@@ -84,7 +84,7 @@ class CategoryProduct extends Controller
 
         $edit_category_product = DB::table('tbl_category_product')->where('category_id',$category_product_id)->get(); //get== select trong dbs
                                                                             //category_id  trong csdl           
-        $manager_category_product = view('admin.updatecategoryProduct')->with('editcategory_Product',$edit_category_product);
+        $manager_category_product = view('admin.updatecategoryproduct')->with('editcategory_Product',$edit_category_product);
                                                                                                     //$update_category_product là biến truyền vào updatecategory_Product
                                         //'admin.updatecategoryProduct là trang đó truyền vào biến $all_category_Product
         return view('admin_layout')->with('admin.updatecategoryproduct',$manager_category_product);

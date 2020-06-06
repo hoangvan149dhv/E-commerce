@@ -105,7 +105,7 @@
                             <form action="{{URL::to('/tim-kiem')}}" method="POST" style="margin-bottom:0px">
                                 {{ csrf_field() }}
                                 <div class="input-group">
-                                    <input type="search" style="border-top-left-radius: 20px;border-bottom-left-radius: 20px;" placeholder="Tìm kiếm" name="search" />
+                                    <input type="search" placeholder="Tìm kiếm" name="search" />
                                     <span class="input-group-btn">
 								<button  name="submit"class="fa fa-search btn btn-sm btn_search_product"></button>
 							</span>
@@ -247,18 +247,23 @@
     {{-- DÙNG VALIDATION FORM ĐỂ CHECK KÍ TỰ --}}
     <script src="{{asset('public/client/js/form-validator.min.js')}}"></script>
     <script type="text/javascript">
-        $.validate({
+       $.validate({
         });
+
         // MENU
         $(document).ready(function() {
             $(window).scroll(function name(params) {
                 if (window.scrollY > 300) {
-                    $('#header').addClass('wapper-col-ul');
+                    // $('#header').addClass('wapper-col-ul');
                     $('.icon-bar-menu').addClass('menu-bar');
+                    // $(".header-middle").css('display','none');
+                    $(".header-middle").slideUp(100);
                 }
                 if (window.scrollY < 200) {
-                    $('#header, wapper-col-ul').removeClass('wapper-col-ul');
+                    // $('#header, wapper-col-ul').removeClass('wapper-col-ul');
                     $('.icon-bar-menu, menu-bar').removeClass('menu-bar')
+                    // $(".header-middle").css('display','block');
+                    $(".header-middle").slideDown(100);
                 }
             })
             $('#background').fadeIn(1000);
@@ -271,8 +276,10 @@
                 $('#background').fadeOut(700, function name(params) {
                     $(this).css('display', 'none');
                 })
-            })
-                        // $('.dropdown').click(function name(params) {
+            });
+            $('.carousel-indicators li:first-child, .carousel-inner>.item:first-child').addClass('active');
+            // $('').addClass('active');
+            // $('.dropdown').click(function name(params) {
             //     $('ul.sub-menu').toggleClass('menu-slide');
             // })
             // $('.dropdown').click(function name(params) {
@@ -283,8 +290,9 @@
             // })
         })
     </script>
-    @yield('script')
-        <script src="{{asset('public/client/js/sweetalert.js')}}"></script>
+    @yield('script') {{-- TẠO AJAX --}}
+    <script src="{{asset('public/client/js/sweetalert.js')}}"></script>
+    {{-- //TẠO AJAX --}}
 </body>
 
 </html>

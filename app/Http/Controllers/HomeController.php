@@ -8,6 +8,7 @@ use DB; //SỬ DỤNG DBS
 use Session; // THƯ VIỆN SỬ DỤNG SESSION
 use Illuminate\Support\Facades\Redirect;
 use Carbon\Carbon;
+use App\sliderModel;
 class HomeController extends Controller
 {
     public function __construct(request $request)
@@ -44,7 +45,9 @@ class HomeController extends Controller
         ->orderby('product_id','desc')->paginate(20);
                                     //paginate( phân trang)
         //jion == INNER JION KHÔNG CẦN "ON" HAY "WHERE" GÌ  HẾT
-
+        // $slider_first= sliderModel::where('status',1)->first();
+        // $slide_id= $slider_first->id;
+        $slider = sliderModel::where('status',1)->orderby('id','desc')->take(3)->get();
         //SỐ LƯỢT TRUY CẬP
         $count = count::findOrFail(1);
         $response = new Response();
@@ -53,13 +56,15 @@ class HomeController extends Controller
             $count->increment('counts');
             return view('user.home')
             ->with('all_productt',$all_product)
-            ->with('count',$count);
+            ->with('count',$count)
+            ->with(compact('all_product','slider'));
              $request->cookie("abc".rand(0,9999));
         }else{
             // $count->increment('counts');
             return view('user.home')
             ->with('all_productt',$all_product)
-            ->with('count',$count);
+            ->with('count',$count)
+            ->with(compact('all_product','slider'));
         }
        
 
@@ -100,13 +105,16 @@ class HomeController extends Controller
 
 
     public function promotion(Request $request){
-
+        // $slider_first= sliderModel::where('status',1)->first();
+        // $slide_id= $slider_first->id;
+        $slider = sliderModel::where('status',1)->orderby('id','desc')->take(3)->get();
         $promotion = DB::table('tbl_product')
         ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
         ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
         ->where('product_price_promotion','>','1')->orderby('product_price_promotion','desc')->paginate(20);
         return view('user.promotion.promotion')
-        ->with('promotion',$promotion);
+        ->with('promotion',$promotion)
+        ->with(compact('slider'));
         
     }
 }
