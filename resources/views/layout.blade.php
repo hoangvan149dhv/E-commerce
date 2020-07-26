@@ -7,18 +7,20 @@
     <meta name="description" content="{{ $meta_desc }}"> {{--MÔ TẢ GOOGLE bên homeController.php --}}
     <meta name="keywords" content="{{ $meta_keyword }}" />{{--TỪ KHÓA GOOGLE bên homeController.php --}}
     <meta name="author" content="">
-    <title>{{ $meta_title }}-Vải áo dài xinh</title>{{-- bên homeController.php --}}
+    <title>{{ $meta_title }}</title>{{-- bên homeController.php --}}
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="{{ $url_canonical }}" />
     <link rel="icon" type="image" href=""> {{-- //SEO --}} {{-- Property --- DÙNG ĐỂ SHARE TRANG( NHƯ FACEBOOK, ...) --}}
-    <meta property="og:image" content="hinh-anh" />
-    <meta property="og:site_name" content="http://localhost/banhanglaravel" />
+    @isset($details_product)<meta property="og:image" content="http://vanduong.com.web3.redhost.vn/public/upload/{{ $details_product->product_image}}"/>@endisset
+    @yield('og:image')
+    <meta property="og:site_name" content="http://vanduong.com.web3.redhost.vn/" />
     <meta property="og:title" content="{{ $meta_title }}" />
     <meta property="og:description" content="{{ $meta_desc }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ $url_canonical }}" /> {{-- Property --}}
     <link href="{{asset('public/client/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('public/client/css/font-awesome.min.css')}}" rel="stylesheet">
+    {{-- <link href="{{asset('public/client/css/prettyPhoto.css')}}" rel="stylesheet"> --}}
     <link href="{{asset('public/client/css/animate.css')}}" rel="stylesheet">
     <link href="{{asset('public/client/css/main.css')}}" rel="stylesheet">
     <link href="{{asset('public/client/css/responsive.css')}}" rel="stylesheet">

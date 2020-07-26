@@ -12,8 +12,8 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="{{ $url_canonical }}" />
     <link rel="icon" type="image" href=""> {{-- //SEO --}} {{-- Property --- DÙNG ĐỂ SHARE TRANG( NHƯ FACEBOOK, ...) --}}
-    <meta property="og:image" content="hinh-anh" />
-    <meta property="og:site_name" content="http://localhost/banhanglaravel" />
+    <meta property="og:image" content="{{ asset('public/upload/qc2.png') }}" />
+    <meta property="og:site_name" content="http://vanduong.com.web3.redhost.vn/" />
     <meta property="og:title" content="{{ $meta_title }}" />
     <meta property="og:description" content="{{ $meta_desc }}" />
     <meta property="og:type" content="website" />
