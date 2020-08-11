@@ -37,3 +37,17 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 }
+class A
+{
+    //class A
+}
+
+class B extends A
+{
+    
+}
+
+class C extends B
+{
+    //class C
+}
