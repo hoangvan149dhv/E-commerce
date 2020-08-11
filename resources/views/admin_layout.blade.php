@@ -207,6 +207,16 @@
                     <li><a href="{{URL::to('/all-news')}}">Liệt Kê Bài viết</a></li>
                     </ul>
                 </li>
+                <li class="sub-menu">
+                    <a @yield('slider') href="javascript:;">
+                        <i class="fa  fa-align-justify"></i>
+                        <span>Slider quảng cáo</span>
+                    </a>
+                    <ul class="sub">
+                    <li><a href="{{URL::to('/add-slider')}}">Thêm slider</a></li>
+                    <li><a href="{{URL::to('/all-slider')}}">Liệt Kê Slider</a></li>
+                    </ul>
+                </li>
             </ul>            
         </div>
         <!-- sidebar menu end-->

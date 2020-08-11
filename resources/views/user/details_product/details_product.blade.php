@@ -22,14 +22,15 @@
             <!-- Wrapper for slides -->ẢNH DI CHUYỂN --}}
             <div class="carousel-inner">
                 <div class="item active">
-                    <a href=""><img src="../public/upload/{{$details_product->product_image}}" style="margin-left:15px" height="80" width="70"  alt="" /></a>
-                </div>
-                <div class="item">
-                    <a href=""><img src="../public/upload/{{$details_product->product_image}}" style="margin-left:15px" height="80" width="70" alt="" /></a>
-                </div>
-                <div class="item">
-                    <a href=""><img src="../public/upload/{{$details_product->product_image}}" style="margin-left:15px" height="80" width="70" alt="" /></a>
-                </div>
+                    {{-- <a href=""><img src="../public/upload/{{$details_product->product_image}}" style="margin-left:15px" height="80" width="70"  alt="" /></a> --}}
+                    @foreach ($related_product as $item)
+                    <a href=""><img src="../public/upload/{{$item->product_image}}" style="margin-left:15px" height="80" width="70" alt="" /></a>
+                    @endforeach
+                </div>           
+                {{--<div class="item">
+                   <a href=""><img src="../public/upload/{{$item->product_image}}" style="margin-left:15px" height="80" width="70" alt="" /></a>
+                </div> --}}
+                
 
             </div>
 
@@ -43,7 +44,6 @@
         </div>
     </div>
     @endforeach
-
     <div class="col-sm-7">
         <div class="product-information">
             <!--/product-information-->

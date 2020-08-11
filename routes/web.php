@@ -83,8 +83,8 @@ Route::post('/lien-he','contactController@insertContact');
 Route::get('khuyen-mai', 'HomeController@promotion');
 
 
-
-
+/////////////////////////////////////////////////////////////////////
+Route::get('/', 'sliderController@slider_user');
 
 
 
@@ -116,7 +116,7 @@ Route::get('/admin-quanly-donhang', 'AdminController@order');
 
 //upload img
 Route::post('ckeditor/image_upload', 'AdminController@upload')->name('uploads');
-                                                        //name('upload') là truyền tham số bên view admin_layout.blde.php dòng 278        
+                                                        //name('uploads') là truyền tham số bên view admin_layout.blde.php dòng 278        
 //ĐĂNG XUẤT
 Route::get('/logout','AdminController@log_out');
 
@@ -261,3 +261,22 @@ Route::get('/deletestatus-1/{Con_Id}','contactController@delete_status_1');
 Route::get('reviews','reviewsController@reviews');
 /////UPDATE- STATUS PHẢN HỒI LIÊN HỆ CỦA KHÁCH (TRẠNG THÁI Chưa GIAO HAY ĐÃ GIAO)
 Route::get('/deletestatus1/{Con_Id}','reviewsController@delete_status_1');
+
+//////////////////////////////////////SLIDER QUẢNG CÁO/////////////////////////////////////////
+//HIển thị thêm quảng cáo
+Route::get('/add-slider','sliderController@slider_layout');
+Route::post('/edit-slider','sliderController@add_slider');
+
+//HIển thị quảng cáo
+route::get('/all-slider','sliderController@slider_all');
+//
+Route::post('/update-slider/{id}','sliderController@update_slider');
+Route::get('/update-layout-slider/{id}','sliderController@update_layout_slider');
+//ẨN QC
+Route::get('/status-0/{id}','sliderController@status_0');
+//hiện Qc
+Route::get('/status-1/{id}','sliderController@status_1');
+//XÓA QC
+Route::get('/delete-layout-slider/{id}','sliderController@delete');
+//XÓA NHIỀU QC
+Route::get('/destroy-slider','sliderController@destroy');

@@ -12,8 +12,8 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="{{ $url_canonical }}" />
     <link rel="icon" type="image" href=""> {{-- //SEO --}} {{-- Property --- DÙNG ĐỂ SHARE TRANG( NHƯ FACEBOOK, ...) --}}
-    <meta property="og:image" content="hinh-anh" />
-    <meta property="og:site_name" content="http://localhost/banhanglaravel" />
+    <meta property="og:image" content="{{ asset('public/upload/qc2.png') }}" />
+    <meta property="og:site_name" content="http://vanduong.com.web3.redhost.vn/" />
     <meta property="og:title" content="{{ $meta_title }}" />
     <meta property="og:description" content="{{ $meta_desc }}" />
     <meta property="og:type" content="website" />
@@ -32,13 +32,13 @@
 <body>
     <header id="header">
         <!--header-->
-        <div class="header-middle" style="background:#fafafa;">
+        <div class="header-middle">
             <!--header-middle-->
             <div class="container">
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="logo pull-left">
-                            <img src="{{asset('public/upload/logo2.png')}}" alt="" />
+                            <a href="{{ URL::to('/') }}"><img src="{{asset('public/upload/logo2.png')}}" alt="" /></a>
                         </div>
                         <div class="btn-group pull-right"></div>
                     </div>
@@ -107,7 +107,7 @@
                             <form action="{{URL::to('/tim-kiem')}}" method="POST" style="margin-bottom:0px">
                                 {{ csrf_field() }}
                                 <div class="input-group">
-                                    <input type="search" style="border-top-left-radius: 20px;border-bottom-left-radius: 20px;" placeholder="Tìm kiếm" name="search" />
+                                    <input type="search" placeholder="Tìm kiếm" name="search" />
                                     <span class="input-group-btn">
 								<button  name="submit"class="fa fa-search btn btn-sm btn_search_product"></button>
 							</span>
@@ -130,35 +130,37 @@
                 <div class="col-sm-12">
                     <div id="slider-carousel" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators" style="z-index:1">
-                            <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+                            <?php
+                                use App\sliderModel;
+                                $alert = sliderModel::all()->where('status',1)->count();
+                            ?>
+                            @for ($i = 0; $i < $alert; $i++)
+                                <li data-target="#slider-carousel" data-slide-to="{{$i}}"></li>
+                            @endfor
+                            {{-- <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
                             <li data-target="#slider-carousel" data-slide-to="1"></li>
-                            <li data-target="#slider-carousel" data-slide-to="2"></li>
+                            <li data-target="#slider-carousel" data-slide-to="2"></li> --}}
                         </ol>
-
                         <div class="carousel-inner">
-                            <div class="item active">
-                                <div class="col-sm-12">
-                                    <img src="{{ asset('public/upload/qc2.png') }}" class="img-fluid" alt="" />
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="col-sm-12">
-                                    <img src="{{ asset('public/upload/mayanh.png') }}" class="img-fluid" alt="" />
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="col-sm-12">
-                                    <img src="{{ asset('public/upload/qc2.png') }}" class="img-fluid" alt="" />
-                                </div>
-                            </div>
+                            {{-- <div class="item active">
+                                @yield('slider_first')
+                            </div> --}}
+                                @yield('slider')
                         </div>
                     </div>
-                    <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+                    {{-- @yield('slide-right-left') --}}
+                    <?php
+                     if(($alert>1)){
+                        echo '<a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
                         <i class="fa fa-angle-left"></i>
-                    </a>
-                    <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
+                        </a>
+                        <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+                            <i class="fa fa-angle-right"></i>
+                        </a>';
+                     }else{
+
+                     }
+                    ?>
                 </div>
 
             </div>
@@ -268,12 +270,16 @@
         $(document).ready(function() {
             $(window).scroll(function name(params) {
                 if (window.scrollY > 300) {
-                    $('#header').addClass('wapper-col-ul');
+                    // $('#header').addClass('wapper-col-ul');
                     $('.icon-bar-menu').addClass('menu-bar');
+                    // $(".header-middle").css('display','none');
+                    $(".header-middle").slideUp(100);
                 }
                 if (window.scrollY < 200) {
-                    $('#header, wapper-col-ul').removeClass('wapper-col-ul');
+                    // $('#header, wapper-col-ul').removeClass('wapper-col-ul');
                     $('.icon-bar-menu, menu-bar').removeClass('menu-bar')
+                    // $(".header-middle").css('display','block');
+                    $(".header-middle").slideDown(100);
                 }
             })
             $('#background').fadeIn(1000);
@@ -286,7 +292,9 @@
                 $('#background').fadeOut(700, function name(params) {
                     $(this).css('display', 'none');
                 })
-            })
+            });
+            $('.carousel-indicators li:first-child, .carousel-inner>.item:first-child').addClass('active');
+            // $('').addClass('active');
             // $('.dropdown').click(function name(params) {
             //     $('ul.sub-menu').toggleClass('menu-slide');
             // })

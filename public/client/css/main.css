@@ -21,7 +21,6 @@ a:hover {
 outline: none;
 text-decoration:none;
 }
-
 a:focus {
   outline:none;
   outline-offset: 0;
@@ -33,7 +32,15 @@ a {
     -o-transition: 300ms;
     transition: 300ms;
 }
-
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto', sans-serif;
 }
@@ -164,8 +171,8 @@ a#scrollUp i{
   border-bottom: 1px solid #f5f5f5;
   margin-left: 0;
   margin-right: 0;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 .header-middle .container .row .col-sm-4{
@@ -175,7 +182,13 @@ a#scrollUp i{
 .header-middle .container .row .col-sm-8 {
 	/* padding-right:0; */
 }
-
+#header{
+  position:sticky;top: 0;z-index: 999;
+}
+.header-middle{
+  background: #fafafa;
+  height: 7rem;
+}
 .usa {
   border-radius: 0;
   color: #B4B1AB;
@@ -201,8 +214,9 @@ button.fa.fa-search.btn.btn-sm.btn_search_product {
   border-bottom-right-radius: 20px;
   background: #ede5da;
   color: #9e9b97;
-  font-size: 21px;
-  padding-top: 6px;
+  height:31px;
+  font-size: 22px;
+  padding-top: 5px;
   padding-bottom: 2px;
 }
 .fa-search:before {
@@ -259,7 +273,9 @@ button.fa.fa-search.btn.btn-sm.btn_search_product {
 
 
 .header-bottom {
-  /* /* padding-bottom: 15px; */
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   background-color: #fe980f;
   padding-top: 10px;
   margin-bottom: 10px;
@@ -361,7 +377,7 @@ ul.menu{
   width:120px;
   height:31px;
   float: right;
-  border-radius: 3px;
+  /* border-radius: 3px; */
   background: #ede5da;
   border: medium none;
   color: #B2B2B2;
@@ -1026,7 +1042,7 @@ h2.title {
   padding: 10px 10px;
   background: #fe980f;
   top: 20px;
-  font-size: 18px;
+  font-size: 1.3rem;
   /* left: 15px; */
   border-radius: 100%;
   color: white;
@@ -1448,7 +1464,7 @@ object-position: 50% 50%;
     background: #fe980f;
     top: 20px;
     font-size: 15px;
-    left: 10px;
+    left:0;
     border-radius: 100%;
     color: white;
     text-align: center;

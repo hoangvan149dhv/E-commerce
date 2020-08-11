@@ -60,7 +60,7 @@
 </div>
     <?php
     // echo "<pre>";
-    // print_r($count);
+    // print_r($slider);
     // echo"</pre>";
     ?>
 @endsection 
@@ -132,3 +132,20 @@
     <button type="submit"><i class="fa fa-times"></i></button> --}}
 </div>
 @endsection
+{{-- @section('slider_first')
+        <div class="col-sm-12">
+            <img src="public/upload/{{$slider_first->img}} " class="img-fluid" alt="" />
+        </div>
+@endsection --}}
+@section('slider')
+        @foreach ($slider as $slider_img)
+            <div class="item">
+                <div class="col-sm-12">
+                    <img src="public/upload/{{$slider_img->img}}" class="img-fluid" alt="" />
+                </div>
+            </div> 
+        @endforeach
+@endsection
+{{-- @section('slide-right-left')
+
+@endsection --}}

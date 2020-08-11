@@ -1,8 +1,13 @@
 <?php
     use Carbon\Carbon;
 ?>
+@section('og:image')
+@isset($newsadminModel)
+<meta property="og:image" content="http://vanduong.com.web3.redhost.vn/public/upload/{{ $newsadminModel->news_image}}"/>
+@endisset
+@endsection
 @extends('layout')   {{-- "triệu gọi trang layout như include"  LƯU Ý:TRONG LARAVEL ĐẶT FILE PHẢI CÓ .BLADE.PHP --}}
-        {{-- GỌI folder routes/web.php dòng 15 --}}
+        {{-- GỌI folder routes/web.php dòng 1http://vanduong.com.web3.redhost.vn/5 --}}
 @Section('content')  {{--Đặt 'content bên trang welcome.blade.php dòng 355' --}}
     <div class="col-sm-12" style="border-right:1px solid #e8e8e2;border-left:1px solid #e8e8e2">
         <div class="blog-post-area">

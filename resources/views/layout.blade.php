@@ -7,18 +7,20 @@
     <meta name="description" content="{{ $meta_desc }}"> {{--MÔ TẢ GOOGLE bên homeController.php --}}
     <meta name="keywords" content="{{ $meta_keyword }}" />{{--TỪ KHÓA GOOGLE bên homeController.php --}}
     <meta name="author" content="">
-    <title>{{ $meta_title }}-Vải áo dài xinh</title>{{-- bên homeController.php --}}
+    <title>{{ $meta_title }}</title>{{-- bên homeController.php --}}
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="{{ $url_canonical }}" />
     <link rel="icon" type="image" href=""> {{-- //SEO --}} {{-- Property --- DÙNG ĐỂ SHARE TRANG( NHƯ FACEBOOK, ...) --}}
-    <meta property="og:image" content="hinh-anh" />
-    <meta property="og:site_name" content="http://localhost/banhanglaravel" />
+    @isset($details_product)<meta property="og:image" content="http://vanduong.com.web3.redhost.vn/public/upload/{{ $details_product->product_image}}"/>@endisset
+    @yield('og:image')
+    <meta property="og:site_name" content="http://vanduong.com.web3.redhost.vn/" />
     <meta property="og:title" content="{{ $meta_title }}" />
     <meta property="og:description" content="{{ $meta_desc }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ $url_canonical }}" /> {{-- Property --}}
     <link href="{{asset('public/client/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('public/client/css/font-awesome.min.css')}}" rel="stylesheet">
+    {{-- <link href="{{asset('public/client/css/prettyPhoto.css')}}" rel="stylesheet"> --}}
     <link href="{{asset('public/client/css/animate.css')}}" rel="stylesheet">
     <link href="{{asset('public/client/css/main.css')}}" rel="stylesheet">
     <link href="{{asset('public/client/css/responsive.css')}}" rel="stylesheet">
@@ -36,7 +38,7 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="logo pull-left">
-                            <img src="{{asset('public/upload/logo2.png')}}" alt="" />
+                            <a href="{{ URL::to('/') }}"><img src="{{asset('public/upload/logo2.png')}}" alt="" /></a>
                         </div>
                         <div class="btn-group pull-right"></div>
                     </div>
@@ -105,7 +107,7 @@
                             <form action="{{URL::to('/tim-kiem')}}" method="POST" style="margin-bottom:0px">
                                 {{ csrf_field() }}
                                 <div class="input-group">
-                                    <input type="search" style="border-top-left-radius: 20px;border-bottom-left-radius: 20px;" placeholder="Tìm kiếm" name="search" />
+                                    <input type="search" placeholder="Tìm kiếm" name="search" />
                                     <span class="input-group-btn">
 								<button  name="submit"class="fa fa-search btn btn-sm btn_search_product"></button>
 							</span>
@@ -247,18 +249,23 @@
     {{-- DÙNG VALIDATION FORM ĐỂ CHECK KÍ TỰ --}}
     <script src="{{asset('public/client/js/form-validator.min.js')}}"></script>
     <script type="text/javascript">
-        $.validate({
+       $.validate({
         });
+
         // MENU
         $(document).ready(function() {
             $(window).scroll(function name(params) {
                 if (window.scrollY > 300) {
-                    $('#header').addClass('wapper-col-ul');
+                    // $('#header').addClass('wapper-col-ul');
                     $('.icon-bar-menu').addClass('menu-bar');
+                    // $(".header-middle").css('display','none');
+                    $(".header-middle").slideUp(100);
                 }
                 if (window.scrollY < 200) {
-                    $('#header, wapper-col-ul').removeClass('wapper-col-ul');
+                    // $('#header, wapper-col-ul').removeClass('wapper-col-ul');
                     $('.icon-bar-menu, menu-bar').removeClass('menu-bar')
+                    // $(".header-middle").css('display','block');
+                    $(".header-middle").slideDown(100);
                 }
             })
             $('#background').fadeIn(1000);
@@ -271,8 +278,10 @@
                 $('#background').fadeOut(700, function name(params) {
                     $(this).css('display', 'none');
                 })
-            })
-                        // $('.dropdown').click(function name(params) {
+            });
+            $('.carousel-indicators li:first-child, .carousel-inner>.item:first-child').addClass('active');
+            // $('').addClass('active');
+            // $('.dropdown').click(function name(params) {
             //     $('ul.sub-menu').toggleClass('menu-slide');
             // })
             // $('.dropdown').click(function name(params) {
@@ -283,8 +292,9 @@
             // })
         })
     </script>
-    @yield('script')
-        <script src="{{asset('public/client/js/sweetalert.js')}}"></script>
+    @yield('script') {{-- TẠO AJAX --}}
+    <script src="{{asset('public/client/js/sweetalert.js')}}"></script>
+    {{-- //TẠO AJAX --}}
 </body>
 
 </html>
