@@ -10,6 +10,7 @@ use Session; // THƯ VIỆN SỬ DỤNG SESSION
 use App\contactModel;
 use Illuminate\Support\Facades\Redirect;
 use App\ReviewModel;
+use App\contactinfoModel;
 use Validator;  //neu cac ban co su dung validate
 class reviewsController extends Controller
 {
@@ -23,5 +24,9 @@ class reviewsController extends Controller
         public function delete_status_1($Rid){
             ReviewModel ::where('Rid',$Rid)->delete();
         return redirect('/reviews');
+        }
+        public function __construct(){
+            $contactinfoModel = contactinfoModel::select()->get();
+     view()->share('contactinfoModel',$contactinfoModel);
         }
 }

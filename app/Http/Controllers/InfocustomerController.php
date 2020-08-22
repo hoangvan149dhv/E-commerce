@@ -8,6 +8,7 @@ use DB; //SỬ DỤNG DBS
 use Session; // THƯ VIỆN SỬ DỤNG SESSION
 use App\Http\Requests; // 
 use Illuminate\Support\Facades\Redirect;
+use App\contactinfoModel;
 // session_start();
 class InfocustomerController extends Controller
 {
@@ -25,6 +26,8 @@ class InfocustomerController extends Controller
          $meta_title = "Vải áo dài xinh- Khuyến Mãi"; //Tile là tên trang đó
          $url_canonical = $request->url(); // url_canonical cái này lấy được cái đường dẫn hiện tại của cái trang  chủ
         //SEO
+        $contactinfoModel = contactinfoModel::select()->get();
+view()->share('contactinfoModel',$contactinfoModel);
         view()->share('category_product',$category_product);
         view()->share('brand_code_product',$brandcode_product);
         view()->share('meta_desc',$meta_desc);

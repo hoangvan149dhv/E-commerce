@@ -103,17 +103,10 @@
                                 <form action="{{ URL::to('/thanh-toan-gio-hang') }}" method="POST">
                                     {{ csrf_field() }}
                                     <input  data-validation="length" data-validation-length="5-70" data-validation-error-msg='vui lòng điền 5- 70 kí tự' type="text" name="name" placeholder="Họ Và Tên Người Nhận">
-                                    <input  data-validation="length" data-validation-length="5-70" data-validation-error-msg='vui lòng điền 5- 70 kí tự' type="text" name="add" placeholder="Địa Chỉ">
+                                    <input  data-validation="length" data-validation-length="5-70" data-validation-error-msg='vui lòng điện dúng địa chỉ' type="text" name="add" placeholder="Địa Chỉ">
                                     <input data-validation="length" data-validation-length="10-11" data-validation-error-msg='vui lòng số sđt 10 kí tự' type="number" name="phone" placeholder="SỐ Điện Thoại">
                                     <textarea data-validation="length" data-validation-length="1-1000" data-validation-error-msg='vui lòng điền 1- 1000 kí tự' name="note" id="" rows="6" placeholder="Ghi Chú">vd:</textarea>
                                     <div style="color:red;margin-top:1.5rem;">
-                                        <?php
-                                                // $message = Session::get('error');
-                                                // if($message){
-                                                //     echo "$message";
-                                                //     Session::put('error',null);
-                                                // }
-                                    ?>
                                     </div>
                                     <div class="checkout" >
                                         <button type="submit" name="submit" class="btn btn-default check_out" style="margin-left: 0px;border-radius: 5px; font-size: 25px;">

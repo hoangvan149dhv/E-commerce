@@ -6,6 +6,7 @@ use DB; //SỬ DỤNG DBS
 use Session; // THƯ VIỆN SỬ DỤNG SESSION
 use App\Http\Requests; // 
 use Illuminate\Support\Facades\Redirect;
+use App\contactinfoModel;
 // session_start();
 class BrandcodeProduct extends Controller
 {
@@ -102,6 +103,9 @@ class BrandcodeProduct extends Controller
         $category_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
         //category_id trong sql, 
         $brandcode_product =DB::table('tbl_brand_code_product')->orderby('code_id','desc')->get();
+        $contactinfoModel = contactinfoModel::select()->get();
+        // $month=  Carbon::now()->month;
+        view()->share('contactinfoModel',$contactinfoModel);
         view()->share('category_product',$category_product);
         view()->share('brand_code_product',$brandcode_product);
     }

@@ -8,6 +8,7 @@ use Session; // THƯ VIỆN SỬ DỤNG SESSION
 use App\Http\Requests; // 
 use Illuminate\Support\Facades\Redirect;
 use App\ReviewModel;
+use App\contactinfoModel;
 // session_start();
 class Productcontroller extends Controller
 {
@@ -253,5 +254,9 @@ public function update_Product(Request $Request,$product_id){
             Session::put('alert-successproduct','Sửa  Sản phẩm Thành Công');
             return back();
         }
+    }
+    public function __construct(){
+        $contactinfoModel = contactinfoModel::select()->get();
+ view()->share('contactinfoModel',$contactinfoModel);
     }
 }

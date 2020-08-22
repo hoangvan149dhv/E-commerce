@@ -17,23 +17,13 @@
                 <img src="../public/upload/{{$details_product->product_image}}" alt="" />
         </div>
         <div id="similar-product" class="carousel slide" data-ride="carousel">
-
-            {{--
-            <!-- Wrapper for slides -->ẢNH DI CHUYỂN --}}
             <div class="carousel-inner">
                 <div class="item active">
-                    {{-- <a href=""><img src="../public/upload/{{$details_product->product_image}}" style="margin-left:15px" height="80" width="70"  alt="" /></a> --}}
                     @foreach ($related_product as $item)
                     <a href=""><img src="../public/upload/{{$item->product_image}}" style="margin-left:15px" height="80" width="70" alt="" /></a>
                     @endforeach
-                </div>           
-                {{--<div class="item">
-                   <a href=""><img src="../public/upload/{{$item->product_image}}" style="margin-left:15px" height="80" width="70" alt="" /></a>
-                </div> --}}
-                
-
+                </div>
             </div>
-
             <!-- Controls -->
             <a class="left item-control" href="#similar-product" data-slide="prev">
                 <i class="fa fa-angle-left"></i>
@@ -59,7 +49,6 @@
             <form action="{{URL::to('/them-gio-hang')}}" method="POST">
                 {{ csrf_field() }}{{--mã tokken --}}
                 <span>
-
                 <span>{{number_format($details_product->product_price)}}.VNĐ</span>
                 <br>
                 <label>Số Lượng:</label>
@@ -73,10 +62,6 @@
                 </button>
                 </span>
             </form>
-            {{-- <p><b>Chất Liệu:</b> {{$details_product->product_material }}</p>
-            <p><b>Thương Hiệu:</b> {{$details_product->brandcode_name}}</p>
-            <p><b>Danh Mục:</b> {{$details_product->category_name}}</p> --}}
-
         </div>
         <!--/product-information-->
     </div>
@@ -138,8 +123,6 @@
                         <button type="submit" name="submit" class="btn btn-default pull-right">
                             Gửi đi
                         </button>
-                        {{--
-                        <input type="submit" name="submit" value="nhấn"> --}}
                 </form>
             </div>
         </div>
@@ -206,7 +189,7 @@
                             <p></p>
                             @else
                             <p style="text-decoration: line-through;color:#ff4b0099">{{number_format($related_product->product_price_promotion) ."VNĐ"}}</p>
-                            @endif {{-- //phân trăm sale sản phẩm --}}
+                            @endif
                                 <h4 style="color: #FE980F;">{{number_format($related_product->product_price)}}.VNĐ</h4>
                                 <a href="{{ URL::to('/chi-tiet/'.$product_recommended->meta_slug) }}" type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Chi tiết</a>
                             </div>

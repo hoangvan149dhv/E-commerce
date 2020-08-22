@@ -66,13 +66,7 @@ class HomeController extends Controller
             ->with('count',$count)
             ->with(compact('all_product','slider'));
         }
-       
-
-
-
-       
     }
-
     //TÌM KIẾM
     public function search(Request $request){
         $key_word = $request->search;
@@ -99,11 +93,7 @@ class HomeController extends Controller
         ->orwhere('product_material','like','%'.$key_word.'%')->paginate(20);
         return view('user.search.search')
         ->with('search',$search);
-        
     }
-
-
-
     public function promotion(Request $request){
         // $slider_first= sliderModel::where('status',1)->first();
         // $slide_id= $slider_first->id;

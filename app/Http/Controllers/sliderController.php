@@ -5,7 +5,8 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use App\sliderModel;
 use DB;
-class sliderController extends HomeController
+use App\contactinfoModel;
+class sliderController extends Controller
 {
     function slider_layout(){
         return view('admin.slider.addslider');
@@ -85,5 +86,9 @@ class sliderController extends HomeController
         else{
             return false;
         }
+    }
+    public function __construct(){
+        $contactinfoModel = contactinfoModel::select()->get();
+ view()->share('contactinfoModel',$contactinfoModel);
     }
 }

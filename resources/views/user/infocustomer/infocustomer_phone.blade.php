@@ -1,11 +1,5 @@
-@extends('layout')   {{-- "triệu gọi trang layout như include"  LƯU Ý:TRONG LARAVEL ĐẶT FILE PHẢI CÓ .BLADE.PHP --}}
-        {{-- GỌI folder routes/web.php dòng 15 --}}
-@Section('content')  {{--Đặt 'content bên trang welcome.blade.php dòng 355' --}}
-<?php
-// if(isset($all_info_customer->cusname)){
-//     echo "<div class='note' style='color:red;font-size:20px'>Không có thông tin!!! </div>";
-// }else {
-?>
+@extends('layout')
+@Section('content')
 <div class="contact-form">
     <h2 class="title text-center">Lịch sử mua hàng</h2>
     @foreach ($all_info_customer as $value_content) {{--$content là khai báo dòng 14, nó hiển thị ra thông tin đã add vào cart--}}
@@ -16,9 +10,6 @@
                 {{-- Sản Phẩm --}}
                 <td style="border: 1px solid #E6E4DF;" class="cart_description">
                 <h5 style="text-align:center;" >Cảm ơn anh/chị <b style="font-size:18px">{{$value_content->cusname }}</b> đã quan tâm tin tưởng sản phẩm chúng tôi</h5>
-                    
-                                    {{-- name nằm bên Cartcontroller ($data['name']) dòng 25 --}}
-                    {{-- <p>Mã Hàng: {{$value_content->weight}}</p> --}}
                 </td>
             </tr>
             <hr>

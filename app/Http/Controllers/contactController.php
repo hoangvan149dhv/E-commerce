@@ -11,11 +11,12 @@ use App\contactModel;
 use Illuminate\Support\Facades\Redirect;
 // use App\Rules\Captcha; 
 use Validator;  //neu cac ban co su dung validate
+use App\contactinfoModel;
 class contactController extends Controller
 {
     public function __construct(request $request)
     {
-        
+        $contactinfoModel = contactinfoModel::select()->get();
        //lấy ra DANH MỤC VÀ THƯƠNG HIỆU
          $category_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
                 //category_id trong sql, 
@@ -26,7 +27,8 @@ class contactController extends Controller
          $meta_keyword = "Áo dài in 3D, áo dài đẹp, áo dài in sỉ lẻ, đồng phục";     //Từ khóa trên google khi người dùng tìm kiếm
          $meta_title = "Vải áo dài xinh- Khuyến Mãi"; //Tile là tên trang đó
          $url_canonical = $request->url(); // url_canonical cái này lấy được cái đường dẫn hiện tại của cái trang  chủ
-        //SEO
+         view()->share('contactinfoModel',$contactinfoModel);
+         //SEO
         view()->share('category_product',$category_product);
         view()->share('brand_code_product',$brandcode_product);
         view()->share('meta_desc',$meta_desc);

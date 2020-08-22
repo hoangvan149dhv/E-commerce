@@ -7,6 +7,7 @@ use DB; //SỬ DỤNG DBS
 use Session; // THƯ VIỆN SỬ DỤNG SESSION
 use App\Http\Requests; // 
 use Illuminate\Support\Facades\Redirect;
+use App\contactinfoModel;
 // session_start();
 class CategoryProduct extends Controller
 {
@@ -138,6 +139,8 @@ class CategoryProduct extends Controller
                 //category_id trong sql, 
         
         $brandcode_product =DB::table('tbl_brand_code_product')->orderby('code_id','desc')->get();
+        $contactinfoModel = contactinfoModel::select()->get();
+        view()->share('contactinfoModel',$contactinfoModel);
         view()->share('category_product',$category_product);
         view()->share('brand_code_product',$brandcode_product);
     }

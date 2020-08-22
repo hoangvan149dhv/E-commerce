@@ -1,4 +1,5 @@
-@extends('home_page') {{-- "triệu gọi trang layout như include" LƯU Ý:TRONG LARAVEL ĐẶT FILE PHẢI CÓ .BLADE.PHP --}} {{-- GỌI folder routes/web.php dòng 15 --}} @Section('content') {{--Đặt 'content bên trang welcome.blade.php dòng 355' --}}
+@extends('home_page') {{-- "triệu gọi trang layout như include" LƯU Ý:TRONG LARAVEL ĐẶT FILE PHẢI CÓ .BLADE.PHP --}} {{-- GỌI folder routes/web.php dòng 15 --}} 
+@Section('content') {{--Đặt 'content bên trang welcome.blade.php dòng 355' --}}
 <div class="features_items">
     <!--features_items-->
     <h2 class="title text-center">Sản Phẩm Mới Nhất</h2> {{--
