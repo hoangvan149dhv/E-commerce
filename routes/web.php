@@ -84,9 +84,7 @@ Route::get('khuyen-mai', 'HomeController@promotion');
 
 
 /////////////////////////////////////////////////////////////////////
-Route::get('/', 'sliderController@slider_user');
-
-
+// Route::get('/', 'sliderController@slider_user');
 
 
 
@@ -280,3 +278,5 @@ Route::get('/status-1/{id}','sliderController@status_1');
 Route::get('/delete-layout-slider/{id}','sliderController@delete');
 //XÓA NHIỀU QC
 Route::get('/destroy-slider','sliderController@destroy');
+Route::get('/them-thong-tin/{id}','contactinfoController@layout_insert_Infocontact');
+Route::post('/save-info-contact','contactinfoController@save_info_contact');

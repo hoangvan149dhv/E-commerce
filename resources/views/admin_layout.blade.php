@@ -217,6 +217,10 @@
                     <li><a href="{{URL::to('/all-slider')}}">Liệt Kê Slider</a></li>
                     </ul>
                 </li>
+                @foreach ($contactinfoModel as $contact)
+                 <li><a href="{{URL::to('/them-thong-tin/'.$contact->id_Info)}}"><i class="fa fa-user"></i>thông tin liên hệ</a></li>
+                @endforeach
+                   
             </ul>            
         </div>
         <!-- sidebar menu end-->
@@ -226,8 +230,8 @@
 <!--main content start-->
 <section id="main-content">
 	<section class="wrapper">
-
-
+        
+       
             @yield('admin_content')
             @yield('content')
             @yield('content-layout')

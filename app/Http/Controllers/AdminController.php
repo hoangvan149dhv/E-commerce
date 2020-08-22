@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Response;
 use Carbon\Carbon;
 use App\CustomerorderModel;
+use App\contactinfoModel;
 use App\count;
 class AdminController extends Controller
 {
@@ -88,9 +89,9 @@ class AdminController extends Controller
         $count = count::find(1);
                 //Số lượt truy cập trong ngày
         // $date=  Carbon::now()->day;
-
+        $contactinfoModel = contactinfoModel::select()->get();
         // $month=  Carbon::now()->month;
-        
+        view()->share('contactinfoModel',$contactinfoModel);
         view()->share('count',$count); // all
         // view()->share('count_date',$count_date); //date
         // view()->share('count_month',$count_month); //month

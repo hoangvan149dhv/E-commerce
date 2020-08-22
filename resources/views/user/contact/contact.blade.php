@@ -171,13 +171,13 @@
                                 <div class="col-sm-5">
                                     <div class="contact-info">
                                         <h2 class="title text-center">Thông tin liên hệ</h2>
+                                        @foreach ($contactinfoModel as $contact)
                                         <address>
-                        <p>Vải áo dài xinh</p><br>
-                        <p><strong> Địa chỉ:</strong> <br>65 Huỳnh Thúc Kháng</p>
-                        <p>P.Bến Nghé, Q.1, TP HCM</p>
-                        <p><strong>SĐT: </strong>0334.964.103</p>
-                        <p><strong> Email:</strong> hoangvan1491999@gmail.com </p>
-                    </address>
+                                            <p><strong> Địa chỉ:</strong> <br>{{ $contact->info_contact_add }}</p>
+                                            <p><strong>SĐT: </strong>{{ $contact->info_contact_phone }}</p>
+                                            <p><strong> Email:</strong> {{ $contact->info_contact_mail }} </p>
+                                         </address>
+                                        @endforeach
                                         <div class="social-networks">
                                             <h2 class="title text-center"></h2>
                                             <ul>
