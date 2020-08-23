@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 23, 2020 lúc 06:11 AM
+-- Thời gian đã tạo: Th8 23, 2020 lúc 06:41 AM
 -- Phiên bản máy phục vụ: 10.4.11-MariaDB
 -- Phiên bản PHP: 7.4.6
 
@@ -150,9 +150,9 @@ CREATE TABLE `tbl_count` (
 --
 
 INSERT INTO `tbl_count` (`id`, `counts`) VALUES
-(1, 273),
-(1, 273),
-(1, 274);
+(1, 274),
+(1, 274),
+(1, 275);
 
 -- --------------------------------------------------------
 
@@ -187,6 +187,7 @@ INSERT INTO `tbl_customer` (`cusid`, `cusname`, `cusadd`, `cusPhone`) VALUES
 
 CREATE TABLE `tbl_info_contact` (
   `id_Info` int(11) NOT NULL,
+  `google_map` text NOT NULL,
   `info_contact_add` varchar(100) NOT NULL,
   `info_contact_phone` varchar(11) NOT NULL,
   `info_contact_mail` varchar(100) NOT NULL
@@ -196,8 +197,8 @@ CREATE TABLE `tbl_info_contact` (
 -- Đang đổ dữ liệu cho bảng `tbl_info_contact`
 --
 
-INSERT INTO `tbl_info_contact` (`id_Info`, `info_contact_add`, `info_contact_phone`, `info_contact_mail`) VALUES
-(1, '65 Huỳnh Phúc Kháng Phường 15', '0334964103', 'hoangvan1491999@gmail.com');
+INSERT INTO `tbl_info_contact` (`id_Info`, `google_map`, `info_contact_add`, `info_contact_phone`, `info_contact_mail`) VALUES
+(1, '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.513849363198!2d106.69912411495774!3d10.771900592324556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f40c7a0f411%3A0xe272a9c70ba4a66e!2zNjUgxJDGsOG7nW5nIEh14buzbmggVGjDumMgS2jDoW5nLCBC4bq_biBOZ2jDqSwgUXXhuq1uIDEsIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1586944204631!5m2!1svi!2s\" width=\"100%\" height=\"450\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\" aria-hidden=\"false\" tabindex=\"0\"></iframe>', '65 Huỳnh Phúc Kháng Phường 15', '0334964103', 'hoangvan1491999@gmail.com');
 
 -- --------------------------------------------------------
 
