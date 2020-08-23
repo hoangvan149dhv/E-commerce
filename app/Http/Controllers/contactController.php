@@ -12,8 +12,7 @@ use Illuminate\Support\Facades\Redirect;
 // use App\Rules\Captcha; 
 use Validator;  //neu cac ban co su dung validate
 use App\contactinfoModel;
-class contactController extends Controller
-{
+class contactController extends Controller {
     public function __construct(request $request)
     {
         $contactinfoModel = contactinfoModel::select()->get();
@@ -48,13 +47,12 @@ class contactController extends Controller
         ->with('meta_title',$meta_title)
         ->with('url_canonical',$url_canonical);
     }
-    public function insertContact(request $request)
-    {
+    public function insertContact(request $request){
          //SEO
-         $meta_desc= "Chuyênn bán vải áo dài,may tại xưởng, giá rẻ, in sỉ, lẻ , chất lượng"; //META DESCRIPTION
-         $meta_keyword = "Áo dài in 3D, áo dài đẹp, áo dài in sỉ lẻ, đồng phục, liên hệ";     //Từ khóa trên google khi người dùng tìm kiếm
-         $meta_title = "Liên hệ - Vải áo dài xinh"; //Tile là tên trang đó
-         $url_canonical = $request->url(); // url_canonical cái này lấy được cái đường dẫn hiện tại của cái trang  chủ
+        $meta_desc= "Chuyênn bán vải áo dài,may tại xưởng, giá rẻ, in sỉ, lẻ , chất lượng"; //META DESCRIPTION
+        $meta_keyword = "Áo dài in 3D, áo dài đẹp, áo dài in sỉ lẻ, đồng phục, liên hệ";     //Từ khóa trên google khi người dùng tìm kiếm
+        $meta_title = "Liên hệ - Vải áo dài xinh"; //Tile là tên trang đó
+        $url_canonical = $request->url(); // url_canonical cái này lấy được cái đường dẫn hiện tại của cái trang  chủ
          //SEO
 
         $contactModel = new contactModel();
@@ -87,8 +85,8 @@ class contactController extends Controller
         return redirect('/contact');
     }
         //XÓA Liên hệ
-        public function delete_status_1($Con_Id){
-        contactModel ::where('Con_Id',$Con_Id)->delete();
-        return redirect('/contact');
-        }
+    public function delete_status_1($Con_Id){
+    contactModel ::where('Con_Id',$Con_Id)->delete();
+    return redirect('/contact');
+    }
 }

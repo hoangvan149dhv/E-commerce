@@ -28,11 +28,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<input type="text" class="ggg" name="Email" placeholder="Tên Đăng Nhập" required="">
 			<input type="password" class="ggg" name="Password" placeholder="Mật Khẩu..." required="">
 			<span><input name="save" type="checkbox" />Lưu Đăng Nhập</span>
-			<h6><a href="#">Quên Mật Khẩu?</a></h6>
+			<h6><a href="{{ URL::to('/quen-mat-khau') }}">Quên Mật Khẩu?</a></h6>
 				<div class="clearfix"></div>
 				<input type="submit" value="Đặng NHập" name="login">
 		</form>
-		<p>Chưa Có Tài Khoản?<a href="registration.html">Tạo Tài khoản</a></p>
+		<p>Chưa Có Tài Khoản?<a href="/">Tạo Tài khoản</a></p>
 </div>
 </div>
 <script src="public/admin/js/bootstrap.js"></script>

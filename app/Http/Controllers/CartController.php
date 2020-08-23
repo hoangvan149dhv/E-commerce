@@ -11,32 +11,33 @@ use Illuminate\Support\Facades\Redirect;
 // session_start();
 class CartController extends Controller
 {   
-    public function __construct()
-    {
+    public function __construct(){
         
        //lấy ra DANH MỤC VÀ THƯƠNG HIỆU
-         $category_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
+        $category_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
                 //category_id trong sql, 
         
-         $brandcode_product =DB::table('tbl_brand_code_product')->orderby('code_id','desc')->get();
+        $brandcode_product =DB::table('tbl_brand_code_product')->orderby('code_id','desc')->get();
+        
         view()->share('category_product',$category_product);
+        
         view()->share('brand_code_product',$brandcode_product);
+    
     }
     public function show_cart_ajax(Request $request){
-                //SEO
-                $meta_desc= "Chuyênn bán vải áo dài,may tại xưởng, giá rẻ, in sỉ, lẻ , chất lượng"; //META DESCRIPTION
-                $meta_keyword = "Áo dài in 3D, áo dài đẹp, áo dài in sỉ lẻ, đồng phục";     //Từ khóa trên google khi người dùng tìm kiếm
-                $meta_title = "Vải áo dài xinh- chuyên bán sỉ lẻ vải may"; //Tile là tên trang đó
-                $url_canonical = $request->url(); // url_canonical cái này lấy được cái đường dẫn hiện tại của cái trang  chủ
-        
-                ///SEO
-        
-        
-                return view('user.cart.show_cartajax')
-                ->with('meta_desc',$meta_desc)
-                ->with('meta_keyword',$meta_keyword)
-                ->with('meta_title',$meta_title)
-                ->with('url_canonical',$url_canonical);
+        //SEO
+        $meta_desc= "Chuyênn bán vải áo dài,may tại xưởng, giá rẻ, in sỉ, lẻ , chất lượng"; //META DESCRIPTION
+        $meta_keyword = "Áo dài in 3D, áo dài đẹp, áo dài in sỉ lẻ, đồng phục";     //Từ khóa trên google khi người dùng tìm kiếm
+        $meta_title = "Vải áo dài xinh- chuyên bán sỉ lẻ vải may"; //Tile là tên trang đó
+        $url_canonical = $request->url(); // url_canonical cái này lấy được cái đường dẫn hiện tại của cái trang  chủ
+
+        ///SEO
+
+        return view('user.cart.show_cartajax')
+        ->with('meta_desc',$meta_desc)
+        ->with('meta_keyword',$meta_keyword)
+        ->with('meta_title',$meta_title)
+        ->with('url_canonical',$url_canonical);
     }
 
 
@@ -63,8 +64,8 @@ class CartController extends Controller
         $productId = $request->product_id_hidden;
 
         //lấy sản phẩm 
-         $product_info = DB::table('tbl_product')->where('tbl_product.product_id',$productId)->first();
-         //XEM BÀI 33 .... LARAVEL
+        $product_info = DB::table('tbl_product')->where('tbl_product.product_id',$productId)->first();
+        //XEM BÀI 33 .... LARAVEL
         //  Cart::add('293ad', 'Product 1', 1, 9.99, 550);
         // $data =array();
         $data['id'] =$productId; //product_info->product_id; //$data'id'] "id" ở đây là trong laravel có sẵn MẶC ĐỊNH PHẢI GHI NHƯ VẬY
@@ -109,22 +110,32 @@ class CartController extends Controller
    public function del_cart($rowId){
    $cart = Cart::content();
    if($cart->isNotEmpty()){
+       
        Cart::remove($rowId);
+       
        return back();
-   }else{
-    return back();
-   }
-}
-   public function del_cart_all($rowId)
-{
-    $cart = Cart::content();
-    if($cart->isNotEmpty()){
-        Cart::destroy($rowId);
-        return back();
+   
     }else{
-     return back();
+    
+        return back();
+   
     }
-}
+    }
+   public function del_cart_all($rowId){
+    
+    $cart = Cart::content();
+    
+    if($cart->isNotEmpty()){
+    
+        Cart::destroy($rowId);
+    
+        return back();
+    
+    }else{
+    
+        return back();
+        }
+    }
 //delete carrt ajjax
 // public function del_cartajax($rowId){
 //     $cart = Cart::content();
@@ -134,21 +145,25 @@ class CartController extends Controller
 //     }
 //  }
    //update cart quantity
-   public function update_Category_quantity(Request $request)
-   {
-        $rowId = $request->rowId_cart; // rowId_cart là trang show_cart dòng 54
-        $qty = $request->soluong; //soluong là name trang show_cart dòng 52-53
-       
-        if(is_numeric($qty)){ // kiểm tra xem có phải số hay không
-            Cart::update($rowId,$qty);
-             return back();
-        }else{
-            Cart::destroy($rowId);
-            return back();
-        }
+   public function update_Category_quantity(Request $request){
         
+    $rowId = $request->rowId_cart; // rowId_cart là trang show_cart dòng 54
+    
+    $qty = $request->soluong; //soluong là name trang show_cart dòng 52-53
+       
+    if(is_numeric($qty)){ // kiểm tra xem có phải số hay không
+        Cart::update($rowId,$qty);
+        return back();
+ 
+    }else{
+ 
+        Cart::destroy($rowId);
+ 
+        return back();
+ 
+        }
+          
     }
-
 
 }
 

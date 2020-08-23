@@ -11,8 +11,7 @@ use Illuminate\Support\Facades\Redirect;
 // session_start();
 class Payment_orderController extends Controller
 {
-    public function __construct(request $request)
-    {
+    public function __construct(request $request){
         
        //lấy ra DANH MỤC VÀ THƯƠNG HIỆU
          $category_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
@@ -41,30 +40,34 @@ class Payment_orderController extends Controller
         $cus_data['cusname'] = $request->name;
         $cus_data['cusadd'] = $request->add;
         $cus_data['cusphone'] =$request->phone;
+
         if(empty($request->phone)|| empty($request->add) || empty($request->name)){
+
             Session::put('error','Bạn Không Được Để Trống bất kì mục nào');
             return Redirect::to('/hien-thi-gio-hang');
+        
         }else{
-        $cus_id = DB::table('tbl_customer')->insertGetId($cus_data);
+        
+            $cus_id = DB::table('tbl_customer')->insertGetId($cus_data);
         
         // INSERT ORDER_PAYMENT
-        foreach($content as $value_content){
-            $order_data['cusid'] = $cus_id;  //MÃ ID KHÁCH HÀNG
-            $order_data['cusname'] = $request->name; //họ tên khachd hang
-            $order_data['product_id'] = $value_content->id; // MÃ ĐƠN HÀNG
-            $order_data['productname'] = $value_content->name;  //TÊN MẶT HÀNG
-            $order_data['price'] = $value_content->price; //GIÁ CỦA TỔNG SẢN PHẨM ĐÓ
-            $order_data['soluong']= $value_content->qty; // SỐ LƯỢNG
-            $order_data['total']=  $order_data['price'] * $order_data['soluong'];// SỐ LƯỢNG
-            $order_data['image']= $value_content->options->images; //HÌNH ẢNH
-            $order_data['cusphone']=$request->phone;  //ĐIỆN THOẠI
-            $order_data['note']=$request->note; //GHI CHÚ
-            $order_data['status']="đang xử lý"; //TRẠNG THÁI XỬ LÝ
-            DB::table('tbl_order')->insert($order_data);
-        }
-        Cart::destroy();
-        //
-        return view('user.payment.payment_order');
+            foreach($content as $value_content){
+                $order_data['cusid'] = $cus_id;  //MÃ ID KHÁCH HÀNG
+                $order_data['cusname'] = $request->name; //họ tên khachd hang
+                $order_data['product_id'] = $value_content->id; // MÃ ĐƠN HÀNG
+                $order_data['productname'] = $value_content->name;  //TÊN MẶT HÀNG
+                $order_data['price'] = $value_content->price; //GIÁ CỦA TỔNG SẢN PHẨM ĐÓ
+                $order_data['soluong']= $value_content->qty; // SỐ LƯỢNG
+                $order_data['total']=  $order_data['price'] * $order_data['soluong'];// SỐ LƯỢNG
+                $order_data['image']= $value_content->options->images; //HÌNH ẢNH
+                $order_data['cusphone']=$request->phone;  //ĐIỆN THOẠI
+                $order_data['note']=$request->note; //GHI CHÚ
+                $order_data['status']="đang xử lý"; //TRẠNG THÁI XỬ LÝ
+                DB::table('tbl_order')->insert($order_data);
+            }
+            Cart::destroy();
+        
+            return view('user.payment.payment_order');
         }
     }
 }

@@ -280,3 +280,6 @@ Route::get('/delete-layout-slider/{id}','sliderController@delete');
 Route::get('/destroy-slider','sliderController@destroy');
 Route::get('/them-thong-tin/{id}','contactinfoController@layout_insert_Infocontact');
 Route::post('/save-info-contact','contactinfoController@save_info_contact');
+
+Route::get('/quen-mat-khau','AdminController@layout_forget_pass');
+Route::post('/lay-mat-khau','AdminController@get_pass');

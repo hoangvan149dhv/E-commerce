@@ -11,35 +11,42 @@ use App\contactinfoModel;
 // session_start();
 class CategoryProduct extends Controller
 {
-    //FUNCTION ADMIN
-
     //KIỂM TRA ĐĂNG NHẬP
     public function AuthLogin(){
+
         $admin_id = Session::get('admin_Id');
+
         if($admin_id){
-             return Redirect::to('admin.dashboard');
+
+            return Redirect::to('admin.dashboard');
+
         }else{
 
             return Redirect::to('admin-login')->send();
-                           //Send là == chuyển ĐẾN TRANG -->RẤT QUAN TRỌNG
-       
-                        }
+                           //Send là == chuyển ĐẾN TRANG -->RẤT QUAN TRỌNG       
+        }
+    
     }
 
     // LAYOUT ADD
     public function add_Category_Product(){
         //KIỂM TRA ĐĂNG NHẬP
         $this->AuthLogin();
+        
         return view('admin.addcategoryProduct');
+    
     }
     //ALL
     public function all_Category_Product(){
         //KIỂM TRA ĐĂNG NHẬP
         $this->AuthLogin();
+    
         $all_category_product = DB::table('tbl_category_product')->get(); //get== select trong dbs
+    
         $manager_category_product = view('admin.allcategoryProduct')->with('allcategory_Productt',$all_category_product);
                                         //'admin.allcategoryProduct là trang đó truyền vào biến $all_category_Product
         return view('admin_layout')->with('admin.allcategoryProduct',$manager_category_product);
+    
     }
 
     //ADD Save
@@ -54,45 +61,48 @@ class CategoryProduct extends Controller
         $data['category_status'] = $Request->status;
         //THỰC HIỆN query
         DB::table('tbl_category_product')->insert($data);//CHỌN table ->insert dữ liệu data
+    
         Session::put('message','Thêm Danh Mục Sản Phẩm Thành Công');                          
+    
         return Redirect::to('addCategoryProduct');
+    
     }
 
     //active
-    public function active_Category_Product($category_product_id){ //$category_product_id tự gán
-        
+    public function active_Category_Product($category_product_id){ //$category_product_id tự gán    
         //KIỂM TRA ĐĂNG NHẬP
         $this->AuthLogin();
 
         DB::table('tbl_category_product')->where('category_id',$category_product_id)->update(['category_status'=>1]);                
+        
         return Redirect::to('allCategoryProduct');
+    
     }
     //unactive
     public function unactive_Category_Product($category_product_id){
-
         //KIỂM TRA ĐĂNG NHẬP
         $this->AuthLogin();
 
         DB::table('tbl_category_product')->where('category_id',$category_product_id)->update(['category_status'=>0]);                
+        
         return Redirect::to('allCategoryProduct');
+    
     }
 
     //EDIT
     public function edit_Category_Product($category_product_id){
-
         //KIỂM TRA ĐĂNG NHẬP
         $this->AuthLogin();
 
         $edit_category_product = DB::table('tbl_category_product')->where('category_id',$category_product_id)->get(); //get== select trong dbs
                                                                             //category_id  trong csdl           
-        $manager_category_product = view('admin.updatecategoryproduct')->with('editcategory_Product',$edit_category_product);
-                                                                                                    //$update_category_product là biến truyền vào updatecategory_Product
+        $manager_category_product = view('admin.updatecategoryproduct')->with('editcategory_Product',$edit_category_product);                                                                                                //$update_category_product là biến truyền vào updatecategory_Product
                                         //'admin.updatecategoryProduct là trang đó truyền vào biến $all_category_Product
         return view('admin_layout')->with('admin.updatecategoryproduct',$manager_category_product);
+    
     }
     //UPDATE
-    public function update_Category_Product(Request $Request,$category_product_id){
-        
+    public function update_Category_Product(Request $Request,$category_product_id){    
         //KIỂM TRA ĐĂNG NHẬP
         $this->AuthLogin();
         
@@ -105,43 +115,47 @@ class CategoryProduct extends Controller
         DB::table('tbl_category_product')->where('category_id',$category_product_id)->update($data);//CHỌN table ->insert dữ liệu data
                                                 //category_id  trong csdl  
         Session::put('message','Sửa Danh Mục Sản Phẩm Thành Công');                          
+        
         return Redirect::to('/allCategoryProduct');
     }
     public function delete_Category_Product($category_product_id){
-
         //KIỂM TRA ĐĂNG NHẬP
         $this->AuthLogin();
 
         DB::table('tbl_category_product')->where('category_id',$category_product_id)->delete();                
+        
         return back();
     }
 ////DESTROY CATEGOY
     public function destroy_Category_Product(request $request){
-
         //KIỂM TRA ĐĂNG NHẬP
         $this->AuthLogin();
+        
         $destroy_cate = $request->category;
+        
         DB::table('tbl_category_product')->whereIn('category_id',$destroy_cate)->delete();                
+        
         return back();
+    
     }
     //END FUNCTION ADMIN PAGE
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //LÀM VIỆC VỚI FRONT-END
-
-
-    public function __construct()
-    {
-        
+    public function __construct(){
     //lấy ra DANH MỤC VÀ THƯƠNG HIỆU
         $category_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
                 //category_id trong sql, 
         
         $brandcode_product =DB::table('tbl_brand_code_product')->orderby('code_id','desc')->get();
+        
         $contactinfoModel = contactinfoModel::select()->get();
+        
         view()->share('contactinfoModel',$contactinfoModel);
+        
         view()->share('category_product',$category_product);
+        
         view()->share('brand_code_product',$brandcode_product);
     }
     //SHOW SẢN PHẨM CỦA DAN MỤC
@@ -153,17 +167,16 @@ class CategoryProduct extends Controller
         ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
         ->where('tbl_category_product.category_id',$category_id)->paginate(12);
                                                                 //paginate( phân trang)
-
         //lấy ra meta                                                        
-         foreach($category_name as $value){
-        
-        
+        foreach($category_name as $value){
         //SEO
         $meta_desc= $value->category_desc; //META DESCRIPTION
+        
         $meta_keyword = "Áo dài in 3D, áo dài đẹp, áo dài in sỉ lẻ, đồng phục";     //Từ khóa trên google khi người dùng tìm kiếm
+        
         $meta_title = $value->category_name; //Tile là tên trang đó
+        
         $url_canonical = $request->url(); // url_canonical cái này lấy được cái đường dẫn hiện tại của cái trang  chủ
-
         ///SEO
         }
         return view('user.category.show_category')
@@ -174,7 +187,9 @@ class CategoryProduct extends Controller
         ->with('meta_keyword',$meta_keyword)
         ->with('meta_title',$meta_title)
         ->with('url_canonical',$url_canonical);
+    
     }
+
 }
 
 // $meta_desc= "Chuyênn bán vải áo dài,may tại xưởng, giá rẻ, in sỉ, lẻ , chất lượng"; //META DESCRIPTION

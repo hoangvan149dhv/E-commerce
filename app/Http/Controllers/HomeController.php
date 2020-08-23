@@ -79,7 +79,6 @@ class HomeController extends Controller
             ->orderby('product_id','desc')->where('product_Name','like','%'.$key_word.'%')
             ->orwhere('product_material','like','%'.$key_word.'%')->paginate(20);
                                             //CẤU TRÚC TÌM KIẾM GẦN GIỐNG NHƯ
-        
         return view('user.search.search')
             ->with('search',$search);
         }
@@ -105,7 +104,6 @@ class HomeController extends Controller
         return view('user.promotion.promotion')
         ->with('promotion',$promotion)
         ->with(compact('slider'));
-        
     }
 }
 

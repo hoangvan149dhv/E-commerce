@@ -8,15 +8,12 @@ use Session; // THƯ VIỆN SỬ DỤNG SESSION
 use App\Http\Requests; // 
 use Illuminate\Support\Facades\Redirect;
 // session_start();
-class DetailsProductController extends Controller
-{
-    public function __construct()
-    {
+class DetailsProductController extends Controller{
+    public function __construct(){
         
        //lấy ra DANH MỤC VÀ THƯƠNG HIỆU
          $category_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
-                //category_id trong sql, 
-        
+                //category_id trong sql,
          $brandcode_product =DB::table('tbl_brand_code_product')->orderby('code_id','desc')->get();
         view()->share('category_product',$category_product);
         view()->share('brand_code_product',$brandcode_product);
@@ -34,9 +31,6 @@ class DetailsProductController extends Controller
         ->whereNotIn('tbl_product.meta_slug',[$meta_slug])
         ->limit('3')->orderby('product_id','desc')->get();
         
-
-
-
         //SẢN PHẨM GỢI Ý   
         foreach($show_details_product as $value){
         $category_product_id = $value->category_id; //có nghĩa là lấy tất cả sản phẩm có category_id        
@@ -107,8 +101,6 @@ class DetailsProductController extends Controller
         }else{
             $reviewModel=$reviewModel->save();
             return back();
-          }
+        }
     }
-
- 
 }

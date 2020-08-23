@@ -16,6 +16,13 @@
                           <?php }
                             Session::put('alert-success-product',null);
                     ?>
+                    <?php
+                     $message = Session::get('alert-warning-product');
+                     if($message){ ?>
+                             <div class="alert-danger alert"><?php echo $message; ?></div>
+                          <?php }
+                            Session::put('alert-warning-product',null);
+                    ?>
                     <form role="form" action="{{URL::to('/save-product')}}" method="post" enctype="multipart/form-data">
                        {{ csrf_field() }}  {{-- CÂU LỆNH token BẢO MẬT --}}
                         <div class="form-group">
@@ -23,7 +30,7 @@
                             <input  data-validation="length" data-validation-length="5-120" data-validation-error-msg='vui lòng điền 5- 120 kí tự' type="text" class="form-control" name="name"id="exampleInputEmail1" placeholder="Tên Sản Phẩm">
                         </div>
                         <div class="form-group">
-                            <input type="checkbox" id="promotion" value="1"/> <label>Gía Khuyến mãi</label>
+                            <input type="checkbox" id="promotion" value="1"/>
                             <label for="exampleInputEmail1">Gía khuyến mãi</label>
                             <input data-validation="length" data-validation-length="4-10" style="display:none" id="promotions" data-validation-error-msg='vui lòng điền kí tự số và ít nhất 4-10 kí tự' type="number" min="1" class="form-control" name="promotion_price"id="exampleInputEmail1" value="1" placeholder="VD: 200.000.VNĐ">
                         </div>
