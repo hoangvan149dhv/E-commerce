@@ -130,7 +130,13 @@
                                 <div class="col-sm-12">
                                     <h2 class="title text-center">liên hệ <strong>chúng tôi</strong></h2> {{--GOOGLE MAP --}}
                                     <div id="gmap" class="contact-map">
-                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.513849363198!2d106.69912411495774!3d10.771900592324556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f40c7a0f411%3A0xe272a9c70ba4a66e!2zNjUgxJDGsOG7nW5nIEh14buzbmggVGjDumMgS2jDoW5nLCBC4bq_biBOZ2jDqSwgUXXhuq1uIDEsIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1586944204631!5m2!1svi!2s" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                                        {{-- {{ $contactinfoModel->google_map }} --}}
+                                        <?php //var_dump($contactinfoModel) ?>
+                                        <?php
+                                            foreach ($contactinfoModel as $item => $contact) {
+                                                echo $contact->google_map;
+                                            }
+                                        ?>
                                     </div>
                                 </div>
                             </div>

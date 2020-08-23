@@ -11,6 +11,10 @@
                     <div class="position-center">
                     <form role="form" action="{{URL::to('/save-info-contact')}}" method="post">
                        {{ csrf_field() }}  {{-- CÂU LỆNH token BẢO MẬT --}}
+                       <div class="form-group">
+                            <label for="exampleInputPassword1">Bản đồ</label>
+                            <input  data-validation="length" data-validation-length="5-10000" data-validation-error-msg='Không được để trống' type="text" class="form-control" name="add"id="exampleInputEmail1" value="{{ $contact->google_map }}" placeholder="Địa chỉ">
+                        </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Địa chỉ</label>
                             <input  data-validation="length" data-validation-length="5-120" data-validation-error-msg='vui lòng điền 5- 120 kí tự' type="text" class="form-control" name="add"id="exampleInputEmail1" value="{{ $contact->info_contact_add }}" placeholder="Địa chỉ">
