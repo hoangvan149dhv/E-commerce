@@ -90,17 +90,29 @@ class DetailsProductController extends Controller{
     // Bình luận đánh giá sản phẩm
     public function insertComment($meta_slug , request $request){
         $reviewModel = new ReviewModel();
+
         $reviewModel->Rname = $request['name'];
+
         $reviewModel->Remail = $request['email'];
+
         $reviewModel->Rcomment = $request['comment'];
+
         $reviewModel->status = 0;
+
         $reviewModel->meta_slug=$meta_slug;
+
         if(empty($request['name']&&$request['email']&&$request['comment'])){ 
+
             Session::put('alert',"<div style='color:red'> bạn không được để trống ở bất kì mục nào</div>"); //admin_Id trong dbs` 
+            
             return back();
+            
         }else{
+
             $reviewModel=$reviewModel->save();
+            
             return back();
+
         }
     }
 }

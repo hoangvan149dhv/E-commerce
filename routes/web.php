@@ -283,3 +283,12 @@ Route::post('/save-info-contact','contactinfoController@save_info_contact');
 
 Route::get('/quen-mat-khau','AdminController@layout_forget_pass');
 Route::post('/lay-mat-khau','AdminController@get_pass');
+
+//Delivery
+Route::get('/add-delivery','DeliveryController@layout_add_delivery');
+Route::post('/select-delivery','DeliveryController@select_delivery');
+
+Route::post('/add-fee-delivery','DeliveryController@insert_fee_delivery');
+
+Route::get('/select-info-delivery','DeliveryController@select_info_delivery');
+Route::get('/update-fee-delivery','DeliveryController@update_fee_delivery');

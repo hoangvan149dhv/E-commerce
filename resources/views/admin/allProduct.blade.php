@@ -11,7 +11,7 @@
       //     echo $message;
       //     Session::put('message',null);
       // }
-  ?>
+       ?>
       <div class="row w3-res-tb">
         <div class="col-sm-5 m-b-xs">             
         </div>

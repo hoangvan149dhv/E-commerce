@@ -102,6 +102,11 @@ class Productcontroller extends Controller{
         $data['product_material'] = $Request->material;// NỘI DUNG SP
         $data['product_price_promotion'] = $Request->promotion_price; //GIÁ khuyến mãi
         $data['product_price'] = $Request->price; //GIÁ
+
+        if($data['product_price_promotion'] ==! 1 || $data['product_price_promotion'] <= $data['product_price'] ){
+            $data['product_price_promotion'] = 1 ;
+        }
+
         $data['brandcode_id'] = $Request->brandcode; // MÃ CODE THUONG HIỆU
         $data['meta_keyword'] = $Request->meta_keyword; // TỪ KHÓA SẢN PHẨM GOOGLE
         $data['meta_desc'] = $Request->meta_desc;    // MỔ RA SP GOOGLE
@@ -156,17 +161,13 @@ class Productcontroller extends Controller{
         $product_id =$request->product;
         $product_slug =$request->slug;
         if(isset( $product_id)){
-
             ReviewModel ::whereIn('meta_slug',$product_slug)->delete();
             DB::table('tbl_order')->where('product_id',$product_id)->delete();
             DB::table('tbl_product')->whereIn('product_id',$product_id)->delete();
             return back();
         }
-        
         else{
-        
             return back();
-        
         }
     }
     //UPDATE (HIỂN THỊ )
@@ -205,6 +206,11 @@ class Productcontroller extends Controller{
         $data['product_material'] = $Request->material;// NỘI DUNG SP
         $data['product_price'] = $Request->price; //GIÁ
         $data['product_price_promotion'] = $Request->promotion_price; //GIÁ
+
+        if($data['product_price_promotion'] ==! 1 || $data['product_price_promotion'] <= $data['product_price'] ){
+            $data['product_price_promotion'] = 1 ;
+        }
+
         $data['brandcode_id'] = $Request->brandcode; // MÃ CODE THUONG HIỆU
         $data['meta_keyword'] = $Request->meta_keyword;
         $data['meta_desc'] = $Request->meta_desc;

@@ -88,7 +88,7 @@
             var cart_image = $('.cart_product_image_' + id).val();
             var cart_price = $('.cart_product_price_' + id).val();
             var cart_qty = $('.cart_product_qty_' + id).val();
-            var token = $('input[name="_token"]').val(); 
+            var _token = $('input[name="_token"]').val(); 
             $.ajax({
                 url: '{{url('/add-cart-ajax')}}', 
                 method: 'POST',
@@ -98,7 +98,7 @@
                     cart_image:cart_image, 
                     cart_price:cart_price,
                     cart_qty:cart_qty, 
-                    _token:token 
+                    _token:_token 
                 },
                 // success:function(data){
                 //     alert(data);

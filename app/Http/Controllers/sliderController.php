@@ -24,7 +24,9 @@ class sliderController extends Controller
             $image = md5(time()).$name_image.'.'.$get_image->getClientOriginalExtension();
             $get_image->move('public/upload',$image); // move == move_upload trong php 
             $data['img'] = $image;
+
             sliderModel::insert($data);
+            
             return back()->with('success','Thêm thành công');
         
         }else{

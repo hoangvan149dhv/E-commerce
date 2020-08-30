@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="{{asset('public/admin/css/font.css')}}" type="text/css"/>
 <link href="{{asset('public/admin/css/font-awesome.css')}}" rel="stylesheet"> 
 <link rel="stylesheet" href="{{asset('public/admin/css/morris.css')}}" type="text/css"/>
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <!-- calendar -->
 {{-- <link rel="stylesheet" href="{{asset('public/admin/css/monthly.css')}}"> --}}
 <!-- //calendar -->
@@ -220,7 +221,16 @@
                 @foreach ($contactinfoModel as $contact)
                  <li><a href="{{URL::to('/them-thong-tin/'.$contact->id_Info)}}"><i class="fa fa-user"></i>thông tin liên hệ</a></li>
                 @endforeach
-                   
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-book"></i>
+                        <span>Phí Giao Hàng</span>
+                    </a>
+                    <ul class="sub">
+                    <li><a href="{{URL::to('/add-delivery')}}">Thêm phí giao hàng</a></li>
+                    {{-- <li><a href="{{URL::to('/allCategoryProduct')}}">Liệt Kê Danh Mục Sản Phẩm</a></li> --}}
+                    </ul>
+                </li>
             </ul>            
         </div>
         <!-- sidebar menu end-->
@@ -297,7 +307,8 @@
 </script>
 
 {{-- DÙNG VALIDATION FORM ĐỂ CHECK KÍ TỰ --}}
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+{{-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> --}}
+<script src="{{asset('public/client/js/jquery.js')}}"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
 <script>
 $.validate({
