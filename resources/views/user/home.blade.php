@@ -37,13 +37,16 @@
 												@endif
 											{{-- //phân trăm sale sản phẩm --}}
 												<img  class="img-fluid" src="public/upload/{{$product->product_image}}" />
-											<h5 id="title">{{$product->product_Name}}</h5></a> {{-- //phân trăm sale sản phẩm --}} @if ($product->product_price_promotion==1||$product->product_price_promotion==0)
+                                            <h5 id="title">{{$product->product_Name}}</h5></a> {{-- //phân trăm sale sản phẩm --}} 
+                                            <div class="product_price">
+                                            @if ($product->product_price_promotion==1||$product->product_price_promotion==0)
                             <p></p>
                             @else
                             <p style="text-decoration: line-through;color:#ff4b0099">{{number_format($product->product_price_promotion) ."VNĐ"}}</p>
                             @endif {{-- //phân trăm sale sản phẩm --}}
 
                             <p style="margin-bottom:4px;font-size: 16px;">{{number_format($product->product_price)}} .VNĐ</p>
+                        </div>
                             <div class="text-center">
                                 <span><a href="{{ URL::to('/chi-tiet/'.$product->meta_slug) }}" class="btn btn-default add-to-cart">Chi tiết</a></span>
                             <span><button type="button" title="Thêm giỏ hàng" class="btn btn-default add-to-cart" data-id_product="{{$product->product_id}}" name="add-to-cart">+<i class="fa fa-shopping-cart"></i></button></span>

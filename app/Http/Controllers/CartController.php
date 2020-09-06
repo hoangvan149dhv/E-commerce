@@ -8,7 +8,10 @@ use DB; //SỬ DỤNG DBS
 use Session; // THƯ VIỆN SỬ DỤNG SESSION
 use App\Http\Requests; // 
 use Illuminate\Support\Facades\Redirect;
-// session_start();
+use App\WardModel;
+use App\ProvinceModel;
+use App\CityModel;
+use App\feeShipModel;
 class CartController extends Controller
 {   
     public function __construct(){
@@ -99,6 +102,10 @@ class CartController extends Controller
 
         ///SEO
         
+        $city = CityModel::orderby('matp','ASC')->get();
+
+        // $feeship = feeShipModel::orderby('fee_id','desc')->get();
+        view()->share('city',$city);
 
         return view('user.cart.show_cart')
         ->with('meta_desc',$meta_desc)

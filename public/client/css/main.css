@@ -1579,18 +1579,13 @@ object-position: 50% 50%;
   border-radius: 0;
   color: #FFFFFF;
   font-family: 'Roboto', sans-serif;
-  font-size: 35px;
+  font-size: 30px;
   margin: 15px auto;
 }
 .cart:hover {
   transition: 300ms;
-  background: #ff1f1f;
-  border: 0 none;
-  border-radius: 0;
   color: #FFFFFF;
-  font-family: 'Roboto', sans-serif;
   font-size: 35px;
-  margin: 15px auto;
 }
 
 #reviews button:hover {
@@ -2105,7 +2100,8 @@ object-position: 50% 50%;
   margin-left: 20px
 }
 .check_out:hover{
-  background-color: #ff1f1f;
+  color:#FFFFFF;
+  background:#FE980F;
 }
 
 
@@ -2850,4 +2846,6 @@ form.has-validation-callback {
   max-width: 100%;
   height: auto;
 }
-
+.product_price{
+  height:50px;
+}

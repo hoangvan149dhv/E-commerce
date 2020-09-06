@@ -286,9 +286,16 @@ Route::post('/lay-mat-khau','AdminController@get_pass');
 
 //Delivery
 Route::get('/add-delivery','DeliveryController@layout_add_delivery');
+
+//CHOOSE WARDS, CITY, PROVICE BEFORE INSERT (AJAX)
 Route::post('/select-delivery','DeliveryController@select_delivery');
-
+//INSERT DELIVERY
 Route::post('/add-fee-delivery','DeliveryController@insert_fee_delivery');
-
+//SHOW INFO DELIVERY
 Route::get('/select-info-delivery','DeliveryController@select_info_delivery');
+//UPdate delivery
 Route::get('/update-fee-delivery','DeliveryController@update_fee_delivery');
+//Remove delivery
+Route::get('/del-fee-delivery','DeliveryController@delete_fee_delivery');
+//SEARCH fee_ship DELIVERY
+Route::get('/search-fee-ship','DeliveryController@search_fee_delivery');

@@ -27,13 +27,15 @@
                                 @if ($product->product_price_promotion==1||$product->product_price_promotion==0)
 												@else
 													<span class="stick-promotion-brand">-{{ round($sale) }}%</span>
-												@endif
+                                                @endif
+                                                <div class="product_price">
 												@if ($product->product_price_promotion==1||$product->product_price_promotion==0)
                             <p></p>
                             @else
                             <p style="text-decoration: line-through;color:#ff4b0099">{{number_format($product->product_price_promotion) ."VNĐ"}}</p>
                             @endif {{-- //phân trăm sale sản phẩm --}}
-											<p>{{number_format($product->product_price)}}.VNĐ</p>
+                                            <p>{{number_format($product->product_price)}}.VNĐ</p>
+                                            </div>
 											<div class="text-center">
 												<span><a href="{{ URL::to('/chi-tiet/'.$product->meta_slug) }}" class="btn btn-default add-to-cart">Chi tiết</a></span>
 											<span><button type="button" title="Thêm giỏ hàng" class="btn btn-default add-to-cart" data-id_product="{{$product->product_id}}" name="add-to-cart">+<i class="fa fa-shopping-cart"></i></button></span>

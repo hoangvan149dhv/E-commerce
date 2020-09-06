@@ -15,7 +15,7 @@ class DeliveryController extends AdminController
         $city = CityModel::orderby('matp','ASC')->get();
 
         // $feeship = feeShipModel::orderby('fee_id','desc')->get();
-
+        view()->share('city',$city);
         return view('admin.delivery.add_delivery')->with(compact('city'));
     }
     
@@ -76,9 +76,9 @@ class DeliveryController extends AdminController
         foreach ($feeship as $key => $fee_ship) {
             echo ' <tr>
                     <td>'.$fee_ship->fee_id.'</td>
-                    <td>'.$fee_ship->city->name.'</td>
-                    <td>'.$fee_ship->province->name.'</td>
-                    <td>'.$fee_ship->wards->name.'</td>
+                    <td>'.$fee_ship->fee_matp.'</td>
+                    <td>'.$fee_ship->fee_maqh.'</td>
+                    <td>'.$fee_ship->fee_xa.'</td>
                     <td>
                         <input  data-feeship="'.$fee_ship->fee_id.'"  type="text"  value=" '.number_format($fee_ship->fee_feeship,0,',','.').' VNĐ" class="fee_ship">
                     </td>
@@ -88,6 +88,7 @@ class DeliveryController extends AdminController
             </table>
         </div>';
     }
+
 
     public function insert_fee_delivery(Request $request){
 
@@ -101,13 +102,26 @@ class DeliveryController extends AdminController
 
         $feeship->fee_feeship = $request['fee'];
 
-        // if ($request['city'] == 0 || $request['province'] == 0 || $request['wards'] == 0) {
-            
-        //     echo "<script>alert('vui lòng điền đầy đủ các trường')</script>";
-        // }
-        // else{
+        // $data = array();
+
+        $check_fee_ship = $feeship->where([['fee_matp','=', $feeship->fee_matp],['fee_maqh','=', $feeship->fee_maqh],['fee_xa','=',$feeship->fee_xa]])->first();
+        
+        if ($check_fee_ship) {
+        
+            echo "<div class='alert-danger alert'>Phí ship này đã tồn tại</div>";
+           
+        }
+        elseif($feeship->fee_matp == "<--Chọn tỉnh thành phố-->" ||  $feeship->fee_maqh == "<--Chọn Quận huyện-->" || $feeship->fee_xa == "<--Vui lòng chọn quận huyện trước-->" ||  $feeship->fee_xa == "<--Chọn Xa Phuong-->" || $feeship->fee_feeship == ""){
+
+            echo "<div class='alert-danger alert'>Vui lòng điền đủ thông tin các trường</div>";
+        
+        }
+        else{
+
+            echo "<div class='alert-success alert'>Thêm phí ship thành công</div>";
             $feeship->save();
-        // }
+        
+        }
     }
 
     public function update_fee_delivery(Request $request){ 
@@ -119,5 +133,52 @@ class DeliveryController extends AdminController
         $data['fee_feeship'] = $request['fee_ship'];        
 
         $feeship_update->where('fee_id',$request['id_fee_ship'])->update($data);
+    }
+
+    public function delete_fee_delivery(Request $request){
+        
+        $feeship_delete = new feeShipModel();
+
+        $feeship_delete->where('fee_id',$request['id_fee_ship'])->delete();
+    }
+
+    public function search_fee_delivery(Request $request){
+        $search_fee_ship = new feeShipModel();
+
+        
+        $search =  $search_fee_ship->orderby('fee_id','desc')->where('fee_matp','like','%'.$request['val_input'].'%')
+        ->orWhere('fee_xa',$request['val_input'])
+        ->orWhere('fee_maqh','like','%'.$request['val_input'].'%')
+        ->orWhere('fee_matp', $request['val_input'])
+        ->orwhere('fee_maqh', $request['val_input'])
+        ->orwhere('fee_xa', $request['val_input'])->get();
+            echo 
+            '<div class="table-responsive">
+                <table class="table table-striped b-t b-light">
+                    <thead>
+                        <tr>
+                        <th></th>
+                        <th>Thành phố / tỉnh</th>
+                        <th>Quận / huyện</th>
+                        <th>Phường / xã</th>
+                        <th>Phí ship</th>
+                        </tr>
+                    </thead>
+                    <tbody>';
+        foreach ($search as $key => $fee_ship) {
+            echo ' <tr>
+                    <td>'.$fee_ship->fee_id.'</td>
+                    <td>'.$fee_ship->fee_matp.'</td>
+                    <td>'.$fee_ship->fee_maqh.'</td>
+                    <td>'.$fee_ship->fee_xa.'</td>
+                    <td>
+                        <input  data-feeship="'.$fee_ship->fee_id.'"  type="text"  value=" '.number_format($fee_ship->fee_feeship,0,',','.').' VNĐ" class="fee_ship">
+                    </td>
+                    </tr> ';
+        }
+            echo '</tbody>
+                </table>
+            </div>';
+
     }
 }

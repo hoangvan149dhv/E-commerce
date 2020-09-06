@@ -149,16 +149,18 @@
                                     $c = (100*$product_recommended->product_price)/$product_recommended->product_price_promotion;
                                     $sale = 100-$c;
                                 ?>
-                                @if ($product_recommended->product_price_promotion==1||$product_recommended->product_price_promotion==0)
-												@else
-													<span class="stick-promotion-brand">-{{ round($sale) }}%</span>
-												@endif
-												@if ($product_recommended->product_price_promotion==1||$product_recommended->product_price_promotion==0)
-                            <p></p>
-                            @else
-                            <p style="text-decoration: line-through;color:#ff4b0099">{{number_format($product_recommended->product_price_promotion) ."VNĐ"}}</p>
-                            @endif {{-- //phân trăm sale sản phẩm --}}
-                                <h4 style="color: #FE980F;">{{number_format($product_recommended->product_price)}}.VNĐ</h4>
+                                <div class="product_price">
+                                    @if ($product_recommended->product_price_promotion==1||$product_recommended->product_price_promotion==0)
+                                    @else
+                                        <span class="stick-promotion-brand">-{{ round($sale) }}%</span>
+                                    @endif
+                                    @if ($product_recommended->product_price_promotion==1||$product_recommended->product_price_promotion==0)
+                                    <p></p>
+                                    @else
+                                    <p style="text-decoration: line-through;color:#ff4b0099">{{number_format($product_recommended->product_price_promotion) ."VNĐ"}}</p>
+                                    @endif {{-- //phân trăm sale sản phẩm --}}
+                                        <p style="color: #FE980F;">{{number_format($product_recommended->product_price)}}.VNĐ</p>
+                                </div>
                                 <a href="{{ URL::to('/chi-tiet/'.$product_recommended->meta_slug) }}" type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Chi tiết</a>
                             </div>
                         </div>
@@ -173,7 +175,7 @@
                         <div class="single-products">
                             <div class="productinfo text-center">
                                 <a href="{{ URL::to('/chi-tiet/'.$product_recommended->meta_slug) }}"><img  src="../public/upload/{{$related_product->product_image}}" width="140" height="180" alt="" />
-                                    <p style="color:red;font-weight: 700;">{{$related_product->product_Name}}</p>
+                                    <p>{{$related_product->product_Name}}</p>
                                 </a>
                                 <?php
                                 // tinh phan tram sale sản phẩm
@@ -184,13 +186,15 @@
                             @if ($related_product->product_price_promotion==1||$related_product->product_price_promotion==0)
 							@else
 								<span class="stick-promotion-brand">-{{ round($sale) }}%</span>
-							@endif
-						    @if ($related_product->product_price_promotion==1||$related_product->product_price_promotion==0)
-                            <p></p>
-                            @else
-                            <p style="text-decoration: line-through;color:#ff4b0099">{{number_format($related_product->product_price_promotion) ."VNĐ"}}</p>
                             @endif
-                                <h4 style="color: #FE980F;">{{number_format($related_product->product_price)}}.VNĐ</h4>
+                            <div class="product_price">
+                                @if ($related_product->product_price_promotion==1||$related_product->product_price_promotion==0)
+                                <p></p>
+                                @else
+                                <p style="text-decoration: line-through;color:#ff4b0099">{{number_format($related_product->product_price_promotion) ."VNĐ"}}</p>
+                                @endif
+                                    <p style="color: #FE980F;">{{number_format($related_product->product_price)}}.VNĐ</p>
+                            </div>
                                 <a href="{{ URL::to('/chi-tiet/'.$product_recommended->meta_slug) }}" type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Chi tiết</a>
                             </div>
                         </div>
@@ -226,7 +230,7 @@
                     <p style="text-decoration: line-through;color:#ff4b0099">{{number_format($product->product_price_promotion) ."VNĐ"}}</p>
                     @endif 
                     {{-- //phân trăm sale sản phẩm --}}
-                    <h4 style="color:#FE980F">{{number_format($product->product_price)}}.VNĐ</h4>
+                    <p style="color:#FE980F">{{number_format($product->product_price)}}.VNĐ</p>
                 </a>
             </li>
         </ul>

@@ -96,23 +96,45 @@
                         <?php
                         if(empty($value_content->name)){
                             echo "<div class='danger' style='color:red;'>CHƯA CÓ SẢN PHẨM</div>";
-                            }    else {
-                                     ?>
+                        }else{
+                         ?>
                             <h2>Thông tin khách hàng</h2>
                             <div class="shopper-info">
                                 <form action="{{ URL::to('/thanh-toan-gio-hang') }}" method="POST">
                                     {{ csrf_field() }}
-                                    <input  data-validation="length" data-validation-length="5-70" data-validation-error-msg='vui lòng điền 5- 70 kí tự' type="text" name="name" placeholder="Họ Và Tên Người Nhận">
-                                    <input  data-validation="length" data-validation-length="5-70" data-validation-error-msg='vui lòng điện dúng địa chỉ' type="text" name="add" placeholder="Địa Chỉ">
-                                    <input data-validation="length" data-validation-length="10-11" data-validation-error-msg='vui lòng số sđt 10 kí tự' type="number" name="phone" placeholder="SỐ Điện Thoại">
-                                    <textarea data-validation="length" data-validation-length="1-1000" data-validation-error-msg='vui lòng điền 1- 1000 kí tự' name="note" id="" rows="6" placeholder="Ghi Chú">vd:</textarea>
+                                    <input  data-validation="length" data-validation-length="5-70" data-validation-error-msg='vui lòng điền đầy đủ thông tin' type="text" name="name" placeholder="Họ Và Tên Người Nhận">
+                                    <input  data-validation="length" data-validation-length="5-70" data-validation-error-msg='vui lòng điền đầy đủ thông tin' type="text" name="add" placeholder="Địa Chỉ">
+                                    <input data-validation="length" data-validation-length="10-11" data-validation-error-msg='vui lòng điền đầy đủ thông tin' type="number" name="phone" placeholder="SỐ Điện Thoại">
+
+                                            <form >
+                                                @csrf
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Địa chỉ</label>
+                                                <select name="city" id="city" class="form-control input-sm m-bot15 choose city">
+                                                    <option value="0"><--Chọn tỉnh thành phố--></option>
+                                                    @foreach ($city as $key=>$City)
+                                                    <option value ="{{$City->matp}}">{{$City->name}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <select name="province" id="province" class="form-control input-sm m-bot15 choose province">
+                                                    <option value="0" ><--Chọn Quận huyện--></option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <select name="wards" id="wards" class="form-control input-sm m-bot15  wards">
+                                                    <option value="0" ><-- Chọn phường xã --></option>
+                                                </select>
+                                            </div>
+                                            </form>
+                                    <textarea data-validation="length" data-validation-length="0-1000" data-validation-error-msg='vui lòng điền đầy đủ thông tin' name="note" id="" rows="6" placeholder="Ghi Chú"></textarea>
                                     <div style="color:red;margin-top:1.5rem;">
                                     </div>
                                     <div class="checkout" >
                                         <button type="submit" name="submit" class="btn btn-default check_out" style="margin-left: 0px;border-radius: 5px; font-size: 25px;">
                                             MUA HÀNG
                                         </button>
-
                                     </div>
                                 </form>
                             </div>
@@ -155,7 +177,37 @@
     <script>
         $(document).ready(function name(params) {
             $('.home, active').removeClass('active');
-            $('.cart-product').addClass('active')
+            $('.cart-product').addClass('active');
+
+            //AJAX Find city , province, wards
+            $('.choose').on('change',function name(params) {
+                var action = $(this).attr('id');
+                var ma_id = $(this).val();
+                var _token = $('input[name="_token"]').val();
+                var result = '';
+                // console.log(action);
+                // console.log(ma_id);
+                // console.log(_token);
+                if(action == 'city'){ 
+                    result = 'province';
+                    //résult_wards
+                    result_ward ='wards';
+                }else{
+                    result = 'wards';
+                }
+                $.ajax({
+                    url : '{{url('/select-delivery') }}',
+                    method : 'POST',
+                    data:{ action:action,ma_id:ma_id,_token:_token },
+                    success:function(data){
+                        var s = $('#'+result).html(data);
+
+                        if(action == 'city'){
+                            $('#'+result_ward).html('<option value="0"><--Vui lòng chọn quận huyện trước--></option>');
+                        }
+                    }
+                });
+            });
         });
     </script>
 @endsection

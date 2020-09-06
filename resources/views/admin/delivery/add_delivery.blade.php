@@ -2,69 +2,84 @@
 @section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
 <div class="row">
     <div class="col-lg-12">
-            <section class="panel">
-                <header class="panel-heading">
-                    Thêm Phí Ship
-                </header>
+        <section class="panel">
+            <header class="panel-heading">
+                Thêm Phí Ship
+            </header>
 
-                <div class="panel-body">
-                    <div class="position-center">
-
-                        <form >
-                            @csrf
-
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Chọn thành phố</label>
-                            <select name="city" id="city" class="form-control input-sm m-bot15 choose city">
-                                <option value="0"><--Chọn tỉnh thành phố--></option>
-                                @foreach ($city as $key=>$City)
-                                <option value ="{{$City->matp}}">{{$City->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Quận huyên</label>
-                            <select name="province" id="province" class="form-control input-sm m-bot15 choose province">
-                                <option value="0" ><--Chọn Quận huyện--></option>
-                                {{-- @foreach ($province as $key=>$Province)
-                                <option value ="{{$Province->maqh}}">{{$Province->name}}</option>
-                                @endforeach --}}
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Phường xã</label>
-                            <select name="wards" id="wards" class="form-control input-sm m-bot15  wards">
-                                <option value="0" ><-- Chọn phường xã --></option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Phí ship</label>
-                            <input name="fee_ship" id="fee_ship" data-validation="length" data-validation-length="5-120" data-validation-error-msg='vui lòng điền 5- 120 kí tự' type="text" class="form-control" placeholder="Tên Sản Phẩm">
-                        </div>  
-                        <div class="alert-success">
-                             
-                        </div>
-                        <button type="button"  class="btn btn-info add_delivery">Thêm Sản Phẩm</button>
-                        {{-- <button type="button" name="submit" class="">Thêm Sản Phẩm</button> --}}
-                        </form>
+            <div class="panel-body">
+                <div class="position-center">
+                    <form >
+                        @csrf
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Chọn thành phố</label>
+                        <select name="city" id="city" class="form-control input-sm m-bot15 choose city">
+                            <option value="0"><--Chọn tỉnh thành phố--></option>
+                            @foreach ($city as $key=>$City)
+                            <option value ="{{$City->matp}}">{{$City->name}}</option>
+                            @endforeach
+                        </select>
                     </div>
-                    <div id="show_info_feeship">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Quận huyên</label>
+                        <select name="province" id="province" class="form-control input-sm m-bot15 choose province">
+                            <option value="0" ><--Chọn Quận huyện--></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Phường xã</label>
+                        <select name="wards" id="wards" class="form-control input-sm m-bot15  wards">
+                            <option value="0" ><-- Chọn phường xã --></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Phí ship</label>
+                        <input name="fee_ship" id="fee_ship" data-validation="number" data-validation-length="5-120" data-validation-error-msg='vui lòng điền phí ship' type="number" class="form-control" placeholder="Tên Sản Phẩm">
+                    </div>  
+                    <div class="alert-success">
+                            
+                    </div>
+                    <button type="button"  class="btn btn-info add_delivery">Thêm Phí Ship</button>
+                    </form>
+                </div>
+
+                 {{-- SEARCH-FEE-DELIVERY --}}
+                 <div class="row w3-res-tb">
+                    <div class="col-sm-5 m-b-xs">                 
+                    </div>
+                    <div class="col-sm-4">
+                    </div>
+                    <div class="col-sm-3">
+                      <form>
+                      <div class="input-group">
+                        <input type="text" name="search" class="input-sm form-control input_search_fee_ship">
+                        <span class="input-group-btn">
+                          <button class="btn btn-sm btn-default search_fee_ship" type="button" name="submit">Tìm</button>
+                        </span>
+                      </div>
+                    </form>
                     </div>
                 </div>
-            </section>
+
+                {{-- LIST-FEE-DELIVERY-AJAX --}}
+                <div id="show_info_feeship">
+                </div>
+            </div>
+        </section>
     </div>
 </div>
 @endsection
 @section('script')
     <script>
         $(document).ready(function name(params) {
-        
+            
             fetch_delivery();
-        //UPDATE FEE SHIP
-        $(document).on('focus','.fee_ship',function name(params) {
+            //UPDATE FEE SHIP
+            $(document).on('focus','.fee_ship',function name(params) {
                 var text_fee_ship = $(this).val();
-                
-                var replace_string = text_fee_ship.split('.').join('').replace(' VNĐ','');
+                $(this).attr({"type":"number","min":"1"});
+                var id_fee_ship = $(this).data('feeship');
+                var replace_string = text_fee_ship.split('.').join('').replace(' VNĐ','').trim();
                 $(this).val(replace_string);
             })
             $(document).on('blur','.fee_ship',function name(params) {
@@ -72,6 +87,22 @@
                 var fee_ship = $(this).val();
                 // alert(id_fee_ship);
                 // alert(fee_ship);
+                
+                if( fee_ship.length == 0){
+                    alert("Vui lòng không được để trống");
+                    
+                }
+                if(fee_ship == 0 ){
+                    $.ajax({
+                    url : '{{url('/del-fee-delivery') }}',
+                    method : 'GET',
+                    headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                    data:{ id_fee_ship:id_fee_ship},
+                    success:function(data){
+                        fetch_delivery();
+                        }
+                    });
+                }
                 $.ajax({
                     url : '{{url('/update-fee-delivery') }}',
                     method : 'GET',
@@ -82,10 +113,8 @@
                     }
                 });
             })
-
-
             //SHOW FEE_SHIP
-            function  fetch_delivery(){
+            function fetch_delivery(){
                 $.ajax({
                     url : '{{url('/select-info-delivery') }}',
                     method : 'GET',
@@ -98,31 +127,30 @@
             //remove success insert
             $(document).on('blur','.btn.btn-info.add_delivery',function name(params) { 
                 $('.alert-success.alert').remove();
+                $('.alert-danger.alert').remove();
             })
-        // Insert data feeship
+            // Insert data feeship
             $('.btn.btn-info.add_delivery').click(function name(params){
-                var city = $('#city').val();
-                var province = $('#province').val();
-                var wards = $('#wards').val();
+                var city = $('#city option:selected').text();
+                var province = $('#province option:selected').text();
+                var wards = $('#wards option:selected').text();
                 var fee = $('#fee_ship').val();
-                // var token = $('input[name="_token"]').val();
                 console.log(city);
                 console.log(province);
                 console.log(wards);
                 console.log(fee);
-                // console.log(token);
                 $.ajax({
                     url : '{{url('/add-fee-delivery') }}',
                     method : 'POST',
                     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                     data:{ city:city, province:province ,wards:wards , fee:fee},
                     success:function(data){
-                        $('.alert-success').html('<div class="alert-success alert">Thêm phí ship thành công</div>');
+                        $('.alert-success').html(data);
                         fetch_delivery();
                     }
                 });
             });
-        //AJAX Find city , province, wards
+            //AJAX Find city , province, wards
             $('.choose').on('change',function name(params) {
                 var action = $(this).attr('id');
                 var ma_id = $(this).val();
@@ -131,8 +159,6 @@
                 // console.log(action);
                 // console.log(ma_id);
                 // console.log(_token);
-
-                
                 if(action == 'city'){ 
                     result = 'province';
                     //résult_wards
@@ -145,15 +171,34 @@
                     method : 'POST',
                     data:{ action:action,ma_id:ma_id,_token:_token },
                     success:function(data){
-                        //data (pâramenter)
                         var s = $('#'+result).html(data);
+
                         if(action == 'city'){
                             $('#'+result_ward).html('<option value="0"><--Vui lòng chọn quận huyện trước--></option>');
                         }
-                        // console.log(s);
                     }
                 });
             });
+
+            // SEARCH FEE_SHIP keypress
+            $('.search_fee_ship, .input_search_fee_ship').on('keypress',function name(params) {
+                var val_input = $('.input_search_fee_ship').val();
+                console.log(val_input);
+                // $('div').remove('.table-responsive');
+
+                $(this).blur(function name(params) {
+                    fetch_delivery();
+                });
+                $.ajax({
+                    url : '{{url('/search-fee-ship') }}',
+                    method : 'GET',
+                    headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                    data: { val_input : val_input },
+                    success : function(data){
+                        $('#show_info_feeship').html(data);
+                    }
+                })
+            })
         });
     </script>
 @endsection

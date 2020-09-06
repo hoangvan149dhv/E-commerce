@@ -61,7 +61,11 @@ class Payment_orderController extends Controller
                 $order_data['total']=  $order_data['price'] * $order_data['soluong'];// SỐ LƯỢNG
                 $order_data['image']= $value_content->options->images; //HÌNH ẢNH
                 $order_data['cusphone']=$request->phone;  //ĐIỆN THOẠI
-                $order_data['note']=$request->note; //GHI CHÚ
+                if(empty($request->note)){
+                    $order_data['note'] = "Null";
+                }else{
+                    $order_data['note'] = $request->note; //GHI CHÚ
+                }
                 $order_data['status']="đang xử lý"; //TRẠNG THÁI XỬ LÝ
                 DB::table('tbl_order')->insert($order_data);
             }
