@@ -33,7 +33,7 @@ class DeliveryController extends AdminController
             if($data['action'] == 'city'){
 
                 $select_province = ProvinceModel::where('matp',$data['ma_id'])->orderby('maqh','asc')->get();
-                echo '<option value="0"><--Chọn Quận huyện--></option>';
+                echo '<option value="0">Chọn Quận huyện</option>';
 
                 foreach ($select_province as $key => $province)
                 {
@@ -180,5 +180,15 @@ class DeliveryController extends AdminController
                 </table>
             </div>';
 
+    }
+    public function select_delivery_feeship(Request $request){
+
+        $data = $request->all();
+
+        $fee_ship_cart = feeShipModel::where('fee_matp',$data['fee_ship'])->take(1)->get();
+
+        foreach ($fee_ship_cart as $key => $value) {
+            echo $value->fee_feeship;
+        }
     }
 }

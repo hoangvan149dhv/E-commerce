@@ -197,7 +197,7 @@
                 {{-- MENU BAR --}}
                 <div class="icon-bar-menu">
                     <a class="home active" href="{{ URL('/trang-chu') }}"><i class="fa fa-home"></i></a> 
-                    <a href="tel:0334964103""><i class="fa fa-phone"></i></a> 
+                    <a href="tel:0334964103"><i class="fa fa-phone"></i></a> 
                     <a class="cart-product" href="{{URL::to('/hien-thi-gio-hang')}}"><i class="fa fa-shopping-cart"><?php
                         $content_cart = Cart::content()->count();  //ĐẾM SỐ LƯỢNG TRONG GIỎ HÀNG
                            if(empty($content_cart)){	

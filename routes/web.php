@@ -299,3 +299,5 @@ Route::get('/update-fee-delivery','DeliveryController@update_fee_delivery');
 Route::get('/del-fee-delivery','DeliveryController@delete_fee_delivery');
 //SEARCH fee_ship DELIVERY
 Route::get('/search-fee-ship','DeliveryController@search_fee_delivery');
+// feeship when checkout USER
+Route::post('/select-delivery-feeship','DeliveryController@select_delivery_feeship');

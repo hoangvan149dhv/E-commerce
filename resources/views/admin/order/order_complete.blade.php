@@ -8,13 +8,6 @@
       <div class="panel-heading">
         Thông Tin Đơn Hàng Khách đặt
       </div>
-      <?php
-    //   $message = Session::get('message');
-    //   if($message){
-    //       echo $message;
-    //       Session::put('message',null);
-    //   }
-  ?>
       <div class="row w3-res-tb">
         <div class="col-sm-5 m-b-xs">                 
         </div>
@@ -49,19 +42,16 @@
           </thead>
           <tbody>
            @foreach ($order_complete as $product) 
-                                                    {{--Product tự đặt --}}
-            {{-- $all_Product là all_Product DÒNG 20 bên controller Product --}}
                 <tr>
                   <td style="text-align:center"><input type="checkbox" value="{{ $product->orderid }}" name="orderid[]"></td>
               <td  style="text-align:center">{{$product->cusid}}</td>  {{--ID--}}
-                    {{--Product dòng 43 || category_name là tên cột trong csld   --}}
               <td  style="text-align:center">{{$product->productname}}
                 <a href="{{ URL::to('/thong-tin-don-hang/'.$product->orderid)}}"><p>chi tiết</p></a>
               </td>  {{--sản phẩm --}}
               <td style="text-align:center">  {{$product->cusname}}</td> {{--họ tên khách  --}}
               <td style="text-align:center"><img src="public/upload/{{$product->image}}"width=80 height=110 alt=""></td>{{--  hình--}}
               <td style="text-align:center">  {{Carbon::createFromFormat('Y-m-d H:i:s', $product->order_date)->format('d/m/yy | H:i:s')}}</td>
-              <td style="text-align:center">  {{number_format($product->price)}}.VNĐ</td> {{--  Gía --}}
+              <td style="text-align:center">  {{number_format($product->total)}}.VNĐ</td> {{--  Gía --}}
               @if ($product->status==1)
               <td style="text-align:center;background:#bbecc457"> 
                   <a href="{{ URL::to('/update-status-1/'.$product->orderid) }}" style="color:green;">Đã Giao Xong</a>

@@ -92,7 +92,7 @@
                                     <ul  class="sub-menu">
                                         @foreach ($brand_code_product as $brand_code)
                                         <li><a href="{{URL::to('/thuong-hieu/'.$brand_code->code_id)}}">{{"- ". $brand_code->brandcode_name}}</a></li>
-                                    @endforeach
+                                        @endforeach
                                     </ul>
                                 </li>
                                     

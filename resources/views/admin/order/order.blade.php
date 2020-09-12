@@ -61,7 +61,7 @@
               <td style="text-align:center">  {{$product->cusname}}</td> {{--họ tên khách  --}}
               <td style="text-align:center"><img src="public/upload/{{$product->image}}"width=80 height=110 alt=""></td>{{--  hình--}}
               <td style="text-align:center">  {{Carbon::createFromFormat('Y-m-d H:i:s', $product->order_date)->format('d/m/yy | H:i:s')}}</td>
-              <td style="text-align:center">  {{number_format($product->price)}}.VNĐ</td> {{--  Gía --}}
+              <td style="text-align:center">  {{number_format($product->total)}}.VNĐ</td> {{--  Gía --}}
               @if ($product->status==1)
               <td style="text-align:center;background:#bbecc457"> 
                   <a href="{{ URL::to('/update-status-1/'.$product->orderid) }}" style="color:green;">Đã Giao Xong</a>

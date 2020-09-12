@@ -2014,8 +2014,15 @@ object-position: 50% 50%;
   margin-bottom: 80px;
 }
 
-.total_area span {
+/* .total_area span {
   float: right;
+} */
+.subtotal_product,.total_name,.fee_ship{
+  width: 50%;
+}
+.fee_cart_product,.total_price,.fee_ship_cart{
+  width: 40%;
+  text-align: right;
 }
 
 .total_area ul li {
@@ -2023,6 +2030,8 @@ object-position: 50% 50%;
   color: #696763;
   margin-top: 10px;
   padding: 7px 20px;
+  display: flex;
+  white-space:nowrap;
 }
 
 
@@ -2078,7 +2087,11 @@ object-position: 50% 50%;
 .user_info select:focus {
   border: 0
 }
-
+.note {
+  color: red;
+  font-size: 35px;
+  font-weight: bold;
+}
 
 .chose_area .update {
   margin-left: 40px;
@@ -2217,7 +2230,7 @@ object-position: 50% 50%;
 .shopper-info > form > input, 
 .form-two > form > select, 
 .form-two > form > input, 
-.form-one > form > input {
+.form-one > form > input,select.input-sm {
   background:#F0F0E9;
   border: 0 none;
   margin-bottom:10px;
@@ -2225,7 +2238,9 @@ object-position: 50% 50%;
   width: 100%;
   font-weight: 300
 }
-
+select.input-sm{
+  height: 40px;
+}
 .form-two > form > select {
   padding:10px 5px
 }

@@ -156,9 +156,6 @@
                 var ma_id = $(this).val();
                 var _token = $('input[name="_token"]').val();
                 var result = '';
-                // console.log(action);
-                // console.log(ma_id);
-                // console.log(_token);
                 if(action == 'city'){ 
                     result = 'province';
                     //résult_wards

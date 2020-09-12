@@ -52,15 +52,16 @@ class Payment_orderController extends Controller
         
         // INSERT ORDER_PAYMENT
             foreach($content as $value_content){
-                $order_data['cusid'] = $cus_id;  //MÃ ID KHÁCH HÀNG
-                $order_data['cusname'] = $request->name; //họ tên khachd hang
-                $order_data['product_id'] = $value_content->id; // MÃ ĐƠN HÀNG
+                $order_data['cusid']       = $cus_id;  //MÃ ID KHÁCH HÀNG
+                $order_data['cusname']     = $request->name; //họ tên khachd hang
+                $order_data['product_id']  = $value_content->id; // MÃ ĐƠN HÀNG
                 $order_data['productname'] = $value_content->name;  //TÊN MẶT HÀNG
-                $order_data['price'] = $value_content->price; //GIÁ CỦA TỔNG SẢN PHẨM ĐÓ
-                $order_data['soluong']= $value_content->qty; // SỐ LƯỢNG
-                $order_data['total']=  $order_data['price'] * $order_data['soluong'];// SỐ LƯỢNG
-                $order_data['image']= $value_content->options->images; //HÌNH ẢNH
-                $order_data['cusphone']=$request->phone;  //ĐIỆN THOẠI
+                $order_data['price']       = $value_content->price; //GIÁ CỦA TỔNG SẢN PHẨM ĐÓ
+                $order_data['soluong']     = $value_content->qty; // SỐ LƯỢNG
+                $order_data['fee_ship']    = $request->val_feeship;
+                $order_data['total']       = ($order_data['price'] * $order_data['soluong']) +  $order_data['fee_ship'];// SỐ LƯỢNG
+                $order_data['image']       = $value_content->options->images; //HÌNH ẢNH
+                $order_data['cusphone']    = $request->phone;  //ĐIỆN THOẠI
                 if(empty($request->note)){
                     $order_data['note'] = "Null";
                 }else{
