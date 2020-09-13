@@ -84,6 +84,13 @@ class sliderController extends Controller
     //xóa qc
     function delete($id){
     
+        
+        $slider = sliderModel::where('id',$id)->get();
+        foreach ($slider as $key) {
+            $slider_img = $slider->img;
+            $del_file   ="public/upload/".$slider_img;
+            unlink($del_file);
+        }
         sliderModel::where('id',$id)->delete();
         return  Redirect::to('all-slider')->with('success','xóa thành công');
     
@@ -91,6 +98,14 @@ class sliderController extends Controller
     function destroy(request $request){
     
         $slider_id = $request->slider;
+        
+        $slider = sliderModel::whereIn('id',$slider_id)->get();
+        $array_slider = (json_decode(json_encode($slider), true));
+        foreach ($array_slider as  $value) {
+            $slider_img = $value['img'];
+            $del_file   ="public/upload/".$slider_img;
+            unlink($del_file);
+        }
         sliderModel::whereIn('id',$slider_id)->delete();
         return Redirect::to('all-slider')->with('success','xóa thành công');
     

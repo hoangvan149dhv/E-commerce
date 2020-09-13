@@ -140,14 +140,17 @@ class Productcontroller extends Controller{
     //DELETE PRODUCT
     public function delete_product($productt_id){
         //KIỂM TRA ĐĂNG NHẬP
+       
         $this->AuthLogin();
         $product= DB::table('tbl_product')->where('product_id',$productt_id)->get();
         foreach ($product as $key) {
 
             $product_slug = $key->meta_slug;
-        
+            $product_img = $key->product_image;
+
+            $del_file   ="public/upload/".$product_img;
         }
-        
+        unlink($del_file);
         DB::table('tbl_product')->where('product_id',$productt_id)->delete();
         DB::table('tbl_order')->where('product_id',$productt_id)->delete();
         ReviewModel ::where('meta_slug',$product_slug)->delete();
@@ -161,6 +164,17 @@ class Productcontroller extends Controller{
         $product_id =$request->product;
         $product_slug =$request->slug;
         if(isset( $product_id)){
+            $product= DB::table('tbl_product')->whereIn('product_id',$product_id)->get();
+
+
+            //convert object to array
+            $array_product = (json_decode(json_encode($product), true));
+            foreach ($array_product as  $value) {
+                $product_img = $value['product_image'];
+                    
+                $del_file   ="public/upload/".$product_img;
+                unlink($del_file);
+            }
             ReviewModel ::whereIn('meta_slug',$product_slug)->delete();
             DB::table('tbl_order')->where('product_id',$product_id)->delete();
             DB::table('tbl_product')->whereIn('product_id',$product_id)->delete();

@@ -16,6 +16,9 @@ class contactinfoController extends AdminController
     public function save_info_contact(Request $Request){
         $this->AuthLogin();
         $data['google_map'] = $Request->googlemap;
+        if($Request->googlemap == ""){
+            $data['google_map'] = "";
+        }
         $data['info_contact_add'] = $Request->add;
         $data['info_contact_phone'] = $Request->phone;
         $data['info_contact_mail'] = $Request->email;

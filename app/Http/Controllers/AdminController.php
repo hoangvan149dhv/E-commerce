@@ -25,7 +25,7 @@ class AdminController extends Controller
         
         }else{
         
-            return Redirect::to('admin-login-dashboard')->send();
+            return Redirect::to('admin-login')->send();
                            //Send là == chuyển ĐẾN TRANG -->RẤT QUAN TRỌNG
         }
 
@@ -202,7 +202,7 @@ class AdminController extends Controller
     
         Session::put('admin_Id',null);
     
-        return redirect('/admin-login-dashboard');
+        return redirect('/admin-login');
     
     }
     //CHUYỂN TRẠNG THÁI GIAO HÀNG CHƯA GIAO THÀNH ĐÃ GIAO

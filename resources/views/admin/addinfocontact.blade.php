@@ -13,7 +13,7 @@
                        {{ csrf_field() }}  {{-- CÂU LỆNH token BẢO MẬT --}}
                        <div class="form-group">
                             <label for="exampleInputPassword1">Bản đồ</label>
-                            <input  data-validation="length" data-validation-length="5-10000" data-validation-error-msg='Không được để trống' type="text" class="form-control" name="add"id="exampleInputEmail1" value="{{ $contact->google_map }}" placeholder="Địa chỉ">
+                            <input type="text" class="form-control" name="googlemap"id="exampleInputEmail1" value="{{ $contact->google_map }}" placeholder="Địa chỉ">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Địa chỉ</label>

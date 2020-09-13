@@ -102,7 +102,7 @@ Route::get('khuyen-mai', 'HomeController@promotion');
 
 ////////////////////////////////////////----ADMIN---///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //   LÀM VIỆC VỚI ADMIN
-Route::get('/admin-login-dashboard', 'AdminController@login'); //URL TRang admin-login
+Route::get('/admin-login', 'AdminController@login'); //URL TRang admin-login
 
 Route::post('/admin-quanly', 'AdminController@check_login'); //quản lý bên controller dòng 15
 
@@ -301,3 +301,7 @@ Route::get('/del-fee-delivery','DeliveryController@delete_fee_delivery');
 Route::get('/search-fee-ship','DeliveryController@search_fee_delivery');
 // feeship when checkout USER
 Route::post('/select-delivery-feeship','DeliveryController@select_delivery_feeship');
+
+
+//LOGO
+Route::get('/layout-logo','logowebsiteController@layout_Logo');

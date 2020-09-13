@@ -8,16 +8,8 @@ use Session; // THƯ VIỆN SỬ DỤNG SESSION
 use App\Http\Requests; // 
 use Illuminate\Support\Facades\Redirect;
 // session_start();
-class DetailsProductController extends Controller{
-    public function __construct(){
-        
-       //lấy ra DANH MỤC VÀ THƯƠNG HIỆU
-         $category_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
-                //category_id trong sql,
-         $brandcode_product =DB::table('tbl_brand_code_product')->orderby('code_id','desc')->get();
-        view()->share('category_product',$category_product);
-        view()->share('brand_code_product',$brandcode_product);
-    }
+class DetailsProductController extends HomeController{
+
     public function show_details($meta_slug, request $request){
         $show_details_product = DB::table('tbl_product')
         ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')

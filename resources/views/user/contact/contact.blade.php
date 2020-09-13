@@ -129,15 +129,16 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <h2 class="title text-center">liên hệ <strong>chúng tôi</strong></h2> {{--GOOGLE MAP --}}
-                                    <div id="gmap" class="contact-map">
-                                        {{-- {{ $contactinfoModel->google_map }} --}}
-                                        <?php //var_dump($contactinfoModel) ?>
                                         <?php
                                             foreach ($contactinfoModel as $item => $contact) {
-                                                echo $contact->google_map;
+                                                $map = $contact->google_map;
+                                                if($map == ""){
+                                                }
+                                                else{
+                                                    echo '<div id="gmap" class="contact-map">'. $map . '</div>';
+                                                }
                                             }
                                         ?>
-                                    </div>
                                 </div>
                             </div>
                             <div class="row" style="margin-top:25px">
@@ -180,7 +181,7 @@
                                         @foreach ($contactinfoModel as $contact)
                                         <address>
                                             <p><strong> Địa chỉ:</strong> <br>{{ $contact->info_contact_add }}</p>
-                                            <p><strong>SĐT: </strong>{{ $contact->info_contact_phone }}</p>
+                                            <p><strong>SĐT: </strong><a href="tel:{{ $contact->info_contact_phone }}">{{ $contact->info_contact_phone }}</a></p>
                                             <p><strong> Email:</strong> {{ $contact->info_contact_mail }} </p>
                                          </address>
                                         @endforeach
@@ -212,7 +213,7 @@
                             {{-- MENU BAR --}}
                             <div class="icon-bar-menu">
                                 <a class="active" href="{{ URL('/trang-chu') }}"><i class="fa fa-home"></i></a> 
-                                <a href="tel:0334964103""><i class="fa fa-phone"></i></a> 
+                                <a href="tel:{{ $contact->info_contact_phone }}"><i class="fa fa-phone"></i></a> 
                                 <a href="{{URL::to('/hien-thi-gio-hang')}}"><i class="fa fa-shopping-cart"><?php
                                     $content_cart = Cart::content()->count();  //ĐẾM SỐ LƯỢNG TRONG GIỎ HÀNG
                                        if(empty($content_cart)){	
@@ -227,7 +228,7 @@
             <a href="tel:0334964103">
                 <div class="hotline">
                     <span class="before-hotline">Hotline:</span>
-                    <span class="hotline-number">0334.964.103</span>
+                    <span class="hotline-number">{{ $contact->info_contact_phone }}</span>
                     <span class="fa fa-phone phone"></span>
                 </div>
             </a>

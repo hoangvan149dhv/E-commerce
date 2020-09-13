@@ -172,25 +172,11 @@
         </div>
     </section>
     <hr>
-     {{-- chat box --}} {{--
-    <div id='fb-root'></div>
-    <script>
-        (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                js = d.createElement(s);
-                js.id = id;
-                js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
-                fjs.parentNode.insertBefore(js, fjs);
-            }
-            (document, 'script', 'facebook-jssdk'));
-    </script>
-    <div class='fb-customerchat' page_id='100009479104128' theme_color='#44bec7' logged_in_greeting='Xin chào, tôi có thể hổ trợ gì cho bạn không?' logged_out_greeting='Xin chào, tôi có thể hổ trợ gì cho bạn không?'>
-    </div> --}}
     </a>
-    <a href="tel:+84909677308">
+    <a href="tel:@foreach ($contactinfoModel as $contact) {{ $contact->info_contact_phone }} @endforeach">
         <div class="hotline">
             <span class="before-hotline">Hotline:</span>
-            <span class="hotline-number">0909.677.308</span>
+            <span class="hotline-number"> {{ $contact->info_contact_phone }}</span>
             <span class="fa fa-phone phone"></span>
         </div>
     </a>

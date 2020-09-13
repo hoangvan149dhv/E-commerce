@@ -193,11 +193,11 @@
                     <a href="#"><i class="fa fa-facebook"></i></a>
                     <a  href="{{URL::to('/thong-tin-khach-hang')}}"><i class="fa fa-pencil-square-o"></i></a> 
                 </div>
-
-    <a href="tel:0334964103">
+                
+    <a href="tel:@foreach ($contactinfoModel as $contact) {{ $contact->info_contact_phone }} @endforeach">
         <div class="hotline">
             <span class="before-hotline">Hotline:</span>
-            <span class="hotline-number">0334.964.103</span>
+            <span class="hotline-number"> {{ $contact->info_contact_phone }}</span>
             <span class="fa fa-phone phone"></span>
         </div>
     </a>

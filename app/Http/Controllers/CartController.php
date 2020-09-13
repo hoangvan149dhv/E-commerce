@@ -12,21 +12,8 @@ use App\WardModel;
 use App\ProvinceModel;
 use App\CityModel;
 use App\feeShipModel;
-class CartController extends Controller
+class CartController extends HomeController
 {   
-    public function __construct(){
-        
-       //lấy ra DANH MỤC VÀ THƯƠNG HIỆU
-        $category_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
-                //category_id trong sql, 
-        
-        $brandcode_product =DB::table('tbl_brand_code_product')->orderby('code_id','desc')->get();
-        
-        view()->share('category_product',$category_product);
-        
-        view()->share('brand_code_product',$brandcode_product);
-    
-    }
     public function show_cart_ajax(Request $request){
         //SEO
         $meta_desc= "Chuyênn bán vải áo dài,may tại xưởng, giá rẻ, in sỉ, lẻ , chất lượng"; //META DESCRIPTION
@@ -143,14 +130,6 @@ class CartController extends Controller
         return back();
         }
     }
-//delete carrt ajjax
-// public function del_cartajax($rowId){
-//     $cart = Cart::content();
-//     if($cart->isNotEmpty()){
-//         Cart::remove($rowId);
-//     }else{
-//     }
-//  }
    //update cart quantity
    public function update_Category_quantity(Request $request){
         
@@ -196,10 +175,4 @@ class CartController extends Controller
         ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
         ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
         ->where('tbl_category_product.category_id',$category_product_id)->limit('3')->get();
-/////////////////////////////////////whereNotIn('tbl_product.product_id',[$product_id]) có nghĩa là trừ ra product_id đã tồn tại([$product_id])
 
-    //     return view('user.cart.show_cart')->with('category_product',$category_product)
-    //     ->with('show_details_product_recommended',$show_details_product_recommended)
-    //     ->with('related_product',$related_product);
-    // }
-// }
