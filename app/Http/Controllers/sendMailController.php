@@ -104,7 +104,7 @@ class sendMailController extends AdminController
         $data = array('email' => $mailid, 'subject' => $subject);
                     //layout message
         view()->share('template',$template);
-        Mail::send('admin.mails.templatemail', $data, 
+        Mail::send('mails.mail', $data, 
 
         function ($message) use ($data, $value) {
 
