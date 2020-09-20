@@ -27,7 +27,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			{{--BẢO MẬT HƠN, token --}}{{ csrf_field() }} 
 			<input type="text" class="ggg" name="Email" placeholder="Tên Đăng Nhập" required="">
 			<input type="password" class="ggg" name="Password" placeholder="Mật Khẩu..." required="">
-			<span><input name="save" type="checkbox" />Lưu Đăng Nhập</span>
 			<h6><a href="{{ URL::to('/quen-mat-khau') }}">Quên Mật Khẩu?</a></h6>
 				<div class="clearfix"></div>
 				<input type="submit" value="Đặng NHập" name="login">

@@ -231,6 +231,18 @@
                     {{-- <li><a href="{{URL::to('/allCategoryProduct')}}">Liệt Kê Danh Mục Sản Phẩm</a></li> --}}
                     </ul>
                 </li>
+                <li class="sub-menu">
+                    <a @yield('mail') href="javascript:;">
+                        <i class="fa  fa-align-justify"></i>
+                        <span>Email</span>
+                    </a>
+                    <ul class="sub">
+                    <li><a href="{{URL::to('/mail-config')}}">Cấu hình Email</a></li>
+                    <li><a href="{{URL::to('/template-mail-config')}}">Tạo giao diện Email</a></li>
+                    <li><a href="{{URL::to('/all-template-mail')}}">Danh sách Email</a></li>
+                    <li><a href="{{URL::to('/template-mail')}}">Giao diện mail được sử dụng</a></li>
+                    </ul>
+                </li>
             </ul>            
         </div>
         <!-- sidebar menu end-->
