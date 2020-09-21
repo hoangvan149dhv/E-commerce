@@ -35,9 +35,9 @@
                     <div class="form-group">
                         <label for="exampleInputEmail1">Phí ship</label>
                         <input name="fee_ship" id="fee_ship" data-validation="number" data-validation-length="5-120" data-validation-error-msg='vui lòng điền phí ship' type="number" class="form-control" placeholder="Tên Sản Phẩm">
-                    </div>  
+                    </div>
                     <div class="alert-success">
-                            
+
                     </div>
                     <button type="button"  class="btn btn-info add_delivery">Thêm Phí Ship</button>
                     </form>
@@ -45,14 +45,14 @@
 
                  {{-- SEARCH-FEE-DELIVERY --}}
                  <div class="row w3-res-tb">
-                    <div class="col-sm-5 m-b-xs">                 
+                    <div class="col-sm-5 m-b-xs">
                     </div>
                     <div class="col-sm-4">
                     </div>
                     <div class="col-sm-3">
                       <form>
                       <div class="input-group">
-                        <input type="text" name="search" class="input-sm form-control input_search_fee_ship">
+                        <input type="text" name="search"  class="input-sm form-control input_search_fee_ship">
                         <span class="input-group-btn">
                           <button class="btn btn-sm btn-default search_fee_ship" type="button" name="submit">Tìm</button>
                         </span>
@@ -68,11 +68,21 @@
         </section>
     </div>
 </div>
+<div id="background" style="text-align: center;
+    position: fixed;
+    z-index: 9999999999;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    border: 0;
+    padding: calc( 50vh - 50px)  0;
+    top: 0;
+    left: 0;
+    display: none;"><img src="public/upload/reloading.gif"  class="loadpage"></div>
 @endsection
 @section('script')
     <script>
         $(document).ready(function name(params) {
-            
             fetch_delivery();
             //UPDATE FEE SHIP
             $(document).on('focus','.fee_ship',function name(params) {
@@ -82,16 +92,11 @@
                 var replace_string = text_fee_ship.split('.').join('').replace(' VNĐ','').trim();
                 $(this).val(replace_string);
             })
+            //remove fee deli
             $(document).on('blur','.fee_ship',function name(params) {
                 var id_fee_ship = $(this).data('feeship');
                 var fee_ship = $(this).val();
-                // alert(id_fee_ship);
-                // alert(fee_ship);
-                
-                if( fee_ship.length == 0){
-                    alert("Vui lòng không được để trống");
-                    
-                }
+
                 if(fee_ship == 0 ){
                     $.ajax({
                     url : '{{url('/del-fee-delivery') }}',
@@ -125,7 +130,7 @@
                 });
              }
             //remove success insert
-            $(document).on('blur','.btn.btn-info.add_delivery',function name(params) { 
+            $(document).on('blur','.btn.btn-info.add_delivery',function name(params) {
                 $('.alert-success.alert').remove();
                 $('.alert-danger.alert').remove();
             })
@@ -135,16 +140,14 @@
                 var province = $('#province option:selected').text();
                 var wards = $('#wards option:selected').text();
                 var fee = $('#fee_ship').val();
-                console.log(city);
-                console.log(province);
-                console.log(wards);
-                console.log(fee);
+                $('#background').css('display','block');
                 $.ajax({
                     url : '{{url('/add-fee-delivery') }}',
                     method : 'POST',
                     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                     data:{ city:city, province:province ,wards:wards , fee:fee},
                     success:function(data){
+                        $('#background').css('display','none');
                         $('.alert-success').html(data);
                         fetch_delivery();
                     }
@@ -156,7 +159,7 @@
                 var ma_id = $(this).val();
                 var _token = $('input[name="_token"]').val();
                 var result = '';
-                if(action == 'city'){ 
+                if(action == 'city'){
                     result = 'province';
                     //résult_wards
                     result_ward ='wards';
@@ -178,14 +181,14 @@
             });
 
             // SEARCH FEE_SHIP keypress
-            $('.search_fee_ship, .input_search_fee_ship').on('keypress',function name(params) {
+            $('.search_fee_ship, .input_search_fee_ship').on('keypress keydown',function name(event) {
                 var val_input = $('.input_search_fee_ship').val();
-                console.log(val_input);
-                // $('div').remove('.table-responsive');
 
-                $(this).blur(function name(params) {
-                    fetch_delivery();
-                });
+                if (event.keyCode == 8 || event.keyCode == 46 ){
+                    if(val_input.length == 0){
+                        fetch_delivery();
+                    }
+                }
                 $.ajax({
                     url : '{{url('/search-fee-ship') }}',
                     method : 'GET',

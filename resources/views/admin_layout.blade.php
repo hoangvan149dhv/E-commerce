@@ -11,7 +11,7 @@
 <!-- font CSS -->
 <!-- font-awesome icons -->
 <link rel="stylesheet" href="{{asset('public/admin/css/font.css')}}" type="text/css"/>
-<link href="{{asset('public/admin/css/font-awesome.css')}}" rel="stylesheet"> 
+<link href="{{asset('public/admin/css/font-awesome.css')}}" rel="stylesheet">
 <link rel="stylesheet" href="{{asset('public/admin/css/morris.css')}}" type="text/css"/>
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <!-- calendar -->
@@ -50,7 +50,7 @@
                         $alertt = ReviewModel::all()->where('status',0)->count();
                         echo $alertt;
                     ?>
-                </span> 
+                </span>
                 <ul class="dropdown-menu extended inbox">
                     <li>
                         <a href="{{ URL::to('reviews') }}">
@@ -85,7 +85,7 @@
                     </span>Góp Ý</p></a>
                 </li>
                 <li>
-                    
+
                 </li>
             </ul>
         </li>
@@ -104,7 +104,7 @@
         </li>
         <!-- notification dropdown end -->
 
-        
+
 
     </ul>
     <!--  notification end -->
@@ -121,7 +121,7 @@
                         $name =Session::get('admin_name');
                         if($name){
                             echo $name;
-                        }    
+                        }
                     ?>
                 </span>
                 <b class="caret"></b>
@@ -133,7 +133,7 @@
             </ul>
         </li>
         <!-- user login dropdown end -->
-       
+
     </ul>
     <!--search & user info end-->
 </div>
@@ -167,7 +167,7 @@
                         <li><a href="{{URL::to('/order_complete')}}">Đơn hàng đã giao xong</a></li>
                         </ul>
                 </li>
-                
+
                 <li class="sub-menu">
                     <a @yield('cate') href="javascript:;">
                         <i class="fa fa-book"></i>
@@ -230,8 +230,15 @@
                     <li><a href="{{URL::to('/add-delivery')}}">Thêm phí giao hàng</a></li>
                     {{-- <li><a href="{{URL::to('/allCategoryProduct')}}">Liệt Kê Danh Mục Sản Phẩm</a></li> --}}
                     </ul>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <form class="abc" action="{{ URL::to('our_backup_database') }}" method="get">
+                            <button onclick="checkConditiondumpDatabase()" style="background: #337ab700;border-color:#337ab700" class="btn btn-primary"> Dump database</button>
+                        </form>
+                    </a>
+
                 </li>
-            </ul>            
+            </ul>
         </div>
         <!-- sidebar menu end-->
     </div>
@@ -240,8 +247,8 @@
 <!--main content start-->
 <section id="main-content">
 	<section class="wrapper">
-        
-       
+
+
             @yield('admin_content')
             @yield('content')
             @yield('content-layout')
@@ -266,42 +273,10 @@
 <script src="{{asset('public/admin/js/jquery.scrollTo.js')}}"></script>
 <script src="{{asset('public/client/ckeditor/ckeditor.js')}}"></script>
 
-{{-- <!-- calendar -->
-<script src="{{asset('public/admin/js/monthly.js')}}"></script>
-<script type="text/javascript">
-    $(window).load( function() {
-
-        $('#mycalendar').monthly({
-            mode: 'event',
-            
-        });
-
-        $('#mycalendar2').monthly({
-            mode: 'picker',
-            target: '#mytarget',
-            setWidth: '250px',
-            startHidden: true,
-            showTrigger: '#mytarget',
-            stylePast: true,
-            disablePast: true
-        });
-
-    switch(window.location.protocol) {
-    case 'http:':
-    case 'https:':
-    // running on a server, should be good.
-    break;
-    case 'file:':
-    alert('Just a heads-up, events will not work when run locally.');
-    }
-
-    });
-</script>
-<!-- //calendar --> --}}
 <script>
     CKEDITOR.replace( 'ckComment', {
         filebrowserUploadUrl: "{{route('uploads', ['_token' => csrf_token() ])}}",
-                                    //('uploads') là truyền tham số bên view web.php dòng 119     
+                                    //('uploads') là truyền tham số bên view web.php dòng 119
         filebrowserUploadMethod: 'form'
     });
 </script>
@@ -316,10 +291,23 @@ $.validate({
 });
 </script>
 <script src="{{asset('public/admin/js/form-validator.min.js')}}"></script>
-<script type="text/javascript">  
+<script type="text/javascript">
 		$.validate({
 
 		});
+
+
+        function checkConditiondumpDatabase() {
+            var condition = prompt("Người yêu của tao tên gì?");
+            if (condition == "" || condition != "ngan" ) {
+                alert('Sai rồi thằng óc chó');
+                $('form.abc').removeAttr('action');
+                return;
+            }
+            else{
+                alert('Giỏi, Mày ngon');
+            }
+        }
 </script>
 @yield('script')
 </body>

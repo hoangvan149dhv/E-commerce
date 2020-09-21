@@ -114,7 +114,7 @@ Route::get('/admin-quanly-donhang', 'AdminController@order');
 
 //upload img
 Route::post('ckeditor/image_upload', 'AdminController@upload')->name('uploads');
-                                                        //name('uploads') là truyền tham số bên view admin_layout.blde.php dòng 278        
+                                                        //name('uploads') là truyền tham số bên view admin_layout.blde.php dòng 278
 //ĐĂNG XUẤT
 Route::get('/logout','AdminController@log_out');
 
@@ -151,7 +151,7 @@ Route::get('/order_complete', 'AdminController@order_complete');
 Route::get('/addCategoryProduct', 'CategoryProduct@add_Category_Product');
 //SHOW
 Route::get('/allCategoryProduct', 'CategoryProduct@all_Category_Product');
-    //SAVE-CATEGORY 
+    //SAVE-CATEGORY
 Route::post('/save-category-product', 'CategoryProduct@save_Category_Product');
 
 //UPDATE
@@ -305,3 +305,6 @@ Route::post('/select-delivery-feeship','DeliveryController@select_delivery_feesh
 
 //LOGO
 Route::get('/layout-logo','logowebsiteController@layout_Logo');
+
+//DUMP DATABASE
+Route::get('/our_backup_database', 'dumpDatabasesController@backup_database')->name('backup_database');
