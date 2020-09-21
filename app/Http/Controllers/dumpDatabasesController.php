@@ -18,9 +18,8 @@ class dumpDatabasesController extends Controller
         // INSERT TABLES IN DATABASE
         $tables             = array("devvn_feeship","devvn_quanhuyen","devvn_tinhthanhpho","devvn_xaphuongthitran","tbl_admin",
                                     "tbl_brand_code_product","tbl_category_product","tbl_contact","tbl_count","tbl_customer",
-                                    "tbl_info_contact","tbl_logo_website","tbl_news","tbl_order","tbl_product",
-                                    "tbl_review","tbl_slider"); //here your tables...
-
+                                    "tbl_info_contact","tbl_logo_website","tbl_news","tbl_order","tbl_product","tbl_review",
+                                    "tbl_slider","tbl_templatemail","tbl_configmail"); //here your tables...
         $connect = new \PDO("mysql:host=$mysqlHostName;dbname=$DbName;charset=utf8", "$mysqlUserName", "$mysqlPassword",array(\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
         $get_all_table_query = "SHOW TABLES";
         $statement = $connect->prepare($get_all_table_query);
@@ -70,7 +69,6 @@ class dumpDatabasesController extends Controller
         ob_clean();
         flush();
         readfile($file_name);
-        unlink($file_name);
         return back();
 
     }

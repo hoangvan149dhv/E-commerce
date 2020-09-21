@@ -236,9 +236,21 @@
                             <button onclick="checkConditiondumpDatabase()" style="background: #337ab700;border-color:#337ab700" class="btn btn-primary"> Dump database</button>
                         </form>
                     </a>
-
+                </li>
+                <li class="sub-menu">
+                    <a @yield('mail') href="javascript:;">
+                        <i class="fa  fa-align-justify"></i>
+                        <span>Email</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="{{URL::to('/mail-config')}}">Cấu hình Email</a></li>
+                        <li><a href="{{URL::to('/template-mail-config')}}">Tạo giao diện Email</a></li>
+                        <li><a href="{{URL::to('/all-template-mail')}}">Danh sách Email</a></li>
+                        <li><a href="{{URL::to('/template-mail')}}">Giao diện mail được sử dụng</a></li>
+                    </ul>
                 </li>
             </ul>
+
         </div>
         <!-- sidebar menu end-->
     </div>

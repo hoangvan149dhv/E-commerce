@@ -308,3 +308,34 @@ Route::get('/layout-logo','logowebsiteController@layout_Logo');
 
 //DUMP DATABASE
 Route::get('/our_backup_database', 'dumpDatabasesController@backup_database')->name('backup_database');
+
+//SEND MAIL ORDER
+Route::get('/mail-config','sendMailController@layoutConfigMail');
+Route::get('mail', function () {
+    return view('mailform');
+});
+
+//layout create template mail
+Route::get('/template-mail-config','sendMailController@layoutcreatetemplatemail');
+//add template mail
+Route::post('/save-template-mail','sendMailController@savetemplatemail');
+Route::post('/save-config-mail','sendMailController@saveConfigmail');
+
+Route::get('/all-template-mail', 'sendMailController@listitemtemplatemail');
+
+//Convert status template work
+Route::get('/status-template/{id}','sendMailController@update_status');
+
+//layout detail update template
+Route::get('/chi-tiet-template/{id}','sendMailController@layout_update_template');
+
+//save uptdate template
+Route::post('/update-template-mail/{id}','sendMailController@update_template_mail');
+
+//delete layout template
+Route::get('/delete-layout-template/{id}','sendMailController@delete_template_mail');
+
+//Display template mail used
+Route::get('/template-mail','sendMailController@templateMail');
+//SEND MAIL
+Route::post('/send','sendMailController@sendMail');
