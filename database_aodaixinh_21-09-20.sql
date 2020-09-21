@@ -23960,56 +23960,26 @@ INSERT INTO tbl_admin (admin_Id, admin_email, admin_pass, admin_name, admin_phon
 
 
 CREATE TABLE `tbl_brand_code_product` (
-  `code_id` int NOT NULL,
+  `code_id` int NOT NULL AUTO_INCREMENT,
   `brandcode_id` varchar(70) NOT NULL,
-  `brandcode_name` varchar(70) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `brandcode_name` varchar(70) NOT NULL,
+  PRIMARY KEY (`code_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
-INSERT INTO tbl_brand_code_product (code_id, brandcode_id, brandcode_name) VALUES ('2','Vải in màu','Vải in màu');
-
-INSERT INTO tbl_brand_code_product (code_id, brandcode_id, brandcode_name) VALUES ('4','Vải in 3D','Vải in 3D');
-
-INSERT INTO tbl_brand_code_product (code_id, brandcode_id, brandcode_name) VALUES ('5','Vải Lụa Thái Tuấn','Vải Lụa Thái Tuấn');
-
-INSERT INTO tbl_brand_code_product (code_id, brandcode_id, brandcode_name) VALUES ('6','Vải Lụa Sunny','Vải Lụa Sunny');
-
-INSERT INTO tbl_brand_code_product (code_id, brandcode_id, brandcode_name) VALUES ('7','Vải Lụa gấm','Vải lụa gấm');
-
-INSERT INTO tbl_brand_code_product (code_id, brandcode_id, brandcode_name) VALUES ('2','Vải in màu','Vải in màu');
-
-INSERT INTO tbl_brand_code_product (code_id, brandcode_id, brandcode_name) VALUES ('4','Vải in 3D','Vải in 3D');
-
-INSERT INTO tbl_brand_code_product (code_id, brandcode_id, brandcode_name) VALUES ('5','Vải Lụa Thái Tuấn','Vải Lụa Thái Tuấn');
-
-INSERT INTO tbl_brand_code_product (code_id, brandcode_id, brandcode_name) VALUES ('6','Vải Lụa Sunny','Vải Lụa Sunny');
-
-INSERT INTO tbl_brand_code_product (code_id, brandcode_id, brandcode_name) VALUES ('7','Vải Lụa gấm','Vải lụa gấm');
+INSERT INTO tbl_brand_code_product (code_id, brandcode_id, brandcode_name) VALUES ('1','Sunny Ngô','Sunny Ngô');
 
 
 CREATE TABLE `tbl_category_product` (
-  `category_id` int NOT NULL,
+  `category_id` int NOT NULL AUTO_INCREMENT,
   `category_name` varchar(100) NOT NULL,
   `category_desc` varchar(100) NOT NULL,
-  `category_status` bigint NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `category_status` bigint NOT NULL,
+  PRIMARY KEY (`category_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
-INSERT INTO tbl_category_product (category_id, category_name, category_desc, category_status) VALUES ('2','Hoa Đa Dạng','Hoa Đa Dạng','1');
-
-INSERT INTO tbl_category_product (category_id, category_name, category_desc, category_status) VALUES ('4','Độc và lạ','Độc và lạ','1');
-
-INSERT INTO tbl_category_product (category_id, category_name, category_desc, category_status) VALUES ('5','Hình lập thể','Hình lập thể','1');
-
-INSERT INTO tbl_category_product (category_id, category_name, category_desc, category_status) VALUES ('7','Đa sắc','Đa sắc','1');
-
-INSERT INTO tbl_category_product (category_id, category_name, category_desc, category_status) VALUES ('2','Hoa Đa Dạng','Hoa Đa Dạng','1');
-
-INSERT INTO tbl_category_product (category_id, category_name, category_desc, category_status) VALUES ('4','Độc và lạ','Độc và lạ','1');
-
-INSERT INTO tbl_category_product (category_id, category_name, category_desc, category_status) VALUES ('5','Hình lập thể','Hình lập thể','1');
-
-INSERT INTO tbl_category_product (category_id, category_name, category_desc, category_status) VALUES ('7','Đa sắc','Đa sắc','1');
+INSERT INTO tbl_category_product (category_id, category_name, category_desc, category_status) VALUES ('1','Lụa Cao Cấp','Lụa Cao Cấp','1');
 
 
 CREATE TABLE `tbl_contact` (
@@ -24030,175 +24000,41 @@ CREATE TABLE `tbl_count` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
-INSERT INTO tbl_count (id, counts) VALUES ('1','376');
+INSERT INTO tbl_count (id, counts) VALUES ('1','390');
 
-INSERT INTO tbl_count (id, counts) VALUES ('1','376');
+INSERT INTO tbl_count (id, counts) VALUES ('1','390');
 
-INSERT INTO tbl_count (id, counts) VALUES ('1','377');
+INSERT INTO tbl_count (id, counts) VALUES ('1','391');
 
-INSERT INTO tbl_count (id, counts) VALUES ('1','349');
+INSERT INTO tbl_count (id, counts) VALUES ('1','363');
 
-INSERT INTO tbl_count (id, counts) VALUES ('1','349');
+INSERT INTO tbl_count (id, counts) VALUES ('1','363');
 
-INSERT INTO tbl_count (id, counts) VALUES ('1','350');
+INSERT INTO tbl_count (id, counts) VALUES ('1','364');
 
 
 CREATE TABLE `tbl_customer` (
-  `cusid` int NOT NULL,
+  `cusid` int NOT NULL AUTO_INCREMENT,
   `cusname` varchar(70) NOT NULL,
   `cusadd` varchar(70) NOT NULL,
-  `cusPhone` varchar(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `cusPhone` varchar(11) NOT NULL,
+  PRIMARY KEY (`cusid`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('71','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu','0334964103');
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('11','Duong Hoang Van','test, Xã Thái Ninh, Huyện Thanh Ba, Tỉnh Phú Thọ','0912345678');
 
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('72','Duong hoang van','aasdsad','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('73','duong hoanb van','45/45/45 Nguyễn Phúc Chu','1234567890');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('74','Duong hoang van','45/45/45 Nguyễn Phúc Chu','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('75','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu. Phường 14. Quận Tân Bình','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('76','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('77','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('78','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('79','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('80','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('81','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('82','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('83','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('84','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('85','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu. Phường 14. Quận Tân Bình','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('86','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu. Phường 14. Quận Tân Bình','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('87','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu. Phường 14. Quận Tân Bình','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('88','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu598211','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('89','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu111','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('90','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('91','Dương Hoàng Văn','tester, Phường Phúc Xá, Quận Ba Đình, Thành phố Hà Nội','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('92','Dương Hoàng Văn','adasd, Vui lòng chọn quận huyện trước, Chọn Quận huyện, Tỉnh Lai Châu','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('93','Dương Hoàng Văn','tét, Phường Nhơn Phú, Thành phố Qui Nhơn, Tỉnh Bình Định','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('94','Dương Hoàng Văn','tét, Phường Nhơn Phú, Thành phố Qui Nhơn, Tỉnh Bình Định','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('95','Dương Hoàng Văn','tét, Phường Lam Sơn, Quận Lê Chân, Thành phố Hải Phòng','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('96','Dương Hoàng Văn','tét, Phường Nhật Tân, Quận Tây Hồ, Thành phố Hà Nội','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('97','Dương Hoàng Văn','ádád, Xã Lũng Cú, Huyện Đồng Văn, Tỉnh Hà Giang','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('98','Dương Hoàng Văn','ádasd, Phường xã, Quận huyện, Chọn tỉnh thành phố','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('99','Dương Hoàng Văn','sdad, Phường xã, Quận huyện, Chọn tỉnh thành phố','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('100','Dương Hoàng Văn','ádasd, Vui lòng chọn quận huyện trước, Chọn Quận huyện, Tỉnh Bắc Giang','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('101','Dương Hoàng Văn','ádfafs, <--Chọn Xa Phuong-->, Quận Tây Hồ, Thành phố Hà Nội','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('102','Dương Hoàng Văn','sâf, Phường Phúc Xá, Quận Ba Đình, Thành phố Hà Nội','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('103','Dương Hoàng Văn','sadsadsa, Phường Phúc Xá, Quận Ba Đình, Thành phố Hà Nội','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('104','Dương Hoàng Văn','sad, Phường Trần Phú, Thành phố Hà Giang, Tỉnh Hà Giang','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('105','Dương Hoàng Văn','sad, Phường Đồng Xuân, Quận Hoàn Kiếm, Thành phố Hà Nội','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('71','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('72','Duong hoang van','aasdsad','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('73','duong hoanb van','45/45/45 Nguyễn Phúc Chu','1234567890');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('74','Duong hoang van','45/45/45 Nguyễn Phúc Chu','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('75','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu. Phường 14. Quận Tân Bình','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('76','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('77','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('78','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('79','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('80','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('81','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('82','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('83','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('84','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('85','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu. Phường 14. Quận Tân Bình','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('86','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu. Phường 14. Quận Tân Bình','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('87','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu. Phường 14. Quận Tân Bình','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('88','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu598211','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('89','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu111','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('90','Dương Hoàng Văn','45/45/45 Nguyễn Phúc Chu','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('91','Dương Hoàng Văn','tester, Phường Phúc Xá, Quận Ba Đình, Thành phố Hà Nội','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('92','Dương Hoàng Văn','adasd, Vui lòng chọn quận huyện trước, Chọn Quận huyện, Tỉnh Lai Châu','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('93','Dương Hoàng Văn','tét, Phường Nhơn Phú, Thành phố Qui Nhơn, Tỉnh Bình Định','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('94','Dương Hoàng Văn','tét, Phường Nhơn Phú, Thành phố Qui Nhơn, Tỉnh Bình Định','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('95','Dương Hoàng Văn','tét, Phường Lam Sơn, Quận Lê Chân, Thành phố Hải Phòng','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('96','Dương Hoàng Văn','tét, Phường Nhật Tân, Quận Tây Hồ, Thành phố Hà Nội','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('97','Dương Hoàng Văn','ádád, Xã Lũng Cú, Huyện Đồng Văn, Tỉnh Hà Giang','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('98','Dương Hoàng Văn','ádasd, Phường xã, Quận huyện, Chọn tỉnh thành phố','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('99','Dương Hoàng Văn','sdad, Phường xã, Quận huyện, Chọn tỉnh thành phố','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('100','Dương Hoàng Văn','ádasd, Vui lòng chọn quận huyện trước, Chọn Quận huyện, Tỉnh Bắc Giang','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('101','Dương Hoàng Văn','ádfafs, <--Chọn Xa Phuong-->, Quận Tây Hồ, Thành phố Hà Nội','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('102','Dương Hoàng Văn','sâf, Phường Phúc Xá, Quận Ba Đình, Thành phố Hà Nội','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('103','Dương Hoàng Văn','sadsadsa, Phường Phúc Xá, Quận Ba Đình, Thành phố Hà Nội','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('104','Dương Hoàng Văn','sad, Phường Trần Phú, Thành phố Hà Giang, Tỉnh Hà Giang','0334964103');
-
-INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('105','Dương Hoàng Văn','sad, Phường Đồng Xuân, Quận Hoàn Kiếm, Thành phố Hà Nội','0334964103');
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('12','Ngo Nguyen Huynh Ngan','128 Lê Sao, Phường Phú Thạnh, Quận Tân Phú, Thành phố Hồ Chí Minh','0909677308');
 
 
 CREATE TABLE `tbl_info_contact` (
-  `id_Info` int NOT NULL,
+  `id_Info` int NOT NULL AUTO_INCREMENT,
   `google_map` text NOT NULL,
   `info_contact_add` varchar(100) NOT NULL,
   `info_contact_phone` varchar(11) NOT NULL,
-  `info_contact_mail` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `info_contact_mail` varchar(100) NOT NULL,
+  PRIMARY KEY (`id_Info`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
 INSERT INTO tbl_info_contact (id_Info, google_map, info_contact_add, info_contact_phone, info_contact_mail) VALUES ('1','','120 Lê Sao','0909677308','vandaovipga1491999@gmail.com');
@@ -24212,239 +24048,20 @@ CREATE TABLE `tbl_logo_website` (
 
 
 CREATE TABLE `tbl_news` (
-  `news_id` int NOT NULL,
+  `news_id` int NOT NULL AUTO_INCREMENT,
   `news_title` varchar(255) NOT NULL,
   `news_desc` text NOT NULL,
   `news_image` varchar(255) NOT NULL,
   `news_content` text NOT NULL,
   `updated_at` datetime NOT NULL,
-  `created_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `created_at` datetime NOT NULL,
+  PRIMARY KEY (`news_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-
-INSERT INTO tbl_news (news_id, news_title, news_desc, news_image, news_content, updated_at, created_at) VALUES ('6','Vì sao áo dài được xem là biểu tượng cho trang phục truyền thống của người Việt?','Đất nước Việt Nam đã trải qua hơn hàng nghìn năm xây dựng và gìn giữ, song cũng đã hình thành nhiều nét đẹp văn hóa, bản sắc và truyền thống dân tộc riêng. Trong số đó, trang phục truyền thống áo dài chính là niềm tự hào mỗi khi bạn bè quốc tế nhắc đến Việt Nam.','94545259_648210152424822_1003256192287375360_o23.jpg','<p>Mỗi một người dân của nước Việt đều rất quen thuộc với hình ảnh chiếc áo dài, nhưng lại rất ít người biết đến nguồn gốc của loại trang phục truyền thống này. Theo sử sách thì áo dài lần đầu tiên được thiết kế dưới thời chúa Nguyễn Phúc Khoát (1744), do sự ảnh hưởng sâu sắc của văn hóa Trung hoa về lối trang phục kín đáo nên chiếc áo dài được thiết kế cổ đứng cài khuy không để hở phần áo lót như kiểu áo tứ thân lúc bấy giờ, sau đó đã được lưu truyền rộng rãi qua các triều đại và cũng trải qua nhiều lần cải cách để có được chiếc áo dài như hiện nay. Do đó mà chiếc áo dài Việt Nam vừa được hội tụ tinh hoa nghệ thuật trong và ngoài nước, vừa là linh hồn của cả dân tộc ta.</p>
-
-<p><img alt="Áo dài truyền thống Việt Nam" src="https://www.tuvantieccuoi.com/imgs/images/ao-dai-truyen-thong-viet-nam2.jpg" /></p>
-
-<p>Theo đó, áo dài được mặc chung với quần dài ống rộng, thường đi đôi với khăn xếp cho nam và khăn gấm hoặc nón lá cho nữ. Áo dài của nữ thì ôm vừa sát người, giúp tôn lên sắc vóc của người phụ nữ Việt Nam một cách tuyệt đối, còn của nam thì bao giờ cũng được may rộng rãi, thoải mái hơn.</p>
-
-<p><img alt="Áo dài truyền thống Việt Nam" src="https://www.tuvantieccuoi.com/imgs/images/ao-dai-truyen-thong-viet-nam3.jpg" /></p>
-
-<p>Từ khi chiếc áo dà ra đời đã cho thấy sức hút của nó. Áo dài nữ mặc nhìn vừa nữ tính, đoan trang lại vừa lễ tiết, còn nam mặc thì vừa thanh lịch vừa nhã nhặn. Nếu ngày xưa, áo dài thường chỉ được sử dụng trong các dịp lễ tết, hoặc các ngày trọng đại, thì ngày nay, áo dài còn rất được ưa chuộng và sử dụng rộng rãi làm đồng phục của các trường trung học, các công ty hay các hãng hàng không (như Việt Nam Airline, Việt Jet Air, Air MeKong, ...), đồng phục cho nhân viên của các tòa soạn, đài truyền hình và thậm chí là các cửa hàng lớn nhỏ trong nước, v.v…</p>
-
-<p><img alt="Áo dài truyền thống Việt Nam" src="https://www.tuvantieccuoi.com/imgs/images/ao-dai-truyen-thong-viet-nam4.jpg" /></p>
-
-<p>Tất cả mọi người đều tự tin diện trang phục áo dài. Bởi lẽ áo dài là một thiết kế không kén chọn người mặc, từ nhà giàu đến bình dân, từ người già đến trẻ nhỏ, ai ai cũng có thể mặc được chiếc áo dài.</p>
-
-<p><img alt="Áo dài truyền thống Việt Nam" src="https://www.tuvantieccuoi.com/imgs/images/ao-dai-truyen-thong-viet-nam5.jpg" /></p>
-
-<p>Với sự phát triển của thế giới hiện đại, tuy chiếc áo dài Việt Nam đã có nhiều sự cải biến nhưng vẫn giữ được cái cốt vốn có của nó.</p>
-
-<p><img alt="Áo dài truyền thống Việt Nam" src="https://www.tuvantieccuoi.com/imgs/images/ao-dai-truyen-thong-viet-nam6.jpg" /></p>
-
-<p><img alt="Áo dài truyền thống Việt Nam" src="https://www.tuvantieccuoi.com/imgs/images/ao-dai-truyen-thong-viet-nam7.jpg" /></p>
-
-<p>Đó chính là những chiếc áo dài cách tân đầy tính sáng tạo, đưa phong cách hiện đại pha lẫn vào nét cổ truyền một cách tinh tế và hoàn mĩ. Tùy theo tính chất của sự kiện mà người sử dụng có thể lựa chọn các kiểu cách phù hợp.</p>
-
-<p><img alt="Áo dài truyền thống Việt Nam" src="https://www.tuvantieccuoi.com/imgs/images/ao-dai-truyen-thong-viet-nam8.jpg" /></p>
-
-<p>Điều đó đã làm đa dạng thêm cho hình ảnh chiếc áo dài truyền thống, cũng là làm phong phú thêm sự chọn lựa của mỗi người. Ngày nay, áo dài cách tân được đón nhận như một làn gió mới trong giới thời trang Việt Nam, mang phong cách mới lạ pha trộn giữ hiện đại và truyền thống rất sắc xảo.</p>
-
-<p><img alt="Áo dài truyền thống Việt Nam" src="https://www.tuvantieccuoi.com/imgs/images/ao-dai-truyen-thong-viet-nam9.jpg" /></p>
-
-<p>Áo dài được lưu truyền cho đến ngày nay đã được gần ba thế kỉ, đã đồng hành cùng bề dày lịch sử dân tộc ta, cùng mảnh đất quê hương Việt Nam hứng chịu hàng nghìn trận bom đạn của kẻ thù đến xâm lược và đứng nhìn đất nước ta ngày càng đổi mới. Ngày nay, có rất nhiều chương trình truyền hình tôn vinh nét đẹp của chiếc áo dài, đồng thời cũng là tôn vinh nét đẹp của người phụ nữ Việt Nam như các cuộc thi thiết kế áo dài, các cuộc thi hoa hậu, v.v…</p>
-
-<p><img alt="Áo dài truyền thống Việt Nam" src="https://www.tuvantieccuoi.com/imgs/images/ao-dai-truyen-thong-viet-nam10.jpg" /></p>
-
-<p><img alt="Áo dài truyền thống Việt Nam" src="https://www.tuvantieccuoi.com/imgs/images/ao-dai-truyen-thong-viet-nam11.jpg" /></p>
-
-<p>Hình ảnh người con gái Việt Nam yêu kiều trong chiếc áo dài thướt tha ấy đã đi khắp năm châu, xuất hiện trên nhiều báo chí, thậm chí là các cuộc thi hoa hậu cấp quốc tế. Nhận được sự ngưỡng mộ của toàn thế giới và trở thành trang phục mà hầu hết các vị khách nước ngoài đều mong muốn được mặc thử một lần khi đến Việt Nam.</p>','2020-04-28 00:00:00','2020-05-31 00:00:00');
-
-INSERT INTO tbl_news (news_id, news_title, news_desc, news_image, news_content, updated_at, created_at) VALUES ('7','Lịch sử phát triển của áo dài Việt Nam','Áo dài là biểu tượng của phụ nữ Việt Nam - duyên dáng và đằm thắm không thể trộn lẫn.','94316912_648208452424992_2217525515101667328_o98.jpg','<p>Trải qua biết bao chặng đường và đổi thay nhưng tà áo dài Việt Nam vẫn giữ nguyên được bản sắc văn hóa của đất nước nghìn năm văn hiến...</p>
-
-<p>Áo dài là biểu hiện của bản sắc, cốt cách tinh thần Việt Nam. Áo dài đã vượt qua mọi thử thách để trở thành "quốc phục", một biểu tượng của phụ nữ, niềm kiêu hãnh của dân tộc Việt Nam.&nbsp;</p>
-
-<p><img alt="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 1" src="https://icdn.dantri.com.vn/thumb_w/640/2020/03/08/ao-1-1583661112289.jpg" title="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 1" /></p>
-
-<p>Nhấn để phóng to ảnh</p>
-
-<p>Nữ sinh Trường THPT Huỳnh Thúc Kháng trong trang phục áo dài.</p>
-
-<p>Từ ngày 2/3 đến ngày 8/3, Trung ương Hội Liên hiệp phụ nữ Việt Nam phối hợp với Bộ Văn hóa, Thể thao và Du lịch phát động tuần lễ phụ nữ cả nước mặc áo dài.&nbsp;</p>
-
-<p>Đây là hoạt động trong khuôn khổ sự kiện "Áo dài - Di sản văn hóa Việt Nam" nhân kỷ niệm 90 năm thành lập Hội Liên hiệp Phụ nữ Việt Nam, 110 năm Ngày Quốc tế phụ nữ 8/3.</p>
-
-<p>Hưởng ứng tuần lễ áo dài nói trên, tại Trường Quốc học Vinh - THPT Huỳnh Thúc Kháng (Nghệ An), các cô giáo và các em nữ sinh đã thực hiện và duy trì việc mặc áo dài vào các ngày lễ và vào sáng thứ 2 hàng tuần trong suốt 15 năm qua.</p>
-
-<p>Chính vì thế, cô và trò Trường THPT Huỳnh Thúc Kháng đã tích cực, sôi nổi hưởng ứng “Tuần lễ áo dài” từ ngày 2/3/2020 đến ngày 8/3/2020 và mặc đồng loạt trong ngày 6/3/2020.&nbsp;</p>
-
-<p><em>Một số hình ảnh của các cô giáo và nữ sinh Trường THPT Huỳnh Thúc Kháng trong "Tuần lễ Áo dài":</em></p>
-
-<p><img alt="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 2" src="https://icdn.dantri.com.vn/thumb_w/640/2020/03/08/ao-2-1583661111944.jpg" title="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 2" /></p>
-
-<p>Nhấn để phóng to ảnh</p>
-
-<p><img alt="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 3" src="https://icdn.dantri.com.vn/thumb_w/640/2020/03/08/ao-18-1583661113310.jpg" title="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 3" /></p>
-
-<p>Nhấn để phóng to ảnh</p>
-
-<p><img alt="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 4" src="https://icdn.dantri.com.vn/thumb_w/640/2020/03/08/ao-3-1583661113167.jpg" title="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 4" /></p>
-
-<p>Nhấn để phóng to ảnh</p>
-
-<p><img alt="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 5" src="https://icdn.dantri.com.vn/thumb_w/640/2020/03/08/ao-5-1583661113125.jpg" title="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 5" /></p>
-
-<p>Nhấn để phóng to ảnh</p>
-
-<p><img alt="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 6" src="https://icdn.dantri.com.vn/thumb_w/640/2020/03/08/ao-7-1583661112729.jpg" title="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 6" /></p>
-
-<p>Nhấn để phóng to ảnh</p>
-
-<p><img alt="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 7" src="https://icdn.dantri.com.vn/thumb_w/640/2020/03/08/ao-15-1583661114090.jpg" title="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 7" /></p>
-
-<p>Nhấn để phóng to ảnh</p>
-
-<p><img alt="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 8" src="https://icdn.dantri.com.vn/thumb_w/640/2020/03/08/ao-13-1583661113841.jpg" title="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 8" /></p>
-
-<p>Nhấn để phóng to ảnh</p>
-
-<p><img alt="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 9" src="https://icdn.dantri.com.vn/thumb_w/640/2020/03/08/ao-8-1583661114047.jpg" title="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 9" /></p>
-
-<p>Nhấn để phóng to ảnh</p>
-
-<p>Hưởng ứng tuần lễ áo dài nói trên, tại Trường Quốc học Vinh - THPT Huỳnh Thúc Kháng, các cô giáo và các em nữ sinh đã thực hiện và duy trì việc mặc áo dài vào các ngày lễ và vào sáng thứ 2 hàng tuần trong suốt 15 năm qua.</p>
-
-<p><img alt="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 10" src="https://icdn.dantri.com.vn/thumb_w/640/2020/03/08/ao-14-1583661113128.jpg" title="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 10" /></p>
-
-<p>Nhấn để phóng to ảnh</p>
-
-<p><img alt="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 11" src="https://icdn.dantri.com.vn/thumb_w/640/2020/03/08/ao-11-1583661114186.jpg" title="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 11" /></p>
-
-<p>Nhấn để phóng to ảnh</p>
-
-<p><img alt="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 12" src="https://icdn.dantri.com.vn/thumb_w/640/2020/03/08/ao-4-1583661114156.jpg" title="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 12" /></p>
-
-<p>Nhấn để phóng to ảnh</p>
-
-<p><img alt="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 13" src="https://icdn.dantri.com.vn/thumb_w/640/2020/03/08/ao-6-1583661114152.jpg" title="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 13" /></p>
-
-<p>Nhấn để phóng to ảnh</p>
-
-<p>Chính vì thế, cô và trò Trường THPT Huỳnh Thúc Kháng đã rất tích cực, sôi nổi hưởng ứng “Tuần lễ áo dài” từ ngày 2/3/2020 đến ngày 8/3/2020 và mặc đồng loạt trong ngày 6/3/2020.</p>','2020-04-28 00:00:00','2020-05-31 06:15:59');
-
-INSERT INTO tbl_news (news_id, news_title, news_desc, news_image, news_content, updated_at, created_at) VALUES ('6','Vì sao áo dài được xem là biểu tượng cho trang phục truyền thống của người Việt?','Đất nước Việt Nam đã trải qua hơn hàng nghìn năm xây dựng và gìn giữ, song cũng đã hình thành nhiều nét đẹp văn hóa, bản sắc và truyền thống dân tộc riêng. Trong số đó, trang phục truyền thống áo dài chính là niềm tự hào mỗi khi bạn bè quốc tế nhắc đến Việt Nam.','94545259_648210152424822_1003256192287375360_o23.jpg','<p>Mỗi một người dân của nước Việt đều rất quen thuộc với hình ảnh chiếc áo dài, nhưng lại rất ít người biết đến nguồn gốc của loại trang phục truyền thống này. Theo sử sách thì áo dài lần đầu tiên được thiết kế dưới thời chúa Nguyễn Phúc Khoát (1744), do sự ảnh hưởng sâu sắc của văn hóa Trung hoa về lối trang phục kín đáo nên chiếc áo dài được thiết kế cổ đứng cài khuy không để hở phần áo lót như kiểu áo tứ thân lúc bấy giờ, sau đó đã được lưu truyền rộng rãi qua các triều đại và cũng trải qua nhiều lần cải cách để có được chiếc áo dài như hiện nay. Do đó mà chiếc áo dài Việt Nam vừa được hội tụ tinh hoa nghệ thuật trong và ngoài nước, vừa là linh hồn của cả dân tộc ta.</p>
-
-<p><img alt="Áo dài truyền thống Việt Nam" src="https://www.tuvantieccuoi.com/imgs/images/ao-dai-truyen-thong-viet-nam2.jpg" /></p>
-
-<p>Theo đó, áo dài được mặc chung với quần dài ống rộng, thường đi đôi với khăn xếp cho nam và khăn gấm hoặc nón lá cho nữ. Áo dài của nữ thì ôm vừa sát người, giúp tôn lên sắc vóc của người phụ nữ Việt Nam một cách tuyệt đối, còn của nam thì bao giờ cũng được may rộng rãi, thoải mái hơn.</p>
-
-<p><img alt="Áo dài truyền thống Việt Nam" src="https://www.tuvantieccuoi.com/imgs/images/ao-dai-truyen-thong-viet-nam3.jpg" /></p>
-
-<p>Từ khi chiếc áo dà ra đời đã cho thấy sức hút của nó. Áo dài nữ mặc nhìn vừa nữ tính, đoan trang lại vừa lễ tiết, còn nam mặc thì vừa thanh lịch vừa nhã nhặn. Nếu ngày xưa, áo dài thường chỉ được sử dụng trong các dịp lễ tết, hoặc các ngày trọng đại, thì ngày nay, áo dài còn rất được ưa chuộng và sử dụng rộng rãi làm đồng phục của các trường trung học, các công ty hay các hãng hàng không (như Việt Nam Airline, Việt Jet Air, Air MeKong, ...), đồng phục cho nhân viên của các tòa soạn, đài truyền hình và thậm chí là các cửa hàng lớn nhỏ trong nước, v.v…</p>
-
-<p><img alt="Áo dài truyền thống Việt Nam" src="https://www.tuvantieccuoi.com/imgs/images/ao-dai-truyen-thong-viet-nam4.jpg" /></p>
-
-<p>Tất cả mọi người đều tự tin diện trang phục áo dài. Bởi lẽ áo dài là một thiết kế không kén chọn người mặc, từ nhà giàu đến bình dân, từ người già đến trẻ nhỏ, ai ai cũng có thể mặc được chiếc áo dài.</p>
-
-<p><img alt="Áo dài truyền thống Việt Nam" src="https://www.tuvantieccuoi.com/imgs/images/ao-dai-truyen-thong-viet-nam5.jpg" /></p>
-
-<p>Với sự phát triển của thế giới hiện đại, tuy chiếc áo dài Việt Nam đã có nhiều sự cải biến nhưng vẫn giữ được cái cốt vốn có của nó.</p>
-
-<p><img alt="Áo dài truyền thống Việt Nam" src="https://www.tuvantieccuoi.com/imgs/images/ao-dai-truyen-thong-viet-nam6.jpg" /></p>
-
-<p><img alt="Áo dài truyền thống Việt Nam" src="https://www.tuvantieccuoi.com/imgs/images/ao-dai-truyen-thong-viet-nam7.jpg" /></p>
-
-<p>Đó chính là những chiếc áo dài cách tân đầy tính sáng tạo, đưa phong cách hiện đại pha lẫn vào nét cổ truyền một cách tinh tế và hoàn mĩ. Tùy theo tính chất của sự kiện mà người sử dụng có thể lựa chọn các kiểu cách phù hợp.</p>
-
-<p><img alt="Áo dài truyền thống Việt Nam" src="https://www.tuvantieccuoi.com/imgs/images/ao-dai-truyen-thong-viet-nam8.jpg" /></p>
-
-<p>Điều đó đã làm đa dạng thêm cho hình ảnh chiếc áo dài truyền thống, cũng là làm phong phú thêm sự chọn lựa của mỗi người. Ngày nay, áo dài cách tân được đón nhận như một làn gió mới trong giới thời trang Việt Nam, mang phong cách mới lạ pha trộn giữ hiện đại và truyền thống rất sắc xảo.</p>
-
-<p><img alt="Áo dài truyền thống Việt Nam" src="https://www.tuvantieccuoi.com/imgs/images/ao-dai-truyen-thong-viet-nam9.jpg" /></p>
-
-<p>Áo dài được lưu truyền cho đến ngày nay đã được gần ba thế kỉ, đã đồng hành cùng bề dày lịch sử dân tộc ta, cùng mảnh đất quê hương Việt Nam hứng chịu hàng nghìn trận bom đạn của kẻ thù đến xâm lược và đứng nhìn đất nước ta ngày càng đổi mới. Ngày nay, có rất nhiều chương trình truyền hình tôn vinh nét đẹp của chiếc áo dài, đồng thời cũng là tôn vinh nét đẹp của người phụ nữ Việt Nam như các cuộc thi thiết kế áo dài, các cuộc thi hoa hậu, v.v…</p>
-
-<p><img alt="Áo dài truyền thống Việt Nam" src="https://www.tuvantieccuoi.com/imgs/images/ao-dai-truyen-thong-viet-nam10.jpg" /></p>
-
-<p><img alt="Áo dài truyền thống Việt Nam" src="https://www.tuvantieccuoi.com/imgs/images/ao-dai-truyen-thong-viet-nam11.jpg" /></p>
-
-<p>Hình ảnh người con gái Việt Nam yêu kiều trong chiếc áo dài thướt tha ấy đã đi khắp năm châu, xuất hiện trên nhiều báo chí, thậm chí là các cuộc thi hoa hậu cấp quốc tế. Nhận được sự ngưỡng mộ của toàn thế giới và trở thành trang phục mà hầu hết các vị khách nước ngoài đều mong muốn được mặc thử một lần khi đến Việt Nam.</p>','2020-04-28 00:00:00','2020-05-31 00:00:00');
-
-INSERT INTO tbl_news (news_id, news_title, news_desc, news_image, news_content, updated_at, created_at) VALUES ('7','Lịch sử phát triển của áo dài Việt Nam','Áo dài là biểu tượng của phụ nữ Việt Nam - duyên dáng và đằm thắm không thể trộn lẫn.','94316912_648208452424992_2217525515101667328_o98.jpg','<p>Trải qua biết bao chặng đường và đổi thay nhưng tà áo dài Việt Nam vẫn giữ nguyên được bản sắc văn hóa của đất nước nghìn năm văn hiến...</p>
-
-<p>Áo dài là biểu hiện của bản sắc, cốt cách tinh thần Việt Nam. Áo dài đã vượt qua mọi thử thách để trở thành "quốc phục", một biểu tượng của phụ nữ, niềm kiêu hãnh của dân tộc Việt Nam.&nbsp;</p>
-
-<p><img alt="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 1" src="https://icdn.dantri.com.vn/thumb_w/640/2020/03/08/ao-1-1583661112289.jpg" title="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 1" /></p>
-
-<p>Nhấn để phóng to ảnh</p>
-
-<p>Nữ sinh Trường THPT Huỳnh Thúc Kháng trong trang phục áo dài.</p>
-
-<p>Từ ngày 2/3 đến ngày 8/3, Trung ương Hội Liên hiệp phụ nữ Việt Nam phối hợp với Bộ Văn hóa, Thể thao và Du lịch phát động tuần lễ phụ nữ cả nước mặc áo dài.&nbsp;</p>
-
-<p>Đây là hoạt động trong khuôn khổ sự kiện "Áo dài - Di sản văn hóa Việt Nam" nhân kỷ niệm 90 năm thành lập Hội Liên hiệp Phụ nữ Việt Nam, 110 năm Ngày Quốc tế phụ nữ 8/3.</p>
-
-<p>Hưởng ứng tuần lễ áo dài nói trên, tại Trường Quốc học Vinh - THPT Huỳnh Thúc Kháng (Nghệ An), các cô giáo và các em nữ sinh đã thực hiện và duy trì việc mặc áo dài vào các ngày lễ và vào sáng thứ 2 hàng tuần trong suốt 15 năm qua.</p>
-
-<p>Chính vì thế, cô và trò Trường THPT Huỳnh Thúc Kháng đã tích cực, sôi nổi hưởng ứng “Tuần lễ áo dài” từ ngày 2/3/2020 đến ngày 8/3/2020 và mặc đồng loạt trong ngày 6/3/2020.&nbsp;</p>
-
-<p><em>Một số hình ảnh của các cô giáo và nữ sinh Trường THPT Huỳnh Thúc Kháng trong "Tuần lễ Áo dài":</em></p>
-
-<p><img alt="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 2" src="https://icdn.dantri.com.vn/thumb_w/640/2020/03/08/ao-2-1583661111944.jpg" title="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 2" /></p>
-
-<p>Nhấn để phóng to ảnh</p>
-
-<p><img alt="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 3" src="https://icdn.dantri.com.vn/thumb_w/640/2020/03/08/ao-18-1583661113310.jpg" title="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 3" /></p>
-
-<p>Nhấn để phóng to ảnh</p>
-
-<p><img alt="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 4" src="https://icdn.dantri.com.vn/thumb_w/640/2020/03/08/ao-3-1583661113167.jpg" title="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 4" /></p>
-
-<p>Nhấn để phóng to ảnh</p>
-
-<p><img alt="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 5" src="https://icdn.dantri.com.vn/thumb_w/640/2020/03/08/ao-5-1583661113125.jpg" title="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 5" /></p>
-
-<p>Nhấn để phóng to ảnh</p>
-
-<p><img alt="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 6" src="https://icdn.dantri.com.vn/thumb_w/640/2020/03/08/ao-7-1583661112729.jpg" title="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 6" /></p>
-
-<p>Nhấn để phóng to ảnh</p>
-
-<p><img alt="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 7" src="https://icdn.dantri.com.vn/thumb_w/640/2020/03/08/ao-15-1583661114090.jpg" title="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 7" /></p>
-
-<p>Nhấn để phóng to ảnh</p>
-
-<p><img alt="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 8" src="https://icdn.dantri.com.vn/thumb_w/640/2020/03/08/ao-13-1583661113841.jpg" title="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 8" /></p>
-
-<p>Nhấn để phóng to ảnh</p>
-
-<p><img alt="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 9" src="https://icdn.dantri.com.vn/thumb_w/640/2020/03/08/ao-8-1583661114047.jpg" title="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 9" /></p>
-
-<p>Nhấn để phóng to ảnh</p>
-
-<p>Hưởng ứng tuần lễ áo dài nói trên, tại Trường Quốc học Vinh - THPT Huỳnh Thúc Kháng, các cô giáo và các em nữ sinh đã thực hiện và duy trì việc mặc áo dài vào các ngày lễ và vào sáng thứ 2 hàng tuần trong suốt 15 năm qua.</p>
-
-<p><img alt="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 10" src="https://icdn.dantri.com.vn/thumb_w/640/2020/03/08/ao-14-1583661113128.jpg" title="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 10" /></p>
-
-<p>Nhấn để phóng to ảnh</p>
-
-<p><img alt="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 11" src="https://icdn.dantri.com.vn/thumb_w/640/2020/03/08/ao-11-1583661114186.jpg" title="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 11" /></p>
-
-<p>Nhấn để phóng to ảnh</p>
-
-<p><img alt="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 12" src="https://icdn.dantri.com.vn/thumb_w/640/2020/03/08/ao-4-1583661114156.jpg" title="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 12" /></p>
-
-<p>Nhấn để phóng to ảnh</p>
-
-<p><img alt="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 13" src="https://icdn.dantri.com.vn/thumb_w/640/2020/03/08/ao-6-1583661114152.jpg" title="Áo dài học đường - Dấu ấn khó phai trong “Tuần lễ Áo dài” - 13" /></p>
-
-<p>Nhấn để phóng to ảnh</p>
-
-<p>Chính vì thế, cô và trò Trường THPT Huỳnh Thúc Kháng đã rất tích cực, sôi nổi hưởng ứng “Tuần lễ áo dài” từ ngày 2/3/2020 đến ngày 8/3/2020 và mặc đồng loạt trong ngày 6/3/2020.</p>','2020-04-28 00:00:00','2020-05-31 06:15:59');
 
 
 CREATE TABLE `tbl_order` (
-  `orderid` int NOT NULL,
+  `orderid` int NOT NULL AUTO_INCREMENT,
   `cusid` int NOT NULL,
   `cusname` varchar(70) NOT NULL,
   `product_id` int NOT NULL,
@@ -24457,13 +24074,18 @@ CREATE TABLE `tbl_order` (
   `cusphone` varchar(11) NOT NULL,
   `status` varchar(20) NOT NULL,
   `note` text NOT NULL,
-  `order_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `order_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`orderid`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ('9','11','Duong Hoang Van','2','Áo dài truyền thống','94191814_648215732424264_3752553548315885568_n125560.jpg','1','500000','20000','520000','0912345678','đang xử lý','test','2020-09-21 17:51:19');
+
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ('10','12','Ngo Nguyen Huynh Ngan','2','Áo dài truyền thống','94191814_648215732424264_3752553548315885568_n125560.jpg','1','500000','500000','1000000','0909677308','đang xử lý','Yêu bà kkk','2020-09-21 18:06:53');
 
 
 CREATE TABLE `tbl_product` (
-  `product_id` int NOT NULL,
+  `product_id` int NOT NULL AUTO_INCREMENT,
   `category_id` int NOT NULL,
   `product_Name` varchar(100) NOT NULL,
   `product_desc` text NOT NULL,
@@ -24474,265 +24096,184 @@ CREATE TABLE `tbl_product` (
   `product_image` varchar(255) NOT NULL,
   `meta_keyword` varchar(100) NOT NULL,
   `meta_desc` text NOT NULL,
-  `meta_slug` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `meta_slug` text NOT NULL,
+  PRIMARY KEY (`product_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug) VALUES ('4','1','Áo dài ngọc bich','a','lụa','100000','0','1','408d1dae0722ff7ca63322.png','','','');
-
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug) VALUES ('7','5','Áo Lụa','a','Cái lol','100000','1','3','408d1dae0722ff7ca63371.png','','','');
-
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug) VALUES ('8','2','Áo Dài Cô Ba','<p>a</p>','vải nhung','500000','1','5','hoa-931.jpg','Áo Dài Cô Ba','Áo Dài Cô Ba','ao-dai-co-ba1');
-
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug) VALUES ('9','6','Aó cánh hoa lan','<p>Aó cánh hoa lan</p>','Coton','150000','1','6','hoa-170.jpg','Aó cánh hoa lan','Aó cánh hoa lan','ao-canh-hoa-lan0');
-
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug) VALUES ('10','4','Aó hoa sim tím','<p>a</p>','Lụa','100000','1','5','hoa-278.jpg','Aó hoa sim tím','Aó hoa sim tím','ao-hoa-sim-tim20');
-
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug) VALUES ('13','6','Vải áo dài kết hoa','<p><img alt="Vai Ao Dai Mau Vang Nhat Dinh Hoa Tre Trung" src="http://vaiaodaimymy.com/wp-content/uploads/2019/08/vai-ao-dai-mau-vang-nhat-dinh-hoa-tre-trung.jpg" style="height:916px; width:651px" /></p>
-
-<p>Vai Ao Dai Mau Vang Nhat Dinh Hoa Tre Trung</p>
-
-<p>&nbsp;</p>','Lụa Nhật','500000','1','4','hoa-1329.jpg','Vải áo dài kết hoa','Vải áo dài kết hoa','vai-ao-dai-ket-hoa14');
-
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug) VALUES ('17','6','Vải áo dài Hoa Mẫu Đơn','<ul>
-	<li>•&nbsp;<strong>Lụa Hàn Quốc</strong>: Vải mềm, mịn, co dãn tốt bề ngang, màu tối dễ bị rạn khi may.</li>
-	<li>•&nbsp;<strong>Lụa Tằm Thái</strong>: Vải mềm, mát, rủ, không co dãn, màu tối dễ bị rạn khi may.</li>
-	<li>•&nbsp;<strong>Lụa Garnet</strong>: Vải mềm, rủ, co dãn thoải mái khi mặc, hạn chế rạn vải khi may.</li>
-	<li>•&nbsp;<strong>Lụa Thái Tuấn</strong>: Vải lụa mềm, mịn, mát, rủ, có độ dãn, dễ may, cực ít rạn, may kỹ gần như không rạn. (Mẫu mã được thiết kế tự do và in trên nền vải lụa Hồng Nhung Thái Tuấn, tránh hiểu lầm với sản phẩm được thiết kế bởi Thái Tuấn).</li>
-</ul>
-
-<p>&nbsp;</p>','Lụa Siêu Mềm','490000','1','4','hoa-142.jpg','Vải áo dài Hoa Mẫu Đơn','Vải áo dài Hoa Mẫu Đơn','vai-ao-dai-hoa-mau-don19');
-
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug) VALUES ('23','6','Vải áo dài Cúc Hoạ Mi','<table>
-	<tbody>
-		<tr>
-			<td colspan="2">ÁO hoa màu vàng</td>
-		</tr>
-	</tbody>
-</table>
-
-<p>&nbsp;</p>','Lụa','200000','1','6','hoa-497.jpg','ÁO hoa màu vàng','ÁO hoa màu vàng','vai-ao-dai-cuc-hoa-mi2');
-
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug) VALUES ('31','6','Áo dài bông cúc','<p>Bông cúc<img alt="" src="http://localhost/banhanglaravel/public/storage/uploads/cong30_1588560894.jpg" style="height:1280px; width:894px" /></p>','Lụa Latin','400000','1','7','hoa-11-280x28060.jpg','bông cúc','bông cúc','ao-dai-bong-cuc18');
-
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug) VALUES ('32','6','Áo dài Mùa Lá Rụng','<p>Áo dài Mùa Lá Rụng</p>','lụa nhật','500000','700000','6','hoa-8-768x111553.jpg','Áo dài Mùa Lá Rụng','Áo dài Mùa Lá Rụng','ao-dai-mua-la-rung0');
-
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug) VALUES ('33','6','Áo dài màu xanh','<p>Áo dài màu xanh</p>','Lụa Latin','450000','500000','5','94227546_648209359091568_5696245787009220608_o94.jpg','Áo dài màu xanh','Áo dài màu xanh','ao-dai-mau-xanh15');
-
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug) VALUES ('42','6','Áo dài hoa lan','<p>Áo dài hoa lan</p>','Lụa Nhật','500000','600000','6','94198150_648209495758221_2984203570011701248_o15.jpg','Áo dài hoa lan','Áo dài hoa lan','ao-dai-hoa-lan12');
-
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug) VALUES ('4','1','Áo dài ngọc bich','a','lụa','100000','0','1','408d1dae0722ff7ca63322.png','','','');
-
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug) VALUES ('7','5','Áo Lụa','a','Cái lol','100000','1','3','408d1dae0722ff7ca63371.png','','','');
-
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug) VALUES ('8','2','Áo Dài Cô Ba','<p>a</p>','vải nhung','500000','1','5','hoa-931.jpg','Áo Dài Cô Ba','Áo Dài Cô Ba','ao-dai-co-ba1');
-
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug) VALUES ('9','6','Aó cánh hoa lan','<p>Aó cánh hoa lan</p>','Coton','150000','1','6','hoa-170.jpg','Aó cánh hoa lan','Aó cánh hoa lan','ao-canh-hoa-lan0');
-
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug) VALUES ('10','4','Aó hoa sim tím','<p>a</p>','Lụa','100000','1','5','hoa-278.jpg','Aó hoa sim tím','Aó hoa sim tím','ao-hoa-sim-tim20');
-
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug) VALUES ('13','6','Vải áo dài kết hoa','<p><img alt="Vai Ao Dai Mau Vang Nhat Dinh Hoa Tre Trung" src="http://vaiaodaimymy.com/wp-content/uploads/2019/08/vai-ao-dai-mau-vang-nhat-dinh-hoa-tre-trung.jpg" style="height:916px; width:651px" /></p>
-
-<p>Vai Ao Dai Mau Vang Nhat Dinh Hoa Tre Trung</p>
-
-<p>&nbsp;</p>','Lụa Nhật','500000','1','4','hoa-1329.jpg','Vải áo dài kết hoa','Vải áo dài kết hoa','vai-ao-dai-ket-hoa14');
-
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug) VALUES ('17','6','Vải áo dài Hoa Mẫu Đơn','<ul>
-	<li>•&nbsp;<strong>Lụa Hàn Quốc</strong>: Vải mềm, mịn, co dãn tốt bề ngang, màu tối dễ bị rạn khi may.</li>
-	<li>•&nbsp;<strong>Lụa Tằm Thái</strong>: Vải mềm, mát, rủ, không co dãn, màu tối dễ bị rạn khi may.</li>
-	<li>•&nbsp;<strong>Lụa Garnet</strong>: Vải mềm, rủ, co dãn thoải mái khi mặc, hạn chế rạn vải khi may.</li>
-	<li>•&nbsp;<strong>Lụa Thái Tuấn</strong>: Vải lụa mềm, mịn, mát, rủ, có độ dãn, dễ may, cực ít rạn, may kỹ gần như không rạn. (Mẫu mã được thiết kế tự do và in trên nền vải lụa Hồng Nhung Thái Tuấn, tránh hiểu lầm với sản phẩm được thiết kế bởi Thái Tuấn).</li>
-</ul>
-
-<p>&nbsp;</p>','Lụa Siêu Mềm','490000','1','4','hoa-142.jpg','Vải áo dài Hoa Mẫu Đơn','Vải áo dài Hoa Mẫu Đơn','vai-ao-dai-hoa-mau-don19');
-
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug) VALUES ('23','6','Vải áo dài Cúc Hoạ Mi','<table>
-	<tbody>
-		<tr>
-			<td colspan="2">ÁO hoa màu vàng</td>
-		</tr>
-	</tbody>
-</table>
-
-<p>&nbsp;</p>','Lụa','200000','1','6','hoa-497.jpg','ÁO hoa màu vàng','ÁO hoa màu vàng','vai-ao-dai-cuc-hoa-mi2');
-
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug) VALUES ('31','6','Áo dài bông cúc','<p>Bông cúc<img alt="" src="http://localhost/banhanglaravel/public/storage/uploads/cong30_1588560894.jpg" style="height:1280px; width:894px" /></p>','Lụa Latin','400000','1','7','hoa-11-280x28060.jpg','bông cúc','bông cúc','ao-dai-bong-cuc18');
-
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug) VALUES ('32','6','Áo dài Mùa Lá Rụng','<p>Áo dài Mùa Lá Rụng</p>','lụa nhật','500000','700000','6','hoa-8-768x111553.jpg','Áo dài Mùa Lá Rụng','Áo dài Mùa Lá Rụng','ao-dai-mua-la-rung0');
-
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug) VALUES ('33','6','Áo dài màu xanh','<p>Áo dài màu xanh</p>','Lụa Latin','450000','500000','5','94227546_648209359091568_5696245787009220608_o94.jpg','Áo dài màu xanh','Áo dài màu xanh','ao-dai-mau-xanh15');
-
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug) VALUES ('42','6','Áo dài hoa lan','<p>Áo dài hoa lan</p>','Lụa Nhật','500000','600000','6','94198150_648209495758221_2984203570011701248_o15.jpg','Áo dài hoa lan','Áo dài hoa lan','ao-dai-hoa-lan12');
+INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug) VALUES ('2','1','Áo dài truyền thống','<p>test</p>','lụa cao cấp','500000','1','1','94191814_648215732424264_3752553548315885568_n125560.jpg','lụa cao cấp lụa cao cấp','lụa cao cấp lụa cao cấp','ao-dai-truyen-thong21336');
 
 
 CREATE TABLE `tbl_review` (
-  `Rid` int NOT NULL,
+  `Rid` int NOT NULL AUTO_INCREMENT,
   `Rname` varchar(70) NOT NULL,
   `Remail` varchar(70) NOT NULL,
   `Rcomment` text NOT NULL,
   `status` int NOT NULL,
   `meta_slug` varchar(255) NOT NULL,
   `updated_at` datetime NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`Rid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
 
 CREATE TABLE `tbl_slider` (
-  `id` bigint unsigned NOT NULL,
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `img` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` bigint NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
 
 CREATE TABLE `tbl_templatemail` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `label` varchar(100) NOT NULL,
   `template` text NOT NULL,
-  `status` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `status` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
-INSERT INTO tbl_templatemail (id, label, template, status) VALUES ('1','mailab','<p>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;</p>
-
-<table cellpadding="0" cellspacing="0" style="width:760px">
+INSERT INTO tbl_templatemail (id, label, template, status) VALUES ('1','Đơn Hàng Từ Vải Áo Dài Xinh Sunny','<table border="1" cellpadding="0" cellspacing="0" style="width:900px">
 	<tbody>
 		<tr>
 			<td>
-			<table cellpadding="0" cellspacing="0" style="width:700px">
+			<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
 				<tbody>
 					<tr>
-						<td>
-						<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
-							<tbody>
-								<tr>
-									<td colspan="3" style="height:20px">&nbsp;</td>
-								</tr>
-								<tr>
-									<td style="width:20px">&nbsp;</td>
-									<td>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
-									<p><strong>Cảm ơn Ngân xinh đẹp</strong></p>
-									&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
-
-									<p>Thank you for ordering from Beer Fridge!</p>
-									&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
-
-									<p><strong>PRODUCTS ORDERED #{order_id} </strong>({order_date})</p>
-									&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
-
-									<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
-										<tbody>
-											<tr>
-												<td style="background-color:#1ab7e2; width:55%">Item</td>
-												<td style="background-color:#1ab7e2; width:20%">Qty</td>
-												<td style="background-color:#1ab7e2; width:25%">Subtotal</td>
-											</tr>
-											<!--{product_loop_start}-->
-											<tr>
-												<td style="border-bottom:1px solid #c3c3c3">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
-												<div>{product_name}{without_vat}&nbsp;</div>
-												&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{product_accessory} &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;</td>
-												<td style="border-bottom:1px solid #c3c3c3; vertical-align:top">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
-												<div>{product_quantity}</div>
-												&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;</td>
-												<td style="border-bottom:1px solid #c3c3c3; vertical-align:top">{product_total_price}</td>
-											</tr>
-											<!--{product_loop_end}-->
-											<tr>
-												<td>&nbsp;</td>
-												<td>Total incl. VAT:</td>
-												<td>{product_subtotal}</td>
-											</tr>
-											<!--{if discount}-->
-											<tr>
-												<td>&nbsp;</td>
-												<td>Discount:</td>
-												<td>{discount}</td>
-											</tr>
-											<!--{discount end if}-->
-											<tr>
-												<td>&nbsp;</td>
-												<td>{shipping_lbl}</td>
-												<td>{shipping}</td>
-											</tr>
-											<tr>
-												<td>&nbsp;</td>
-												<td>Grand Total:</td>
-												<td><strong>{order_total}</strong></td>
-											</tr>
-										</tbody>
-									</table>
-									&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
-
-									<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
-										<tbody>
-											<tr>
-												<td style="vertical-align:top; width:50%">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
-												<p><strong>Address information: </strong></p>
-												&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
-
-												<div>{billing_address}</div>
-												&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;</td>
-												<td style="vertical-align:top; width:50%">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
-												<p><strong>Order details:</strong></p>
-												&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
-
-												<p>{payment_lbl}:{payment_method}</p>
-												&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
-
-												<p>Payment status:{order_payment_status}</p>
-												&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
-
-												<p>{expected_delivery_time_lbl}{expected_delivery_time}</p>
-												&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
-
-												<p>{shipping_method}:{shipping_rate_name}</p>
-												&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<!--{if track_no}--> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
-
-												<p>{tracking_url_lbl}{tracking_url}</p>
-												&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<!--{track_no end if}--> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;</td>
-											</tr>
-										</tbody>
-									</table>
-									&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
-
-									<p>&nbsp;</p>
-									&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
-
-									<p>To see the details of your order please {order_detail_link}.</p>
-									&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
-
-									<hr /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
-									<p>If you have any questions about your account or any other matter, please feel free to contact us at cheers@beerfridge.vn</p>
-									&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
-
-									<p>Regards,<br />
-									<strong>Beer Fridge</strong></p>
-									&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;</td>
-									<td style="width:20px">&nbsp;</td>
-								</tr>
-								<tr>
-									<td colspan="3" style="height:10px">&nbsp;</td>
-								</tr>
-							</tbody>
-						</table>
-						&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;</td>
+						<td colspan="3" style="height:10px">&nbsp;</td>
+					</tr>
+					<tr>
+						<td style="width:20px">&nbsp;</td>
+						<td>&nbsp;</td>
+						<td style="width:20px">&nbsp;</td>
 					</tr>
 				</tbody>
 			</table>
-			&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;</td>
+
+			<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
+				<tbody>
+					<tr>
+						<td colspan="3" style="height:20px">&nbsp;</td>
+					</tr>
+					<tr>
+						<td style="width:20px">&nbsp;</td>
+						<td>
+						<p><strong>Cảm ơn bạn đã đặt hàng!</strong></p>
+
+						<p>Cảm ơn bạn đã đặt hàng từ Vải Áo Dài Xinh Sunny</p>
+
+						<p>&nbsp;</p>
+
+						<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
+							<tbody>
+								<tr>
+									<td style="vertical-align:top">
+									<p><strong>Thông tin đơn hàng</strong></p>
+
+									<div>
+									<p>{order_date}</p>
+
+									<p>&nbsp;</p>
+
+									<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
+										<tbody>
+											<tr>
+												<td>Mã đơn hàng:</td>
+												<td>{order_id}</td>
+											</tr>
+											<!--{shipping_address_start}-->
+											<tr>
+												<td>Tên khách hàng:</td>
+												<td>{cus_name}</td>
+											</tr>
+											<tr>
+												<td>Điện thoại liên hệ:</td>
+												<td>{cusphone}</td>
+											</tr>
+											<tr>
+												<td>Địa chỉ giao hàng:</td>
+												<td>{address}</td>
+											</tr>
+											<!--{shipping_address_end}-->
+											<tr>
+												<td>Ngày đặt:</td>
+												<td>{order_date}</td>
+											</tr>
+											<tr>
+												<td>Trạng thái:</td>
+												<td>{order_status}</td>
+											</tr>
+											<!--{order_tracking_lalamove}-->
+										</tbody>
+									</table>
+									</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<p><strong>Chi tiết đơn hàng</strong></p>
+
+						<table border="1" cellpadding="0" cellspacing="0" style="width:100%">
+							<tbody>
+								<tr>
+									<td style="text-align:center">Tên sản phẩm</td>
+									<td style="text-align:center">Đơn giá</td>
+									<td style="text-align:center">Số lượng</td>
+								</tr>
+								<!--{product_loop_start}-->
+								<tr>
+									<td>
+									<div>{product_name}</div>
+									</td>
+									<td style="text-align:center">{product_price}</td>
+									<td style="text-align:center">{product_quantity}</td>
+								</tr>
+								<!--{product_loop_end}-->
+							</tbody>
+						</table>
+
+						<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
+							<tbody><!--{if discount}--><!--{discount end if}-->
+								<tr>
+									<td colspan="3">Phí vận chuyển</td>
+									<td>{fee_shipping}</td>
+								</tr>
+								<!--{if vat}--><!--{vat end if}-->
+								<tr>
+									<td colspan="3"><strong>Tổng cộng</strong></td>
+									<td><strong>{order_total}</strong></td>
+								</tr>
+							</tbody>
+						</table>
+
+						<p><strong>Ghi chú của khách hàng:</strong></p>
+
+						<p>{cus_note}</p>
+
+						<p>&nbsp;</p>
+						</td>
+						<td style="width:20px">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="3" style="height:10px">&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table cellpadding="0" cellspacing="0" style="width:100%">
+				<tbody>
+					<tr>
+						<td style="background-color:#f7f7f7; height:25px">&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
 		</tr>
 	</tbody>
 </table>','Hiện');
-
-
-CREATE TABLE `tbl_configmail` (
-  `id` int NOT NULL,
-  `Email` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
-
-INSERT INTO tbl_configmail (id, Email) VALUES ('1','sunnyngo7662@gmail.com');

@@ -20,13 +20,13 @@
                 </tr>
               </thead>
               <tbody>
-               @foreach ($infocustomerorder as $product) 
+               @foreach ($infocustomerorder as $info)
                     <tr>
-                  <td style="text-align:center">  {{$product->customer->cusname}}</td> {{-- họ tên khách  --}}
-                  <td style="text-align:center">  {{$product->cusphone}}</td> {{-- sđt --}}
-                  <td style="text-align:center">  {{$product->customer->cusadd}}</td> {{--địa chỉ  --}}
-                  <td style="text-align:center">  {{$product->note}}</td> {{--ghi chú --}}
-                  <td style="text-align:center">  {{Carbon::createFromFormat('Y-m-d H:i:s', $product->order_date)->format('d/m/yy | H:i:s')}}</td>
+                  <td style="text-align:center">  {{$info->customer->cusname}}</td> {{-- họ tên khách  --}}
+                  <td style="text-align:center">  {{$info->cusphone}}</td> {{-- sđt --}}
+                  <td style="text-align:center">  {{$info->customer->cusadd}}</td> {{--địa chỉ  --}}
+                  <td style="text-align:center">  {{$info->note}}</td> {{--ghi chú --}}
+                  <td style="text-align:center">  {{Carbon::createFromFormat('Y-m-d H:i:s', $info->order_date)->format('d/m/yy | H:i:s')}}</td>
                 </tr>
                 @endforeach
               </tbody>
@@ -41,9 +41,9 @@
       <div class="table-responsive">
         <table class="table table-striped b-t b-light table-hover" style="border:1px solid #eae6e6">
           <thead style="border:1px solid #eae6e6">
-            <tr > 
-              <th style="text-align:center">Sản Phẩm</th> 
-              <th style="text-align:center">Hình Ảnh</th> 
+            <tr >
+              <th style="text-align:center">Sản Phẩm</th>
+              <th style="text-align:center">Hình Ảnh</th>
               <th style="text-align:center">Chất liệu</th>
              <th style="text-align:center">Số Lượng</th>
              <th style="text-align:center">Đơn giá</th>
@@ -53,9 +53,9 @@
             </tr>
           </thead>
           <tbody>
-           @foreach ($infocustomerorder as $product) 
+           @foreach ($infocustomerorder as $product)
             <tr>
-              
+
               <td  style="text-align:center">{{$product->productname}}</td>  {{--sản phẩm --}}
               <td style="text-align:center"><img src="../public/upload/{{$product->image}}"width=80 height=110 alt=""></td>{{--  hình--}}
               <td  style="text-align:center">{{$product->productorder->product_material}}</td>  {{--chất liệu --}}
@@ -64,10 +64,10 @@
               <td style="text-align:center">  {{number_format($product->fee_ship)}}.VNĐ</td> {{--  tổng --}}
               <td style="text-align:center">  {{number_format($product->total)}}.VNĐ</td> {{--  tổng --}}
               @if ($product->status==1)
-              <td style="text-align:center;background:#bbecc457"> 
+              <td style="text-align:center;background:#bbecc457">
                   <a href="{{ URL::to('/update-status-1/'.$product->orderid) }}" style="color:green;">Đã Giao Xong</a>
               @else
-              <td style="text-align:center;background:#f0bcb470;"> 
+              <td style="text-align:center;background:#f0bcb470;">
                   <a href="{{ URL::to('/update-status-0/'.$product->orderid) }}" style="color:red">Đang Xử Lý</a>
               @endif</td> {{-- trạng thái --}}
             </tr>

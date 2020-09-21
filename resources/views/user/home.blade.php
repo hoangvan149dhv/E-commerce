@@ -1,4 +1,4 @@
-@extends('home_page') {{-- "triệu gọi trang layout như include" LƯU Ý:TRONG LARAVEL ĐẶT FILE PHẢI CÓ .BLADE.PHP --}} {{-- GỌI folder routes/web.php dòng 15 --}} 
+@extends('home_page') {{-- "triệu gọi trang layout như include" LƯU Ý:TRONG LARAVEL ĐẶT FILE PHẢI CÓ .BLADE.PHP --}} {{-- GỌI folder routes/web.php dòng 15 --}}
 @Section('content') {{--Đặt 'content bên trang welcome.blade.php dòng 355' --}}
 <div class="features_items">
     <!--features_items-->
@@ -31,13 +31,13 @@
 											?>
                             <a href="{{ URL::to('/chi-tiet/'.$product->meta_slug) }}" title="Chi tiết">
 												@if ($product->product_price_promotion==1||$product->product_price_promotion==0)
-												
+
 												@else
 													<span class="stick-promotion">-{{ round($sale) }}%</span>
 												@endif
 											{{-- //phân trăm sale sản phẩm --}}
 												<img  class="img-fluid" src="public/upload/{{$product->product_image}}" />
-                                            <h5 id="title">{{$product->product_Name}}</h5></a> {{-- //phân trăm sale sản phẩm --}} 
+                                            <h5 id="title">{{$product->product_Name}}</h5></a> {{-- //phân trăm sale sản phẩm --}}
                                             <div class="product_price">
                                             @if ($product->product_price_promotion==1||$product->product_price_promotion==0)
                             <p></p>
@@ -62,50 +62,30 @@
 <div class="page" style="text-align:center">
     {{-- CÂU LỆNH PHÂN TRANG --}} {!! $all_productt->links() !!}
 </div>
-    <?php
-    // echo "<pre>";
-    // print_r($slider);
-    // echo"</pre>";
-    ?>
-@endsection 
-@section('script') {{--
-<script>
-    //AJAX
-    $(document).ready(function() {
-        $('#option').change(function() {
-            var idOption = $(this).val(); //val là value lấy giá trị
-            // alert (idOption);
-            $.get("ajax/product_price/" + idOption, function(data) { // truyền URL ajax/product_price/ idOption, QUA BÊN ROUTE
-                $('#product').html(data);
-            })
-        });
-    });
-</script> --}}
+@endsection
+@section('script')
 <script>
     $(document).ready(function() {
         $('.add-to-cart').click(function() {
             //ID CỦA  BUTTON
             var id = $(this).data('id_product');
-            var cart_id = $('.cart_product_id_' + id).val(); 
-            var cart_name = $('.cart_product_name_' + id).val(); 
+            var cart_id = $('.cart_product_id_' + id).val();
+            var cart_name = $('.cart_product_name_' + id).val();
             var cart_image = $('.cart_product_image_' + id).val();
             var cart_price = $('.cart_product_price_' + id).val();
             var cart_qty = $('.cart_product_qty_' + id).val();
-            var _token = $('input[name="_token"]').val(); 
+            var _token = $('input[name="_token"]').val();
             $.ajax({
-                url: '{{url('/add-cart-ajax')}}', 
+                url: '{{url('/add-cart-ajax')}}',
                 method: 'POST',
                 data: {
-                    cart_id: cart_id,  
+                    cart_id: cart_id,
                     cart_name:cart_name,
-                    cart_image:cart_image, 
+                    cart_image:cart_image,
                     cart_price:cart_price,
-                    cart_qty:cart_qty, 
-                    _token:_token 
+                    cart_qty:cart_qty,
+                    _token:_token
                 },
-                // success:function(data){
-                //     alert(data);
-                // }
                 success:function(){setTimeout(() => {
                     swal({
                                 title: "Đã thêm sản phẩm vào giỏ hàng",
@@ -147,7 +127,7 @@
                 <div class="col-sm-12">
                     <img src="public/upload/{{$slider_img->img}}" class="img-fluid" alt="" />
                 </div>
-            </div> 
+            </div>
         @endforeach
 @endsection
 {{-- @section('slide-right-left')

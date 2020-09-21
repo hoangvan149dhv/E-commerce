@@ -339,3 +339,7 @@ Route::get('/delete-layout-template/{id}','sendMailController@delete_template_ma
 Route::get('/template-mail','sendMailController@templateMail');
 //SEND MAIL
 Route::post('/send','sendMailController@sendMail');
+
+
+//
+Route::get('/testmail','sendMailController@test');

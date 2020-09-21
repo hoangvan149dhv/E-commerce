@@ -10,14 +10,19 @@
                     <div class="position-center">
                         <form action="{{ URL::to('/save-config-mail') }}" method="POST">
                        {{ csrf_field() }}  {{-- CÂU LỆNH token BẢO MẬT --}}
+                            @foreach ($configmail as $item)
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Địa chỉ Email</label>
-                                @foreach ($configmail as $item)
                                     <input value="{{ $item->Email }}"  data-validation="length" data-validation-length="5-120" data-validation-error-msg='vui lòng điền 5- 120 kí tự' type="email" class="form-control" name="Email"id="exampleInputEmail1" placeholder="Tên Sản Phẩm">
-                                @endforeach
                                 <input type="hidden" name="ID" value="1">
                             </div>
-                            <div class="checkbox"> 
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Tên mail để gửi</label>
+                                    <input value="{{ $item->name_email }}"  data-validation="length" data-validation-length="1-120" data-validation-error-msg='vui lòng điền 5- 120 kí tự' type="text" class="form-control" name="name"id="exampleInputEmail1" placeholder="Tên Sản Phẩm">
+
+                                </div>
+                            @endforeach
+                            <div class="checkbox">
                             </div>
                             <button type="submit" name="submit"  class="btn btn-info-mail">Lưu</button>
                         </form>
@@ -39,7 +44,7 @@
                     method : 'POST',
                     data:{ Email:Email,_token:_token },
                     success:function(data){
-                        alert('Thêm thành công')l
+                        alert('Thêm thành công');
                         var s = $('#exampleInputEmail1').val(data);
                     }
                 });

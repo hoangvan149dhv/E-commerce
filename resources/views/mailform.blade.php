@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -9,7 +9,7 @@
 <body>
 <div class="about-banner">
 </div>
-<div class="contact-background"> 
+<div class="contact-background">
 <div class="contactussec">
 <div class="container">
 <div class="col-md-4">

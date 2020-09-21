@@ -245,7 +245,7 @@
                         <li><a href="{{URL::to('/mail-config')}}">Cấu hình Email</a></li>
                         <li><a href="{{URL::to('/template-mail-config')}}">Tạo giao diện Email</a></li>
                         <li><a href="{{URL::to('/all-template-mail')}}">Danh sách Email</a></li>
-                        <li><a href="{{URL::to('/template-mail')}}">Giao diện mail được sử dụng</a></li>
+                        <li><a href="{{URL::to('/template-mail')}}">Giao diện mail đang sử dụng</a></li>
                     </ul>
                 </li>
             </ul>
@@ -258,8 +258,6 @@
 <!--main content start-->
 <section id="main-content">
 	<section class="wrapper">
-
-
             @yield('admin_content')
             @yield('content')
             @yield('content-layout')
