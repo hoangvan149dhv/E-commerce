@@ -24201,9 +24201,7 @@ CREATE TABLE `tbl_info_contact` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
-INSERT INTO tbl_info_contact (id_Info, google_map, info_contact_add, info_contact_phone, info_contact_mail) VALUES ('1','','128A Lê Sao, Phường Phú Thạnh, Quận Tân Phú','0909677308','hoangvan1491999@gmail.com');
-
-INSERT INTO tbl_info_contact (id_Info, google_map, info_contact_add, info_contact_phone, info_contact_mail) VALUES ('1','','128A Lê Sao, Phường Phú Thạnh, Quận Tân Phú','0909677308','hoangvan1491999@gmail.com');
+INSERT INTO tbl_info_contact (id_Info, google_map, info_contact_add, info_contact_phone, info_contact_mail) VALUES ('1','','120 Lê Sao','0909677308','vandaovipga1491999@gmail.com');
 
 
 CREATE TABLE `tbl_logo_website` (

@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class configMailModel extends Model
 {
-    protected $table =('tbl_configMail');
+    protected $table =('tbl_configmail');
     public $timestamps = false;
 }

@@ -14,7 +14,7 @@ class sendMailController extends AdminController
         $configmail = configMailModel::where('id',1)->get();
         return view('admin.mails.layoutconfig')->with('configmail',$configmail);
     }
-    
+
     //create template mail
     public function layoutcreatetemplatemail(){
         return view('admin.mails.addtemplatemail');
@@ -51,14 +51,14 @@ class sendMailController extends AdminController
         $checkstatus_pushlished = templateMailModel::where('status','Hiện')->get();
         $checkstatus_un_pushlished = templateMailModel::where('status','Ẩn')->get();
         if((int) count($checkstatus_pushlished) > 1 || isset($checkstatus_un_pushlished) ){
-            
+
             templateMailModel::where('status','Hiện')->update(['status'=>'Ẩn']);
         }
         if(isset($checkstatus_un_pushlished) ){
             $show_template = templateMailModel::where('id',$id)->update(['status'=>'Hiện']);
         }
 
-                   
+
         return back();
     }
 
@@ -75,9 +75,9 @@ class sendMailController extends AdminController
         $detailtemplateMail->status = $detailtemplateMail['status'];
             $detailtemplateMail->save();
             return back()->with('detailtemplateMail',$detailtemplateMail);
-    
+
     }
-    
+
     //delete template
     function delete_template_mail($id){
         templateMailModel::find($id)->delete();
@@ -104,15 +104,15 @@ class sendMailController extends AdminController
         $data = array('email' => $mailid, 'subject' => $subject);
                     //layout message
         view()->share('template',$template);
-        Mail::send('mails.mail', $data, 
+        Mail::send('mails.mail', $data,
 
         function ($message) use ($data, $value) {
 
         $message->from( 'vandaovipga1491999@gmail.com','Áo dài xinh');
         $message->to( $data['email']);
-        $message->subject($data['subject']); 
+        $message->subject($data['subject']);
         });
 
-        return redirect()->back()->with('message','Successfully Send Your Mail Id.');
+        return redirect()->back();
     }
 }

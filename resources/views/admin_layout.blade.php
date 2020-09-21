@@ -228,7 +228,6 @@
                     </a>
                     <ul class="sub">
                     <li><a href="{{URL::to('/add-delivery')}}">Thêm phí giao hàng</a></li>
-                    {{-- <li><a href="{{URL::to('/allCategoryProduct')}}">Liệt Kê Danh Mục Sản Phẩm</a></li> --}}
                     </ul>
                 <li class="sub-menu">
                     <a href="javascript:;">
