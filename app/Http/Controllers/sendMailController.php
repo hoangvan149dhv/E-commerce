@@ -108,7 +108,7 @@ class sendMailController extends AdminController
         //template mail display
         $file_template_mail = "mails.order_mail";
 
-        $ccname = "hoangvan149dhv@gmail.com";
+        $ccname = array("hoangvan149dhv@gmail.com","hoangvan1491999@gmail.com");
 
         $EmailName = configMailModel::select()->get();
         foreach ($EmailName as $key => $value) {
@@ -124,6 +124,7 @@ class sendMailController extends AdminController
         }
         $subject              = $item->label;
         $data = array('email_recipient' => $mailconfig_recipient, 'subject' => $subject, 'fromname' => $fromname, 'ccname' => $ccname);
+
         //layout message
         view()->share('item_detail_order',$item_detail_order);
         view()->share('template',$template);

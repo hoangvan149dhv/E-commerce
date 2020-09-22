@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Redirect;
 use App\CustomerorderModel;
 use App\Http\Controllers\sendMailController;
 use App\templateMailModel;
-// session_start();
 class Payment_orderController extends Controller
 {
     public function __construct(request $request){
@@ -66,9 +65,10 @@ class Payment_orderController extends Controller
                 $order_data['image']       = $value_content->options->images;
                 $order_data['cusphone']    = $request->phone;
 
-                if(empty($request->note)){
+                if(empty($request->note))
+                {
                     $order_data['note'] = "Null";
-                }else{
+                }else {
                     $order_data['note'] = $request->note; //GHI CHÚ
                 }
                 $order_data['status']="đang xử lý"; //TRẠNG THÁI XỬ LÝ

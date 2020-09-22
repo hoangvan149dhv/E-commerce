@@ -12,7 +12,7 @@
                         <?php
                         $message = Session::get('alert-success-product');
                             if($message){ ?>
-                            <div class="alert-success alert"><?php echo $message; ?></div> 
+                            <div class="alert-success alert"><?php echo $message; ?></div>
                           <?php }
                             Session::put('alert-success-product',null);
                     ?>
@@ -40,7 +40,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Hình Ảnh</label>
-                            <input type="file"  data-validation="mime size" data-validation-allowing="jpg, png, gif" 
+                            <input type="file"  data-validation="mime size" data-validation-allowing="jpg, png, gif"
                             data-validation-max-size="2M"class="form-control"
                             data-validation-error-msg="Vui lòng chọn file có đuôi .jpg, png, gif" class="form-control" name="image"id="exampleInputEmail1">
                         </div>
@@ -66,7 +66,7 @@
                                 <option value="0"><--Chọn Danh Mục Sản Phẩm--></option>
                                 @foreach ($category_product as $key=>$category_product)
                             <option value ="{{$category_product->category_id}}">{{$category_product->category_name}}</option>
-                                                                    {{-- category_id là sql ||$cate_product là ở bên troller khai báo 
+                                                                    {{-- category_id là sql ||$cate_product là ở bên troller khai báo
                                                                                                      category_name là sql --}}
                                 @endforeach
                             </select>
@@ -80,21 +80,42 @@
                                                             {{-- code_id là sql                 brandcode_name là sql --}}
                                 @endforeach
                             </select>
-                        </div>  
-                        <div class="checkbox"> 
+                        </div>
+                        <div class="checkbox">
                         </div>
                         <button type="submit" name="submit" class="btn btn-info">Thêm Sản Phẩm</button>
                         </form>
                     </div>
-
                 </div>
             </section>
     </div>
 </div>
+<div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 @section('script')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css" integrity="sha512-bYPO5jmStZ9WI2602V2zaivdAnbAhtfzmxnEGh9RwtlI00I9s8ulGe4oBa5XxiC6tCITJH/QG70jswBhbLkxPw==" crossorigin="anonymous" />
+
+
     <script>
+
         $(document).ready(function name(params) {
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
             $('#promotion').click(function () {
                 if($(this).is(":checked")){
                 $("#promotions").css('display','block');

@@ -10,273 +10,258 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-//đặt TÊN TRÊN URL
-//LÀM VIỆC VỚI  USER
-Route::get('/','HomeController@index'); // TRIỆU GỌI HÀM trong controller->homeController->gọi hàm index dòng 10
 
-Route::get('/trang-chu','HomeController@index'); // TRẢ VỀ trang chủ
+//////////////////////////--------------USER----------//////////////////////////////////////////////////////////////////
+Route::get('/','HomeController@index');
 
-//TIM-KIEM
-Route::post('tim-kiem','HomeController@search');\
+Route::get('/trang-chu','HomeController@index');
+
+//FIND PRODUCTS
+Route::post('tim-kiem','HomeController@search');
 Route::get('tim-kiem','HomeController@search_product');
-//////////////////////////---------DANH MỤC, THƯƠNG HIỆU////////////////////////////////////////////////////
-//LẤY RA SẢN PHẨM CỦA DANH MỤC ĐÓ
+///////////////////////////////---------BRANDS - CATEGORIES---------////////////////////////////////////////////////////
+
+//SHOW PRODUCT BY CATEGORIES
 Route::get('/Danh-muc-san-pham/{category_id}', 'CategoryProduct@show_category_home');
 Route::get('/Danh-muc-san-pham/{category_idd}', 'CategoryProduct@show_category');
 
-//LẤY RA SẢN PHẨM CỦA THƯƠNG HIỆU
+//SHOW PRODUCT BY BRANDS
 Route::get('/thuong-hieu/{brandcode_id}', 'BrandcodeProduct@show_brand_home');
-//////////////////////////------CHI TIẾT SP////////////////////////////////////////////////////
+//////////////////////////////////------DETAIL PRODUCT------////////////////////////////////////////////////////////////
 
-//CHI-TIẾT-SẢN-PHẨM
+//DETAIL PRODUCT
 Route::get('/chi-tiet/{meta_slug}','DetailsProductController@show_details','DetailsProductController@insertComment');
-// Route::get('/hien-thi-gio-hang/{product_id}','DetailsProductController@show_details_cart');
-//////////////////////////------bình luận////////////////////////////////////////////////////
-//bình-luận khách hàng
-// Route::post('/chi-tiet/{product_id}', 'reviewController@insertComment');
+
+//COMMENT DETAIL PRODUCT
 Route::post('/chi-tiet/{product_id}','DetailsProductController@insertComment');
 
 
 
-///////////////////----------GIỎ HÀNG-------/////////////////////////////////////////////////////////////////////////////////////
-//LƯU GIỎ HÀNG BẰNG AJAX
+///////////////////----------CART-------////////////////////////////////////////////////////////////////////////////////
+///
+//SAVE CART AJAX
 Route::post('/add-cart-ajax','CartController@save_cart_ajax');
-//LƯU SẢN PHẨM VÀO GIỎ HÀNG
+//SAVE CART
 Route::post('/them-gio-hang','CartController@save_product_cart');
 
-//show CART
+//SHOW CART
 Route::get('/hien-thi-gio-hang','CartController@show_cart');
 
-// delete cart
+// REMOVE CART
 Route::get('/delete/{rowId}','CartController@del_cart');
-// Route::get('/hien-thi-gio-hang/{rowId}','CartController@del_cartajax'); //DELETE CARRT AJJAX
-//DELETE ALL
+
+//REMOVE ALL CART
 Route::get('/delete-all/{rowId}','CartController@del_cart_all');
-//update_cart_quantity
+
+//UPDATE CART QUANTITY
 Route::post('/update_cart_quantity','CartController@update_Category_quantity');
-////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-//THANH TOÁN THÀNH CÔNG
+//ORDER SUCCESS
 Route::post('/thanh-toan-gio-hang','Payment_orderController@payment_order');
-Route::get('/thanh-toan-gio-hang','Payment_orderController@payment_order'); //BẮC BUỘC VÌ BẢO MẬT
-/////////////////////////////////////-------/////////////////////////////////////-------
-/////////////////////////////////////-------TIN TỨC-------/////////////////////////////////////////////////////////////////////
+Route::get('/thanh-toan-gio-hang','Payment_orderController@payment_order');
+
+
+/////////////////////////////////////-------NEWS-------/////////////////////////////////////////////////////////////////
+
 Route::get('/tin-tuc-chia-se','newsadminController@news_client');
-//chi tiết tin đó
+
+//DETAIL NEWS
 Route::get('/tin-tuc-chia-se/{primary_id}','newsadminController@newsdetails_client');
 
-//THONG-TIN-KHACH-HANG
+//DETAIL INFO ORDER CUSTOMER
 route::get('/thong-tin-khach-hang','InfocustomerController@info_customer');
 
-///hien-thi-thong-tin
+//DETAIL INFO ORDER CUSTOMER
 route::post('/hien-thi-thong-tin','InfocustomerController@info_customer_phone');
 route::get('/hien-thi-thong-tin','InfocustomerController@info_customer_phone');
 
 
-//LIÊN HỆ KHÁCH HÀNG
+//CONTACT CUSTOMER
 Route::get('/lien-he','contactController@Contact');
 Route::post('/lien-he','contactController@insertContact');
 
 
-/////////////////////////////////////-------KHUYẾN MÃI--------/////////////////////////////////////-------
+/////////////////////////////////////-------PROMOTION--------///////////////////////////////////////////////////////////
 Route::get('khuyen-mai', 'HomeController@promotion');
 
 
-/////////////////////////////////////////////////////////////////////
-// Route::get('/', 'sliderController@slider_user');
 
 
+////////////////////////////////////////----ADMIN---////////////////////////////////////////////////////////////////////
 
+Route::get('/admin-login', 'AdminController@login');
 
-
-
-
-
-
-
-
-
-
-
-
-////////////////////////////////////////----ADMIN---///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//   LÀM VIỆC VỚI ADMIN
-Route::get('/admin-login', 'AdminController@login'); //URL TRang admin-login
-
-Route::post('/admin-quanly', 'AdminController@check_login'); //quản lý bên controller dòng 15
+Route::post('/admin-quanly', 'AdminController@check_login');
 
 Route::get('/admin-quanly', 'AdminController@index');
-// Route::get('/admin-dashboard','AdminController@dashboard'); //BÊN CONTROLLER dòng 21
 
-//QUẢN LÝ ĐƠN HÀNG
+//ORDER MANAGEMENT
 Route::get('/admin-quanly-donhang', 'AdminController@order');
 
-//upload img
+//UPLOAD IMAGE
 Route::post('ckeditor/image_upload', 'AdminController@upload')->name('uploads');
-                                                        //name('uploads') là truyền tham số bên view admin_layout.blde.php dòng 278
-//ĐĂNG XUẤT
+
+//LOGOUT
 Route::get('/logout','AdminController@log_out');
 
 
-/////////////////////////////////////-------TRẠNG THÁI ĐƠN HÀNG------/////////////////////////////////////-------
-/////UPDATE- STATUS GIAO HÀNG (TRẠNG THÁI Chưa GIAO HAY ĐÃ GIAO)
+/////////////////////////////////////////-------ORDER------/////////////////////////////////////////////////////////////
+
+/////UPDATE- STATUS ORDER
 Route::get('/update-status-0/{order_id}','AdminController@update_status_0');
-//UPDATE- STATUS GIAO HÀNG (TRẠNG THÁI ĐÃ GIAO HAY CHƯA GIAO)
+//UPDATE- STATUS ORDER
 Route::get('/update-status-1/{order_id}','AdminController@update_status_1');
 
-//XÓA STATUS ĐÃ GIAO
+//DELETE STATUS ORDER COMPLETE
 Route::get('/delete-status-1/{order_id}','AdminController@delete_status_1');
-// XÓA NHIỀU ĐƠN HÀNG
+//REMOVE MUTI ORDERS
 Route::get('/destroy-order', 'AdminController@destroy_order');
-/////////////////////////////////////-------tìm kiếm đơn hàng--------/////////////////////////////////////-------
-//tìm kiếm đơn hàng khách đặt
-Route::post('/tim-kiem-admin', 'AdminController@search_order'); //quản lý bên controller dòng 15
-Route::get('/tim-kiem-admin', 'AdminController@search_product_order'); //quản lý bên controller dòng 15
 
-//TÌM KIẾM SẢN PHẨM
+//ORDERS FIND
+Route::post('/tim-kiem-admin', 'AdminController@search_order');
+Route::get('/tim-kiem-admin', 'AdminController@search_product_order');
+
+//PRODUCTS FIND
 Route::post('/tim-kiem-san-pham', 'AdminController@searchProduct');
 Route::get('/tim-kiem-san-pham', 'AdminController@searchProduct_item');
 
-//ĐƠN HÀNG CHƯA HOÀN THÀNH
+//UNFINIGH ORDERS
 Route::get('/order_not_complete', 'AdminController@order_not_complete');
 
-//ĐƠN HÀNG ĐÃ HOÀN THÀNH
+//ORDERS COMPLETE
 Route::get('/order_complete', 'AdminController@order_complete');
 
 
-/////////////////////////////////////-------DANH MỤC, THƯƠNG HIỆU-----/////////////////////////////////////-------
-//CATEGORY PRODUCTT
-//ADD
+////////////////////////////////////////-------CATEGORIES - BRANDS-----/////////////////////////////////////////////////
+
+//ADD CATEGORY
 Route::get('/addCategoryProduct', 'CategoryProduct@add_Category_Product');
-//SHOW
+//SHOW CATEGORY
 Route::get('/allCategoryProduct', 'CategoryProduct@all_Category_Product');
-    //SAVE-CATEGORY
+//SAVE CATEGORY
 Route::post('/save-category-product', 'CategoryProduct@save_Category_Product');
 
-//UPDATE
+//UPDATE CATEGORY
 Route::get('/edit-category-product/{category_product_idd}', 'CategoryProduct@edit_Category_Product');
-                                    //category_product_idd đặt gì cũng đc miễn sao có dấu {}
+
 Route::post('/update-category-product/{category_product_idd}', 'CategoryProduct@update_Category_Product');
-                                    //category_product_idd đặt gì cũng đc miễn sao có dấu {}
 
 //DELETE CATEGORY
 Route::get('/delete-category-product/{category_product_id}', 'CategoryProduct@delete_Category_Product');
-                                //category_product_id đặt gì cũng đc miễn sao có dấu {}
+
 //DESTROY CATEGOY
 Route::get('/destroy', 'CategoryProduct@destroy_Category_Product');
 
 
 
-///////////HOẠT ĐỘNG CỦA DANH MỤC
-//active (ID)
+//ACTIVE (ID)
 Route::get('/active/{category_product_idd}', 'CategoryProduct@active_Category_Product');
-                   //xem bài 14  $category_product_id lag lấy cái ID trong csdl
-//unactive (ID)
+
+//UNACTIVE (ID)
 Route::get('/unactive/{category_product_idd}', 'CategoryProduct@unactive_Category_Product');
-                     //xem bài 14  category_product_id là lấy cái ID trong csdl
 
 
-// CODE BRAND PRODUCT
 
-//add code brand
+//BRAND PRODUCT
+
+//add  BRAND
 Route::get('/add-Brand-code-Product', 'BrandcodeProduct@add_Brand_code_Product');
-//SHOW brand
+//SHOW BRAND
 Route::get('/all-Brand-code-Product', 'BrandcodeProduct@all_Brand_code_Product');
-// SAVE - BRAND-CODE (XÀI CHUNG HẾT)
+// SAVE BRAND
 Route::post('/save-brandcode-product', 'BrandcodeProduct@save_brandcode_product');
 
-//DELETE brand
+//DELETE BRAND
 route::get('/delete-brand-code-product/{brand_code_id}','BrandcodeProduct@delete_brand_code_product');
-                                    //brand_code_id cho là gì cũng đc
-//UPDATE BRAND-CODE
+
+//UPDATE BRAND
 route::get('edit-brand-code-product/{brand_code_id}','BrandcodeProduct@edit_brand_code_product');
 
 route::post('update-brandcode-product/{brand_code_id}','BrandcodeProduct@update_brand_code_Product');
 
 
 
-///////////////////////////////////////------- PRODUCT (SẢN PHẨM)----------/////////////////////////////////////-------
+///////////////////////////////////////-------------PRODUCT----------------/////////////////////////////////////////////
 
-//add  product
+//ADD  PRODUCT
 Route::get('/add-Product', 'Productcontroller@add_Product');
-//SHOW product
+//SHOW PRODUCT
 Route::get('/all-Product', 'Productcontroller@all_Product');
-// SAVE - product (XÀI CHUNG HẾT)
+// SAVE PRODUCT
 Route::post('/save-product', 'Productcontroller@save_product');
 
-//DELETE product
+//DELETE PRODUCT
 route::get('/delete-product/{product_id}','Productcontroller@delete_product');
-                                    //product_id cho là gì cũng đc
-//XÓA NHIỀU SP
+
+//DELETE MUTI PRODUCT
 Route::get('/destroy-product', 'Productcontroller@destroy_product');
-//UPDATE product
+//UPDATE PRODUCT
 route::get('edit-product/{product_id}','Productcontroller@edit_product');
 
 route::post('update-product/{product_id}','Productcontroller@update_Product');
-///////////////////////////////////////////////////////////////////////////////////////////////////-------/////////////////////////////////////--------------
 
 
-///////////////////////////////////////////------- THÔNG TIN KHÁCH HÀNG ĐÃ ĐẶT-------/////////////////////////////////////-------
+///////////////////////////////////////////-------INFO CUSTOMER ORDER-------////////////////////////////////////////////
 route::get('/thong-tin-don-hang/{order_id}','AdminController@infocustomerorder');
 
 
-////////////////////////////////////------- Bài viết----------/////////////////////////////////////-------
+//////////////////////////////////////////-------NEWS----------/////////////////////////////////////////////////////////
 
-//HIỂN THỊ LAYOUT TRANG THÊM BÀI
+//SHOW DISPLAY NEWS
 route::get('/add-news','newsadminController@layoutaddNews');
-//THÊM BÀI VIẾT
+//ADD NEWS
 route::post('/save-news','newsadminController@insertNews');
 
-//HIỂN THỊ BÀI VIẾT
+//SHOW NEWS
 route::get('/all-news','newsadminController@layoutallNews');
 
-//
+
 route::get('/chi-tiet-bai-viet/{primaryKey}','newsadminController@newsdetails');
-//XÓA BÀI VIẾT
+
 route::get('/delete-news/{primaryKey}','newsadminController@delete_news');
-                                    //product_id cho là gì cũng đc
-//UPDATE BÀI VIẾT
+
+//UPDATE NEWS
 route::get('edit-news/{primaryKey}','newsadminController@edit_news');
 
 route::post('update-news/{primaryKey}','newsadminController@update_news');
-/////////////////////////////////////-------/////////////////////////////////////-------/////////////////////////////////////-------
 
 
+////////////////////////////////////////-------CONTACT-CUSTOMER----------///////////////////////////////////////////////
 
-// PHẢN HỒI LIÊN HỆ CỦA KHÁCH
 Route::get('contact','contactController@contactadmin');
-/////UPDATE- STATUS PHẢN HỒI LIÊN HỆ CỦA KHÁCH (TRẠNG THÁI Chưa GIAO HAY ĐÃ GIAO)
+
 Route::get('/updatestatus-0/{Con_Id}','contactController@update_status_0');
-//UPDATE- PHẢN HỒI LIÊN HỆ CỦA KHÁCH (TRẠNG THÁI ĐÃ GIAO HAY CHƯA GIAO)
+
 Route::get('/updatestatus-1/{Con_Id}','contactController@update_status_1');
 
-//XÓA STATUS PHẢN HỒI LIÊN HỆ CỦA KHÁCH
+
 Route::get('/deletestatus-1/{Con_Id}','contactController@delete_status_1');
 
 
-//ĐÁNH GIÁ SẢN PHẨM TỪ KHÁCH HÀNG
+
 Route::get('reviews','reviewsController@reviews');
-/////UPDATE- STATUS PHẢN HỒI LIÊN HỆ CỦA KHÁCH (TRẠNG THÁI Chưa GIAO HAY ĐÃ GIAO)
+
 Route::get('/deletestatus1/{Con_Id}','reviewsController@delete_status_1');
 
-//////////////////////////////////////SLIDER QUẢNG CÁO/////////////////////////////////////////
-//HIển thị thêm quảng cáo
+//////////////////////////////////-------------------SLIDER---------------------////////////////////////////////////////
+
+//SHOW ADD SLIDER
 Route::get('/add-slider','sliderController@slider_layout');
 Route::post('/edit-slider','sliderController@add_slider');
 
-//HIển thị quảng cáo
+//SLIDER MANAGERMENT
 route::get('/all-slider','sliderController@slider_all');
-//
+
 Route::post('/update-slider/{id}','sliderController@update_slider');
 Route::get('/update-layout-slider/{id}','sliderController@update_layout_slider');
-//ẨN QC
+
 Route::get('/status-0/{id}','sliderController@status_0');
-//hiện Qc
+
 Route::get('/status-1/{id}','sliderController@status_1');
-//XÓA QC
+
 Route::get('/delete-layout-slider/{id}','sliderController@delete');
-//XÓA NHIỀU QC
+
 Route::get('/destroy-slider','sliderController@destroy');
 Route::get('/them-thong-tin/{id}','contactinfoController@layout_insert_Infocontact');
 Route::post('/save-info-contact','contactinfoController@save_info_contact');
@@ -284,39 +269,45 @@ Route::post('/save-info-contact','contactinfoController@save_info_contact');
 Route::get('/quen-mat-khau','AdminController@layout_forget_pass');
 Route::post('/lay-mat-khau','AdminController@get_pass');
 
-//Delivery
+//////////////////////////////////-------------------DELIVERY---------------------//////////////////////////////////////
 Route::get('/add-delivery','DeliveryController@layout_add_delivery');
 
 //CHOOSE WARDS, CITY, PROVICE BEFORE INSERT (AJAX)
 Route::post('/select-delivery','DeliveryController@select_delivery');
+
 //INSERT DELIVERY
 Route::post('/add-fee-delivery','DeliveryController@insert_fee_delivery');
+
 //SHOW INFO DELIVERY
 Route::get('/select-info-delivery','DeliveryController@select_info_delivery');
+
 //UPdate delivery
 Route::get('/update-fee-delivery','DeliveryController@update_fee_delivery');
+
 //Remove delivery
 Route::get('/del-fee-delivery','DeliveryController@delete_fee_delivery');
+
 //SEARCH fee_ship DELIVERY
 Route::get('/search-fee-ship','DeliveryController@search_fee_delivery');
+
 // feeship when checkout USER
 Route::post('/select-delivery-feeship','DeliveryController@select_delivery_feeship');
-
 
 //LOGO
 Route::get('/layout-logo','logowebsiteController@layout_Logo');
 
+//////////////////////////////////----------------DUMP DATABASE-----------------////////////////////////////////////////
 //DUMP DATABASE
 Route::get('/our_backup_database', 'dumpDatabasesController@backup_database')->name('backup_database');
 
+///////////////////////////////////////----------------MAIL-----------------////////////////////////////////////////////
+
 //SEND MAIL ORDER
 Route::get('/mail-config','sendMailController@layoutConfigMail');
-Route::get('mail', function () {
-    return view('mailform');
-});
 
 //layout create template mail
 Route::get('/template-mail-config','sendMailController@layoutcreatetemplatemail');
+
 //add template mail
 Route::post('/save-template-mail','sendMailController@savetemplatemail');
 Route::post('/save-config-mail','sendMailController@saveConfigmail');
@@ -340,6 +331,8 @@ Route::get('/template-mail','sendMailController@templateMail');
 //SEND MAIL
 Route::post('/send','sendMailController@sendMail');
 
-
-//
+//TEST MAIL
 Route::get('/testmail','sendMailController@test');
+Route::get('/test',function (){
+    return view('mailform');
+});

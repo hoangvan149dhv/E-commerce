@@ -1,10 +1,10 @@
 @extends('admin_layout')
-@section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
+@section('content')
 <div class="row">
     <div class="col-lg-12">
             <section class="panel">
                 <header class="panel-heading">
-                    Tạo giao diện Mail  
+                    Tạo giao diện Mail
                 </header>
 
                 <div class="panel-body">
@@ -26,8 +26,10 @@
                         </form>
                         @endforeach
                     </div>
-
                 </div>
+                {{-- yeild helper_word_orderdetail_mail--}}
+                @include('admin.mails.helper_word_orderdetail_mail')
+
             </section>
     </div>
 </div>

@@ -24000,17 +24000,17 @@ CREATE TABLE `tbl_count` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
-INSERT INTO tbl_count (id, counts) VALUES ('1','390');
+INSERT INTO tbl_count (id, counts) VALUES ('1','395');
 
-INSERT INTO tbl_count (id, counts) VALUES ('1','390');
+INSERT INTO tbl_count (id, counts) VALUES ('1','395');
 
-INSERT INTO tbl_count (id, counts) VALUES ('1','391');
+INSERT INTO tbl_count (id, counts) VALUES ('1','396');
 
-INSERT INTO tbl_count (id, counts) VALUES ('1','363');
+INSERT INTO tbl_count (id, counts) VALUES ('1','368');
 
-INSERT INTO tbl_count (id, counts) VALUES ('1','363');
+INSERT INTO tbl_count (id, counts) VALUES ('1','368');
 
-INSERT INTO tbl_count (id, counts) VALUES ('1','364');
+INSERT INTO tbl_count (id, counts) VALUES ('1','369');
 
 
 CREATE TABLE `tbl_customer` (
@@ -24019,12 +24019,18 @@ CREATE TABLE `tbl_customer` (
   `cusadd` varchar(70) NOT NULL,
   `cusPhone` varchar(11) NOT NULL,
   PRIMARY KEY (`cusid`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
 INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('11','Duong Hoang Van','test, Xã Thái Ninh, Huyện Thanh Ba, Tỉnh Phú Thọ','0912345678');
 
 INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('12','Ngo Nguyen Huynh Ngan','128 Lê Sao, Phường Phú Thạnh, Quận Tân Phú, Thành phố Hồ Chí Minh','0909677308');
+
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('13','Ngô Nguyễn Huỳnh Ngân','128A Lê Sao, Phường Phú Thọ Hòa, Quận Tân Phú, Thành phố Hồ Chí Minh','0909677308');
+
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('14','Duong Hoang Van','test, Xã Tân Thành, Huyện Krông Nô, Tỉnh Đắk Nông','0909677308');
+
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ('15','Duong Hoang Van','test, Xã Tân Thành, Huyện Krông Nô, Tỉnh Đắk Nông','0909677308');
 
 
 CREATE TABLE `tbl_info_contact` (
@@ -24034,7 +24040,7 @@ CREATE TABLE `tbl_info_contact` (
   `info_contact_phone` varchar(11) NOT NULL,
   `info_contact_mail` varchar(100) NOT NULL,
   PRIMARY KEY (`id_Info`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
 INSERT INTO tbl_info_contact (id_Info, google_map, info_contact_add, info_contact_phone, info_contact_mail) VALUES ('1','','120 Lê Sao','0909677308','vandaovipga1491999@gmail.com');
@@ -24076,12 +24082,18 @@ CREATE TABLE `tbl_order` (
   `note` text NOT NULL,
   `order_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`orderid`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
 INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ('9','11','Duong Hoang Van','2','Áo dài truyền thống','94191814_648215732424264_3752553548315885568_n125560.jpg','1','500000','20000','520000','0912345678','đang xử lý','test','2020-09-21 17:51:19');
 
 INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ('10','12','Ngo Nguyen Huynh Ngan','2','Áo dài truyền thống','94191814_648215732424264_3752553548315885568_n125560.jpg','1','500000','500000','1000000','0909677308','đang xử lý','Yêu bà kkk','2020-09-21 18:06:53');
+
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ('11','13','Ngô Nguyễn Huỳnh Ngân','2','Áo dài truyền thống','94191814_648215732424264_3752553548315885568_n125560.jpg','1','500000','500000','1000000','0909677308','đang xử lý','Ngân nè','2020-09-22 09:15:24');
+
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ('12','14','Duong Hoang Van','2','Áo dài truyền thống','94191814_648215732424264_3752553548315885568_n125560.jpg','1','500000','20000','520000','0909677308','đang xử lý','tét','2020-09-22 09:18:08');
+
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ('13','15','Duong Hoang Van','2','Áo dài truyền thống','94191814_648215732424264_3752553548315885568_n125560.jpg','1','500000','20000','520000','0909677308','1','tét','2020-09-22 09:21:21');
 
 
 CREATE TABLE `tbl_product` (
@@ -24135,7 +24147,7 @@ CREATE TABLE `tbl_templatemail` (
   `template` text NOT NULL,
   `status` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
 INSERT INTO tbl_templatemail (id, label, template, status) VALUES ('1','Đơn Hàng Từ Vải Áo Dài Xinh Sunny','<table border="1" cellpadding="0" cellspacing="0" style="width:900px">

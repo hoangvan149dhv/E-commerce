@@ -55,11 +55,16 @@ class dumpDatabasesController extends Controller
             }
         }
         $file_name = 'database_aodaixinh_' . date('d-m-y') . '.sql';
+
+        //SAVE DATABASE IN FOLDER
         $file_handle = fopen($file_name, 'w+');
+
+        //write
         fwrite($file_handle, $output);
         fclose($file_handle);
         header('Content-Description: File Transfer');
         header('Content-Type: application/octet-stream');
+        //Dowload Database
         header('Content-Disposition: attachment; filename=' . basename($file_name));
         header('Content-Transfer-Encoding: binary');
         header('Expires: 0');

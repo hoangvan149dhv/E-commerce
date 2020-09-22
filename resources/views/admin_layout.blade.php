@@ -15,7 +15,6 @@
 <link rel="stylesheet" href="{{asset('public/admin/css/morris.css')}}" type="text/css"/>
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <!-- calendar -->
-{{-- <link rel="stylesheet" href="{{asset('public/admin/css/monthly.css')}}"> --}}
 <!-- //calendar -->
 <!-- //font-awesome icons -->
 <script src="{{asset('public/admin/js/jquery2.0.3.min.js')}}"></script>
@@ -64,7 +63,6 @@
             </a>
         </li>
         <!-- settings end -->
-
         <!-- inbox dropdown start-->
         <li id="header_inbox_bar" class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -85,7 +83,6 @@
                     </span>Góp Ý</p></a>
                 </li>
                 <li>
-
                 </li>
             </ul>
         </li>
@@ -103,9 +100,6 @@
             </form>
         </li>
         <!-- notification dropdown end -->
-
-
-
     </ul>
     <!--  notification end -->
 </div>
@@ -223,7 +217,7 @@
                 @endforeach
                 <li class="sub-menu">
                     <a href="javascript:;">
-                        <i class="fa fa-book"></i>
+                        <i class="fa fa-bicycle"></i>
                         <span>Phí Giao Hàng</span>
                     </a>
                     <ul class="sub">
@@ -238,7 +232,7 @@
                 </li>
                 <li class="sub-menu">
                     <a @yield('mail') href="javascript:;">
-                        <i class="fa  fa-align-justify"></i>
+                        <i class="fa fa-folder-open"></i>
                         <span>Email</span>
                     </a>
                     <ul class="sub">
@@ -277,10 +271,12 @@
 <script src="{{asset('public/admin/js/bootstrap.js')}}"></script>
 <script src="{{asset('public/admin/js/jquery.dcjqaccordion.2.7.js')}}"></script>
 <script src="{{asset('public/admin/js/scripts.js')}}"></script>
-{{-- <script src="{{asset('public/admin/js/jquery.slimscroll.js')}}"></script> --}}
 <script src="{{asset('public/admin/js/jquery.nicescroll.js')}}"></script>
 <script src="{{asset('public/admin/js/jquery.scrollTo.js')}}"></script>
 <script src="{{asset('public/client/ckeditor/ckeditor.js')}}"></script>
+
+
+
 
 <script>
     CKEDITOR.replace( 'ckComment', {
@@ -291,20 +287,14 @@
 </script>
 
 {{-- DÙNG VALIDATION FORM ĐỂ CHECK KÍ TỰ --}}
-{{-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> --}}
 <script src="{{asset('public/client/js/jquery.js')}}"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
 <script>
-$.validate({
-  modules : 'file'
-});
 </script>
 <script src="{{asset('public/admin/js/form-validator.min.js')}}"></script>
 <script type="text/javascript">
+        //check validate
 		$.validate({
-
 		});
-
 
         function checkConditiondumpDatabase() {
             var condition = prompt("Người yêu của tao tên gì?");

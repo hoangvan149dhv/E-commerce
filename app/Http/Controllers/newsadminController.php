@@ -22,7 +22,7 @@ class newsadminController extends HomeController
         }else{
 
             return Redirect::to('admin-login')->send();
-                           //Send là == chuyển ĐẾN TRANG -->RẤT QUAN TRỌNG
+
              }
         }
     //LAY OUT TRANG THÊM BÀI VIẾT
@@ -50,7 +50,7 @@ class newsadminController extends HomeController
             $newsadminModel->news_content="Chưa có thông tin";
 
         }
-            //GET IMAGE //BÀI 23
+
         $get_image=$Request->file('image');
 
         if($get_image){
@@ -69,7 +69,7 @@ class newsadminController extends HomeController
             $get_image->move('public/upload',$new_image); // move == move_upload trong php
             $newsadminModel->news_image = $new_image; // image là name bên addProduct.blade.php dòng 30
             //$newsadminModel->news_image trong tbl_news
-            //
+
         }else{
             $newsadminModel->news_image =='';
             Session::put('success','Thêm bản tin Thành Công');
