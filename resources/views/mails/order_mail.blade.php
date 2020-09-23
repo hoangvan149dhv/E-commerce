@@ -34,7 +34,7 @@
     //content
     $body = $item->template;
 
-    echo str_replace($search , $item_replace, $body );
+        echo str_replace($search , $item_replace, $body );
 
 ?>
 
