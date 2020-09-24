@@ -1,11 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
-
-class dumpDatabasesController extends Controller
+use App\Http\Controllers\admin\AdminController;
+class dumpDatabasesController extends AdminController
 {
+    public function __construct(){
+        $this->AuthLogin();
+    }
+
     public function backup_database(){
 
         //ENTER THE RELEVANT INFO BELOW

@@ -1,19 +1,34 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 use App\Cartcount;
 use Illuminate\Http\Request;
-use DB; //SỬ DỤNG DBS
-use Session; // THƯ VIỆN SỬ DỤNG SESSION
-use App\Http\Requests; //
+use DB;
+use App\Http\Controllers\Controller;
+use Session;
+use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Response;
 use Carbon\Carbon;
 use App\CustomerorderModel;
 use App\contactinfoModel;
 use App\count;
-class AdminController extends Controller
-{
+class AdminController extends Controller{
+
+    public function __construct(){
+        $count = count::find(1);
+        $contactinfoModel = contactinfoModel::select()->get();
+        view()->share('contactinfoModel',$contactinfoModel);
+        view()->share('count',$count);
+
+        $category_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
+        $brandcode_product =DB::table('tbl_brand_code_product')->orderby('code_id','desc')->get();
+        $contactinfoModel = contactinfoModel::select()->get();
+        view()->share('contactinfoModel',$contactinfoModel);
+        view()->share('category_product',$category_product);
+        view()->share('brand_code_product',$brandcode_product);
+    }
+
     //KIỂM TRA ĐĂNG NHẬP
     public function AuthLogin(){
 
@@ -26,7 +41,6 @@ class AdminController extends Controller
         }else{
 
             return Redirect::to('admin-login')->send();
-                           //Send là == chuyển ĐẾN TRANG -->RẤT QUAN TRỌNG
         }
 
     }
@@ -41,7 +55,7 @@ class AdminController extends Controller
 
         }else{
 
-            return view('admin.login.admin_login'); //Đường Dẫn admin_login.blade.php
+            return view('admin.login.admin_login');
         }
 
     }
@@ -54,7 +68,7 @@ class AdminController extends Controller
 
     public function get_pass(Request $request){
 
-        $admin_name = $request->name; //DÒNG 35 admin_login.blade.php
+        $admin_name = $request->name;
 
         $admin_question = $request->question;
 
@@ -72,18 +86,15 @@ class AdminController extends Controller
                 return view('admin.login.admin_login');
         }
     }
-    //ĐĂNG NHẬP ĐÚNG TK MK
-    //ĐIỀU KHIỂN  //QUẢN LÝ
+
     public function check_login(Request $request){
-        $admin_email = $request->Email; //DÒNG 35 admin_login.blade.php
+        $admin_email = $request->Email;
 
         $admin_pass = addslashes(md5($request->Password));
 
         $result = DB::table('tbl_admin')->where('admin_email',$admin_email)->where('admin_pass',$admin_pass)->first();
-                                 // admin_email, admin_pass là trong dbs first là lấy giá trị đầu tiên
-        //NẾU ĐĂNG NHẬP ĐÚNG
+
         if($result){
-            //TRẢ VỀ TRANG THÔNG TIN ĐƠN HÀNG KHÁCH ĐẶT
             $date=  Carbon::now()->day;
 
             $month=  Carbon::now()->month;
@@ -115,36 +126,15 @@ class AdminController extends Controller
 
                 return view('admin.login.admin_login');
 
-            }
-                    // return view('admin.dashboard')
-                    // // ->with('alert',$alert)
-                    // ->with('product_order_date',$product_order_date)
-                    // ->with('product_order_month',$product_order_month);
-                    // return view('admin.dashboard')
-                    // ->with('alert',$alert)
-                    // ->with('product_order_date',$product_order_date)
-                    // ->with('product_order_month',$product_order_month);
-
-
+                }
         }else{
-            echo  "<script type='text/javascript'>
-                    alert('Sai Mật Khẩu ');
-                </script>";
-                return view('admin.login.admin_login');
+            echo "<script type='text/javascript'>
+                  alert('Sai Mật Khẩu ');
+                  </script>";
+            return view('admin.login.admin_login');
         }
     }
-    public function __construct(){
-        //ĐÉM SỐ LƯỢT TRUY CẬP
-        $count = count::find(1);
-                //Số lượt truy cập trong ngày
-        // $date=  Carbon::now()->day;
-        $contactinfoModel = contactinfoModel::select()->get();
-        // $month=  Carbon::now()->month;
-        view()->share('contactinfoModel',$contactinfoModel);
-        view()->share('count',$count); // all
-        // view()->share('count_date',$count_date); //date
-        // view()->share('count_month',$count_month); //month
-    }
+
     //cHUYỂN ĐẾN TRANG CHỦ ADMIN
     public function index(){
         //KIỂM TRA NGƯỜI DÙNG ĐÃ ĐĂNG NHẬP CHƯA
@@ -155,8 +145,6 @@ class AdminController extends Controller
         $month=  Carbon::now()->month;
 
         $product_order_date = DB::table('tbl_order')->where('status',1)->whereDate('order_date',$date)->get();
-        // $count_date =DB::table('tbl_count')->where('id',1)->whereDate('created_at',$date)->get();
-        // $count_month = DB::table('tbl_count')->where('id',1)->whereMonth('created_at',$month)->get();
 
         $product_order_month = DB::table('tbl_order')->where('status',1)->whereMonth('order_date',$month)->get();
 
@@ -171,8 +159,6 @@ class AdminController extends Controller
             return view('admin.dashboard')
             ->with('alert',$alert)
             ->with('product_order_date',$product_order_date)
-            // ->with('count_month',$count_month)
-            // ->with('count_date',$count_date)
             ->with('product_order_month',$product_order_month);
 
         }else{
@@ -188,7 +174,6 @@ class AdminController extends Controller
     $this->AuthLogin();
 
     $product_order = DB::table('tbl_order')->orderby('orderid','desc')->paginate(10);
-    // return Redirect::to('/admin-login'); //Đường Dẫn admin_login.blade.php
 
     session::put('message', DB::table('tbl_order')->where('status',0)->count());
 
@@ -198,13 +183,12 @@ class AdminController extends Controller
 
     public function log_out(){
 
-        // return Redirect::to('/admin-login'); //Đường Dẫn admin_login.blade.php
-
         Session::put('admin_Id',null);
 
         return redirect('/admin-login');
 
     }
+
     //CHUYỂN TRẠNG THÁI GIAO HÀNG CHƯA GIAO THÀNH ĐÃ GIAO
     public function update_status_0($orderid){
 
@@ -214,6 +198,7 @@ class AdminController extends Controller
 
         return back();
     }
+
     //CHUYỂN TRẠNG THÁI GIAO HÀNG ĐÃ GIAO THÀNH CHƯA GIAO
     public function update_status_1($orderid){
 
@@ -224,6 +209,7 @@ class AdminController extends Controller
         return back();
 
     }
+
     //XÓA ĐƠN HÀNG ĐÃ GIAO XONG
     public function delete_status_1($orderid){
 
@@ -232,6 +218,7 @@ class AdminController extends Controller
         return back();
 
     }
+
     //Hủy nhiều đơn hàng
     public function destroy_order(Request $request){
         //KIỂM TRA ĐĂNG NHẬP
@@ -240,18 +227,12 @@ class AdminController extends Controller
 
         $order_id =$request->orderid;
 
-        if(isset($order_id)){
-
+        if(isset($order_id)) {
             DB::table('tbl_order')->whereIn('orderid',$order_id)->delete();
-
             return back();
-
         }
-
-        else{
-
+        else {
             return back();
-
         }
 
     }
@@ -265,8 +246,6 @@ class AdminController extends Controller
         $search = DB::table('tbl_order')->orderby('orderid','desc')->where('cusname','like','%'.$key_word.'%')
         ->orWhere('status',$key_word)
         ->orWhere('productname','like','%'.$key_word.'%')->paginate(30);
-                                            //CẤU TRÚC TÌM KIẾM GẦN GIỐNG NHƯ
-
         return view('admin.search.search')->with('search',$search);
 
     }
@@ -279,7 +258,6 @@ class AdminController extends Controller
         $search = DB::table('tbl_order')->orderby('orderid','desc')->where('cusname','like','%'.$key_word.'%')
         ->orWhere('status',$key_word)
         ->orWhere('productname','like','%'.$key_word.'%')->paginate(30);
-                                            //CẤU TRÚC TÌM KIẾM GẦN GIỐNG NHƯ
         return view('admin.search.search')->with('search',$search);
 
     }
@@ -288,7 +266,6 @@ class AdminController extends Controller
         $this->AuthLogin();
 
         $order_not_complete = DB::table('tbl_order')->orderby('orderid','desc')->where('status',0)->paginate(30);
-                                            //CẤU TRÚC TÌM KIẾM GẦN GIỐNG NHƯ
         return view('admin.order.order_not_complete')->with('order_not_complete',$order_not_complete);
 
     }
@@ -296,7 +273,6 @@ class AdminController extends Controller
         $this->AuthLogin();
 
         $order_complete = DB::table('tbl_order')->orderby('orderid','desc')->where('status',1)->paginate(30);
-                                            //CẤU TRÚC TÌM KIẾM GẦN GIỐNG NHƯ
         return view('admin.order.order_complete')->with('order_complete',$order_complete);
 
     }
@@ -329,7 +305,7 @@ class AdminController extends Controller
         ->orderby('product_id','desc')->where('product_Name','like','%'.$key_word.'%')
         ->orWhere('tbl_category_product.category_name','like','%'.$key_word.'%')
         ->paginate(30);
-                                            //CẤU TRÚC TÌM KIẾM GẦN GIỐNG NHƯ
+
         return view('admin.search.searchproduct')->with('search',$search);
     }
 

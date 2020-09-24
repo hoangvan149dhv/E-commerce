@@ -1,13 +1,16 @@
 <?php
-
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
+use App\Http\Controllers\admin\AdminController;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use App\sliderModel;
 use DB;
-use App\contactinfoModel;
-class sliderController extends Controller
+class sliderController extends AdminController
 {
+    public function __construct(){
+        $this->AuthLogin();
+    }
+
     function slider_layout(){
         return view('admin.slider.addslider');
     }
@@ -84,7 +87,6 @@ class sliderController extends Controller
     //xóa qc
     function delete($id){
 
-
         $slider = sliderModel::where('id',$id)->get();
         foreach ($slider as $key) {
             $slider_img = $slider->img;
@@ -113,27 +115,5 @@ class sliderController extends Controller
         }
         sliderModel::whereIn('id',$slider_id)->delete();
         return Redirect::to('all-slider')->with('success','xóa thành công');
-
-    }
-///////////////////////////////////////////////USER////////////////////////////////////
-
-    function slider_user(){
-        // $slider_first= sliderModel::where('status',1)->first();
-        // $slide_id= $slider_first->id;
-        $slider = sliderModel::where('status',1)->orderby('id','desc')->take(3)->get();
-        if(isset($slider)){
-            $all_productt = DB::table('tbl_product')
-            ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
-            ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
-            ->orderby('product_id','desc')->paginate(20);
-            return view('user.home')->with(compact('all_productt','slider'));
-        }
-        else{
-            return false;
-        }
-    }
-    public function __construct(){
-        $contactinfoModel = contactinfoModel::select()->get();
-        view()->share('contactinfoModel',$contactinfoModel);
     }
 }

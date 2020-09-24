@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Redirect;
@@ -7,6 +8,7 @@ use App\configMailModel;
 use App\templateMailModel;
 use View;
 use Mail;
+use App\Http\Controllers\admin\AdminController;
 use DB;
 use App\CustomerorderModel;
 class sendMailController extends AdminController

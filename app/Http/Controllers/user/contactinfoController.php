@@ -1,20 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\user;
 use Illuminate\Http\Request;
 use DB;
 use Session;
 use App\contactinfoModel;
 use Illuminate\Support\Facades\Redirect;
-class contactinfoController extends AdminController
+use App\Http\Controllers\user\HomeController;
+class contactinfoController extends HomeController
 {
     public function layout_insert_Infocontact($info_Id){
-        $this->AuthLogin();
         $contactinfoModel = contactinfoModel::where('id_Info',$info_Id)->get();
         return view('admin.contact.addinfocontact')->with('contactinfoModel',$contactinfoModel);
     }
     public function save_info_contact(Request $Request){
-        $this->AuthLogin();
         $data['google_map'] = $Request->googlemap;
         if($Request->googlemap == ""){
             $data['google_map'] = "";

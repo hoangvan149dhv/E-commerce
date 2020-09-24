@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\user;
 use App\ReviewModel;
 use Illuminate\Http\Request;
-use DB; //SỬ DỤNG DBS
-use Session; // THƯ VIỆN SỬ DỤNG SESSION
-use App\Http\Requests; // 
+use DB;
+use Session;
+use App\Http\Requests; //
 use Illuminate\Support\Facades\Redirect;
-// session_start();
+use App\Http\Controllers\user\HomeController;
 class DetailsProductController extends HomeController{
 
     public function show_details($meta_slug, request $request){
@@ -15,20 +15,20 @@ class DetailsProductController extends HomeController{
         ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
         ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
         ->where('meta_slug',$meta_slug)->get();
-        
+
         //SẢN PHÂM ĐC QUAN TÂM (SẢN PHẨM MỚI)
         $show_details_product_recommended = DB::table('tbl_product')
         ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
         ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
         ->whereNotIn('tbl_product.meta_slug',[$meta_slug])
         ->limit('3')->orderby('product_id','desc')->get();
-        
-        //SẢN PHẨM GỢI Ý   
+
+        //SẢN PHẨM GỢI Ý
         foreach($show_details_product as $value){
-        $category_product_id = $value->category_id; //có nghĩa là lấy tất cả sản phẩm có category_id        
-        //SẢN PHẨM GỢI Ý  
+        $category_product_id = $value->category_id; //có nghĩa là lấy tất cả sản phẩm có category_id
+        //SẢN PHẨM GỢI Ý
         $brand_product_id =$value->brandcode_id;
-        
+
         //SEO
         $meta_desc= $value->meta_desc; //META DESCRIPTION
         $meta_keyword = $value->meta_keyword;     //Từ khóa trên google khi người dùng tìm kiếm
@@ -47,7 +47,6 @@ class DetailsProductController extends HomeController{
             return redirect('trang-chu');
         }
 
-/////////////////////////////////////whereNotIn('tbl_product.product_id',[$product_id]) có nghĩa là trừ ra product_id đã tồn tại([$product_id])
         //LẤY SẢN PHẨM THEO DANH MỤC
         $show_product = DB::table('tbl_product')
         ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
@@ -73,12 +72,10 @@ class DetailsProductController extends HomeController{
         ->with('meta_title',$meta_title)
         ->with('url_canonical',$url_canonical)
 
-        //Truyền paramenter qua bên view 
+        //Truyền paramenter qua bên view
         ->with('reviewModel',$reviewModel);
     }
 
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Bình luận đánh giá sản phẩm
     public function insertComment($meta_slug , request $request){
         $reviewModel = new ReviewModel();
@@ -93,18 +90,16 @@ class DetailsProductController extends HomeController{
 
         $reviewModel->meta_slug=$meta_slug;
 
-        if(empty($request['name']&&$request['email']&&$request['comment'])){ 
+        if(empty($request['name']&&$request['email']&&$request['comment'])){
 
-            Session::put('alert',"<div style='color:red'> bạn không được để trống ở bất kì mục nào</div>"); //admin_Id trong dbs` 
-            
+            Session::put('alert',"<div style='color:red'> bạn không được để trống ở bất kì mục nào</div>"); //admin_Id trong dbs`
+
             return back();
-            
+
         }else{
-
             $reviewModel=$reviewModel->save();
-            
-            return back();
 
+            return back();
         }
     }
 }
