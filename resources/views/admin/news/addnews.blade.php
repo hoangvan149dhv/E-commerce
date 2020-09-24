@@ -1,11 +1,11 @@
-@extends('admin_layout')
+@extends('admin.admin_layout')
 @section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
 <div class="row">
     <div class="col-lg-12">
             <section class="panel">
                 <header class="panel-heading">
                     Thêm Bài viết
-                </header> 
+                </header>
                 <div class="panel-body">
                     <div class="position-center">
                     <form role="form" action="{{URL::to('/save-news')}}" method="post" enctype="multipart/form-data">
@@ -20,7 +20,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Hình Ảnh</label>
-                            <input type="file"  data-validation="mime size" data-validation-allowing="jpg, png, gif" 
+                            <input type="file"  data-validation="mime size" data-validation-allowing="jpg, png, gif"
                             data-validation-max-size="2M"class="form-control"
                             data-validation-error-msg="Vui lòng chọn file có đuôi .jpg, png, gif" class="form-control" name="image"id="exampleInputEmail1">
                         </div>
@@ -32,7 +32,7 @@
                             <?php
                             $message = Session::get('success');
                             if($message){ ?>
-                                <div class="alert-success alert"><?php echo $message; ?></div> 
+                                <div class="alert-success alert"><?php echo $message; ?></div>
                               <?php }  Session::put('messages',null);
                         ?>
                         </div>

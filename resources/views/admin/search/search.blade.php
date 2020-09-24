@@ -1,7 +1,7 @@
 <?php
     use Carbon\Carbon;
 ?>
-@extends('admin_layout')
+@extends('admin.admin_layout')
 @section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
 <div class="table-agile-info">
     <div class="panel panel-default">
@@ -46,11 +46,11 @@
             </tr>
           </thead>
           <tbody>
-           @foreach ($search as $product) 
+           @foreach ($search as $product)
                                                     {{--Product tự đặt --}}
             {{-- $all_Product là all_Product DÒNG 20 bên controller Product --}}
-                
-            
+
+
             <tr>
               <td  style="text-align:center">{{$product->cusid}}</td>  {{--ID--}}
                     {{--Product dòng 43 || category_name là tên cột trong csld   --}}
@@ -60,12 +60,12 @@
               <td style="text-align:center">  {{Carbon::createFromFormat('Y-m-d H:i:s', $product->order_date)->format('d/m/yy | H:i:s')}}</td>
               <td style="text-align:center">  {{number_format($product->price)}}.VNĐ</td> {{--  Gía --}}
               @if ($product->status==1)
-              <td style="text-align:center;background:#bbecc457"> 
+              <td style="text-align:center;background:#bbecc457">
                   <a href="{{ URL::to('/update-status-1/'.$product->orderid) }}" style="color:green;">Đã Giao Xong</a>
                   ||
                   <a href="{{ URL::to('/delete-status-1/'.$product->orderid) }}" style="color:red">Xóa</a>
               @else
-              <td style="text-align:center;background:#f0bcb470;"> 
+              <td style="text-align:center;background:#f0bcb470;">
                   <a href="{{ URL::to('/update-status-0/'.$product->orderid) }}" style="color:red">Đang Xử Lý</a>
               @endif</td> {{-- trạng thái --}}
             </tr>
@@ -75,10 +75,10 @@
       </div>
       <footer class="panel-footer">
         <div class="row">
-          
+
           <div class="col-sm-5 text-center">
           </div>
-          <div class="col-sm-7 text-right text-center-xs">                
+          <div class="col-sm-7 text-right text-center-xs">
             <ul class="pagination pagination-sm m-t-none m-b-none">
               {!! $search->links() !!}
             </ul>

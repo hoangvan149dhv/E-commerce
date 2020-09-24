@@ -1,7 +1,7 @@
 <?php
     use Carbon\Carbon;
 ?>
-@extends('admin_layout')
+@extends('admin.admin_layout')
 @section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
 <div class="table-agile-info">
     <div class="panel panel-default">

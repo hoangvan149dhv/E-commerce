@@ -4,28 +4,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="{{asset('public/admin/css/bootstrap.min.css')}}" >
-<!-- //bootstrap-css -->
-<!-- Custom CSS -->
 <link href="{{asset('public/admin/css/style.css')}}" rel='stylesheet' type='text/css' />
 <link href="{{asset('public/admin/css/style-responsive.css')}}" rel="stylesheet"/>
-<!-- font CSS -->
-<!-- font-awesome icons -->
 <link rel="stylesheet" href="{{asset('public/admin/css/font.css')}}" type="text/css"/>
 <link href="{{asset('public/admin/css/font-awesome.css')}}" rel="stylesheet">
 <link rel="stylesheet" href="{{asset('public/admin/css/morris.css')}}" type="text/css"/>
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<!-- calendar -->
-<!-- //calendar -->
-<!-- //font-awesome icons -->
 <script src="{{asset('public/admin/js/jquery2.0.3.min.js')}}"></script>
 <script src="{{asset('public/admin/js/raphael-min.js')}}"></script>
 <script src="{{asset('public/admin/js/morris.js')}}"></script>
 </head>
 <body>
 <section id="container">
-<!--header start-->
 <header class="header fixed-top clearfix">
-<!--logo start-->
 <div class="brand">
     <a href="index.html" class="logo">
         Điều khiển
@@ -69,11 +60,10 @@
                 <i class="fa fa-envelope-o"></i>
                 <span class="badge bg-important">
                 <?php
-                // //  TẠO MODEL
                     use App\contactModel;
                     $alert = contactModel::all()->where('status',0)->count();
                     echo $alert;
-                // ?>
+                ?>
                 </span>
             </a>
             <ul class="dropdown-menu extended inbox">
@@ -274,10 +264,6 @@
 <script src="{{asset('public/admin/js/jquery.nicescroll.js')}}"></script>
 <script src="{{asset('public/admin/js/jquery.scrollTo.js')}}"></script>
 <script src="{{asset('public/client/ckeditor/ckeditor.js')}}"></script>
-
-
-
-
 <script>
     CKEDITOR.replace( 'ckComment', {
         filebrowserUploadUrl: "{{route('uploads', ['_token' => csrf_token() ])}}",

@@ -6,14 +6,14 @@ use Illuminate\Http\Request;
 use Cart;
 use DB; //SỬ DỤNG DBS
 use Session; // THƯ VIỆN SỬ DỤNG SESSION
-use App\Http\Requests; // 
+use App\Http\Requests; //
 use Illuminate\Support\Facades\Redirect;
 use App\WardModel;
 use App\ProvinceModel;
 use App\CityModel;
 use App\feeShipModel;
 class CartController extends HomeController
-{   
+{
     public function show_cart_ajax(Request $request){
         //SEO
         $meta_desc= "Chuyênn bán vải áo dài,may tại xưởng, giá rẻ, in sỉ, lẻ , chất lượng"; //META DESCRIPTION
@@ -49,11 +49,11 @@ class CartController extends HomeController
     }
     //details_product.blade.php  //XEM BÀI 33
     public function save_product_cart(Request $request){
-        
+
         // $product_amount = $request->soluong; //LẤY SỐ LƯỢNG BÊN TRANG details_product.blade.php dòng 45
         $productId = $request->product_id_hidden;
 
-        //lấy sản phẩm 
+        //lấy sản phẩm
         $product_info = DB::table('tbl_product')->where('tbl_product.product_id',$productId)->first();
         //XEM BÀI 33 .... LARAVEL
         //  Cart::add('293ad', 'Product 1', 1, 9.99, 550);
@@ -88,7 +88,7 @@ class CartController extends HomeController
         $url_canonical = $request->url(); // url_canonical cái này lấy được cái đường dẫn hiện tại của cái trang  chủ
 
         ///SEO
-        
+
         $city = CityModel::orderby('matp','ASC')->get();
 
         // $feeship = feeShipModel::orderby('fee_id','desc')->get();
@@ -104,73 +104,71 @@ class CartController extends HomeController
    public function del_cart($rowId){
    $cart = Cart::content();
    if($cart->isNotEmpty()){
-       
+
        Cart::remove($rowId);
-       
+
        return back();
-   
+
     }else{
-    
+
         return back();
-   
+
     }
     }
    public function del_cart_all($rowId){
-    
+
     $cart = Cart::content();
-    
+
     if($cart->isNotEmpty()){
-    
+
         Cart::destroy($rowId);
-    
+
         return back();
-    
+
     }else{
-    
+
         return back();
         }
     }
    //update cart quantity
    public function update_Category_quantity(Request $request){
-        
+
     $rowId = $request->rowId_cart; // rowId_cart là trang show_cart dòng 54
-    
+
     $qty = $request->soluong; //soluong là name trang show_cart dòng 52-53
-       
+
     if(is_numeric($qty)){ // kiểm tra xem có phải số hay không
         Cart::update($rowId,$qty);
         return back();
- 
+
     }else{
- 
+
         Cart::destroy($rowId);
- 
+
         return back();
- 
+
         }
-          
+
     }
 
 }
-
-
 
     ////////SẢN PHẨM GỢI Ý///////////////
     // public function show_details(){
         $show_details_product = DB::table('tbl_product')
         ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
         ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')->get();
-        
+
         //SẢN PHÂM ĐC QUAN TÂM (SẢN PHẨM MỚI)
         $show_details_product_recommended = DB::table('tbl_product')
         ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
         ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
         ->limit('3')->get();
 
-        //SẢN PHẨM GỢI Ý   
+        //SẢN PHẨM GỢI Ý
         foreach($show_details_product as $value){
-        $category_product_id = $value->category_id;} //có nghĩa là lấy tất cả sản phẩm có category_id        
-        //SẢN PHẨM GỢI Ý      
+        $category_product_id = $value->category_id;} //có nghĩa là lấy tất cả sản phẩm có category_id
+        //SẢN PHẨM GỢI Ý
         $related_product = DB::table('tbl_product')
         ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
         ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')

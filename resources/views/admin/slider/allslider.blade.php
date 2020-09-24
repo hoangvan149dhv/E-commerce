@@ -1,4 +1,4 @@
-@extends('admin_layout')
+@extends('admin.admin_layout')
 @section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
 <div class="table-agile-info">
     <div class="panel panel-default">
@@ -37,7 +37,7 @@
            @foreach ($slider_all as $slider)
             <tr>
               <td><label class="i-checks m-b-none"><input type="checkbox" value="{{ $slider->id }}" name="slider[]"></label></td>
-              <td><img src="public/upload/{{$slider->img}}" width="80" height="120" alt=""></td> 
+              <td><img src="public/upload/{{$slider->img}}" width="80" height="120" alt=""></td>
               <td><span class="text-ellipsis">
                   <?php
                       if($slider->status==0){?>

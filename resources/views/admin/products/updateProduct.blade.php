@@ -1,4 +1,4 @@
-@extends('admin_layout')
+@extends('admin.admin_layout')
 @section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
 <div class="row">
     <div class="col-lg-12">
@@ -13,7 +13,7 @@
                         <?php
                         $message = Session::get('alert-successproduct');
                             if($message){ ?>
-                            <div class="alert-success alert"><?php echo $message; ?></div> 
+                            <div class="alert-success alert"><?php echo $message; ?></div>
                           <?php }
                             Session::put('alert-success-product',null);
                     ?>
@@ -34,7 +34,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Hình Ảnh</label>
-                            <input type="file" data-validation="mime size" data-validation-allowing="jpg, png, gif" 
+                            <input type="file" data-validation="mime size" data-validation-allowing="jpg, png, gif"
                             data-validation-max-size="2M"class="form-control"
                             data-validation-error-msg="Vui lòng chọn file có đuôi .jpg, png, gif" name="image"id="exampleInputEmail1">
                             <img src="../public/upload/{{ $product->product_image }}" width="80" height="110">
@@ -54,7 +54,7 @@
                         <div class="form-group">
                             <label for="exampleInputPassword1">Meta_desc(google)</label>
                             <textarea name="meta_desc"  data-validation="length" data-validation-length="5-120" data-validation-error-msg='vui lòng điền 5- 120 kí tự' class="form-control"  cols="" rows="" placeholder="Mô Tả trên google....">{{$product->meta_desc}}</textarea>
-                        </div>    
+                        </div>
                     @endforeach
                         <div class="form-group">
                             <label for="exampleInputEmail1">Danh Mục Sản Phẩm</label>
@@ -62,7 +62,7 @@
                                 <option selected value="{{$product->category_id}}">{{$product->category_name}}</option>
                                 @foreach ($category_product as $category_product)
                             <option value ="{{$category_product->category_id}}">{{$category_product->category_name}}</option>
-                                                                    {{-- category_id là sql ||$cate_product là ở bên troller khai báo 
+                                                                    {{-- category_id là sql ||$cate_product là ở bên troller khai báo
                                                                                                      category_name là sql --}}
                                 @endforeach
                             </select>
@@ -81,7 +81,7 @@
                         </form>
                     </div>
                 </div>
-                    
+
             </section>
     </div>
 </div>

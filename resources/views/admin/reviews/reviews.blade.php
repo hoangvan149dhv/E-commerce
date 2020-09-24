@@ -1,7 +1,7 @@
 <?php
     use Carbon\Carbon;
 ?>
-@extends('admin_layout')
+@extends('admin.admin_layout')
 @section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
 <div class="table-agile-info">
     <div class="panel panel-default">
@@ -16,7 +16,7 @@
     //   }
   ?>
       <div class="row w3-res-tb">
-        <div class="col-sm-5 m-b-xs">                 
+        <div class="col-sm-5 m-b-xs">
         </div>
         <div class="col-sm-4">
         </div>
@@ -36,7 +36,7 @@
             </tr>
           </thead>
           <tbody>
-           @foreach ($reviews as $reviewsadmin) 
+           @foreach ($reviews as $reviewsadmin)
                                                     {{--Product tự đặt --}}
             {{-- $all_Product là all_Product DÒNG 20 bên controller Product --}}
                 <tr>
@@ -45,17 +45,17 @@
                     <td style="text-align:center">  {{($reviewsadmin->Remail)}}</td> {{--  email --}}
                     <td style="text-align:center">  {{($reviewsadmin->Rcomment)}}</td> {{--  nội dung --}}
                     <td style="text-align:center">  {{Carbon::createFromFormat('Y-m-d H:i:s', $reviewsadmin->created_at)->format('d/m/yy | H:i:s')}}</td>
-                    <td style="text-align:center;background:#bbecc457"> 
+                    <td style="text-align:center;background:#bbecc457">
                         <a href="{{ URL::to('/deletestatus1/'.$reviewsadmin->Rid) }}" style="color:red">Xóa</a> {{-- trạng thái --}}
             </tr>
             @endforeach
           </tbody>
         </table>
-        
+
       </div>
       <footer class="panel-footer">
         <div class="row">
-          <div class="col-sm-7 text-right text-center-xs">                
+          <div class="col-sm-7 text-right text-center-xs">
             <ul class="pagination pagination-sm m-t-none m-b-none">
               {!! $reviews->links() !!}
             </ul>

@@ -1,7 +1,7 @@
 <?php
     use Carbon\Carbon;
 ?>
-@extends('admin_layout')
+@extends('admin.admin_layout')
 @section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
 <div class="table-agile-info">
     <div class="panel panel-default">
@@ -16,7 +16,7 @@
     //   }
   ?>
       <div class="row w3-res-tb">
-        <div class="col-sm-5 m-b-xs">                 
+        <div class="col-sm-5 m-b-xs">
         </div>
         <div class="col-sm-4">
         </div>
@@ -36,7 +36,7 @@
             </tr>
           </thead>
           <tbody>
-           @foreach ($newsadminModel as $news) 
+           @foreach ($newsadminModel as $news)
                                                     {{--Product tự đặt --}}
             {{-- $all_Product là all_Product DÒNG 20 bên controller Product --}}
                 <tr>
@@ -46,7 +46,7 @@
                <td style="text-align:center">  {{$news->news_desc}}</td> {{--trích dẫn  --}}
               <td style="text-align:center"><img src="public/upload/{{$news->news_image}}"width=80 height=110 alt=""></td>{{--  hình--}}
                               {{-- SỬA / XÓA --}}
-              <td> 
+              <td>
                 <a href="{{URL::to('/edit-news/'.$news->news_id)}}"style='color:green;font-size:20px' class="active" ui-toggle-class="">
                     <i class="fa fa-pencil-square-o text-success text-active"></i>
                   </a>||
@@ -58,11 +58,11 @@
             @endforeach
           </tbody>
         </table>
-        
+
       </div>
       <footer class="panel-footer">
         <div class="row">
-          <div class="col-sm-7 text-right text-center-xs">                
+          <div class="col-sm-7 text-right text-center-xs">
             <ul class="pagination pagination-sm m-t-none m-b-none">
               {!! $newsadminModel->links() !!}
             </ul>

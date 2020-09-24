@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
-use Session; 
+use Session;
 use App\contactinfoModel;
 use Illuminate\Support\Facades\Redirect;
 class contactinfoController extends AdminController
 {
     public function layout_insert_Infocontact($info_Id){
-        $this->AuthLogin(); 
+        $this->AuthLogin();
         $contactinfoModel = contactinfoModel::where('id_Info',$info_Id)->get();
-        return view('admin.addinfocontact')->with('contactinfoModel',$contactinfoModel);
+        return view('admin.contact.addinfocontact')->with('contactinfoModel',$contactinfoModel);
     }
     public function save_info_contact(Request $Request){
         $this->AuthLogin();

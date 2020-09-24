@@ -1,4 +1,4 @@
-@extends('admin_layout')
+@extends('admin.admin_layout')
 @section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
 <div class="row">
     <div class="col-lg-12">
@@ -12,13 +12,13 @@
                     //     echo $message;
                     //     Session::put('updatesuccess',null);
                     // }
-                ?> 
+                ?>
                 <div class="panel-body">
                     <div class="position-center">
                         <?php
                         $message = Session::get('updatesuccess');
                             if($message){ ?>
-                            <div class="alert-success alert"><?php echo $message; ?></div> 
+                            <div class="alert-success alert"><?php echo $message; ?></div>
                           <?php }
                             Session::put('updatesuccess',null);
                     ?>
@@ -34,7 +34,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Hình Ảnh</label>
-                            <input type="file" data-validation="mime size" data-validation-allowing="jpg, png, gif" 
+                            <input type="file" data-validation="mime size" data-validation-allowing="jpg, png, gif"
                             data-validation-max-size="2M"class="form-control"
                             data-validation-error-msg="Vui lòng chọn file có đuôi .jpg, png, gif" class="form-control" name="image"id="exampleInputEmail1">
                             <img src="../public/upload/{{ $newsadminModel->news_image }}" width="80" height="110">

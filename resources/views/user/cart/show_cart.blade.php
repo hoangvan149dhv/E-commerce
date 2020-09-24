@@ -1,8 +1,8 @@
-@extends('layout') {{-- "triệu gọi trang layout như include" LƯU Ý:TRONG LARAVEL ĐẶT FILE PHẢI CÓ .BLADE.PHP --}} {{-- GỌI folder routes/web.php dòng 15 --}} @Section('content') {{--Đặt 'content bên trang welcome.blade.php dòng 355' --}}
+@extends('layout')
+@Section('content')
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <section id="cart_items">
     <div class="container-sm">
-
         <div class="cart_info table-responsive">
             <?php
                 $content = Cart::Content();
@@ -72,7 +72,7 @@
                             <li><span class="total_name">Thành tiền</span><span class="total_price">{{ str_replace('.00',"",Cart::subtotal()) }}</span><span>.VNĐ</li>
                         </ul>
                     </div>
-                    
+
                 </div>
                 <div class="col-sm-6">
                     <div class="chose_area col-sm-12" style="padding-left:25px;">
@@ -145,7 +145,7 @@
                 var ma_id = $(this).val();
                 var _token = $('input[name="_token"]').val();
                 var result = '';
-                if(action == 'city'){ 
+                if(action == 'city'){
                     result = 'province';
                     //résult_wards
                     result_ward ='wards';
@@ -163,21 +163,20 @@
                         }
                     }
                 });
-                // val_address
             });
 
             //format number // money
             function formatNumber(nStr, decSeperate, groupSeperate) {
-            nStr += '';
-            x = nStr.split(decSeperate);
-            x1 = x[0];
-            x2 = x.length > 1 ? '.' + x[1] : '';
-            var rgx = /(\d+)(\d{3})/;
-            while (rgx.test(x1)) {
-                x1 = x1.replace(rgx, '$1' + groupSeperate + '$2');
+                nStr += '';
+                x = nStr.split(decSeperate);
+                x1 = x[0];
+                x2 = x.length > 1 ? '.' + x[1] : '';
+                var rgx = /(\d+)(\d{3})/;
+                while (rgx.test(x1)) {
+                    x1 = x1.replace(rgx, '$1' + groupSeperate + '$2');
+                }
+                return x1 + x2;
             }
-            return x1 + x2;
-        }
             //fee_ship
             $('#city').change(function name(params) {
                 var fee_ship =$('#city option:selected').text();
@@ -199,7 +198,7 @@
                             $('.val_feeship').val(parseFloat(data));
                             total = parseFloat(data) + parseFloat(fee_cart_product);
                         }
-                        
+
                         $('.total_price').text(formatNumber(parseFloat(total) , '.', ','));
 
                     }

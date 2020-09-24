@@ -47,11 +47,11 @@
                             <ul class="nav navbar-nav">
                                 {{-- <li><a href=""><i class="fa fa-envelope"></i> hoangvan1491999_gmail.com</a></li> --}}
                                 <li><a href="{{URL::to('/thong-tin-khach-hang')}}"><i class="fa fa-pencil-square-o"></i> Lịch sử mua hàng</a></li>
-                                <li><a href="{{URL::to('/hien-thi-gio-hang')}}"><i class="fa fa-shopping-cart"></i> Giỏ hàng	
+                                <li><a href="{{URL::to('/hien-thi-gio-hang')}}"><i class="fa fa-shopping-cart"></i> Giỏ hàng
                                     {{-- <li><a href="{{URL::to('/hien-thi-gio-hang-ajax')}}"><i class="fa fa-shopping-cart"></i> Giỏ hàng									 --}}
                                     <?php
 									$content_cart = Cart::content()->count();  //ĐẾM SỐ LƯỢNG TRONG GIỎ HÀNG
-									   if(empty($content_cart)){	
+									   if(empty($content_cart)){
 										   echo "";
 									   }else{
 										   echo "	(".$content_cart.")";
@@ -81,24 +81,24 @@
                         <div class="mainmenu pull-left">
                             <ul class="nav navbar-nav collapse navbar-collapse">
                                 <li><a href="{{ url('/trang-chu') }}">Trang Chủ</a></li>
-                                <li class="dropdowna"><a style="cursor: pointer;"><i class="fa-icon fa fa-chevron-down"></i> Bộ sưu tập</a>  
+                                <li class="dropdowna"><a style="cursor: pointer;"><i class="fa-icon fa fa-chevron-down"></i> Bộ sưu tập</a>
                                     <ul role="menu" class="sub-menu-cate">
                                         @foreach ($category_product as $cate)
                                         <li><a href="{{ URL::to('/Danh-muc-san-pham/'.$cate->category_id)}}">{{"- ". $cate->category_name}}</a></li>
                                         @endforeach
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a style="cursor: pointer;"><i class="fa-icon fa fa-chevron-down"></i> Vải áo dài sunny</a>  
+                                <li class="dropdown"><a style="cursor: pointer;"><i class="fa-icon fa fa-chevron-down"></i> Vải áo dài sunny</a>
                                     <ul  class="sub-menu">
                                         @foreach ($brand_code_product as $brand_code)
                                         <li><a href="{{URL::to('/thuong-hieu/'.$brand_code->code_id)}}">{{"- ". $brand_code->brandcode_name}}</a></li>
                                     @endforeach
                                     </ul>
                                 </li>
-                                    
+
                                 <li><a href="{{ url::to('/khuyen-mai') }}"> Khuyễn mãi</a></li>
                                 <li><a href="{{URL::to('/tin-tuc-chia-se')}}">Tin tức</a></li>
-                                <li><a href="{{ url::to('/lien-he') }}">Liên Hệ</a>    </li>                              
+                                <li><a href="{{ url::to('/lien-he') }}">Liên Hệ</a>    </li>
                             </ul>
                         </div>
                     </div>
@@ -126,7 +126,7 @@
         <div class="container">
             <div class="row" style="margin-top:15px">
                 <div class="col-sm-9 col-ipad-details">
-                    @yield('content') {{--GỌI 'content bên trang home.blade.php dòng 2' --}}
+                    @yield('content')
                     @yield('contentinfocustome')
                 </div>
                 <div class="col-sm-3 col-ipad-slide" style="text-align: center;">
@@ -138,7 +138,7 @@
                             <div class="brands-name">
                                 <ul class="nav nav-pills nav-stacked">
                                     @foreach ($category_product as $cate)
-                                    <li><a href="{{ URL::to('/Danh-muc-san-pham/'.$cate->category_id)}}">{{$cate->category_name}}</a></li>
+                                        <li><a href="{{ URL::to('/Danh-muc-san-pham/'.$cate->category_id)}}">{{$cate->category_name}}</a></li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -150,29 +150,19 @@
                             <div class="brands-name">
                                 <ul class="nav nav-pills nav-stacked">
                                     @foreach ($brand_code_product as $brand_code)
-                                    <li><a href="{{URL::to('/thuong-hieu/'.$brand_code->code_id)}}">{{$brand_code->brandcode_name}}</a></li>
-                                    @endforeach {{--
-                                    <li>
-                                        <a href="#"> <span class="pull-right">(50)</span>Acne</a>
-                                    </li> --}}
+                                        <li><a href="{{URL::to('/thuong-hieu/'.$brand_code->code_id)}}">{{$brand_code->brandcode_name}}</a></li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
-                        <br>
                         <!--/brands_products-->
-                        {{-- fan-page --}}
                         @yield('product')
-                        <div class="brands_products facebook">
-                            <h2>FanPage</h2>
-                            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Faodaisunnyngo76%2F&tabs=timeline&width=280&height=400&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="280" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <hr>
-    </a>
     <a href="tel:@foreach ($contactinfoModel as $contact) {{ $contact->info_contact_phone }} @endforeach">
         <div class="hotline">
             <span class="before-hotline">Hotline:</span>
@@ -182,18 +172,18 @@
     </a>
                 {{-- MENU BAR --}}
                 <div class="icon-bar-menu">
-                    <a class="home active" href="{{ URL('/trang-chu') }}"><i class="fa fa-home"></i></a> 
-                    <a href="tel:0334964103"><i class="fa fa-phone"></i></a> 
+                    <a class="home active" href="{{ URL('/trang-chu') }}"><i class="fa fa-home"></i></a>
+                    <a href="tel:0334964103"><i class="fa fa-phone"></i></a>
                     <a class="cart-product" href="{{URL::to('/hien-thi-gio-hang')}}"><i class="fa fa-shopping-cart"><?php
                         $content_cart = Cart::content()->count();  //ĐẾM SỐ LƯỢNG TRONG GIỎ HÀNG
-                           if(empty($content_cart)){	
+                           if(empty($content_cart)){
                                echo "";
                            }else{
                                echo "(".$content_cart.")";
                            }
                         ?></i></a>
                     <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a class="info-customer" href="{{URL::to('/thong-tin-khach-hang')}}"><i class="fa fa-pencil-square-o"></i></a> 
+                    <a class="info-customer" href="{{URL::to('/thong-tin-khach-hang')}}"><i class="fa fa-pencil-square-o"></i></a>
                 </div>
     <footer id="footer">
         <!--Footer-->
@@ -242,15 +232,11 @@
         $(document).ready(function() {
             $(window).scroll(function name(params) {
                 if (window.scrollY > 300) {
-                    // $('#header').addClass('wapper-col-ul');
                     $('.icon-bar-menu').addClass('menu-bar');
-                    // $(".header-middle").css('display','none');
                     $(".header-middle").slideUp(100);
                 }
                 if (window.scrollY < 200) {
-                    // $('#header, wapper-col-ul').removeClass('wapper-col-ul');
                     $('.icon-bar-menu, menu-bar').removeClass('menu-bar')
-                    // $(".header-middle").css('display','block');
                     $(".header-middle").slideDown(100);
                 }
             })
@@ -266,16 +252,6 @@
                 })
             });
             $('.carousel-indicators li:first-child, .carousel-inner>.item:first-child').addClass('active');
-            // $('').addClass('active');
-            // $('.dropdown').click(function name(params) {
-            //     $('ul.sub-menu').toggleClass('menu-slide');
-            // })
-            // $('.dropdown').click(function name(params) {
-            //     $('ul.sub-menu').slideToggle(700);
-            // })
-            // $('.dropdowna').click(function name(params) {
-            //     $('ul.sub-menu-cate').slideToggle(700);
-            // })
         })
     </script>
     @yield('script') {{-- TẠO AJAX --}}

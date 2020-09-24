@@ -69,9 +69,9 @@ class Productcontroller extends Controller{
             //HIỂN THỊ THƯƠNG HIỆU SẢN PHẨM BÊN THANH SLIDE-BAR
         $brandcode_product =DB::table('tbl_brand_code_product')->orderby('code_id','desc')->get();
 
-        return view('admin.addProduct')->with('category_product',$category_product)->with('brand_code_product',$brandcode_product);
+        return view('admin.products.addProduct')->with('category_product',$category_product)->with('brand_code_product',$brandcode_product);
                                                 //'cate_product' là do mình khai báo    //brand_code_product do mimnhf khai báo
-                                                                            //ĐỂ TRUYỀN QUA TRANG admin.addProduct
+                                                                            //ĐỂ TRUYỀN QUA TRANG admin.products.addProduct
     }
     //ALL HIỂN THỊ TẤT CẢ
     public function all_Product(){
@@ -83,9 +83,9 @@ class Productcontroller extends Controller{
         ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
         ->orderby('product_id','desc')->paginate(10);
         //jion == INNER JION KHÔNG CẦN "ON" HAY "WHERE" GÌ  HẾT
-        $manager_product = view('admin.allProduct')->with('all_Productt',$all_product);
-                                        //'admin.allProduct là trang đó truyền vào biến $all_Product
-        return view('admin_layout')->with('admin.allProduct',$manager_product);
+        $manager_product = view('admin.products.allProduct')->with('all_Productt',$all_product);
+                                        //'admin.products.allProduct là trang đó truyền vào biến $all_Product
+        return view('admin.admin_layout')->with('admin.products.allProduct',$manager_product);
     }
     //THÊM product
     public function save_product(request $Request){
@@ -206,10 +206,10 @@ class Productcontroller extends Controller{
         ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
         ->orderby('product_id','desc')->get();
                                     //get == select(sql)
-        $manager_product=view('admin.updateProduct')->with('all_product',$all_product)
+        $manager_product=view('admin.products.updateProduct')->with('all_product',$all_product)
         ->with('category_product',$category_product)
         ->with('brandcode_product',$brandcode_product);
-        return view('admin_layout')->with('admin.updateProduct',$manager_product);
+        return view('admin.admin_layout')->with('admin.products.updateProduct',$manager_product);
     }
     //UPDATE
     public function update_Product(Request $Request,$product_id){

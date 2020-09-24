@@ -4,21 +4,21 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> {{-- SEO --}}
-    <meta name="description" content="{{ $meta_desc }}"> {{--MÔ TẢ GOOGLE bên homeController.php --}}
-    <meta name="keywords" content="{{ $meta_keyword }}" />{{--TỪ KHÓA GOOGLE bên homeController.php --}}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ $meta_desc }}">
+    <meta name="keywords" content="{{ $meta_keyword }}"/>
     <meta name="author" content="">
-    <title>{{ $meta_title }}</title>{{-- bên homeController.php --}}
-    
+    <title>{{ $meta_title }}</title>
+
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="{{ $url_canonical }}" />
-    <link rel="icon" type="image" href=""> {{-- //SEO --}} {{-- Property --- DÙNG ĐỂ SHARE TRANG( NHƯ FACEBOOK, ...) --}}
+    <link rel="icon" type="image" href="">
     <meta property="og:image" content="{{ asset('public/upload/qc2.png') }}" />
     <meta property="og:site_name" content="http://vanduong.com.web3.redhost.vn/" />
     <meta property="og:title" content="{{ $meta_title }}" />
     <meta property="og:description" content="{{ $meta_desc }}" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{ $url_canonical }}" /> {{-- Property --}}
+    <meta property="og:url" content="{{ $url_canonical }}"/>
     <link href="{{asset('public/client/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('public/client/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('public/client/css/animate.css')}}" rel="stylesheet">
@@ -43,13 +43,11 @@
                     <div class="col-sm-8">
                         <div class="shop-menu pull-right">
                             <ul class="nav navbar-nav">
-                                {{-- <li><a href=""><i class="fa fa-envelope"></i> hoangvan1491999_gmail.com</a></li> --}}
                                 <li><a href="{{URL::to('/thong-tin-khach-hang')}}"><i class="fa fa-pencil-square-o"></i> Lịch sử mua hàng</a></li>
-                                <li><a href="{{URL::to('/hien-thi-gio-hang')}}"><i class="fa fa-shopping-cart"></i> Giỏ hàng									
-                                    {{-- <li><a href="{{URL::to('/hien-thi-gio-hang-ajax')}}"><i class="fa fa-shopping-cart"></i> Giỏ hàng									 --}}
+                                <li><a href="{{URL::to('/hien-thi-gio-hang')}}"><i class="fa fa-shopping-cart"></i> Giỏ hàng
                                     <?php
-									$content_cart = Cart::content()->count();  //ĐẾM SỐ LƯỢNG TRONG GIỎ HÀNG
-									   if(empty($content_cart)){	
+									$content_cart = Cart::content()->count();
+									   if(empty($content_cart)){
 										   echo "";
 									   }else{
 										   echo "	(".$content_cart.")";
@@ -79,24 +77,24 @@
                         <div class="mainmenu pull-left">
                             <ul class="nav navbar-nav collapse navbar-collapse">
                                 <li><a href="{{ url('/trang-chu') }}">Trang Chủ</a></li>
-                                <li class="dropdowna"><a style="cursor: pointer;"><i class="fa-icon fa fa-chevron-down"></i> Bộ sưu tập</a>  
+                                <li class="dropdowna"><a style="cursor: pointer;"><i class="fa-icon fa fa-chevron-down"></i> Bộ sưu tập</a>
                                     <ul role="menu" class="sub-menu-cate">
                                         @foreach ($category_product as $cate)
                                         <li><a href="{{ URL::to('/Danh-muc-san-pham/'.$cate->category_id)}}">{{"- ". $cate->category_name}}</a></li>
                                         @endforeach
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a style="cursor: pointer;"><i class="fa-icon fa fa-chevron-down"></i> Vải áo dài sunny</a>  
+                                <li class="dropdown"><a style="cursor: pointer;"><i class="fa-icon fa fa-chevron-down"></i> Vải áo dài sunny</a>
                                     <ul  class="sub-menu">
                                         @foreach ($brand_code_product as $brand_code)
                                         <li><a href="{{URL::to('/thuong-hieu/'.$brand_code->code_id)}}">{{"- ". $brand_code->brandcode_name}}</a></li>
                                     @endforeach
                                     </ul>
                                 </li>
-                                    
+
                                 <li><a href="{{ url::to('/khuyen-mai') }}"> Khuyễn mãi</a></li>
                                 <li><a href="{{URL::to('/tin-tuc-chia-se')}}">Tin tức</a></li>
-                                <li><a href="{{ url::to('/lien-he') }}">Liên Hệ</a>    </li>                              
+                                <li><a href="{{ url::to('/lien-he') }}">Liên Hệ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -114,7 +112,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
         <!--/header-bottom-->
@@ -129,16 +126,16 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <h2 class="title text-center">liên hệ <strong>chúng tôi</strong></h2> {{--GOOGLE MAP --}}
-                                        <?php
-                                            foreach ($contactinfoModel as $item => $contact) {
-                                                $map = $contact->google_map;
-                                                if($map == ""){
-                                                }
-                                                else{
-                                                    echo '<div id="gmap" class="contact-map">'. $map . '</div>';
-                                                }
+                                    <?php
+                                        foreach ($contactinfoModel as $item => $contact) {
+                                            $map = $contact->google_map;
+                                            if($map == ""){
                                             }
-                                        ?>
+                                            else{
+                                                echo '<div id="gmap" class="contact-map">'. $map . '</div>';
+                                            }
+                                        }
+                                    ?>
                                 </div>
                             </div>
                             <div class="row" style="margin-top:25px">
@@ -160,18 +157,19 @@
                                             <div class="g-recaptcha" data-sitekey="{{env('CAPTCHA_KEY')}}"></div>
                                             @if($errors->has('g-recaptcha-response'))
                                             <span class="invalid-feedback" style="display:block">
-								<strong>{{$errors->first('g-recaptcha-response')}}</strong>
-							</span> @endif
+                                                <strong>{{$errors->first('g-recaptcha-response')}}</strong>
+                                            </span>
+                                            @endif
                                             <?php
-                            $message = Session::get('success');
-                            if($message){
-                            echo "<h2 class='col-md-12' style='color:green'>".$message."</h2>";
-                            Session::put('success',null);
-                            }
-                        ?>
-                                                <div class="form-group col-md-12">
-                                                    <input type="submit" name="submit" class="btn btn-primary pull-right" value="Xác nhận">
-                                                </div>
+                                                $message = Session::get('success');
+                                                if($message){
+                                                echo "<h2 class='col-md-12' style='color:green'>".$message."</h2>";
+                                                Session::put('success',null);
+                                                }
+                                            ?>
+                                            <div class="form-group col-md-12">
+                                                <input type="submit" name="submit" class="btn btn-primary pull-right" value="Xác nhận">
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
@@ -210,21 +208,21 @@
                     <!--/#contact-page-->
                 </div>
             </div>
-                            {{-- MENU BAR --}}
-                            <div class="icon-bar-menu">
-                                <a class="active" href="{{ URL('/trang-chu') }}"><i class="fa fa-home"></i></a> 
-                                <a href="tel:{{ $contact->info_contact_phone }}"><i class="fa fa-phone"></i></a> 
-                                <a href="{{URL::to('/hien-thi-gio-hang')}}"><i class="fa fa-shopping-cart"><?php
-                                    $content_cart = Cart::content()->count();  //ĐẾM SỐ LƯỢNG TRONG GIỎ HÀNG
-                                       if(empty($content_cart)){	
-                                           echo "";
-                                       }else{
-                                           echo "(".$content_cart.")";
-                                       }
-                                    ?></i></a>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="{{URL::to('/thong-tin-khach-hang')}}"><i class="fa fa-pencil-square-o"></i></a>  
-                            </div>
+            {{-- MENU BAR --}}
+            <div class="icon-bar-menu">
+                <a class="active" href="{{ URL('/trang-chu') }}"><i class="fa fa-home"></i></a>
+                <a href="tel:{{ $contact->info_contact_phone }}"><i class="fa fa-phone"></i></a>
+                <a href="{{URL::to('/hien-thi-gio-hang')}}"><i class="fa fa-shopping-cart"><?php
+                    $content_cart = Cart::content()->count();  //ĐẾM SỐ LƯỢNG TRONG GIỎ HÀNG
+                       if(empty($content_cart)){
+                           echo "";
+                       }else{
+                           echo "(".$content_cart.")";
+                       }
+                    ?></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="{{URL::to('/thong-tin-khach-hang')}}"><i class="fa fa-pencil-square-o"></i></a>
+            </div>
             <a href="tel:0334964103">
                 <div class="hotline">
                     <span class="before-hotline">Hotline:</span>
@@ -232,7 +230,6 @@
                     <span class="fa fa-phone phone"></span>
                 </div>
             </a>
-
             <footer id="footer">
                 <!--Footer-->
                 <div class="footer-top">
@@ -265,45 +262,45 @@
                 </div>
             </footer>
             <!--/Footer-->
-            <script src="{{asset('public/client/js/jquery.js')}}"></script>
-            <script src="{{asset('public/client/js/bootstrap.min.js')}}"></script>
-            <script src="{{asset('public/client/js/jquery.scrollUp.min.js')}}"></script>
-            <script src="{{asset('public/client/js/price-range.js')}}"></script>
-            <script src="{{asset('public/client/js/jquery.prettyPhoto.js')}}"></script>
-            <script src="{{asset('public/client/js/main.js')}}"></script>
-            {{-- DÙNG VALIDATION FORM ĐỂ CHECK KÍ TỰ --}}
-            <script src="{{asset('public/client/js/form-validator.min.js')}}"></script>
-            <script type="text/javascript">
-                $.validate({
-                });
-        
-                // MENU
-                $(document).ready(function() {
-                    $(window).scroll(function name(params) {
-                if (window.scrollY > 300) {
-                    // $('#header').addClass('wapper-col-ul');
-                    $('.icon-bar-menu').addClass('menu-bar');
-                    // $(".header-middle").css('display','none');
-                    $(".header-middle").slideUp(100);
-                }
-                if (window.scrollY < 200) {
-                    // $('#header, wapper-col-ul').removeClass('wapper-col-ul');
-                    $('.icon-bar-menu, menu-bar').removeClass('menu-bar')
-                    // $(".header-middle").css('display','block');
-                    $(".header-middle").slideDown(100);
-                }
+<script src="{{asset('public/client/js/jquery.js')}}"></script>
+<script src="{{asset('public/client/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('public/client/js/jquery.scrollUp.min.js')}}"></script>
+<script src="{{asset('public/client/js/price-range.js')}}"></script>
+<script src="{{asset('public/client/js/jquery.prettyPhoto.js')}}"></script>
+<script src="{{asset('public/client/js/main.js')}}"></script>
+{{-- DÙNG VALIDATION FORM ĐỂ CHECK KÍ TỰ --}}
+<script src="{{asset('public/client/js/form-validator.min.js')}}"></script>
+<script type="text/javascript">
+    $.validate({
+    });
+
+    // MENU
+    $(document).ready(function() {
+        $(window).scroll(function name(params) {
+    if (window.scrollY > 300) {
+        // $('#header').addClass('wapper-col-ul');
+        $('.icon-bar-menu').addClass('menu-bar');
+        // $(".header-middle").css('display','none');
+        $(".header-middle").slideUp(100);
+    }
+    if (window.scrollY < 200) {
+        // $('#header, wapper-col-ul').removeClass('wapper-col-ul');
+        $('.icon-bar-menu, menu-bar').removeClass('menu-bar')
+        // $(".header-middle").css('display','block');
+        $(".header-middle").slideDown(100);
+    }
+})
+        $('#background').fadeIn(1000);
+        $('#background').click(function name(params) {
+            $('#background').fadeOut(700, function name(params) {
+                $(this).css('display', 'none');
             })
-                    $('#background').fadeIn(1000);
-                    $('#background').click(function name(params) {
-                        $('#background').fadeOut(700, function name(params) {
-                            $(this).css('display', 'none');
-                        })
-                    })
-                    $('#background button').click(function name(params) {
-                        $('#background').fadeOut(700, function name(params) {
-                            $(this).css('display', 'none');
-                        })
-                    })
-                })
-            </script>
-            @yield('script') {{-- TẠO AJAX --}}
+        })
+        $('#background button').click(function name(params) {
+            $('#background').fadeOut(700, function name(params) {
+                $(this).css('display', 'none');
+            })
+        })
+    })
+</script>
+@yield('script')

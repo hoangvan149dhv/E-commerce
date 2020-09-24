@@ -8,9 +8,8 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background:;
   position: relative;
-  font-weight:400px;
+  font-weight: 400;
 }
 
 ul li {
@@ -45,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto', sans-serif;
 }
 
-.btn:hover, 
+.btn:hover,
 .btn:focus{
   outline: none;
   box-shadow: none;
@@ -253,7 +252,7 @@ button.fa.fa-search.btn.btn-sm.btn_search_product {
   color: #696763;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  font-weight: 4  00;
+  font-weight: 400;
   padding:0;
   padding-right: 0;
   margin-top: 10px;
@@ -306,7 +305,7 @@ ul.menu{
 }
 .mainmenu ul li:hover ul.menu {
   display: block;
-  
+
 }
 .mainmenu ul li:hover {
   color: white;
@@ -351,7 +350,7 @@ ul.menu{
   z-index: 2;
 }
 .mainmenu ul li a {
-  color: white; 
+  color: white;
   font-family: 'Roboto', sans-serif;
   font-size: 17px;
   font-weight: bold;
@@ -396,7 +395,7 @@ ul.menu{
 
 /*  Dropdown menu*/
 
-.navbar-header 
+.navbar-header
 .navbar-toggle .icon-bar {
     background-color: #fff;
 }
@@ -491,7 +490,7 @@ ul.sub-menu::before,ul.sub-menu-cate::before{
 }
 
 .fa-angle-down{
-  padding-left: 5px; 
+  padding-left: 5px;
 }
 
 @-webkit-keyframes fadeInUp {
@@ -507,7 +506,7 @@ ul.sub-menu::before,ul.sub-menu-cate::before{
     transform: translateY(0);
   }
 }
-  
+
 /*************************
 *******Footer CSS******
 **************************/
@@ -698,7 +697,7 @@ ul.sub-menu::before,ul.sub-menu-cate::before{
   font-size: 20px;
 }
 
-.searchform  button:hover, 
+.searchform  button:hover,
 .searchform  button:focus{
 	background-color:#FE980F;
 }
@@ -1024,7 +1023,7 @@ h2.title:before{
 }
 #title:hover{
   color: #ff9c16eb;
- 
+
 }
 h2.title {
   color: #FE980F;
@@ -1062,11 +1061,11 @@ h2.title {
   height: 300px;
   transition: transform .8s; /* Animation */
   width: 100%;
-} 
+}
 .productinfo.text-center img:hover {
   /* transform: scale(1.1); (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   transform: rotatey(180deg);
-} 
+}
 .product-image-wrapper{
   transition: 300ms;
   height: 430px;
@@ -1116,7 +1115,7 @@ object-position: 50% 50%;
 }
 .nav-pills .li h6, .nav-pills .li p {
   position: relative;
-  
+
   padding-left: 65px;
 }
 .product-new {
@@ -1455,7 +1454,7 @@ object-position: 50% 50%;
 .view-product img:hover {
   transform: scale(1.2); (150% zoom - Note: if the zoom is too large, it will go outside of the viewport)
   /* transform: rotatey(180deg); */
-} 
+}
   .productinfo.text-center .stick-promotion-brand {
     font-weight: 700;
     position: absolute;
@@ -1961,7 +1960,7 @@ object-position: 50% 50%;
   font-size: 17px;
   text-align: center;
   font-family: 'Roboto',sans-serif;
-  
+
 }
 
 
@@ -2203,8 +2202,8 @@ object-position: 50% 50%;
 
 
 
-.shopper-info p, 
-.bill-to p, 
+.shopper-info p,
+.bill-to p,
 .order-message p {
   color: #696763;
   font-size: 20px;
@@ -2227,9 +2226,9 @@ object-position: 50% 50%;
 }
 
 
-.shopper-info > form > input, 
-.form-two > form > select, 
-.form-two > form > input, 
+.shopper-info > form > input,
+.form-two > form > select,
+.form-two > form > input,
 .form-one > form > input,select.input-sm {
   background:#F0F0E9;
   border: 0 none;
@@ -2286,27 +2285,27 @@ select.input-sm{
   margin-right: 30px;
 }
 
-#cart_items .cart_info 
+#cart_items .cart_info
 .table.table-condensed.total-result {
   margin-bottom: 10px;
   margin-top: 35px;
   color: #696763
 }
 
-#cart_items .cart_info 
+#cart_items .cart_info
 .table.table-condensed.total-result tr {
   border-bottom: 0
 }
 
-#cart_items .cart_info 
+#cart_items .cart_info
 .table.table-condensed.total-result span {
   color: #FE980F;
   font-weight: 700;
   font-size: 16px
 }
 
-#cart_items .cart_info 
-.table.table-condensed.total-result 
+#cart_items .cart_info
+.table.table-condensed.total-result
 .shipping-cost {
   border-bottom: 1px solid #F7F7F0;
 }
@@ -2341,7 +2340,7 @@ select.input-sm{
 .single-blog-post > a {
 }
 
-.blog-post-area 
+.blog-post-area
 .single-blog-post a img {
   border: 1px solid #F7F7F0;
   /* height: 220px; */
@@ -2349,25 +2348,25 @@ select.input-sm{
   margin-bottom: 30px
 }
 
-.blog-post-area  
+.blog-post-area
 .single-blog-post p {
   color: #363432
 }
 
-.blog-post-area 
+.blog-post-area
 .post-meta {
   display: block;
   margin-bottom: 20px;
   overflow: hidden;
 }
 
-.blog-post-area 
+.blog-post-area
 .post-meta ul {
   padding:0;
   display: inline;
 }
 
-.blog-post-area 
+.blog-post-area
 .post-meta ul li {
   background:#F0F0E9;
   float: right;
@@ -2378,7 +2377,7 @@ select.input-sm{
   position: relative;
 }
 
-.blog-post-area 
+.blog-post-area
 .post-meta ul li i {
   background:#FE980F;
   color: #FFFFFF;
@@ -2388,7 +2387,7 @@ select.input-sm{
 }
 
 .sinlge-post-meta li i:after,
-.blog-post-area 
+.blog-post-area
 .post-meta ul li i:after {
   content: "";
   position: absolute;
@@ -2401,7 +2400,7 @@ select.input-sm{
   left:24px
 }
 
-.blog-post-area 
+.blog-post-area
 .post-meta ul span {
   float: right;
   color: #FE980F
@@ -2416,8 +2415,8 @@ select.input-sm{
 }
 
 
-.blog-post-area  
-.single-blog-post 
+.blog-post-area
+.single-blog-post
 .btn-primary {
   background:#FE980F;
   border: medium none;
@@ -2432,7 +2431,7 @@ select.input-sm{
   margin-top:45px
 }
 
-.pagination-area 
+.pagination-area
 .pagination li a {
   background:#F0F0E9;
   border: 0 none;
@@ -2442,9 +2441,9 @@ select.input-sm{
   padding: 4px 12px;
 }
 
-.pagination-area 
+.pagination-area
 .pagination li a:hover,
-.pagination-area 
+.pagination-area
 .pagination li .active {
   background:#FE980F;
   color: #fff
@@ -2472,17 +2471,12 @@ select.input-sm{
   width: 57px;
 }
 
-.pager-area 
+.pager-area
 .pager li a:hover {
   background: #FE980F;
   color: #fff
 }
 
-.rating-area {
-  border: 1px solid #F7F7F0;
-  direction: block;
-  overflow: hidden;
-}
 
 .rating-area ul li {
   float: left;
@@ -2497,7 +2491,7 @@ select.input-sm{
 }
 
 
-.rating-area 
+.rating-area
 .ratings li i {
   color:#CCCCCC
 }
@@ -2509,8 +2503,8 @@ select.input-sm{
   text-transform: uppercase;
 }
 
-.rating-area 
-.ratings .color, 
+.rating-area
+.ratings .color,
 .rating-area .color {
   color: #FE980F
 }
@@ -2536,7 +2530,7 @@ select.input-sm{
 }
 
 
-.commnets 
+.commnets
 .media-object {
   margin-right: 15px;
   width: 100%;
@@ -2552,8 +2546,8 @@ select.input-sm{
   margin-right: 22px
 }
 
-.commnets p, 
-.response-area p, 
+.commnets p,
+.response-area p,
 .replay-box p {
   font-size: 12px
 }
@@ -2582,7 +2576,7 @@ select.input-sm{
 }
 
 .blog-socials ul li {
-  
+
   float: left;
   height: 17px;
   margin-right: 5px;
@@ -2605,7 +2599,7 @@ select.input-sm{
 }
 
 
-.media-list .btn-primary, 
+.media-list .btn-primary,
 .commnets .btn-primary {
   background:#FC9A11;
   border: 0 none;
@@ -2716,7 +2710,7 @@ select.input-sm{
   width: 100%;
 }
 
-.replay-box form input:hover, 
+.replay-box form input:hover,
 .text-area textarea:hover {
   border: 1px solid #FE980F;
 }
@@ -2753,7 +2747,7 @@ form.has-validation-callback {
   border-color:#FE980F transparent transparent transparent;
   top: 25px;
   left: 5px
-} 
+}
 
 
 
@@ -2767,13 +2761,13 @@ form.has-validation-callback {
   margin-bottom: 70px
 }
 
-.contact-info .heading, 
+.contact-info .heading,
 .contact-form .heading {
   text-transform: capitalize;
 }
 
 
-#contact-page 
+#contact-page
 .form-control::-moz-placeholder {
   color: #8D8D8D;
 }
@@ -2801,7 +2795,7 @@ form.has-validation-callback {
 }
 
 
-#contact-page .form-control:focus, 
+#contact-page .form-control:focus,
 #contact-page .form-control:hover {
   box-shadow: inherit;
   border-color: #FDB45E;

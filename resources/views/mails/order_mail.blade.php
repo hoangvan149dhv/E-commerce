@@ -7,9 +7,6 @@
 @foreach ($template as $item)
 @endforeach
 <?php
-    $search  = array('{order_id}','{cus_id}','{cus_name}','{product_id}','{product_name}',
-                     '{fee_shipping}','{address}','{product_quantity}','{product_price}','{order_total}','{cusphone}','{order_status}',
-                     '{cus_note}','{order_date}');
 
     //data replace
     $order_id     = $key->orderid;
@@ -31,6 +28,9 @@
                           $productname,number_format($fee_ship). ' VNĐ',$email,$soluong,number_format($price).' VNĐ',number_format($total).' VNĐ',
                           $cusphone,$status,$note,Carbon::createFromFormat('Y-m-d H:i:s', $order_date)->format('d/m/yy | H:i:s'));
 
+    $search       = array('{order_id}','{cus_id}','{cus_name}','{product_id}','{product_name}',
+                          '{fee_shipping}','{address}','{product_quantity}','{product_price}','{order_total}','{cusphone}','{order_status}',
+                          '{cus_note}','{order_date}');
     //content
     $body = $item->template;
 

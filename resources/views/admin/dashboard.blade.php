@@ -2,7 +2,7 @@
     use Carbon\Carbon;
     use App\Cartcount;
 ?>
-@extends('admin_layout')
+@extends('admin.admin_layout')
 @section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
 <div class="table-agile-info">
     <div class="panel panel-default">
@@ -159,15 +159,15 @@
 @endsection
 @section('script')
 <script>
-  $('#select-all').click(function(event) {   
+  $('#select-all').click(function(event) {
   if(this.checked) {
       // Iterate each checkbox
       $(':checkbox').each(function() {
-          this.checked = true;                        
+          this.checked = true;
       });
   } else {
       $(':checkbox').each(function() {
-          this.checked = false;                       
+          this.checked = false;
       });
   }
 });

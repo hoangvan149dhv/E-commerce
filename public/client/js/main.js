@@ -4,8 +4,8 @@
 
 	var RGBChange = function() {
 	  $('#RGB').css('background', 'rgb('+r.getValue()+','+g.getValue()+','+b.getValue()+')')
-	};	
-		
+	};
+
 /*scroll to top*/
 
 $(document).ready(function(){
@@ -24,7 +24,7 @@ $(document).ready(function(){
 	        scrollTitle: false, // Set a custom <a> title if required.
 	        scrollImg: false, // Set true to use image
 	        activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
-	        zIndex: 2147483647 // Z-Index for the overlay
+	        zIndex: 999 // Z-Index for the overlay
 		});
 	});
 });

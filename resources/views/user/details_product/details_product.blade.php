@@ -1,20 +1,21 @@
-@extends('layout') {{-- "triệu gọi trang layout như include" LƯU Ý:TRONG LARAVEL ĐẶT FILE PHẢI CÓ .BLADE.PHP --}} {{-- GỌI folder routes/web.php dòng 15 --}} @Section('content') {{--Đặt 'content bên trang welcome.blade.php dòng 355' --}}
+@extends('layout')
+@Section('content')
 <div class="product-details">
     <!--product-details-->
     @foreach ($details_product as $details_product)
     <div class="col-sm-4">
         <div class="view-product">
             <?php
-				// tinh phan tram sale sản phẩm
-					$c = 0;
-					$c = (100*$details_product->product_price)/$details_product->product_price_promotion;
-					$sale = 100-$c;
-			?>
-                @if ($details_product->product_price_promotion==1||$details_product->product_price_promotion==0)
-                <p></p>
-                @else
-                <span class="stick-promotion">-{{ round($sale) }}%</span> @endif
-                <img src="../public/upload/{{$details_product->product_image}}" alt="" />
+                // tinh phan tram sale sản phẩm
+                    $c = 0;
+                    $c = (100*$details_product->product_price)/$details_product->product_price_promotion;
+                    $sale = 100-$c;
+            ?>
+            @if ($details_product->product_price_promotion==1||$details_product->product_price_promotion==0)
+            <p></p>
+            @else
+            <span class="stick-promotion">-{{ round($sale) }}%</span> @endif
+            <img src="../public/upload/{{$details_product->product_image}}" alt="" />
         </div>
         <div id="similar-product" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -44,10 +45,10 @@
             @if ($details_product->product_price_promotion==0 ||$details_product->product_price_promotion==1)
             <p></p>
             @else
-            <h4 style="color: #fe980fe8;text-decoration: line-through">{{number_format($details_product->product_price_promotion)}}.VNĐ</h4> 
+            <h4 style="color: #fe980fe8;text-decoration: line-through">{{number_format($details_product->product_price_promotion)}}.VNĐ</h4>
             @endif
             <form action="{{URL::to('/them-gio-hang')}}" method="POST">
-                {{ csrf_field() }}{{--mã tokken --}}
+                {{ csrf_field() }}
                 <span>
                 <span>{{number_format($details_product->product_price)}}.VNĐ</span>
                 <br>
@@ -78,10 +79,8 @@
     <div class="tab-content">
         <div class="tab-pane" id="details">
             <div class="col-sm-12">
-                <div class="product-image-wrapper">
-                    <div class="single-products">
-                        {!! $details_product->product_desc !!}
-                    </div>
+                <div class="single-products">
+                    {!! $details_product->product_desc !!}
                 </div>
             </div>
         </div>
@@ -113,16 +112,16 @@
                         <input data-validation="length" data-validation-length="5-100" data-validation-error-msg='vui lòng điền 5- 100 kí tự' type="email" name="email" placeholder="Email"/>
                     </span>
                     <textarea name="comment" data-validation="length" data-validation-length="5-1000" data-validation-error-msg='vui lòng điền 5- 1000 kí tự' placeholder="Nội dung"></textarea>
-                    <?php 
+                    <?php
                      $message = Session::get('alert');
                      if($message){
                          echo $message;
                          Session::put('alert',null);
                      }
                      ?>
-                        <button type="submit" name="submit" class="btn btn-default pull-right">
-                            Gửi đi
-                        </button>
+                    <button type="submit" name="submit" class="btn btn-default pull-right">
+                        Gửi đi
+                    </button>
                 </form>
             </div>
         </div>
@@ -143,10 +142,10 @@
                             <div class="productinfo text-center">
                                 <a href="{{ URL::to('/chi-tiet/'.$product_recommended->meta_slug) }}"><img src="../public/upload/{{$product_recommended->product_image}}" alt="" />
                                 <p >{{$product_recommended->product_Name}}</p></a>
-                                                                <?php
+                                <?php
                                 // tinh phan tram sale sản phẩm
                                     $c = 0;
-                                    $c = (100*$product_recommended->product_price)/$product_recommended->product_price_promotion;
+                                    $c = (100 * $product_recommended->product_price)/$product_recommended->product_price_promotion;
                                     $sale = 100-$c;
                                 ?>
                                 <div class="product_price">
@@ -158,7 +157,7 @@
                                     <p></p>
                                     @else
                                     <p style="text-decoration: line-through;color:#ff4b0099">{{number_format($product_recommended->product_price_promotion) ."VNĐ"}}</p>
-                                    @endif {{-- //phân trăm sale sản phẩm --}}
+                                    @endif
                                         <p style="color: #FE980F;">{{number_format($product_recommended->product_price)}}.VNĐ</p>
                                 </div>
                                 <a href="{{ URL::to('/chi-tiet/'.$product_recommended->meta_slug) }}" type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Chi tiết</a>
@@ -180,8 +179,8 @@
                                 <?php
                                 // tinh phan tram sale sản phẩm
                                     $c = 0;
-                                    $c = (100*$related_product->product_price)/$related_product->product_price_promotion;
-                                    $sale = 100-$c;
+                                    $c = (100 * $related_product->product_price) / $related_product->product_price_promotion;
+                                    $sale = 100 - $c;
                                 ?>
                             @if ($related_product->product_price_promotion==1||$related_product->product_price_promotion==0)
 							@else
@@ -228,8 +227,7 @@
                     <p></p>
                     @else
                     <p style="text-decoration: line-through;color:#ff4b0099">{{number_format($product->product_price_promotion) ."VNĐ"}}</p>
-                    @endif 
-                    {{-- //phân trăm sale sản phẩm --}}
+                    @endif
                     <p style="color:#FE980F">{{number_format($product->product_price)}}.VNĐ</p>
                 </a>
             </li>

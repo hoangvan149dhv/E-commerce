@@ -1,17 +1,8 @@
-@extends('home_page') {{-- "triệu gọi trang layout như include" LƯU Ý:TRONG LARAVEL ĐẶT FILE PHẢI CÓ .BLADE.PHP --}} {{-- GỌI folder routes/web.php dòng 15 --}}
-@Section('content') {{--Đặt 'content bên trang welcome.blade.php dòng 355' --}}
+@extends('home_page')
+@Section('content')
 <div class="features_items">
     <!--features_items-->
-    <h2 class="title text-center">Sản Phẩm Mới Nhất</h2> {{--
-    <div class="col-sm-12">
-        <select class="input-sm form-control w-sm inline v-middle" id="option">
-            <option value="0">chỉnh a-z</option>
-            <option value="1">chỉnh z-a</option>
-            <option value="2">giá giảm dần</option>
-            <option value="3">giá tăng dần</option>
-        </select>
-    </div>
-    <br> --}} @foreach ($all_productt as $product)
+    <h2 class="title text-center">Sản Phẩm Mới Nhất</h2> @foreach ($all_productt as $product)
     <div class="col-sm-3 col-xs-6 col-ipad" style="padding:0 5px;">
         <div class="product-image-wrapper product-image">
             <div class="single-products">
@@ -24,33 +15,32 @@
                         <input type="hidden" value="{{$product->product_price}}" class="cart_product_price_{{$product->product_id}}">
                         <input type="hidden" value="1" class="cart_product_qty_{{$product->product_id}}">
                         <?php
-											// tinh phan tram sale sản phẩm
-												$c = 0;
-												$c = (100*$product->product_price)/$product->product_price_promotion;
-												$sale = 100-$c;
-											?>
-                            <a href="{{ URL::to('/chi-tiet/'.$product->meta_slug) }}" title="Chi tiết">
-												@if ($product->product_price_promotion==1||$product->product_price_promotion==0)
+                        // tinh phan tram sale sản phẩm
+                            $c = 0;
+                            $c = (100 * $product->product_price)/$product->product_price_promotion;
+                            $sale = 100-$c;
+                        ?>
+                        <a href="{{ URL::to('/chi-tiet/'.$product->meta_slug) }}" title="Chi tiết">
+                        @if ($product->product_price_promotion==1||$product->product_price_promotion==0)
 
-												@else
-													<span class="stick-promotion">-{{ round($sale) }}%</span>
-												@endif
-											{{-- //phân trăm sale sản phẩm --}}
-												<img  class="img-fluid" src="public/upload/{{$product->product_image}}" />
-                                            <h5 id="title">{{$product->product_Name}}</h5></a> {{-- //phân trăm sale sản phẩm --}}
-                                            <div class="product_price">
-                                            @if ($product->product_price_promotion==1||$product->product_price_promotion==0)
-                            <p></p>
-                            @else
-                            <p style="text-decoration: line-through;color:#ff4b0099">{{number_format($product->product_price_promotion) ."VNĐ"}}</p>
-                            @endif {{-- //phân trăm sale sản phẩm --}}
+                        @else
+                            <span class="stick-promotion">-{{ round($sale) }}%</span>
+                        @endif
+                        <img  class="img-fluid" src="public/upload/{{$product->product_image}}" />
+                        <h5 id="title">{{$product->product_Name}}</h5></a> {{-- //phân trăm sale sản phẩm --}}
+                        <div class="product_price">
+                        @if ($product->product_price_promotion==1||$product->product_price_promotion==0)
+                        <p></p>
+                        @else
+                        <p style="text-decoration: line-through;color:#ff4b0099">{{number_format($product->product_price_promotion) ."VNĐ"}}</p>
+                        @endif {{-- //phân trăm sale sản phẩm --}}
 
-                            <p style="margin-bottom:4px;font-size: 16px;">{{number_format($product->product_price)}} .VNĐ</p>
+                        <p style="margin-bottom:4px;font-size: 16px;">{{number_format($product->product_price)}} .VNĐ</p>
                         </div>
-                            <div class="text-center">
-                                <span><a href="{{ URL::to('/chi-tiet/'.$product->meta_slug) }}" class="btn btn-default add-to-cart">Chi tiết</a></span>
+                        <div class="text-center">
+                            <span><a href="{{ URL::to('/chi-tiet/'.$product->meta_slug) }}" class="btn btn-default add-to-cart">Chi tiết</a></span>
                             <span><button type="button" title="Thêm giỏ hàng" class="btn btn-default add-to-cart" data-id_product="{{$product->product_id}}" name="add-to-cart">+<i class="fa fa-shopping-cart"></i></button></span>
-                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -60,7 +50,7 @@
 </div>
 <!--features_items-->
 <div class="page" style="text-align:center">
-    {{-- CÂU LỆNH PHÂN TRANG --}} {!! $all_productt->links() !!}
+   {!! $all_productt->links() !!}
 </div>
 @endsection
 @section('script')
@@ -107,20 +97,12 @@
             });
         });
     </script>
-
 @endsection
 @section('pupup')
 <div id="background">
-
-    <img src="public/upload/qc2.png" alt=""> {{--
-    <button type="submit"><i class="fa fa-times"></i></button> --}}
+    <img src="public/upload/qc2.png" alt="">
 </div>
 @endsection
-{{-- @section('slider_first')
-        <div class="col-sm-12">
-            <img src="public/upload/{{$slider_first->img}} " class="img-fluid" alt="" />
-        </div>
-@endsection --}}
 @section('slider')
         @foreach ($slider as $slider_img)
             <div class="item">
@@ -130,6 +112,3 @@
             </div>
         @endforeach
 @endsection
-{{-- @section('slide-right-left')
-
-@endsection --}}

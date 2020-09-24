@@ -1,4 +1,4 @@
-@extends('admin_layout')
+@extends('admin.admin_layout')
 @section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
 <div class="table-agile-info">
     <div class="panel panel-default">
@@ -13,7 +13,7 @@
       // }
        ?>
       <div class="row w3-res-tb">
-        <div class="col-sm-5 m-b-xs">             
+        <div class="col-sm-5 m-b-xs">
         </div>
         <div class="col-sm-4">
         </div>
@@ -46,7 +46,7 @@
             </tr>
           </thead>
           <tbody>
-           @foreach ($all_Productt as $product) 
+           @foreach ($all_Productt as $product)
                                                     {{--Product tự đặt --}}
             {{-- $all_Product là all_Product DÒNG 20 bên controller Product --}}
             <tr>
@@ -61,7 +61,7 @@
               <td style="text-align:center">{{number_format($product->product_price)}}.VNĐ</td> {{-- Gía --}}
               <td style="text-align:center">{{number_format($product->product_price_promotion)}}.VNĐ</td> {{-- Gía --}}
               {{-- SỬA / XÓA --}}
-              <td> 
+              <td>
               <a href="{{URL::to('/edit-product/'.$product->product_id)}}"style='color:green;font-size:20px' class="active" ui-toggle-class="">
                   <i class="fa fa-pencil-square-o text-success text-active"></i>
                 </a>||
@@ -78,7 +78,7 @@
       </div>
       <footer class="panel-footer">
         <div class="row">
-          <div class="col-sm-7 text-right text-center-xs">                
+          <div class="col-sm-7 text-right text-center-xs">
             <ul class="pagination pagination-sm m-t-none m-b-none">
               {!! $all_Productt->links() !!}
             </ul>
@@ -90,15 +90,15 @@
 @endsection
 @section('script')
 <script>
-  $('#select-all').click(function(event) {   
+  $('#select-all').click(function(event) {
   if(this.checked) {
       // Iterate each checkbox
       $(':checkbox').each(function() {
-          this.checked = true;                        
+          this.checked = true;
       });
   } else {
       $(':checkbox').each(function() {
-          this.checked = false;                       
+          this.checked = false;
       });
   }
 });

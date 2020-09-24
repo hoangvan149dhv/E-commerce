@@ -1,4 +1,4 @@
-@extends('admin_layout')
+@extends('admin.admin_layout')
 @section('content-layout')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
 <div class="row">
     <div class="col-lg-12">
@@ -24,7 +24,7 @@
                             $message = Session::get('messages');
                             if($message){
                                 ?>
-                                <div class="alert-success alert"><?php echo $message; ?></div> 
+                                <div class="alert-success alert"><?php echo $message; ?></div>
                                 <?php
                                 Session::put('messages',null);
                             }

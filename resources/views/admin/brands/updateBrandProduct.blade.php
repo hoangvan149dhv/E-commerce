@@ -1,4 +1,4 @@
-@extends('admin_layout')
+@extends('admin.admin_layout')
 @section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
 <div class="row">
     <div class="col-lg-12">
@@ -27,8 +27,8 @@
                                     $message = Session::get('alert-success');
                                     if($message){
                                  ?>
-                       
-                                <div class="alert-success alert"><?php echo $message; ?></div> 
+
+                                <div class="alert-success alert"><?php echo $message; ?></div>
                                 <?php
                                 Session::put('alert-success',null);
                                         }
@@ -37,7 +37,7 @@
                             <button type="submit" name="update" class="btn btn-info">Cập Nhật</button>
                             </form>
                         </div>
-    
+
                     </div>
                     @endforeach
 

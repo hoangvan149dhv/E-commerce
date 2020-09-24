@@ -1,7 +1,7 @@
 <?php
     // use Carbon\Carbon;
 ?>
-@extends('admin_layout')
+@extends('admin.admin_layout')
 @section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
 <div class="table-agile-info">
     <div class="panel panel-default">
@@ -10,7 +10,7 @@
       </div>
       <?php
   ?>
-     
+
           <div class="container">
             <div class="row w3-res-tb">
             <div class="col-sm-12 m-b-xs">
@@ -28,7 +28,7 @@
 
       <footer class="panel-footer">
         <div class="row">
-          <div class="col-sm-7 text-right text-center-xs">                
+          <div class="col-sm-7 text-right text-center-xs">
             <ul class="pagination pagination-sm m-t-none m-b-none">
               {{-- {!! $newsadminModel->links() !!} --}}
             </ul>

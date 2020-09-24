@@ -1,4 +1,4 @@
-@extends('admin_layout')
+@extends('admin.admin_layout')
 @section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
 <div class="table-agile-info">
     <div class="panel panel-default">
@@ -39,7 +39,7 @@
                     {{--$cate_Product dòng 43 || category_name là tên cột trong csld   --}}
               <td><span class="text-ellipsis">
                   <?php
-                      if($cate_Product->category_status==0){?>
+                      if($cate_Product->category_status == 0){?>
                         <a href=" {{URL::to('/active/'.$cate_Product->category_id)}}"><span class='fa fa-eye'style='color:green;font-size:20px'>||Hiện</span></a>
                       <?php }else{ ?>
                         <a href=" {{URL::to('/unactive/'.$cate_Product->category_id)}}"><span class="fa fa-eye-slash" style='color:red;font-size:20px'>||Ẩn</span></a>

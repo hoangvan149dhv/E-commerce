@@ -1,7 +1,7 @@
 <?php
     // use Carbon\Carbon;
 ?>
-@extends('admin_layout')
+@extends('admin.admin_layout')
 @section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
 <div class="table-agile-info">
     <div class="panel panel-default">
@@ -49,13 +49,13 @@
 			  </tr>
 			</thead>
 			<tbody>
-			 @foreach ($search as $product) 
+			 @foreach ($search as $product)
 													  {{--Product tự đặt --}}
 			  {{-- $all_Product là all_Product DÒNG 20 bên controller Product --}}
 			  <tr>
             {{--Product dòng 43 || category_name là tên cột trong csld   --}}
         <td style="text-align:center"><input type="checkbox" value="{{ $product->product_id }}" name="product[]"></></td>
-        <input type="hidden" name="slug[]" value="{{ $product->meta_slug }}">    
+        <input type="hidden" name="slug[]" value="{{ $product->meta_slug }}">
 				<td>{{$product->brandcode_id}}</td>  {{--Mã Hàng --}}
 				<td>{{$product->product_Name}}</td> {{--Sản Phẩm  --}}
 				<td>{{$product->category_name}}</td>{{--  danh mục--}}
@@ -64,7 +64,7 @@
 				<td>{{number_format($product->product_price)}}.VNĐ</td> {{-- Gía --}}
 				<td>{{number_format($product->product_price_promotion)}}.VNĐ</td> {{-- Gía --}}
 				{{-- SỬA / XÓA --}}
-				<td> 
+				<td>
 				<a href="{{URL::to('/edit-product/'.$product->product_id)}}"style='color:green;font-size:20px' class="active" ui-toggle-class="">
 					<i class="fa fa-pencil-square-o text-success text-active"></i>
 				  </a>||
@@ -81,10 +81,10 @@
       </div>
       <footer class="panel-footer">
         <div class="row">
-          
+
           <div class="col-sm-5 text-center">
           </div>
-          <div class="col-sm-7 text-right text-center-xs">                
+          <div class="col-sm-7 text-right text-center-xs">
             <ul class="pagination pagination-sm m-t-none m-b-none">
 				{!! $search->links() !!}
             </ul>
@@ -96,15 +96,15 @@
 @endsection
 @section('script')
 <script>
-  $('#select-all').click(function(event) {   
+  $('#select-all').click(function(event) {
   if(this.checked) {
       // Iterate each checkbox
       $(':checkbox').each(function() {
-          this.checked = true;                        
+          this.checked = true;
       });
   } else {
       $(':checkbox').each(function() {
-          this.checked = false;                       
+          this.checked = false;
       });
   }
 });
