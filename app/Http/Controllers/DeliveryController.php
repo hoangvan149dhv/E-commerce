@@ -15,7 +15,6 @@ class DeliveryController extends AdminController
         $this->AuthLogin();
         $city = CityModel::orderby('matp','ASC')->get();
 
-        // $feeship = feeShipModel::orderby('fee_id','desc')->get();
         view()->share('city',$city);
         return view('admin.delivery.add_delivery')->with(compact('city'));
     }
@@ -102,8 +101,6 @@ class DeliveryController extends AdminController
         $feeship->fee_xa = $request['wards'];
 
         $feeship->fee_feeship = $request['fee'];
-
-        // $data = array();
 
         $check_fee_ship = $feeship->where([['fee_matp','=', $feeship->fee_matp],['fee_maqh','=', $feeship->fee_maqh],['fee_xa','=',$feeship->fee_xa]])->first();
 

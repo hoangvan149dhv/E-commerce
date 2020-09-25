@@ -11,6 +11,7 @@ class sliderController extends HomeController
 {
     function slider_user(){
         $slider = sliderModel::where('status',1)->orderby('id','desc')->take(3)->get();
+
         if(isset($slider)){
             $all_productt = DB::table('tbl_product')
             ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
@@ -19,6 +20,7 @@ class sliderController extends HomeController
             return view('user.home')->with(compact('all_productt','slider'));
         }
         else{
+
             return false;
         }
     }

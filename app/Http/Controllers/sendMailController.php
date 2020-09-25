@@ -73,18 +73,20 @@ class sendMailController extends AdminController
     }
     //update template mail
     function update_template_mail($id, request $request){
+
         $detailtemplateMail = templateMailModel::find($id);
         $detailtemplateMail->label = $request['label'];
         $detailtemplateMail->template = $request['template'];
         $detailtemplateMail->status = $detailtemplateMail['status'];
-            $detailtemplateMail->save();
-            return back()->with('detailtemplateMail',$detailtemplateMail);
+        $detailtemplateMail->save();
 
+        return back()->with('detailtemplateMail',$detailtemplateMail);
     }
 
     //delete template
     function delete_template_mail($id){
         templateMailModel::find($id)->delete();
+
         return back();
     }
 

@@ -20,36 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bda5f2a-3606-4d58-aac0-d427369cc74e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/admin/BrandcodeProduct.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/user/BrandcodeProduct.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/user/CartController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/user/CategoryProduct.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/user/contactController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/user/contactinfoController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/user/newsadminController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/user/sliderController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/admin/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BrandcodeProduct.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/admin/CategoryProduct.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DeliveryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DeliveryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DetailsProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/user/DetailsProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/user/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InfocustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/user/InfocustomerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Payment_orderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/user/Payment_orderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Productcontroller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/admin/Productcontroller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/contactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/admin/contactController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/contactinfoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/admin/contactinfoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/controllerText.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/dumpDatabasesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/admin/dumpDatabasesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/logowebsiteController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/newsadminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/admin/newsadminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/reviewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/admin/reviewsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/admin/AdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/sendMailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/sendMailController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/sliderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/admin/sliderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/user/CategoryProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/user/CategoryProduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/user/DetailsProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/user/DetailsProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/user/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/user/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/user/contactinfoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/user/contactinfoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/user/sliderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/user/sliderController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +204,7 @@
       <workItem from="1600765170623" duration="2334000" />
       <workItem from="1600826569345" duration="629000" />
       <workItem from="1600858600924" duration="36000" />
-      <workItem from="1600913102886" duration="21136000" />
+      <workItem from="1600913102886" duration="21888000" />
     </task>
     <servers />
   </component>
@@ -285,10 +264,10 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="602" y="167" width="778" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1600684181003" />
-    <state x="610" y="286" width="619" height="550" key="find.popup" timestamp="1600943610571">
+    <state x="610" y="286" width="619" height="550" key="find.popup" timestamp="1600945529419">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="610" y="286" width="619" height="550" key="find.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1600943610571" />
+    <state x="610" y="286" width="619" height="550" key="find.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1600945529419" />
     <state x="660" y="252" key="run.anything.popup" timestamp="1600916791601">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>

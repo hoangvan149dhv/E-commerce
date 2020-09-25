@@ -29,7 +29,7 @@ class AdminController extends Controller{
         view()->share('brand_code_product',$brandcode_product);
     }
 
-    //KIỂM TRA ĐĂNG NHẬP
+    //check login
     public function AuthLogin(){
 
         $admin_id = Session::get('admin_Id');
@@ -44,7 +44,6 @@ class AdminController extends Controller{
         }
 
     }
-    // VÀO TRANG ĐĂNG NHẬP
     public function login(){
 
         $admin_id = Session::get('admin_Id');
@@ -80,9 +79,9 @@ class AdminController extends Controller{
 
         }else{
 
-            echo  "<script type='text/javascript'>
+            echo"<script type='text/javascript'>
                     alert('Câu hỏi bảo mật không đúng');
-                </script>";
+                 </script>";
                 return view('admin.login.admin_login');
         }
     }

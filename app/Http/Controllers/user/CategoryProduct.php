@@ -24,9 +24,7 @@ class CategoryProduct extends HomeController
         //lấy ra meta
         foreach($category_name as $value){
         //SEO
-        $meta_desc= $value->category_desc; //META DESCRIPTION
-
-        $meta_keyword = "Áo dài in 3D, áo dài đẹp, áo dài in sỉ lẻ, đồng phục";
+        $meta_desc= $value->category_desc;
 
         $meta_title = $value->category_name;
 
@@ -38,7 +36,6 @@ class CategoryProduct extends HomeController
         ->with('category_name',$category_name)
         //SEO
         ->with('meta_desc',$meta_desc)
-        ->with('meta_keyword',$meta_keyword)
         ->with('meta_title',$meta_title)
         ->with('url_canonical',$url_canonical);
     }

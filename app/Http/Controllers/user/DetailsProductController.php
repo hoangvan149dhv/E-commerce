@@ -23,17 +23,17 @@ class DetailsProductController extends HomeController{
         ->whereNotIn('tbl_product.meta_slug',[$meta_slug])
         ->limit('3')->orderby('product_id','desc')->get();
 
-        //SẢN PHẨM GỢI Ý
+
         foreach($show_details_product as $value){
-        $category_product_id = $value->category_id; //có nghĩa là lấy tất cả sản phẩm có category_id
-        //SẢN PHẨM GỢI Ý
+        $category_product_id = $value->category_id;
+
         $brand_product_id =$value->brandcode_id;
 
-        //SEO
-        $meta_desc= $value->meta_desc; //META DESCRIPTION
-        $meta_keyword = $value->meta_keyword;     //Từ khóa trên google khi người dùng tìm kiếm
-        $meta_title = $value->product_Name; //Tile là tên trang đó
-        $url_canonical = $request->url(); // url_canonical cái này lấy được cái đường dẫn hiện tại của cái trang  chủ
+
+        $meta_desc= $value->meta_desc;
+        $meta_keyword = $value->meta_keyword;
+        $meta_title = $value->product_Name;
+        $url_canonical = $request->url();
 
         ///SEO
         }
@@ -53,26 +53,19 @@ class DetailsProductController extends HomeController{
         ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
         ->where('tbl_product.category_id',$category_product_id)->limit(5)->get();
 
-        //LẤY THÔNG TIN BÌNH LUẬN TỪ KHÁCH HÀNG Model
-        // $reviewModel = ReviewModel::all();
         $reviewModel = ReviewModel::where('meta_slug',$meta_slug)->limit(4)->orderby('Rid','desc')->get();
-                                                            //take là lấy 5 cái(giống limit)
-                                 //sortByDesc LÀ LẤY GIÁ TRỊ Rid từ trên xuống
-
 
         return view('user.details_product.details_product')
         ->with('details_product',$show_details_product)
         ->with('show_details_product_recommended',$show_details_product_recommended)
         ->with('related_product',$related_product)
-         ->with('show_product',$show_product)
+        ->with('show_product',$show_product)
 
         //SEO
         ->with('meta_desc',$meta_desc)
         ->with('meta_keyword',$meta_keyword)
         ->with('meta_title',$meta_title)
         ->with('url_canonical',$url_canonical)
-
-        //Truyền paramenter qua bên view
         ->with('reviewModel',$reviewModel);
     }
 

@@ -11,8 +11,10 @@ class contactinfoController extends HomeController
 {
     public function layout_insert_Infocontact($info_Id){
         $contactinfoModel = contactinfoModel::where('id_Info',$info_Id)->get();
+
         return view('admin.contact.addinfocontact')->with('contactinfoModel',$contactinfoModel);
     }
+
     public function save_info_contact(Request $Request){
         $data['google_map'] = $Request->googlemap;
         if($Request->googlemap == ""){
