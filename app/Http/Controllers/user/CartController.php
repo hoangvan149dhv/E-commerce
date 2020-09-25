@@ -62,6 +62,7 @@ class CartController extends HomeController
            Cart::remove($rowId);
 
            return back();
+
        }else{
 
             return back();

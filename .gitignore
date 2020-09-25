@@ -11,3 +11,5 @@ npm-debug.log
 yarn-error.log
 .env
 database_aodaixinh_23-09-20.sql
+.idea/*
+/public/search.blade.php

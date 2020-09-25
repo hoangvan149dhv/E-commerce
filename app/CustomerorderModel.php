@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class CustomerorderModel extends Model
 {
     protected $table = 'tbl_order';
-    //khóa chinh
+
     protected $primary='order_id';
     public $timastamps = false;
 
@@ -19,10 +19,4 @@ class CustomerorderModel extends Model
     {
         return $this->belongsTo('App\customerModel','cusid','cusid');
     }
-
-      //  return $this->hasMany('App\Comment', 'foreign_key', 'local_key');
-
-        //  return $this->belongsTo('App\User', 'foreign_key', 'other_key');
-    
-  
 }

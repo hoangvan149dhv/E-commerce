@@ -283,12 +283,12 @@ class AdminController extends Controller{
         $key_word = $request->search;
 
         $search = DB::table('tbl_product')->orderby('product_id','desc')
-        ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
-        ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
-        ->orderby('product_id','desc')->where('product_Name','like','%'.$key_word.'%')
-        ->orWhere('tbl_category_product.category_name','like','%'.$key_word.'%')
-        ->paginate(30);
-                                            //CẤU TRÚC TÌM KIẾM GẦN GIỐNG NHƯ
+                ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
+                ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
+                ->orderby('product_id','desc')->where('product_Name','like','%'.$key_word.'%')
+                ->orWhere('tbl_category_product.category_name','like','%'.$key_word.'%')
+                ->paginate(30);
+
         return view('admin.search.searchproduct')->with('search',$search);
 
     }
@@ -299,11 +299,11 @@ class AdminController extends Controller{
         $key_word = $request->search;
 
         $search = DB::table('tbl_product')->orderby('product_id','desc')
-        ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
-        ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
-        ->orderby('product_id','desc')->where('product_Name','like','%'.$key_word.'%')
-        ->orWhere('tbl_category_product.category_name','like','%'.$key_word.'%')
-        ->paginate(30);
+                    ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
+                    ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
+                    ->orderby('product_id','desc')->where('product_Name','like','%'.$key_word.'%')
+                    ->orWhere('tbl_category_product.category_name','like','%'.$key_word.'%')
+                    ->paginate(30);
 
         return view('admin.search.searchproduct')->with('search',$search);
     }
