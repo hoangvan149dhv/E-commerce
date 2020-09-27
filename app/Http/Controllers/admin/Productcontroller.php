@@ -9,10 +9,6 @@ use App\ReviewModel;
 use App\Http\Controllers\admin\AdminController;
 use App\contactinfoModel;
 class Productcontroller extends AdminController {
-    public function __construct(){
-        $this->AuthLogin();
-    }
-
             ////SEO GOOGLE UTF8 convert UTF
     public function utf8convert($str) {
 
@@ -56,6 +52,8 @@ class Productcontroller extends AdminController {
 
     // LAYOUT ADD
     public function add_Product(){
+        
+        $this->AuthLogin();
 
         $category_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
 
@@ -66,6 +64,9 @@ class Productcontroller extends AdminController {
     }
 
     public function all_Product(){
+        
+        $this->AuthLogin();
+
         $all_product = DB::table('tbl_product')
         ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
         ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
@@ -77,6 +78,9 @@ class Productcontroller extends AdminController {
     }
     //THÊM product
     public function save_product(request $Request){
+        
+        $this->AuthLogin();
+
         $data['category_id'] = $Request->category;
         $data['product_Name']=$Request->name; //TEN SP
         $data['product_desc'] = $Request->mota; //MOTA
@@ -127,6 +131,8 @@ class Productcontroller extends AdminController {
     //DELETE PRODUCT
     public function delete_product($productt_id){
 
+        $this->AuthLogin();
+
         $product= DB::table('tbl_product')->where('product_id',$productt_id)->get();
         foreach ($product as $key) {
 
@@ -142,10 +148,14 @@ class Productcontroller extends AdminController {
         DB::table('tbl_product')->where('product_id',$productt_id)->delete();
         DB::table('tbl_order')->where('product_id',$productt_id)->delete();
         ReviewModel ::where('meta_slug',$product_slug)->delete();
+
         return back();
     }
     //xóa tất cả sản phẩm
     public function destroy_product(Request $request){
+
+        $this->AuthLogin();
+
         $product_id =$request->product;
         $product_slug =$request->slug;
 
@@ -179,6 +189,8 @@ class Productcontroller extends AdminController {
     //UPDATE (HIỂN THỊ )
     public function edit_product($product_id, request $Request){
 
+        $this->AuthLogin();
+
         $category_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
 
         $brandcode_product =DB::table('tbl_brand_code_product')->orderby('code_id','desc')->get();
@@ -195,6 +207,8 @@ class Productcontroller extends AdminController {
     //UPDATE
     public function update_Product(Request $Request,$product_id){
 
+        $this->AuthLogin();
+        
         $data = array();
         $data['category_id'] = $Request->category;
         $data['product_Name']=$Request->name;

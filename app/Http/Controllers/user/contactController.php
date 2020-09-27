@@ -24,6 +24,7 @@ class contactController extends HomeController{
         $contactModel->status= 0;
         $contactModel->save();
         Session::put('success','Cảm ơn bạn đã góp ý');
+        
         return redirect('/lien-he');
     }
 }

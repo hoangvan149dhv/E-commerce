@@ -7,14 +7,15 @@ use App\sliderModel;
 use DB;
 class sliderController extends AdminController
 {
-    public function __construct(){
-        $this->AuthLogin();
-    }
-
     function slider_layout(){
+        
+        $this->AuthLogin();
+
         return view('admin.slider.addslider');
     }
     function add_slider(Request $request){
+
+        $this->AuthLogin();
 
         $data = array();
         $data['status'] = $request->status;
@@ -40,17 +41,24 @@ class sliderController extends AdminController
     }
     function slider_all(){
 
+        $this->AuthLogin();
+
         $slider_all=sliderModel::all();
         return view('admin.slider.allslider')->with(compact('slider_all'));
 
     }
     function update_layout_slider($id){
 
+        $this->AuthLogin();
+
         $slider_edit = sliderModel::find($id);
         return view('admin.slider.updateslider')->with(compact('slider_edit'));
 
     }
     function update_slider($id, request $request){
+
+        $this->AuthLogin();
+
         $slider_update = sliderModel::find($id);
         $slider_update->status = $request['status'];
         $get_image = $request->file('image');
@@ -67,6 +75,7 @@ class sliderController extends AdminController
         }else{
 
             $slider_update->save();
+
             return redirect::to('update-layout-slider/'.$id)->with('error','thành công');
 
         }
@@ -74,18 +83,26 @@ class sliderController extends AdminController
     }
     function status_0($id){
 
+        $this->AuthLogin();
+
         sliderModel::where('id',$id)->update(['status'=>0]);
+
         return Redirect::to('all-slider');
 
     }
     function status_1($id){
 
+        $this->AuthLogin();
+
         sliderModel::where('id',$id)->update(['status'=>1]);
+        
         return Redirect::to('all-slider');
 
     }
     //xóa qc
     function delete($id){
+
+        $this->AuthLogin();
 
         $slider = sliderModel::where('id',$id)->get();
         foreach ($slider as $key) {
@@ -96,10 +113,14 @@ class sliderController extends AdminController
             }
         }
         sliderModel::where('id',$id)->delete();
+
         return  Redirect::to('all-slider')->with('success','xóa thành công');
 
     }
+
     function destroy(request $request){
+
+        $this->AuthLogin();
 
         $slider_id = $request->slider;
 
@@ -114,6 +135,7 @@ class sliderController extends AdminController
             }
         }
         sliderModel::whereIn('id',$slider_id)->delete();
+        
         return Redirect::to('all-slider')->with('success','xóa thành công');
     }
 }

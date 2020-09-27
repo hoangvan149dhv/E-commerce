@@ -202,9 +202,8 @@
                     <li><a href="{{URL::to('/all-slider')}}">Liệt Kê Slider</a></li>
                     </ul>
                 </li>
-                @foreach ($contactinfoModel as $contact)
-                 <li><a href="{{URL::to('/them-thong-tin/'.$contact->id_Info)}}"><i class="fa fa-user"></i>thông tin liên hệ</a></li>
-                @endforeach
+                 <li><a href="{{URL::to('/them-thong-tin')}}"><i class="fa fa-user"></i>thông tin liên hệ</a>
+                </li>
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-bicycle"></i>

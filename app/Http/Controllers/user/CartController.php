@@ -16,9 +16,11 @@ use App\feeShipModel;
 class CartController extends HomeController
 {
     public function show_cart_ajax(Request $request){
+
         return view('user.cart.show_cartajax');
     }
     public function save_cart_ajax(Request $request){
+
         $data['id'] =$request->cart_id;
         $data['qty']= $request->cart_qty;
         $data['name'] =$request->cart_name;
@@ -27,6 +29,7 @@ class CartController extends HomeController
         $data['options']['images']=$request->cart_image;
         Cart::add($data);
         session::put('message',Cart::content()->count());
+
     }
 
     public function save_product_cart(Request $request){
@@ -44,6 +47,7 @@ class CartController extends HomeController
         $data['options']['images']=$product_info->product_image;
         Cart::add($data);
         session::put('message',Cart::content()->count());
+
         return Redirect::to('/hien-thi-gio-hang');
     }
 
@@ -94,6 +98,7 @@ class CartController extends HomeController
     if(is_numeric($qty)){
 
         Cart::update($rowId,$qty);
+        
         return back();
 
     }else{

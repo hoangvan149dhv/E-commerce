@@ -16,7 +16,7 @@ class newsadminController extends HomeController
         $newsadminModel = newsadminModel::select()->orderby('news_id','desc')->paginate(5);
 
         return view('user.news.news')
-        ->with('newsadminModel',$newsadminModel);
+              ->with('newsadminModel',$newsadminModel);
 
     }
          //CHI TIẾT trang tin tức
@@ -29,11 +29,11 @@ class newsadminController extends HomeController
         $url_canonical = $request->url();
 
         return view('user.news.newsdetails')
-            ->with('meta_desc',$meta_desc)
-            ->with('meta_title',$meta_title)
-            ->with('url_canonical',$url_canonical)
-            ->with('newsadminModel',$newsadminModel)
-            ->with('news_details',$news_details);
+                ->with('meta_desc',$meta_desc)
+                ->with('meta_title',$meta_title)
+                ->with('url_canonical',$url_canonical)
+                ->with('newsadminModel',$newsadminModel)
+                ->with('news_details',$news_details);
     }
 }
 

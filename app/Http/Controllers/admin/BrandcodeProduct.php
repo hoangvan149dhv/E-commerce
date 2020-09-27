@@ -5,20 +5,24 @@ use App\Http\Controllers\admin\AdminController;
 use Illuminate\Http\Request;
 use DB;
 use Session;
+use Illuminate\Database\Query\Builder;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Controllers\admin\loginController as loginController;
 class BrandcodeProduct extends AdminController
 {
-    public function __construct(){
-        $this->AuthLogin();
-    }
     // LAYOUT ADD
     public function add_Brand_code_Product(){
+
+        $this->AuthLogin();
+
         return view('admin.brands.addBrandProduct');
     }
 
     //ALL HIỂN THỊ
     public function all_Brand_code_Product(){
+
+        $this->AuthLogin();
 
         $allBrandcode_product = DB::table('tbl_brand_code_product')->get();
 
@@ -29,6 +33,8 @@ class BrandcodeProduct extends AdminController
 
     // THÊM brand
     public function save_brandcode_product(request $Request){
+
+        $this->AuthLogin();
 
         $data['brandcode_name'] = $Request->name;
 
@@ -44,14 +50,16 @@ class BrandcodeProduct extends AdminController
     //DELETE BRAND-CODE
     public function delete_brand_code_product($brand_code_id){
 
+        $this->AuthLogin();
 
         DB::table('tbl_brand_code_product')->where('code_id',$brand_code_id)->delete();
 
         return redirect::to('/all-Brand-code-Product');
     }
     //UPDATE (HIỂN THỊ )
-    public function edit_brand_code_product($brand_code_id, request $Request)
-    {
+    public function edit_brand_code_product($brand_code_id, request $Request){
+
+        $this->AuthLogin();
 
         $allBrandcode_product = DB::table('tbl_brand_code_product')->where('code_id',$brand_code_id)->get();
 
@@ -61,6 +69,9 @@ class BrandcodeProduct extends AdminController
     }
 
     public function update_brand_code_Product(Request $Request,$brand_code_id){
+
+        $this->AuthLogin();
+
         $data = array();
         $data['brandcode_name'] = $Request->name;
         $data['brandcode_id'] = $Request->code;

@@ -40,28 +40,32 @@ class HomeController extends Controller
     }
     public function index(Request $request){
 
-            $all_product = DB::table('tbl_product')
-        ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
-        ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
-        ->orderby('product_id','desc')->paginate(20);
+        $all_product = DB::table('tbl_product')
+                        ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
+                        ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
+                        ->orderby('product_id','desc')->paginate(20);
         $slider = sliderModel::where('status',1)->orderby('id','desc')->take(3)->get();
         //SỐ LƯỢT TRUY CẬP
         $count = count::findOrFail(1);
         $response = new Response();
         $response->withcookie("abc".rand(0,9999),"abc".rand(0,9999),1111);
+
         if(isset($response)){
+
             $count->increment('counts');
+
             return view('user.home')
             ->with('all_productt',$all_product)
             ->with('count',$count)
             ->with(compact('all_product','slider'));
              $request->cookie("abc".rand(0,9999));
+
         }else{
             // $count->increment('counts');
             return view('user.home')
-            ->with('all_productt',$all_product)
-            ->with('count',$count)
-            ->with(compact('all_product','slider'));
+                    ->with('all_productt',$all_product)
+                    ->with('count',$count)
+                    ->with(compact('all_product','slider'));
         }
     }
     //TÌM KIẾM
@@ -71,34 +75,39 @@ class HomeController extends Controller
             return back();
         }else{
             $search = DB::table('tbl_product')
-            ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
-            ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
-            ->orderby('product_id','desc')->where('product_Name','like','%'.$key_word.'%')
-            ->orwhere('product_material','like','%'.$key_word.'%')->paginate(20);
-                                            //CẤU TRÚC TÌM KIẾM GẦN GIỐNG NHƯ
+                        ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
+                        ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
+                        ->orderby('product_id','desc')->where('product_Name','like','%'.$key_word.'%')
+                        ->orwhere('product_material','like','%'.$key_word.'%')->paginate(20);
+
         return view('user.search.search')
-            ->with('search',$search);
+                  ->with('search',$search);
         }
     }
     public function search_product(Request $request){
         $key_word = $request->search;
         $search = DB::table('tbl_product')
-        ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
-        ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
-        ->orderby('product_id','desc')->where('product_Name','like','%'.$key_word.'%')
-        ->orwhere('product_material','like','%'.$key_word.'%')->paginate(20);
+                    ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
+                    ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
+                    ->orderby('product_id','desc')->where('product_Name','like','%'.$key_word.'%')
+                    ->orwhere('product_material','like','%'.$key_word.'%')->paginate(20);
+      
         return view('user.search.search')
-        ->with('search',$search);
+                ->with('search',$search);
+
     }
     public function promotion(Request $request){
+
         $slider = sliderModel::where('status',1)->orderby('id','desc')->take(3)->get();
+
         $promotion = DB::table('tbl_product')
-        ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
-        ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
-        ->where('product_price_promotion','>','1')->orderby('product_price_promotion','desc')->paginate(20);
+                        ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
+                        ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
+                        ->where('product_price_promotion','>','1')->orderby('product_price_promotion','desc')->paginate(20);
+       
         return view('user.promotion.promotion')
-        ->with('promotion',$promotion)
-        ->with(compact('slider'));
+                    ->with('promotion',$promotion)
+                    ->with(compact('slider'));
     }
 }
 

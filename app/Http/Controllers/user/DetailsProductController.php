@@ -44,6 +44,7 @@ class DetailsProductController extends HomeController{
             ->where('tbl_brand_code_product.brandcode_id',$brand_product_id)->whereNotIn('tbl_product.meta_slug',[$meta_slug])->limit('3')
             ->orderby('product_id','asc')->get();
         }else{
+
             return redirect('trang-chu');
         }
 
@@ -56,17 +57,17 @@ class DetailsProductController extends HomeController{
         $reviewModel = ReviewModel::where('meta_slug',$meta_slug)->limit(4)->orderby('Rid','desc')->get();
 
         return view('user.details_product.details_product')
-        ->with('details_product',$show_details_product)
-        ->with('show_details_product_recommended',$show_details_product_recommended)
-        ->with('related_product',$related_product)
-        ->with('show_product',$show_product)
+                ->with('details_product',$show_details_product)
+                ->with('show_details_product_recommended',$show_details_product_recommended)
+                ->with('related_product',$related_product)
+                ->with('show_product',$show_product)
 
-        //SEO
-        ->with('meta_desc',$meta_desc)
-        ->with('meta_keyword',$meta_keyword)
-        ->with('meta_title',$meta_title)
-        ->with('url_canonical',$url_canonical)
-        ->with('reviewModel',$reviewModel);
+                //SEO
+                ->with('meta_desc',$meta_desc)
+                ->with('meta_keyword',$meta_keyword)
+                ->with('meta_title',$meta_title)
+                ->with('url_canonical',$url_canonical)
+                ->with('reviewModel',$reviewModel);
     }
 
     // Bình luận đánh giá sản phẩm

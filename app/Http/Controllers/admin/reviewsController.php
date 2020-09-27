@@ -12,20 +12,22 @@ use Validator;
 use App\Http\Controllers\admin\AdminController;
 class reviewsController extends AdminController {
 
-    public function __construct(){
-        $this->AuthLogin();
-    }
-
     public function reviews(){
 
+        $this->AuthLogin();
+
         $reviews= ReviewModel::select()->orderby('Rid','desc')->paginate(10);
+        
         return view('admin.reviews.reviews')->with(compact('reviews'));
 
     }
         //remove Reviews
     public function delete_status_1($Rid){
 
+        $this->AuthLogin();
+
         ReviewModel ::where('Rid',$Rid)->delete();
+
         return redirect('/reviews');
 
     }

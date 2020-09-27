@@ -12,7 +12,7 @@ class DeliveryController extends AdminController
 {
     //LAYOUT_DELIVERY
     public function layout_add_delivery(){
-        $this->AuthLogin();
+        
         $city = CityModel::orderby('matp','ASC')->get();
 
         view()->share('city',$city);

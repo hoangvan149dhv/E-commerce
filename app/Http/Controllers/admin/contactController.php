@@ -9,29 +9,43 @@ use Validator;
 use App\Http\Controllers\admin\AdminController;
 class contactController extends AdminController{
 
-    public function __construct(){
-        $this->AuthLogin();
-    }
-
     public function contactadmin(){
+
+        $this->AuthLogin();
+
         $contact= contactModel::select()->orderby('Con_Id','desc')->paginate(10);
+        
         return view('admin.contact.contact')->with(compact('contact'));
     }
 
-        public function update_status_0($Con_Id){
-            $data['status'] = 1;
-            contactModel ::where('Con_Id',$Con_Id)->update($data);
-            return redirect('/contact');
-        }
+    public function update_status_0($Con_Id){
+        
+        $this->AuthLogin();
+
+        $data['status'] = 1;
+        
+        contactModel ::where('Con_Id',$Con_Id)->update($data);
+        
+        return redirect('/contact');
+    }
 
     public function update_status_1($Con_Id){
+
+        $this->AuthLogin();
+
         $data['status'] = 0;
+        
         contactModel ::where('Con_Id',$Con_Id)->update($data);
+        
         return redirect('/contact');
     }
 
     public function delete_status_1($Con_Id){
-    contactModel ::where('Con_Id',$Con_Id)->delete();
-    return redirect('/contact');
+    
+        $this->AuthLogin();
+
+        contactModel ::where('Con_Id',$Con_Id)->delete();
+    
+        return redirect('/contact');
     }
 }

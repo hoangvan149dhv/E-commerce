@@ -85,13 +85,13 @@ Route::post('/lien-he','user\contactController@insertContact');
 Route::get('khuyen-mai', 'user\HomeController@promotion');
 
 
-
+Route::get('cc', 'admin\loginController@get_session_userlogin');
 
 ////////////////////////////////////////----ADMIN---////////////////////////////////////////////////////////////////////
 
-Route::get('/admin-login', 'admin\AdminController@login');
+Route::get('/admin-login', 'admin\loginController@login');
 
-Route::post('/admin-quanly', 'admin\AdminController@check_login');
+Route::post('/admin-quanly', 'admin\loginController@check_login_user_pass');
 
 Route::get('/admin-quanly', 'admin\AdminController@index');
 
@@ -262,11 +262,11 @@ Route::get('/status-1/{id}','admin\sliderController@status_1');
 Route::get('/delete-layout-slider/{id}','admin\sliderController@delete');
 
 Route::get('/destroy-slider','admin\sliderController@destroy');
-Route::get('/them-thong-tin/{id}','admin\contactinfoController@layout_insert_Infocontact');
+Route::get('/them-thong-tin','admin\contactinfoController@layout_insert_Infocontact');
 Route::post('/save-info-contact','admin\contactinfoController@save_info_contact');
 
-Route::get('/quen-mat-khau','admin\AdminController@layout_forget_pass');
-Route::post('/lay-mat-khau','admin\AdminController@get_pass');
+Route::get('/quen-mat-khau','admin\loginController@layout_forget_pass');
+Route::post('/lay-mat-khau','admin\loginController@get_pass');
 
 //////////////////////////////////-------------------DELIVERY---------------------//////////////////////////////////////
 Route::get('/add-delivery','DeliveryController@layout_add_delivery');
@@ -302,31 +302,32 @@ Route::get('/our_backup_database', 'admin\dumpDatabasesController@backup_databas
 ///////////////////////////////////////----------------MAIL-----------------////////////////////////////////////////////
 
 //SEND MAIL ORDER
-Route::get('/mail-config','sendMailController@layoutConfigMail');
+Route::get('/mail-config','admin\configmailController@layoutConfigMail');
 
 //layout create template mail
-Route::get('/template-mail-config','sendMailController@layoutcreatetemplatemail');
+Route::get('/template-mail-config','admin\configmailController@layoutcreatetemplatemail');
 
 //add template mail
-Route::post('/save-template-mail','sendMailController@savetemplatemail');
-Route::post('/save-config-mail','sendMailController@saveConfigmail');
+Route::post('/save-template-mail','admin\configmailController@savetemplatemail');
+Route::post('/save-config-mail','admin\configmailController@saveConfigmail');
 
-Route::get('/all-template-mail', 'sendMailController@listitemtemplatemail');
+Route::get('/all-template-mail', 'admin\configmailController@listitemtemplatemail');
 
 //Convert status template work
-Route::get('/status-template/{id}','sendMailController@update_status');
+Route::get('/status-template/{id}','admin\configmailController@update_status');
 
 //layout detail update template
-Route::get('/chi-tiet-template/{id}','sendMailController@layout_update_template');
+Route::get('/chi-tiet-template/{id}','admin\configmailController@layout_update_template');
 
 //save uptdate template
-Route::post('/update-template-mail/{id}','sendMailController@update_template_mail');
+Route::post('/update-template-mail/{id}','admin\configmailController@update_template_mail');
 
 //delete layout template
-Route::get('/delete-layout-template/{id}','sendMailController@delete_template_mail');
+Route::get('/delete-layout-template/{id}','admin\configmailController@delete_template_mail');
 
 //Display template mail used
-Route::get('/template-mail','sendMailController@templateMail');
+Route::get('/template-mail','admin\configmailController@templateMail');
+
 //SEND MAIL
 Route::post('/send','sendMailController@sendMail');
 

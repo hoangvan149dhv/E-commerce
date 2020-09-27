@@ -25,6 +25,7 @@ class contactinfoController extends HomeController
         $data['info_contact_mail'] = $Request->email;
         $contactinfoModel = new contactinfoModel;
         $contactinfoModel->where('id_Info',1)->update($data);
+        
         return back();
     }
 }
