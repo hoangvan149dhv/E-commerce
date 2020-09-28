@@ -13,16 +13,6 @@ use App\count;
 use Illuminate\Database\Query\Builder;
 class loginController extends Controller
 {
-    
-    //KIỂM TRA ĐĂNG NHẬP
-    public function AuthLogin(){
-        $session_id = session::get('session_id');
-
-        if(empty($session_id)){
-            
-            return Redirect::to('admin-login')->send();        
-        }
-    }
     //check login if user already login
     public function login(){
 
@@ -87,11 +77,11 @@ class loginController extends Controller
             $product_order_month = DB::table('tbl_order')->where('status',1)->whereMonth('order_date',$month)->get();
 
             session::put('admin_name', $result->admin_name); 
-
+            
             session::put('session_id',md5( $result->admin_pass . Carbon::now()->day));
             
             session::put('message', DB::table('tbl_order')->where('status',0)->count());
-            
+
             $response = new Response();
 
             $alert=  $response->withcookie($result->admin_name,$result->admin_name,1000000);
@@ -110,6 +100,7 @@ class loginController extends Controller
                 return view('admin.login.admin_login');
                 }
         }else{
+
             echo "<script type='text/javascript'>
                   alert('Sai Mật Khẩu ');
                   </script>";

@@ -12,7 +12,7 @@ class contactinfoController extends AdminController
     
     public function layout_insert_Infocontact(){
 
-        $this->AuthLogin();
+        
 
         $contactinfoModel = contactinfoModel::where('id_Info',1)->get();
         
@@ -21,7 +21,7 @@ class contactinfoController extends AdminController
 
     public function save_info_contact(Request $Request){
         
-        $this->AuthLogin();
+        
 
         $data['google_map'] = $Request->googlemap;
         

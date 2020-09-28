@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Cartcount extends Model
+class OrderModel extends Model
 {
     protected $table =('tbl_order');
     public function count(){

@@ -1,17 +1,10 @@
 @extends('admin.admin_layout')
-@section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
+@section('content')
 <div class="table-agile-info">
     <div class="panel panel-default">
       <div class="panel-heading">
         Thông Tin Sản Phẩm
       </div>
-      <?php
-      // $message = Session::get('message');
-      // if($message){
-      //     echo $message;
-      //     Session::put('message',null);
-      // }
-       ?>
       <div class="row w3-res-tb">
         <div class="col-sm-5 m-b-xs">
         </div>
@@ -47,25 +40,21 @@
           </thead>
           <tbody>
            @foreach ($all_Productt as $product)
-                                                    {{--Product tự đặt --}}
-            {{-- $all_Product là all_Product DÒNG 20 bên controller Product --}}
             <tr>
-                    {{--Product dòng 43 || category_name là tên cột trong csld   --}}
-              <td style="text-align:center"><input type="checkbox" value="{{ $product->product_id }}" name="product[]"></></td>
+              <td style="text-align:center"><input type="checkbox" value="{{ $product->product_id }}" name="product[]"></td>
               <input type="hidden" name="slug[]" value="{{ $product->meta_slug }}">
-              <td style="text-align:center">{{$product->brandcode_id}}</td>  {{--Mã Hàng --}}
-              <td style="text-align:center">{{$product->product_Name}}</td> {{--Sản Phẩm  --}}
-              <td style="text-align:center">{{$product->category_name}}</td>{{--  danh mục--}}
-              <td style="text-align:center">{{$product->product_material}}</td>{{--  Chất Liệu--}}
-              <td style="text-align:center"><img src="public/upload/{{ $product->product_image }}" width=80 height=110></td> {{--hình  --}}
-              <td style="text-align:center">{{number_format($product->product_price)}}.VNĐ</td> {{-- Gía --}}
-              <td style="text-align:center">{{number_format($product->product_price_promotion)}}.VNĐ</td> {{-- Gía --}}
-              {{-- SỬA / XÓA --}}
+              <td style="text-align:center">{{$product->brandcode_id}}</td>
+              <td style="text-align:center">{{$product->product_Name}}</td>
+              <td style="text-align:center">{{$product->category_name}}</td>
+              <td style="text-align:center">{{$product->product_material}}</td>
+              <td style="text-align:center"><img src="public/upload/{{ $product->product_image }}" width=80 height=110></td>
+              <td style="text-align:center">{{number_format($product->product_price)}}.VNĐ</td>
+              <td style="text-align:center">{{number_format($product->product_price_promotion)}}.VNĐ</td>
               <td>
-              <a href="{{URL::to('/edit-product/'.$product->product_id)}}"style='color:green;font-size:20px' class="active" ui-toggle-class="">
+                <a href="{{URL::to('/edit-product/'.$product->product_id)}}"style='color:green;font-size:20px' class="active" ui-toggle-class="">
                   <i class="fa fa-pencil-square-o text-success text-active"></i>
                 </a>||
-                  <a href="{{URL::to('/delete-product/'.$product->product_id)}}" style='color:red;font-size:20px'class="active" ui-toggle-class="">
+                <a href="{{URL::to('/delete-product/'.$product->product_id)}}" style='color:red;font-size:20px'class="active" ui-toggle-class="">
                   <i class="fa fa-times text-danger text"></i>
                 </a>
               </td>

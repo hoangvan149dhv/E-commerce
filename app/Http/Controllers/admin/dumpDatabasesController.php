@@ -8,7 +8,7 @@ class dumpDatabasesController extends AdminController
 {
     public function backup_database(){
 
-        $this->AuthLogin();
+        
         //ENTER THE RELEVANT INFO BELOW
         $mysqlHostName      = env('DB_HOST');
         $mysqlUserName      = env('DB_USERNAME');
@@ -52,7 +52,8 @@ class dumpDatabasesController extends AdminController
                 $table_value_array = array_values($single_result);
                 $output .= "\nINSERT INTO $table (";
                 $output .= "" . implode(", ", $table_column_array) . ") VALUES (";
-                $output .= "'" . implode("','", $table_value_array) . "');\n";
+                $output .= '"' . implode('","', $table_value_array) . '");';
+                // var_dump($output);die;
             }
         }
         $file_name = 'database_aodaixinh_' . date('d-m-y') . '.sql';

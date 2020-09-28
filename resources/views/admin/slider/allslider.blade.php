@@ -1,19 +1,20 @@
 @extends('admin.admin_layout')
-@section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
+@section('content')
 <div class="table-agile-info">
     <div class="panel panel-default">
       <div class="panel-heading">
         Liệt Kê Danh Mục
       </div>
       <?php
-      $message = Session::get('success');
-      if($message){?>
-        <div class="alert-success alert">
-        <?php echo $message; ?></div>
-        <?php
+          $message = Session::get('success');
+          if($message){
+      ?>
+          <div class="alert-success alert">
+          <?php echo $message; ?></div>
+      <?php
           Session::put('success',null);
-      }
-    ?>
+        }
+      ?>
       <div class="row w3-res-tb">
         <div class="col-sm-5 m-b-xs">
         </div>
@@ -46,7 +47,8 @@
                         <a href=" {{URL::to('/status-0/'.$slider->id)}}"><span class="fa fa-eye-slash" style='color:red;font-size:20px'>||Ẩn</span></a>
                      <?php }
                     ?>
-              </span></td>
+                  </span>
+              </td>
               <td>
                 <a href="{{URL::to('/update-layout-slider/'.$slider->id)}}"style='color:green;font-size:20px' class="active" ui-toggle-class="">
                   <i class="fa fa-pencil-square-o text-success text-active"></i>
@@ -62,11 +64,6 @@
         </table>
       </form>
       </div>
-      <footer class="panel-footer">
-        <div class="row">
-
-        </div>
-      </footer>
     </div>
   </div>
 @endsection

@@ -27,7 +27,6 @@
                         @endforeach
                     </div>
                 </div>
-                {{-- yeild helper_word_orderdetail_mail--}}
                 @include('admin.mails.helper_word_orderdetail_mail')
 
             </section>

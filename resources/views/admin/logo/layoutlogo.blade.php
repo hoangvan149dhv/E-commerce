@@ -1,5 +1,5 @@
 @extends('admin.admin_layout')
-@section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
+@section('content')
 <div class="table-agile-info">
     <div class="panel panel-default">
       <div class="panel-heading">

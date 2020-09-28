@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> {{-- SEO --}}
-    <meta name="description" content="{{ $meta_desc }}"> {{--MÔ TẢ GOOGLE bên homeController.php --}}
-    <meta name="keywords" content="{{ $meta_keyword }}" />{{--TỪ KHÓA GOOGLE bên homeController.php --}}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ $meta_desc }}">
+    <meta name="keywords" content="{{ $meta_keyword }}" />
     <meta name="author" content="">
-    <title>{{ $meta_title }}</title>{{-- bên homeController.php --}}
+    <title>{{ $meta_title }}</title>
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="{{ $url_canonical }}" />
-    <link rel="icon" type="image" href=""> {{-- //SEO --}} {{-- Property --- DÙNG ĐỂ SHARE TRANG( NHƯ FACEBOOK, ...) --}}
+    <link rel="icon" type="image" href="">
     @isset($details_product)<meta property="og:image" content="http://vanduong.com.web3.redhost.vn/public/upload/{{ $details_product->product_image}}"/>@endisset
     @yield('og:image')
     <meta property="og:site_name" content="http://vanduong.com.web3.redhost.vn/" />
     <meta property="og:title" content="{{ $meta_title }}" />
-    <meta property="og:description" content="{{ $meta_desc }}" />
+    <meta property="og:description" content="{{ $meta_desc }}"/>
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{ $url_canonical }}" /> {{-- Property --}}
+    <meta property="og:url" content="{{ $url_canonical }}"/>
     <link href="{{asset('public/client/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('public/client/css/font-awesome.min.css')}}" rel="stylesheet">
-    {{-- <link href="{{asset('public/client/css/prettyPhoto.css')}}" rel="stylesheet"> --}}
     <link href="{{asset('public/client/css/animate.css')}}" rel="stylesheet">
     <link href="{{asset('public/client/css/main.css')}}" rel="stylesheet">
     <link href="{{asset('public/client/css/responsive.css')}}" rel="stylesheet">
     <link href="{{asset('public/client/css/sweetalert.css')}}" rel="stylesheet">
-    <link href="{{asset('public/client/js/sweetalert.js')}}" rel="stylesheet">{{-- sweet alert --}}
+    <link href="{{asset('public/client/js/sweetalert.js')}}" rel="stylesheet">
 </head>
 <!--/head-->
-
 <body>
     <header id="header" class="header-main">
         <!--header-->
@@ -45,18 +42,18 @@
                     <div class="col-sm-8">
                         <div class="shop-menu pull-right" >
                             <ul class="nav navbar-nav">
-                                {{-- <li><a href=""><i class="fa fa-envelope"></i> hoangvan1491999_gmail.com</a></li> --}}
                                 <li><a href="{{URL::to('/thong-tin-khach-hang')}}"><i class="fa fa-pencil-square-o"></i> Lịch sử mua hàng</a></li>
                                 <li><a href="{{URL::to('/hien-thi-gio-hang')}}"><i class="fa fa-shopping-cart"></i> Giỏ hàng
-                                    {{-- <li><a href="{{URL::to('/hien-thi-gio-hang-ajax')}}"><i class="fa fa-shopping-cart"></i> Giỏ hàng									 --}}
                                     <?php
-									$content_cart = Cart::content()->count();  //ĐẾM SỐ LƯỢNG TRONG GIỎ HÀNG
-									   if(empty($content_cart)){
-										   echo "";
-									   }else{
-										   echo "	(".$content_cart.")";
-									   }
-								   ?></a></li>
+                                    $content_cart = Cart::content()->count();
+                                       if(empty($content_cart)){
+                                           echo "";
+                                       }else{
+                                           echo "	(".$content_cart.")";
+                                       }
+                                    ?>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -64,7 +61,6 @@
             </div>
         </div>
         <!--/header-middle-->
-
         <div class="header-bottom">
             <!--header-bottom-->
             <div class="container">
@@ -175,7 +171,7 @@
                     <a class="home active" href="{{ URL('/trang-chu') }}"><i class="fa fa-home"></i></a>
                     <a href="tel:0334964103"><i class="fa fa-phone"></i></a>
                     <a class="cart-product" href="{{URL::to('/hien-thi-gio-hang')}}"><i class="fa fa-shopping-cart"><?php
-                        $content_cart = Cart::content()->count();  //ĐẾM SỐ LƯỢNG TRONG GIỎ HÀNG
+                        $content_cart = Cart::content()->count();
                            if(empty($content_cart)){
                                echo "";
                            }else{
@@ -221,8 +217,8 @@
     <script src="{{asset('public/client/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('public/client/js/jquery.scrollUp.min.js')}}"></script>
     <script src="{{asset('public/client/js/price-range.js')}}"></script>
-        <script src="{{asset('public/client/js/main.js')}}"></script>
-    {{-- DÙNG VALIDATION FORM ĐỂ CHECK KÍ TỰ --}}
+    <script src="{{asset('public/client/js/main.js')}}"></script>
+
     <script src="{{asset('public/client/js/form-validator.min.js')}}"></script>
     <script type="text/javascript">
        $.validate({

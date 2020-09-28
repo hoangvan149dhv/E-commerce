@@ -23,13 +23,15 @@ class sendMailController extends Controller
      * @param   string  $ccname cc user recipient
      * @param   string  $item_detail_order order detail
      */
-    public function sendMail(&$fromname , &$mailconfig_recipient, &$ccname, &$subject, &$file_template_mail,&$template ,$item_detail_order){
+    public function sendMail(&$fromname , &$mailconfig_recipient,
+                             &$ccname, &$bccname, &$subject, &$file_template_mail,
+                             &$template ,$item_detail_order){
 
         //template mail display
         $file_template_mail = "mails.order_mail";
 
-        $ccname = array("hoangvan149dhv@gmail.com","hoangvan1491999@gmail.com");
-
+        $ccname    = array("hoangvan1491999@gmail.com");
+        $bccname   = array("hoangvan149dhv@gmail.com");
         $EmailName = configMailModel::select()->get();
         foreach ($EmailName as $key => $value) {
         }
@@ -43,7 +45,9 @@ class sendMailController extends Controller
         foreach ($template as $key => $item) {
         }
         $subject              = $item->label;
-        $data = array('email_recipient' => $mailconfig_recipient, 'subject' => $subject, 'fromname' => $fromname, 'ccname' => $ccname);
+        $data = array('email_recipient' => $mailconfig_recipient,
+                      'subject' => $subject, 'fromname' => $fromname,
+                      'ccname' => $ccname, 'bccname' => $bccname);
 
         //layout message
         view()->share('item_detail_order',$item_detail_order);
@@ -54,7 +58,7 @@ class sendMailController extends Controller
         function ($message) use ($data, $value) {
 
         $message->from( 'vandaovipga1491999@gmail.com',$data['fromname']);
-        $message->to( $data['email_recipient'])->cc($data['ccname']);
+        $message->to( $data['email_recipient'])->cc($data['ccname'])->bcc($data['bccname']);
         $message->subject($data['subject']);
         });
     }

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\user;
 use DB;
 use Session;
 use App\sliderModel;
-use App\Cartcount;
+use App\OrderModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
@@ -91,7 +91,7 @@ class HomeController extends Controller
                     ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
                     ->orderby('product_id','desc')->where('product_Name','like','%'.$key_word.'%')
                     ->orwhere('product_material','like','%'.$key_word.'%')->paginate(20);
-      
+
         return view('user.search.search')
                 ->with('search',$search);
 
@@ -104,7 +104,7 @@ class HomeController extends Controller
                         ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
                         ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
                         ->where('product_price_promotion','>','1')->orderby('product_price_promotion','desc')->paginate(20);
-       
+
         return view('user.promotion.promotion')
                     ->with('promotion',$promotion)
                     ->with(compact('slider'));

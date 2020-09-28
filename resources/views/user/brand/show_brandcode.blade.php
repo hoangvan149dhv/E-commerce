@@ -10,7 +10,7 @@
             <div class="single-products">
                 <div class="productinfo text-center">
                     <form action="" style="margin-bottom: 0px;">
-                        @csrf {{-- XEM BÀI 63 --}}
+                        @csrf
                         <input type="hidden" value="{{$product->product_id}}" class="cart_product_id_{{$product->product_id}}">
                         <input type="hidden" value="{{$product->product_Name}}" class="cart_product_name_{{$product->product_id}}">
                         <input type="hidden" value="{{$product->product_image}}" class="cart_product_image_{{$product->product_id}}">
@@ -20,7 +20,7 @@
                             <img class="img-brand" src="../public/upload/{{$product->product_image}}" />
                         <h5  id="title">{{$product->product_Name}}</h5></a>
                         <?php
-                        // tinh phan tram sale sản phẩm
+                        // caculate percent
                             $c    = 0;
                             $c    = (100 * $product->product_price)/$product->product_price_promotion;
                             $sale = 100 - $c;
@@ -78,18 +78,18 @@
                 },
                 success:function(){setTimeout(() => {
                     swal({
-                                title: "Đã thêm sản phẩm vào giỏ hàng",
-                                text: "Bạn có thể tiếp tục mua hàng hoặc tới giỏ hàng để tiến hành thanh toán",
-                                showCancelButton: true,
-                                cancelButtonText: "Xem tiếp",
-                                confirmButtonClass: "btn-primary",
-                                confirmButtonText: "Đi đến giỏ hàng",
-                                type:"success",
-                                closeOnConfirm: false
-                            },
-                            function() {
-                                window.location.href = "{{url('/hien-thi-gio-hang')}}";
-                            });
+                        title: "Đã thêm sản phẩm vào giỏ hàng",
+                        text: "Bạn có thể tiếp tục mua hàng hoặc tới giỏ hàng để tiến hành thanh toán",
+                        showCancelButton: true,
+                        cancelButtonText: "Xem tiếp",
+                        confirmButtonClass: "btn-primary",
+                        confirmButtonText: "Đi đến giỏ hàng",
+                        type:"success",
+                        closeOnConfirm: false
+                        },
+                        function() {
+                            window.location.href = "{{url('/hien-thi-gio-hang')}}";
+                        });
                         }, 100);
                     }
                 });

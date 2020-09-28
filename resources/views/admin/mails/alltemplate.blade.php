@@ -1,17 +1,9 @@
 @extends('admin.admin_layout')
-@section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
+@section('content')
 <div class="table-agile-info">
     <div class="panel panel-default">
       <div class="panel-heading">
         Danh sách mail đã tạo
-      </div>
-      <div class="row w3-res-tb">
-        <div class="col-sm-5 m-b-xs">
-        </div>
-        <div class="col-sm-4">
-        </div>
-        <div class="col-sm-3">
-        </div>
       </div>
       <div class="table-responsive">
         <form action="{{URL::to('/destroy-template')}}" method="get">
@@ -31,10 +23,9 @@
                   <?php
                       if($template->status=="Ẩn"){?>
                         <a href=" {{URL::to('/status-template/'.$template->id)}}"><span class='fa fa-eye'style='color:red;font-size:20px'>||Ẩn</span></a>
-                      <?php }else{ ?>
+                  <?php }else{ ?>
                         <a href=" {{URL::to('/status-template/'.$template->id)}}"><span class="fa fa-eye-slash" style='color:green;font-size:20px'>||Hiện</span></a>
-                     <?php }
-                    ?>
+                  <?php }?>
               </span></td>
               <td>
                 <a href="{{URL::to('/chi-tiet-template/'.$template->id)}}"style='color:green;font-size:20px' class="active" ui-toggle-class="">
@@ -48,13 +39,8 @@
             @endforeach
           </tbody>
         </table>
-      </form>
+       </form>
       </div>
-      <footer class="panel-footer">
-        <div class="row">
-
-        </div>
-      </footer>
     </div>
   </div>
 @endsection

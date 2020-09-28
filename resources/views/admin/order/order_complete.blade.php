@@ -2,7 +2,7 @@
     use Carbon\Carbon;
 ?>
 @extends('admin.admin_layout')
-@section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
+@section('content')
 <div class="table-agile-info">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -42,16 +42,16 @@
           </thead>
           <tbody>
            @foreach ($order_complete as $product)
-                <tr>
-                  <td style="text-align:center"><input type="checkbox" value="{{ $product->orderid }}" name="orderid[]"></td>
-              <td  style="text-align:center">{{$product->cusid}}</td>  {{--ID--}}
+            <tr>
+              <td style="text-align:center"><input type="checkbox" value="{{ $product->orderid }}" name="orderid[]"></td>
+              <td  style="text-align:center">{{$product->cusid}}</td>
               <td  style="text-align:center">{{$product->productname}}
                 <a href="{{ URL::to('/thong-tin-don-hang/'.$product->orderid)}}"><p>chi tiết</p></a>
-              </td>  {{--sản phẩm --}}
-              <td style="text-align:center">  {{$product->cusname}}</td> {{--họ tên khách  --}}
-              <td style="text-align:center"><img src="public/upload/{{$product->image}}"width=80 height=110 alt=""></td>{{--  hình--}}
+              </td>
+              <td style="text-align:center">  {{$product->cusname}}</td>
+              <td style="text-align:center"><img src="public/upload/{{$product->image}}"width=80 height=110 alt=""></td>
               <td style="text-align:center">  {{Carbon::createFromFormat('Y-m-d H:i:s', $product->order_date)->format('d/m/yy | H:i:s')}}</td>
-              <td style="text-align:center">  {{number_format($product->total)}}.VNĐ</td> {{--  Gía --}}
+              <td style="text-align:center">  {{number_format($product->total)}}.VNĐ</td>
               @if ($product->status==1)
               <td style="text-align:center;background:#bbecc457">
                   <a href="{{ URL::to('/update-status-1/'.$product->orderid) }}" style="color:green;">Đã Giao Xong</a>
@@ -60,9 +60,9 @@
               @else
               <td style="text-align:center;background:#f0bcb470;">
                   <a href="{{ URL::to('/update-status-0/'.$product->orderid) }}" style="color:red">Đang Xử Lý</a>
-              @endif</td> {{-- trạng thái --}}
+              @endif</td>
             </tr>
-            @endforeach
+           @endforeach
             <tr><td><button onclick="return confirm('Bạn Muốn Xóa Sản Phẩm Này?')" class="btn btn-danger" type="submit">Xóa</button></td></tr>
           </tbody>
         </table>

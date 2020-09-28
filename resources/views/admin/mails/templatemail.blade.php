@@ -2,10 +2,9 @@
     // use Carbon\Carbon;
 ?>
 @extends('admin.admin_layout')
-@section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
+@section('content')
 <div class="table-agile-info">
     <div class="panel panel-default">
-
         @foreach ($template as $item)
         <a href="{{URL::to('/chi-tiet-template/'.$item->id)}}"style='color:green;font-size:20px' class="active" ui-toggle-class="">
             <i class="fa fa-pencil-square-o text-success text-active"></i></a>

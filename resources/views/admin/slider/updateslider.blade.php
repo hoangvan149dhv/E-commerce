@@ -1,8 +1,8 @@
 @extends('admin.admin_layout')
-@section('content-layout')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
+@section('content')
 <div class="row">
     <div class="col-lg-12">
-            <section class="panel">
+        <section class="panel">
                 <header class="panel-heading">
                     Cập nhật Slider quảng cáo
                 </header>
@@ -11,7 +11,7 @@
                     <div class="position-center">
                         <form role="form" action="{{URL::to('/update-slider/'.$slider_edit->id)}}" method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
-                           <div class="form-group">
+                            <div class="form-group">
                                 <label for="exampleInputEmail1">Hình Ảnh</label>
                                 <input type="file"   data-validation="mime size" data-validation-allowing="jpg, png, gif"
                                 data-validation-max-size="2M"class="form-control"
@@ -35,23 +35,23 @@
                                 <?php
                                 $message = Session::get('success');
                                 if($message){
-                                    ?>
+                                ?>
                                     <div class="alert-success alert"><?php echo $message; ?></div>
-                                    <?php
+                                <?php
                                     Session::put('success',null);
                                 }
                                 $error = Session::get('error');
                                 if($error){
-                                    ?>
+                                ?>
                                     <div class="alert-danger alert"><?php echo $error; ?></div>
-                                    <?php
+                                <?php
                                     Session::put('error',null);
                                 }
-                            ?>
+                                ?>
                             </div>
                             <button type="submit" name="submit" class="btn btn-info">Thêm</button>
-                            </form>
-                        </div>
+                        </form>
+                    </div>
                     {{-- @endforeach --}}
                 </div>
 

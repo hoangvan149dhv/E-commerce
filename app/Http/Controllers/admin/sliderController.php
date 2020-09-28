@@ -9,13 +9,13 @@ class sliderController extends AdminController
 {
     function slider_layout(){
         
-        $this->AuthLogin();
+        
 
         return view('admin.slider.addslider');
     }
     function add_slider(Request $request){
 
-        $this->AuthLogin();
+        
 
         $data = array();
         $data['status'] = $request->status;
@@ -41,7 +41,7 @@ class sliderController extends AdminController
     }
     function slider_all(){
 
-        $this->AuthLogin();
+        
 
         $slider_all=sliderModel::all();
         return view('admin.slider.allslider')->with(compact('slider_all'));
@@ -49,7 +49,7 @@ class sliderController extends AdminController
     }
     function update_layout_slider($id){
 
-        $this->AuthLogin();
+        
 
         $slider_edit = sliderModel::find($id);
         return view('admin.slider.updateslider')->with(compact('slider_edit'));
@@ -57,7 +57,7 @@ class sliderController extends AdminController
     }
     function update_slider($id, request $request){
 
-        $this->AuthLogin();
+        
 
         $slider_update = sliderModel::find($id);
         $slider_update->status = $request['status'];
@@ -83,7 +83,7 @@ class sliderController extends AdminController
     }
     function status_0($id){
 
-        $this->AuthLogin();
+        
 
         sliderModel::where('id',$id)->update(['status'=>0]);
 
@@ -92,7 +92,7 @@ class sliderController extends AdminController
     }
     function status_1($id){
 
-        $this->AuthLogin();
+        
 
         sliderModel::where('id',$id)->update(['status'=>1]);
         
@@ -102,7 +102,7 @@ class sliderController extends AdminController
     //xóa qc
     function delete($id){
 
-        $this->AuthLogin();
+        
 
         $slider = sliderModel::where('id',$id)->get();
         foreach ($slider as $key) {
@@ -120,7 +120,7 @@ class sliderController extends AdminController
 
     function destroy(request $request){
 
-        $this->AuthLogin();
+        
 
         $slider_id = $request->slider;
 

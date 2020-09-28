@@ -35,7 +35,7 @@
                  <i class="fa fa-bell-o"></i>
                  <span class="badge bg-success">
                     <?php
-                    // //  TẠO MODEL
+                    //  TẠO MODEL
                         use App\ReviewModel;
                         $alertt = ReviewModel::all()->where('status',0)->count();
                         echo $alertt;
@@ -101,12 +101,8 @@
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <img alt="" src="{{asset('public/upload/561d1b934c1cb442ed0d25.jpg')}}">
                 <span class="username">
-                    <?php
-                        $name =Session::get('admin_name');
-                        if($name){
-                            echo $name;
-                        }
-                    ?>
+                        {!! $name =Session::get('admin_name'); !!}
+                        @isset($name)@endif
                 </span>
                 <b class="caret"></b>
             </a>
@@ -140,9 +136,9 @@
                         <i class="fa fa-shopping-cart"></i>
                         <span >Đơn Hàng (<?php
                             //  TẠO MODEL
-                                use App\Cartcount;
-                                $alert = Cartcount::all()->where('status',0)->count();
-                                echo $alert;
+                                use App\OrderModel;
+                                $order_status_notcomplete = OrderModel::all()->where('status',0)->count();
+                                echo $order_status_notcomplete;
                             ?>)</span>
                     </a>
                     <ul class="sub">
@@ -241,9 +237,7 @@
 <!--main content start-->
 <section id="main-content">
 	<section class="wrapper">
-            @yield('admin_content')
             @yield('content')
-            @yield('content-layout')
 		<div class="agileits-w3layouts-stats">
             <div class="clearfix"> </div>
 		</div>

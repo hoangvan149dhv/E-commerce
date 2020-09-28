@@ -1,12 +1,11 @@
 @extends('admin.admin_layout')
-@section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
+@section('content')
 <div class="row">
     <div class="col-lg-12">
         <section class="panel">
             <header class="panel-heading">
                 Thêm Phí Ship
             </header>
-
             <div class="panel-body">
                 <div class="position-center">
                     <form >
@@ -42,7 +41,6 @@
                     <button type="button"  class="btn btn-info add_delivery">Thêm Phí Ship</button>
                     </form>
                 </div>
-
                  {{-- SEARCH-FEE-DELIVERY --}}
                  <div class="row w3-res-tb">
                     <div class="col-sm-5 m-b-xs">
@@ -60,7 +58,6 @@
                     </form>
                     </div>
                 </div>
-
                 {{-- LIST-FEE-DELIVERY-AJAX --}}
                 <div id="show_info_feeship">
                 </div>
@@ -179,7 +176,6 @@
                     }
                 });
             });
-
             // SEARCH FEE_SHIP keypress
             $('.search_fee_ship, .input_search_fee_ship').on('keypress keydown',function name(event) {
                 var val_input = $('.input_search_fee_ship').val();

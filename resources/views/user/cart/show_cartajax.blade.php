@@ -22,11 +22,9 @@
                         </td>
                         <td style="border: 1px solid #E6E4DF;" class="cart_description">
                             <h5 style="text-align: center;"><p>{{ $cart['product_Name'] }}</p></h5>
-                                                                {{-- product_Name CHÍNH LÀ CÁI MẢNG CỦA cart CartController dòng 78 --}}
                         </td>
                         <td style="border: 1px solid #E6E4DF;" class="cart_price">
                             <p style="text-align: center;">{{ number_format($cart['product_price']) }}.VNĐ</p>
-                                                                {{-- product_price CHÍNH LÀ CÁI MẢNG CỦA cart CartController dòng 78 --}}
                         </td>
                         <td style="border: 1px solid #E6E4DF;" class="cart_quantity">
                             <form action="{{ URL::to('update_cart_quantity_ajax') }}" method="POST" style="margin-bottom:0px">
@@ -41,9 +39,9 @@
                         <td style="border: 1px solid #E6E4DF;" class="cart_total">
                             <p style="text-align: center;" class="cart_total_price">
                                 <?php
-                            $subtotal = $cart['product_price'] * $cart['product_qty'];
-                            echo number_format($subtotal);
-                        ?>.VNĐ
+                                    $subtotal = $cart['product_price'] * $cart['product_qty'];
+                                    echo number_format($subtotal);
+                                ?>.VNĐ
                             </p>
                         </td>
                         <td class="cart_deletee" style="border: 1px solid #E6E4DF;">

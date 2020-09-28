@@ -63,6 +63,7 @@ class Payment_orderController extends HomeController
                         $fromname,
                         $mailconfig_recipient,
                         $ccname,
+                        $bccname,
                         $subject,
                         $file_template_mail,
                         $template,

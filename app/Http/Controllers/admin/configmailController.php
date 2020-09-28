@@ -12,7 +12,7 @@ class configmailController extends AdminController
 {
     public function layoutConfigMail(){
         
-        $this->AuthLogin();
+        
 
         $configmail = configMailModel::where('id',1)->get();
 
@@ -22,7 +22,7 @@ class configmailController extends AdminController
     //create template mail
     public function layoutcreatetemplatemail(){
         
-        $this->AuthLogin();
+        
         
         return view('admin.mails.addtemplatemail');
     }
@@ -30,7 +30,7 @@ class configmailController extends AdminController
     //save templatemail
     public function savetemplatemail(Request $req){
 
-        $this->AuthLogin();
+        
 
         $data['template'] = $req->template;
         $data['label'] = $req->label;
@@ -42,7 +42,7 @@ class configmailController extends AdminController
     //save config mail
     public function saveConfigmail(Request $req){
 
-        $this->AuthLogin();
+        
 
         $data['Email'] = $req->Email;
         $data['name_email'] = $req->name;
@@ -56,7 +56,7 @@ class configmailController extends AdminController
     //show list templatemail user create
     public function listitemtemplatemail(){
 
-       $this->AuthLogin();
+       
 
        $itemlisttemplateMail =  templateMailModel::all();
 
@@ -66,7 +66,7 @@ class configmailController extends AdminController
     //check status mail
     public function update_status($id){
 
-        $this->AuthLogin();
+        
 
         $checkstatus_pushlished = templateMailModel::where('status','Hiện')->get();
         $checkstatus_un_pushlished = templateMailModel::where('status','Ẩn')->get();
@@ -93,7 +93,7 @@ class configmailController extends AdminController
     //update template mail
     function update_template_mail($id, request $request){
 
-        $this->AuthLogin();
+        
         
         $detailtemplateMail = templateMailModel::find($id);
         $detailtemplateMail->label = $request['label'];
@@ -107,7 +107,7 @@ class configmailController extends AdminController
     //delete template
     function delete_template_mail($id){
         
-        $this->AuthLogin();
+        
         
         templateMailModel::find($id)->delete();
 
@@ -117,7 +117,7 @@ class configmailController extends AdminController
     //display template Mail
     function templateMail(){
 
-        $this->AuthLogin();
+        
         
         $template = templateMailModel::where('status','Hiện')->get();
 

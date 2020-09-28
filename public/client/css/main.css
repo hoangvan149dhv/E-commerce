@@ -2858,3 +2858,15 @@ form.has-validation-callback {
 .product_price{
   height:50px;
 }
+img{
+    max-width: 100%;
+}
+.news-extra p:hover{
+    color:#fd7e00b8;
+}
+.news-extra p{
+    text-align: justify;
+    padding: 10px 20px;
+    font-size: 17px;
+    color: #4d4b49;
+}

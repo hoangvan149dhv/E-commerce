@@ -13,7 +13,7 @@ class newsadminController extends AdminController
 
     public function layoutaddNews(){
 
-        $this->AuthLogin();
+        
 
         return view('admin.news.addnews');
 
@@ -21,7 +21,7 @@ class newsadminController extends AdminController
     //THÊM BÀI VIẾT
     public function insertNews(request $Request){
 
-        $this->AuthLogin();
+        
 
         $newsadminModel = new newsadminModel();
         $newsadminModel['news_title'] = $Request['title'];
@@ -65,7 +65,7 @@ class newsadminController extends AdminController
     // HIỂN THỊ TẤT CẢ BÀI VIẾT
     public function layoutallNews(){
 
-        $this->AuthLogin();
+        
 
         $newsadminModel= newsadminModel::select()->orderBy('news_id','desc')->paginate(10);
         // $newsadminModel
@@ -75,7 +75,7 @@ class newsadminController extends AdminController
     //HIỂN THỊ CHI TIẾT TỪNG BÀI VIẾT
     public function newsdetails($primaryKey){
 
-        $this->AuthLogin();
+        
 
         $newsadminModel= newsadminModel::find($primaryKey);
 
@@ -86,7 +86,7 @@ class newsadminController extends AdminController
         //XÓA BÀI VIẾT
     public function delete_news($primaryKey){
 
-        $this->AuthLogin();
+        
 
         $newsadminModel = newsadminModel::find($primaryKey);
         $newsadminModel->delete();
@@ -104,7 +104,7 @@ class newsadminController extends AdminController
     //UPDATE
     public function edit_news($primaryKey){
 
-        $this->AuthLogin();
+        
 
         $newsadminModel = newsadminModel::find($primaryKey);
         return view('admin.news.updatenews')->with('newsadminModel',$newsadminModel);
@@ -113,7 +113,7 @@ class newsadminController extends AdminController
     //UPDATE SỬA
     public function update_news($primaryKey,  request $Request){
 
-        $this->AuthLogin();
+        
         
         $newsadminModel = newsadminModel::find($primaryKey);
         $newsadminModel->news_title = $Request['title'];

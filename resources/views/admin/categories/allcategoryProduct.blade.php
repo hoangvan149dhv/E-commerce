@@ -1,17 +1,10 @@
 @extends('admin.admin_layout')
-@section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
+@section('content')
 <div class="table-agile-info">
     <div class="panel panel-default">
       <div class="panel-heading">
         Liệt Kê Danh Mục
       </div>
-      <?php
-      // $message = Session::get('message');
-      // if($message){
-      //     echo $message;
-      //     Session::put('message',null);
-      // }
-  ?>
       <div class="row w3-res-tb">
         <div class="col-sm-5 m-b-xs">
         </div>
@@ -36,16 +29,15 @@
             <tr>
               <td><label class="i-checks m-b-none"><input type="checkbox" value="{{ $cate_Product->category_id }}" name="category[]"></label></td>
               <td>{{$cate_Product->category_name}}</td>
-                    {{--$cate_Product dòng 43 || category_name là tên cột trong csld   --}}
-              <td><span class="text-ellipsis">
-                  <?php
-                      if($cate_Product->category_status == 0){?>
-                        <a href=" {{URL::to('/active/'.$cate_Product->category_id)}}"><span class='fa fa-eye'style='color:green;font-size:20px'>||Hiện</span></a>
-                      <?php }else{ ?>
-                        <a href=" {{URL::to('/unactive/'.$cate_Product->category_id)}}"><span class="fa fa-eye-slash" style='color:red;font-size:20px'>||Ẩn</span></a>
-                     <?php }
-                    ?>
-              </span></td>
+              <td>
+                  <span class="text-ellipsis">
+                      <?php if($cate_Product->category_status == 0){?>
+                            <a href=" {{URL::to('/active/'.$cate_Product->category_id)}}"><span class='fa fa-eye'style='color:green;font-size:20px'>||Hiện</span></a>
+                          <?php }else{ ?>
+                            <a href=" {{URL::to('/unactive/'.$cate_Product->category_id)}}"><span class="fa fa-eye-slash" style='color:red;font-size:20px'>||Ẩn</span></a>
+                      <?php }?>
+                  </span>
+              </td>
               <td>
                 <a href="{{URL::to('/edit-category-product/'.$cate_Product->category_id)}}"style='color:green;font-size:20px' class="active" ui-toggle-class="">
                   <i class="fa fa-pencil-square-o text-success text-active"></i>

@@ -53,7 +53,7 @@ class Productcontroller extends AdminController {
     // LAYOUT ADD
     public function add_Product(){
         
-        $this->AuthLogin();
+        
 
         $category_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
 
@@ -65,7 +65,7 @@ class Productcontroller extends AdminController {
 
     public function all_Product(){
         
-        $this->AuthLogin();
+        
 
         $all_product = DB::table('tbl_product')
         ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
@@ -79,7 +79,7 @@ class Productcontroller extends AdminController {
     //THÊM product
     public function save_product(request $Request){
         
-        $this->AuthLogin();
+        
 
         $data['category_id'] = $Request->category;
         $data['product_Name']=$Request->name; //TEN SP
@@ -131,7 +131,7 @@ class Productcontroller extends AdminController {
     //DELETE PRODUCT
     public function delete_product($productt_id){
 
-        $this->AuthLogin();
+        
 
         $product= DB::table('tbl_product')->where('product_id',$productt_id)->get();
         foreach ($product as $key) {
@@ -154,7 +154,7 @@ class Productcontroller extends AdminController {
     //xóa tất cả sản phẩm
     public function destroy_product(Request $request){
 
-        $this->AuthLogin();
+        
 
         $product_id =$request->product;
         $product_slug =$request->slug;
@@ -189,7 +189,7 @@ class Productcontroller extends AdminController {
     //UPDATE (HIỂN THỊ )
     public function edit_product($product_id, request $Request){
 
-        $this->AuthLogin();
+        
 
         $category_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
 
@@ -207,7 +207,7 @@ class Productcontroller extends AdminController {
     //UPDATE
     public function update_Product(Request $Request,$product_id){
 
-        $this->AuthLogin();
+        
         
         $data = array();
         $data['category_id'] = $Request->category;

@@ -14,7 +14,7 @@ class BrandcodeProduct extends AdminController
     // LAYOUT ADD
     public function add_Brand_code_Product(){
 
-        $this->AuthLogin();
+        
 
         return view('admin.brands.addBrandProduct');
     }
@@ -22,7 +22,7 @@ class BrandcodeProduct extends AdminController
     //ALL HIỂN THỊ
     public function all_Brand_code_Product(){
 
-        $this->AuthLogin();
+        
 
         $allBrandcode_product = DB::table('tbl_brand_code_product')->get();
 
@@ -34,7 +34,7 @@ class BrandcodeProduct extends AdminController
     // THÊM brand
     public function save_brandcode_product(request $Request){
 
-        $this->AuthLogin();
+        
 
         $data['brandcode_name'] = $Request->name;
 
@@ -50,7 +50,7 @@ class BrandcodeProduct extends AdminController
     //DELETE BRAND-CODE
     public function delete_brand_code_product($brand_code_id){
 
-        $this->AuthLogin();
+        
 
         DB::table('tbl_brand_code_product')->where('code_id',$brand_code_id)->delete();
 
@@ -59,7 +59,7 @@ class BrandcodeProduct extends AdminController
     //UPDATE (HIỂN THỊ )
     public function edit_brand_code_product($brand_code_id, request $Request){
 
-        $this->AuthLogin();
+        
 
         $allBrandcode_product = DB::table('tbl_brand_code_product')->where('code_id',$brand_code_id)->get();
 
@@ -70,7 +70,7 @@ class BrandcodeProduct extends AdminController
 
     public function update_brand_code_Product(Request $Request,$brand_code_id){
 
-        $this->AuthLogin();
+        
 
         $data = array();
         $data['brandcode_name'] = $Request->name;

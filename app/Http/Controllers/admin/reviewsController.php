@@ -14,7 +14,7 @@ class reviewsController extends AdminController {
 
     public function reviews(){
 
-        $this->AuthLogin();
+        
 
         $reviews= ReviewModel::select()->orderby('Rid','desc')->paginate(10);
         
@@ -24,7 +24,7 @@ class reviewsController extends AdminController {
         //remove Reviews
     public function delete_status_1($Rid){
 
-        $this->AuthLogin();
+        
 
         ReviewModel ::where('Rid',$Rid)->delete();
 

@@ -1,5 +1,5 @@
 @extends('admin.admin_layout')
-@section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
+@section('content')
 <div class="row">
     <div class="col-lg-12">
             <section class="panel">
@@ -9,7 +9,7 @@
                 <div class="panel-body">
                     <div class="position-center">
                         <form action="{{ URL::to('/save-config-mail') }}" method="POST">
-                       {{ csrf_field() }}  {{-- CÂU LỆNH token BẢO MẬT --}}
+                       {{ csrf_field() }}  {{-- Token --}}
                             @foreach ($configmail as $item)
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Địa chỉ Email</label>

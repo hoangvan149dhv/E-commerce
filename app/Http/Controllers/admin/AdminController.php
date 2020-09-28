@@ -25,11 +25,22 @@ class AdminController extends loginController{
         view()->share('category_product',$category_product);
         view()->share('brand_code_product',$brandcode_product);
 
+        //check login
+        $this->middleware(function ($request, $next){
+            $session_id = session::get('session_id');
+
+            if(empty($session_id)){
+            
+                return Redirect::to('admin-login')->send();        
+            }
+            
+            return $next($request);
+        });
     }
 
     //cHUYỂN ĐẾN TRANG CHỦ ADMIN
     public function index(){
-        $this->AuthLogin();
+        
 
         $date=  Carbon::now()->day;
 
@@ -61,7 +72,7 @@ class AdminController extends loginController{
     }
     //QUẢN LÝ ĐƠN HÀNG
     public function order(){
-        $this->AuthLogin();
+        
 
         $product_order = DB::table('tbl_order')->orderby('orderid','desc')->paginate(10);
 
@@ -80,7 +91,7 @@ class AdminController extends loginController{
 
     //convert status 0->1
     public function update_status_0($orderid){
-        $this->AuthLogin();
+        
 
         $data['status'] = 1;
 
@@ -91,7 +102,7 @@ class AdminController extends loginController{
 
     //covert status 1->0
     public function update_status_1($orderid){ 
-        $this->AuthLogin();
+        
 
         $data['status'] = 0;
 
@@ -103,7 +114,7 @@ class AdminController extends loginController{
 
     //remove oder complete
     public function delete_status_1($orderid){
-        $this->AuthLogin();
+        
 
         DB::table('tbl_order')->where('orderid',$orderid)->delete();
 
@@ -114,7 +125,7 @@ class AdminController extends loginController{
     //destroy muti order
     public function destroy_order(Request $request){
 
-        $this->AuthLogin();
+        
 
         $order_id =$request->orderid;
 
@@ -131,7 +142,7 @@ class AdminController extends loginController{
     }
 
     public function search_order(Request $request){
-        $this->AuthLogin();
+        
 
         $key_word = $request->search;
 
@@ -144,7 +155,7 @@ class AdminController extends loginController{
     }
 
     public function search_product_order(Request $request){
-        $this->AuthLogin();
+        
 
         $key_word = $request->search;
 
@@ -156,7 +167,7 @@ class AdminController extends loginController{
     }
 
     public function order_not_complete(){
-        $this->AuthLogin();
+        
 
         $order_not_complete = DB::table('tbl_order')->orderby('orderid','desc')->where('status',0)->paginate(30);
         
@@ -165,7 +176,7 @@ class AdminController extends loginController{
     }
 
     public function order_complete(){
-        $this->AuthLogin();
+        
 
         $order_complete = DB::table('tbl_order')->orderby('orderid','desc')->where('status',1)->paginate(30);
         
@@ -175,7 +186,7 @@ class AdminController extends loginController{
 
     public function searchProduct(Request $request){
 
-        $this->AuthLogin();
+        
 
         $key_word = $request->search;
 
@@ -192,7 +203,7 @@ class AdminController extends loginController{
 
     public function searchProduct_item(Request $request){
 
-        $this->AuthLogin();
+        
         
         $key_word = $request->search;
 
@@ -209,7 +220,7 @@ class AdminController extends loginController{
     //THÔNG TIN ĐƠN HÀNG KHÁCH ĐÃ ĐẶT
     public function infocustomerorder($orderid){
 
-        $this->AuthLogin();
+        
 
         $infocustomer = CustomerorderModel::where('orderid',$orderid)->get();
 
@@ -219,7 +230,7 @@ class AdminController extends loginController{
 
     public function upload(Request $request){
 
-        $this->AuthLogin();
+        
         
         if($request->hasFile('upload')) {
             //get filename with extension

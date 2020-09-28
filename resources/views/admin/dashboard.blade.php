@@ -1,9 +1,9 @@
 <?php
     use Carbon\Carbon;
-    use App\Cartcount;
+    use App\OrderModel;
 ?>
 @extends('admin.admin_layout')
-@section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
+@section('content')
 <div class="table-agile-info">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -54,8 +54,8 @@
                     <li class="pull-left notification-sender"><span><a>Đơn chưa hoàn thành</a></span></li>
                     <li class="pull-right notification-time">
                       <?PHP
-                        $alertt = Cartcount::all()->where('status',0)->count();
-                        echo $alertt;
+                        $order_status_notcomplete = OrderModel::all()->where('status',0)->count();
+                        echo $order_status_notcomplete;
                         ?>
                     </li>
                   </ul>
@@ -68,8 +68,8 @@
                     <li class="pull-left notification-sender"><a>Đã giao xong</a>  </li>
                     <li class="pull-right notification-time">
                       <?PHP
-                        $alert = Cartcount::all()->where('status',1)->count();
-                        echo $alert;
+                        $order_status_complete = OrderModel::all()->where('status',1)->count();
+                        echo $order_status_complete;
                         ?>
                     </li>
                   </ul>

@@ -268,7 +268,6 @@
 <script src="{{asset('public/client/js/price-range.js')}}"></script>
 <script src="{{asset('public/client/js/jquery.prettyPhoto.js')}}"></script>
 <script src="{{asset('public/client/js/main.js')}}"></script>
-{{-- DÙNG VALIDATION FORM ĐỂ CHECK KÍ TỰ --}}
 <script src="{{asset('public/client/js/form-validator.min.js')}}"></script>
 <script type="text/javascript">
     $.validate({
@@ -278,15 +277,11 @@
     $(document).ready(function() {
         $(window).scroll(function name(params) {
     if (window.scrollY > 300) {
-        // $('#header').addClass('wapper-col-ul');
         $('.icon-bar-menu').addClass('menu-bar');
-        // $(".header-middle").css('display','none');
         $(".header-middle").slideUp(100);
     }
     if (window.scrollY < 200) {
-        // $('#header, wapper-col-ul').removeClass('wapper-col-ul');
-        $('.icon-bar-menu, menu-bar').removeClass('menu-bar')
-        // $(".header-middle").css('display','block');
+        $('.icon-bar-menu, menu-bar').removeClass('menu-bar');
         $(".header-middle").slideDown(100);
     }
 })

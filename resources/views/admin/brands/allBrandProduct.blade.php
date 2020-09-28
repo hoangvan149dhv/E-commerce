@@ -1,5 +1,5 @@
 @extends('admin.admin_layout')
-@section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
+@section('content')
 <div class="table-agile-info">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -30,13 +30,7 @@
             </tr>
           </thead>
           <tbody>
-           @foreach ($allBrandcode_Productt as $Brandcode_Product)  {{-- BÀI 13 --}}
-                                                    {{-- $cate_Product tự đặt --}}
-            {{-- $allcategory_Product là allcategory_Product DÒNG 20 bên controller CategoryProduct --}}
-
-
-            <tr>
-              {{-- <td><label class="i-checks m-b-none"><input type="checkbox" name="post"><i></i></label></td> --}}
+           @foreach ($allBrandcode_Productt as $Brandcode_Product)
               <td>{{$Brandcode_Product->brandcode_id}}</td>
               <td>{{$Brandcode_Product->brandcode_name}}</td>
               <td>

@@ -1,6 +1,5 @@
-@extends('layout')   {{-- "triệu gọi trang layout như include"  LƯU Ý:TRONG LARAVEL ĐẶT FILE PHẢI CÓ .BLADE.PHP --}}
-        {{-- GỌI folder routes/web.php dòng 15 --}}
-@Section('content')  {{--Đặt 'content bên trang welcome.blade.php dòng 355' --}}
+@extends('layout')
+@Section('content')
 <div class="contact-form">
     <h2 class="title text-center">Thông Tin Khách Hàng</h2>
     <div class="status alert alert-success" style="display: none"></div>
@@ -9,14 +8,14 @@
         <div class="form-group col-md-12"><h3>Nhập Số Điện Thoại</h3></div>
         <div class="form-group col-md-12">
             <input type="text" name="phone" class="form-control" placeholder="Số Điện Thoại">
-        </div>                     
+        </div>
         <div class="form-group col-md-12">
             <input type="submit" name="submit" class="btn btn-primary pull-right" style="border-radius:5px" value="Tìm">
         </div>
     </form>
 </div>
 
-@endsection 
+@endsection
 @section('script')
     <script>$(document).ready(function name(params) {
         $('.home, active').removeClass('active');

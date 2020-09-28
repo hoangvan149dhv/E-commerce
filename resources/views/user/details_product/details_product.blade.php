@@ -6,7 +6,7 @@
     <div class="col-sm-4">
         <div class="view-product">
             <?php
-                // tinh phan tram sale sản phẩm
+                // caculate percent
                     $c = 0;
                     $c = (100*$details_product->product_price)/$details_product->product_price_promotion;
                     $sale = 100-$c;
@@ -143,7 +143,7 @@
                                 <a href="{{ URL::to('/chi-tiet/'.$product_recommended->meta_slug) }}"><img src="../public/upload/{{$product_recommended->product_image}}" alt="" />
                                 <p >{{$product_recommended->product_Name}}</p></a>
                                 <?php
-                                // tinh phan tram sale sản phẩm
+                                //caculate percent
                                     $c = 0;
                                     $c = (100 * $product_recommended->product_price)/$product_recommended->product_price_promotion;
                                     $sale = 100-$c;
@@ -177,7 +177,7 @@
                                     <p>{{$related_product->product_Name}}</p>
                                 </a>
                                 <?php
-                                // tinh phan tram sale sản phẩm
+                                // caculate percent
                                     $c = 0;
                                     $c = (100 * $related_product->product_price) / $related_product->product_price_promotion;
                                     $sale = 100 - $c;
