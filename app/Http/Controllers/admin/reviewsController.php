@@ -14,17 +14,13 @@ class reviewsController extends AdminController {
 
     public function reviews(){
 
-        
-
         $reviews= ReviewModel::select()->orderby('Rid','desc')->paginate(10);
-        
+
         return view('admin.reviews.reviews')->with(compact('reviews'));
 
     }
         //remove Reviews
     public function delete_status_1($Rid){
-
-        
 
         ReviewModel ::where('Rid',$Rid)->delete();
 

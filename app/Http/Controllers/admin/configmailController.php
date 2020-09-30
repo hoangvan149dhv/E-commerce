@@ -11,8 +11,6 @@ use App\Http\Controllers\admin\AdminController;
 class configmailController extends AdminController
 {
     public function layoutConfigMail(){
-        
-        
 
         $configmail = configMailModel::where('id',1)->get();
 
@@ -21,16 +19,12 @@ class configmailController extends AdminController
 
     //create template mail
     public function layoutcreatetemplatemail(){
-        
-        
-        
+
         return view('admin.mails.addtemplatemail');
     }
 
     //save templatemail
     public function savetemplatemail(Request $req){
-
-        
 
         $data['template'] = $req->template;
         $data['label'] = $req->label;
@@ -41,8 +35,6 @@ class configmailController extends AdminController
 
     //save config mail
     public function saveConfigmail(Request $req){
-
-        
 
         $data['Email'] = $req->Email;
         $data['name_email'] = $req->name;
@@ -56,8 +48,6 @@ class configmailController extends AdminController
     //show list templatemail user create
     public function listitemtemplatemail(){
 
-       
-
        $itemlisttemplateMail =  templateMailModel::all();
 
        return view('admin.mails.alltemplate')->with(compact('itemlisttemplateMail'));
@@ -65,8 +55,6 @@ class configmailController extends AdminController
 
     //check status mail
     public function update_status($id){
-
-        
 
         $checkstatus_pushlished = templateMailModel::where('status','Hiện')->get();
         $checkstatus_un_pushlished = templateMailModel::where('status','Ẩn')->get();
@@ -79,7 +67,6 @@ class configmailController extends AdminController
             $show_template = templateMailModel::where('id',$id)->update(['status'=>'Hiện']);
         }
 
-
         return back();
     }
 
@@ -88,13 +75,11 @@ class configmailController extends AdminController
 
         $detailtemplateMail = templateMailModel::where('id',$id)->get();
         return view('admin.mails.updatetemplatemail')->with(compact('detailtemplateMail'));
-   
+
     }
     //update template mail
     function update_template_mail($id, request $request){
 
-        
-        
         $detailtemplateMail = templateMailModel::find($id);
         $detailtemplateMail->label = $request['label'];
         $detailtemplateMail->template = $request['template'];
@@ -106,9 +91,7 @@ class configmailController extends AdminController
 
     //delete template
     function delete_template_mail($id){
-        
-        
-        
+
         templateMailModel::find($id)->delete();
 
         return back();
@@ -117,8 +100,6 @@ class configmailController extends AdminController
     //display template Mail
     function templateMail(){
 
-        
-        
         $template = templateMailModel::where('status','Hiện')->get();
 
         return view('admin.mails.templatemail')->with(compact('template'));

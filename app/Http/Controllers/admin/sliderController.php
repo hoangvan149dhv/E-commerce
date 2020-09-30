@@ -8,14 +8,10 @@ use DB;
 class sliderController extends AdminController
 {
     function slider_layout(){
-        
-        
 
         return view('admin.slider.addslider');
     }
     function add_slider(Request $request){
-
-        
 
         $data = array();
         $data['status'] = $request->status;
@@ -41,23 +37,17 @@ class sliderController extends AdminController
     }
     function slider_all(){
 
-        
-
         $slider_all=sliderModel::all();
         return view('admin.slider.allslider')->with(compact('slider_all'));
 
     }
     function update_layout_slider($id){
 
-        
-
         $slider_edit = sliderModel::find($id);
         return view('admin.slider.updateslider')->with(compact('slider_edit'));
 
     }
     function update_slider($id, request $request){
-
-        
 
         $slider_update = sliderModel::find($id);
         $slider_update->status = $request['status'];
@@ -83,8 +73,6 @@ class sliderController extends AdminController
     }
     function status_0($id){
 
-        
-
         sliderModel::where('id',$id)->update(['status'=>0]);
 
         return Redirect::to('all-slider');
@@ -92,17 +80,13 @@ class sliderController extends AdminController
     }
     function status_1($id){
 
-        
-
         sliderModel::where('id',$id)->update(['status'=>1]);
-        
+
         return Redirect::to('all-slider');
 
     }
     //xóa qc
     function delete($id){
-
-        
 
         $slider = sliderModel::where('id',$id)->get();
         foreach ($slider as $key) {
@@ -120,8 +104,6 @@ class sliderController extends AdminController
 
     function destroy(request $request){
 
-        
-
         $slider_id = $request->slider;
 
         $slider = sliderModel::whereIn('id',$slider_id)->get();
@@ -135,7 +117,7 @@ class sliderController extends AdminController
             }
         }
         sliderModel::whereIn('id',$slider_id)->delete();
-        
+
         return Redirect::to('all-slider')->with('success','xóa thành công');
     }
 }

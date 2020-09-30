@@ -15,7 +15,7 @@ class AdminController extends loginController{
 
     public function __construct(){
         $count = count::find(1);
-        
+
         $category_product  = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
         $brandcode_product = DB::table('tbl_brand_code_product')->orderby('code_id','desc')->get();
         $contactinfoModel  = contactinfoModel::select()->get();
@@ -30,17 +30,16 @@ class AdminController extends loginController{
             $session_id = session::get('session_id');
 
             if(empty($session_id)){
-            
-                return Redirect::to('admin-login')->send();        
+
+                return Redirect::to('admin-login')->send();
             }
-            
+
             return $next($request);
         });
     }
 
     //cHUYỂN ĐẾN TRANG CHỦ ADMIN
     public function index(){
-        
 
         $date=  Carbon::now()->day;
 
@@ -57,7 +56,7 @@ class AdminController extends loginController{
         $alert=  $response->withcookie('hjftgkk','dàdsfs',1000000);
 
         if(isset($alert)){
-            
+
             return view('admin.dashboard')
                   ->with('alert',$alert)
                   ->with('product_order_date',$product_order_date)
@@ -72,7 +71,6 @@ class AdminController extends loginController{
     }
     //QUẢN LÝ ĐƠN HÀNG
     public function order(){
-        
 
         $product_order = DB::table('tbl_order')->orderby('orderid','desc')->paginate(10);
 
@@ -91,7 +89,6 @@ class AdminController extends loginController{
 
     //convert status 0->1
     public function update_status_0($orderid){
-        
 
         $data['status'] = 1;
 
@@ -101,8 +98,7 @@ class AdminController extends loginController{
     }
 
     //covert status 1->0
-    public function update_status_1($orderid){ 
-        
+    public function update_status_1($orderid){
 
         $data['status'] = 0;
 
@@ -114,7 +110,6 @@ class AdminController extends loginController{
 
     //remove oder complete
     public function delete_status_1($orderid){
-        
 
         DB::table('tbl_order')->where('orderid',$orderid)->delete();
 
@@ -124,8 +119,6 @@ class AdminController extends loginController{
 
     //destroy muti order
     public function destroy_order(Request $request){
-
-        
 
         $order_id =$request->orderid;
 
@@ -142,7 +135,6 @@ class AdminController extends loginController{
     }
 
     public function search_order(Request $request){
-        
 
         $key_word = $request->search;
 
@@ -155,7 +147,6 @@ class AdminController extends loginController{
     }
 
     public function search_product_order(Request $request){
-        
 
         $key_word = $request->search;
 
@@ -167,26 +158,22 @@ class AdminController extends loginController{
     }
 
     public function order_not_complete(){
-        
 
         $order_not_complete = DB::table('tbl_order')->orderby('orderid','desc')->where('status',0)->paginate(30);
-        
+
         return view('admin.order.order_not_complete')->with('order_not_complete',$order_not_complete);
 
     }
 
     public function order_complete(){
-        
 
         $order_complete = DB::table('tbl_order')->orderby('orderid','desc')->where('status',1)->paginate(30);
-        
+
         return view('admin.order.order_complete')->with('order_complete',$order_complete);
 
     }
 
     public function searchProduct(Request $request){
-
-        
 
         $key_word = $request->search;
 
@@ -203,8 +190,6 @@ class AdminController extends loginController{
 
     public function searchProduct_item(Request $request){
 
-        
-        
         $key_word = $request->search;
 
         $search = DB::table('tbl_product')->orderby('product_id','desc')
@@ -220,8 +205,6 @@ class AdminController extends loginController{
     //THÔNG TIN ĐƠN HÀNG KHÁCH ĐÃ ĐẶT
     public function infocustomerorder($orderid){
 
-        
-
         $infocustomer = CustomerorderModel::where('orderid',$orderid)->get();
 
         return view('admin.infoOrder.infoOrder',['infocustomerorder'=>$infocustomer]);
@@ -230,8 +213,8 @@ class AdminController extends loginController{
 
     public function upload(Request $request){
 
-        
-        
+
+
         if($request->hasFile('upload')) {
             //get filename with extension
             $filenamewithextension = $request->file('upload')->getClientOriginalName();

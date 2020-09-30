@@ -12044,12 +12044,12 @@ CREATE TABLE `tbl_count` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
-INSERT INTO tbl_count (id, counts) VALUES ("1","613");
-INSERT INTO tbl_count (id, counts) VALUES ("1","613");
-INSERT INTO tbl_count (id, counts) VALUES ("1","614");
-INSERT INTO tbl_count (id, counts) VALUES ("1","586");
-INSERT INTO tbl_count (id, counts) VALUES ("1","586");
-INSERT INTO tbl_count (id, counts) VALUES ("1","587");
+INSERT INTO tbl_count (id, counts) VALUES ("1","617");
+INSERT INTO tbl_count (id, counts) VALUES ("1","617");
+INSERT INTO tbl_count (id, counts) VALUES ("1","618");
+INSERT INTO tbl_count (id, counts) VALUES ("1","590");
+INSERT INTO tbl_count (id, counts) VALUES ("1","590");
+INSERT INTO tbl_count (id, counts) VALUES ("1","591");
 
 CREATE TABLE `tbl_customer` (
   `cusid` int NOT NULL AUTO_INCREMENT,
@@ -12080,7 +12080,7 @@ CREATE TABLE `tbl_info_contact` (
   `info_contact_phone` varchar(11) NOT NULL,
   `info_contact_mail` varchar(100) NOT NULL,
   PRIMARY KEY (`id_Info`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
 INSERT INTO tbl_info_contact (id_Info, google_map, info_contact_add, info_contact_phone, info_contact_mail) VALUES ("1","","120 Lê Sao","0909677308","vandaovipga1491999@gmail.com");
@@ -12193,19 +12193,19 @@ CREATE TABLE `tbl_templatemail` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
-INSERT INTO tbl_templatemail (id, label, template, status) VALUES ("1","Đơn Hàng Từ Vải Áo Dài Xinh Sunny","<table border="1" cellpadding="0" cellspacing="0" style="width:900px">
+INSERT INTO tbl_templatemail (id, label, template, status) VALUES ("1","Đơn Hàng Từ Vải Áo Dài Xinh Sunny","<table border='1' cellpadding='0' cellspacing='0' style='width:900px'>
 	<tbody>
 		<tr>
 			<td>
 			<p>&nbsp;</p>
 
-			<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
+			<table border='0' cellpadding='0' cellspacing='0' style='width:100%'>
 				<tbody>
 					<tr>
-						<td colspan="3" style="height:20px">&nbsp;</td>
+						<td colspan='3' style='height:20px'>&nbsp;</td>
 					</tr>
 					<tr>
-						<td style="width:20px">&nbsp;</td>
+						<td style='width:20px'>&nbsp;</td>
 						<td>
 						<p><strong>Cảm ơn bạn đã đặt hàng!</strong></p>
 
@@ -12213,10 +12213,10 @@ INSERT INTO tbl_templatemail (id, label, template, status) VALUES ("1","Đơn H�
 
 						<p>&nbsp;</p>
 
-						<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
+						<table border='0' cellpadding='0' cellspacing='0' style='width:100%'>
 							<tbody>
 								<tr>
-									<td style="vertical-align:top">
+									<td style='vertical-align:top'>
 									<p><strong>Thông tin đơn hàng</strong></p>
 
 									<div>
@@ -12224,7 +12224,7 @@ INSERT INTO tbl_templatemail (id, label, template, status) VALUES ("1","Đơn H�
 
 									<p>&nbsp;</p>
 
-									<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
+									<table border='0' cellpadding='0' cellspacing='0' style='width:100%'>
 										<tbody>
 											<tr>
 												<td>Mã đơn hàng:</td>
@@ -12263,33 +12263,33 @@ INSERT INTO tbl_templatemail (id, label, template, status) VALUES ("1","Đơn H�
 
 						<p><strong>Chi tiết đơn hàng</strong></p>
 
-						<table border="1" cellpadding="0" cellspacing="0" style="width:100%">
+						<table border='1' cellpadding='0' cellspacing='0' style='width:100%'>
 							<tbody>
 								<tr>
-									<td style="text-align:center">Tên sản phẩm</td>
-									<td style="text-align:center">Đơn giá</td>
-									<td style="text-align:center">Số lượng</td>
+									<td style='text-align:center'>Tên sản phẩm</td>
+									<td style='text-align:center'>Đơn giá</td>
+									<td style='text-align:center'>Số lượng</td>
 								</tr>
 								<!--{product_loop_start}-->
 								<tr>
-									<td style="text-align:center">{product_name}</td>
-									<td style="text-align:center">{product_price}</td>
-									<td style="text-align:center">{product_quantity}</td>
+									<td style='text-align:center'>{product_name}</td>
+									<td style='text-align:center'>{product_price}</td>
+									<td style='text-align:center'>{product_quantity}</td>
 								</tr>
 								<!--{product_loop_end}-->
 							</tbody>
 						</table>
 
-						<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
+						<table border='0' cellpadding='0' cellspacing='0' style='width:100%'>
 							<tbody><!--{if discount}--><!--{discount end if}-->
 								<tr>
-									<td colspan="3">Phí vận chuyển</td>
-									<td style="text-align:center">{fee_shipping}</td>
+									<td colspan='3'>Phí vận chuyển</td>
+									<td style='text-align:center'>{fee_shipping}</td>
 								</tr>
 								<!--{if vat}--><!--{vat end if}-->
 								<tr>
-									<td colspan="3"><strong>Tổng cộng</strong></td>
-									<td style="text-align:center"><strong>{order_total}</strong></td>
+									<td colspan='3'><strong>Tổng cộng</strong></td>
+									<td style='text-align:center'><strong>{order_total}</strong></td>
 								</tr>
 							</tbody>
 						</table>
@@ -12300,18 +12300,18 @@ INSERT INTO tbl_templatemail (id, label, template, status) VALUES ("1","Đơn H�
 
 						<p>&nbsp;</p>
 						</td>
-						<td style="width:20px">&nbsp;</td>
+						<td style='width:20px'>&nbsp;</td>
 					</tr>
 					<tr>
-						<td colspan="3" style="height:10px">&nbsp;</td>
+						<td colspan='3' style='height:10px'>&nbsp;</td>
 					</tr>
 				</tbody>
 			</table>
 
-			<table cellpadding="0" cellspacing="0" style="width:100%">
+			<table cellpadding='0' cellspacing='0' style='width:100%'>
 				<tbody>
 					<tr>
-						<td style="background-color:#f7f7f7; height:25px">&nbsp;</td>
+						<td style='background-color:#f7f7f7; height:25px'>&nbsp;</td>
 					</tr>
 				</tbody>
 			</table>

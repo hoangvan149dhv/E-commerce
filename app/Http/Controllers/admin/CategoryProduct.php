@@ -13,13 +13,11 @@ class CategoryProduct extends AdminController
 
     // LAYOUT ADD
     public function add_Category_Product(){
-        
 
         return view('admin.categories.addcategoryProduct');
     }
 
     public function all_Category_Product(){
-        
 
         $all_category_product = DB::table('tbl_category_product')->get();
 
@@ -27,18 +25,17 @@ class CategoryProduct extends AdminController
             'allcategory_Productt',
             $all_category_product
         );
-        //'admin.categories.allcategoryProduct là trang đó truyền vào biến $all_category_Product
+
         return view('admin.admin_layout')->with('admin.categories.allcategoryProduct', $manager_category_product);
     }
 
     //ADD Save
     public function save_Category_Product(Request $Request){
-        
 
         $data['category_name'] = $Request->name;
         $data['category_desc'] = $Request->mota;
         $data['category_status'] = $Request->status;
-        //THỰC HIỆN query
+
         DB::table('tbl_category_product')->insert($data);//CHỌN table ->insert dữ liệu data
 
         Session::put('message', 'Thêm Danh Mục Sản Phẩm Thành Công');
@@ -48,7 +45,6 @@ class CategoryProduct extends AdminController
 
     //active
     public function active_Category_Product($category_product_id){
-        
 
         DB::table('tbl_category_product')->where('category_id', $category_product_id)->update(['category_status' => 1]);
 
@@ -57,7 +53,6 @@ class CategoryProduct extends AdminController
 
     //unactive
     public function unactive_Category_Product($category_product_id){
-        
 
         DB::table('tbl_category_product')->where('category_id', $category_product_id)->update(['category_status' => 0]);
 
@@ -66,10 +61,9 @@ class CategoryProduct extends AdminController
 
     //EDIT
     public function edit_Category_Product($category_product_id){
-        
 
         $edit_category_product = DB::table('tbl_category_product')->where('category_id', $category_product_id)->get();
-        
+
         $manager_category_product = view('admin.categories.updatecategoryproduct')->with(
             'editcategory_Product',
             $edit_category_product
@@ -79,8 +73,6 @@ class CategoryProduct extends AdminController
     }
 
     public function update_Category_Product(Request $Request, $category_product_id){
-
-        
 
         $data = array();
         $data['category_name'] = $Request->name;
@@ -96,8 +88,6 @@ class CategoryProduct extends AdminController
     }
 
     public function delete_Category_Product($category_product_id){
-        
-        
 
         DB::table('tbl_category_product')->where('category_id', $category_product_id)->delete();
 
@@ -107,8 +97,6 @@ class CategoryProduct extends AdminController
 ////DESTROY CATEGOY
     public function destroy_Category_Product(request $request){
 
-        
-        
         $destroy_cate = $request->category;
 
         DB::table('tbl_category_product')->whereIn('category_id', $destroy_cate)->delete();
