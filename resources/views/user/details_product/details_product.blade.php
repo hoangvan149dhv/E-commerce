@@ -41,7 +41,7 @@
             <img src="../public/client/images/new.jpg" class="newarrival" alt="" />
             <h2 style="color:red;font-weight: 700;">{{$details_product->product_Name}}</h2>
             <p>Mã Hàng: {{$details_product->brandcode_id}}</p>
-            {{-- UPDATE SỐ LƯỢNG --}}
+            {{-- UPDATE QUATITY --}}
             @if ($details_product->product_price_promotion==0 ||$details_product->product_price_promotion==1)
             <p></p>
             @else
@@ -79,7 +79,7 @@
     <div class="tab-content">
         <div class="tab-pane" id="details">
             <div class="col-sm-12">
-                <div class="single-products">
+                <div class="details-desc-products">
                     {!! $details_product->product_desc !!}
                 </div>
             </div>

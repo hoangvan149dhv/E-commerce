@@ -179,7 +179,7 @@
             // SEARCH FEE_SHIP keypress
             $('.search_fee_ship, .input_search_fee_ship').on('keypress keydown',function name(event) {
                 var val_input = $('.input_search_fee_ship').val();
-
+                //reset value
                 if (event.keyCode == 8 || event.keyCode == 46 ){
                     if(val_input.length == 0){
                         fetch_delivery();

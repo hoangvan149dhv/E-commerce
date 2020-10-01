@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Session;
 use Redirect;
 use App\configMailModel;
 use App\templateMailModel;
@@ -15,36 +16,26 @@ class sendMailController extends Controller
 {
     /**
      * SEND MAIL
-     * @param   string  $subject   label
-     * @param   string  $file_template_mail content / display template
-     * @param   string  $template
+     * @param   string  $subject   label mail
+     * @param   string  $file_template_mail file display template
+     * @param   string  $template   body mail
      * @param   string  $fromname name user sendmail
      * @param   string  $mailconfig_recipient  user recipient
      * @param   string  $ccname cc user recipient
      * @param   string  $item_detail_order order detail
      */
-    public function sendMail(&$fromname , &$mailconfig_recipient,
-                             &$ccname, &$bccname, &$subject, &$file_template_mail,
-                             &$template ,$item_detail_order){
+    public function sendMail(&$fromname , $mailconfig_recipient,
+                             $ccname, $bccname, $subject, $file_template_mail,
+                             $template ,$item_detail_order){
 
         //template mail display
-        $file_template_mail = "mails.order_mail";
-
-        $ccname    = array("hoangvan1491999@gmail.com");
-        $bccname   = array("hoangvan149dhv@gmail.com");
         $EmailName = configMailModel::select()->get();
         foreach ($EmailName as $key => $value) {
         }
 
         //value mail config in admin
-        $mailconfig_recipient = $value->Email;
         $fromname             = $value->name_email;
 
-        //param
-        $template = templateMailModel::where('status','Hiện')->get();
-        foreach ($template as $key => $item) {
-        }
-        $subject              = $item->label;
         $data = array('email_recipient' => $mailconfig_recipient,
                       'subject' => $subject, 'fromname' => $fromname,
                       'ccname' => $ccname, 'bccname' => $bccname);
@@ -63,7 +54,29 @@ class sendMailController extends Controller
         });
     }
 
+    public function sendtestMail(){
+        $EmailName = configMailModel::select()->get();
+        foreach ($EmailName as $key => $value) {
+        }
 
+        //value mail config in admin
+
+        //SUBJECT
+        $subject = "Test Mail thành công";
+        $template = "send mail thành công";
+        $file_template_mail = "mails.testmail";
+        $mailconfig_recipient = $value->Email;
+        $ccname    = array("hoangvan1491999@gmail.com");
+        $bccname    = array("hoangvan149dhv@gmail.com");
+
+        $this->sendMail($fromname, $mailconfig_recipient,
+                        $ccname, $bccname, $subject,
+                        $file_template_mail, $template, $item_detail_order = null);
+
+        Session::put('send-mail-success','send mail thành công');
+
+        return back();
+    }
 
 
 

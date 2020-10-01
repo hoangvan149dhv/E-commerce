@@ -5,7 +5,7 @@
     <h2>Lấy mật khẩu</h2>
 <form action="{{URL::to('/lay-mat-khau')}}" method="post">
             {{--BẢO MẬT HƠN, token --}}{{ csrf_field() }}
-            <input type="text" class="ggg" name="name" placeholder="Tên Đăng Nhập" required="">
+            <input type="text" class="ggg" name="name" placeholder="Địa Chỉ Email" required="">
             <input type="text" class="ggg" name="question" placeholder="câu hỏi bảo mật" required="">
                 <div class="clearfix"></div>
                 <input type="submit" value="Lấy mật khẩu" name="getpass">

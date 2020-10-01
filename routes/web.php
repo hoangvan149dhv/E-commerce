@@ -17,8 +17,8 @@ Route::get('/','user\HomeController@index');
 Route::get('/trang-chu','user\HomeController@index');
 
 //FIND PRODUCTS
-Route::post('tim-kiem','user\HomeController@search');
-Route::get('tim-kiem','user\HomeController@search_product');
+Route::get('/tim-kiem','user\HomeController@search');
+Route::get('/tim-kiem','user\HomeController@search_product');
 ///////////////////////////////---------BRANDS - CATEGORIES---------////////////////////////////////////////////////////
 
 //SHOW PRODUCT BY CATEGORIES
@@ -118,8 +118,8 @@ Route::get('/delete-status-1/{order_id}','admin\AdminController@delete_status_1'
 Route::get('/destroy-order', 'admin\AdminController@destroy_order');
 
 //ORDERS FIND
-Route::post('/tim-kiem-admin', 'admin\AdminController@search_order');
-Route::get('/tim-kiem-admin', 'admin\AdminController@search_product_order');
+Route::get('/search-order', 'admin\AdminController@search_order');
+Route::get('/search-order', 'admin\AdminController@search_product_order');
 
 //PRODUCTS FIND
 Route::post('/tim-kiem-san-pham', 'admin\AdminController@searchProduct');
@@ -330,6 +330,8 @@ Route::get('/template-mail','admin\configmailController@templateMail');
 
 //SEND MAIL
 Route::post('/send','sendMailController@sendMail');
+
+Route::get('/send-test-mail','sendMailController@sendtestMail');
 
 //TEST MAIL
 Route::get('/testmail','sendMailController@test');

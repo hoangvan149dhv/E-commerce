@@ -72,7 +72,7 @@ class AdminController extends loginController{
     //QUẢN LÝ ĐƠN HÀNG
     public function order(){
 
-        $product_order = DB::table('tbl_order')->orderby('orderid','desc')->paginate(10);
+        $product_order = DB::table('tbl_order')->orderby('orderid','desc')->paginate(3);
 
         session::put('message', DB::table('tbl_order')->where('status',0)->count());
 
@@ -139,8 +139,8 @@ class AdminController extends loginController{
         $key_word = $request->search;
 
         $search = DB::table('tbl_order')->orderby('orderid','desc')->where('cusname','like','%'.$key_word.'%')
-        ->orWhere('status',$key_word)
-        ->orWhere('productname','like','%'.$key_word.'%')->paginate(30);
+                    ->orWhere('status',$key_word)
+                    ->orWhere('productname','like','%'.$key_word.'%')->paginate(30);
 
         return view('admin.search.search')->with('search',$search);
 
