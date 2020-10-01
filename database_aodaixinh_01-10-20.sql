@@ -12044,12 +12044,12 @@ CREATE TABLE `tbl_count` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
-INSERT INTO tbl_count (id, counts) VALUES ("1","620");
-INSERT INTO tbl_count (id, counts) VALUES ("1","620");
-INSERT INTO tbl_count (id, counts) VALUES ("1","621");
-INSERT INTO tbl_count (id, counts) VALUES ("1","593");
-INSERT INTO tbl_count (id, counts) VALUES ("1","593");
-INSERT INTO tbl_count (id, counts) VALUES ("1","594");
+INSERT INTO tbl_count (id, counts) VALUES ("1","632");
+INSERT INTO tbl_count (id, counts) VALUES ("1","632");
+INSERT INTO tbl_count (id, counts) VALUES ("1","633");
+INSERT INTO tbl_count (id, counts) VALUES ("1","605");
+INSERT INTO tbl_count (id, counts) VALUES ("1","605");
+INSERT INTO tbl_count (id, counts) VALUES ("1","606");
 
 CREATE TABLE `tbl_customer` (
   `cusid` int NOT NULL AUTO_INCREMENT,

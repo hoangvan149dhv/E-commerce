@@ -5,8 +5,8 @@
         <h2>Đăng Nhập</h2>
     <form action="{{URL::to('/admin-quanly')}}" method="post">
                 {{--BẢO MẬT HƠN, token --}}{{ csrf_field() }}
-                <input type="text" class="ggg" name="Email" value="{{ $result->admin_email }}" placeholder="Tên Đăng Nhập" required="">
-                <input type="text" class="ggg" value="{{ $result->pass }}" name="Password" placeholder="Mật Khẩu..." required="">
+                <input type="text" class="ggg" name="Email" value="{{ $result->user_name }}" placeholder="Tên Đăng Nhập" required="">
+                <input type="text" class="ggg" value="" name="Password" placeholder="Mật Khẩu..." required="">
 
                 <h6><a href="{{ URL::to('/quen-mat-khau') }}">Quên Mật Khẩu?</a></h6>
                     <div class="clearfix"></div>

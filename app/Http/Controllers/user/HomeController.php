@@ -13,6 +13,7 @@ use Illuminate\Http\Response;
 use Carbon\Carbon;
 use App\CustomerorderModel;
 use App\contactinfoModel;
+use Illuminate\Support\Facades\Cookie;
 use App\count;
 class HomeController extends Controller
 {
@@ -48,17 +49,19 @@ class HomeController extends Controller
         //SỐ LƯỢT TRUY CẬP
         $count = count::findOrFail(1);
         $response = new Response();
+
         $response->withcookie("abc".rand(0,9999),"abc".rand(0,9999),1111);
 
         if(isset($response)){
+            $cookie = $request->cookie("abc".rand(0,9999));
 
-            $count->increment('counts');
+                $count->increment('counts');
 
             return view('user.home')
             ->with('all_productt',$all_product)
             ->with('count',$count)
             ->with(compact('all_product','slider'));
-             $request->cookie("abc".rand(0,9999));
+
 
         }else{
             // $count->increment('counts');

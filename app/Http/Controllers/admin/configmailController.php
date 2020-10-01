@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Session;
 use Redirect;
 use App\configMailModel;
 use App\templateMailModel;
@@ -41,8 +42,9 @@ class configmailController extends AdminController
         $configMail = new configMailModel();
         $configMail->where('id',1)->update($data);
 
-        return back();
+        Session::put('add-config-mail-success','Lưu thông tin thành công');
 
+        return back();
     }
 
     //show list templatemail user create

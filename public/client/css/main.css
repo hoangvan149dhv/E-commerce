@@ -1084,6 +1084,10 @@ h2.title {
 .single-products {
   position: relative;
 }
+.details-desc-products{
+    position: relative;
+    margin: 0 25px;
+}
 .nav-pills .li{
   list-style: none;
   /* padding: 10px 0 5px 10px; */
@@ -1165,7 +1169,6 @@ object-position: 50% 50%;
   transition: height 500ms ease 0s;
   width: 100%;
   display: block;
-  opacity:;
 }
 
 .single-products:hover .product-overlay {
@@ -1584,7 +1587,6 @@ object-position: 50% 50%;
 .cart:hover {
   transition: 300ms;
   color: #FFFFFF;
-  font-size: 35px;
 }
 
 #reviews button:hover {

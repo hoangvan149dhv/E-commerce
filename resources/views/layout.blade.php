@@ -100,7 +100,7 @@
                     </div>
                     <div class="col-sm-3">
                         <div class="search_box pull-right">
-                            <form action="{{URL::to('/tim-kiem')}}" method="POST" style="margin-bottom:0px">
+                            <form action="{{URL::to('/tim-kiem')}}" method="GET" style="margin-bottom:0px">
                                 {{ csrf_field() }}
                                 <div class="input-group">
                                     <input type="search" placeholder="Tìm kiếm" name="search" />

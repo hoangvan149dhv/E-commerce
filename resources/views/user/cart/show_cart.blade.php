@@ -181,7 +181,7 @@
             $('#city').change(function name(params) {
                 var fee_ship =$('#city option:selected').text();
                 var _token = $('input[name="_token"]').val();
-                var fee_cart_product = $('.fee_cart_product').text().replace(',','');
+                var fee_cart_product = $('.fee_cart_product').text().split(',').join('');
                 var total ;
                 $.ajax({
                     url : '{{url('/select-delivery-feeship') }}',

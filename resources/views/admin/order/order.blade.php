@@ -14,7 +14,7 @@
         <div class="col-sm-4">
         </div>
         <div class="col-sm-3">
-          <form action="{{ URL::to('/tim-kiem-admin') }}" method="POST">
+          <form action="{{ URL::to('/search-order') }}" method="GET">
             {{ csrf_field() }}
           <div class="input-group">
             <input type="text" name="search" class="input-sm form-control">

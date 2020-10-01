@@ -82,7 +82,7 @@
         <!-- inbox dropdown end -->
         <!-- notification dropdown start-->
         <li id="header_notification_bar" class="dropdown">
-            <form action="{{ URL::to('/tim-kiem-admin') }}" method="POST">
+            <form action="{{ URL::to('/search-order') }}" method="POST">
             {{ csrf_field() }}
             <li>
                 <input type="text" name="search" class="form-control search" placeholder=" Search">

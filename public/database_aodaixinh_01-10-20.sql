@@ -7,7 +7,7 @@ CREATE TABLE `devvn_feeship` (
   `fee_xa` varchar(50) NOT NULL,
   `fee_feeship` int NOT NULL,
   PRIMARY KEY (`fee_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
 INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("75","Thành phố Hà Nội","Quận Ba Đình","Phường Phúc Xá","500000");
@@ -20,9 +20,15 @@ INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALU
 INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("82","Thành phố Hồ Chí Minh","Quận Phú Nhuận","Phường 17","500000");
 INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("83","Thành phố Hồ Chí Minh","Huyện Nhà Bè","Xã Hiệp Phước","500000");
 INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("84","Tỉnh Tuyên Quang","Huyện Hàm Yên","Xã Bình Xa","500000");
-INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("85","Tỉnh Tuyên Quang","Huyện Hàm Yên","Xã Thái Hòa","5000006");
-INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("86","Thành phố Hồ Chí Minh","Quận 6","Phường 07","5000007");
-INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("87","Tỉnh Điện Biên","Huyện Điện Biên","Xã Noọng Hẹt","5000005");
+INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("85","Tỉnh Tuyên Quang","Huyện Hàm Yên","Xã Thái Hòa","500000");
+INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("86","Thành phố Hồ Chí Minh","Quận 6","Phường 07","500000");
+INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("87","Tỉnh Điện Biên","Huyện Điện Biên","Xã Noọng Hẹt","500000");
+INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("88","Thành phố Hồ Chí Minh","Quận Tân Bình","Phường 03","20000");
+INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("89","Thành phố Hồ Chí Minh","Quận Tân Bình","Phường 08","20000");
+INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("90","Thành phố Hồ Chí Minh","Quận Tân Bình","Phường 02","20000");
+INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("91","Thành phố Hồ Chí Minh","Quận Thủ Đức","Phường Hiệp Bình Phước","20000");
+INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("92","Tỉnh Quảng Ngãi","Huyện Tây Trà","Xã Trà Phong","20000");
+INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("93","Thành phố Cần Thơ","Quận Bình Thuỷ","Phường An Thới","20000");
 
 CREATE TABLE `devvn_quanhuyen` (
   `maqh` int NOT NULL,
@@ -11994,15 +12000,17 @@ INSERT INTO devvn_xaphuongthitran (xaid, name, type, maqh) VALUES ("32248","Xã 
 CREATE TABLE `tbl_admin` (
   `admin_Id` int NOT NULL AUTO_INCREMENT,
   `admin_email` varchar(50) NOT NULL,
+  `user_name` varchar(50) NOT NULL,
   `admin_pass` varchar(50) NOT NULL,
   `admin_name` varchar(50) NOT NULL,
-  `admin_phone` text NOT NULL,
+  `admin_question_getpass` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `pass` varchar(50) NOT NULL,
   PRIMARY KEY (`admin_Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
-INSERT INTO tbl_admin (admin_Id, admin_email, admin_pass, admin_name, admin_phone, pass) VALUES ("1","hoangvan","b502e8023901df1e74e95c9b86dc5913","Văn","hoangvan","hoangvan");
+INSERT INTO tbl_admin (admin_Id, admin_email, user_name, admin_pass, admin_name, admin_question_getpass, pass) VALUES ("1","hoangvan1491999@gmail.com","hoangvan","b502e8023901df1e74e95c9b86dc5913","Văn","hoangvan","hoangvan");
+INSERT INTO tbl_admin (admin_Id, admin_email, user_name, admin_pass, admin_name, admin_question_getpass, pass) VALUES ("2","sunnyngo7662@gmail.com","ngan","4df26b7d69a26516915261039bbb1cb6","ngân","ngan","ngan");
 
 CREATE TABLE `tbl_brand_code_product` (
   `code_id` int NOT NULL AUTO_INCREMENT,
@@ -12023,7 +12031,7 @@ CREATE TABLE `tbl_category_product` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
-INSERT INTO tbl_category_product (category_id, category_name, category_desc, category_status) VALUES ("1","Lụa Cao Cấp","Lụa Cao Cấp","1");
+INSERT INTO tbl_category_product (category_id, category_name, category_desc, category_status) VALUES ("1","Lụa Cao Cấp","Lụa Cao Cấp","0");
 INSERT INTO tbl_category_product (category_id, category_name, category_desc, category_status) VALUES ("2","áo dài phụ nữ","áo dài phụ nữ","0");
 
 CREATE TABLE `tbl_contact` (
@@ -12044,12 +12052,12 @@ CREATE TABLE `tbl_count` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
-INSERT INTO tbl_count (id, counts) VALUES ("1","620");
-INSERT INTO tbl_count (id, counts) VALUES ("1","620");
-INSERT INTO tbl_count (id, counts) VALUES ("1","621");
-INSERT INTO tbl_count (id, counts) VALUES ("1","593");
-INSERT INTO tbl_count (id, counts) VALUES ("1","593");
-INSERT INTO tbl_count (id, counts) VALUES ("1","594");
+INSERT INTO tbl_count (id, counts) VALUES ("1","713");
+INSERT INTO tbl_count (id, counts) VALUES ("1","713");
+INSERT INTO tbl_count (id, counts) VALUES ("1","714");
+INSERT INTO tbl_count (id, counts) VALUES ("1","686");
+INSERT INTO tbl_count (id, counts) VALUES ("1","686");
+INSERT INTO tbl_count (id, counts) VALUES ("1","687");
 
 CREATE TABLE `tbl_customer` (
   `cusid` int NOT NULL AUTO_INCREMENT,
@@ -12057,7 +12065,7 @@ CREATE TABLE `tbl_customer` (
   `cusadd` varchar(70) NOT NULL,
   `cusPhone` varchar(11) NOT NULL,
   PRIMARY KEY (`cusid`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
 INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("11","Duong Hoang Van","test, Xã Thái Ninh, Huyện Thanh Ba, Tỉnh Phú Thọ","0912345678");
@@ -12072,6 +12080,26 @@ INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("19","test t
 INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("20","test twst","test, Xã Khâu Vai, Huyện Mèo Vạc, Tỉnh Hà Giang","0334964103");
 INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("21","test twst","test, Xã Lũng Thầu, Huyện Đồng Văn, Tỉnh Hà Giang","01234578900");
 INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("22","test twst","as, Xã Tây Cốc, Huyện Đoan Hùng, Tỉnh Phú Thọ","01234578900");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("23","Dương Hoàng Văn","test, Xã Trường Hà, Huyện Hà Quảng, Tỉnh Cao Bằng","0334964103");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("24","Dương Hoàng Văn","test, Xã Trường Hà, Huyện Hà Quảng, Tỉnh Cao Bằng","0334964103");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("25","Dương Hoàng Văn","test, Phường Hàng Buồm, Quận Hoàn Kiếm, Thành phố Hà Nội","1234567389");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("26","Dương Hoàng Văn","test, Phường Vĩnh Phúc, Quận Ba Đình, Thành phố Hà Nội","1234567899");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("27","Dương Hoàng Văn","test, Phường Vĩnh Phúc, Quận Ba Đình, Thành phố Hà Nội","1234567899");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("28","hoangvan","tesatr, Thị trấn Phó Bảng, Huyện Đồng Văn, Tỉnh Hà Giang","12345678901");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("29","hoangvan","tesatr, Thị trấn Phó Bảng, Huyện Đồng Văn, Tỉnh Hà Giang","12345678901");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("30","hoangvan","test, Phường Giang Biên, Quận Long Biên, Thành phố Hà Nội","1234567890");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("31","Dương Hoàng Văn","test, Xã Trị Quận, Huyện Phù Ninh, Tỉnh Phú Thọ","12345567890");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("32","Dương Hoàng Văn","test, Xã Cẩm Hải, Thành phố Cẩm Phả, Tỉnh Quảng Ninh","1234567890");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("33","aHoàng Văn","test, Xã Cô Ba, Huyện Bảo Lạc, Tỉnh Cao Bằng","1234523563");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("34","Dương Hoàng Văn","test, Xã Đông Hải, Huyện Tiên Yên, Tỉnh Quảng Ninh","0334964103");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("35","Dương Hoàng Văn","test, Xã Đông Hải, Huyện Tiên Yên, Tỉnh Quảng Ninh","0334964103");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("36","Dương Hoàng Văn","test, Xã Đông Hải, Huyện Tiên Yên, Tỉnh Quảng Ninh","0334964103");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("37","Dương Hoàng Văn","test, Xã Đông Hải, Huyện Tiên Yên, Tỉnh Quảng Ninh","0334964103");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("38","Dương Hoàng Văn","test, Xã Đông Hải, Huyện Tiên Yên, Tỉnh Quảng Ninh","0334964103");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("39","Dương Hoàng Văn","test, Xã Đông Hải, Huyện Tiên Yên, Tỉnh Quảng Ninh","0334964103");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("40","Dương Hoàng Văn","test, Xã Đông Hải, Huyện Tiên Yên, Tỉnh Quảng Ninh","0334964103");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("41","Dương Hoàng Văn","test, Xã Đông Hải, Huyện Tiên Yên, Tỉnh Quảng Ninh","0334964103");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("42","Dương Hoàng Văn","test, Xã Đông Hải, Huyện Tiên Yên, Tỉnh Quảng Ninh","0334964103");
 
 CREATE TABLE `tbl_info_contact` (
   `id_Info` int NOT NULL AUTO_INCREMENT,
@@ -12121,21 +12149,25 @@ CREATE TABLE `tbl_order` (
   `note` text NOT NULL,
   `order_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`orderid`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
-INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("9","11","Duong Hoang Van","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","0912345678","đang xử lý","test","2020-09-21 17:51:19");
-INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("10","12","Ngo Nguyen Huynh Ngan","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","500000","1000000","0909677308","đang xử lý","Yêu bà kkk","2020-09-21 18:06:53");
-INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("11","13","Ngô Nguyễn Huỳnh Ngân","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","500000","1000000","0909677308","đang xử lý","Ngân nè","2020-09-22 09:15:24");
-INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("12","14","Duong Hoang Van","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","0909677308","đang xử lý","tét","2020-09-22 09:18:08");
-INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("13","15","Duong Hoang Van","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","0909677308","0","tét","2020-09-24 17:10:57");
-INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("14","16","Dương Hoàng Van","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","500000","1000000","0334964103","đang xử lý","tét","2020-09-23 17:38:37");
-INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("15","17","Van HOang","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","500000","1000000","0334964103","1","tét","2020-09-24 17:11:05");
-INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("16","18","test twst","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","4","500000","20000","2020000","01234578900","1","test","2020-09-24 17:11:04");
-INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("17","19","test twst","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","01234578900","đang xử lý","test","2020-09-24 17:45:32");
-INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("18","20","test twst","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","12","500000","20000","6020000","0334964103","đang xử lý","twsy","2020-09-24 17:46:17");
-INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("19","21","test twst","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","01234578900","đang xử lý","ts","2020-09-25 17:57:50");
-INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("20","22","test twst","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","01234578900","đang xử lý","asd","2020-09-25 17:58:42");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("23","25","Dương Hoàng Văn","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","500000","1000000","1234567389","0","test","2020-10-01 15:41:38");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("24","26","Dương Hoàng Văn","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","500000","1000000","1234567899","0","twestr","2020-10-01 16:53:08");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("25","28","hoangvan","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","2","500000","20000","1020000","12345678901","1","twtr","2020-10-01 15:14:37");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("26","30","hoangvan","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","2","500000","500000","1500000","1234567890","1","test","2020-10-01 14:56:49");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("27","31","Dương Hoàng Văn","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","12345567890","1","testt","2020-10-01 14:56:50");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("28","32","Dương Hoàng Văn","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","1234567890","1","twst","2020-10-01 14:59:59");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("29","33","aHoàng Văn","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","500000","1000000","1234523563","0","testwetr","2020-10-01 15:51:19");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("30","34","Dương Hoàng Văn","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","0334964103","đang xử lý","téty","2020-10-01 17:22:40");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("31","35","Dương Hoàng Văn","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","0334964103","đang xử lý","téty","2020-10-01 17:22:41");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("32","36","Dương Hoàng Văn","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","0334964103","đang xử lý","téty","2020-10-01 17:22:42");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("33","37","Dương Hoàng Văn","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","0334964103","đang xử lý","téty","2020-10-01 17:22:42");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("34","38","Dương Hoàng Văn","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","0334964103","đang xử lý","téty","2020-10-01 17:22:43");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("35","39","Dương Hoàng Văn","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","0334964103","đang xử lý","téty","2020-10-01 17:22:43");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("36","40","Dương Hoàng Văn","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","0334964103","đang xử lý","téty","2020-10-01 17:22:43");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("37","41","Dương Hoàng Văn","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","0334964103","đang xử lý","téty","2020-10-01 17:22:43");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("38","42","Dương Hoàng Văn","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","0334964103","đang xử lý","téty","2020-10-01 17:22:43");
 
 CREATE TABLE `tbl_product` (
   `product_id` int NOT NULL AUTO_INCREMENT,
@@ -12168,10 +12200,11 @@ CREATE TABLE `tbl_review` (
   `updated_at` datetime NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`Rid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
 INSERT INTO tbl_review (Rid, Rname, Remail, Rcomment, status, meta_slug, updated_at, created_at) VALUES ("1","test twst","vanduong@redweb.dk","tests","0","ao-dai-truyen-thong513","2020-09-24 10:45:03","2020-09-24 10:45:03");
+INSERT INTO tbl_review (Rid, Rname, Remail, Rcomment, status, meta_slug, updated_at, created_at) VALUES ("2","hoangvan","van.duong@redweb.dk","dfgdfh","0","ao-dai-truyen-thong513","2020-10-01 05:33:02","2020-10-01 05:33:02");
 
 CREATE TABLE `tbl_slider` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -12328,4 +12361,4 @@ CREATE TABLE `tbl_configmail_receiver` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
-INSERT INTO tbl_configmail_receiver (id, Email, name_email) VALUES ("1","hoangvan1491999@gmail.com","Hoàng Văn");
+INSERT INTO tbl_configmail_receiver (id, Email, name_email) VALUES ("1","van.duong@redweb.dk","Hoàng Văn");

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Http\Controllers\sendMailController;
 use Illuminate\Http\Request;
 use DB;
 use App\Http\Controllers\Controller;
@@ -10,7 +11,6 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Response;
 use Carbon\Carbon;
 use App\count;
-use Illuminate\Database\Query\Builder;
 class loginController extends Controller
 {
     //check login if user already login
@@ -19,7 +19,7 @@ class loginController extends Controller
         $session_id = Session::get('session_id');
 
         if($session_id){
-            
+
             return Redirect::to('admin-quanly');
 
         }else{
@@ -37,13 +37,29 @@ class loginController extends Controller
 
     public function get_pass(Request $request){
 
-        $admin_name = $request->name;
+        //SEND MAIL
+        $sendmail = new sendMailController();
+
+        $admin_email = $request->name;
 
         $admin_question = $request->question;
 
-        $result = DB::table('tbl_admin')->where('admin_email',$admin_name)->where('admin_phone',$admin_question)->first();
+        $result = DB::table('tbl_admin')->where('admin_email',$admin_email)->where('admin_question_getpass',$admin_question)->first();
 
         if($result){
+            $ccname             = array();
+            $bccname            = array("$admin_email");
+            $mailconfig_recipient = array("$admin_email");
+            $subject            = "Lấy mật khẩu từ Vải áo dài xinh";
+            $file_template_mail = "mails.get_pass_admin";
+            $template           = "";
+            $item_detail_order  = DB::table('tbl_admin')->where('admin_email',$admin_email)->where('admin_question_getpass',$admin_question)->get();
+            $sendmail->sendMail($fromname, $mailconfig_recipient, $ccname,
+                                $bccname, $subject, $file_template_mail,
+                                $template, $item_detail_order);
+            echo "<script type='text/javascript'>
+                    alert('Lấy mật khẩu thành công, Vui lòng kiểm tra mail');
+                 </script>";
 
             return  view('admin.login.getpass')->with('result',$result);
 
@@ -52,22 +68,22 @@ class loginController extends Controller
             echo"<script type='text/javascript'>
                     alert('Câu hỏi bảo mật không đúng');
                  </script>";
-                 
+
             return view('admin.login.admin_login');
         }
     }
-    //check user password when user fill  
+    //check user password when user fill
     public function check_login_user_pass(Request $request){
-        $admin_email = $request->Email;
+        $user_name = $request->Email;
 
         $admin_pass = addslashes(md5($request->Password));
 
-        $result = DB::table('tbl_admin')->where('admin_email',$admin_email)->where('admin_pass',$admin_pass)->first();
+        $result = DB::table('tbl_admin')->where('user_name',$user_name)->where('admin_pass',$admin_pass)->first();
 
         if($result){
 
             $count = count::find(1);
-            
+
             $date  = Carbon::now()->day;
 
             $month = Carbon::now()->month;
@@ -76,10 +92,10 @@ class loginController extends Controller
 
             $product_order_month = DB::table('tbl_order')->where('status',1)->whereMonth('order_date',$month)->get();
 
-            session::put('admin_name', $result->admin_name); 
-            
+            session::put('admin_name', $result->admin_name);
+
             session::put('session_id',md5( $result->admin_pass . Carbon::now()->day));
-            
+
             session::put('message', DB::table('tbl_order')->where('status',0)->count());
 
             $response = new Response();
@@ -87,7 +103,7 @@ class loginController extends Controller
             $alert=  $response->withcookie($result->admin_name,$result->admin_name,1000000);
 
             if(isset($alert)){
-                
+
                 view()->share('count',$count);
 
                 return view('admin.dashboard')

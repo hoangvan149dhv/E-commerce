@@ -25,7 +25,7 @@ class CartController extends HomeController
         $data['qty']= $request->cart_qty;
         $data['name'] =$request->cart_name;
         $data['price'] =$request->cart_price;
-        $data['weight'] ="session";
+        $data['weight'] = 0; //default
         $data['options']['images']=$request->cart_image;
         Cart::add($data);
         session::put('message',Cart::content()->count());
@@ -43,7 +43,7 @@ class CartController extends HomeController
         $data['qty']= 1;
         $data['name'] =$product_info->product_Name;
         $data['price'] =$product_info->product_price;
-        $data['weight'] ="session";
+        $data['weight'] = 0;
         $data['options']['images']=$product_info->product_image;
         Cart::add($data);
         session::put('message',Cart::content()->count());
@@ -98,7 +98,7 @@ class CartController extends HomeController
     if(is_numeric($qty)){
 
         Cart::update($rowId,$qty);
-        
+
         return back();
 
     }else{
