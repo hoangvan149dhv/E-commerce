@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use Session;
-use App\Http\Requests; //
+use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 use App\newsadminModel;
 use DB;

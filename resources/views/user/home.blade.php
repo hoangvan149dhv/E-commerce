@@ -16,26 +16,26 @@
                         <input type="hidden" value="1" class="cart_product_qty_{{$product->product_id}}">
                         <?php
                         // tinh phan tram sale sản phẩm
-                            $c = 0;
-                            $c = (100 * $product->product_price)/$product->product_price_promotion;
-                            $sale = 100-$c;
+                            $c    = 0;
+                            $c    = (100 * $product->product_price) / $product->product_price_promotion;
+                            $sale = 100 - $c;
                         ?>
                         <a href="{{ URL::to('/chi-tiet/'.$product->meta_slug) }}" title="Chi tiết">
-                        @if ($product->product_price_promotion==1||$product->product_price_promotion==0)
+                            @if ($product->product_price_promotion == 1|| $product->product_price_promotion==0)
 
-                        @else
-                            <span class="stick-promotion">-{{ round($sale) }}%</span>
-                        @endif
-                        <img  class="img-fluid" src="public/upload/{{$product->product_image}}" />
-                        <h5 id="title">{{$product->product_Name}}</h5></a> {{-- //phân trăm sale sản phẩm --}}
+                            @else
+                                <span class="stick-promotion">-{{ round($sale) }}%</span>
+                            @endif
+                            <img  class="img-fluid" src="public/upload/{{$product->product_image}}" />
+                            <h5 id="title">{{$product->product_Name}}</h5>
+                        </a>
                         <div class="product_price">
-                        @if ($product->product_price_promotion==1||$product->product_price_promotion==0)
-                        <p></p>
-                        @else
-                        <p style="text-decoration: line-through;color:#ff4b0099">{{number_format($product->product_price_promotion) ."VNĐ"}}</p>
-                        @endif {{-- //phân trăm sale sản phẩm --}}
-
-                        <p style="margin-bottom:4px;font-size: 16px;">{{number_format($product->product_price)}} .VNĐ</p>
+                            @if ($product->product_price_promotion==1||$product->product_price_promotion==0)
+                            <p></p>
+                            @else
+                            <p style="text-decoration: line-through;color:#ff4b0099">{{number_format($product->product_price_promotion) ."VNĐ"}}</p>
+                            @endif {{-- //phân trăm sale sản phẩm --}}
+                            <p style="margin-bottom:4px;font-size: 16px;">{{number_format($product->product_price)}} .VNĐ</p>
                         </div>
                         <div class="text-center">
                             <span><a href="{{ URL::to('/chi-tiet/'.$product->meta_slug) }}" class="btn btn-default add-to-cart">Chi tiết</a></span>
@@ -78,21 +78,20 @@
                 },
                 success:function(){setTimeout(() => {
                     swal({
-                                title: "Đã thêm sản phẩm vào giỏ hàng",
-                                text: "Bạn có thể tiếp tục mua hàng hoặc tới giỏ hàng để tiến hành thanh toán",
-                                showCancelButton: true,
-                                cancelButtonText: "Xem tiếp",
-                                confirmButtonClass: "btn-primary",
-                                confirmButtonText: "Đi đến giỏ hàng",
-                                type:"success",
-                                closeOnConfirm: false
-                            },
-                            function() {
-                                window.location.href = "{{url('/hien-thi-gio-hang')}}";
-                            });
-                }, 100);
+                        title: "Đã thêm sản phẩm vào giỏ hàng",
+                        text: "Bạn có thể tiếp tục mua hàng hoặc tới giỏ hàng để tiến hành thanh toán",
+                        showCancelButton: true,
+                        cancelButtonText: "Xem tiếp",
+                        confirmButtonClass: "btn-primary",
+                        confirmButtonText: "Đi đến giỏ hàng",
+                        type:"success",
+                        closeOnConfirm: false
+                        },
+                        function() {
+                            window.location.href = "{{url('/hien-thi-gio-hang')}}";
+                         });
+                      }, 100);
                     }
-
                 });
             });
         });

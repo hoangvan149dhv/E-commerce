@@ -91,7 +91,7 @@ class DetailsProductController extends HomeController{
             return back();
 
         }else{
-            $reviewModel=$reviewModel->save();
+            $reviewModel = $reviewModel->save();
 
             return back();
         }

@@ -15,7 +15,7 @@
 <meta property="og:title" content="{{ $meta_title }}" />
 <meta property="og:description" content="{{ $meta_desc }}" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="{{ $url_canonical }}" /> {{-- Property --}}
+<meta property="og:url" content="{{ $url_canonical }}" />
 <link href="{{asset('public/client/css/bootstrap.min.css')}}" rel="stylesheet">
 <link href="{{asset('public/client/css/font-awesome.min.css')}}" rel="stylesheet">
 <link href="{{asset('public/client/css/animate.css')}}" rel="stylesheet">
@@ -43,7 +43,7 @@
                             <li><a href="{{URL::to('/thong-tin-khach-hang')}}"><i class="fa fa-pencil-square-o"></i> Lịch sử mua hàng</a></li>
                             <li><a href="{{URL::to('/hien-thi-gio-hang')}}"><i class="fa fa-shopping-cart"></i> Giỏ hàng
                                 <?php
-                                $content_cart = Cart::content()->count();  //ĐẾM SỐ LƯỢNG TRONG GIỎ HÀNG
+                                $content_cart = Cart::content()->count();
                                    if(empty($content_cart)){
                                        echo "";
                                    }else{
@@ -100,7 +100,7 @@
                         <form action="{{URL::to('/tim-kiem')}}" method="GET" style="margin-bottom:0px">
                             {{ csrf_field() }}
                             <div class="input-group">
-                                <input type="search" placeholder="Tìm kiếm" name="search" />
+                                <input type="search" placeholder="Tìm kiếm" value="{{ old('search') }}" name="search" />
                                 <span class="input-group-btn">
                             <button  name="submit"class="fa fa-search btn btn-sm btn_search_product"></button>
                         </span>

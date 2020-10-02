@@ -24,20 +24,20 @@ class HomeController extends Controller
         $brandcode_product =DB::table('tbl_brand_code_product')->orderby('code_id','desc')->get();
 
         //SEO
-        $meta_desc= "Chuyên bán vải áo dài,may tại xưởng, giá rẻ, in sỉ, lẻ , chất lượng"; //META DESCRIPTION
-        $meta_keyword = "Áo dài in 3D, áo dài đẹp, áo dài in sỉ lẻ, đồng phục";     //Từ khóa trên google khi người dùng tìm kiếm
-        $meta_title = "Vải áo dài xinh- Khuyến Mãi"; //Tile là tên trang đó
-        $url_canonical = $request->url(); // url_canonical cái này lấy được cái đường dẫn hiện tại của cái trang  chủ
+        $meta_desc= "Chuyên bán vải áo dài,may tại xưởng, giá rẻ, in sỉ, lẻ , chất lượng";
+        $meta_keyword = "Áo dài in 3D, áo dài đẹp, áo dài in sỉ lẻ, đồng phục";
+        $meta_title = "Vải áo dài xinh - Khuyến Mãi";
+        $url_canonical = $request->url();
+        //SEO
 
-         //SEO
         view()->share('category_product',$category_product);
         view()->share('brand_code_product',$brandcode_product);
 
-        view()->share('meta_desc',$meta_desc);
-        view()->share('meta_keyword',$meta_keyword);
-        view()->share('meta_title',$meta_title);
-        view()->share('url_canonical',$url_canonical);
-        view()->share('contactinfoModel',$contactinfoModel);
+        view()->share('meta_desc',ucwords($meta_desc));
+        view()->share('meta_keyword',ucwords($meta_keyword));
+        view()->share('meta_title',ucwords($meta_title));
+        view()->share('url_canonical',($url_canonical));
+        view()->share('contactinfoModel',($contactinfoModel));
     }
     public function index(Request $request){
 
@@ -50,12 +50,10 @@ class HomeController extends Controller
         $count = count::findOrFail(1);
         $response = new Response();
 
-        $response->withcookie("abc".rand(0,9999),"abc".rand(0,9999),1111);
+        $Cookie = $response->withcookie("abc","abc".rand(0,9999),1111);
+        if(isset($Cookie)){
 
-        if(isset($response)){
-            $cookie = $request->cookie("abc".rand(0,9999));
-
-                $count->increment('counts');
+            $count->increment('counts');
 
             return view('user.home')
             ->with('all_productt',$all_product)
@@ -73,7 +71,7 @@ class HomeController extends Controller
     }
     //TÌM KIẾM
     public function search(Request $request){
-        $key_word = $request->search;
+        $key_word = $request->old('search');
         if($key_word==''){
             return back();
         }else{
@@ -88,7 +86,7 @@ class HomeController extends Controller
         }
     }
     public function search_product(Request $request){
-        $key_word = $request->search;
+        $key_word = $request->old('search');
         $search = DB::table('tbl_product')
                     ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
                     ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')

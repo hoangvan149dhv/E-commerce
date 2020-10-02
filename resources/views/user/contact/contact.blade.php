@@ -213,7 +213,7 @@
                 <a class="active" href="{{ URL('/trang-chu') }}"><i class="fa fa-home"></i></a>
                 <a href="tel:{{ $contact->info_contact_phone }}"><i class="fa fa-phone"></i></a>
                 <a href="{{URL::to('/hien-thi-gio-hang')}}"><i class="fa fa-shopping-cart"><?php
-                    $content_cart = Cart::content()->count();  //ĐẾM SỐ LƯỢNG TRONG GIỎ HÀNG
+                    $content_cart = Cart::content()->count();
                        if(empty($content_cart)){
                            echo "";
                        }else{
