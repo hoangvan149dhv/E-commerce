@@ -33,6 +33,14 @@
                         <label for="exampleInputEmail1">Gía khuyến mãi</label>
                         <input data-validation="length" data-validation-length="4-10" style="display:none" id="promotions" data-validation-error-msg='vui lòng điền kí tự số và ít nhất 4-10 kí tự' type="number" min="1" class="form-control" name="promotion_price"id="exampleInputEmail1" value="1" placeholder="VD: 200.000.VNĐ">
                     </div>
+                    <div class="form-group" id="promotion_start_date" style="display:none" >
+                        <label >Ngày bắt đầu giảm giá:</label>
+                        <input type="date"  name="promotion_start_date">
+                    </div>
+                    <div class="form-group" id="promotion_end_date" style="display:none">
+                        <label>Ngày kết thúc giảm giá:</label>
+                        <input type="date"   name="promotion_end_date">
+                    </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Gía Sản Phẩm</label>
                         <input   id="promotions" data-validation="length" data-validation-length="4-10" data-validation-error-msg='vui lòng điền 4-10 kí tự' type="number" class="form-control" name="price"id="exampleInputEmail1" placeholder="VD: 200.000.VNĐ">
@@ -92,10 +100,10 @@
         $(document).ready(function name(params) {
             $('#promotion').click(function () {
                 if($(this).is(":checked")){
-                $("#promotions").css('display','block');
+                $("#promotions, #promotion_start_date, #promotion_end_date").css('display','block');
             }
             else if($(this).is(":not(:checked)")){
-                $("#promotions").css('display','none');
+                $("#promotions, #promotion_start_date, #promotion_end_date").css('display','none');
             }
             });
         });

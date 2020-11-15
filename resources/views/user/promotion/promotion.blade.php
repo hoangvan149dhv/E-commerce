@@ -1,4 +1,5 @@
-@extends('home_page') @Section('content')
+@extends('home_page')
+@Section('content')
 <div class="features_items">
     <!--features_items-->
     <h2 class="title text-center">Sản Phẩm Khuyến Mãi</h2>
@@ -14,6 +15,8 @@
                         <input type="hidden" value="{{$product->product_image}}" class="cart_product_image_{{$product->product_id}}">
                         <input type="hidden" value="{{$product->product_price}}" class="cart_product_price_{{$product->product_id}}">
                         <input type="hidden" value="1" class="cart_product_qty_{{$product->product_id}}">
+                        <input type="hidden" class="url" url="{{url('/add-cart-ajax')}}" />
+                        <input type="hidden" class="url_addtocart_success" url="{{url('/hien-thi-gio-hang')}}" />
                         <?php
                         // caculate percent
                             $c = 0;
@@ -25,6 +28,46 @@
 
                             @else
                                 <span class="stick-promotion">-{{ round($sale) }}%</span>
+                                    <p id="stick-promotions">
+                                        <script>
+                                            var end = new Date('2020-11-15');
+
+                                            var _second = 1000;
+                                            var _minute = _second * 60;
+                                            var _hour = _minute * 60;
+                                            var _day = _hour * 24;
+                                            var timer;
+
+                                            function showRemaining() {
+                                                var now = new Date();
+                                                var distance = end - now;
+                                                if (distance < 0) {
+
+                                                    clearInterval(timer);
+                                                    document.getElementById('stick-promotions').innerHTML = 'EXPIRED!';
+
+                                                    return;
+                                                }
+                                                var days = Math.floor(distance / _day);
+                                                var hours = Math.floor((distance % _day) / _hour);
+                                                var minutes = Math.floor((distance % _hour) / _minute);
+                                                var seconds = Math.floor((distance % _minute) / _second);
+
+                                                document.getElementById('stick-promotions').innerHTML = days + 'days ';
+                                                document.getElementById('stick-promotions').innerHTML += hours + 'hrs ';
+                                                document.getElementById('stick-promotions').innerHTML += minutes + 'mins ';
+                                                document.getElementById('stick-promotions').innerHTML += seconds + 'secs';
+                                            }
+
+                                            timer = setInterval(showRemaining, 1000);
+
+                                            // $(function ($) {
+                                            //     var fiveMinutes = 600 * 5,
+                                            //         display = $(".productinfo").find("#stick-promotions");
+                                            //     startTimer(fiveMinutes, display);
+                                            // });
+                                        </script>
+                                    </p>
                             @endif
                             <img  class="img-fluid" src="public/upload/{{$product->product_image}}" />
                         <h6 id="title">{{$product->product_Name}}</h6>
@@ -53,52 +96,8 @@
    {!! $promotion->links() !!}
 </div>
 @endsection
-@section('script')
-<script>
-    $(document).ready(function() {
-        $('.add-to-cart').click(function() {
-            //ID CỦA  BUTTON
-            var id = $(this).data('id_product');
-            var cart_id = $('.cart_product_id_' + id).val();
-            var cart_name = $('.cart_product_name_' + id).val();
-            var cart_image = $('.cart_product_image_' + id).val();
-            var cart_price = $('.cart_product_price_' + id).val();
-            var cart_qty = $('.cart_product_qty_' + id).val();
-            var token = $('input[name="_token"]').val();
-            $.ajax({
-                url: '{{url('/add-cart-ajax')}}',
-                method: 'POST',
-                data: {
-                    cart_id: cart_id,
-                    cart_name:cart_name,
-                    cart_image:cart_image,
-                    cart_price:cart_price,
-                    cart_qty:cart_qty,
-                    _token:token
-                },
-                success:function(){setTimeout(() => {
-                    swal({
-                            title: "Đã thêm sản phẩm vào giỏ hàng",
-                            text: "Bạn có thể tiếp tục mua hàng hoặc tới giỏ hàng để tiến hành thanh toán",
-                            showCancelButton: true,
-                            cancelButtonText: "Xem tiếp",
-                            confirmButtonClass: "btn-primary",
-                            confirmButtonText: "Đi đến giỏ hàng",
-                            type:"success",
-                            closeOnConfirm: false
-                        },
-                        function() {
-                            window.location.href = "{{url('/hien-thi-gio-hang')}}";
-                        });
-                        }, 100);
-                    }
-
-                });
-            });
-        });
-    </script>
-@endsection
 @section('slider')
+
         @foreach ($slider as $slider_img)
             <div class="item">
                 <div class="col-sm-12">

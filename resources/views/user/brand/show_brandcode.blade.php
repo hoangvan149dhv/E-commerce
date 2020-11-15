@@ -16,6 +16,8 @@
                         <input type="hidden" value="{{$product->product_image}}" class="cart_product_image_{{$product->product_id}}">
                         <input type="hidden" value="{{$product->product_price}}" class="cart_product_price_{{$product->product_id}}">
                         <input type="hidden" value="1" class="cart_product_qty_{{$product->product_id}}">
+                        <input type="hidden" class="url" url="{{url('/add-cart-ajax')}}" />
+                        <input type="hidden" class="url_addtocart_success" url="{{url('/hien-thi-gio-hang')}}" />
                         <a href="{{ URL::to('/chi-tiet/'.$product->meta_slug) }}">
                             <img class="img-brand" src="../public/upload/{{$product->product_image}}" />
                         <h5  id="title">{{$product->product_Name}}</h5></a>
@@ -52,48 +54,4 @@
     {{-- Paginate--}}
     {!! $brand_by_id->links() !!}
 </div>
-@endsection
-@section('script')
-<script>
-    $(document).ready(function() {
-        $('.add-to-cart').click(function() {
-            //ID CỦA  BUTTON
-            var id = $(this).data('id_product');
-            var cart_id = $('.cart_product_id_' + id).val();
-            var cart_name = $('.cart_product_name_' + id).val();
-            var cart_image = $('.cart_product_image_' + id).val();
-            var cart_price = $('.cart_product_price_' + id).val();
-            var cart_qty = $('.cart_product_qty_' + id).val();
-            var token = $('input[name="_token"]').val();
-            $.ajax({
-                url: '{{url('/add-cart-ajax')}}',
-                method: 'POST',
-                data: {
-                    cart_id: cart_id,
-                    cart_name:cart_name,
-                    cart_image:cart_image,
-                    cart_price:cart_price,
-                    cart_qty:cart_qty,
-                    _token:token
-                },
-                success:function(){setTimeout(() => {
-                    swal({
-                        title: "Đã thêm sản phẩm vào giỏ hàng",
-                        text: "Bạn có thể tiếp tục mua hàng hoặc tới giỏ hàng để tiến hành thanh toán",
-                        showCancelButton: true,
-                        cancelButtonText: "Xem tiếp",
-                        confirmButtonClass: "btn-primary",
-                        confirmButtonText: "Đi đến giỏ hàng",
-                        type:"success",
-                        closeOnConfirm: false
-                        },
-                        function() {
-                            window.location.href = "{{url('/hien-thi-gio-hang')}}";
-                        });
-                        }, 100);
-                    }
-                });
-            });
-        });
-    </script>
 @endsection

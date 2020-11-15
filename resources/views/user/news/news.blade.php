@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-        <div class="border" style="height: 260px;border-bottom: 2px dashed #999;"></div>
+        <div class="border" style="border-bottom: 2px dashed #999;"></div>
         @endforeach
         <div class="pagination-area text-center">
             <ul class="pagination " >

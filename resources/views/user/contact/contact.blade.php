@@ -262,40 +262,12 @@
                 </div>
             </footer>
             <!--/Footer-->
-<script src="{{asset('public/client/js/jquery.js')}}"></script>
-<script src="{{asset('public/client/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('public/client/js/jquery.scrollUp.min.js')}}"></script>
-<script src="{{asset('public/client/js/price-range.js')}}"></script>
-<script src="{{asset('public/client/js/jquery.prettyPhoto.js')}}"></script>
-<script src="{{asset('public/client/js/main.js')}}"></script>
-<script src="{{asset('public/client/js/form-validator.min.js')}}"></script>
-<script type="text/javascript">
-    $.validate({
-    });
-
-    // MENU
-    $(document).ready(function() {
-        $(window).scroll(function name(params) {
-    if (window.scrollY > 300) {
-        $('.icon-bar-menu').addClass('menu-bar');
-        $(".header-middle").slideUp(100);
-    }
-    if (window.scrollY < 200) {
-        $('.icon-bar-menu, menu-bar').removeClass('menu-bar');
-        $(".header-middle").slideDown(100);
-    }
-})
-        $('#background').fadeIn(1000);
-        $('#background').click(function name(params) {
-            $('#background').fadeOut(700, function name(params) {
-                $(this).css('display', 'none');
-            })
-        })
-        $('#background button').click(function name(params) {
-            $('#background').fadeOut(700, function name(params) {
-                $(this).css('display', 'none');
-            })
-        })
-    })
-</script>
+            <script src="{{asset('public/client/js/jquery.js')}}"></script>
+            <script src="{{asset('public/client/js/bootstrap.min.js')}}"></script>
+            <script src="{{asset('public/client/js/jquery.scrollUp.min.js')}}"></script>
+            <script src="{{asset('public/client/js/price-range.js')}}"></script>
+            <script src="{{asset('public/client/js/jquery.prettyPhoto.js')}}"></script>
+            <script src="{{asset('public/client/js/form-validator.min.js')}}"></script>
+            <script src="{{asset('public/client/js/sweetalert.js')}}"></script>
+            <script src="{{asset('public/client/js/main.js')}}"></script>
 @yield('script')
