@@ -94,6 +94,17 @@ class Productcontroller extends AdminController {
         $data['brandcode_id'] = $Request->brandcode;
         $data['meta_keyword'] = $Request->meta_keyword;
         $data['meta_desc'] = $Request->meta_desc;
+        if (empty($Request->promotion_start_date) || empty($Request->promotion_end_date))
+        {
+            $data['promotion_start_date'] = date("d-m-Y");
+            $data['promotion_end_date']   = date("d-m-Y");
+        }
+        else
+        {
+            var_dump($Request->promotion_start_date);die;
+            $data['promotion_start_date'] = date("d-m-Y",$Request->promotion_start_date);
+            $data['promotion_end_date']   = date("d-m-Y",$Request->promotion_end_date);
+        }
         $slugg = $this->utf8convert($data['product_Name']);
         $data['meta_slug']= $this->utf8tourl($slugg).rand(0, 22220);
 
@@ -217,19 +228,29 @@ class Productcontroller extends AdminController {
         $data['brandcode_id'] = $Request->brandcode;
         $data['meta_keyword'] = $Request->meta_keyword;
         $data['meta_desc'] = $Request->meta_desc;
+        if (empty($Request->promotion_start_date) || empty($Request->promotion_end_date))
+        {
+            $data['promotion_start_date'] = date("d-m-Y");
+            $data['promotion_end_date']   = date("d-m-Y");
+        }
+        else
+        {
+            $data['promotion_start_date'] = $Request->promotion_end_date;
+            $data['promotion_end_date']   = $Request->promotion_end_date;
+        }
         $slugg = $this->utf8convert($data['product_Name']);
         $data['meta_slug']= $this->utf8tourl($slugg).rand(0, 1000);
         $get_image=$Request->file('image');
-        //THỰC HIỆN query
-        if(empty($get_image)){
 
+        if(empty($get_image)){
             DB::table('tbl_product')->where('product_id',$product_id)->update($data);
 
             Session::put('alert-successproduct','Sửa  Sản phẩm Thành Công');
             return back();
 
-        }elseif ($get_image) {
-
+        }
+        elseif ($get_image)
+        {
             $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.',$get_name_image));
 
@@ -239,8 +260,8 @@ class Productcontroller extends AdminController {
             $data['product_image'] = $new_image;
             DB::table('tbl_product')->where('product_id',$product_id)->update($data);
             Session::put('alert-successproduct','Sửa  Sản phẩm Thành Công');
-            return back();
 
+            return back();
         }
     }
 }

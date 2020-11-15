@@ -52,8 +52,8 @@ class sliderController extends AdminController
         $slider_update = sliderModel::find($id);
         $slider_update->status = $request['status'];
         $get_image = $request->file('image');
-        if($get_image){
-
+        if($get_image)
+        {
             $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.',$get_name_image));
             $image = md5(time()).$name_image.'.'.$get_image->getClientOriginalExtension();
@@ -61,22 +61,19 @@ class sliderController extends AdminController
             $slider_update->img = $image;
             $slider_update->save();
             return redirect::to('update-layout-slider/'.$id)->with('success','sửa ảnh thành công');
-
-        }else{
-
+        }
+        else
+        {
             $slider_update->save();
 
             return redirect::to('update-layout-slider/'.$id)->with('error','thành công');
-
         }
 
     }
     function status_0($id){
-
         sliderModel::where('id',$id)->update(['status'=>0]);
 
         return Redirect::to('all-slider');
-
     }
     function status_1($id){
 
@@ -112,9 +109,8 @@ class sliderController extends AdminController
             $slider_img = $value['img'];
             $del_file   ="public/upload/".$slider_img;
 
-            if(file_exists($del_file)){
-                unlink($del_file);
-            }
+            file_exists($del_file) ? unlink($del_file) : "";
+
         }
         sliderModel::whereIn('id',$slider_id)->delete();
 

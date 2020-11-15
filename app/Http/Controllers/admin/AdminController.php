@@ -122,15 +122,8 @@ class AdminController extends loginController{
 
         $order_id =$request->orderid;
 
-        if(isset($order_id)) {
-            DB::table('tbl_order')->whereIn('orderid',$order_id)->delete();
-
-            return back();
-        }
-        else {
-
-            return back();
-        }
+        isset($order_id)? DB::table('tbl_order')->whereIn('orderid',$order_id)->delete() : "";
+        return back();
 
     }
 
