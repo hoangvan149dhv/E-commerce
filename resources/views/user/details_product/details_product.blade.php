@@ -151,7 +151,9 @@
                                 <div class="product_price">
                                     @if ($product_recommended->product_price_promotion==1||$product_recommended->product_price_promotion==0)
                                     @else
-                                        <span class="stick-promotion-brand">-{{ round($sale) }}%</span>
+                                        <span class="stick-promotion">-{{ round($sale) }}%</span>
+                                        <span class="stick-promotion_countdown"
+                                              id="stick-promotions_{{$product_recommended->product_id}}"></span>
                                     @endif
                                     @if ($product_recommended->product_price_promotion==1||$product_recommended->product_price_promotion==0)
                                     <p></p>
@@ -168,33 +170,35 @@
                 @endforeach
             </div>
             <div class="item">
-                @foreach ($related_product as $related_product)
+                @foreach ($related_product as $related_product_item)
                 <div class="col-sm-4">
                     <div class="product-image-wrapper details">
                         <div class="single-products">
                             <div class="productinfo text-center">
-                                <a href="{{ URL::to('/chi-tiet/'.$product_recommended->meta_slug) }}"><img  src="../public/upload/{{$related_product->product_image}}" width="140" height="180" alt="" />
-                                    <p>{{$related_product->product_Name}}</p>
+                                <a href="{{ URL::to('/chi-tiet/'.$related_product_item->meta_slug) }}"><img  src="../public/upload/{{$related_product_item->product_image}}" width="140" height="180" alt="" />
+                                    <p>{{$related_product_item->product_Name}}</p>
                                 </a>
                                 <?php
                                 // caculate percent
                                     $c = 0;
-                                    $c = (100 * $related_product->product_price) / $related_product->product_price_promotion;
+                                    $c = (100 * $related_product_item->product_price) / $related_product_item->product_price_promotion;
                                     $sale = 100 - $c;
                                 ?>
-                            @if ($related_product->product_price_promotion==1||$related_product->product_price_promotion==0)
-							@else
-								<span class="stick-promotion-brand">-{{ round($sale) }}%</span>
-                            @endif
+                            @if ($related_product_item->product_price_promotion==1||$related_product_item->product_price_promotion==0)
+                                @else
+                                    <span class="stick-promotion">-{{ round($sale) }}%</span>
+                                    <span class="stick-promotion_countdown"
+                                          id="stick-promotions_{{$related_product_item->product_id}}"></span>
+                                @endif
                             <div class="product_price">
-                                @if ($related_product->product_price_promotion==1||$related_product->product_price_promotion==0)
+                                @if ($related_product_item->product_price_promotion==1||$related_product_item->product_price_promotion==0)
                                 <p></p>
                                 @else
-                                <p style="text-decoration: line-through;color:#ff4b0099">{{number_format($related_product->product_price_promotion) ."VNĐ"}}</p>
+                                <p style="text-decoration: line-through;color:#ff4b0099">{{number_format($related_product_item->product_price_promotion) ."VNĐ"}}</p>
                                 @endif
-                                    <p style="color: #FE980F;">{{number_format($related_product->product_price)}}.VNĐ</p>
+                                    <p style="color: #FE980F;">{{number_format($related_product_item->product_price)}}.VNĐ</p>
                             </div>
-                                <a href="{{ URL::to('/chi-tiet/'.$product_recommended->meta_slug) }}" type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Chi tiết</a>
+                                <a href="{{ URL::to('/chi-tiet/'.$related_product_item->meta_slug) }}" type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Chi tiết</a>
                             </div>
                         </div>
                     </div>
@@ -235,4 +239,70 @@
     </div>
     @endforeach
 </div>
+@endsection
+@section('script')
+    <script>
+        @foreach ($show_details_product_recommended as $product)
+        // Set the date we're counting down to
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+            var countDownDate = new Date("{{$product->promotion_end_date}}").getTime();
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            if ( document.getElementById("stick-promotions_{{$product->product_id}}") !== null )
+            {
+                // Display the result in the element with id="demo"
+                document.getElementById("stick-promotions_{{$product->product_id}}").innerHTML = "Còn " + days + " ngày " + hours + ":"
+                    + minutes + ":" + seconds;
+                // If the count down is finished, write some text
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("stick-promotions_{{$product->product_id}}").innerHTML = "SALE";
+                }
+            }
+
+        }, 1000);
+        @endforeach
+        @foreach ($related_product as $product)
+        // Set the date we're counting down to
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+            var countDownDate = new Date("{{$product->promotion_end_date}}").getTime();
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            if ( document.getElementById("stick-promotions_{{$product->product_id}}") !== null )
+            {
+                // Display the result in the element with id="demo"
+                document.getElementById("stick-promotions_{{$product->product_id}}").innerHTML = "Còn " + days + " ngày " + hours + ":"
+                    + minutes + ":" + seconds;
+                // If the count down is finished, write some text
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("stick-promotions_{{$product->product_id}}").innerHTML = "SALE";
+                }
+            }
+
+        }, 1000);
+        @endforeach
+    </script>
 @endsection

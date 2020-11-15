@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="form-group" id="promotion_start_date" >
                                     <label>Ngày bắt đầu giảm giá:</label>
-                                    <input type="date" value="{{$product->promotion_start_date}}" name="promotion_start_date">
+                                    <input type="date"  value="{{$product->promotion_start_date}}" name="promotion_start_date">
                                 </div>
                                 <div class="form-group" id="promotion_end_date" >
                                     <label>Ngày kết thúc giảm giá:</label>

@@ -22,14 +22,6 @@
     <link href="{{asset('public/client/css/main.css')}}" rel="stylesheet">
     <link href="{{asset('public/client/css/responsive.css')}}" rel="stylesheet">
     <link href="{{asset('public/client/css/sweetalert.css')}}" rel="stylesheet">
-    <script src="{{asset('public/client/js/jquery.js')}}"></script>
-    <script src="{{asset('public/client/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('public/client/js/jquery.scrollUp.min.js')}}"></script>
-    <script src="{{asset('public/client/js/price-range.js')}}"></script>
-    <script src="{{asset('public/client/js/jquery.prettyPhoto.js')}}"></script>
-    <script src="{{asset('public/client/js/form-validator.min.js')}}"></script>
-    <script src="{{asset('public/client/js/sweetalert.js')}}"></script>
-    <script src="{{asset('public/client/js/main.js')}}"></script>
 </head>
 <!--/head-->
 <body>
@@ -236,6 +228,14 @@
 </footer>
 <!--/Footer-->
 @yield('pupup')
-
+<script src="{{asset('public/client/js/jquery.js')}}"></script>
+<script src="{{asset('public/client/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('public/client/js/jquery.scrollUp.min.js')}}"></script>
+<script src="{{asset('public/client/js/price-range.js')}}"></script>
+<script src="{{asset('public/client/js/jquery.prettyPhoto.js')}}"></script>
+<script src="{{asset('public/client/js/form-validator.min.js')}}"></script>
+<script src="{{asset('public/client/js/sweetalert.js')}}"></script>
+<script src="{{asset('public/client/js/main.js')}}"></script>
+@yield('script')
 </body>
 </html>

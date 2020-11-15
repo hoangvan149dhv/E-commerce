@@ -96,14 +96,13 @@ class Productcontroller extends AdminController {
         $data['meta_desc'] = $Request->meta_desc;
         if (empty($Request->promotion_start_date) || empty($Request->promotion_end_date))
         {
-            $data['promotion_start_date'] = date("d-m-Y");
-            $data['promotion_end_date']   = date("d-m-Y");
+            $data['promotion_start_date'] = date("Y-m-d");
+            $data['promotion_end_date']   = date("Y-m-d");
         }
         else
         {
-            var_dump($Request->promotion_start_date);die;
-            $data['promotion_start_date'] = date("d-m-Y",$Request->promotion_start_date);
-            $data['promotion_end_date']   = date("d-m-Y",$Request->promotion_end_date);
+            $data['promotion_start_date'] =  date($Request->promotion_start_date);
+            $data['promotion_end_date']   = date($Request->promotion_end_date);
         }
         $slugg = $this->utf8convert($data['product_Name']);
         $data['meta_slug']= $this->utf8tourl($slugg).rand(0, 22220);
@@ -230,13 +229,13 @@ class Productcontroller extends AdminController {
         $data['meta_desc'] = $Request->meta_desc;
         if (empty($Request->promotion_start_date) || empty($Request->promotion_end_date))
         {
-            $data['promotion_start_date'] = date("d-m-Y");
-            $data['promotion_end_date']   = date("d-m-Y");
+            $data['promotion_start_date'] = date("Y-m-d");
+            $data['promotion_end_date']   = date("Y-m-d");
         }
         else
         {
-            $data['promotion_start_date'] = $Request->promotion_end_date;
-            $data['promotion_end_date']   = $Request->promotion_end_date;
+            $data['promotion_start_date'] =  date($Request->promotion_start_date);
+            $data['promotion_end_date']   = date($Request->promotion_end_date);
         }
         $slugg = $this->utf8convert($data['product_Name']);
         $data['meta_slug']= $this->utf8tourl($slugg).rand(0, 1000);
@@ -245,7 +244,7 @@ class Productcontroller extends AdminController {
         if(empty($get_image)){
             DB::table('tbl_product')->where('product_id',$product_id)->update($data);
 
-            Session::put('alert-successproduct','Sửa  Sản phẩm Thành Công');
+            Session::put('alert-successproduct','Sửa Sản phẩm Thành Công');
             return back();
 
         }

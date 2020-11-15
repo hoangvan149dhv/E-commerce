@@ -99,14 +99,18 @@ class HomeController extends Controller
                 ->with('search',$search);
 
     }
-    public function promotion(Request $request){
+    public function promotion(){
 
         $slider = sliderModel::where('status',1)->orderby('id','desc')->take(3)->get();
+
+        $now  = date("Y-m-d");
 
         $promotion = DB::table('tbl_product')
                         ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
                         ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
-                        ->where('product_price_promotion','>','1')->orderby('product_price_promotion','desc')->paginate(20);
+                        ->where('product_price_promotion','>','1')
+                        ->where('tbl_product.promotion_end_date', '>=', $now)
+                        ->orderby('product_price_promotion','desc')->paginate(10);
 
         return view('user.promotion.promotion')
                     ->with('promotion',$promotion)
