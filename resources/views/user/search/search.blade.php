@@ -8,7 +8,7 @@
                     <div class="single-products">
                         <div class="productinfo text-center">
                             <form action="" style="margin-bottom: 0px;">
-                                @csrf {{-- XEM BÀI 63 --}}
+                                @csrf
                                 <input type="hidden" value="{{$product->product_id}}"
                                        class="cart_product_id_{{$product->product_id}}">
                                 <input type="hidden" value="{{$product->product_Name}}"
@@ -37,7 +37,9 @@
                                     @if ($product->product_price_promotion==1||$product->product_price_promotion==0)
                                         <p></p>
                                     @else
-                                        <p style="text-decoration: line-through;color:#ff4b0099">{{number_format($product->product_price_promotion) ."VNĐ"}}</p>
+                                        <span class="stick-promotion">-{{ round($sale) }}%</span>
+                                        <span class="stick-promotion_countdown"
+                                              id="stick-promotions_{{$product->product_id}}"></span>
                                     @endif
                                     <p>{{number_format($product->product_price)}}.VNĐ</p>
                                 </div>
@@ -60,3 +62,40 @@
         {!! $search->links() !!}
     </div>
 @endsection
+
+@section('script')
+    <script>
+        @foreach ($search as $product)
+        // Set the date we're counting down to
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+            var countDownDate = new Date("{{$product->promotion_end_date}}").getTime();
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            if ( document.getElementById("stick-promotions_{{$product->product_id}}") !== null )
+            {
+                // Display the result in the element with id="demo"
+                document.getElementById("stick-promotions_{{$product->product_id}}").innerHTML = "Còn " + days + " ngày " + hours + ":"
+                    + minutes + ":" + seconds;
+                // If the count down is finished, write some text
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("stick-promotions_{{$product->product_id}}").innerHTML = "SALE";
+                }
+            }
+
+        }, 1000);
+        @endforeach
+    </script>
+@endsection
+
