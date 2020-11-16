@@ -66,11 +66,5 @@
         @endforeach
     </tbody>
 </table>
-
 </div>
-
-
-
-    <?php
-    // } ?>
 @endsection
