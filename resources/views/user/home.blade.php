@@ -86,8 +86,13 @@
         @foreach ($all_productt as $product)
         // Set the date we're counting down to
         // Update the count down every 1 second
-        var x = setInterval(function () {
-            var countDownDate = new Date("{{$product->promotion_end_date}}").getTime();
+        var datetime = "'{{$product->promotion_end_date}}'";
+        var id         = "{{$product->promotion_end_date}}";
+        // console.log(datetime);
+        var x = setInterval(countdown(datetime, id), 1000);
+        function countdown (datetime) {
+            console.log(datetime);
+            var countDownDate = new Date(" ' " + datetime + " ' ").getTime();
             // Get today's date and time
             var now = new Date().getTime();
 
@@ -100,19 +105,19 @@
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            if ( document.getElementById("stick-promotions_{{$product->product_id}}") !== null )
+            if ( document.getElementById("stick-promotions_"+ id) !== null )
             {
                 // Display the result in the element with id="demo"
-                document.getElementById("stick-promotions_{{$product->product_id}}").innerHTML = "Còn " + days + " ngày " + hours + ":"
+                document.getElementById("stick-promotions_" + id).innerHTML = "Còn " + days + " ngày " + hours + ":"
                     + minutes + ":" + seconds;
                 // If the count down is finished, write some text
                 if (distance < 0) {
                     clearInterval(x);
-                    document.getElementById("stick-promotions_{{$product->product_id}}").innerHTML = "SALE";
+                    document.getElementById("stick-promotions_" + id).innerHTML = "SALE";
                 }
             }
 
-        }, 1000);
+        }
         @endforeach
     </script>
 @endsection

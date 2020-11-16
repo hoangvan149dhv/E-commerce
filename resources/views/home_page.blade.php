@@ -96,7 +96,6 @@
                                     @endforeach
                                 </ul>
                             </li>
-
                             <li><a href="{{ url::to('/khuyen-mai') }}"> Khuyễn mãi</a></li>
                             <li><a href="{{ url::to('/tin-tuc-chia-se')}}">Tin tức</a></li>
                             <li><a href="{{ url::to('/lien-he') }}">Liên Hệ</a></li>
@@ -151,7 +150,6 @@
                     <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
                         <i class="fa fa-angle-right"></i>
                     </a>';
-                } else {
                 }
                 ?>
             </div>
