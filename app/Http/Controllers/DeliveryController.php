@@ -8,11 +8,11 @@ use App\ProvinceModel;
 use App\CityModel;
 use App\feeShipModel;
 use App\Http\Controllers\admin\AdminController;
-class DeliveryController extends AdminController
+class DeliveryController extends Controller
 {
     //LAYOUT_DELIVERY
     public function layout_add_delivery(){
-        
+
         $city = CityModel::orderby('matp','ASC')->get();
 
         view()->share('city',$city);
