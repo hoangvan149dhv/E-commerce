@@ -73,7 +73,7 @@ class Payment_orderController extends HomeController
 
                     //CC Name //BCCNAME  //RECEIPT
                     $mailconfig_recipient = $value->Email;
-                    $ccname    = array("hoangvan1491999@gmail.com");
+                    $ccname    = array("$request->email");
                     $bccname    = array("hoangvan149dhv@gmail.com");
 
                     //Subject (mail)
