@@ -96,8 +96,8 @@ class Productcontroller extends AdminController {
         $data['meta_desc'] = $Request->meta_desc;
         if (empty($Request->promotion_start_date) || empty($Request->promotion_end_date))
         {
-            $data['promotion_start_date'] = date("Y-m-d");
-            $data['promotion_end_date']   = date("Y-m-d");
+            $data['promotion_start_date'] = null;
+            $data['promotion_end_date']   = null;
         }
         else
         {
@@ -229,8 +229,8 @@ class Productcontroller extends AdminController {
         $data['meta_desc'] = $Request->meta_desc;
         if (empty($Request->promotion_start_date) || empty($Request->promotion_end_date))
         {
-            $data['promotion_start_date'] = date("Y-m-d");
-            $data['promotion_end_date']   = date("Y-m-d");
+            $data['promotion_start_date'] = null;
+            $data['promotion_end_date']   = null;
         }
         else
         {

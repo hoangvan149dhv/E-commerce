@@ -58,39 +58,44 @@ class Payment_orderController extends HomeController
 
                 $item_detail_order = CustomerorderModel::where('orderid',$getIdorder)->get();
 
-                if($item_detail_order){
+                try {
+                    if ($item_detail_order) {
 
-                    $EmailName = configMailModel::select()->get();
+                        $EmailName = configMailModel::select()->get();
                         foreach ($EmailName as $key => $value) {
+                        }
+
+                        //SEND MAIL
+                        $sendmail = new sendMailController();
+                        //param
+                        $template = templateMailModel::where('status', 'Hiện')->get();
+                        foreach ($template as $key => $item) {
+                        }
+
+                        //CC Name //BCCNAME  //RECEIPT
+                        $mailconfig_recipient = $value->Email;
+                        $ccname = array("$request->email");
+                        $bccname = array("hoangvan149dhv@gmail.com");
+
+                        //Subject (mail)
+                        $subject = $item->label;
+
+                        //template order
+                        $file_template_mail = "mails.order_mail";
+
+                        $sendmail->sendMail(
+                            $fromname,
+                            $mailconfig_recipient,
+                            $ccname,
+                            $bccname,
+                            $subject,
+                            $file_template_mail,
+                            $template,
+                            $item_detail_order);
                     }
+                } catch (\RuntimeException $e) {
 
-                    //SEND MAIL
-                    $sendmail = new sendMailController();
-                    //param
-                    $template = templateMailModel::where('status','Hiện')->get();
-                    foreach ($template as $key => $item) {
-                    }
-
-                    //CC Name //BCCNAME  //RECEIPT
-                    $mailconfig_recipient = $value->Email;
-                    $ccname    = array("$request->email");
-                    $bccname    = array("hoangvan149dhv@gmail.com");
-
-                    //Subject (mail)
-                    $subject              = $item->label;
-
-                    //template order
-                    $file_template_mail = "mails.order_mail";
-
-                    $sendmail->sendMail(
-                        $fromname,
-                        $mailconfig_recipient,
-                        $ccname,
-                        $bccname,
-                        $subject,
-                        $file_template_mail,
-                        $template,
-                        $item_detail_order);
+                    throw new \RuntimeException($e->getMessage(), $e->getCode());
                 }
             }
             Cart::destroy();

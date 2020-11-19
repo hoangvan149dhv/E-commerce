@@ -25,7 +25,7 @@
             //SẢN PHÂM ĐC QUAN TÂM (SẢN PHẨM MỚI)
             $show_details_product_recommended = DB::table('tbl_product')
                 ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
-                ->where('tbl_product.promotion_end_date', '>=', parent::getTimecurrent())
+                ->where('tbl_product.promotion_end_date', '>=', parent::getcurrentTime())
                 ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
                 ->whereNotIn('tbl_product.meta_slug', [$meta_slug])
                 ->limit('3')->orderby('product_id', 'desc')->get();
@@ -48,7 +48,7 @@
                 $related_product = DB::table('tbl_product')
                     ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
                     ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
-                    ->where('tbl_product.promotion_end_date', '>=', parent::getTimecurrent())
+                    ->where('tbl_product.promotion_end_date', '>=', parent::getcurrentTime())
                     ->where('tbl_brand_code_product.brandcode_id', $brand_product_id)->whereNotIn('tbl_product.meta_slug', [$meta_slug])->limit('3')
                     ->orderby('product_id', 'asc')->get();
             } else {

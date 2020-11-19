@@ -49,7 +49,7 @@
                 ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
                 ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
                 ->orderby('product_id', 'desc')
-                ->where('tbl_product.promotion_end_date', '>=', self::getTimecurrent())->paginate(15);
+                ->where('tbl_product.promotion_end_date', '>=', self::getcurrentTime())->paginate(15);
             $slider = sliderModel::where('status', 1)->orderby('id', 'desc')->take(3)->get();
             //SỐ LƯỢT TRUY CẬP
             $count = count::findOrFail(1);
@@ -90,7 +90,7 @@
                     ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
                     ->orderby('product_id', 'desc')->where('product_Name', 'like', '%' . $key_word . '%')
                     ->orwhere('product_material', 'like', '%' . $key_word . '%')
-                    ->where('tbl_product.promotion_end_date', '>=', self::getTimecurrent())->paginate(20);
+                    ->where('tbl_product.promotion_end_date', '>=', self::getcurrentTime())->paginate(20);
 
                 return view('user.search.search')
                     ->with('search', $search);
@@ -105,7 +105,7 @@
                 ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
                 ->orderby('product_id', 'desc')->where('product_Name', 'like', '%' . $key_word . '%')
                 ->orwhere('product_material', 'like', '%' . $key_word . '%')
-                ->where('tbl_product.promotion_end_date', '>=', self::getTimecurrent())->paginate(20);
+                ->where('tbl_product.promotion_end_date', '>=', self::getcurrentTime())->paginate(20);
 
             return view('user.search.search')
                 ->with('search', $search);
@@ -122,7 +122,7 @@
                 ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
                 ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
                 ->where('product_price_promotion', '>', '1')
-                ->where('tbl_product.promotion_end_date', '>=', self::getTimecurrent())
+                ->where('tbl_product.promotion_end_date', '>=', self::getcurrentTime())
                 ->orderby('product_price_promotion', 'desc')->paginate(10);
 
             return view('user.promotion.promotion')
@@ -130,7 +130,7 @@
                 ->with(compact('slider'));
         }
 
-        public static function getTimecurrent()
+        public static function getcurrentTime()
         {
             $timeCurrent = date("Y-m-d");
 

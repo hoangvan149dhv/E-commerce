@@ -55,25 +55,32 @@ class sendMailController extends Controller
     }
 
     public function sendtestMail(){
-        $EmailName = configMailModel::select()->get();
-        foreach ($EmailName as $key => $value) {
+        try {
+             $EmailName = configMailModel::select()->get();
+             foreach ($EmailName as $key => $value) {
+             }
+
+             //value mail config in admin
+
+             //SUBJECT
+             $subject = "Test Mail thành công";
+             $template = "send mail thành công";
+             $file_template_mail = "mails.testmail";
+             $mailconfig_recipient = $value->Email;
+             $ccname    = array("hoangvan1491999@gmail.com");
+             $bccname    = array("hoangvan149dhv@gmail.com");
+
+             $this->sendMail($fromname, $mailconfig_recipient,
+                 $ccname, $bccname, $subject,
+                 $file_template_mail, $template, $item_detail_order = null);
+
+             Session::put('send-mail-success','send mail thành công');
+        } catch (Exception $e) {
+            // Call report() method of App\Exceptions\Handler
+            $this->reportException($e);
+    return false;
+            // Call render() method of App\Exceptions\Handler
         }
-
-        //value mail config in admin
-
-        //SUBJECT
-        $subject = "Test Mail thành công";
-        $template = "send mail thành công";
-        $file_template_mail = "mails.testmail";
-        $mailconfig_recipient = $value->Email;
-        $ccname    = array("hoangvan1491999@gmail.com");
-        $bccname    = array("hoangvan149dhv@gmail.com");
-
-        $this->sendMail($fromname, $mailconfig_recipient,
-                        $ccname, $bccname, $subject,
-                        $file_template_mail, $template, $item_detail_order = null);
-
-        Session::put('send-mail-success','send mail thành công');
 
         return back();
     }
