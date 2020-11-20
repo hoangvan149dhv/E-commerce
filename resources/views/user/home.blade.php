@@ -3,7 +3,7 @@
     <div class="features_items">
         <!--features_items-->
         <h2 class="title text-center">Sản Phẩm Mới Nhất</h2>
-        @foreach ($all_productt as $product)
+        @foreach ($all_product as $product)
             <div class="col-sm-3 col-xs-6 col-ipad" style="padding:0 5px;">
                 <div class="product-image-wrapper product-image">
                     <div class="single-products">
@@ -37,7 +37,7 @@
                                     @endif
                                     <img class="img-fluid" src="public/upload/{{$product->product_image}}"/>
                                     <h5 id="title">{{$product->product_Name}}</h5>
-                                </a> {{-- //phân trăm sale sản phẩm --}}
+                                </a>
                                 <div class="product_price">
                                     @if ($product->product_price_promotion==1||$product->product_price_promotion==0)
                                         <p></p>
@@ -64,7 +64,7 @@
     </div>
     <!--features_items-->
     <div class="page" style="text-align:center">
-        {!! $all_productt->links() !!}
+        {!! $all_product->links() !!}
     </div>
 @endsection
 @section('pupup')
@@ -83,16 +83,16 @@
 @endsection
 @section('script')
     <script>
-        @foreach ($all_productt as $product)
+        @foreach ($all_product as $product)
         // Set the date we're counting down to
         // Update the count down every 1 second
         var x = setInterval(function () {
             const countDownDate_{{$product->product_id}} = new Date("{{$product->promotion_end_date}}").getTime();
             // Get today's date and time
             var now = new Date().getTime();
-
+            var onedayGMT7 = (1000 * 60 * 60 * 17);
             // Find the distance between now and the count down date
-            var distance = (countDownDate_{{$product->product_id}} - now) + (1000 * 60 *60 *24);
+            var distance = (countDownDate_{{$product->product_id}} - now) + onedayGMT7;
 
             // Time calculations for days, hours, minutes and seconds
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -105,10 +105,12 @@
                 // Display the result in the element with id="demo"
                 document.getElementById("stick-promotions_{{$product->product_id}}").innerHTML = "Còn " + days + " ngày " + hours + ":"
                     + minutes + ":" + seconds;
+                document.getElementById("stick-promotions_{{$product->product_id}}").style.background = '#fe980f';
                 // If the count down is finished, write some text
                 if (distance < 0) {
                     clearInterval(x);
                     document.getElementById("stick-promotions_{{$product->product_id}}").innerHTML = "SALE";
+                    document.getElementById("stick-promotions_{{$product->product_id}}").style.background = '#fe980f';
                 }
             }
         }, 1000);

@@ -18,7 +18,9 @@
 
             $brand_by_id = DB::table('tbl_product')->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
                 ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
-                ->where('tbl_product.promotion_end_date', '>=', parent::getcurrentTime())
+                ->where('tbl_product.promotion_end_date', '>=', self::getcurrentTime())
+                ->orwhere('tbl_product.promotion_end_date', '=' , null)
+                ->orwhere('product_price_promotion', '=', 1)
                 ->where('tbl_brand_code_product.code_id', $brand_id)->paginate(12);
 
             return view('user.brand.show_brandcode')

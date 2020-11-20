@@ -34,6 +34,7 @@ Route::get('/chi-tiet/{meta_slug}','user\DetailsProductController@show_details',
 //COMMENT DETAIL PRODUCT
 Route::post('/chi-tiet/{product_id}','user\DetailsProductController@insertComment');
 
+    Route::get('/abc','user\HomeController@getAllProduct');
 
 
 ///////////////////----------CART-------////////////////////////////////////////////////////////////////////////////////

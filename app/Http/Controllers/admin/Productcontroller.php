@@ -68,7 +68,7 @@ class Productcontroller extends AdminController {
         ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
         ->orderby('product_id','desc')->paginate(10);
 
-        $manager_product = view('admin.products.allProduct')->with('all_Productt',$all_product);
+        $manager_product = view('admin.products.allProduct')->with('all_Product',$all_product);
 
         return view('admin.admin_layout')->with('admin.products.allProduct',$manager_product);
     }
@@ -76,16 +76,16 @@ class Productcontroller extends AdminController {
     public function save_product(request $Request){
 
         $data['category_id'] = $Request->category;
-        $data['product_Name']=$Request->name; //TEN SP
-        $data['product_desc'] = $Request->mota; //MOTA
+        $data['product_Name']=$Request->name;
+        $data['product_desc'] = $Request->mota;
 
         if($data['product_desc']==""){
             $data['product_desc']="Chưa có thông tin";
         }
 
-        $data['product_material'] = $Request->material;// NỘI DUNG SP
-        $data['product_price_promotion'] = $Request->promotion_price; //GIÁ khuyến mãi
-        $data['product_price'] = $Request->price; //GIÁ
+        $data['product_material'] = $Request->material;
+        $data['product_price_promotion'] = $Request->promotion_price;
+        $data['product_price'] = $Request->price;
 
         if($data['product_price_promotion'] ==! 1 || $data['product_price_promotion'] <= $data['product_price'] ){
             $data['product_price_promotion'] = 1 ;
@@ -96,8 +96,10 @@ class Productcontroller extends AdminController {
         $data['meta_desc'] = $Request->meta_desc;
         if (empty($Request->promotion_start_date) || empty($Request->promotion_end_date))
         {
-            $data['promotion_start_date'] = null;
-            $data['promotion_end_date']   = null;
+            $data['promotion_start_date']    = null;
+            $data['promotion_end_date']      = null;
+            $data['product_price_promotion'] = 1;
+            $data['product_price']           = $Request->promotion_price;
         }
         else
         {
@@ -124,9 +126,9 @@ class Productcontroller extends AdminController {
             DB::table('tbl_product')->insert($data);
             Session::put('alert-success-product','Thêm  Sản phẩm Thành Công');
             return redirect::to('add-Product');
-
-        }else{
-
+        }
+        else
+        {
             $data['product_image'] ='';
             Session::put('alert-success-product','Thêm  Sản phẩm Thành Công');
             return redirect::to('add-Product');
@@ -196,28 +198,26 @@ class Productcontroller extends AdminController {
         ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
         ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
         ->orderby('product_id','desc')->get();
-                                    //get == select(sql)
+
         $manager_product=view('admin.products.updateProduct')->with('all_product',$all_product)
         ->with('category_product',$category_product)
         ->with('brandcode_product',$brandcode_product);
         return view('admin.admin_layout')->with('admin.products.updateProduct',$manager_product);
     }
     //UPDATE
-    public function update_Product(Request $Request,$product_id){
+    public function update_Product(Request $Request, $product_id) {
 
         $data = array();
-        $data['category_id'] = $Request->category;
-        $data['product_Name']=$Request->name;
+        $data['category_id']  = $Request->category;
+        $data['product_Name'] = $Request->name;
         $data['product_desc'] = $Request->mota;
 
-        if($data['product_desc']==""){
-
-            $data['product_desc']="Chưa có thông tin";
-
+        if($data['product_desc'] == "") {
+            $data['product_desc'] = "Chưa có thông tin";
         }
 
-        $data['product_material'] = $Request->material;
-        $data['product_price'] = $Request->price;
+        $data['product_material']        = $Request->material;
+        $data['product_price']           = $Request->price;
         $data['product_price_promotion'] = $Request->promotion_price;
 
         if($data['product_price_promotion'] ==! 1 || $data['product_price_promotion'] <= $data['product_price'] ){
@@ -229,12 +229,14 @@ class Productcontroller extends AdminController {
         $data['meta_desc'] = $Request->meta_desc;
         if (empty($Request->promotion_start_date) || empty($Request->promotion_end_date))
         {
-            $data['promotion_start_date'] = null;
-            $data['promotion_end_date']   = null;
+            $data['promotion_start_date']    = null;
+            $data['promotion_end_date']      = null;
+            $data['product_price_promotion'] = 1;
+            $data['product_price']           = $Request->promotion_price;
         }
         else
         {
-            $data['promotion_start_date'] =  date($Request->promotion_start_date);
+            $data['promotion_start_date'] = date($Request->promotion_start_date);
             $data['promotion_end_date']   = date($Request->promotion_end_date);
         }
         $slugg = $this->utf8convert($data['product_Name']);

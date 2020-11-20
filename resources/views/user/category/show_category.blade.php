@@ -53,7 +53,7 @@
         @endforeach
     </div>
 <!--features_items-->
-<div class="pagination" style="text-align:center">
+<div class="page" style="text-align:center">
     {!! $category_by_id->links() !!}
 </div>
 @endsection
@@ -81,10 +81,12 @@
                 // Display the result in the element with id="demo"
                 document.getElementById("stick-promotions_{{$product->product_id}}").innerHTML = "Còn " + days + " ngày " + hours + ":"
                     + minutes + ":" + seconds;
+                document.getElementById("stick-promotions_{{$product->product_id}}").style.background = '#fe980f';
                 // If the count down is finished, write some text
                 if (distance < 0) {
                     clearInterval(x);
                     document.getElementById("stick-promotions_{{$product->product_id}}").innerHTML = "SALE";
+                    document.getElementById("stick-promotions_{{$product->product_id}}").style.background = '#fe980f';
                 }
             }
         }, 1000);

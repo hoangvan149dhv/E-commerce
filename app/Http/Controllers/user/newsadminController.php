@@ -11,7 +11,7 @@ use App\contactinfoModel;
 use App\Http\Controllers\user\HomeController;
 class newsadminController extends HomeController
 {
-    public function news_client(request $request){
+    public function news_client(){
 
         $newsadminModel = newsadminModel::select()->orderby('news_id','desc')->paginate(5);
 

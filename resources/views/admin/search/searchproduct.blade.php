@@ -43,25 +43,25 @@
 			</thead>
 			<tbody>
 			 @foreach ($search as $product)
-			  <tr>
-                <td style="text-align:center"><input type="checkbox" value="{{ $product->product_id }}" name="product[]"></td>
-                <input type="hidden" name="slug[]" value="{{ $product->meta_slug }}">
-				<td>{{$product->brandcode_id}}</td>
-				<td>{{$product->product_Name}}</td>
-				<td>{{$product->category_name}}</td>
-				<td>{{$product->product_material}}</td>
-				<td><img src="public/upload/{{ $product->product_image }}" width=80 height=110></td>
-				<td>{{number_format($product->product_price)}}.VNĐ</td>
-				<td>{{number_format($product->product_price_promotion)}}.VNĐ</td>
-				<td>
-				  <a href="{{URL::to('/edit-product/'.$product->product_id)}}"style='color:green;font-size:20px' class="active" ui-toggle-class="">
-					<i class="fa fa-pencil-square-o text-success text-active"></i>
-				  </a>||
-                  <a href="{{URL::to('/delete-product/'.$product->product_id)}}" style='color:red;font-size:20px'class="active" ui-toggle-class="">
-					<i class="fa fa-times text-danger text"></i>
-				  </a>
-				</td>
-			  </tr>
+                 <tr>
+                     <td style="text-align:center"><input type="checkbox" value="{{ $product->product_id }}" name="product[]"></td>
+                     <input type="hidden" name="slug[]" value="{{ $product->meta_slug }}">
+                     <td style="text-align:center">{{$product->brandcode_id}}</td>
+                     <td style="text-align:center"><a href="{{URL::to('/edit-product/'.$product->product_id)}}">{{$product->product_Name}}</a></td>
+                     <td style="text-align:center">{{$product->category_name}}</td>
+                     <td style="text-align:center">{{$product->product_material}}</td>
+                     <td style="text-align:center"><a href="{{URL::to('/edit-product/'.$product->product_id)}}"><img src="public/upload/{{ $product->product_image }}" width=80 height=110></a></td>
+                     <td style="text-align:center">{{number_format($product->product_price)}}.VNĐ</td>
+                     <td style="text-align:center">{{number_format($product->product_price_promotion)}}.VNĐ</td>
+                     <td>
+                         <a href="{{URL::to('/edit-product/'.$product->product_id)}}"style='color:green;font-size:20px' class="active" ui-toggle-class="">
+                             <i class="fa fa-pencil-square-o text-success text-active"></i>
+                         </a>||
+                         <a href="{{URL::to('/delete-product/'.$product->product_id)}}" style='color:red;font-size:20px'class="active" ui-toggle-class="">
+                             <i class="fa fa-times text-danger text"></i>
+                         </a>
+                     </td>
+                 </tr>
         @endforeach
         <tr><td><button onclick="return confirm('Bạn Muốn Xóa Sản Phẩm Này?')" class="btn btn-danger" type="submit">Xóa</button></td></tr>
 			</tbody>
