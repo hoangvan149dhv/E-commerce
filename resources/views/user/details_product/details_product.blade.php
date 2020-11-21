@@ -15,13 +15,13 @@
             <p></p>
             @else
             <span class="stick-promotion">-{{ round($sale) }}%</span> @endif
-            <img src="../public/upload/{{$details_product->product_image}}" alt="" />
+            <img src="{{asset('public/upload/'.$details_product->product_image)}}" alt="" />
         </div>
         <div id="similar-product" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="item active">
                     @foreach ($related_product as $item)
-                    <a href=""><img src="../public/upload/{{$item->product_image}}" style="margin-left:15px" height="80" width="70" alt="" /></a>
+                    <a href=""><img src="{{asset('public/upload/'.$item->product_image)}}" style="margin-left:15px" height="80" width="70" alt="" /></a>
                     @endforeach
                 </div>
             </div>
@@ -38,7 +38,7 @@
     <div class="col-sm-7">
         <div class="product-information">
             <!--/product-information-->
-            <img src="../public/client/images/new.jpg" class="newarrival" alt="" />
+            <img src="{{asset('public/client/images/new.jpg')}}" class="newarrival" alt="" />
             <h2 style="color:red;font-weight: 700;">{{$details_product->product_Name}}</h2>
             <p>Mã Hàng: {{$details_product->brandcode_id}}</p>
             {{-- UPDATE QUATITY --}}
@@ -140,7 +140,7 @@
                     <div class="product-image-wrapper details">
                         <div class="single-products">
                             <div class="productinfo text-center">
-                                <a href="{{ URL::to('/chi-tiet/'.$product_recommended->meta_slug) }}"><img src="../public/upload/{{$product_recommended->product_image}}" alt="" />
+                                <a href="{{ URL::to('/chi-tiet/'.$product_recommended->meta_slug) }}"><img src="{{asset('public/upload/'.$product_recommended->product_image)}}" alt="" />
                                 <p >{{$product_recommended->product_Name}}</p></a>
                                 <?php
                                 //caculate percent
@@ -175,7 +175,7 @@
                     <div class="product-image-wrapper details">
                         <div class="single-products">
                             <div class="productinfo text-center">
-                                <a href="{{ URL::to('/chi-tiet/'.$related_product_item->meta_slug) }}"><img  src="../public/upload/{{$related_product_item->product_image}}" width="140" height="180" alt="" />
+                                <a href="{{ URL::to('/chi-tiet/'.$related_product_item->meta_slug) }}"><img  src="{{asset('public/upload/'.$related_product_item->product_image)}}" width="140" height="180" alt="" />
                                     <p>{{$related_product_item->product_Name}}</p>
                                 </a>
                                 <?php
@@ -225,7 +225,7 @@
         <ul class="nav nav-pills nav-stacked">
             <li class="li">
                 <a href="{{ URL::to('/chi-tiet/'.$product->meta_slug) }}">
-                    <img class="img-fluid" src="../public/upload/{{ $product->product_image }}">
+                    <img class="img-fluid" src="{{asset('public/upload/'.$product->product_image)}}">
                     <h6 style="color:#ff0000">{{ $product->product_Name}}</h6>
                     @if ($product->product_price_promotion==1||$product->product_price_promotion==0)
                     <p></p>

@@ -23,7 +23,7 @@
                 <div clas="content col-sm-12" >
                     <div class="row" style="padding-bottom:20px">
                         <div class="col-sm-12">
-                            <img src="../public/upload/{{ $newsadminModel->news_image }}" alt="">
+                            <img src="{{asset('public/upload/'.$newsadminModel->news_image)}}" alt="">
                         </div>
                         <div class="col-sm-12" style="text-align:justify">
                             <p >{!! $newsadminModel->news_content !!}</p>

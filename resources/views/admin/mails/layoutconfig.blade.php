@@ -38,6 +38,12 @@
                         }
                         ?>
                         <div class="checkbox">
+                            <div class="checkbox">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Trạng thái gửi mail (bật)</label>
+                                    <input type="checkbox" checked="checked" name="pushlish" value="<?php echo Config::get('config_admin.mail.pushlish'); ?>"  name="pushlish"  ></label>
+                                </div>
+                            </div>
                         </div>
                         <button type="submit" name="submit"  class="btn  btn-info">Lưu</button>
                     </form>

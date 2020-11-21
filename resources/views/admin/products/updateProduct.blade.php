@@ -59,7 +59,7 @@
                                            data-validation-max-size="2M" class="form-control"
                                            data-validation-error-msg="Vui lòng chọn file có đuôi .jpg, png, gif"
                                            name="image" id="exampleInputEmail1">
-                                    <img src="../public/upload/{{ $product->product_image }}" width="80" height="110">
+                                    <img src="{{asset('public/upload/'.$product->product_image )}}" width="80" height="110">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Mô Tả Sản Phẩm</label>

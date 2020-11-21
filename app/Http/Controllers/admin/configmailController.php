@@ -36,7 +36,9 @@ class configmailController extends AdminController
 
     //save config mail
     public function saveConfigmail(Request $req){
-
+        $pushlish_mail = empty($req->pushlish) ? 0 : $req->pushlish;
+        $a = Config::set('social.mail.pushlish', $pushlish_mail);
+        var_dump($a);die;
         $data['Email'] = $req->Email;
         $data['name_email'] = $req->name;
         $configMail = new configMailModel();

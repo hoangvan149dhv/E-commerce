@@ -11986,7 +11986,7 @@ INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, 
 INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("20","22","test twst","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","01234578900","đang xử lý","asd","2020-09-25 17:58:42");
 INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug, pushlish) VALUES ("2","2","Áo dài truyền thống","<p>test</p>","lụa cao cấp","100000","1000000","2020-11-20","2020-12-06","1","94191814_648215732424264_3752553548315885568_n125560.jpg","lụa cao cấp lụa cao cấp","lụa cao cấp lụa cao cấp","ao-dai-truyen-thong96","0");
 INSERT INTO tbl_review (Rid, Rname, Remail, Rcomment, status, meta_slug, updated_at, created_at) VALUES ("1","test twst","vanduong@redweb.dk","tests","0","ao-dai-truyen-thong513","2020-09-24 10:45:03","2020-09-24 10:45:03");
-INSERT INTO tbl_templatemail (id, label, template, status) VALUES ("1","Đơn Hàng Từ Vải Áo Dài Xinh Sunny","<table border='1' cellpadding='0' cellspacing='0' style='width:900px'>
+INSERT INTO tbl_template_mail (id, label, template, status) VALUES ("1","Đơn Hàng Từ Vải Áo Dài Xinh Sunny","<table border='1' cellpadding='0' cellspacing='0' style='width:900px'>
 	<tbody>
 		<tr>
 			<td>

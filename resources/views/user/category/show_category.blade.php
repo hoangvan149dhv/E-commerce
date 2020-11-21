@@ -19,7 +19,7 @@
                                 <input type="hidden" class="url" url="{{url('/add-cart-ajax')}}" />
                                 <input type="hidden" class="url_addtocart_success" url="{{url('/hien-thi-gio-hang')}}" />
                                 <a href="{{ URL::to('/chi-tiet/'.$product->meta_slug) }}">
-                                    <img class="img-brand" src="../public/upload/{{$product->product_image}}"/>
+                                    <img class="img-brand" src="{{asset('public/upload/'.$product->product_image)}}"/>
                                     <h5 id="title">{{$product->product_Name}}</h5></a>
                                 <?php
                                 // // caculate percent

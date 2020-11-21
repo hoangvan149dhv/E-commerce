@@ -56,8 +56,8 @@
            @foreach ($infocustomerorder as $product)
             <tr>
 
-              <td style="text-align:center">{{$product->productname}}</td>
-              <td style="text-align:center"><img src="../public/upload/{{$product->image}}"width=80 height=110 alt=""></td>
+              <td style="text-align:center"><a href="{{URL::to('/edit-product/'.$product->product_id)}}">{{$product->productname}}</a></td>
+              <td style="text-align:center"><a href="{{URL::to('/edit-product/'.$product->product_id)}}"><img src="{{asset('public/upload/'.$product->image )}}" width=80 height=110></a></td>
               <td style="text-align:center">{{$product->productorder->product_material}}</td>
               <td style="text-align:center">  {{$product->soluong}}</td>
               <td style="text-align:center">  {{number_format($product->price)}}.VNĐ</td>

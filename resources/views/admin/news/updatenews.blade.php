@@ -28,7 +28,7 @@
                         <input type="file" data-validation="mime size" data-validation-allowing="jpg, png, gif"
                         data-validation-max-size="2M"class="form-control"
                         data-validation-error-msg="Vui lòng chọn file có đuôi .jpg, png, gif" class="form-control" name="image"id="exampleInputEmail1">
-                        <img src="../public/upload/{{ $newsadminModel->news_image }}" width="80" height="110">
+                        <img src="{{asset('public/upload/'.$newsadminModel->news_image)}}" width="80" height="110">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Nội dung</label>

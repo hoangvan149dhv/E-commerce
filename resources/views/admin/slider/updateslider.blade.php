@@ -17,7 +17,7 @@
                                 data-validation-max-size="2M"class="form-control"
                                 data-validation-error-msg="Vui lòng chọn file có đuôi .jpg, png, gif" class="form-control" name="image"id="exampleInputEmail1">
                                 <input type="hidden" value="{{ $slider_edit->img }}" name="image">
-                                <img src="../public/upload/{{ $slider_edit->img }}" width="80" height="110">
+                                <img src="{{asset('public/upload/'.$slider_edit->img )}}" width="80" height="110">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Hiển Thị</label>

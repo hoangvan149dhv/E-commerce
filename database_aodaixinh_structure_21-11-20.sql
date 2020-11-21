@@ -197,8 +197,8 @@ CREATE TABLE `tbl_slider` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
-DROP TABLE IF EXISTS `tbl_templatemail` ;
-CREATE TABLE `tbl_templatemail` (
+DROP TABLE IF EXISTS `tbl_template_mail` ;
+CREATE TABLE `tbl_template_mail` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `label` varchar(100) NOT NULL,
   `template` text NOT NULL,
