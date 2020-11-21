@@ -43,7 +43,7 @@ class dumpDatabasesController extends AdminController
 
             foreach($show_table_result as $show_table_row)
             {
-                $output_data .= "\nDROP TABLE ". "`$table` ;";
+                $output_data .= "\nDROP TABLE IF EXISTS ". "`$table` ;";
                 $output_data .= "\n" . $show_table_row["Create Table"] . ";\n\n";
             }
             for($count=0; $count < $total_row; $count++)

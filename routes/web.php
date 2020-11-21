@@ -197,10 +197,12 @@ route::get('/delete-product/{product_id}','admin\Productcontroller@delete_produc
 //DELETE MUTI PRODUCT
 Route::get('/destroy-product', 'admin\Productcontroller@destroy_product');
 //UPDATE PRODUCT
-route::get('edit-product/{product_id}','admin\Productcontroller@edit_product');
+route::get('/edit-product/{product_id}','admin\Productcontroller@edit_product');
 
-route::post('update-product/{product_id}','admin\Productcontroller@update_Product');
+route::post('/update-product/{product_id}','admin\Productcontroller@update_Product');
 
+//PUSHLISH PRODUCTS
+route::get('/check-pushlish-product/{product_id}/{pushlish}','admin\Productcontroller@pushlish');
 
 ///////////////////////////////////////////-------INFO CUSTOMER ORDER-------////////////////////////////////////////////
 route::get('/thong-tin-don-hang/{order_id}','admin\AdminController@infocustomerorder');

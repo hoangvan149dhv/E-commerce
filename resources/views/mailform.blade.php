@@ -65,6 +65,8 @@
         </div>
     </div>
 </div>
+xxxxxxxxxxxxxxx
+<?php echo Config::get('config_admin.facebook.url'); ?>
 </body>
 </html>
 <script>

@@ -55,6 +55,7 @@
         </li>
         <!-- settings end -->
         <!-- inbox dropdown start-->
+        
         <li id="header_inbox_bar" class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <i class="fa fa-envelope-o"></i>
@@ -79,6 +80,7 @@
         <li id="header_inbox_bar">
             <a  class="dropdown-toggle" target="_blank" href="{{ URL::to('/trang-chu') }}"><i class="fa fa-globe"></i></a>
         </li>
+        @yield('preview_product')
         <!-- inbox dropdown end -->
         <!-- notification dropdown start-->
         <li id="header_notification_bar" class="dropdown">

@@ -10,11 +10,16 @@
                     @foreach ($all_product as $product)
                         <div class="position-center">
                             <?php
-                            $message = Session::get('alert-successproduct');
-                            if($message){ ?>
-                            <div class="alert-success alert"><?php echo $message;?></div>
-                            <?php }
+                            $message_success = Session::get('alert-success-product');
+                            $message_fail = Session::get('alert-danger-product');
+                            if(!empty($message_success)) : ?>
+                            <div class="alert-success alert"><?php echo $message_success;?></div>
+                            <?php elseif (!empty($message_fail)):?>
+                            <div class="alert-danger alert"><?php echo $message_fail;?></div>
+                            <?php endif ?>
+                            <?php
                             Session::put('alert-success-product', null);
+                            Session::put('alert-danger-product', null);
                             ?>
                             <form role="form" action="{{URL::to('/update-product/'.$product->product_id)}}"
                                   method="post" enctype="multipart/form-data">
@@ -106,6 +111,10 @@
                                         @endforeach
                                     </select>
                                 </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Trạng thái (bật)</label>
+                                    <input type="checkbox"<?php if ($product->pushlish == 1) : ?> checked="checked" <?php endif?> value="1"  name="pushlish"  ></label>
+                                </div>
                                 <button type="submit" name="update" class="btn btn-info">Cập Nhật</button>
                             </form>
                         </div>
@@ -116,4 +125,9 @@
 @endsection
 @section('product')
     class="active"
+@endsection
+@section('preview_product')
+<li id="header_inbox_bar">
+    <a  class="dropdown-toggle" target="_blank" href="{{ URL::to('/chi-tiet/'.$product->meta_slug) }}"><i class="fa fa-external-link-square"></i></a>
+</li>
 @endsection

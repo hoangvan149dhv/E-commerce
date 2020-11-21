@@ -20,12 +20,16 @@
             $show_details_product = DB::table('tbl_product')
                 ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
                 ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
-                ->where('meta_slug', $meta_slug)->get();
-
+                ->where('meta_slug', $meta_slug)
+                ->where('tbl_product.pushlish','=', 1)->get();
+            if (empty($show_details_product)) {
+                return redirect('trang-chu');
+            }
             //SẢN PHÂM ĐC QUAN TÂM (SẢN PHẨM MỚI)
             $show_details_product_recommended = DB::table('tbl_product')
                 ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
                 ->where('tbl_product.promotion_end_date', '>=', self::getcurrentTime())
+                ->where('tbl_product.pushlish','=', 1)
                 ->orwhere('tbl_product.promotion_end_date', '=' , null)
                 ->orwhere('product_price_promotion', '=', 1)
                 ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
@@ -52,6 +56,7 @@
                     ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
                     ->where('tbl_product.promotion_end_date', '>=', self::getcurrentTime())
                     ->orwhere('tbl_product.promotion_end_date', '=' , null)
+                    ->where('tbl_product.pushlish','=', 1)
                     ->orwhere('product_price_promotion', '=', 1)
                     ->where('tbl_brand_code_product.brandcode_id', $brand_product_id)->whereNotIn('tbl_product.meta_slug', [$meta_slug])->limit('3')
                     ->orderby('product_id', 'asc')->get();
@@ -64,7 +69,8 @@
             $show_product = DB::table('tbl_product')
                 ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
                 ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
-                ->where('tbl_product.category_id', $category_product_id)->limit(5)->get();
+                ->where('tbl_product.category_id', $category_product_id)
+                ->where('tbl_product.pushlish','=', 1)->limit(5)->get();
 
             $reviewModel = ReviewModel::where('meta_slug', $meta_slug)->limit(4)->orderby('Rid', 'desc')->get();
 
