@@ -176,10 +176,10 @@ DROP TABLE IF EXISTS `tbl_review` ;
 CREATE TABLE `tbl_review` (
   `Rid` int(11) NOT NULL AUTO_INCREMENT,
   `Rname` varchar(70) NOT NULL,
+  `product_id` int(11) NOT NULL,
   `Remail` varchar(70) NOT NULL,
   `Rcomment` text NOT NULL,
   `status` int(11) NOT NULL,
-  `meta_slug` varchar(255) NOT NULL,
   `updated_at` datetime NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`Rid`)
