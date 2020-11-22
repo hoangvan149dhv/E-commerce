@@ -22,7 +22,9 @@
                 ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
                 ->where('meta_slug', $meta_slug)
                 ->where('tbl_product.pushlish','=', 1)->get();
+            
             if (empty($show_details_product)) {
+
                 return redirect('trang-chu');
             }
             //SẢN PHÂM ĐC QUAN TÂM (SẢN PHẨM MỚI)
@@ -72,7 +74,7 @@
                 ->where('tbl_product.category_id', $category_product_id)
                 ->where('tbl_product.pushlish','=', 1)->limit(5)->get();
 
-            $reviewModel = ReviewModel::where('meta_slug', $meta_slug)->limit(4)->orderby('Rid', 'desc')->get();
+            $reviewModel = ReviewModel::where('product_id', $show_details_product[0]->product_id)->limit(4)->orderby('Rid', 'desc')->get();
 
             return view('user.details_product.details_product')
                 ->with('details_product', $show_details_product)

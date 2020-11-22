@@ -24,7 +24,7 @@
            @foreach ($reviews as $reviewsadmin)
                 <tr>
                     <td style="text-align:center">
-                        <a href="{{ URL::to('/chi-tiet/'.$reviewsadmin->meta_slug) }}"target="_blank">{{ $reviewsadmin->product->product_Name}}</a>
+                        <a href="{{ URL::to('/chi-tiet/'.$reviewsadmin->product->meta_slug) }}"target="_blank">{{ $reviewsadmin->product->product_Name}}</a>
                     </td>
                     <td style="text-align:center">  {{$reviewsadmin->Rname}}</td>
                     <td style="text-align:center">  {{($reviewsadmin->Remail)}}</td>

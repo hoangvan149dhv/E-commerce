@@ -12,6 +12,7 @@ use Mail;
 use App\Http\Controllers\Controller;
 use DB;
 use App\CustomerorderModel;
+use Illuminate\Support\Facades\Config;
 class sendMailController extends Controller
 {
     /**
@@ -27,7 +28,11 @@ class sendMailController extends Controller
     public function sendMail(&$fromname , $mailconfig_recipient,
                              $ccname, $bccname, $subject, $file_template_mail,
                              $template ,$item_detail_order){
-
+            var_dump(Config::get('config_admin.mail.pushlish'));die;                     
+        if (
+            Config::get('config_admin.mail.pushlish') == 1) {
+                echo "xxx";die;
+            }
         //template mail display
         $EmailName = configMailModel::select()->get();
         foreach ($EmailName as $key => $value) {

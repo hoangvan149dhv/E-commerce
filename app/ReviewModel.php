@@ -11,6 +11,6 @@ class ReviewModel extends Model
     protected $primarykey= ('Rid');
     public function product()
     {
-        return $this->belongsTo('App\productModel', 'meta_slug', 'meta_slug');
+        return $this->belongsTo('App\productModel', 'product_id', 'product_id');
     }
 }

@@ -8,7 +8,7 @@ use Redirect;
 use App\configMailModel;
 use App\templateMailModel;
 use App\Http\Controllers\admin\AdminController;
-
+use Illuminate\Support\Facades\Config;
 class configmailController extends AdminController
 {
     public function layoutConfigMail(){
@@ -36,14 +36,14 @@ class configmailController extends AdminController
 
     //save config mail
     public function saveConfigmail(Request $req){
-        $pushlish_mail = empty($req->pushlish) ? 0 : $req->pushlish;
-        $a = Config::set('social.mail.pushlish', $pushlish_mail);
-        var_dump($a);die;
+        $pushlish_mail = empty($req->pushlish) ? 2 : 1;
+        Config::set(['config_admin.mail.pushlish'=> $pushlish_mail]);
+
         $data['Email'] = $req->Email;
         $data['name_email'] = $req->name;
         $configMail = new configMailModel();
         $configMail->where('id',1)->update($data);
-
+        var_dump( Config::get('config_admin.mail.pushlish'));die;
         Session::put('add-config-mail-success','Lưu thông tin thành công');
 
         return back();
@@ -68,7 +68,7 @@ class configmailController extends AdminController
         }
         if(isset($checkstatus_un_pushlished) ){
 
-            $show_template = templateMailModel::where('id',$id)->update(['status'=>'Hiện']);
+            templateMailModel::where('id',$id)->update(['status'=>'Hiện']);
         }
 
         return back();

@@ -146,7 +146,6 @@ class Productcontroller extends AdminController {
         $product= DB::table('tbl_product')->where('product_id',$product_id)->get();
         foreach ($product as $key) {
 
-            $product_slug = $key->meta_slug;
             $product_img = $key->product_image;
 
             $del_file   ="public/upload/".$product_img;
@@ -157,7 +156,7 @@ class Productcontroller extends AdminController {
         }
         DB::table('tbl_product')->where('product_id',$product_id)->delete();
         DB::table('tbl_order')->where('product_id',$product_id)->delete();
-        ReviewModel ::where('meta_slug',$product_slug)->delete();
+        ReviewModel ::where('product_id',$product_id)->delete();
 
         return back();
     }
@@ -165,7 +164,6 @@ class Productcontroller extends AdminController {
     public function destroy_product(Request $request){
 
         $product_id =$request->product;
-        $product_slug =$request->slug;
 
         if(isset( $product_id))
         {
@@ -183,7 +181,7 @@ class Productcontroller extends AdminController {
                 }
             }
 
-            ReviewModel ::whereIn('meta_slug',$product_slug)->delete();
+            ReviewModel ::whereIn('product_id',$product_id)->delete();
             DB::table('tbl_order')->where('product_id',$product_id)->delete();
             DB::table('tbl_product')->whereIn('product_id',$product_id)->delete();
 

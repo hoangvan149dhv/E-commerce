@@ -28,8 +28,8 @@
           <thead>
             <tr>
               <th class="text-center"><input type="checkbox" name="select-all"  id="select-all"/></th>
-              <th style="text-align:center">Mã Hàng</th>
               <th style="text-align:center">Sản Phẩm</th>
+              <th style="text-align:center">Mã Hàng</th>
               <th style="text-align:center">Danh Mục</th>
               <th style="text-align:center">Chất Liệu</th>
               <th style="text-align:center">Hình Ảnh</th>
@@ -42,9 +42,8 @@
            @foreach ($all_Product as $product)
             <tr>
               <td style="text-align:center"><input type="checkbox" value="{{ $product->product_id }}" name="product[]"></td>
-              <input type="hidden" name="slug[]" value="{{ $product->meta_slug }}">
-              <td style="text-align:center">{{$product->brandcode_id}}</td>
               <td style="text-align:center"><a href="{{URL::to('/edit-product/'.$product->product_id)}}">{{$product->product_Name}}</a></td>
+              <td style="text-align:center">{{$product->brandcode_id}}</td>
               <td style="text-align:center">{{$product->category_name}}</td>
               <td style="text-align:center">{{$product->product_material}}</td>
               <td style="text-align:center"><a href="{{URL::to('/edit-product/'.$product->product_id)}}"><img src="public/upload/{{ $product->product_image }}" width=80 height=110></a></td>

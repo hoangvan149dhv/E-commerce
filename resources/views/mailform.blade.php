@@ -65,8 +65,9 @@
         </div>
     </div>
 </div>
+<input type="color" name="" id="">
 xxxxxxxxxxxxxxx
-<?php echo Config::get('config_admin.facebook.url'); ?>
+<?php echo Config::get('config_admin.mail.pushlish'); ?>
 </body>
 </html>
 <script>
