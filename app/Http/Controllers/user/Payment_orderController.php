@@ -13,7 +13,7 @@ use App\CustomerorderModel;
 use App\Http\Controllers\sendMailController;
 use App\templateMailModel;
 use App\Http\Controllers\user\HomeController;
-require $_SERVER['DOCUMENT_ROOT'].$_SERVER['REQUEST_URI'].'mpdf/vendor/autoload.php';
+require dirname(__FILE__, 5). '/mpdf/vendor/autoload.php';
 
 class Payment_orderController extends HomeController
 {
@@ -94,6 +94,10 @@ class Payment_orderController extends HomeController
                             $file_template_mail,
                             $template,
                             $item_detail_order);
+                        $mpdf = new \Mpdf\Mpdf();
+                        $mpdf->WriteHTML($file_template_mail);
+                        $mpdf->Output('hoa don.pdf','I');
+                        $mpdf->SetTitle("xxx");
                     }
                 } catch (\RuntimeException $e) {
 
@@ -102,10 +106,7 @@ class Payment_orderController extends HomeController
             }
             Cart::destroy();
 
-            $mpdf = new \Mpdf\Mpdf();
-            $mpdf->WriteHTML('<h1>Hello world!</h1>');
-            $mpdf->Output('hoa don.pdf','D');
-            $mpdf->SetTitle("xxx");
+
             return view('user.payment.payment_order');
         }
     }
