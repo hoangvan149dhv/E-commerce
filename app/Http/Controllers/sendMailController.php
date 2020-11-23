@@ -28,11 +28,7 @@ class sendMailController extends Controller
     public function sendMail(&$fromname , $mailconfig_recipient,
                              $ccname, $bccname, $subject, $file_template_mail,
                              $template ,$item_detail_order){
-            var_dump(Config::get('config_admin.mail.publish'));die;
-        if (
-            Config::get('config_admin.mail.publish') == 1) {
-                echo "xxx";die;
-            }
+
         //template mail display
         $EmailName = configMailModel::select()->get();
         foreach ($EmailName as $key => $value) {
