@@ -1,16 +1,24 @@
-INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("75","Thành phố Hà Nội","Quận Ba Đình","Phường Phúc Xá","500000");
-INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("76","Tỉnh Cao Bằng","Huyện Bảo Lạc","Xã Đình Phùng","500000");
-INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("77","Tỉnh Tuyên Quang","Huyện Chiêm Hóa","Xã Trung Hà","500000");
-INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("78","Tỉnh Sơn La","Huyện Mộc Châu","Xã Tân Hợp","500000");
+INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("75","Thành phố Hà Nội","Quận Ba Đình","Phường Phúc Xá","40000");
+INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("76","Tỉnh Cao Bằng","Huyện Bảo Lạc","Xã Đình Phùng","50000");
+INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("77","Tỉnh Tuyên Quang","Huyện Chiêm Hóa","Xã Trung Hà","100000");
+INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("78","Tỉnh Sơn La","Huyện Mộc Châu","Xã Tân Hợp","150000");
 INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("79","Tỉnh Tuyên Quang","Huyện Yên Sơn","Xã Thắng Quân","500000");
-INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("80","Tỉnh Bắc Giang","Huyện Lục Nam","Xã Chu Điện","500000");
+INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("80","Tỉnh Bắc Giang","Huyện Lục Nam","Xã Chu Điện","200000");
 INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("81","Tỉnh Nghệ An","Huyện Anh Sơn","Xã Phúc Sơn","500000");
 INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("82","Thành phố Hồ Chí Minh","Quận Phú Nhuận","Phường 17","500000");
 INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("83","Thành phố Hồ Chí Minh","Huyện Nhà Bè","Xã Hiệp Phước","500000");
 INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("84","Tỉnh Tuyên Quang","Huyện Hàm Yên","Xã Bình Xa","500000");
-INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("85","Tỉnh Tuyên Quang","Huyện Hàm Yên","Xã Thái Hòa","5000006");
-INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("86","Thành phố Hồ Chí Minh","Quận 6","Phường 07","5000007");
-INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("87","Tỉnh Điện Biên","Huyện Điện Biên","Xã Noọng Hẹt","5000005");
+INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("85","Tỉnh Tuyên Quang","Huyện Hàm Yên","Xã Thái Hòa","500000");
+INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("86","Thành phố Hồ Chí Minh","Quận 6","Phường 07","500000");
+INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("87","Tỉnh Điện Biên","Huyện Điện Biên","Xã Noọng Hẹt","500000");
+INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("88","Thành phố Hồ Chí Minh","Quận Tân Bình","Phường 03","20000");
+INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("89","Thành phố Hồ Chí Minh","Quận Tân Bình","Phường 08","20000");
+INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("90","Thành phố Hồ Chí Minh","Quận Tân Bình","Phường 02","20000");
+INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("91","Thành phố Hồ Chí Minh","Quận Thủ Đức","Phường Hiệp Bình Phước","20000");
+INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("92","Tỉnh Quảng Ngãi","Huyện Tây Trà","Xã Trà Phong","30000");
+INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("93","Thành phố Cần Thơ","Quận Bình Thuỷ","Phường An Thới","40000");
+INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("94","Tỉnh Cao Bằng","Huyện Hà Quảng","Xã Cải Viên","10000");
+INSERT INTO devvn_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("95","Tỉnh Tuyên Quang","Huyện Chiêm Hóa","Xã Minh Quang","10000");
 INSERT INTO devvn_quanhuyen (maqh, name, type, matp) VALUES ("1","Quận Ba Đình","Quận","1");
 INSERT INTO devvn_quanhuyen (maqh, name, type, matp) VALUES ("2","Quận Hoàn Kiếm","Quận","1");
 INSERT INTO devvn_quanhuyen (maqh, name, type, matp) VALUES ("3","Quận Tây Hồ","Quận","1");
@@ -11949,16 +11957,20 @@ INSERT INTO devvn_xaphuongthitran (xaid, name, type, maqh) VALUES ("32242","Xã 
 INSERT INTO devvn_xaphuongthitran (xaid, name, type, maqh) VALUES ("32244","Thị trấn Rạch Gốc","Thị trấn","973");
 INSERT INTO devvn_xaphuongthitran (xaid, name, type, maqh) VALUES ("32245","Xã Tân Ân","Xã","973");
 INSERT INTO devvn_xaphuongthitran (xaid, name, type, maqh) VALUES ("32248","Xã Đất Mũi","Xã","973");
-INSERT INTO tbl_admin (admin_Id, user_name, admin_pass, admin_name, admin_email, admin_question_getpass, pass) VALUES ("1","hoangvan","b502e8023901df1e74e95c9b86dc5913","Văn","hoangvan1491999@gmail.com","hoangvan","hoangvan");
+INSERT INTO tbl_admin (admin_Id, admin_email, user_name, admin_pass, admin_name, admin_question_getpass, pass) VALUES ("1","hoangvan1491999@gmail.com","hoangvan","b502e8023901df1e74e95c9b86dc5913","Văn","hoangvan","hoangvan");
+INSERT INTO tbl_admin (admin_Id, admin_email, user_name, admin_pass, admin_name, admin_question_getpass, pass) VALUES ("2","sunnyngo7662@gmail.com","ngan","4df26b7d69a26516915261039bbb1cb6","ngân","ngan","ngan");
 INSERT INTO tbl_brand_code_product (code_id, brandcode_id, brandcode_name) VALUES ("1","Sunny Ngô","Sunny Ngô");
-INSERT INTO tbl_category_product (category_id, category_name, category_desc, category_status) VALUES ("1","Lụa Cao Cấp","Lụa Cao Cấp","1");
+INSERT INTO tbl_category_product (category_id, category_name, category_desc, category_status) VALUES ("1","Lụa Cao Cấp","Lụa Cao Cấp","0");
 INSERT INTO tbl_category_product (category_id, category_name, category_desc, category_status) VALUES ("2","áo dài phụ nữ","áo dài phụ nữ","0");
-INSERT INTO tbl_count (id, counts) VALUES ("1","628");
-INSERT INTO tbl_count (id, counts) VALUES ("1","628");
-INSERT INTO tbl_count (id, counts) VALUES ("1","629");
-INSERT INTO tbl_count (id, counts) VALUES ("1","601");
-INSERT INTO tbl_count (id, counts) VALUES ("1","601");
-INSERT INTO tbl_count (id, counts) VALUES ("1","602");
+INSERT INTO tbl_category_product (category_id, category_name, category_desc, category_status) VALUES ("3","Áo dài cách tân","abcde","1");
+INSERT INTO tbl_category_product (category_id, category_name, category_desc, category_status) VALUES ("4","Lụa nhung","tests","1");
+INSERT INTO tbl_category_product (category_id, category_name, category_desc, category_status) VALUES ("5","Áo dài truyền thông","tests","1");
+INSERT INTO tbl_count (id, counts) VALUES ("1","1336");
+INSERT INTO tbl_count (id, counts) VALUES ("1","1336");
+INSERT INTO tbl_count (id, counts) VALUES ("1","1337");
+INSERT INTO tbl_count (id, counts) VALUES ("1","1309");
+INSERT INTO tbl_count (id, counts) VALUES ("1","1309");
+INSERT INTO tbl_count (id, counts) VALUES ("1","1310");
 INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("11","Duong Hoang Van","test, Xã Thái Ninh, Huyện Thanh Ba, Tỉnh Phú Thọ","0912345678");
 INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("12","Ngo Nguyen Huynh Ngan","128 Lê Sao, Phường Phú Thạnh, Quận Tân Phú, Thành phố Hồ Chí Minh","0909677308");
 INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("13","Ngô Nguyễn Huỳnh Ngân","128A Lê Sao, Phường Phú Thọ Hòa, Quận Tân Phú, Thành phố Hồ Chí Minh","0909677308");
@@ -11971,21 +11983,784 @@ INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("19","test t
 INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("20","test twst","test, Xã Khâu Vai, Huyện Mèo Vạc, Tỉnh Hà Giang","0334964103");
 INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("21","test twst","test, Xã Lũng Thầu, Huyện Đồng Văn, Tỉnh Hà Giang","01234578900");
 INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("22","test twst","as, Xã Tây Cốc, Huyện Đoan Hùng, Tỉnh Phú Thọ","01234578900");
-INSERT INTO tbl_info_contact (id_Info, google_map, info_contact_add, info_contact_phone, info_contact_mail) VALUES ("1","","120 Lê Sao","0909677308","vandaovipga1491999@gmail.com");
-INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("9","11","Duong Hoang Van","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","0912345678","đang xử lý","test","2020-09-21 17:51:19");
-INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("10","12","Ngo Nguyen Huynh Ngan","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","500000","1000000","0909677308","đang xử lý","Yêu bà kkk","2020-09-21 18:06:53");
-INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("11","13","Ngô Nguyễn Huỳnh Ngân","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","500000","1000000","0909677308","đang xử lý","Ngân nè","2020-09-22 09:15:24");
-INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("12","14","Duong Hoang Van","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","0909677308","đang xử lý","tét","2020-09-22 09:18:08");
-INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("13","15","Duong Hoang Van","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","0909677308","0","tét","2020-09-24 17:10:57");
-INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("14","16","Dương Hoàng Van","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","500000","1000000","0334964103","đang xử lý","tét","2020-09-23 17:38:37");
-INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("15","17","Van HOang","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","500000","1000000","0334964103","1","tét","2020-09-24 17:11:05");
-INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("16","18","test twst","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","4","500000","20000","2020000","01234578900","1","test","2020-09-24 17:11:04");
-INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("17","19","test twst","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","01234578900","đang xử lý","test","2020-09-24 17:45:32");
-INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("18","20","test twst","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","12","500000","20000","6020000","0334964103","đang xử lý","twsy","2020-09-24 17:46:17");
-INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("19","21","test twst","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","01234578900","đang xử lý","ts","2020-09-25 17:57:50");
-INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("20","22","test twst","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","01234578900","đang xử lý","asd","2020-09-25 17:58:42");
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug, pushlish) VALUES ("2","2","Áo dài truyền thống","<p>test</p>","lụa cao cấp","100000","1000000","2020-11-20","2020-12-06","1","94191814_648215732424264_3752553548315885568_n125560.jpg","lụa cao cấp lụa cao cấp","lụa cao cấp lụa cao cấp","ao-dai-truyen-thong96","1");
-INSERT INTO tbl_review (Rid, Rname, product_id, Remail, Rcomment, status, updated_at, created_at) VALUES ("1","test twst","2","vanduong@redweb.dk","tests","0","2020-09-24 10:45:03","2020-09-24 10:45:03");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("23","Dương Hoàng Văn","test, Xã Trường Hà, Huyện Hà Quảng, Tỉnh Cao Bằng","0334964103");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("24","Dương Hoàng Văn","test, Xã Trường Hà, Huyện Hà Quảng, Tỉnh Cao Bằng","0334964103");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("25","Dương Hoàng Văn","test, Phường Hàng Buồm, Quận Hoàn Kiếm, Thành phố Hà Nội","1234567389");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("26","Dương Hoàng Văn","test, Phường Vĩnh Phúc, Quận Ba Đình, Thành phố Hà Nội","1234567899");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("27","Dương Hoàng Văn","test, Phường Vĩnh Phúc, Quận Ba Đình, Thành phố Hà Nội","1234567899");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("28","hoangvan","tesatr, Thị trấn Phó Bảng, Huyện Đồng Văn, Tỉnh Hà Giang","12345678901");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("29","hoangvan","tesatr, Thị trấn Phó Bảng, Huyện Đồng Văn, Tỉnh Hà Giang","12345678901");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("30","hoangvan","test, Phường Giang Biên, Quận Long Biên, Thành phố Hà Nội","1234567890");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("31","Dương Hoàng Văn","test, Xã Trị Quận, Huyện Phù Ninh, Tỉnh Phú Thọ","12345567890");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("32","Dương Hoàng Văn","test, Xã Cẩm Hải, Thành phố Cẩm Phả, Tỉnh Quảng Ninh","1234567890");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("33","aHoàng Văn","test, Xã Cô Ba, Huyện Bảo Lạc, Tỉnh Cao Bằng","1234523563");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("34","Dương Hoàng Văn","test, Xã Đông Hải, Huyện Tiên Yên, Tỉnh Quảng Ninh","0334964103");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("35","Dương Hoàng Văn","test, Xã Đông Hải, Huyện Tiên Yên, Tỉnh Quảng Ninh","0334964103");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("36","Dương Hoàng Văn","test, Xã Đông Hải, Huyện Tiên Yên, Tỉnh Quảng Ninh","0334964103");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("37","Dương Hoàng Văn","test, Xã Đông Hải, Huyện Tiên Yên, Tỉnh Quảng Ninh","0334964103");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("38","Dương Hoàng Văn","test, Xã Đông Hải, Huyện Tiên Yên, Tỉnh Quảng Ninh","0334964103");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("39","Dương Hoàng Văn","test, Xã Đông Hải, Huyện Tiên Yên, Tỉnh Quảng Ninh","0334964103");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("40","Dương Hoàng Văn","test, Xã Đông Hải, Huyện Tiên Yên, Tỉnh Quảng Ninh","0334964103");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("41","Dương Hoàng Văn","test, Xã Đông Hải, Huyện Tiên Yên, Tỉnh Quảng Ninh","0334964103");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("42","Dương Hoàng Văn","test, Xã Đông Hải, Huyện Tiên Yên, Tỉnh Quảng Ninh","0334964103");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("43","Dương Hoàng Văn","jyguiguigui, Phường Hàng Mã, Quận Hoàn Kiếm, Thành phố Hà Nội","0334964103");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("44","hoangvan","safasf, Phường Trần Hưng Đạo, Quận Hoàn Kiếm, Thành phố Hà Nội","0334964103");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("45","Áo dài cách tân","asdasd, Xã Bành Trạch, Huyện Ba Bể, Tỉnh Bắc Kạn","0334964103");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("46","Áo dài cách tân","asdasd, Xã Bành Trạch, Huyện Ba Bể, Tỉnh Bắc Kạn","0334964103");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("47","hoangvan","asdasd, Xã Lũng Cú, Huyện Đồng Văn, Tỉnh Hà Giang","1234567890");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("48","hoangtran","asdasdas, Xã Má Lé, Huyện Đồng Văn, Tỉnh Hà Giang","1234567890");
+INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("49","hoangvan","asdawsd, Phường Quang Trung, Thành phố Hà Giang, Tỉnh Hà Giang","0334964103");
+INSERT INTO tbl_info_contact (id_Info, google_map, info_contact_add, info_contact_phone, info_contact_mail) VALUES ("1","<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.678414013548!2d106.68587031536053!3d10.759248862451315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1a8284e89f%3A0x323e361ec67595d5!2zNDQ5IMSQLiBUcuG6p24gSMawbmcgxJDhuqFvLCBD4bqndSBLaG8sIFF14bqtbiAxLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1605318235579!5m2!1svi!2s' width='600' height='450' frameborder='0' style='border:0;' allowfullscreen='' aria-hidden='false' tabindex='0'></iframe>","xnxx.com","1234567890","xnxx.com@gmail.com");
+INSERT INTO tbl_news (news_id, news_title, news_desc, news_image, news_content, updated_at, created_at) VALUES ("7","Áo dài cách tân: “Hơi thở mới” cho trang phục truyền thống","Áo dài cách tân: “Hơi thở mới” cho trang phục truyền thống, Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.","84194903_773654616376103_8257184345794543616_n91.jpg","<h2>Lịch sử hình thành áo dài Việt Nam</h2>
+
+<p>Hình ảnh tà áo dài đã quá quen thuộc với mỗi người Việt nhưng không phải ai cũng có thể miêu tả chính xác bộ trang phục truyền thống này với bạn bè ngoại quốc.</p>
+
+<p><em>Vậy thì áo dài là gì?</em></p>
+
+<p>Áo dài là một bộ trang phục được mặc cùng với quần dài, che thân từ cổ đến chân, dành cho cả nam và nữ nhưng được biết đến như trang phục cho nữ nhiều hơn.</p>
+
+<p><strong>Về cấu tạo áo dài truyền thống:</strong></p>
+
+<ul>
+	<li><strong>Cổ áo</strong>: Cổ áo cao khoảng 2-3 cm, ôm khít cổ, tạo hình chữ V trước cổ.</li>
+	<li><strong>Khuy áo</strong>: Thường dùng khuy bấm, từ cổ chéo sang vai rồi dọc xuống ngang hông.Theo truyền thống, khuy áo dài ở phần thân trên được cố định tại 5 vị trí, vừa giúp chiếc áo dài được cố định ngay ngắn, vừa biểu tượng cho 5 đạo làm người của dân tộc Việt: nhân, nghĩa, lễ, trí, tín</li>
+	<li><strong>Thân áo</strong>: Gồm 2 phần: thân trước và thân sau. Cả 2 thân áo đều dài từ cổ xuống mắt cá chân, được may sát vào phom người.</li>
+	<li><strong>Tay áo</strong>: Dài, không có cầu vai, may kéo dài từ cổ áo đến cổ tay.</li>
+	<li><strong>Tà áo</strong>: Gồm 2 tà là tà trước và tà sau, xẻ từ ngang hông xuống dưới.</li>
+</ul>
+
+<p><img alt='Áo dài là gì' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22152931/ao-dai-cach-tan-la-gi.jpg' style='height:468px; width:570px' /></p>
+
+<p>Chiếc áo dài truyền thống với những thiết kế làm tôn lên vẻ đẹp duyên dáng, dịu dàng, nết na của người phụ nữ Việt Nam.</p>
+
+<p>Tuy nhiên, bật mí cho bạn, tà áo dài mà được coi là truyền thống ấy cũng đã từng là phiên bản “cách tân” đấy!</p>
+
+<p>Để biết được nguồn gốc và hình dáng chiếc áo dài xưa như thế nào, hãy cùng đến với lịch sử phát triển của áo dài qua từng thời kỳ nhé!</p>
+
+<p><strong>Áo giao lãnh</strong></p>
+
+<p>Áo giao lãnh được coi là kiểu sơ khai nhất của của chiếc áo dài xưa, rất phổ biến vào thời Lý – Trần – Lê</p>
+
+<p><img alt='Áo giao lãnh ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153156/lich-su-ao-dai-giao-lanh.jpg' style='height:675px; width:429px' /></p>
+
+<p>Đặc điểm của áo giao lãnh là: áo rộng, cổ áo giao nhau khi mặc, áo xẻ hai bên hông, dài tay, cổ tay rộng, thân áo dài chấm gót chân (thân áo được may bằng năm, sáu tấm vải).</p>
+
+<p><strong>Áo dài tứ thân</strong></p>
+
+<p>Áo dài tứ thân vốn là trang phục dành cho những người dân ở tầng lớp bình dân.</p>
+
+<p><img alt='Áo dài tứ thân ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153310/ao-dai-tu-than.jpg' style='height:684px; width:439px' /></p>
+
+<p>Đó là bởi vì 2 vạt trước của chiếc áo được thiết kế rời nhau, có thể buộc lại cho gọn khi làm việc trong khi 2 vạt sau được may liền thành 1 tà áo.</p>
+
+<p><strong>Áo dài ngũ thân</strong></p>
+
+<p>Là kiểu áo do chúa Nguyễn Phúc Khoát đặt ra, áo ngũ thân, dựa trên tiền đề là áo tứ thân, có 5 vạt áo.</p>
+
+<p><img alt='Áo dài ngũ thân' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153407/ao-dai-ngu-than.jpg' style='height:450px; width:360px' /></p>
+
+<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>","2020-11-14 04:40:23","2020-11-14 04:40:23");
+INSERT INTO tbl_news (news_id, news_title, news_desc, news_image, news_content, updated_at, created_at) VALUES ("8","Áo dài cách tân: “Hơi thở mới” cho trang phục truyền thống","Áo dài cách tân: “Hơi thở mới” cho trang phục truyền thống, Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.","84612966_773653896376175_640374783405457408_o76.jpg","<p><strong>Áo dài cách tân</strong>&nbsp;– xu hướng mới, mang phong cách hiện đại, trẻ trung, sang trọng mà vẫn có nét duyên dáng của một chiếc áo dài truyền thống Việt Nam. Ngày nay, không chỉ đơn giản là thứ trang phục để mặc lên người mà áo dài còn trở thành một nét gì đó rất riêng trong tâm thức, linh hồn người Việt.</p>
+
+<p>Và hôm nay, CANIFA sẽ mang đến cho bạn những&nbsp;<strong>mẫu áo dài cách tân mới nhất</strong>, mang hơi thở của nhịp sống hiện đại và những nét chuyển mình của Việt Nam trong thời đại mới. Tất cả sẽ được làm sáng tỏ ngay trong bài viết sau đây.</p>
+
+<h2>Lịch sử hình thành áo dài Việt Nam</h2>
+
+<p>Hình ảnh tà áo dài đã quá quen thuộc với mỗi người Việt nhưng không phải ai cũng có thể miêu tả chính xác bộ trang phục truyền thống này với bạn bè ngoại quốc.</p>
+
+<p><em>Vậy thì áo dài là gì?</em></p>
+
+<p>Áo dài là một bộ trang phục được mặc cùng với quần dài, che thân từ cổ đến chân, dành cho cả nam và nữ nhưng được biết đến như trang phục cho nữ nhiều hơn.</p>
+
+<p><strong>Về cấu tạo áo dài truyền thống:</strong></p>
+
+<ul>
+	<li><strong>Cổ áo</strong>: Cổ áo cao khoảng 2-3 cm, ôm khít cổ, tạo hình chữ V trước cổ.</li>
+	<li><strong>Khuy áo</strong>: Thường dùng khuy bấm, từ cổ chéo sang vai rồi dọc xuống ngang hông.Theo truyền thống, khuy áo dài ở phần thân trên được cố định tại 5 vị trí, vừa giúp chiếc áo dài được cố định ngay ngắn, vừa biểu tượng cho 5 đạo làm người của dân tộc Việt: nhân, nghĩa, lễ, trí, tín</li>
+	<li><strong>Thân áo</strong>: Gồm 2 phần: thân trước và thân sau. Cả 2 thân áo đều dài từ cổ xuống mắt cá chân, được may sát vào phom người.</li>
+	<li><strong>Tay áo</strong>: Dài, không có cầu vai, may kéo dài từ cổ áo đến cổ tay.</li>
+	<li><strong>Tà áo</strong>: Gồm 2 tà là tà trước và tà sau, xẻ từ ngang hông xuống dưới.</li>
+</ul>
+
+<p><img alt='Áo dài là gì' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22152931/ao-dai-cach-tan-la-gi.jpg' style='height:468px; width:570px' /></p>
+
+<p>Chiếc áo dài truyền thống với những thiết kế làm tôn lên vẻ đẹp duyên dáng, dịu dàng, nết na của người phụ nữ Việt Nam.</p>
+
+<p>Tuy nhiên, bật mí cho bạn, tà áo dài mà được coi là truyền thống ấy cũng đã từng là phiên bản “cách tân” đấy!</p>
+
+<p>Để biết được nguồn gốc và hình dáng chiếc áo dài xưa như thế nào, hãy cùng đến với lịch sử phát triển của áo dài qua từng thời kỳ nhé!</p>
+
+<p><strong>Áo giao lãnh</strong></p>
+
+<p>Áo giao lãnh được coi là kiểu sơ khai nhất của của chiếc áo dài xưa, rất phổ biến vào thời Lý – Trần – Lê</p>
+
+<p><img alt='Áo giao lãnh ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153156/lich-su-ao-dai-giao-lanh.jpg' style='height:675px; width:429px' /></p>
+
+<p>Đặc điểm của áo giao lãnh là: áo rộng, cổ áo giao nhau khi mặc, áo xẻ hai bên hông, dài tay, cổ tay rộng, thân áo dài chấm gót chân (thân áo được may bằng năm, sáu tấm vải).</p>
+
+<p><strong>Áo dài tứ thân</strong></p>
+
+<p>Áo dài tứ thân vốn là trang phục dành cho những người dân ở tầng lớp bình dân.</p>
+
+<p><img alt='Áo dài tứ thân ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153310/ao-dai-tu-than.jpg' style='height:684px; width:439px' /></p>
+
+<p>Đó là bởi vì 2 vạt trước của chiếc áo được thiết kế rời nhau, có thể buộc lại cho gọn khi làm việc trong khi 2 vạt sau được may liền thành 1 tà áo.</p>
+
+<p><strong>Áo dài ngũ thân</strong></p>
+
+<p>Là kiểu áo do chúa Nguyễn Phúc Khoát đặt ra, áo ngũ thân, dựa trên tiền đề là áo tứ thân, có 5 vạt áo.</p>
+
+<p><img alt='Áo dài ngũ thân' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153407/ao-dai-ngu-than.jpg' style='height:450px; width:360px' /></p>
+
+<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>
+
+<p><strong>Áo dài Le Mur</strong></p>
+
+<p>Được đặt tên theo chính người thiết kế ra nó, áo dài Le Mur là một bước cải cách vô cùng quan trọng từ chiếc áo dài tứ thân.</p>
+
+<p>Áo dài Le Mur chỉ còn có 2 vạt trước và sau, hàng nút phía trước dịch sang theo vai và dọc bên sườn, tay áo phồng, cổ hở. Đây là kiểu áo dài được cho là “lai căng” thái quá.</p>
+
+<p><strong>Áo dài Lê Phổ</strong></p>
+
+<p>Bằng cách kết hợp khéo léo giữa áo dài tứ thân và áo dài Le Mur, họa sĩ Lê Phổ tạo ra chiếc áo dài vẫn giữ được nét truyền thống của áo dài tứ thân nhưng bỏ những nét lai căng như ráp tay phồng, cổ hở từ áo Le Mur.</p>
+
+<p><img alt='Áo dài Lê Phổ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153616/ao-dai-le-pho.jpg' style='height:910px; width:480px' /></p>
+
+<p>Chiếc áo dài Lê Phổ được nhiều phụ nữ Việt ưa thích và hoan nghênh nhiệt liệt.</p>","2020-11-14 04:40:57","2020-11-14 04:40:57");
+INSERT INTO tbl_news (news_id, news_title, news_desc, news_image, news_content, updated_at, created_at) VALUES ("9","Áo dài cách tân: “Hơi thở mới” cho trang phục truyền thống","Áo dài cách tân: “Hơi thở mới” cho trang phục truyền thống, Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.","86240284_773653849709513_6325635315381829632_o66.jpg","<p><strong>Áo dài cách tân</strong>&nbsp;– xu hướng mới, mang phong cách hiện đại, trẻ trung, sang trọng mà vẫn có nét duyên dáng của một chiếc áo dài truyền thống Việt Nam. Ngày nay, không chỉ đơn giản là thứ trang phục để mặc lên người mà áo dài còn trở thành một nét gì đó rất riêng trong tâm thức, linh hồn người Việt.</p>
+
+<p>Và hôm nay, CANIFA sẽ mang đến cho bạn những&nbsp;<strong>mẫu áo dài cách tân mới nhất</strong>, mang hơi thở của nhịp sống hiện đại và những nét chuyển mình của Việt Nam trong thời đại mới. Tất cả sẽ được làm sáng tỏ ngay trong bài viết sau đây.</p>
+
+<h2>Lịch sử hình thành áo dài Việt Nam</h2>
+
+<p>Hình ảnh tà áo dài đã quá quen thuộc với mỗi người Việt nhưng không phải ai cũng có thể miêu tả chính xác bộ trang phục truyền thống này với bạn bè ngoại quốc.</p>
+
+<p><em>Vậy thì áo dài là gì?</em></p>
+
+<p>Áo dài là một bộ trang phục được mặc cùng với quần dài, che thân từ cổ đến chân, dành cho cả nam và nữ nhưng được biết đến như trang phục cho nữ nhiều hơn.</p>
+
+<p><strong>Về cấu tạo áo dài truyền thống:</strong></p>
+
+<ul>
+	<li><strong>Cổ áo</strong>: Cổ áo cao khoảng 2-3 cm, ôm khít cổ, tạo hình chữ V trước cổ.</li>
+	<li><strong>Khuy áo</strong>: Thường dùng khuy bấm, từ cổ chéo sang vai rồi dọc xuống ngang hông.Theo truyền thống, khuy áo dài ở phần thân trên được cố định tại 5 vị trí, vừa giúp chiếc áo dài được cố định ngay ngắn, vừa biểu tượng cho 5 đạo làm người của dân tộc Việt: nhân, nghĩa, lễ, trí, tín</li>
+	<li><strong>Thân áo</strong>: Gồm 2 phần: thân trước và thân sau. Cả 2 thân áo đều dài từ cổ xuống mắt cá chân, được may sát vào phom người.</li>
+	<li><strong>Tay áo</strong>: Dài, không có cầu vai, may kéo dài từ cổ áo đến cổ tay.</li>
+	<li><strong>Tà áo</strong>: Gồm 2 tà là tà trước và tà sau, xẻ từ ngang hông xuống dưới.</li>
+</ul>
+
+<p><img alt='Áo dài là gì' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22152931/ao-dai-cach-tan-la-gi.jpg' style='height:468px; width:570px' /></p>
+
+<p>Chiếc áo dài truyền thống với những thiết kế làm tôn lên vẻ đẹp duyên dáng, dịu dàng, nết na của người phụ nữ Việt Nam.</p>
+
+<p>Tuy nhiên, bật mí cho bạn, tà áo dài mà được coi là truyền thống ấy cũng đã từng là phiên bản “cách tân” đấy!</p>
+
+<p>Để biết được nguồn gốc và hình dáng chiếc áo dài xưa như thế nào, hãy cùng đến với lịch sử phát triển của áo dài qua từng thời kỳ nhé!</p>
+
+<p><strong>Áo giao lãnh</strong></p>
+
+<p>Áo giao lãnh được coi là kiểu sơ khai nhất của của chiếc áo dài xưa, rất phổ biến vào thời Lý – Trần – Lê</p>
+
+<p><img alt='Áo giao lãnh ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153156/lich-su-ao-dai-giao-lanh.jpg' style='height:675px; width:429px' /></p>
+
+<p>Đặc điểm của áo giao lãnh là: áo rộng, cổ áo giao nhau khi mặc, áo xẻ hai bên hông, dài tay, cổ tay rộng, thân áo dài chấm gót chân (thân áo được may bằng năm, sáu tấm vải).</p>
+
+<p><strong>Áo dài tứ thân</strong></p>
+
+<p>Áo dài tứ thân vốn là trang phục dành cho những người dân ở tầng lớp bình dân.</p>
+
+<p><img alt='Áo dài tứ thân ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153310/ao-dai-tu-than.jpg' style='height:684px; width:439px' /></p>
+
+<p>Đó là bởi vì 2 vạt trước của chiếc áo được thiết kế rời nhau, có thể buộc lại cho gọn khi làm việc trong khi 2 vạt sau được may liền thành 1 tà áo.</p>
+
+<p><strong>Áo dài ngũ thân</strong></p>
+
+<p>Là kiểu áo do chúa Nguyễn Phúc Khoát đặt ra, áo ngũ thân, dựa trên tiền đề là áo tứ thân, có 5 vạt áo.</p>
+
+<p><img alt='Áo dài ngũ thân' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153407/ao-dai-ngu-than.jpg' style='height:450px; width:360px' /></p>
+
+<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>
+
+<p><strong>Áo dài Le Mur</strong></p>
+
+<p>Được đặt tên theo chính người thiết kế ra nó, áo dài Le Mur là một bước cải cách vô cùng quan trọng từ chiếc áo dài tứ thân.</p>
+
+<p>Áo dài Le Mur chỉ còn có 2 vạt trước và sau, hàng nút phía trước dịch sang theo vai và dọc bên sườn, tay áo phồng, cổ hở. Đây là kiểu áo dài được cho là “lai căng” thái quá.</p>
+
+<p><strong>Áo dài Lê Phổ</strong></p>
+
+<p>Bằng cách kết hợp khéo léo giữa áo dài tứ thân và áo dài Le Mur, họa sĩ Lê Phổ tạo ra chiếc áo dài vẫn giữ được nét truyền thống của áo dài tứ thân nhưng bỏ những nét lai căng như ráp tay phồng, cổ hở từ áo Le Mur.</p>
+
+<p><img alt='Áo dài Lê Phổ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153616/ao-dai-le-pho.jpg' style='height:910px; width:480px' /></p>
+
+<p>Chiếc áo dài Lê Phổ được nhiều phụ nữ Việt ưa thích và hoan nghênh nhiệt liệt.</p>","2020-11-14 04:42:40","2020-11-14 04:42:40");
+INSERT INTO tbl_news (news_id, news_title, news_desc, news_image, news_content, updated_at, created_at) VALUES ("10","Áo dài cách tân: “Hơi thở mới” cho trang phục truyền thống","Áo dài cách tân: “Hơi thở mới” cho trang phục truyền thống, Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.","83815495_773654023042829_651030464122847232_o94.jpg","<p><strong>Áo dài cách tân</strong>&nbsp;– xu hướng mới, mang phong cách hiện đại, trẻ trung, sang trọng mà vẫn có nét duyên dáng của một chiếc áo dài truyền thống Việt Nam. Ngày nay, không chỉ đơn giản là thứ trang phục để mặc lên người mà áo dài còn trở thành một nét gì đó rất riêng trong tâm thức, linh hồn người Việt.</p>
+
+<p>Và hôm nay, CANIFA sẽ mang đến cho bạn những&nbsp;<strong>mẫu áo dài cách tân mới nhất</strong>, mang hơi thở của nhịp sống hiện đại và những nét chuyển mình của Việt Nam trong thời đại mới. Tất cả sẽ được làm sáng tỏ ngay trong bài viết sau đây.</p>
+
+<h2>Lịch sử hình thành áo dài Việt Nam</h2>
+
+<p>Hình ảnh tà áo dài đã quá quen thuộc với mỗi người Việt nhưng không phải ai cũng có thể miêu tả chính xác bộ trang phục truyền thống này với bạn bè ngoại quốc.</p>
+
+<p><em>Vậy thì áo dài là gì?</em></p>
+
+<p>Áo dài là một bộ trang phục được mặc cùng với quần dài, che thân từ cổ đến chân, dành cho cả nam và nữ nhưng được biết đến như trang phục cho nữ nhiều hơn.</p>
+
+<p><strong>Về cấu tạo áo dài truyền thống:</strong></p>
+
+<ul>
+	<li><strong>Cổ áo</strong>: Cổ áo cao khoảng 2-3 cm, ôm khít cổ, tạo hình chữ V trước cổ.</li>
+	<li><strong>Khuy áo</strong>: Thường dùng khuy bấm, từ cổ chéo sang vai rồi dọc xuống ngang hông.Theo truyền thống, khuy áo dài ở phần thân trên được cố định tại 5 vị trí, vừa giúp chiếc áo dài được cố định ngay ngắn, vừa biểu tượng cho 5 đạo làm người của dân tộc Việt: nhân, nghĩa, lễ, trí, tín</li>
+	<li><strong>Thân áo</strong>: Gồm 2 phần: thân trước và thân sau. Cả 2 thân áo đều dài từ cổ xuống mắt cá chân, được may sát vào phom người.</li>
+	<li><strong>Tay áo</strong>: Dài, không có cầu vai, may kéo dài từ cổ áo đến cổ tay.</li>
+	<li><strong>Tà áo</strong>: Gồm 2 tà là tà trước và tà sau, xẻ từ ngang hông xuống dưới.</li>
+</ul>
+
+<p><img alt='Áo dài là gì' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22152931/ao-dai-cach-tan-la-gi.jpg' style='height:468px; width:570px' /></p>
+
+<p>Chiếc áo dài truyền thống với những thiết kế làm tôn lên vẻ đẹp duyên dáng, dịu dàng, nết na của người phụ nữ Việt Nam.</p>
+
+<p>Tuy nhiên, bật mí cho bạn, tà áo dài mà được coi là truyền thống ấy cũng đã từng là phiên bản “cách tân” đấy!</p>
+
+<p>Để biết được nguồn gốc và hình dáng chiếc áo dài xưa như thế nào, hãy cùng đến với lịch sử phát triển của áo dài qua từng thời kỳ nhé!</p>
+
+<p><strong>Áo giao lãnh</strong></p>
+
+<p>Áo giao lãnh được coi là kiểu sơ khai nhất của của chiếc áo dài xưa, rất phổ biến vào thời Lý – Trần – Lê</p>
+
+<p><img alt='Áo giao lãnh ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153156/lich-su-ao-dai-giao-lanh.jpg' style='height:675px; width:429px' /></p>
+
+<p>Đặc điểm của áo giao lãnh là: áo rộng, cổ áo giao nhau khi mặc, áo xẻ hai bên hông, dài tay, cổ tay rộng, thân áo dài chấm gót chân (thân áo được may bằng năm, sáu tấm vải).</p>
+
+<p><strong>Áo dài tứ thân</strong></p>
+
+<p>Áo dài tứ thân vốn là trang phục dành cho những người dân ở tầng lớp bình dân.</p>
+
+<p><img alt='Áo dài tứ thân ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153310/ao-dai-tu-than.jpg' style='height:684px; width:439px' /></p>
+
+<p>Đó là bởi vì 2 vạt trước của chiếc áo được thiết kế rời nhau, có thể buộc lại cho gọn khi làm việc trong khi 2 vạt sau được may liền thành 1 tà áo.</p>
+
+<p><strong>Áo dài ngũ thân</strong></p>
+
+<p>Là kiểu áo do chúa Nguyễn Phúc Khoát đặt ra, áo ngũ thân, dựa trên tiền đề là áo tứ thân, có 5 vạt áo.</p>
+
+<p><img alt='Áo dài ngũ thân' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153407/ao-dai-ngu-than.jpg' style='height:450px; width:360px' /></p>
+
+<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>
+
+<p><strong>Áo dài Le Mur</strong></p>
+
+<p>Được đặt tên theo chính người thiết kế ra nó, áo dài Le Mur là một bước cải cách vô cùng quan trọng từ chiếc áo dài tứ thân.</p>
+
+<p>Áo dài Le Mur chỉ còn có 2 vạt trước và sau, hàng nút phía trước dịch sang theo vai và dọc bên sườn, tay áo phồng, cổ hở. Đây là kiểu áo dài được cho là “lai căng” thái quá.</p>
+
+<p><strong>Áo dài Lê Phổ</strong></p>
+
+<p>Bằng cách kết hợp khéo léo giữa áo dài tứ thân và áo dài Le Mur, họa sĩ Lê Phổ tạo ra chiếc áo dài vẫn giữ được nét truyền thống của áo dài tứ thân nhưng bỏ những nét lai căng như ráp tay phồng, cổ hở từ áo Le Mur.</p>
+
+<p><img alt='Áo dài Lê Phổ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153616/ao-dai-le-pho.jpg' style='height:910px; width:480px' /></p>
+
+<p>Chiếc áo dài Lê Phổ được nhiều phụ nữ Việt ưa thích và hoan nghênh nhiệt liệt.</p>","2020-11-14 04:42:48","2020-11-14 04:42:48");
+INSERT INTO tbl_news (news_id, news_title, news_desc, news_image, news_content, updated_at, created_at) VALUES ("11","Áo dài cách tân: “Hơi thở mới” cho trang phục truyền thống","Áo dài cách tân: “Hơi thở mới” cho trang phục truyền thống, Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.","85137522_773653723042859_9173677491418562560_n27.jpg","<p><strong>Áo dài cách tân</strong>&nbsp;– xu hướng mới, mang phong cách hiện đại, trẻ trung, sang trọng mà vẫn có nét duyên dáng của một chiếc áo dài truyền thống Việt Nam. Ngày nay, không chỉ đơn giản là thứ trang phục để mặc lên người mà áo dài còn trở thành một nét gì đó rất riêng trong tâm thức, linh hồn người Việt.</p>
+
+<p>Và hôm nay, CANIFA sẽ mang đến cho bạn những&nbsp;<strong>mẫu áo dài cách tân mới nhất</strong>, mang hơi thở của nhịp sống hiện đại và những nét chuyển mình của Việt Nam trong thời đại mới. Tất cả sẽ được làm sáng tỏ ngay trong bài viết sau đây.</p>
+
+<h2>Lịch sử hình thành áo dài Việt Nam</h2>
+
+<p>Hình ảnh tà áo dài đã quá quen thuộc với mỗi người Việt nhưng không phải ai cũng có thể miêu tả chính xác bộ trang phục truyền thống này với bạn bè ngoại quốc.</p>
+
+<p><em>Vậy thì áo dài là gì?</em></p>
+
+<p>Áo dài là một bộ trang phục được mặc cùng với quần dài, che thân từ cổ đến chân, dành cho cả nam và nữ nhưng được biết đến như trang phục cho nữ nhiều hơn.</p>
+
+<p><strong>Về cấu tạo áo dài truyền thống:</strong></p>
+
+<ul>
+	<li><strong>Cổ áo</strong>: Cổ áo cao khoảng 2-3 cm, ôm khít cổ, tạo hình chữ V trước cổ.</li>
+	<li><strong>Khuy áo</strong>: Thường dùng khuy bấm, từ cổ chéo sang vai rồi dọc xuống ngang hông.Theo truyền thống, khuy áo dài ở phần thân trên được cố định tại 5 vị trí, vừa giúp chiếc áo dài được cố định ngay ngắn, vừa biểu tượng cho 5 đạo làm người của dân tộc Việt: nhân, nghĩa, lễ, trí, tín</li>
+	<li><strong>Thân áo</strong>: Gồm 2 phần: thân trước và thân sau. Cả 2 thân áo đều dài từ cổ xuống mắt cá chân, được may sát vào phom người.</li>
+	<li><strong>Tay áo</strong>: Dài, không có cầu vai, may kéo dài từ cổ áo đến cổ tay.</li>
+	<li><strong>Tà áo</strong>: Gồm 2 tà là tà trước và tà sau, xẻ từ ngang hông xuống dưới.</li>
+</ul>
+
+<p><img alt='Áo dài là gì' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22152931/ao-dai-cach-tan-la-gi.jpg' style='height:468px; width:570px' /></p>
+
+<p>Chiếc áo dài truyền thống với những thiết kế làm tôn lên vẻ đẹp duyên dáng, dịu dàng, nết na của người phụ nữ Việt Nam.</p>
+
+<p>Tuy nhiên, bật mí cho bạn, tà áo dài mà được coi là truyền thống ấy cũng đã từng là phiên bản “cách tân” đấy!</p>
+
+<p>Để biết được nguồn gốc và hình dáng chiếc áo dài xưa như thế nào, hãy cùng đến với lịch sử phát triển của áo dài qua từng thời kỳ nhé!</p>
+
+<p><strong>Áo giao lãnh</strong></p>
+
+<p>Áo giao lãnh được coi là kiểu sơ khai nhất của của chiếc áo dài xưa, rất phổ biến vào thời Lý – Trần – Lê</p>
+
+<p><img alt='Áo giao lãnh ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153156/lich-su-ao-dai-giao-lanh.jpg' style='height:675px; width:429px' /></p>
+
+<p>Đặc điểm của áo giao lãnh là: áo rộng, cổ áo giao nhau khi mặc, áo xẻ hai bên hông, dài tay, cổ tay rộng, thân áo dài chấm gót chân (thân áo được may bằng năm, sáu tấm vải).</p>
+
+<p><strong>Áo dài tứ thân</strong></p>
+
+<p>Áo dài tứ thân vốn là trang phục dành cho những người dân ở tầng lớp bình dân.</p>
+
+<p><img alt='Áo dài tứ thân ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153310/ao-dai-tu-than.jpg' style='height:684px; width:439px' /></p>
+
+<p>Đó là bởi vì 2 vạt trước của chiếc áo được thiết kế rời nhau, có thể buộc lại cho gọn khi làm việc trong khi 2 vạt sau được may liền thành 1 tà áo.</p>
+
+<p><strong>Áo dài ngũ thân</strong></p>
+
+<p>Là kiểu áo do chúa Nguyễn Phúc Khoát đặt ra, áo ngũ thân, dựa trên tiền đề là áo tứ thân, có 5 vạt áo.</p>
+
+<p><img alt='Áo dài ngũ thân' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153407/ao-dai-ngu-than.jpg' style='height:450px; width:360px' /></p>
+
+<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>
+
+<p><strong>Áo dài Le Mur</strong></p>
+
+<p>Được đặt tên theo chính người thiết kế ra nó, áo dài Le Mur là một bước cải cách vô cùng quan trọng từ chiếc áo dài tứ thân.</p>
+
+<p>Áo dài Le Mur chỉ còn có 2 vạt trước và sau, hàng nút phía trước dịch sang theo vai và dọc bên sườn, tay áo phồng, cổ hở. Đây là kiểu áo dài được cho là “lai căng” thái quá.</p>
+
+<p><strong>Áo dài Lê Phổ</strong></p>
+
+<p>Bằng cách kết hợp khéo léo giữa áo dài tứ thân và áo dài Le Mur, họa sĩ Lê Phổ tạo ra chiếc áo dài vẫn giữ được nét truyền thống của áo dài tứ thân nhưng bỏ những nét lai căng như ráp tay phồng, cổ hở từ áo Le Mur.</p>
+
+<p><img alt='Áo dài Lê Phổ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153616/ao-dai-le-pho.jpg' style='height:910px; width:480px' /></p>
+
+<p>Chiếc áo dài Lê Phổ được nhiều phụ nữ Việt ưa thích và hoan nghênh nhiệt liệt.</p>","2020-11-14 04:42:54","2020-11-14 04:42:54");
+INSERT INTO tbl_news (news_id, news_title, news_desc, news_image, news_content, updated_at, created_at) VALUES ("12","Áo dài cách tân: “Hơi thở mới” cho trang phục truyền thống","Áo dài cách tân: “Hơi thở mới” cho trang phục truyền thống, Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.","85195202_773653663042865_7979821151729745920_o5.jpg","<p><strong>Áo dài cách tân</strong>&nbsp;– xu hướng mới, mang phong cách hiện đại, trẻ trung, sang trọng mà vẫn có nét duyên dáng của một chiếc áo dài truyền thống Việt Nam. Ngày nay, không chỉ đơn giản là thứ trang phục để mặc lên người mà áo dài còn trở thành một nét gì đó rất riêng trong tâm thức, linh hồn người Việt.</p>
+
+<p>Và hôm nay, CANIFA sẽ mang đến cho bạn những&nbsp;<strong>mẫu áo dài cách tân mới nhất</strong>, mang hơi thở của nhịp sống hiện đại và những nét chuyển mình của Việt Nam trong thời đại mới. Tất cả sẽ được làm sáng tỏ ngay trong bài viết sau đây.</p>
+
+<h2>Lịch sử hình thành áo dài Việt Nam</h2>
+
+<p>Hình ảnh tà áo dài đã quá quen thuộc với mỗi người Việt nhưng không phải ai cũng có thể miêu tả chính xác bộ trang phục truyền thống này với bạn bè ngoại quốc.</p>
+
+<p><em>Vậy thì áo dài là gì?</em></p>
+
+<p>Áo dài là một bộ trang phục được mặc cùng với quần dài, che thân từ cổ đến chân, dành cho cả nam và nữ nhưng được biết đến như trang phục cho nữ nhiều hơn.</p>
+
+<p><strong>Về cấu tạo áo dài truyền thống:</strong></p>
+
+<ul>
+	<li><strong>Cổ áo</strong>: Cổ áo cao khoảng 2-3 cm, ôm khít cổ, tạo hình chữ V trước cổ.</li>
+	<li><strong>Khuy áo</strong>: Thường dùng khuy bấm, từ cổ chéo sang vai rồi dọc xuống ngang hông.Theo truyền thống, khuy áo dài ở phần thân trên được cố định tại 5 vị trí, vừa giúp chiếc áo dài được cố định ngay ngắn, vừa biểu tượng cho 5 đạo làm người của dân tộc Việt: nhân, nghĩa, lễ, trí, tín</li>
+	<li><strong>Thân áo</strong>: Gồm 2 phần: thân trước và thân sau. Cả 2 thân áo đều dài từ cổ xuống mắt cá chân, được may sát vào phom người.</li>
+	<li><strong>Tay áo</strong>: Dài, không có cầu vai, may kéo dài từ cổ áo đến cổ tay.</li>
+	<li><strong>Tà áo</strong>: Gồm 2 tà là tà trước và tà sau, xẻ từ ngang hông xuống dưới.</li>
+</ul>
+
+<p><img alt='Áo dài là gì' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22152931/ao-dai-cach-tan-la-gi.jpg' style='height:468px; width:570px' /></p>
+
+<p>Chiếc áo dài truyền thống với những thiết kế làm tôn lên vẻ đẹp duyên dáng, dịu dàng, nết na của người phụ nữ Việt Nam.</p>
+
+<p>Tuy nhiên, bật mí cho bạn, tà áo dài mà được coi là truyền thống ấy cũng đã từng là phiên bản “cách tân” đấy!</p>
+
+<p>Để biết được nguồn gốc và hình dáng chiếc áo dài xưa như thế nào, hãy cùng đến với lịch sử phát triển của áo dài qua từng thời kỳ nhé!</p>
+
+<p><strong>Áo giao lãnh</strong></p>
+
+<p>Áo giao lãnh được coi là kiểu sơ khai nhất của của chiếc áo dài xưa, rất phổ biến vào thời Lý – Trần – Lê</p>
+
+<p><img alt='Áo giao lãnh ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153156/lich-su-ao-dai-giao-lanh.jpg' style='height:675px; width:429px' /></p>
+
+<p>Đặc điểm của áo giao lãnh là: áo rộng, cổ áo giao nhau khi mặc, áo xẻ hai bên hông, dài tay, cổ tay rộng, thân áo dài chấm gót chân (thân áo được may bằng năm, sáu tấm vải).</p>
+
+<p><strong>Áo dài tứ thân</strong></p>
+
+<p>Áo dài tứ thân vốn là trang phục dành cho những người dân ở tầng lớp bình dân.</p>
+
+<p><img alt='Áo dài tứ thân ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153310/ao-dai-tu-than.jpg' style='height:684px; width:439px' /></p>
+
+<p>Đó là bởi vì 2 vạt trước của chiếc áo được thiết kế rời nhau, có thể buộc lại cho gọn khi làm việc trong khi 2 vạt sau được may liền thành 1 tà áo.</p>
+
+<p><strong>Áo dài ngũ thân</strong></p>
+
+<p>Là kiểu áo do chúa Nguyễn Phúc Khoát đặt ra, áo ngũ thân, dựa trên tiền đề là áo tứ thân, có 5 vạt áo.</p>
+
+<p><img alt='Áo dài ngũ thân' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153407/ao-dai-ngu-than.jpg' style='height:450px; width:360px' /></p>
+
+<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>
+
+<p><strong>Áo dài Le Mur</strong></p>
+
+<p>Được đặt tên theo chính người thiết kế ra nó, áo dài Le Mur là một bước cải cách vô cùng quan trọng từ chiếc áo dài tứ thân.</p>
+
+<p>Áo dài Le Mur chỉ còn có 2 vạt trước và sau, hàng nút phía trước dịch sang theo vai và dọc bên sườn, tay áo phồng, cổ hở. Đây là kiểu áo dài được cho là “lai căng” thái quá.</p>
+
+<p><strong>Áo dài Lê Phổ</strong></p>
+
+<p>Bằng cách kết hợp khéo léo giữa áo dài tứ thân và áo dài Le Mur, họa sĩ Lê Phổ tạo ra chiếc áo dài vẫn giữ được nét truyền thống của áo dài tứ thân nhưng bỏ những nét lai căng như ráp tay phồng, cổ hở từ áo Le Mur.</p>
+
+<p><img alt='Áo dài Lê Phổ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153616/ao-dai-le-pho.jpg' style='height:910px; width:480px' /></p>
+
+<p>Chiếc áo dài Lê Phổ được nhiều phụ nữ Việt ưa thích và hoan nghênh nhiệt liệt.</p>","2020-11-14 04:43:01","2020-11-14 04:43:01");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("39","43","Dương Hoàng Văn","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","40000","540000","0334964103","đang xử lý","uighuighuigiu","2020-11-23 06:06:01");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("40","44","hoangvan","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","40000","540000","0334964103","đang xử lý","asfasf","2020-11-23 06:06:01");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("41","45","Áo dài cách tân","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","0334964103","đang xử lý","asdasd","2020-11-23 06:06:01");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("42","46","Áo dài cách tân","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","0334964103","đang xử lý","asdasd","2020-11-23 06:06:01");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("43","46","Áo dài cách tân","15","Áo dài Hội Phố ABC","84612966_773653896376175_640374783405457408_o42.jpg","1","600000","20000","620000","0334964103","đang xử lý","asdasd","2020-11-23 06:06:01");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("44","46","Áo dài cách tân","17","Áo dài Lê PHỐ A","85195202_773653663042865_7979821151729745920_o59.jpg","1","400000","20000","420000","0334964103","đang xử lý","asdasd","2020-11-23 06:06:01");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("45","46","Áo dài cách tân","13","Áo dài truyền thống VN","83815495_773654023042829_651030464122847232_o6.jpg","1","500000","20000","520000","0334964103","đang xử lý","asdasd","2020-11-23 06:06:01");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("46","46","Áo dài cách tân","14","Áo dài cách tân ABC","85137522_773653723042859_9173677491418562560_n30.jpg","1","200000","20000","220000","0334964103","đang xử lý","asdasd","2020-11-23 06:06:01");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("47","47","hoangvan","14","Áo dài cách tân ABC","85137522_773653723042859_9173677491418562560_n30.jpg","1","200000","20000","220000","1234567890","đang xử lý","asdasd","2020-11-23 06:06:01");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("48","48","hoangtran","12","Áo dài Dạ Hội AB","84922140_773654203042811_7474135159747379200_o65.jpg","1","900000","20000","920000","1234567890","1","asdasdas","2020-11-23 06:06:01");
+INSERT INTO tbl_order (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("49","49","hoangvan","13","Áo dài truyền thống VN","83815495_773654023042829_651030464122847232_o6.jpg","1","500000","20000","520000","0334964103","1","asdasdasd","2020-11-23 06:06:01");
+INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("2","2","Áo dài truyền thống","<p>test</p>","lụa cao cấp","500000","1","","","1","94191814_648215732424264_3752553548315885568_n125560.jpg","lụa cao cấp lụa cao cấp","lụa cao cấp lụa cao cấp","ao-dai-truyen-thong631","1");
+INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("3","3","Áo dài cách tân","<h2>Lịch sử hình thành áo dài Việt Nam</h2>
+
+<p>Hình ảnh tà áo dài đã quá quen thuộc với mỗi người Việt nhưng không phải ai cũng có thể miêu tả chính xác bộ trang phục truyền thống này với bạn bè ngoại quốc.</p>
+
+<p><em>Vậy thì áo dài là gì?</em></p>
+
+<p>Áo dài là một bộ trang phục được mặc cùng với quần dài, che thân từ cổ đến chân, dành cho cả nam và nữ nhưng được biết đến như trang phục cho nữ nhiều hơn.</p>
+
+<p><strong>Về cấu tạo áo dài truyền thống:</strong></p>
+
+<ul>
+	<li><strong>Cổ áo</strong>: Cổ áo cao khoảng 2-3 cm, ôm khít cổ, tạo hình chữ V trước cổ.</li>
+	<li><strong>Khuy áo</strong>: Thường dùng khuy bấm, từ cổ chéo sang vai rồi dọc xuống ngang hông.Theo truyền thống, khuy áo dài ở phần thân trên được cố định tại 5 vị trí, vừa giúp chiếc áo dài được cố định ngay ngắn, vừa biểu tượng cho 5 đạo làm người của dân tộc Việt: nhân, nghĩa, lễ, trí, tín</li>
+	<li><strong>Thân áo</strong>: Gồm 2 phần: thân trước và thân sau. Cả 2 thân áo đều dài từ cổ xuống mắt cá chân, được may sát vào phom người.</li>
+	<li><strong>Tay áo</strong>: Dài, không có cầu vai, may kéo dài từ cổ áo đến cổ tay.</li>
+	<li><strong>Tà áo</strong>: Gồm 2 tà là tà trước và tà sau, xẻ từ ngang hông xuống dưới.</li>
+</ul>
+
+<p><img alt='Áo dài là gì' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22152931/ao-dai-cach-tan-la-gi.jpg' style='height:468px; width:570px' /></p>
+
+<p>Chiếc áo dài truyền thống với những thiết kế làm tôn lên vẻ đẹp duyên dáng, dịu dàng, nết na của người phụ nữ Việt Nam.</p>
+
+<p>Tuy nhiên, bật mí cho bạn, tà áo dài mà được coi là truyền thống ấy cũng đã từng là phiên bản “cách tân” đấy!</p>
+
+<p>Để biết được nguồn gốc và hình dáng chiếc áo dài xưa như thế nào, hãy cùng đến với lịch sử phát triển của áo dài qua từng thời kỳ nhé!</p>
+
+<p><strong>Áo giao lãnh</strong></p>
+
+<p>Áo giao lãnh được coi là kiểu sơ khai nhất của của chiếc áo dài xưa, rất phổ biến vào thời Lý – Trần – Lê</p>
+
+<p><img alt='Áo giao lãnh ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153156/lich-su-ao-dai-giao-lanh.jpg' style='height:675px; width:429px' /></p>
+
+<p>Đặc điểm của áo giao lãnh là: áo rộng, cổ áo giao nhau khi mặc, áo xẻ hai bên hông, dài tay, cổ tay rộng, thân áo dài chấm gót chân (thân áo được may bằng năm, sáu tấm vải).</p>
+
+<p><strong>Áo dài tứ thân</strong></p>
+
+<p>Áo dài tứ thân vốn là trang phục dành cho những người dân ở tầng lớp bình dân.</p>
+
+<p><img alt='Áo dài tứ thân ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153310/ao-dai-tu-than.jpg' style='height:684px; width:439px' /></p>
+
+<p>Đó là bởi vì 2 vạt trước của chiếc áo được thiết kế rời nhau, có thể buộc lại cho gọn khi làm việc trong khi 2 vạt sau được may liền thành 1 tà áo.</p>
+
+<p><strong>Áo dài ngũ thân</strong></p>
+
+<p>Là kiểu áo do chúa Nguyễn Phúc Khoát đặt ra, áo ngũ thân, dựa trên tiền đề là áo tứ thân, có 5 vạt áo.</p>
+
+<p><img alt='Áo dài ngũ thân' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153407/ao-dai-ngu-than.jpg' style='height:450px; width:360px' /></p>
+
+<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>","lụa nhật","1000000","1","","","1","84194903_773654616376103_8257184345794543616_n93.jpg","Áo dài cách tân","Áo dài cách tân","ao-dai-cach-tan720","1");
+INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("4","5","Áo dài Hội Phố","<h2>Lịch sử hình thành áo dài Việt Nam</h2>
+
+<p>Hình ảnh tà áo dài đã quá quen thuộc với mỗi người Việt nhưng không phải ai cũng có thể miêu tả chính xác bộ trang phục truyền thống này với bạn bè ngoại quốc.</p>
+
+<p><em>Vậy thì áo dài là gì?</em></p>
+
+<p>Áo dài là một bộ trang phục được mặc cùng với quần dài, che thân từ cổ đến chân, dành cho cả nam và nữ nhưng được biết đến như trang phục cho nữ nhiều hơn.</p>
+
+<p><strong>Về cấu tạo áo dài truyền thống:</strong></p>
+
+<ul>
+	<li><strong>Cổ áo</strong>: Cổ áo cao khoảng 2-3 cm, ôm khít cổ, tạo hình chữ V trước cổ.</li>
+	<li><strong>Khuy áo</strong>: Thường dùng khuy bấm, từ cổ chéo sang vai rồi dọc xuống ngang hông.Theo truyền thống, khuy áo dài ở phần thân trên được cố định tại 5 vị trí, vừa giúp chiếc áo dài được cố định ngay ngắn, vừa biểu tượng cho 5 đạo làm người của dân tộc Việt: nhân, nghĩa, lễ, trí, tín</li>
+	<li><strong>Thân áo</strong>: Gồm 2 phần: thân trước và thân sau. Cả 2 thân áo đều dài từ cổ xuống mắt cá chân, được may sát vào phom người.</li>
+	<li><strong>Tay áo</strong>: Dài, không có cầu vai, may kéo dài từ cổ áo đến cổ tay.</li>
+	<li><strong>Tà áo</strong>: Gồm 2 tà là tà trước và tà sau, xẻ từ ngang hông xuống dưới.</li>
+</ul>
+
+<p><img alt='Áo dài là gì' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22152931/ao-dai-cach-tan-la-gi.jpg' style='height:468px; width:570px' /></p>
+
+<p>Chiếc áo dài truyền thống với những thiết kế làm tôn lên vẻ đẹp duyên dáng, dịu dàng, nết na của người phụ nữ Việt Nam.</p>
+
+<p>Tuy nhiên, bật mí cho bạn, tà áo dài mà được coi là truyền thống ấy cũng đã từng là phiên bản “cách tân” đấy!</p>
+
+<p>Để biết được nguồn gốc và hình dáng chiếc áo dài xưa như thế nào, hãy cùng đến với lịch sử phát triển của áo dài qua từng thời kỳ nhé!</p>
+
+<p><strong>Áo giao lãnh</strong></p>
+
+<p>Áo giao lãnh được coi là kiểu sơ khai nhất của của chiếc áo dài xưa, rất phổ biến vào thời Lý – Trần – Lê</p>
+
+<p><img alt='Áo giao lãnh ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153156/lich-su-ao-dai-giao-lanh.jpg' style='height:675px; width:429px' /></p>
+
+<p>Đặc điểm của áo giao lãnh là: áo rộng, cổ áo giao nhau khi mặc, áo xẻ hai bên hông, dài tay, cổ tay rộng, thân áo dài chấm gót chân (thân áo được may bằng năm, sáu tấm vải).</p>
+
+<p><strong>Áo dài tứ thân</strong></p>
+
+<p>Áo dài tứ thân vốn là trang phục dành cho những người dân ở tầng lớp bình dân.</p>
+
+<p><img alt='Áo dài tứ thân ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153310/ao-dai-tu-than.jpg' style='height:684px; width:439px' /></p>
+
+<p>Đó là bởi vì 2 vạt trước của chiếc áo được thiết kế rời nhau, có thể buộc lại cho gọn khi làm việc trong khi 2 vạt sau được may liền thành 1 tà áo.</p>
+
+<p><strong>Áo dài ngũ thân</strong></p>
+
+<p>Là kiểu áo do chúa Nguyễn Phúc Khoát đặt ra, áo ngũ thân, dựa trên tiền đề là áo tứ thân, có 5 vạt áo.</p>
+
+<p><img alt='Áo dài ngũ thân' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153407/ao-dai-ngu-than.jpg' style='height:450px; width:360px' /></p>
+
+<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>","lụa nhật","1000000","1","","","1","84527909_773654836376081_9198133503353421824_o36.jpg","Áo dài Hội Phố","Áo dài Hội Phố","ao-dai-hoi-pho988","1");
+INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("5","4","Áo dài Lê Phố","<h2>Lịch sử hình thành áo dài Việt Nam</h2>
+
+<p>Hình ảnh tà áo dài đã quá quen thuộc với mỗi người Việt nhưng không phải ai cũng có thể miêu tả chính xác bộ trang phục truyền thống này với bạn bè ngoại quốc.</p>
+
+<p><em>Vậy thì áo dài là gì?</em></p>
+
+<p>Áo dài là một bộ trang phục được mặc cùng với quần dài, che thân từ cổ đến chân, dành cho cả nam và nữ nhưng được biết đến như trang phục cho nữ nhiều hơn.</p>
+
+<p><strong>Về cấu tạo áo dài truyền thống:</strong></p>
+
+<ul>
+	<li><strong>Cổ áo</strong>: Cổ áo cao khoảng 2-3 cm, ôm khít cổ, tạo hình chữ V trước cổ.</li>
+	<li><strong>Khuy áo</strong>: Thường dùng khuy bấm, từ cổ chéo sang vai rồi dọc xuống ngang hông.Theo truyền thống, khuy áo dài ở phần thân trên được cố định tại 5 vị trí, vừa giúp chiếc áo dài được cố định ngay ngắn, vừa biểu tượng cho 5 đạo làm người của dân tộc Việt: nhân, nghĩa, lễ, trí, tín</li>
+	<li><strong>Thân áo</strong>: Gồm 2 phần: thân trước và thân sau. Cả 2 thân áo đều dài từ cổ xuống mắt cá chân, được may sát vào phom người.</li>
+	<li><strong>Tay áo</strong>: Dài, không có cầu vai, may kéo dài từ cổ áo đến cổ tay.</li>
+	<li><strong>Tà áo</strong>: Gồm 2 tà là tà trước và tà sau, xẻ từ ngang hông xuống dưới.</li>
+</ul>
+
+<p><img alt='Áo dài là gì' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22152931/ao-dai-cach-tan-la-gi.jpg' style='height:468px; width:570px' /></p>
+
+<p>Chiếc áo dài truyền thống với những thiết kế làm tôn lên vẻ đẹp duyên dáng, dịu dàng, nết na của người phụ nữ Việt Nam.</p>
+
+<p>Tuy nhiên, bật mí cho bạn, tà áo dài mà được coi là truyền thống ấy cũng đã từng là phiên bản “cách tân” đấy!</p>
+
+<p>Để biết được nguồn gốc và hình dáng chiếc áo dài xưa như thế nào, hãy cùng đến với lịch sử phát triển của áo dài qua từng thời kỳ nhé!</p>
+
+<p><strong>Áo giao lãnh</strong></p>
+
+<p>Áo giao lãnh được coi là kiểu sơ khai nhất của của chiếc áo dài xưa, rất phổ biến vào thời Lý – Trần – Lê</p>
+
+<p><img alt='Áo giao lãnh ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153156/lich-su-ao-dai-giao-lanh.jpg' style='height:675px; width:429px' /></p>
+
+<p>Đặc điểm của áo giao lãnh là: áo rộng, cổ áo giao nhau khi mặc, áo xẻ hai bên hông, dài tay, cổ tay rộng, thân áo dài chấm gót chân (thân áo được may bằng năm, sáu tấm vải).</p>
+
+<p><strong>Áo dài tứ thân</strong></p>
+
+<p>Áo dài tứ thân vốn là trang phục dành cho những người dân ở tầng lớp bình dân.</p>
+
+<p><img alt='Áo dài tứ thân ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153310/ao-dai-tu-than.jpg' style='height:684px; width:439px' /></p>
+
+<p>Đó là bởi vì 2 vạt trước của chiếc áo được thiết kế rời nhau, có thể buộc lại cho gọn khi làm việc trong khi 2 vạt sau được may liền thành 1 tà áo.</p>
+
+<p><strong>Áo dài ngũ thân</strong></p>
+
+<p>Là kiểu áo do chúa Nguyễn Phúc Khoát đặt ra, áo ngũ thân, dựa trên tiền đề là áo tứ thân, có 5 vạt áo.</p>
+
+<p><img alt='Áo dài ngũ thân' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153407/ao-dai-ngu-than.jpg' style='height:450px; width:360px' /></p>
+
+<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>","Áo dài Lê Phố","1000000","1","","","1","86190117_773654536376111_1148412901342576640_n39.jpg","Áo dài Lê Phố","Áo dài Lê Phố","ao-dai-le-pho603","1");
+INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("6","5","Áo dài Lễ Hội","<h2>Lịch sử hình thành áo dài Việt Nam</h2>
+
+<p>Hình ảnh tà áo dài đã quá quen thuộc với mỗi người Việt nhưng không phải ai cũng có thể miêu tả chính xác bộ trang phục truyền thống này với bạn bè ngoại quốc.</p>
+
+<p><em>Vậy thì áo dài là gì?</em></p>
+
+<p>Áo dài là một bộ trang phục được mặc cùng với quần dài, che thân từ cổ đến chân, dành cho cả nam và nữ nhưng được biết đến như trang phục cho nữ nhiều hơn.</p>
+
+<p><strong>Về cấu tạo áo dài truyền thống:</strong></p>
+
+<ul>
+	<li><strong>Cổ áo</strong>: Cổ áo cao khoảng 2-3 cm, ôm khít cổ, tạo hình chữ V trước cổ.</li>
+	<li><strong>Khuy áo</strong>: Thường dùng khuy bấm, từ cổ chéo sang vai rồi dọc xuống ngang hông.Theo truyền thống, khuy áo dài ở phần thân trên được cố định tại 5 vị trí, vừa giúp chiếc áo dài được cố định ngay ngắn, vừa biểu tượng cho 5 đạo làm người của dân tộc Việt: nhân, nghĩa, lễ, trí, tín</li>
+	<li><strong>Thân áo</strong>: Gồm 2 phần: thân trước và thân sau. Cả 2 thân áo đều dài từ cổ xuống mắt cá chân, được may sát vào phom người.</li>
+	<li><strong>Tay áo</strong>: Dài, không có cầu vai, may kéo dài từ cổ áo đến cổ tay.</li>
+	<li><strong>Tà áo</strong>: Gồm 2 tà là tà trước và tà sau, xẻ từ ngang hông xuống dưới.</li>
+</ul>
+
+<p><img alt='Áo dài là gì' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22152931/ao-dai-cach-tan-la-gi.jpg' style='height:468px; width:570px' /></p>
+
+<p>Chiếc áo dài truyền thống với những thiết kế làm tôn lên vẻ đẹp duyên dáng, dịu dàng, nết na của người phụ nữ Việt Nam.</p>
+
+<p>Tuy nhiên, bật mí cho bạn, tà áo dài mà được coi là truyền thống ấy cũng đã từng là phiên bản “cách tân” đấy!</p>
+
+<p>Để biết được nguồn gốc và hình dáng chiếc áo dài xưa như thế nào, hãy cùng đến với lịch sử phát triển của áo dài qua từng thời kỳ nhé!</p>
+
+<p><strong>Áo giao lãnh</strong></p>
+
+<p>Áo giao lãnh được coi là kiểu sơ khai nhất của của chiếc áo dài xưa, rất phổ biến vào thời Lý – Trần – Lê</p>
+
+<p><img alt='Áo giao lãnh ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153156/lich-su-ao-dai-giao-lanh.jpg' style='height:675px; width:429px' /></p>
+
+<p>Đặc điểm của áo giao lãnh là: áo rộng, cổ áo giao nhau khi mặc, áo xẻ hai bên hông, dài tay, cổ tay rộng, thân áo dài chấm gót chân (thân áo được may bằng năm, sáu tấm vải).</p>
+
+<p><strong>Áo dài tứ thân</strong></p>
+
+<p>Áo dài tứ thân vốn là trang phục dành cho những người dân ở tầng lớp bình dân.</p>
+
+<p><img alt='Áo dài tứ thân ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153310/ao-dai-tu-than.jpg' style='height:684px; width:439px' /></p>
+
+<p>Đó là bởi vì 2 vạt trước của chiếc áo được thiết kế rời nhau, có thể buộc lại cho gọn khi làm việc trong khi 2 vạt sau được may liền thành 1 tà áo.</p>
+
+<p><strong>Áo dài ngũ thân</strong></p>
+
+<p>Là kiểu áo do chúa Nguyễn Phúc Khoát đặt ra, áo ngũ thân, dựa trên tiền đề là áo tứ thân, có 5 vạt áo.</p>
+
+<p><img alt='Áo dài ngũ thân' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153407/ao-dai-ngu-than.jpg' style='height:450px; width:360px' /></p>
+
+<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>","lụa nhật","1000000","1","","","1","86172838_773654293042802_193841709543587840_n68.jpg","Áo dài Lễ Hội","Áo dài Lễ Hội","ao-dai-le-hoi133","1");
+INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("7","2","Áo dài Hà Nội","<p>test</p>","lụa nhật","1000000","1","","","1","84404743_773654449709453_1007598137935659008_o (1)80.jpg","lụa nhật","lụa nhật","ao-dai-ha-noi962","1");
+INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("8","1","Áo dài cách tân","<h2>Lịch sử hình thành áo dài Việt Nam</h2>
+
+<p>Hình ảnh tà áo dài đã quá quen thuộc với mỗi người Việt nhưng không phải ai cũng có thể miêu tả chính xác bộ trang phục truyền thống này với bạn bè ngoại quốc.</p>
+
+<p><em>Vậy thì áo dài là gì?</em></p>
+
+<p>Áo dài là một bộ trang phục được mặc cùng với quần dài, che thân từ cổ đến chân, dành cho cả nam và nữ nhưng được biết đến như trang phục cho nữ nhiều hơn.</p>
+
+<p><strong>Về cấu tạo áo dài truyền thống:</strong></p>
+
+<ul>
+	<li><strong>Cổ áo</strong>: Cổ áo cao khoảng 2-3 cm, ôm khít cổ, tạo hình chữ V trước cổ.</li>
+	<li><strong>Khuy áo</strong>: Thường dùng khuy bấm, từ cổ chéo sang vai rồi dọc xuống ngang hông.Theo truyền thống, khuy áo dài ở phần thân trên được cố định tại 5 vị trí, vừa giúp chiếc áo dài được cố định ngay ngắn, vừa biểu tượng cho 5 đạo làm người của dân tộc Việt: nhân, nghĩa, lễ, trí, tín</li>
+	<li><strong>Thân áo</strong>: Gồm 2 phần: thân trước và thân sau. Cả 2 thân áo đều dài từ cổ xuống mắt cá chân, được may sát vào phom người.</li>
+	<li><strong>Tay áo</strong>: Dài, không có cầu vai, may kéo dài từ cổ áo đến cổ tay.</li>
+	<li><strong>Tà áo</strong>: Gồm 2 tà là tà trước và tà sau, xẻ từ ngang hông xuống dưới.</li>
+</ul>
+
+<p><img alt='Áo dài là gì' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22152931/ao-dai-cach-tan-la-gi.jpg' style='height:468px; width:570px' /></p>
+
+<p>Chiếc áo dài truyền thống với những thiết kế làm tôn lên vẻ đẹp duyên dáng, dịu dàng, nết na của người phụ nữ Việt Nam.</p>
+
+<p>Tuy nhiên, bật mí cho bạn, tà áo dài mà được coi là truyền thống ấy cũng đã từng là phiên bản “cách tân” đấy!</p>
+
+<p>Để biết được nguồn gốc và hình dáng chiếc áo dài xưa như thế nào, hãy cùng đến với lịch sử phát triển của áo dài qua từng thời kỳ nhé!</p>
+
+<p><strong>Áo giao lãnh</strong></p>
+
+<p>Áo giao lãnh được coi là kiểu sơ khai nhất của của chiếc áo dài xưa, rất phổ biến vào thời Lý – Trần – Lê</p>
+
+<p><img alt='Áo giao lãnh ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153156/lich-su-ao-dai-giao-lanh.jpg' style='height:675px; width:429px' /></p>
+
+<p>Đặc điểm của áo giao lãnh là: áo rộng, cổ áo giao nhau khi mặc, áo xẻ hai bên hông, dài tay, cổ tay rộng, thân áo dài chấm gót chân (thân áo được may bằng năm, sáu tấm vải).</p>
+
+<p><strong>Áo dài tứ thân</strong></p>
+
+<p>Áo dài tứ thân vốn là trang phục dành cho những người dân ở tầng lớp bình dân.</p>
+
+<p><img alt='Áo dài tứ thân ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153310/ao-dai-tu-than.jpg' style='height:684px; width:439px' /></p>
+
+<p>Đó là bởi vì 2 vạt trước của chiếc áo được thiết kế rời nhau, có thể buộc lại cho gọn khi làm việc trong khi 2 vạt sau được may liền thành 1 tà áo.</p>
+
+<p><strong>Áo dài ngũ thân</strong></p>
+
+<p>Là kiểu áo do chúa Nguyễn Phúc Khoát đặt ra, áo ngũ thân, dựa trên tiền đề là áo tứ thân, có 5 vạt áo.</p>
+
+<p><img alt='Áo dài ngũ thân' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153407/ao-dai-ngu-than.jpg' style='height:450px; width:360px' /></p>
+
+<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>","lụa nhật","1000000","1","","","1","84676676_773654356376129_7117881907605405696_n76.jpg","Áo dài cách tân","Áo dài cách tân","ao-dai-cach-tan839","1");
+INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("9","5","Áo dài truyền thống","<h2>Lịch sử hình thành áo dài Việt Nam</h2>
+
+<p>Hình ảnh tà áo dài đã quá quen thuộc với mỗi người Việt nhưng không phải ai cũng có thể miêu tả chính xác bộ trang phục truyền thống này với bạn bè ngoại quốc.</p>
+
+<p><em>Vậy thì áo dài là gì?</em></p>
+
+<p>Áo dài là một bộ trang phục được mặc cùng với quần dài, che thân từ cổ đến chân, dành cho cả nam và nữ nhưng được biết đến như trang phục cho nữ nhiều hơn.</p>
+
+<p><strong>Về cấu tạo áo dài truyền thống:</strong></p>
+
+<ul>
+	<li><strong>Cổ áo</strong>: Cổ áo cao khoảng 2-3 cm, ôm khít cổ, tạo hình chữ V trước cổ.</li>
+	<li><strong>Khuy áo</strong>: Thường dùng khuy bấm, từ cổ chéo sang vai rồi dọc xuống ngang hông.Theo truyền thống, khuy áo dài ở phần thân trên được cố định tại 5 vị trí, vừa giúp chiếc áo dài được cố định ngay ngắn, vừa biểu tượng cho 5 đạo làm người của dân tộc Việt: nhân, nghĩa, lễ, trí, tín</li>
+	<li><strong>Thân áo</strong>: Gồm 2 phần: thân trước và thân sau. Cả 2 thân áo đều dài từ cổ xuống mắt cá chân, được may sát vào phom người.</li>
+	<li><strong>Tay áo</strong>: Dài, không có cầu vai, may kéo dài từ cổ áo đến cổ tay.</li>
+	<li><strong>Tà áo</strong>: Gồm 2 tà là tà trước và tà sau, xẻ từ ngang hông xuống dưới.</li>
+</ul>
+
+<p><img alt='Áo dài là gì' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22152931/ao-dai-cach-tan-la-gi.jpg' style='height:468px; width:570px' /></p>
+
+<p>Chiếc áo dài truyền thống với những thiết kế làm tôn lên vẻ đẹp duyên dáng, dịu dàng, nết na của người phụ nữ Việt Nam.</p>
+
+<p>Tuy nhiên, bật mí cho bạn, tà áo dài mà được coi là truyền thống ấy cũng đã từng là phiên bản “cách tân” đấy!</p>
+
+<p>Để biết được nguồn gốc và hình dáng chiếc áo dài xưa như thế nào, hãy cùng đến với lịch sử phát triển của áo dài qua từng thời kỳ nhé!</p>
+
+<p><strong>Áo giao lãnh</strong></p>
+
+<p>Áo giao lãnh được coi là kiểu sơ khai nhất của của chiếc áo dài xưa, rất phổ biến vào thời Lý – Trần – Lê</p>
+
+<p><img alt='Áo giao lãnh ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153156/lich-su-ao-dai-giao-lanh.jpg' style='height:675px; width:429px' /></p>
+
+<p>Đặc điểm của áo giao lãnh là: áo rộng, cổ áo giao nhau khi mặc, áo xẻ hai bên hông, dài tay, cổ tay rộng, thân áo dài chấm gót chân (thân áo được may bằng năm, sáu tấm vải).</p>
+
+<p><strong>Áo dài tứ thân</strong></p>
+
+<p>Áo dài tứ thân vốn là trang phục dành cho những người dân ở tầng lớp bình dân.</p>
+
+<p><img alt='Áo dài tứ thân ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153310/ao-dai-tu-than.jpg' style='height:684px; width:439px' /></p>
+
+<p>Đó là bởi vì 2 vạt trước của chiếc áo được thiết kế rời nhau, có thể buộc lại cho gọn khi làm việc trong khi 2 vạt sau được may liền thành 1 tà áo.</p>
+
+<p><strong>Áo dài ngũ thân</strong></p>
+
+<p>Là kiểu áo do chúa Nguyễn Phúc Khoát đặt ra, áo ngũ thân, dựa trên tiền đề là áo tứ thân, có 5 vạt áo.</p>
+
+<p><img alt='Áo dài ngũ thân' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153407/ao-dai-ngu-than.jpg' style='height:450px; width:360px' /></p>
+
+<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>","lụa nhật","500000","600000","2020-11-18","2020-11-28","1","85115032_773654149709483_9059140063778045952_n58.jpg","lụa nhật","lụa nhật","ao-dai-truyen-thong898","1");
+INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("10","2","Áo dài bông hoa","<h2>Lịch sử hình thành áo dài Việt Nam</h2>
+
+<p>Hình ảnh tà áo dài đã quá quen thuộc với mỗi người Việt nhưng không phải ai cũng có thể miêu tả chính xác bộ trang phục truyền thống này với bạn bè ngoại quốc.</p>
+
+<p><em>Vậy thì áo dài là gì?</em></p>
+
+<p>Áo dài là một bộ trang phục được mặc cùng với quần dài, che thân từ cổ đến chân, dành cho cả nam và nữ nhưng được biết đến như trang phục cho nữ nhiều hơn.</p>
+
+<p><strong>Về cấu tạo áo dài truyền thống:</strong></p>
+
+<ul>
+	<li><strong>Cổ áo</strong>: Cổ áo cao khoảng 2-3 cm, ôm khít cổ, tạo hình chữ V trước cổ.</li>
+	<li><strong>Khuy áo</strong>: Thường dùng khuy bấm, từ cổ chéo sang vai rồi dọc xuống ngang hông.Theo truyền thống, khuy áo dài ở phần thân trên được cố định tại 5 vị trí, vừa giúp chiếc áo dài được cố định ngay ngắn, vừa biểu tượng cho 5 đạo làm người của dân tộc Việt: nhân, nghĩa, lễ, trí, tín</li>
+	<li><strong>Thân áo</strong>: Gồm 2 phần: thân trước và thân sau. Cả 2 thân áo đều dài từ cổ xuống mắt cá chân, được may sát vào phom người.</li>
+	<li><strong>Tay áo</strong>: Dài, không có cầu vai, may kéo dài từ cổ áo đến cổ tay.</li>
+	<li><strong>Tà áo</strong>: Gồm 2 tà là tà trước và tà sau, xẻ từ ngang hông xuống dưới.</li>
+</ul>
+
+<p><img alt='Áo dài là gì' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22152931/ao-dai-cach-tan-la-gi.jpg' style='height:468px; width:570px' /></p>
+
+<p>Chiếc áo dài truyền thống với những thiết kế làm tôn lên vẻ đẹp duyên dáng, dịu dàng, nết na của người phụ nữ Việt Nam.</p>
+
+<p>Tuy nhiên, bật mí cho bạn, tà áo dài mà được coi là truyền thống ấy cũng đã từng là phiên bản “cách tân” đấy!</p>
+
+<p>Để biết được nguồn gốc và hình dáng chiếc áo dài xưa như thế nào, hãy cùng đến với lịch sử phát triển của áo dài qua từng thời kỳ nhé!</p>
+
+<p><strong>Áo giao lãnh</strong></p>
+
+<p>Áo giao lãnh được coi là kiểu sơ khai nhất của của chiếc áo dài xưa, rất phổ biến vào thời Lý – Trần – Lê</p>
+
+<p><img alt='Áo giao lãnh ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153156/lich-su-ao-dai-giao-lanh.jpg' style='height:675px; width:429px' /></p>
+
+<p>Đặc điểm của áo giao lãnh là: áo rộng, cổ áo giao nhau khi mặc, áo xẻ hai bên hông, dài tay, cổ tay rộng, thân áo dài chấm gót chân (thân áo được may bằng năm, sáu tấm vải).</p>
+
+<p><strong>Áo dài tứ thân</strong></p>
+
+<p>Áo dài tứ thân vốn là trang phục dành cho những người dân ở tầng lớp bình dân.</p>
+
+<p><img alt='Áo dài tứ thân ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153310/ao-dai-tu-than.jpg' style='height:684px; width:439px' /></p>
+
+<p>Đó là bởi vì 2 vạt trước của chiếc áo được thiết kế rời nhau, có thể buộc lại cho gọn khi làm việc trong khi 2 vạt sau được may liền thành 1 tà áo.</p>
+
+<p><strong>Áo dài ngũ thân</strong></p>
+
+<p>Là kiểu áo do chúa Nguyễn Phúc Khoát đặt ra, áo ngũ thân, dựa trên tiền đề là áo tứ thân, có 5 vạt áo.</p>
+
+<p><img alt='Áo dài ngũ thân' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153407/ao-dai-ngu-than.jpg' style='height:450px; width:360px' /></p>
+
+<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>","lụa nhật","600000","1","","","1","85142834_773653949709503_6666853325834551296_o49.jpg","Áo dài bông hoa","Áo dài bông hoa","ao-dai-bong-hoa378","1");
+INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("11","5","Áo dài Dạ Hội","<p>Áo dài Dạ Hội</p>","lụa nhật","1000000","1","","","1","85195202_773653663042865_7979821151729745920_o89.jpg","Áo dài Dạ Hội","Áo dài Dạ Hội","ao-dai-da-hoi979","1");
+INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("12","4","Áo dài Dạ Hội AB","<p>Áo dài Dạ Hội AB</p>","lụa nhật","900000","1000000","2020-11-15","2020-12-08","1","84922140_773654203042811_7474135159747379200_o65.jpg","Áo dài Dạ Hội AB","Áo dài Dạ Hội AB","ao-dai-da-hoi-ab211","1");
+INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("13","5","Áo dài truyền thống VN","<p>Áo dài truyền thống VN</p>","Áo dài truyền thống VN","500000","1","","","1","83815495_773654023042829_651030464122847232_o6.jpg","Áo dài truyền thống VN","Áo dài truyền thống VN","ao-dai-truyen-thong-vn858","1");
+INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("14","1","Áo dài cách tân ABC","<p>Áo dài cách tân ABC</p>","Áo dài cách tân ABC","300000","1","","","1","85137522_773653723042859_9173677491418562560_n30.jpg","Áo dài cách tân ABC","Áo dài cách tân ABC","ao-dai-cach-tan-abc425","1");
+INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("15","2","Áo dài Hội Phố ABC","<p>Áo dài Hội Phố ABC</p>","Áo dài Hội Phố ABC","600000","1","","","1","84612966_773653896376175_640374783405457408_o42.jpg","Áo dài Hội Phố ABC","Áo dài Hội Phố ABC","ao-dai-hoi-pho-abc703","1");
+INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("16","1","Áo dài cách tân ABCS","<p>Áo dài cách tân ABCS</p>","Áo dài cách tân ABCS","100000000","1","","","1","86190117_773654536376111_1148412901342576640_n66.jpg","Áo dài cách tân ABCS","Áo dài cách tân ABCS","ao-dai-cach-tan-abcs944","1");
+INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("17","2","Áo dài Lê PHỐ A","<p>Áo dài Lê PHỐ A</p>","Áo dài Lê PHỐ A","400000","1","","","1","85195202_773653663042865_7979821151729745920_o59.jpg","Áo dài Lê PHỐ A","Áo dài Lê PHỐ A","ao-dai-le-pho-a699","1");
+INSERT INTO tbl_review (Rid, Rname, Remail, Rcomment, status, meta_slug, updated_at, created_at) VALUES ("1","test twst","vanduong@redweb.dk","tests","0","ao-dai-truyen-thong513","2020-09-24 10:45:03","2020-09-24 03:45:03");
+INSERT INTO tbl_review (Rid, Rname, Remail, Rcomment, status, meta_slug, updated_at, created_at) VALUES ("2","hoangvan","van.duong@redweb.dk","dfgdfh","0","ao-dai-truyen-thong513","2020-10-01 05:33:02","2020-09-30 22:33:02");
+INSERT INTO tbl_slider (id, img, status, created_at, updated_at) VALUES ("1","e3b4c48ba38c0220c847af75d94578bfqc2.png","1","","");
 INSERT INTO tbl_template_mail (id, label, template, status) VALUES ("1","Đơn Hàng Từ Vải Áo Dài Xinh Sunny","<table border='1' cellpadding='0' cellspacing='0' style='width:900px'>
 	<tbody>
 		<tr>
@@ -12112,4 +12887,4 @@ INSERT INTO tbl_template_mail (id, label, template, status) VALUES ("1","Đơn H
 		</tr>
 	</tbody>
 </table>","Hiện");
-INSERT INTO tbl_configmail_receiver (id, Email, name_email) VALUES ("1","hoangvan1491999@gmail.com","Hoàng Văn");
+INSERT INTO tbl_configmail_receiver (id, Email, name_email) VALUES ("1","van.duong@redweb.dk","Hoàng Văn");

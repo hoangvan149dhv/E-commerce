@@ -55,7 +55,7 @@
         </li>
         <!-- settings end -->
         <!-- inbox dropdown start-->
-        
+
         <li id="header_inbox_bar" class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <i class="fa fa-envelope-o"></i>
@@ -70,7 +70,6 @@
             <ul class="dropdown-menu extended inbox">
                 <li>
                     <a href="{{ URL::to('contact') }}"><p class="red">Bạn Có {{$alert }} <span style="color:red">
-                        <?php// echo $alert?>
                     </span>Góp Ý</p></a>
                 </li>
                 <li>
