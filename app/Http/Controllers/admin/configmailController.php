@@ -36,14 +36,14 @@ class configmailController extends AdminController
 
     //save config mail
     public function saveConfigmail(Request $req){
-        $pushlish_mail = empty($req->pushlish) ? 2 : 1;
-        Config::set(['config_admin.mail.pushlish'=> $pushlish_mail]);
+        $pushlish_mail = empty($req->publish) ? 2 : 1;
+        Config::set(['config_admin.mail.publish'=> $pushlish_mail]);
 
         $data['Email'] = $req->Email;
         $data['name_email'] = $req->name;
         $configMail = new configMailModel();
         $configMail->where('id',1)->update($data);
-        var_dump( Config::get('config_admin.mail.pushlish'));die;
+        var_dump( Config::get('config_admin.mail.publish'));die;
         Session::put('add-config-mail-success','Lưu thông tin thành công');
 
         return back();

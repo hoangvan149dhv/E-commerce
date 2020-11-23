@@ -202,7 +202,7 @@ route::get('/edit-product/{product_id}','admin\Productcontroller@edit_product');
 route::post('/update-product/{product_id}','admin\Productcontroller@update_Product');
 
 //PUSHLISH PRODUCTS
-route::get('/check-pushlish-product/{product_id}/{pushlish}','admin\Productcontroller@pushlish');
+route::get('/check-publish-product/{product_id}/{publish}','admin\Productcontroller@publish');
 
 ///////////////////////////////////////////-------INFO CUSTOMER ORDER-------////////////////////////////////////////////
 route::get('/thong-tin-don-hang/{order_id}','admin\AdminController@infocustomerorder');

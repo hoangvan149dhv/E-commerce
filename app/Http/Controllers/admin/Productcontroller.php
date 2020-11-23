@@ -78,7 +78,7 @@ class Productcontroller extends AdminController {
         $data['category_id']      = $Request->category;
         $data['product_Name']     = $Request->name;
         $data['product_desc']     = empty($Request->mota)? "Chưa có thông tin" : $Request->mota;
-        $data['pushlish']         = empty($Request->pushlish) ? 0 : $Request->pushlish;
+        $data['publish']         = empty($Request->publish) ? 0 : $Request->publish;
 
         $data['product_material'] = $Request->material;
         $data['product_price_promotion'] = (empty($Request->promotion_price) || ($Request->promotion_price >= $Request->price)) ? 1 : $Request->promotion_price;
@@ -93,7 +93,7 @@ class Productcontroller extends AdminController {
             $data['promotion_end_date']      = null;
             if ( $Request->promotion_price > 1) {
                 Session::put('alert-danger-product','Vui lòng chọn thời gian khuyến mãi');
-                
+
                 return back();
             }
             $data['product_price_promotion'] = 1;
@@ -103,7 +103,7 @@ class Productcontroller extends AdminController {
         {
             if ( date($Request->promotion_start_date) > date($Request->promotion_end_date)) {
                 Session::put('alert-danger-product','Vui lòng chọn thời gian bắt đầu phải nhỏ hơn thời gian kết thúc');
-                
+
                 return back();
             }
             else{
@@ -215,7 +215,7 @@ class Productcontroller extends AdminController {
         $data['category_id']  = $Request->category;
         $data['product_Name'] = $Request->name;
         $data['product_desc'] = empty($Request->mota)? "Chưa có thông tin" : $Request->mota;
-        $data['pushlish']     = empty($Request->pushlish) ? 0 : $Request->pushlish;
+        $data['publish']     = empty($Request->publish) ? 0 : $Request->publish;
 
         $data['product_material']        = $Request->material;
         $data['product_price']           = $Request->price;
@@ -230,7 +230,7 @@ class Productcontroller extends AdminController {
             $data['promotion_end_date']      = null;
             if ( $Request->promotion_price > 1) {
                 Session::put('alert-danger-product','Vui lòng chọn thời gian khuyến mãi');
-                
+
                 return back();
             }
             $data['product_price_promotion'] = 1;
@@ -240,7 +240,7 @@ class Productcontroller extends AdminController {
         {
             if ( date($Request->promotion_start_date) > date($Request->promotion_end_date)) {
                 Session::put('alert-danger-product','Vui lòng chọn thời gian bắt đầu phải nhỏ hơn thời gian kết thúc');
-                
+
                 return back();
             }
             else{
@@ -275,11 +275,11 @@ class Productcontroller extends AdminController {
             return back();
         }
     }
-    public function pushlish($product_id, $pushlish) {
+    public function publish($product_id, $pushlish) {
         $pushlish = $pushlish == 1 ? 0 : 1;
         $data = array();
 
-        $data['pushlish'] = $pushlish;
+        $data['publish'] = $pushlish;
 
         DB::table('tbl_product')->where('product_id',$product_id)->update($data);
 

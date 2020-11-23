@@ -113,7 +113,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Trạng thái (bật)</label>
-                                    <input type="checkbox"<?php if ($product->pushlish == 1) : ?> checked="checked" <?php endif?> value="1"  name="pushlish"  ></label>
+                                    <input type="checkbox"<?php if ($product->publish == 1) : ?> checked="checked" <?php endif?> value="1"  name="publish"  ></label>
                                 </div>
                                 <button type="submit" name="update" class="btn btn-info">Cập Nhật</button>
                             </form>

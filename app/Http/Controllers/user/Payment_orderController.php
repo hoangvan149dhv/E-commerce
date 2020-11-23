@@ -13,6 +13,8 @@ use App\CustomerorderModel;
 use App\Http\Controllers\sendMailController;
 use App\templateMailModel;
 use App\Http\Controllers\user\HomeController;
+require $_SERVER['DOCUMENT_ROOT'].$_SERVER['REQUEST_URI'].'mpdf/vendor/autoload.php';
+
 class Payment_orderController extends HomeController
 {
     public function payment_order(Request $request){
@@ -100,6 +102,10 @@ class Payment_orderController extends HomeController
             }
             Cart::destroy();
 
+            $mpdf = new \Mpdf\Mpdf();
+            $mpdf->WriteHTML('<h1>Hello world!</h1>');
+            $mpdf->Output('hoa don.pdf','D');
+            $mpdf->SetTitle("xxx");
             return view('user.payment.payment_order');
         }
     }

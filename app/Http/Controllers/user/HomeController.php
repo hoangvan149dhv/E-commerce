@@ -48,7 +48,7 @@
                 ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
                 ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
                 ->where('tbl_product.promotion_end_date', '>=', self::getcurrentTime())
-                ->where('tbl_product.pushlish','=', 1)
+                ->where('tbl_product.publish','=', 1)
                 ->orwhere('tbl_product.promotion_end_date', '=', null)
                 ->orwhere('product_price_promotion', '=', 1)
                 ->orderby('product_id', 'desc')->paginate(15);
@@ -90,7 +90,7 @@
                     ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
                     ->orderby('product_id', 'desc')->where('product_Name', 'like', '%' . $key_word . '%')
                     ->orwhere('product_material', 'like', '%' . $key_word . '%')
-                    ->where('tbl_product.pushlish','=', 1)
+                    ->where('tbl_product.publish','=', 1)
                     ->where('tbl_product.promotion_end_date', '>=', self::getcurrentTime())
                     ->orwhere('tbl_product.promotion_end_date', '=', null)
                     ->orwhere('product_price_promotion', '=', 1)->paginate(15);
@@ -109,7 +109,7 @@
                 ->orderby('product_id', 'desc')->where('product_Name', 'like', '%' . $key_word . '%')
                 ->orwhere('product_material', 'like', '%' . $key_word . '%')
                 ->where('tbl_product.promotion_end_date', '>=', self::getcurrentTime())
-                ->where('tbl_product.pushlish','=', 1)
+                ->where('tbl_product.publish','=', 1)
                 ->orwhere('tbl_product.promotion_end_date', '=', null)
                 ->orwhere('product_price_promotion', '=', 1)->paginate(20);
 
@@ -126,7 +126,7 @@
                 ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
                 ->where('product_price_promotion', '>', '1')
                 ->where('tbl_product.promotion_end_date', '>=', self::getcurrentTime())
-                ->where('tbl_product.pushlish','=', 1)
+                ->where('tbl_product.publish','=', 1)
                 ->orwhere('tbl_product.promotion_end_date', '=', null)
                 ->orwhere('product_price_promotion', '=', 1)
                 ->orderby('product_price_promotion', 'desc')->paginate(10);

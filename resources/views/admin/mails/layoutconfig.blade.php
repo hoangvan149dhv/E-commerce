@@ -41,7 +41,7 @@
                             <div class="checkbox">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Trạng thái gửi mail (bật)</label>
-                                    <input type="checkbox" checked="checked" name="pushlish" value="<?php echo Config::get('config_admin.mail.pushlish'); ?>"  name="pushlish"  ></label>
+                                    <input type="checkbox" checked="checked" name="publish" value="<?php echo Config::get('config_admin.mail.publish'); ?>"  name="publish"  ></label>
                                 </div>
                             </div>
                         </div>

@@ -67,7 +67,7 @@
 </div>
 <input type="color" name="" id="">
 xxxxxxxxxxxxxxx
-<?php echo Config::get('config_admin.mail.pushlish'); ?>
+<?php echo Config::get('config_admin.mail.publish'); ?>
 </body>
 </html>
 <script>

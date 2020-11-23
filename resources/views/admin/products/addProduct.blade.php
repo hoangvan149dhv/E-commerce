@@ -88,7 +88,7 @@
                     <div class="checkbox">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Trạng thái (bật)</label>
-                            <input type="checkbox" checked="checked"  value="1"  name="pushlish"  ></label>
+                            <input type="checkbox" checked="checked"  value="1"  name="publish"  ></label>
                         </div>
                     </div>
                     <button type="submit" name="submit" class="btn btn-info">Thêm Sản Phẩm</button>

@@ -50,12 +50,12 @@
               <td style="text-align:center">{{number_format($product->product_price)}}.VNĐ</td>
               <td style="text-align:center">{{number_format($product->product_price_promotion)}}.VNĐ</td>
               <td>
-                <?php if($product->pushlish == 1):?>
-                <a href="{{URL::to('/check-pushlish-product/'.$product->product_id.'/'.$product->pushlish)}}"class="active" ui-toggle-class="">
+                <?php if($product->publish == 1):?>
+                <a href="{{URL::to('/check-publish-product/'.$product->product_id.'/'.$product->publish)}}"class="active" ui-toggle-class="">
                   <i class="fa fa-check-circle text-success text-active"></i>
                 </a>
                 <?php else : ?>
-                <a href="{{URL::to('/check-pushlish-product/'.$product->product_id.'/'.$product->pushlish)}}" class="active" ui-toggle-class="">
+                <a href="{{URL::to('/check-publish-product/'.$product->product_id.'/'.$product->publish)}}" class="active" ui-toggle-class="">
                   <i class="fa fa-times-circle text-danger text-active"></i>
                 </a>
                 <?php endif ?>
