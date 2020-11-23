@@ -127,8 +127,6 @@
                 ->where('product_price_promotion', '>', '1')
                 ->where('tbl_product.promotion_end_date', '>=', self::getcurrentTime())
                 ->where('tbl_product.publish','=', 1)
-                ->orwhere('tbl_product.promotion_end_date', '=', null)
-                ->orwhere('product_price_promotion', '=', 1)
                 ->orderby('product_price_promotion', 'desc')->paginate(10);
 
             return view('user.promotion.promotion')
