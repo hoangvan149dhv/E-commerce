@@ -3,7 +3,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\admin\AdminController;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
-use App\sliderModel;
+use App\Http\Model\sliderModel;
 use DB;
 class sliderController extends AdminController
 {

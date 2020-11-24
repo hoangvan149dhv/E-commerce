@@ -3,7 +3,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use DB;
 use Session;
-use App\contactModel;
+use App\Http\Model\contactModel;
 use Illuminate\Support\Facades\Redirect;
 use Validator;
 use App\Http\Controllers\admin\AdminController;

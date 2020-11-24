@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use Session;
-use App\Http\Requests; //
+use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
-use App\newsadminModel;
+use App\Http\Model\newsadminModel;
 use DB;
 use App\Http\Controllers\admin\AdminController;
 class newsadminController extends AdminController

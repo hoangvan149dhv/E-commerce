@@ -4,7 +4,7 @@ namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use DB;
 use Session;
-use App\contactinfoModel;
+use App\Http\Model\contactinfoModel;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\admin\AdminController;
 class contactinfoController extends AdminController

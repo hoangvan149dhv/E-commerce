@@ -1,13 +1,9 @@
 <?php
 
 namespace App\Http\Controllers\admin;
-use Illuminate\Http\Request;
 use DB;
 use Session;
-use App\contactModel;
-use Illuminate\Support\Facades\Redirect;
-use App\ReviewModel;
-use App\contactinfoModel;
+use App\Http\Model\ReviewModel;
 use Validator;
 use App\Http\Controllers\admin\AdminController;
 class reviewsController extends AdminController {

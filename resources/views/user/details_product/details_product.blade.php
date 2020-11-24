@@ -110,6 +110,7 @@
                     <span>
                         <input data-validation="length" data-validation-length="5-70" data-validation-error-msg='vui lòng điền 5- 70 kí tự' type="text" name="name" placeholder="Họ tên"/>
                         <input data-validation="length" data-validation-length="5-100" data-validation-error-msg='vui lòng điền 5- 100 kí tự' type="email" name="email" placeholder="Email"/>
+                        <input type="hidden" name="pid" value="{{$details_product->product_id}}" />
                     </span>
                     <textarea name="comment" data-validation="length" data-validation-length="5-1000" data-validation-error-msg='vui lòng điền 5- 1000 kí tự' placeholder="Nội dung"></textarea>
                     <?php

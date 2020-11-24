@@ -4,7 +4,7 @@ namespace App\Http\Controllers\user;
 use Illuminate\Http\Request;
 use DB;
 use Session;
-use App\contactModel;
+use App\Http\Model\contactModel;
 use Illuminate\Support\Facades\Redirect;
 use Validator;
 use App\contactinfoModel;
@@ -24,7 +24,7 @@ class contactController extends HomeController{
         $contactModel->status= 0;
         $contactModel->save();
         Session::put('success','Cảm ơn bạn đã góp ý');
-        
+
         return redirect('/lien-he');
     }
 }

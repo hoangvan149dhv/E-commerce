@@ -5,8 +5,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Session;
 use Redirect;
-use App\configMailModel;
-use App\templateMailModel;
+use App\Http\Model\configMailModel;
+use App\Http\Model\templateMailModel;
 use App\Http\Controllers\admin\AdminController;
 use Illuminate\Support\Facades\Config;
 class configmailController extends AdminController

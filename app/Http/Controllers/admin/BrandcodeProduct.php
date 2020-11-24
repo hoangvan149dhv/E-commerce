@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use DB;
 use Session;
 use Illuminate\Database\Query\Builder;
-use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\admin\loginController as loginController;
 class BrandcodeProduct extends AdminController

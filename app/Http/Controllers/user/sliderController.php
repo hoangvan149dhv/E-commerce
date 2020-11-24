@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers\user;
 use App\Http\Controllers\user\HomeController;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Http\Request;
 use App\sliderModel;
 use DB;
-use App\contactinfoModel;
 class sliderController extends HomeController
 {
     function slider_user(){

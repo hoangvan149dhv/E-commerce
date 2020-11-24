@@ -4,7 +4,7 @@ namespace App\Http\Controllers\user;
 use Illuminate\Http\Request;
 use DB;
 use Session;
-use App\contactinfoModel;
+use App\Http\Model\contactinfoModel;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\user\HomeController;
 class contactinfoController extends HomeController
@@ -25,7 +25,7 @@ class contactinfoController extends HomeController
         $data['info_contact_mail'] = $Request->email;
         $contactinfoModel = new contactinfoModel;
         $contactinfoModel->where('id_Info',1)->update($data);
-        
+
         return back();
     }
 }

@@ -5,9 +5,9 @@ use DB;
 use Session;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
-use App\ReviewModel;
+use App\Http\Model\ReviewModel;
 use App\Http\Controllers\admin\AdminController;
-use App\contactinfoModel;
+use App\Http\Model\contactinfoModel;
 class Productcontroller extends AdminController {
             ////SEO GOOGLE UTF8 convert UTF
     public function utf8convert($str) {

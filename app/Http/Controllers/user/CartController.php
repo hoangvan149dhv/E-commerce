@@ -6,20 +6,21 @@ use Illuminate\Http\Request;
 use Cart;
 use DB;
 use Session;
-use App\Http\Requests; //
+use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
-use App\WardModel;
-use App\ProvinceModel;
-use App\CityModel;
+use App\Http\Model\WardModel;
+use App\Http\Model\ProvinceModel;
+use App\Http\Model\CityModel;
 use App\Http\Controllers\user\HomeController;
-use App\feeShipModel;
+use App\Http\Model\feeShipModel;
 class CartController extends HomeController
 {
     public function show_cart_ajax(Request $request){
 
         return view('user.cart.show_cartajax');
     }
-    public function save_cart_ajax(Request $request){
+    public function save_cart_ajax(Request $request)
+    {
 
         $data['id'] =$request->cart_id;
         $data['qty']= $request->cart_qty;
@@ -27,7 +28,11 @@ class CartController extends HomeController
         $data['price'] =$request->cart_price;
         $data['weight'] = 0; //default
         $data['options']['images']=$request->cart_image;
-        Cart::add($data);
+        if (!Cart::add($data))
+        {
+            return back();
+        }
+//        Cart::add($data);
         session::put('message',Cart::content()->count());
 
     }
@@ -45,7 +50,11 @@ class CartController extends HomeController
         $data['price'] =$product_info->product_price;
         $data['weight'] = 0;
         $data['options']['images']=$product_info->product_image;
-        Cart::add($data);
+        if (!Cart::add($data))
+        {
+            return back();
+        }
+//        Cart::add($data);
         session::put('message',Cart::content()->count());
 
         return Redirect::to('/hien-thi-gio-hang');
@@ -66,11 +75,11 @@ class CartController extends HomeController
            Cart::remove($rowId);
 
            return back();
-
-       }else{
+       }
+       else
+       {
 
             return back();
-
        }
     }
    public function del_cart_all($rowId){
@@ -89,24 +98,22 @@ class CartController extends HomeController
         }
     }
    //update cart quantity
-   public function update_Category_quantity(Request $request){
+   public function update_Cart_quantity(Request $request)
+   {
+        $rowId = $request->rowId_cart;
+        $qty = $request->soluong;
+        if( is_numeric($qty) )
+        {
+            Cart::update($rowId,$qty);
 
-    $rowId = $request->rowId_cart;
+            return back();
 
-    $qty = $request->soluong;
+        }
+        else
+        {
+            Cart::destroy($rowId);
 
-    if(is_numeric($qty)){
-
-        Cart::update($rowId,$qty);
-
-        return back();
-
-    }else{
-
-        Cart::destroy($rowId);
-
-        return back();
-
+            return back();
         }
     }
 }

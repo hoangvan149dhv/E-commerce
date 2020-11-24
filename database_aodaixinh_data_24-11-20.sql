@@ -11965,12 +11965,12 @@ INSERT INTO tbl_category_product (category_id, category_name, category_desc, cat
 INSERT INTO tbl_category_product (category_id, category_name, category_desc, category_status) VALUES ("3","Áo dài cách tân","abcde","1");
 INSERT INTO tbl_category_product (category_id, category_name, category_desc, category_status) VALUES ("4","Lụa nhung","tests","1");
 INSERT INTO tbl_category_product (category_id, category_name, category_desc, category_status) VALUES ("5","Áo dài truyền thông","tests","1");
-INSERT INTO tbl_count (id, counts) VALUES ("1","1336");
-INSERT INTO tbl_count (id, counts) VALUES ("1","1336");
-INSERT INTO tbl_count (id, counts) VALUES ("1","1337");
-INSERT INTO tbl_count (id, counts) VALUES ("1","1309");
-INSERT INTO tbl_count (id, counts) VALUES ("1","1309");
-INSERT INTO tbl_count (id, counts) VALUES ("1","1310");
+INSERT INTO tbl_count (id, counts) VALUES ("1","1342");
+INSERT INTO tbl_count (id, counts) VALUES ("1","1342");
+INSERT INTO tbl_count (id, counts) VALUES ("1","1343");
+INSERT INTO tbl_count (id, counts) VALUES ("1","1315");
+INSERT INTO tbl_count (id, counts) VALUES ("1","1315");
+INSERT INTO tbl_count (id, counts) VALUES ("1","1316");
 INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("11","Duong Hoang Van","test, Xã Thái Ninh, Huyện Thanh Ba, Tỉnh Phú Thọ","0912345678");
 INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("12","Ngo Nguyen Huynh Ngan","128 Lê Sao, Phường Phú Thạnh, Quận Tân Phú, Thành phố Hồ Chí Minh","0909677308");
 INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("13","Ngô Nguyễn Huỳnh Ngân","128A Lê Sao, Phường Phú Thọ Hòa, Quận Tân Phú, Thành phố Hồ Chí Minh","0909677308");
@@ -12756,10 +12756,8 @@ INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, pr
 INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("13","5","Áo dài truyền thống VN","<p>Áo dài truyền thống VN</p>","Áo dài truyền thống VN","500000","1","","","1","83815495_773654023042829_651030464122847232_o6.jpg","Áo dài truyền thống VN","Áo dài truyền thống VN","ao-dai-truyen-thong-vn858","1");
 INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("14","1","Áo dài cách tân ABC","<p>Áo dài cách tân ABC</p>","Áo dài cách tân ABC","300000","1","","","1","85137522_773653723042859_9173677491418562560_n30.jpg","Áo dài cách tân ABC","Áo dài cách tân ABC","ao-dai-cach-tan-abc425","1");
 INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("15","2","Áo dài Hội Phố ABC","<p>Áo dài Hội Phố ABC</p>","Áo dài Hội Phố ABC","600000","1","","","1","84612966_773653896376175_640374783405457408_o42.jpg","Áo dài Hội Phố ABC","Áo dài Hội Phố ABC","ao-dai-hoi-pho-abc703","1");
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("16","1","Áo dài cách tân ABCS","<p>Áo dài cách tân ABCS</p>","Áo dài cách tân ABCS","100000000","1","","","1","86190117_773654536376111_1148412901342576640_n66.jpg","Áo dài cách tân ABCS","Áo dài cách tân ABCS","ao-dai-cach-tan-abcs944","1");
+INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("16","1","Áo dài cách tân ABCS","<p>Áo dài cách tân ABCS</p>","Áo dài cách tân ABCS","1000000","10000000","2020-11-22","2020-11-26","1","86190117_773654536376111_1148412901342576640_n66.jpg","Áo dài cách tân ABCS","Áo dài cách tân ABCS","ao-dai-cach-tan-abcs62","1");
 INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, brandcode_id, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("17","2","Áo dài Lê PHỐ A","<p>Áo dài Lê PHỐ A</p>","Áo dài Lê PHỐ A","400000","1","","","1","85195202_773653663042865_7979821151729745920_o59.jpg","Áo dài Lê PHỐ A","Áo dài Lê PHỐ A","ao-dai-le-pho-a699","1");
-INSERT INTO tbl_review (Rid, Rname, Remail, Rcomment, status, meta_slug, updated_at, created_at) VALUES ("1","test twst","vanduong@redweb.dk","tests","0","ao-dai-truyen-thong513","2020-09-24 10:45:03","2020-09-24 03:45:03");
-INSERT INTO tbl_review (Rid, Rname, Remail, Rcomment, status, meta_slug, updated_at, created_at) VALUES ("2","hoangvan","van.duong@redweb.dk","dfgdfh","0","ao-dai-truyen-thong513","2020-10-01 05:33:02","2020-09-30 22:33:02");
 INSERT INTO tbl_slider (id, img, status, created_at, updated_at) VALUES ("1","e3b4c48ba38c0220c847af75d94578bfqc2.png","1","","");
 INSERT INTO tbl_template_mail (id, label, template, status) VALUES ("1","Đơn Hàng Từ Vải Áo Dài Xinh Sunny","<table border='1' cellpadding='0' cellspacing='0' style='width:900px'>
 	<tbody>

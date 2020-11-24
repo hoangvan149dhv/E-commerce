@@ -7,9 +7,9 @@ use Session;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Response;
 use Carbon\Carbon;
-use App\CustomerorderModel;
-use App\contactinfoModel;
-use App\count;
+use App\Http\Model\CustomerorderModel;
+use App\Http\Model\contactinfoModel;
+use App\Http\Model\count;
 use App\Http\Controllers\admin\loginController ;
 class AdminController extends loginController{
 

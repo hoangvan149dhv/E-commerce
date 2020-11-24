@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 use Cart;
 use DB;
 use Session;
-use App\Http\Requests; //
+use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
-use App\CustomerorderModel;
+use App\Http\Model\CustomerorderModel;
 use App\Http\Controllers\sendMailController;
-use App\templateMailModel;
+use App\Http\Model\templateMailModel;
 use App\Http\Controllers\user\HomeController;
 require dirname(__FILE__, 5). '/mpdf/vendor/autoload.php';
 
@@ -95,7 +95,11 @@ class Payment_orderController extends HomeController
                             $template,
                             $item_detail_order);
                         $mpdf = new \Mpdf\Mpdf();
-                        $mpdf->WriteHTML($file_template_mail);
+                        $EmailName = configMailModel::select()->get();
+//                        var_dump($EmailName);die;
+                        view()->share('item_detail_order',$item_detail_order);
+                        view()->share('template',$template);
+                        $mpdf->WriteHTML($template[0]->template);
                         $mpdf->Output('hoa don.pdf','I');
                         $mpdf->SetTitle("xxx");
                     }

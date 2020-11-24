@@ -4,18 +4,18 @@
 
     use DB;
     use Session;
-    use App\sliderModel;
-    use App\OrderModel;
+    use App\Http\Model\sliderModel;
+    use App\Http\Model\OrderModel;
     use Illuminate\Http\Request;
     use App\Http\Controllers\Controller;
     use App\Http\Requests;
     use Illuminate\Support\Facades\Redirect;
     use Illuminate\Http\Response;
     use Carbon\Carbon;
-    use App\CustomerorderModel;
-    use App\contactinfoModel;
+    use App\Http\Model\CustomerorderModel;
+    use App\Http\Model\contactinfoModel;
     use Illuminate\Support\Facades\Cookie;
-    use App\count;
+    use App\Http\Model\count;
 
     class HomeController extends Controller
     {
@@ -82,9 +82,12 @@
         {
             $key_word = $request->search;
 
-            if ($key_word == '') {
+            if ($key_word == '')
+            {
                 return back();
-            } else {
+            }
+            else
+            {
                 $search = DB::table('tbl_product')
                     ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
                     ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')

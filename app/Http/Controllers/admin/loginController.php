@@ -10,7 +10,7 @@ use Session;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Response;
 use Carbon\Carbon;
-use App\count;
+use App\Http\Model\count;
 class loginController extends Controller
 {
     //check login if user already login

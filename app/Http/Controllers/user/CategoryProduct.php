@@ -8,7 +8,7 @@
     use Session;
     use App\Http\Requests;
     use Illuminate\Support\Facades\Redirect;
-    use App\contactinfoModel;
+    use App\Http\Model\contactinfoModel;
 
     class CategoryProduct extends HomeController
     {

@@ -54,7 +54,7 @@ Route::get('/delete/{rowId}','user\CartController@del_cart');
 Route::get('/delete-all/{rowId}','user\CartController@del_cart_all');
 
 //UPDATE CART QUANTITY
-Route::post('/update_cart_quantity','user\CartController@update_Category_quantity');
+Route::post('/update_cart_quantity','user\CartController@update_Cart_quantity');
 
 
 //ORDER SUCCESS

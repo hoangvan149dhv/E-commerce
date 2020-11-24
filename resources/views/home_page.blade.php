@@ -131,7 +131,7 @@
                 <div id="slider-carousel" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators" style="z-index:1">
                         <?php
-                        use App\sliderModel;
+                        use App\Http\Model\sliderModel;
                         $alert = sliderModel::all()->where('status', 1)->count();
                         ?>
                         @for ($i = 0; $i < $alert; $i++)

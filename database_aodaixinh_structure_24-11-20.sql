@@ -179,7 +179,7 @@ CREATE TABLE `tbl_review` (
   `Remail` varchar(70) NOT NULL,
   `Rcomment` text NOT NULL,
   `status` int(11) NOT NULL,
-  `meta_slug` varchar(255) NOT NULL,
+  `product_id` int(11) DEFAULT NULL,
   `updated_at` datetime NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`Rid`)

@@ -8,7 +8,7 @@ use DB;
 use Session;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
-use App\contactinfoModel;
+use App\Http\Model\contactinfoModel;
 use App\Http\Controllers\user\HomeController;
 class InfocustomerController extends HomeController {
 
