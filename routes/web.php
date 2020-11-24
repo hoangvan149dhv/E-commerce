@@ -338,7 +338,8 @@ Route::get('/send-test-mail','sendMailController@sendtestMail');
 
 //TEST MAIL
 Route::get('/testmail','sendMailController@test');
-Route::get('/test',function (){
+Route::get('/test','sendMailController@abc');
+//Route::get('/test',function (){
 
-    return view('mailform');
-});
+//    return view('mailform');
+//});

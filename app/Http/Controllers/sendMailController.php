@@ -1,18 +1,15 @@
 <?php
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Session;
 use Redirect;
-use App\configMailModel;
-use App\templateMailModel;
+use App\Http\Model\configMailModel;
+use App\Http\Model\templateMailModel;
 use View;
 use Mail;
-use App\Http\Controllers\Controller;
 use DB;
-use App\CustomerorderModel;
-use Illuminate\Support\Facades\Config;
+use App\Http\Model\CustomerorderModel;
+use App\Http\library\replace_template;
 class sendMailController extends Controller
 {
     /**
@@ -120,6 +117,11 @@ class sendMailController extends Controller
 //        } else {
 //            echo 'Mail sent';
 //        }
+    }
+    public function abc(){
+        $template = \App\Http\Model\templateMailModel::where('status', 'Hiện')->get();
+        $replace_Template = new replace_template();
+        $replace_Template->replace_orderID(39, $template[0]->template);
     }
 }
 

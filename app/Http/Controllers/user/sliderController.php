@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\user;
 use App\Http\Controllers\user\HomeController;
-use App\sliderModel;
+use App\Http\Model\sliderModel;
 use DB;
 class sliderController extends HomeController
 {

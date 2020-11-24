@@ -7,7 +7,7 @@ use Session;
 use App\Http\Model\contactModel;
 use Illuminate\Support\Facades\Redirect;
 use Validator;
-use App\contactinfoModel;
+use App\Http\Model\contactinfoModel;
 use App\Http\Controllers\user\HomeController;
 class contactController extends HomeController{
     public function Contact(Request $request){

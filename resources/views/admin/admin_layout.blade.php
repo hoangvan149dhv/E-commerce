@@ -35,8 +35,7 @@
                  <i class="fa fa-bell-o"></i>
                  <span class="badge bg-success">
                     <?php
-                    //  TẠO MODEL
-                        use App\ReviewModel;
+                        use App\Http\Model\ReviewModel;
                         $alertt = ReviewModel::all()->where('status',0)->count();
                         echo $alertt;
                     ?>
@@ -61,7 +60,7 @@
                 <i class="fa fa-envelope-o"></i>
                 <span class="badge bg-important">
                 <?php
-                    use App\contactModel;
+                    use App\Http\Model\contactModel;
                     $alert = contactModel::all()->where('status',0)->count();
                     echo $alert;
                 ?>
@@ -135,9 +134,10 @@
                 <li class="sub-menu">
                     <a  @yield('order') href="#">
                         <i class="fa fa-shopping-cart"></i>
-                        <span >Đơn Hàng (<?php
+                        <span >Đơn Hàng (
+                            <?php
                             //  TẠO MODEL
-                                use App\OrderModel;
+                                use App\Http\Model\OrderModel;
                                 $order_status_notcomplete = OrderModel::all()->where('status',0)->count();
                                 echo $order_status_notcomplete;
                             ?>)</span>

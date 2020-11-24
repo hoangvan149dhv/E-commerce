@@ -32,7 +32,7 @@ class CartController extends HomeController
         {
             return back();
         }
-//        Cart::add($data);
+
         session::put('message',Cart::content()->count());
 
     }
@@ -54,7 +54,6 @@ class CartController extends HomeController
         {
             return back();
         }
-//        Cart::add($data);
         session::put('message',Cart::content()->count());
 
         return Redirect::to('/hien-thi-gio-hang');

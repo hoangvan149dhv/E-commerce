@@ -1,6 +1,6 @@
 <?php
     use Carbon\Carbon;
-    use App\OrderModel;
+    use App\Http\Model\OrderModel;
 ?>
 @extends('admin.admin_layout')
 @section('content')
@@ -9,18 +9,10 @@
       <div class="panel-heading">
        TỔNG QUAN
       </div>
-      <?php
-    //   $message = Session::get('message');
-    //   if($message){
-    //       echo $message;
-    //       Session::put('message',null);
-    //   }
-  ?>
 		<div class="agil-info-calendar">
       <div class="col-md-6 w3agile-notifications">
         <div class="notifications">
           <!--notification start-->
-          {{-- {{ $alert }} --}}
             <header class="panel-heading">
               Lượt truy cập
             </header>
@@ -53,7 +45,7 @@
                   <ul class="clearfix notification-meta">
                     <li class="pull-left notification-sender"><span><a>Đơn chưa hoàn thành</a></span></li>
                     <li class="pull-right notification-time">
-                      <?PHP
+                      <?php
                         $order_status_notcomplete = OrderModel::all()->where('status',0)->count();
                         echo $order_status_notcomplete;
                         ?>
@@ -67,7 +59,7 @@
                   <ul class="clearfix notification-meta">
                     <li class="pull-left notification-sender"><a>Đã giao xong</a>  </li>
                     <li class="pull-right notification-time">
-                      <?PHP
+                      <?php
                         $order_status_complete = OrderModel::all()->where('status',1)->count();
                         echo $order_status_complete;
                         ?>
@@ -86,7 +78,6 @@
       <div class="col-md-6 w3agile-notifications">
         <div class="notifications">
           <!--notification start-->
-          {{-- {{ $alert }} --}}
             <header class="panel-heading">
               Doanh thu
             </header>
@@ -134,13 +125,6 @@
                               $subtotal = $key->price;
                               $total += $subtotal;
                           @endphp
-                          <?php
-                          // $productp = 0;
-                          //   $productp += $product->price;
-                          //   echo "<pre>";
-                          // print_r($product);
-                          // echo"</pre>";
-                          ?>
                       @endforeach
                           <?php
                           echo number_format($total) .".VNĐ";

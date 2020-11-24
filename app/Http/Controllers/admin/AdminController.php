@@ -45,11 +45,11 @@ class AdminController extends loginController{
 
         $month=  Carbon::now()->month;
 
-        $product_order_date = DB::table('tbl_order')->where('status',1)->whereDate('order_date',$date)->get();
+        $product_order_date = DB::table('tbl_orders')->where('status',1)->whereDate('order_date',$date)->get();
 
-        $product_order_month = DB::table('tbl_order')->where('status',1)->whereMonth('order_date',$month)->get();
+        $product_order_month = DB::table('tbl_orders')->where('status',1)->whereMonth('order_date',$month)->get();
 
-        session::put('message', DB::table('tbl_order')->where('status',0)->count());
+        session::put('message', DB::table('tbl_orders')->where('status',0)->count());
 
         $response = new Response();
 
@@ -72,9 +72,9 @@ class AdminController extends loginController{
     //QUẢN LÝ ĐƠN HÀNG
     public function order(){
 
-        $product_order = DB::table('tbl_order')->orderby('orderid','desc')->paginate(3);
+        $product_order = DB::table('tbl_orders')->orderby('orderid','desc')->paginate(3);
 
-        session::put('message', DB::table('tbl_order')->where('status',0)->count());
+        session::put('message', DB::table('tbl_orders')->where('status',0)->count());
 
         return view('admin.order.order')->with('product_order',$product_order);
 
@@ -92,7 +92,7 @@ class AdminController extends loginController{
 
         $data['status'] = 1;
 
-        DB::table('tbl_order')->where('orderid',$orderid)->update($data);
+        DB::table('tbl_orders')->where('orderid',$orderid)->update($data);
 
         return back();
     }
@@ -102,7 +102,7 @@ class AdminController extends loginController{
 
         $data['status'] = 0;
 
-        DB::table('tbl_order')->where('orderid',$orderid)->update($data);
+        DB::table('tbl_orders')->where('orderid',$orderid)->update($data);
 
         return back();
 
@@ -111,7 +111,7 @@ class AdminController extends loginController{
     //remove oder complete
     public function delete_status_1($orderid){
 
-        DB::table('tbl_order')->where('orderid',$orderid)->delete();
+        DB::table('tbl_orders')->where('orderid',$orderid)->delete();
 
         return back();
 
@@ -122,7 +122,7 @@ class AdminController extends loginController{
 
         $order_id =$request->orderid;
 
-        isset($order_id)? DB::table('tbl_order')->whereIn('orderid',$order_id)->delete() : "";
+        isset($order_id)? DB::table('tbl_orders')->whereIn('orderid',$order_id)->delete() : "";
         return back();
 
     }
@@ -131,7 +131,7 @@ class AdminController extends loginController{
 
         $key_word = $request->search;
 
-        $search = DB::table('tbl_order')->orderby('orderid','desc')->where('cusname','like','%'.$key_word.'%')
+        $search = DB::table('tbl_orders')->orderby('orderid','desc')->where('cusname','like','%'.$key_word.'%')
                     ->orWhere('status',$key_word)
                     ->orWhere('productname','like','%'.$key_word.'%')->paginate(30);
 
@@ -143,7 +143,7 @@ class AdminController extends loginController{
 
         $key_word = $request->search;
 
-        $search = DB::table('tbl_order')->orderby('orderid','desc')->where('cusname','like','%'.$key_word.'%')
+        $search = DB::table('tbl_orders')->orderby('orderid','desc')->where('cusname','like','%'.$key_word.'%')
         ->orWhere('status',$key_word)
         ->orWhere('productname','like','%'.$key_word.'%')->paginate(30);
         return view('admin.search.search')->with('search',$search);
@@ -152,7 +152,7 @@ class AdminController extends loginController{
 
     public function order_not_complete(){
 
-        $order_not_complete = DB::table('tbl_order')->orderby('orderid','desc')->where('status',0)->paginate(30);
+        $order_not_complete = DB::table('tbl_orders')->orderby('orderid','desc')->where('status',0)->paginate(30);
 
         return view('admin.order.order_not_complete')->with('order_not_complete',$order_not_complete);
 
@@ -160,7 +160,7 @@ class AdminController extends loginController{
 
     public function order_complete(){
 
-        $order_complete = DB::table('tbl_order')->orderby('orderid','desc')->where('status',1)->paginate(30);
+        $order_complete = DB::table('tbl_orders')->orderby('orderid','desc')->where('status',1)->paginate(30);
 
         return view('admin.order.order_complete')->with('order_complete',$order_complete);
 

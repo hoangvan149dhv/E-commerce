@@ -155,7 +155,7 @@ class Productcontroller extends AdminController {
             unlink($del_file);
         }
         DB::table('tbl_product')->where('product_id',$product_id)->delete();
-        DB::table('tbl_order')->where('product_id',$product_id)->delete();
+        DB::table('tbl_orders')->where('product_id',$product_id)->delete();
         ReviewModel ::where('product_id',$product_id)->delete();
 
         return back();
@@ -182,7 +182,7 @@ class Productcontroller extends AdminController {
             }
 
             ReviewModel ::whereIn('product_id',$product_id)->delete();
-            DB::table('tbl_order')->where('product_id',$product_id)->delete();
+            DB::table('tbl_orders')->where('product_id',$product_id)->delete();
             DB::table('tbl_product')->whereIn('product_id',$product_id)->delete();
 
             return back();

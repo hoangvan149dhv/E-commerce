@@ -9,8 +9,9 @@ class ReviewModel extends Model
     protected $table = ('tbl_review');
 
     protected $primarykey= ('Rid');
+
     public function product()
     {
-        return $this->belongsTo('App\productModel', 'product_id', 'product_id');
+        return $this->belongsTo('App\Http\Model\productModel', 'product_id', 'product_id');
     }
 }

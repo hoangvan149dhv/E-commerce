@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\WardModel;
-use App\ProvinceModel;
-use App\CityModel;
-use App\feeShipModel;
+use App\Http\Model\WardModel;
+use App\Http\Model\ProvinceModel;
+use App\Http\Model\CityModel;
+use App\Http\Model\feeShipModel;
 use App\Http\Controllers\admin\AdminController;
 class DeliveryController extends Controller
 {

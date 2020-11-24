@@ -16,9 +16,9 @@ class dumpDatabasesController extends AdminController
 
 
         // INSERT TABLES IN DATABASE
-        $tables             = array("devvn_feeship","devvn_quanhuyen","devvn_tinhthanhpho","devvn_xaphuongthitran","tbl_admin",
+        $tables             = array("tbl_feeship","tbl_province","tbl_city","tbl_ward","tbl_admin",
                                     "tbl_brand_code_product","tbl_category_product","tbl_contact","tbl_count","tbl_customer",
-                                    "tbl_info_contact","tbl_logo_website","tbl_news","tbl_order","tbl_product","tbl_review",
+                                    "tbl_info_contact","tbl_logo_website","tbl_news","tbl_orders","tbl_product","tbl_review",
                                     "tbl_slider","tbl_template_mail","tbl_configmail_receiver"); //here your tables...
         $connect = new \PDO("mysql:host=$mysqlHostName;dbname=$DbName;charset=utf8", "$mysqlUserName", "$mysqlPassword",array(\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
         $get_all_table_query = "SHOW TABLES";
@@ -83,9 +83,9 @@ class dumpDatabasesController extends AdminController
 
 
     //     // INSERT TABLES IN DATABASE
-    //     $tables             = array("devvn_feeship","devvn_quanhuyen","devvn_tinhthanhpho","devvn_xaphuongthitran","tbl_admin",
+    //     $tables             = array("tbl_feeship","tbl_province","tbl_city","tbl_ward","tbl_admin",
     //                                 "tbl_brand_code_product","tbl_category_product","tbl_contact","tbl_count","tbl_customer",
-    //                                 "tbl_info_contact","tbl_logo_website","tbl_news","tbl_order","tbl_product","tbl_review",
+    //                                 "tbl_info_contact","tbl_logo_website","tbl_news","tbl_orders","tbl_product","tbl_review",
     //                                 "tbl_slider","tbl_template_mail","tbl_configmail_receiver"); //here your tables...
     //     $connect = new \PDO("mysql:host=$mysqlHostName;dbname=$DbName;charset=utf8", "$mysqlUserName", "$mysqlPassword",array(\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
     //     $get_all_table_query = "SHOW TABLES";

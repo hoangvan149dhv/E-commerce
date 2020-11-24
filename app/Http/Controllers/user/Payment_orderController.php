@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\user;
 
-use App\configMailModel;
+use App\Http\Model\configMailModel;
 use Illuminate\Http\Request;
 use Cart;
 use DB;
@@ -56,7 +56,7 @@ class Payment_orderController extends HomeController
                 }
                 $order_data['status']="đang xử lý"; //TRẠNG THÁI XỬ LÝ
 
-                $getIdorder = DB::table('tbl_order')->insertGetId($order_data);
+                $getIdorder = DB::table('tbl_orders')->insertGetId($order_data);
 
                 $item_detail_order = CustomerorderModel::where('orderid',$getIdorder)->get();
 
@@ -85,7 +85,7 @@ class Payment_orderController extends HomeController
                         //template order
                         $file_template_mail = "mails.order_mail";
 
-                        $sendmail->sendMail(
+                        if (!$sendmail->sendMail(
                             $fromname,
                             $mailconfig_recipient,
                             $ccname,
@@ -93,12 +93,11 @@ class Payment_orderController extends HomeController
                             $subject,
                             $file_template_mail,
                             $template,
-                            $item_detail_order);
+                            $item_detail_order)){
+                            continue;
+                        }
+
                         $mpdf = new \Mpdf\Mpdf();
-                        $EmailName = configMailModel::select()->get();
-//                        var_dump($EmailName);die;
-                        view()->share('item_detail_order',$item_detail_order);
-                        view()->share('template',$template);
                         $mpdf->WriteHTML($template[0]->template);
                         $mpdf->Output('hoa don.pdf','I');
                         $mpdf->SetTitle("xxx");

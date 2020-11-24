@@ -14,7 +14,7 @@ class modeltext extends Model
 
         public function comments()
         {
-            return $this->hasMany('App\Comment', 'foreign_key', 'local_key');
+            return $this->hasMany('App\Http\Model\Comment', 'foreign_key', 'local_key');
         }
 
     protected $array = ['idName','idDesc'];
