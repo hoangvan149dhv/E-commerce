@@ -17,9 +17,10 @@ class CreateTblNews extends Migration
             $table->bigIncrements('news_id');
             $table->string('news_title',255);
             $table->text('news_desc');
-            $table->string('	news_image');
+            $table->string('news_image');
             $table->text('news_content');
-            $table->timestamps();
+            $table->timestamp('created_date')->default(DB::raw('CURRENT_TIMESTAMP'))->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

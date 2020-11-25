@@ -15,9 +15,9 @@ class CreateTblWard extends Migration
     {
         Schema::create('tbl_ward', function (Blueprint $table) {
             $table->bigIncrements('xaid');
-            $table->string('	name',100);
-            $table->integer('type',30);
-            $table->integer('matp');
+            $table->string('name',100);
+            $table->integer('type');
+            $table->integer('maqh');
         });
     }
 

@@ -11965,12 +11965,7 @@ INSERT INTO tbl_category_product (category_id, category_name, category_desc, cat
 INSERT INTO tbl_category_product (category_id, category_name, category_desc, category_status) VALUES ("3","Áo dài cách tân","abcde","1");
 INSERT INTO tbl_category_product (category_id, category_name, category_desc, category_status) VALUES ("4","Lụa nhung","tests","1");
 INSERT INTO tbl_category_product (category_id, category_name, category_desc, category_status) VALUES ("5","Áo dài truyền thông","tests","1");
-INSERT INTO tbl_count (id, counts) VALUES ("1","1375");
-INSERT INTO tbl_count (id, counts) VALUES ("1","1375");
-INSERT INTO tbl_count (id, counts) VALUES ("1","1376");
-INSERT INTO tbl_count (id, counts) VALUES ("1","1348");
-INSERT INTO tbl_count (id, counts) VALUES ("1","1348");
-INSERT INTO tbl_count (id, counts) VALUES ("1","1349");
+INSERT INTO tbl_count (id, counts) VALUES ("1","1379");
 INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("11","Duong Hoang Van","test, Xã Thái Ninh, Huyện Thanh Ba, Tỉnh Phú Thọ","0912345678");
 INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("12","Ngo Nguyen Huynh Ngan","128 Lê Sao, Phường Phú Thạnh, Quận Tân Phú, Thành phố Hồ Chí Minh","0909677308");
 INSERT INTO tbl_customer (cusid, cusname, cusadd, cusPhone) VALUES ("13","Ngô Nguyễn Huỳnh Ngân","128A Lê Sao, Phường Phú Thọ Hòa, Quận Tân Phú, Thành phố Hồ Chí Minh","0909677308");
@@ -12290,7 +12285,7 @@ INSERT INTO tbl_news (news_id, news_title, news_desc, news_image, news_content, 
 <p><img alt='Áo dài Lê Phổ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153616/ao-dai-le-pho.jpg' style='height:910px; width:480px' /></p>
 
 <p>Chiếc áo dài Lê Phổ được nhiều phụ nữ Việt ưa thích và hoan nghênh nhiệt liệt.</p>","2020-11-14 04:42:48","2020-11-14 04:42:48");
-INSERT INTO tbl_news (news_id, news_title, news_desc, news_image, news_content, updated_at, created_at) VALUES ("11","Áo dài cách tân: “Hơi thở mới” cho trang phục truyền thống","Áo dài cách tân: “Hơi thở mới” cho trang phục truyền thống, Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.","85137522_773653723042859_9173677491418562560_n27.jpg","<p><strong>Áo dài cách tân</strong>&nbsp;– xu hướng mới, mang phong cách hiện đại, trẻ trung, sang trọng mà vẫn có nét duyên dáng của một chiếc áo dài truyền thống Việt Nam. Ngày nay, không chỉ đơn giản là thứ trang phục để mặc lên người mà áo dài còn trở thành một nét gì đó rất riêng trong tâm thức, linh hồn người Việt.</p>
+INSERT INTO tbl_news (news_id, news_title, news_desc, news_image, news_content, updated_at, created_at) VALUES ("11","Áo dài cách tân: “Hơi thở mới” cho trang phục truyền thống","Áo dài cách tân: “Hơi thở mới” cho trang phục truyền thống, Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.","85045870_773653759709522_4298833234717835264_o66.jpg","<p><strong>Áo dài cách tân</strong>&nbsp;– xu hướng mới, mang phong cách hiện đại, trẻ trung, sang trọng mà vẫn có nét duyên dáng của một chiếc áo dài truyền thống Việt Nam. Ngày nay, không chỉ đơn giản là thứ trang phục để mặc lên người mà áo dài còn trở thành một nét gì đó rất riêng trong tâm thức, linh hồn người Việt.</p>
 
 <p>Và hôm nay, CANIFA sẽ mang đến cho bạn những&nbsp;<strong>mẫu áo dài cách tân mới nhất</strong>, mang hơi thở của nhịp sống hiện đại và những nét chuyển mình của Việt Nam trong thời đại mới. Tất cả sẽ được làm sáng tỏ ngay trong bài viết sau đây.</p>
 
@@ -12356,80 +12351,12 @@ INSERT INTO tbl_news (news_id, news_title, news_desc, news_image, news_content, 
 
 <p><img alt='Áo dài Lê Phổ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153616/ao-dai-le-pho.jpg' style='height:910px; width:480px' /></p>
 
-<p>Chiếc áo dài Lê Phổ được nhiều phụ nữ Việt ưa thích và hoan nghênh nhiệt liệt.</p>","2020-11-14 04:42:54","2020-11-14 04:42:54");
-INSERT INTO tbl_news (news_id, news_title, news_desc, news_image, news_content, updated_at, created_at) VALUES ("12","Áo dài cách tân: “Hơi thở mới” cho trang phục truyền thống","Áo dài cách tân: “Hơi thở mới” cho trang phục truyền thống, Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.","85195202_773653663042865_7979821151729745920_o5.jpg","<p><strong>Áo dài cách tân</strong>&nbsp;– xu hướng mới, mang phong cách hiện đại, trẻ trung, sang trọng mà vẫn có nét duyên dáng của một chiếc áo dài truyền thống Việt Nam. Ngày nay, không chỉ đơn giản là thứ trang phục để mặc lên người mà áo dài còn trở thành một nét gì đó rất riêng trong tâm thức, linh hồn người Việt.</p>
-
-<p>Và hôm nay, CANIFA sẽ mang đến cho bạn những&nbsp;<strong>mẫu áo dài cách tân mới nhất</strong>, mang hơi thở của nhịp sống hiện đại và những nét chuyển mình của Việt Nam trong thời đại mới. Tất cả sẽ được làm sáng tỏ ngay trong bài viết sau đây.</p>
-
-<h2>Lịch sử hình thành áo dài Việt Nam</h2>
-
-<p>Hình ảnh tà áo dài đã quá quen thuộc với mỗi người Việt nhưng không phải ai cũng có thể miêu tả chính xác bộ trang phục truyền thống này với bạn bè ngoại quốc.</p>
-
-<p><em>Vậy thì áo dài là gì?</em></p>
-
-<p>Áo dài là một bộ trang phục được mặc cùng với quần dài, che thân từ cổ đến chân, dành cho cả nam và nữ nhưng được biết đến như trang phục cho nữ nhiều hơn.</p>
-
-<p><strong>Về cấu tạo áo dài truyền thống:</strong></p>
-
-<ul>
-	<li><strong>Cổ áo</strong>: Cổ áo cao khoảng 2-3 cm, ôm khít cổ, tạo hình chữ V trước cổ.</li>
-	<li><strong>Khuy áo</strong>: Thường dùng khuy bấm, từ cổ chéo sang vai rồi dọc xuống ngang hông.Theo truyền thống, khuy áo dài ở phần thân trên được cố định tại 5 vị trí, vừa giúp chiếc áo dài được cố định ngay ngắn, vừa biểu tượng cho 5 đạo làm người của dân tộc Việt: nhân, nghĩa, lễ, trí, tín</li>
-	<li><strong>Thân áo</strong>: Gồm 2 phần: thân trước và thân sau. Cả 2 thân áo đều dài từ cổ xuống mắt cá chân, được may sát vào phom người.</li>
-	<li><strong>Tay áo</strong>: Dài, không có cầu vai, may kéo dài từ cổ áo đến cổ tay.</li>
-	<li><strong>Tà áo</strong>: Gồm 2 tà là tà trước và tà sau, xẻ từ ngang hông xuống dưới.</li>
-</ul>
-
-<p><img alt='Áo dài là gì' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22152931/ao-dai-cach-tan-la-gi.jpg' style='height:468px; width:570px' /></p>
-
-<p>Chiếc áo dài truyền thống với những thiết kế làm tôn lên vẻ đẹp duyên dáng, dịu dàng, nết na của người phụ nữ Việt Nam.</p>
-
-<p>Tuy nhiên, bật mí cho bạn, tà áo dài mà được coi là truyền thống ấy cũng đã từng là phiên bản “cách tân” đấy!</p>
-
-<p>Để biết được nguồn gốc và hình dáng chiếc áo dài xưa như thế nào, hãy cùng đến với lịch sử phát triển của áo dài qua từng thời kỳ nhé!</p>
-
-<p><strong>Áo giao lãnh</strong></p>
-
-<p>Áo giao lãnh được coi là kiểu sơ khai nhất của của chiếc áo dài xưa, rất phổ biến vào thời Lý – Trần – Lê</p>
-
-<p><img alt='Áo giao lãnh ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153156/lich-su-ao-dai-giao-lanh.jpg' style='height:675px; width:429px' /></p>
-
-<p>Đặc điểm của áo giao lãnh là: áo rộng, cổ áo giao nhau khi mặc, áo xẻ hai bên hông, dài tay, cổ tay rộng, thân áo dài chấm gót chân (thân áo được may bằng năm, sáu tấm vải).</p>
-
-<p><strong>Áo dài tứ thân</strong></p>
-
-<p>Áo dài tứ thân vốn là trang phục dành cho những người dân ở tầng lớp bình dân.</p>
-
-<p><img alt='Áo dài tứ thân ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153310/ao-dai-tu-than.jpg' style='height:684px; width:439px' /></p>
-
-<p>Đó là bởi vì 2 vạt trước của chiếc áo được thiết kế rời nhau, có thể buộc lại cho gọn khi làm việc trong khi 2 vạt sau được may liền thành 1 tà áo.</p>
-
-<p><strong>Áo dài ngũ thân</strong></p>
-
-<p>Là kiểu áo do chúa Nguyễn Phúc Khoát đặt ra, áo ngũ thân, dựa trên tiền đề là áo tứ thân, có 5 vạt áo.</p>
-
-<p><img alt='Áo dài ngũ thân' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153407/ao-dai-ngu-than.jpg' style='height:450px; width:360px' /></p>
-
-<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>
-
-<p><strong>Áo dài Le Mur</strong></p>
-
-<p>Được đặt tên theo chính người thiết kế ra nó, áo dài Le Mur là một bước cải cách vô cùng quan trọng từ chiếc áo dài tứ thân.</p>
-
-<p>Áo dài Le Mur chỉ còn có 2 vạt trước và sau, hàng nút phía trước dịch sang theo vai và dọc bên sườn, tay áo phồng, cổ hở. Đây là kiểu áo dài được cho là “lai căng” thái quá.</p>
-
-<p><strong>Áo dài Lê Phổ</strong></p>
-
-<p>Bằng cách kết hợp khéo léo giữa áo dài tứ thân và áo dài Le Mur, họa sĩ Lê Phổ tạo ra chiếc áo dài vẫn giữ được nét truyền thống của áo dài tứ thân nhưng bỏ những nét lai căng như ráp tay phồng, cổ hở từ áo Le Mur.</p>
-
-<p><img alt='Áo dài Lê Phổ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153616/ao-dai-le-pho.jpg' style='height:910px; width:480px' /></p>
-
-<p>Chiếc áo dài Lê Phổ được nhiều phụ nữ Việt ưa thích và hoan nghênh nhiệt liệt.</p>","2020-11-14 04:43:01","2020-11-14 04:43:01");
+<p>Chiếc áo dài Lê Phổ được nhiều phụ nữ Việt ưa thích và hoan nghênh nhiệt liệt.</p>","2020-11-25 03:44:13","2020-11-14 04:42:54");
 INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("39","43","Dương Hoàng Văn","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","40000","540000","0334964103","đang xử lý","uighuighuigiu","2020-11-14 15:33:18");
 INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("40","44","hoangvan","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","40000","540000","0334964103","đang xử lý","asfasf","2020-11-17 15:42:08");
 INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("41","45","Áo dài cách tân","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","0334964103","đang xử lý","asdasd","2020-11-17 17:50:43");
 INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("42","46","Áo dài cách tân","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","0334964103","đang xử lý","asdasd","2020-11-17 17:53:33");
 INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("43","46","Áo dài cách tân","15","Áo dài Hội Phố ABC","84612966_773653896376175_640374783405457408_o42.jpg","1","600000","20000","620000","0334964103","đang xử lý","asdasd","2020-11-17 17:53:37");
-INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("44","46","Áo dài cách tân","17","Áo dài Lê PHỐ A","85195202_773653663042865_7979821151729745920_o59.jpg","1","400000","20000","420000","0334964103","đang xử lý","asdasd","2020-11-17 17:53:40");
 INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("45","46","Áo dài cách tân","13","Áo dài truyền thống VN","83815495_773654023042829_651030464122847232_o6.jpg","1","500000","20000","520000","0334964103","đang xử lý","asdasd","2020-11-17 17:53:44");
 INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("46","46","Áo dài cách tân","14","Áo dài cách tân ABC","85137522_773653723042859_9173677491418562560_n30.jpg","1","200000","20000","220000","0334964103","đang xử lý","asdasd","2020-11-17 17:53:48");
 INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("47","47","hoangvan","14","Áo dài cách tân ABC","85137522_773653723042859_9173677491418562560_n30.jpg","1","200000","20000","220000","1234567890","đang xử lý","asdasd","2020-11-17 18:01:21");
@@ -12449,72 +12376,11 @@ INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image,
 INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("61","64","hoangvan","16","Áo dài cách tân ABCS","86190117_773654536376111_1148412901342576640_n66.jpg","1","100000000","20000","100020000","0334964103","đang xử lý","tyrjtryj","2020-11-23 17:17:13");
 INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("62","65","hoangvan","16","Áo dài cách tân ABCS","86190117_773654536376111_1148412901342576640_n66.jpg","1","100000000","20000","100020000","0334964103","đang xử lý","tyrjtryj","2020-11-23 17:17:50");
 INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("63","66","Dương Hoàng Văn","2","Áo dài truyền thống","94191814_648215732424264_3752553548315885568_n125560.jpg","1","500000","20000","520000","0334964103","đang xử lý","faaa","2020-11-24 09:21:26");
-INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("64","67","hoangvan","17","Áo dài Lê PHỐ A","85195202_773653663042865_7979821151729745920_o59.jpg","1","400000","20000","420000","0334964103","đang xử lý","asd","2020-11-24 09:22:00");
-INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("65","68","hoangvan","17","Áo dài Lê PHỐ A","85195202_773653663042865_7979821151729745920_o59.jpg","1","400000","20000","420000","0334964103","đang xử lý","asd","2020-11-24 09:22:28");
-INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("66","69","hoangvan","17","Áo dài Lê PHỐ A","85195202_773653663042865_7979821151729745920_o59.jpg","1","400000","20000","420000","0334964103","đang xử lý","asd","2020-11-24 09:27:37");
-INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("67","70","hoangvan","17","Áo dài Lê PHỐ A","85195202_773653663042865_7979821151729745920_o59.jpg","1","400000","20000","420000","0334964103","đang xử lý","asd","2020-11-24 09:30:42");
-INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("68","71","hoangvan","17","Áo dài Lê PHỐ A","85195202_773653663042865_7979821151729745920_o59.jpg","1","400000","20000","420000","0334964103","đang xử lý","asf","2020-11-24 09:31:02");
-INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("69","73","Dương Hoàng Văn","17","Áo dài Lê PHỐ A","85195202_773653663042865_7979821151729745920_o59.jpg","1","400000","20000","420000","0334964103","đang xử lý","asf","2020-11-24 09:35:15");
-INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("70","74","hoangvan","17","Áo dài Lê PHỐ A","85195202_773653663042865_7979821151729745920_o59.jpg","1","400000","20000","420000","0334964103","đang xử lý","asf","2020-11-24 09:36:00");
-INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("71","75","asfasfasf","17","Áo dài Lê PHỐ A","85195202_773653663042865_7979821151729745920_o59.jpg","1","400000","20000","420000","0334964103","đang xử lý","asfasf","2020-11-24 14:44:51");
-INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("72","76","asfasfasf","17","Áo dài Lê PHỐ A","85195202_773653663042865_7979821151729745920_o59.jpg","1","400000","20000","420000","0334964103","đang xử lý","asfasf","2020-11-24 14:45:14");
-INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("73","77","asfasfasf","17","Áo dài Lê PHỐ A","85195202_773653663042865_7979821151729745920_o59.jpg","1","400000","20000","420000","0334964103","đang xử lý","asfasf","2020-11-24 14:46:15");
 INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("74","77","asfasfasf","16","Áo dài cách tân ABCS","86190117_773654536376111_1148412901342576640_n66.jpg","1","100000000","20000","100020000","0334964103","đang xử lý","asfasf","2020-11-24 14:46:18");
 INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("75","77","asfasfasf","15","Áo dài Hội Phố ABC","84612966_773653896376175_640374783405457408_o42.jpg","1","600000","20000","620000","0334964103","đang xử lý","asfasf","2020-11-24 14:46:22");
 INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("76","77","asfasfasf","14","Áo dài cách tân ABC","85137522_773653723042859_9173677491418562560_n30.jpg","1","300000","20000","320000","0334964103","đang xử lý","asfasf","2020-11-24 14:46:25");
-INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("77","78","Dương Hoàng Văn","17","Áo dài Lê PHỐ A","85195202_773653663042865_7979821151729745920_o59.jpg","1","400000","20000","420000","0334964103","đang xử lý","qwrwqr","2020-11-24 14:47:06");
 INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("78","78","Dương Hoàng Văn","16","Áo dài cách tân ABCS","86190117_773654536376111_1148412901342576640_n66.jpg","1","100000000","20000","100020000","0334964103","đang xử lý","qwrwqr","2020-11-24 14:47:09");
 INSERT INTO tbl_orders (orderid, cusid, cusname, product_id, productname, image, soluong, price, fee_ship, total, cusphone, status, note, order_date) VALUES ("79","78","Dương Hoàng Văn","15","Áo dài Hội Phố ABC","84612966_773653896376175_640374783405457408_o42.jpg","1","600000","20000","620000","0334964103","đang xử lý","qwrwqr","2020-11-24 14:47:12");
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("2","2","Áo dài truyền thống","<p>test</p>","lụa cao cấp","1","1","1","","","94191814_648215732424264_3752553548315885568_n125560.jpg","lụa cao cấp lụa cao cấp","lụa cao cấp lụa cao cấp","ao-dai-truyen-thong631","1");
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("3","3","Áo dài cách tân","<h2>Lịch sử hình thành áo dài Việt Nam</h2>
-
-<p>Hình ảnh tà áo dài đã quá quen thuộc với mỗi người Việt nhưng không phải ai cũng có thể miêu tả chính xác bộ trang phục truyền thống này với bạn bè ngoại quốc.</p>
-
-<p><em>Vậy thì áo dài là gì?</em></p>
-
-<p>Áo dài là một bộ trang phục được mặc cùng với quần dài, che thân từ cổ đến chân, dành cho cả nam và nữ nhưng được biết đến như trang phục cho nữ nhiều hơn.</p>
-
-<p><strong>Về cấu tạo áo dài truyền thống:</strong></p>
-
-<ul>
-	<li><strong>Cổ áo</strong>: Cổ áo cao khoảng 2-3 cm, ôm khít cổ, tạo hình chữ V trước cổ.</li>
-	<li><strong>Khuy áo</strong>: Thường dùng khuy bấm, từ cổ chéo sang vai rồi dọc xuống ngang hông.Theo truyền thống, khuy áo dài ở phần thân trên được cố định tại 5 vị trí, vừa giúp chiếc áo dài được cố định ngay ngắn, vừa biểu tượng cho 5 đạo làm người của dân tộc Việt: nhân, nghĩa, lễ, trí, tín</li>
-	<li><strong>Thân áo</strong>: Gồm 2 phần: thân trước và thân sau. Cả 2 thân áo đều dài từ cổ xuống mắt cá chân, được may sát vào phom người.</li>
-	<li><strong>Tay áo</strong>: Dài, không có cầu vai, may kéo dài từ cổ áo đến cổ tay.</li>
-	<li><strong>Tà áo</strong>: Gồm 2 tà là tà trước và tà sau, xẻ từ ngang hông xuống dưới.</li>
-</ul>
-
-<p><img alt='Áo dài là gì' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22152931/ao-dai-cach-tan-la-gi.jpg' style='height:468px; width:570px' /></p>
-
-<p>Chiếc áo dài truyền thống với những thiết kế làm tôn lên vẻ đẹp duyên dáng, dịu dàng, nết na của người phụ nữ Việt Nam.</p>
-
-<p>Tuy nhiên, bật mí cho bạn, tà áo dài mà được coi là truyền thống ấy cũng đã từng là phiên bản “cách tân” đấy!</p>
-
-<p>Để biết được nguồn gốc và hình dáng chiếc áo dài xưa như thế nào, hãy cùng đến với lịch sử phát triển của áo dài qua từng thời kỳ nhé!</p>
-
-<p><strong>Áo giao lãnh</strong></p>
-
-<p>Áo giao lãnh được coi là kiểu sơ khai nhất của của chiếc áo dài xưa, rất phổ biến vào thời Lý – Trần – Lê</p>
-
-<p><img alt='Áo giao lãnh ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153156/lich-su-ao-dai-giao-lanh.jpg' style='height:675px; width:429px' /></p>
-
-<p>Đặc điểm của áo giao lãnh là: áo rộng, cổ áo giao nhau khi mặc, áo xẻ hai bên hông, dài tay, cổ tay rộng, thân áo dài chấm gót chân (thân áo được may bằng năm, sáu tấm vải).</p>
-
-<p><strong>Áo dài tứ thân</strong></p>
-
-<p>Áo dài tứ thân vốn là trang phục dành cho những người dân ở tầng lớp bình dân.</p>
-
-<p><img alt='Áo dài tứ thân ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153310/ao-dai-tu-than.jpg' style='height:684px; width:439px' /></p>
-
-<p>Đó là bởi vì 2 vạt trước của chiếc áo được thiết kế rời nhau, có thể buộc lại cho gọn khi làm việc trong khi 2 vạt sau được may liền thành 1 tà áo.</p>
-
-<p><strong>Áo dài ngũ thân</strong></p>
-
-<p>Là kiểu áo do chúa Nguyễn Phúc Khoát đặt ra, áo ngũ thân, dựa trên tiền đề là áo tứ thân, có 5 vạt áo.</p>
-
-<p><img alt='Áo dài ngũ thân' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153407/ao-dai-ngu-than.jpg' style='height:450px; width:360px' /></p>
-
-<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>","lụa nhật","1","1","1","","","84194903_773654616376103_8257184345794543616_n93.jpg","Áo dài cách tân","Áo dài cách tân","ao-dai-cach-tan720","1");
 INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("4","5","Áo dài Hội Phố","<h2>Lịch sử hình thành áo dài Việt Nam</h2>
 
 <p>Hình ảnh tà áo dài đã quá quen thuộc với mỗi người Việt nhưng không phải ai cũng có thể miêu tả chính xác bộ trang phục truyền thống này với bạn bè ngoại quốc.</p>
@@ -12816,10 +12682,7 @@ INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, pr
 INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("14","1","Áo dài cách tân ABC","<p>Áo dài cách tân ABC</p>","Áo dài cách tân ABC","1","1","1","","","85137522_773653723042859_9173677491418562560_n30.jpg","Áo dài cách tân ABC","Áo dài cách tân ABC","ao-dai-cach-tan-abc425","1");
 INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("15","2","Áo dài Hội Phố ABC","<p>Áo dài Hội Phố ABC</p>","Áo dài Hội Phố ABC","1","1","1","","","84612966_773653896376175_640374783405457408_o42.jpg","Áo dài Hội Phố ABC","Áo dài Hội Phố ABC","ao-dai-hoi-pho-abc703","1");
 INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("16","1","Áo dài cách tân ABCS","<p>Áo dài cách tân ABCS</p>","Áo dài cách tân ABCS","1","1","1","","","86190117_773654536376111_1148412901342576640_n66.jpg","Áo dài cách tân ABCS","Áo dài cách tân ABCS","ao-dai-cach-tan-abcs944","1");
-INSERT INTO tbl_product (product_id, category_id, product_Name, product_desc, product_material, product_price, product_price_promotion, brandcode_id, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish) VALUES ("17","2","Áo dài Lê PHỐ A","<p>Áo dài Lê PHỐ A</p>","Áo dài Lê PHỐ A","1","1","1","","","85195202_773653663042865_7979821151729745920_o59.jpg","Áo dài Lê PHỐ A","Áo dài Lê PHỐ A","ao-dai-le-pho-a699","1");
 INSERT INTO tbl_review (Rid, Rname, Remail, Rcomment, status, product_id, updated_at, created_at) VALUES ("3","asdasasdasd","asdasd@gmail.com","asdasdasd","0","0","2020-11-24 02:59:32","2020-11-24 02:59:32");
-INSERT INTO tbl_review (Rid, Rname, Remail, Rcomment, status, product_id, updated_at, created_at) VALUES ("4","hoangvan","van.duong@redweb.dk","safasfasfasfa","0","17","2020-11-24 03:21:37","2020-11-24 03:21:37");
-INSERT INTO tbl_review (Rid, Rname, Remail, Rcomment, status, product_id, updated_at, created_at) VALUES ("5","asdasd","van.duong@redweb.dk","asdasd","0","17","2020-11-24 03:38:54","2020-11-24 03:38:54");
 INSERT INTO tbl_sliders (id, img, status, created_at, updated_at) VALUES ("1","e3b4c48ba38c0220c847af75d94578bfqc2.png","1","0000-00-00 00:00:00","0000-00-00 00:00:00");
 INSERT INTO tbl_template_mail (id, label, template, status) VALUES ("1","Đơn Hàng Từ Vải Áo Dài Xinh Sunny","<table border='1' cellpadding='0' cellspacing='0' style='width:900px'>
 	<tbody>
@@ -12947,4 +12810,4 @@ INSERT INTO tbl_template_mail (id, label, template, status) VALUES ("1","Đơn H
 		</tr>
 	</tbody>
 </table>","Hiện");
-INSERT INTO tbl_configmail_receiver (id, Email, name_email) VALUES ("1","van.duong@redweb.dk","Hoàng Văn");
+INSERT INTO tbl_configmail_receiver (id, Email, name_email) VALUES ("1","hoangvan149dhv@gmail.com","Hoàng Văn");

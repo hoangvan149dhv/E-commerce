@@ -29,6 +29,7 @@ class CreateTblProduct extends Migration
             $table->text('meta_desc');
             $table->text('meta_slug');
             $table->integer('publish');
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'))->nullable();
         });
     }
 

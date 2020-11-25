@@ -14,7 +14,7 @@ class CreateTblFeeship extends Migration
     public function up()
     {
         Schema::create('tbl_feeship', function (Blueprint $table) {
-            $table->fee_id('id');
+            $table->increments('fee_id');
             $table->string('fee_matp',50);
             $table->string('fee_maqh',50);
             $table->string('fee_xa',50);

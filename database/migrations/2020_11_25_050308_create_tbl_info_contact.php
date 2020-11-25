@@ -19,6 +19,7 @@ class CreateTblInfoContact extends Migration
             $table->string('info_contact_add',100);
             $table->string('info_contact_phone',11);
             $table->string('info_contact_mail',100);
+            $table->timestamp('created_date')->default(DB::raw('CURRENT_TIMESTAMP'))->nullable();
         });
     }
 
