@@ -77,18 +77,12 @@ class newsadminController extends AdminController
 
         //XÓA BÀI VIẾT
     public function delete_news($primaryKey){
-
         $newsadminModel = newsadminModel::find($primaryKey);
+        $news_img_old = $newsadminModel->news_image;
+        \App\Http\library\media::cleanImage($news_img_old);
         $newsadminModel->delete();
 
-        foreach ($newsadminModel as $key) {
-            $news_img = $newsadminModel->news_image;
-            $del_file   ="public/upload/".$news_img;
-        }
-        if(file_exists($del_file)){
-            unlink($del_file);
-        }
-            return back();
+        return back();
 
     }
     //UPDATE
@@ -103,20 +97,28 @@ class newsadminController extends AdminController
 
         $newsadminModel = newsadminModel::find($primaryKey);
         $newsadminModel->news_title = $Request['title'];
-
         $newsadminModel->news_desc = $Request['desc'];
         $newsadminModel->news_content = $Request['content'];
-        if( $newsadminModel->news_content==""){
+        $get_image=$Request->file('image');
+        $news_img_old = $newsadminModel->news_image;
+
+        //remove image old if user update
+        \App\Http\library\media::cleanImage($news_img_old);
+
+        if ( $newsadminModel->news_content=="")
+        {
             $newsadminModel->news_content="Chưa có thông tin";
         }
-        $get_image=$Request->file('image');
-        if(empty($get_image)){
+
+        if (empty($get_image)) {
+
+
             $newsadminModel->save();
             Session::put('updatesuccess','Sửa bản tin Thành Công');
 
             return redirect::to('edit-news/'.$primaryKey);
 
-        }elseif($get_image){
+        } elseif ($get_image) {
 
             $get_name_image = $get_image->getClientOriginalName();
 
@@ -129,10 +131,9 @@ class newsadminController extends AdminController
 
             $newsadminModel->save();
             Session::put('updatesuccess','Sửa bản tin Thành Công');
+            $newsadminModel = $this->edit_news($primaryKey);
 
-            $updateNews= $newsadminModel;
-            $updateNews = $this->edit_news($primaryKey);
-            return $updateNews;
+            return $newsadminModel;
         }
     }
 }

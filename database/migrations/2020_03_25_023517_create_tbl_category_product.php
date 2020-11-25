@@ -15,10 +15,9 @@ class CreateTblCategoryProduct extends Migration
     {
         Schema::create('tbl_category_product', function (Blueprint $table) {
             $table->increments('category_id');
-            $table->string('category_name');
-            $table->text('category_desc'); //MÔ TẢ
-            $table->integer('category_status');
-            $table->timestamps();
+            $table->string('category_name',100);
+            $table->text('category_desc',100);
+            $table->tinyInteger('category_status');
         });
     }
 

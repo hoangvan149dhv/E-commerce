@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTblSlider extends Migration
+class CreateTblProvince extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateTblSlider extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_slider', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('img');
-            $table->bigInteger('status');
-            $table->timestamps();
+        Schema::create('tbl_province', function (Blueprint $table) {
+            $table->bigIncrements('maqh');
+            $table->string('	name',70);
+            $table->integer('type',50);
+            $table->integer('matp');
         });
     }
 
@@ -28,6 +28,6 @@ class CreateTblSlider extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_slider');
+        Schema::dropIfExists('tbl_province');
     }
 }

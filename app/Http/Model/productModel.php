@@ -9,4 +9,5 @@ class productModel extends Model
     protected $table = ('tbl_product');
 
     protected $primary=('product_id');
+
 }

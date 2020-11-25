@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTblBrandcodeProduct extends Migration
+class CreateTblSlider extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateTblBrandcodeProduct extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_brand_code_product', function (Blueprint $table) {
-            $table->increments('code_id');
-            $table->string('brandcode_id');
-            $table->string('brandcode_name');
-            $table->timestamps();
+        Schema::create('tbl_slider', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('img',255);
+            $table->integer('status');
+            $table->timestamps(0);
         });
     }
 
@@ -28,6 +28,6 @@ class CreateTblBrandcodeProduct extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_brand_code_product');
+        Schema::dropIfExists('tbl_sliders');
     }
 }

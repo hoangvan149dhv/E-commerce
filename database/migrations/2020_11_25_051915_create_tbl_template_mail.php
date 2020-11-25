@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTblCount extends Migration
+class CreateTblTemplateMail extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateTblCount extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_count', function (Blueprint $table) {
-            $table->Increments('id');
-            $table->integer('counts');
+        Schema::create('tbl_template_mail', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('label',100);
+            $table->text('template');
+            $table->string('status',20);
         });
     }
 
@@ -26,6 +28,6 @@ class CreateTblCount extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_count');
+        Schema::dropIfExists('tbl_template_mail');
     }
 }

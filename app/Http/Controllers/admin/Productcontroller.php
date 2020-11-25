@@ -6,8 +6,8 @@ use Session;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Model\ReviewModel;
-use App\Http\Controllers\admin\AdminController;
-use App\Http\Model\contactinfoModel;
+use App\Http\Model\OrderModel;
+use App\Http\Model\productModel;
 class Productcontroller extends AdminController {
             ////SEO GOOGLE UTF8 convert UTF
     public function utf8convert($str) {
@@ -140,73 +140,45 @@ class Productcontroller extends AdminController {
             return redirect::to('add-Product');
         }
     }
-    //DELETE PRODUCT
-    public function delete_product($product_id){
 
-        $product= DB::table('tbl_product')->where('product_id',$product_id)->get();
-        foreach ($product as $key) {
-
-            $product_img = $key->product_image;
-
-            $del_file   ="public/upload/".$product_img;
-        }
-
-        if(file_exists($del_file)){
-            unlink($del_file);
-        }
-        DB::table('tbl_product')->where('product_id',$product_id)->delete();
-        DB::table('tbl_orders')->where('product_id',$product_id)->delete();
-        ReviewModel ::where('product_id',$product_id)->delete();
-
-        return back();
-    }
     //xóa tất cả sản phẩm
     public function destroy_product(Request $request){
 
-        $product_id =$request->product;
+        $product_id = $request->product;
 
-        if(isset( $product_id))
+        if(!empty( $product_id))
         {
-            $product= DB::table('tbl_product')->whereIn('product_id',$product_id)->get();
-
+            $products = \App\Http\library\product_detail::getProductDetail($product_id);
             //convert object to array
-            $array_product = (json_decode(json_encode($product), true));
-            foreach ($array_product as  $value) {
-                $product_img = $value['product_image'];
-
-                $del_file   ="public/upload/".$product_img;
-
-                if(file_exists($del_file)){
-                    unlink($del_file);
-                }
+            $array_product = (json_decode(json_encode($products), true));
+            foreach ($array_product as  $value)
+            {
+                $product_img_old = $value['product_image'];
+                \App\Http\library\media::cleanImage($product_img_old);
+                productModel::where('product_id',$product_id)->delete();
+                ReviewModel ::where('product_id',$product_id)->delete();
+                OrderModel  ::where('product_id',$product_id)->delete();
             }
-
-            ReviewModel ::whereIn('product_id',$product_id)->delete();
-            DB::table('tbl_orders')->where('product_id',$product_id)->delete();
-            DB::table('tbl_product')->whereIn('product_id',$product_id)->delete();
-
-            return back();
         }
-        else{
-
             return back();
-        }
     }
     //UPDATE (HIỂN THỊ )
     public function edit_product($product_id){
 
-        $category_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
+        $category_product  = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
 
-        $brandcode_product =DB::table('tbl_brand_code_product')->orderby('code_id','desc')->get();
-        $all_product = DB::table('tbl_product')->where('product_id',$product_id)
+        $brandcode_product = DB::table('tbl_brand_code_product')->orderby('code_id','desc')->get();
+        $all_product       = DB::table('tbl_product')->where('product_id',$product_id)
         ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
         ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
         ->orderby('product_id','desc')->get();
 
-        $manager_product=view('admin.products.updateProduct')->with('all_product',$all_product)
-        ->with('category_product',$category_product)
-        ->with('brandcode_product',$brandcode_product);
-        return view('admin.admin_layout')->with('admin.products.updateProduct',$manager_product);
+        $manager_product   = view('admin.products.updateProduct')
+                        ->with('all_product',$all_product)
+                        ->with('category_product',$category_product)
+                        ->with('brandcode_product',$brandcode_product);
+
+        return view('admin.admin_layout')->with('admin.products.updateProduct', $manager_product);
     }
     //UPDATE
     public function update_Product(Request $Request, $product_id) {
@@ -215,15 +187,14 @@ class Productcontroller extends AdminController {
         $data['category_id']  = $Request->category;
         $data['product_Name'] = $Request->name;
         $data['product_desc'] = empty($Request->mota)? "Chưa có thông tin" : $Request->mota;
-        $data['publish']     = empty($Request->publish) ? 0 : $Request->publish;
-
+        $data['publish']      = empty($Request->publish) ? 0 : $Request->publish;
         $data['product_material']        = $Request->material;
         $data['product_price']           = $Request->price;
         $data['product_price_promotion'] = (empty($Request->promotion_price) || ($Request->promotion_price <= $Request->price)) ? 1 : $Request->promotion_price;
-
         $data['brandcode_id'] = $Request->brandcode;
         $data['meta_keyword'] = $Request->meta_keyword;
-        $data['meta_desc'] = $Request->meta_desc;
+        $data['meta_desc']    = $Request->meta_desc;
+
         if (empty($Request->promotion_start_date) || empty($Request->promotion_end_date) || $Request->promotion_price == 1)
         {
             $data['promotion_start_date']    = null;
@@ -253,9 +224,9 @@ class Productcontroller extends AdminController {
         $data['meta_slug']= $this->utf8tourl($slugg).rand(0, 1000);
         $get_image=$Request->file('image');
 
-        if(empty($get_image)){
+        if (empty($get_image))
+        {
             DB::table('tbl_product')->where('product_id',$product_id)->update($data);
-
             Session::put('alert-success-product','Sửa Sản phẩm Thành Công');
             return back();
 
@@ -278,7 +249,6 @@ class Productcontroller extends AdminController {
     public function publish($product_id, $pushlish) {
         $pushlish = $pushlish == 1 ? 0 : 1;
         $data = array();
-
         $data['publish'] = $pushlish;
 
         DB::table('tbl_product')->where('product_id',$product_id)->update($data);

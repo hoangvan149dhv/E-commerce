@@ -22,8 +22,9 @@ class contactController extends HomeController{
         $contactModel->Con_Email= $request['email'];
         $contactModel->Con_Content= $request['content'];
         $contactModel->status= 0;
-        $contactModel->save();
-        Session::put('success','Cảm ơn bạn đã góp ý');
+
+        Session::put('success','Góp ý thất bại, vui lòng thử lại sau') ? !$contactModel->save() : Session::put('success','Cảm ơn bạn đã góp ý');
+
 
         return redirect('/lien-he');
     }

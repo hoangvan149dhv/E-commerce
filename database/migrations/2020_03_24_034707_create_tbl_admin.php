@@ -19,7 +19,7 @@ class CreateTblAdmin extends Migration
             $table->string('admin_pass',100);
             $table->string('admin_name',100);
             $table->string('admin_phone',20);
-            $table->timestamps();
+            $table->string('admin_question_getpass',100);
         });
     }
 

@@ -1,12 +1,12 @@
 <?php
 namespace App\Http\library;
-use App\Http\Controllers\Controller;
 use App\Http\Model\templateMailModel;
 use Carbon\Carbon;
+use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Model\OrderModel;
 use App\Http\Model\CustomerorderModel;
-class replace_template extends Controller
+class replace_template extends BaseController
 {
     public function replace_orderID($id, $template)
     {

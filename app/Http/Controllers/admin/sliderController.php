@@ -17,22 +17,20 @@ class sliderController extends AdminController
         $data['status'] = $request->status;
         $get_image=$request->file('image');
 
-        if($get_image){
+        if($get_image) {
 
             $get_name_image = $get_image->getClientOriginalName();
-            $name_image = current(explode('.',$get_name_image));
-            $image = md5(time()).$name_image.'.'.$get_image->getClientOriginalExtension();
-            $get_image->move('public/upload',$image); // move == move_upload trong php
+            $name_image = current(explode('.', $get_name_image));
+            $image = md5(time()) . $name_image . '.' . $get_image->getClientOriginalExtension();
+            $get_image->move('public/upload', $image); // move == move_upload trong php
             $data['img'] = $image;
 
-            sliderModel::insert($data);
-
-            return back()->with('success','Thêm thành công');
-
-        }else{
-
-            return back()->with('error','Vui lòng upload hình ảnh');
-
+            if (!sliderModel::insert($data)) {
+                return back()->with('error', 'Vui lòng upload hình ảnh');
+            }
+            else{
+                return back()->with('success','Thêm thành công');
+            }
         }
     }
     function slider_all(){
@@ -51,22 +49,23 @@ class sliderController extends AdminController
 
         $slider_update = sliderModel::find($id);
         $slider_update->status = $request['status'];
+        $slider_img_old = $slider_update->img;
+        \App\Http\library\media::cleanImage($slider_img_old);
         $get_image = $request->file('image');
-        if($get_image)
+
+        if ($get_image)
         {
             $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.',$get_name_image));
             $image = md5(time()).$name_image.'.'.$get_image->getClientOriginalExtension();
-            $get_image->move('public/upload',$image); // move == move_upload trong php
+            $get_image->move('public/upload',$image);
             $slider_update->img = $image;
             $slider_update->save();
             return redirect::to('update-layout-slider/'.$id)->with('success','sửa ảnh thành công');
         }
         else
         {
-            $slider_update->save();
-
-            return redirect::to('update-layout-slider/'.$id)->with('error','thành công');
+            return redirect::to('update-layout-slider/'.$id)->with('error','Sửa thất bại vui lòng thử lại');
         }
 
     }
@@ -83,16 +82,15 @@ class sliderController extends AdminController
 
     }
     //xóa qc
-    function delete($id){
-
+    function delete($id)
+    {
         $slider = sliderModel::where('id',$id)->get();
+
         foreach ($slider as $key) {
-            $slider_img = $slider->img;
-            $del_file   ="public/upload/".$slider_img;
-            if(file_exists($del_file)){
-                unlink($del_file);
-            }
+            $slider_img = $key->img;
+            \App\Http\library\media::cleanImage($slider_img);
         }
+
         sliderModel::where('id',$id)->delete();
 
         return  Redirect::to('all-slider')->with('success','xóa thành công');
@@ -105,12 +103,10 @@ class sliderController extends AdminController
 
         $slider = sliderModel::whereIn('id',$slider_id)->get();
         $array_slider = (json_decode(json_encode($slider), true));
-        foreach ($array_slider as  $value) {
+        foreach ($array_slider as  $value)
+        {
             $slider_img = $value['img'];
-            $del_file   ="public/upload/".$slider_img;
-
-            file_exists($del_file) ? unlink($del_file) : "";
-
+            \App\Http\library\media::cleanImage($slider_img);
         }
         sliderModel::whereIn('id',$slider_id)->delete();
 

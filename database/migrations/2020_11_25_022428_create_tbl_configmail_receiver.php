@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTblCount extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateTblCount extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_count', function (Blueprint $table) {
+        Schema::create('tbl_configmail_receiver', function (Blueprint $table) {
             $table->Increments('id');
-            $table->integer('counts');
+            $table->string('Email',50);
+            $table->string('type',50);
         });
     }
 
@@ -26,6 +27,6 @@ class CreateTblCount extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_count');
+        Schema::dropIfExists('tbl_configmail_receiver');
     }
 }

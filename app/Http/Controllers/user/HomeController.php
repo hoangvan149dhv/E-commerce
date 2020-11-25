@@ -139,17 +139,11 @@
 
         public function getAllProduct()
         {
-            $products = DB::table('tbl_product')->where('tbl_product.promotion_end_date', '<', self::getcurrentTime())->get();
+            DB::table('tbl_product')->where('tbl_product.promotion_end_date', '<', self::getcurrentTime())
+                ->update(array('promotion_end_date'=> null,
+                             'promotion_start_date'=> null,
+                'publish' => 0));
 
-
-            foreach ($products as $product) {
-                $promotion_price = 1;
-                $product_price = $product->product_price_promotion;
-                DB::table('tbl_product')->where('tbl_product.promotion_end_date', '<', self::getcurrentTime())
-                    ->update(array('promotion_end_date'=> null,
-                                 'promotion_start_date'=> null,
-                    'product_price'=> $product_price, 'product_price_promotion'=> $promotion_price));
-            }
         }
 
         public static function getcurrentTime()

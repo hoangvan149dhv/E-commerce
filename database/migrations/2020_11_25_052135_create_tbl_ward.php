@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTblCount extends Migration
+class CreateTblWard extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateTblCount extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_count', function (Blueprint $table) {
-            $table->Increments('id');
-            $table->integer('counts');
+        Schema::create('tbl_ward', function (Blueprint $table) {
+            $table->bigIncrements('xaid');
+            $table->string('	name',100);
+            $table->integer('type',30);
+            $table->integer('matp');
         });
     }
 
@@ -26,6 +28,6 @@ class CreateTblCount extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_count');
+        Schema::dropIfExists('tbl_ward');
     }
 }

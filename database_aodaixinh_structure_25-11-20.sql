@@ -153,23 +153,23 @@ CREATE TABLE `tbl_orders` (
 
 DROP TABLE IF EXISTS `tbl_product` ;
 CREATE TABLE `tbl_product` (
-  `product_id` int NOT NULL AUTO_INCREMENT,
+  `product_id` int unsigned NOT NULL AUTO_INCREMENT,
   `category_id` int NOT NULL,
-  `product_Name` varchar(100) NOT NULL,
-  `product_desc` text NOT NULL,
-  `product_material` varchar(100) NOT NULL,
+  `product_Name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `product_desc` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `product_material` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `product_price` int NOT NULL,
   `product_price_promotion` int NOT NULL,
+  `brandcode_id` int NOT NULL,
   `promotion_start_date` date DEFAULT NULL,
   `promotion_end_date` date DEFAULT NULL,
-  `brandcode_id` int NOT NULL,
-  `product_image` varchar(255) NOT NULL,
-  `meta_keyword` varchar(100) NOT NULL,
-  `meta_desc` text NOT NULL,
-  `meta_slug` text NOT NULL,
-  `publish` int NOT NULL DEFAULT '1',
+  `product_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_desc` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_slug` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `publish` int NOT NULL,
   PRIMARY KEY (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
 DROP TABLE IF EXISTS `tbl_review` ;
@@ -186,15 +186,15 @@ CREATE TABLE `tbl_review` (
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 
-DROP TABLE IF EXISTS `tbl_slider` ;
-CREATE TABLE `tbl_slider` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `img` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `status` bigint NOT NULL,
+DROP TABLE IF EXISTS `tbl_sliders` ;
+CREATE TABLE `tbl_sliders` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` int NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
 DROP TABLE IF EXISTS `tbl_template_mail` ;
@@ -204,7 +204,7 @@ CREATE TABLE `tbl_template_mail` (
   `template` text NOT NULL,
   `status` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 
 DROP TABLE IF EXISTS `tbl_configmail_receiver` ;

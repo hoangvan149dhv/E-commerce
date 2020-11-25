@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTblCount extends Migration
+class CreateTblBrandcodeProduct extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateTblCount extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_count', function (Blueprint $table) {
-            $table->Increments('id');
-            $table->integer('counts');
+        Schema::create('tbl_brand_code_product', function (Blueprint $table) {
+            $table->increments('code_id');
+            $table->string('brandcode_id',70);
+            $table->string('brandcode_name',70);
         });
     }
 
@@ -26,6 +27,6 @@ class CreateTblCount extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_count');
+        Schema::dropIfExists('tbl_brand_code_product');
     }
 }

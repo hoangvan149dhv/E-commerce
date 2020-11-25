@@ -212,18 +212,18 @@
             <div class="icon-bar-menu">
                 <a class="active" href="{{ URL('/trang-chu') }}"><i class="fa fa-home"></i></a>
                 <a href="tel:{{ $contact->info_contact_phone }}"><i class="fa fa-phone"></i></a>
-                <a href="{{URL::to('/hien-thi-gio-hang')}}"><i class="fa fa-shopping-cart"><?php
-                    $content_cart = Cart::content()->count();  //ĐẾM SỐ LƯỢNG TRONG GIỎ HÀNG
-                       if(empty($content_cart)){
-                           echo "";
-                       }else{
-                           echo "(".$content_cart.")";
-                       }
-                    ?></i></a>
+                <a href="{{URL::to('/hien-thi-gio-hang')}}"><i class="fa fa-shopping-cart">
+                        <?php
+                            $content_cart = Cart::content()->count();
+                               if(!empty($content_cart)){
+                                   echo "(".$content_cart.")";
+                               }
+                        ?></i>
+                </a>
                 <a href="#"><i class="fa fa-facebook"></i></a>
                 <a href="{{URL::to('/thong-tin-khach-hang')}}"><i class="fa fa-pencil-square-o"></i></a>
             </div>
-            <a href="tel:0334964103">
+            <a href="tel:{{ $contact->info_contact_phone }}">
                 <div class="hotline">
                     <span class="before-hotline">Hotline:</span>
                     <span class="hotline-number">{{ $contact->info_contact_phone }}</span>

@@ -191,9 +191,6 @@ Route::get('/all-Product', 'admin\Productcontroller@all_Product');
 // SAVE PRODUCT
 Route::post('/save-product', 'admin\Productcontroller@save_product');
 
-//DELETE PRODUCT
-route::get('/delete-product/{product_id}','admin\Productcontroller@delete_product');
-
 //DELETE MUTI PRODUCT
 Route::get('/destroy-product', 'admin\Productcontroller@destroy_product');
 //UPDATE PRODUCT
