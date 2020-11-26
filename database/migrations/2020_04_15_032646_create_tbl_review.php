@@ -21,6 +21,7 @@ class CreateTblReview extends Migration
             $table->text('Rcomment');
             $table->tinyInteger('status');
             $table->timestamp('created_date')->default(DB::raw('CURRENT_TIMESTAMP'))->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

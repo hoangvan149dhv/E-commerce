@@ -9,7 +9,7 @@
                     <div class="single-products">
                         <div class="productinfo text-center" id="product">
                             <form action="" style="margin-bottom: 0px;">
-                                @csrf {{-- XEM BÀI 63 --}}
+                                @csrf
                                 <input type="hidden" value="{{$product->product_id}}"
                                        class="cart_product_id_{{$product->product_id}}">
                                 <input type="hidden" value="{{$product->product_Name}}"
@@ -100,8 +100,7 @@
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            if ( document.getElementById("stick-promotions_{{$product->product_id}}") !== null )
-            {
+            if (document.getElementById("stick-promotions_{{$product->product_id}}") !== null) {
                 // Display the result in the element with id="demo"
                 document.getElementById("stick-promotions_{{$product->product_id}}").innerHTML = "Còn " + days + " ngày " + hours + ":"
                     + minutes + ":" + seconds;

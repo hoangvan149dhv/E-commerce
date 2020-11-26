@@ -29,10 +29,6 @@
                                 $c = (100 * $product->product_price) / $product->product_price_promotion;
                                 $sale = 100 - $c;
                                 ?>
-                                @if ($product->product_price_promotion==1||$product->product_price_promotion==0)
-                                @else
-                                    <span class="stick-promotion-brand">-{{ round($sale) }}%</span>
-                                @endif
                                 <div class="product_price">
                                     @if ($product->product_price_promotion==1||$product->product_price_promotion==0)
                                         <p></p>

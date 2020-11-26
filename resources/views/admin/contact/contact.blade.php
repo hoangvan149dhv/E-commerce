@@ -40,7 +40,7 @@
                     <td style="text-align:center">  {{$contactadmin->Con_Name}}</td>
                     <td style="text-align:center">  {{($contactadmin->Con_Email)}}</td>
                     <td style="text-align:center">  {{($contactadmin->Con_Content)}}</td>
-                    <td style="text-align:center">  {{Carbon::createFromFormat('Y-m-d H:i:s', $contactadmin->created_at)->format('d/m/yy | H:i:s')}}</td>
+                    <td style="text-align:center">  {{Carbon::createFromFormat('Y-m-d H:i:s', $contactadmin->created_date)->format('d/m/yy | H:i:s')}}</td>
                     @if ($contactadmin->status==1)
                     <td style="text-align:center;background:#bbecc457">
                         <a href="{{ URL::to('/updatestatus-1/'.$contactadmin->Con_Id) }}" style="color:green;">Đã Đọc</a>

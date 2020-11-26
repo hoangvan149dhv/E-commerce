@@ -16,7 +16,7 @@ class CreateTblConfigmailReceiver extends Migration
         Schema::create('tbl_configmail_receiver', function (Blueprint $table) {
             $table->Increments('id');
             $table->string('Email',50);
-            $table->string('type',50);
+            $table->string('name_email',50);
         });
     }
 

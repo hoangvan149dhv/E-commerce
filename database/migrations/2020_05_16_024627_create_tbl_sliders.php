@@ -13,7 +13,7 @@ class CreateTblSliders extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_slider', function (Blueprint $table) {
+        Schema::create('tbl_sliders', function (Blueprint $table) {
             $table->increments('id');
             $table->string('img',255);
             $table->integer('status');

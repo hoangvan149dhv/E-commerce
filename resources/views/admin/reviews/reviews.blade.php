@@ -29,7 +29,7 @@
                     <td style="text-align:center">  {{$reviewsadmin->Rname}}</td>
                     <td style="text-align:center">  {{($reviewsadmin->Remail)}}</td>
                     <td style="text-align:center">  {{($reviewsadmin->Rcomment)}}</td>
-                    <td style="text-align:center">  {{Carbon::createFromFormat('Y-m-d H:i:s', $reviewsadmin->created_at)->format('d/m/yy | H:i:s')}}</td>
+                    <td style="text-align:center">  {{Carbon::createFromFormat('Y-m-d H:i:s', $reviewsadmin->created_date)->format('d/m/yy | H:i:s')}}</td>
                     <td style="text-align:center;background:#bbecc457">
                     <a href="{{ URL::to('/deletestatus1/'.$reviewsadmin->Rid) }}" style="color:red">Xóa</a>
             </tr>

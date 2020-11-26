@@ -5,18 +5,13 @@
     use DB;
     use Session;
     use App\Http\Model\sliderModel;
-    use App\Http\Model\OrderModel;
     use Illuminate\Http\Request;
     use App\Http\Controllers\Controller;
     use App\Http\Requests;
-    use Illuminate\Support\Facades\Redirect;
     use Illuminate\Http\Response;
-    use Carbon\Carbon;
-    use App\Http\Model\CustomerorderModel;
     use App\Http\Model\contactinfoModel;
-    use Illuminate\Support\Facades\Cookie;
     use App\Http\Model\count;
-
+    use App\Http\library\product_detail;
     class HomeController extends Controller
     {
         public function __construct(request $request)
@@ -24,7 +19,8 @@
             $contactinfoModel = contactinfoModel::select()->get();
             $category_product = DB::table('tbl_category_product')->orderby('category_id', 'desc')->get();
             $brandcode_product = DB::table('tbl_brand_code_product')->orderby('code_id', 'desc')->get();
-            $this->getAllProduct();
+
+            \App\Http\library\product_detail::getAllProduct();
             //SEO
             $meta_desc = "Chuyên bán vải áo dài, may tại xưởng, giá rẻ, in sỉ, lẻ , chất lượng";
             $meta_keyword = "Áo dài in 3D, áo dài đẹp, áo dài in sỉ lẻ, đồng phục";
@@ -47,11 +43,10 @@
             $all_product = DB::table('tbl_product')
                 ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
                 ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
-                ->where('tbl_product.promotion_end_date', '>=', self::getcurrentTime())
-                ->where('tbl_product.publish','=', 1)
-                ->orwhere('tbl_product.promotion_end_date', '=', null)
-                ->orwhere('product_price_promotion', '=', 1)
-                ->orderby('product_id', 'desc')->paginate(15);
+                ->where('tbl_product.publish', '=', 1)
+                ->orderby('product_price_promotion', 'desc')
+                ->orderby('product_id', 'desc')
+                ->paginate(15);
 
             $slider = sliderModel::where('status', 1)->orderby('id', 'desc')->take(3)->get();
             //SỐ LƯỢT TRUY CẬP
@@ -82,18 +77,15 @@
         {
             $key_word = $request->search;
 
-            if ($key_word == '')
-            {
+            if ($key_word == '') {
                 return back();
-            }
-            else
-            {
+            } else {
                 $search = DB::table('tbl_product')
                     ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
                     ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
                     ->orderby('product_id', 'desc')->where('product_Name', 'like', '%' . $key_word . '%')
                     ->orwhere('product_material', 'like', '%' . $key_word . '%')
-                    ->where('tbl_product.publish','=', 1)
+                    ->where('tbl_product.publish', '=', 1)
                     ->where('tbl_product.promotion_end_date', '>=', self::getcurrentTime())
                     ->orwhere('tbl_product.promotion_end_date', '=', null)
                     ->orwhere('product_price_promotion', '=', 1)->paginate(15);
@@ -112,7 +104,7 @@
                 ->orderby('product_id', 'desc')->where('product_Name', 'like', '%' . $key_word . '%')
                 ->orwhere('product_material', 'like', '%' . $key_word . '%')
                 ->where('tbl_product.promotion_end_date', '>=', self::getcurrentTime())
-                ->where('tbl_product.publish','=', 1)
+                ->where('tbl_product.publish', '=', 1)
                 ->orwhere('tbl_product.promotion_end_date', '=', null)
                 ->orwhere('product_price_promotion', '=', 1)->paginate(20);
 
@@ -129,21 +121,12 @@
                 ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
                 ->where('product_price_promotion', '>', '1')
                 ->where('tbl_product.promotion_end_date', '>=', self::getcurrentTime())
-                ->where('tbl_product.publish','=', 1)
+                ->where('tbl_product.publish', '=', 1)
                 ->orderby('product_price_promotion', 'desc')->paginate(10);
 
             return view('user.promotion.promotion')
                 ->with('promotion', $promotion)
                 ->with(compact('slider'));
-        }
-
-        public function getAllProduct()
-        {
-            DB::table('tbl_product')->where('tbl_product.promotion_end_date', '<', self::getcurrentTime())
-                ->update(array('promotion_end_date'=> null,
-                             'promotion_start_date'=> null,
-                'publish' => 0));
-
         }
 
         public static function getcurrentTime()

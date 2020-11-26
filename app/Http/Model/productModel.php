@@ -10,4 +10,5 @@ class productModel extends Model
 
     protected $primary=('product_id');
 
+    public $timestamps = false;
 }

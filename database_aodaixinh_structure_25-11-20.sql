@@ -79,7 +79,7 @@ CREATE TABLE `tbl_contact` (
   `Con_Content` text NOT NULL,
   `status` int NOT NULL,
   `updated_at` datetime NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -126,7 +126,7 @@ CREATE TABLE `tbl_news` (
   `news_image` varchar(255) NOT NULL,
   `news_content` text NOT NULL,
   `updated_at` datetime NOT NULL,
-  `created_at` datetime NOT NULL,
+  `created_date` datetime NOT NULL,
   PRIMARY KEY (`news_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
@@ -181,7 +181,7 @@ CREATE TABLE `tbl_review` (
   `status` int NOT NULL,
   `product_id` tinyint DEFAULT NULL,
   `updated_at` datetime NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`Rid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
@@ -191,7 +191,7 @@ CREATE TABLE `tbl_sliders` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
   `img` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` int NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
+  `created_date` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

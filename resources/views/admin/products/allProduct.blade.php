@@ -8,6 +8,15 @@
       <div class="row w3-res-tb">
         <div class="col-sm-5 m-b-xs">
         </div>
+          <?php
+          $message_fail = Session::get('alert-danger-product');
+          ?>
+          <?php if (!empty($message_fail)):?>
+          <div class="alert-danger alert"><?php echo $message_fail;?></div>
+          <?php endif ?>
+          <?php
+          Session::put('alert-danger-product', null);
+          ?>
         <div class="col-sm-4">
         </div>
         <div class="col-sm-3">
