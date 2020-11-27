@@ -17,7 +17,7 @@ class CreateTblSliders extends Migration
             $table->increments('id');
             $table->string('img',255);
             $table->integer('status');
-            $table->timestamps(0);
+            $table->timestamps();
         });
     }
 

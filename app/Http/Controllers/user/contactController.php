@@ -10,18 +10,19 @@ use Validator;
 use App\Http\Model\contactinfoModel;
 use App\Http\Controllers\user\HomeController;
 class contactController extends HomeController{
-    public function Contact(Request $request){
+    public function Contact(Request $request)
+    {
 
         return view('user.contact.contact');
     }
 
-    public function insertContact(request $request){
-
+    public function insertContact(request $request)
+    {
         $contactModel = new contactModel();
         $contactModel->Con_Name = $request['name'];
-        $contactModel->Con_Email= $request['email'];
-        $contactModel->Con_Content= $request['content'];
-        $contactModel->status= 0;
+        $contactModel->Con_Email = $request['email'];
+        $contactModel->Con_Content = $request['content'];
+        $contactModel->status = 0;
 
         if (!$contactModel->save())
         {
