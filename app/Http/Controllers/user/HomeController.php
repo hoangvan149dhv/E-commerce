@@ -20,7 +20,7 @@
             $category_product = DB::table('tbl_category_product')->orderby('category_id', 'desc')->get();
             $brandcode_product = DB::table('tbl_brand_code_product')->orderby('code_id', 'desc')->get();
 
-            \App\Http\library\product_detail::getAllProduct();
+            \App\Http\library\product_detail::updateProduct();
             //SEO
             $meta_desc = "Chuyên bán vải áo dài, may tại xưởng, giá rẻ, in sỉ, lẻ , chất lượng";
             $meta_keyword = "Áo dài in 3D, áo dài đẹp, áo dài in sỉ lẻ, đồng phục";
@@ -40,10 +40,7 @@
 
         public function index(Request $request)
         {
-            $all_product = DB::table('tbl_product')
-                ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
-                ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
-                ->where('tbl_product.publish', '=', 1)
+            $all_product = \App\Http\library\product_detail::getProductPublish()
                 ->orderby('product_price_promotion', 'desc')
                 ->orderby('product_id', 'desc')
                 ->paginate(15);
@@ -57,22 +54,13 @@
 
             if (isset($response)) {
                 $request->cookie("abc" . rand(0, 9999));
-
                 $count->increment('counts');
-
-                return view('user.home')
-                    ->with('count', $count)
-                    ->with(compact('all_product', 'slider'));
-
-
-            } else {
-                return view('user.home')
-                    ->with('count', $count)
-                    ->with(compact('all_product', 'slider'));
             }
+            return view('user.home')
+                ->with('count', $count)
+                ->with(compact('all_product', 'slider'));
         }
 
-        //TÌM KIẾM
         public function search(Request $request)
         {
             $key_word = $request->search;
@@ -80,49 +68,26 @@
             if ($key_word == '') {
                 return back();
             } else {
-                $search = DB::table('tbl_product')
-                    ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
-                    ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
-                    ->orderby('product_id', 'desc')->where('product_Name', 'like', '%' . $key_word . '%')
+                $search = \App\Http\library\product_detail::getAllProduct()
+                    ->where('product_Name', 'like', '%' . $key_word . '%')
                     ->orwhere('product_material', 'like', '%' . $key_word . '%')
-                    ->where('tbl_product.publish', '=', 1)
-                    ->where('tbl_product.promotion_end_date', '>=', self::getcurrentTime())
-                    ->orwhere('tbl_product.promotion_end_date', '=', null)
-                    ->orwhere('product_price_promotion', '=', 1)->paginate(15);
+                    ->orderby('product_price_promotion', 'desc')
+                    ->orderby('product_id', 'desc')
+                    ->paginate(15);
 
                 return view('user.search.search')
                     ->with('search', $search);
             }
         }
 
-        public function search_product(Request $request)
-        {
-            $key_word = $request->search;
-            $search = DB::table('tbl_product')
-                ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
-                ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
-                ->orderby('product_id', 'desc')->where('product_Name', 'like', '%' . $key_word . '%')
-                ->orwhere('product_material', 'like', '%' . $key_word . '%')
-                ->where('tbl_product.promotion_end_date', '>=', self::getcurrentTime())
-                ->where('tbl_product.publish', '=', 1)
-                ->orwhere('tbl_product.promotion_end_date', '=', null)
-                ->orwhere('product_price_promotion', '=', 1)->paginate(20);
-
-            return view('user.search.search')
-                ->with('search', $search);
-
-        }
-
         public function promotion()
         {
             $slider = sliderModel::where('status', 1)->orderby('id', 'desc')->take(3)->get();
-            $promotion = DB::table('tbl_product')
-                ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
-                ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
+            $promotion = \App\Http\library\product_detail::getAllProduct()
                 ->where('product_price_promotion', '>', '1')
                 ->where('tbl_product.promotion_end_date', '>=', self::getcurrentTime())
-                ->where('tbl_product.publish', '=', 1)
-                ->orderby('product_price_promotion', 'desc')->paginate(10);
+                ->orderby('product_price_promotion', 'desc')
+                ->paginate(10);
 
             return view('user.promotion.promotion')
                 ->with('promotion', $promotion)
@@ -131,9 +96,7 @@
 
         public static function getcurrentTime()
         {
-            $timeCurrent = date("Y-m-d");
-
-            return $timeCurrent;
+            \App\Http\library\product_detail::getcurrentTime();
         }
     }
 

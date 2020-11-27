@@ -12,7 +12,7 @@ class product_detail  extends BaseController
         return $productData;
     }
 
-    public static function getAllProduct()
+    public static function updateProduct()
     {
         // Update product when promotion_end_date over time
         DB::table('tbl_product')->where('tbl_product.promotion_end_date', '<', self::getcurrentTime())
@@ -26,12 +26,23 @@ class product_detail  extends BaseController
                 'publish' => 0));
     }
 
+    public static function getProductPublish()
+    {
+        $all_product = DB::table('tbl_product')
+            ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
+            ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
+            ->where('tbl_product.publish', '=', 1);
+
+        return $all_product;
+    }
+
     public static function getcurrentTime()
     {
         $timeCurrent = date("Y-m-d");
 
         return $timeCurrent;
     }
+
     public static function getProductPromotionEmptynedDate($pid)
     {
         $products = productModel::where('product_price_promotion', '>', 1 )->where('promotion_end_date', '=', null)

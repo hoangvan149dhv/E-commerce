@@ -21,21 +21,15 @@
             {
                 return back();
             }
-            $show_details_product = DB::table('tbl_product')
-                ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
-                ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
-                ->where('meta_slug', $meta_slug)
-                ->where('tbl_product.publish','=', 1)->get();
+            $show_details_product = \App\Http\library\product_detail::getAllProduct()
+                ->where('meta_slug', $meta_slug)->get();
 
             if (empty($show_details_product)) {
 
                 return redirect('trang-chu');
             }
             //SẢN PHÂM ĐC QUAN TÂM (SẢN PHẨM MỚI)
-            $show_details_product_recommended = DB::table('tbl_product')
-                ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
-                ->where('tbl_product.publish','=', 1)
-                ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
+            $show_details_product_recommended = \App\Http\library\product_detail::getAllProduct()
                 ->whereNotIn('tbl_product.meta_slug', [$meta_slug])
                 ->limit('3')->orderby('product_id', 'desc')->get();
 
@@ -51,10 +45,7 @@
                 ///SEO
             }
             if (isset($brand_product_id)) {
-                $related_product = DB::table('tbl_product')
-                    ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
-                    ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
-                    ->where('tbl_product.publish','=', 1)
+                $related_product = \App\Http\library\product_detail::getAllProduct()
                     ->where('tbl_brand_code_product.brandcode_id', $brand_product_id)
                     ->whereNotIn('tbl_product.meta_slug', [$meta_slug])->limit('3')
                     ->orderby('product_id', 'asc')->get();
@@ -64,12 +55,11 @@
             }
 
             //LẤY SẢN PHẨM THEO DANH MỤC
-            $show_product = DB::table('tbl_product')
-                ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
-                ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
+            $show_product =\App\Http\library\product_detail::getAllProduct()
                 ->where('tbl_product.category_id', $category_product_id)
                 ->whereNotIn('tbl_product.meta_slug', [$meta_slug])
-                ->where('tbl_product.publish','=', 1)->limit(5)->get();
+                ->limit(5)
+                ->get();
             $reviewModel = ReviewModel::where('product_id', $show_details_product[0]->product_id)->limit(4)->orderby('Rid', 'desc')->get();
 
             return view('user.details_product.details_product')
@@ -106,11 +96,9 @@
 
             if (empty($request['name'] && $request['email'] && $request['comment']))
             {
-
                 Session::put('alert', "<div style='color:red'> bạn không được để trống ở bất kì mục nào</div>"); //admin_Id trong dbs`
 
                 return back();
-
             }
             else
             {

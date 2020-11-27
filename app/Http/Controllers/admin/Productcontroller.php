@@ -70,7 +70,6 @@
 
         public function all_Product()
         {
-
             $all_product = DB::table('tbl_product')
                 ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
                 ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
@@ -136,13 +135,12 @@
                 $data['product_image'] = $new_image;
 
                 DB::table('tbl_product')->insert($data);
-                Session::put('alert-success-product', 'Thêm  Sản phẩm Thành Công');
-                return redirect::to('add-Product');
+
             } else {
                 $data['product_image'] = '';
-                Session::put('alert-success-product', 'Thêm  Sản phẩm Thành Công');
-                return redirect::to('add-Product');
             }
+            Session::put('alert-success-product', 'Thêm Sản phẩm Thành Công');
+            return redirect::to('add-Product');
         }
 
         //xóa tất cả sản phẩm

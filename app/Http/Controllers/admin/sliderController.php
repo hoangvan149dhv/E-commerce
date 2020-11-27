@@ -22,7 +22,7 @@ class sliderController extends AdminController
             $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.', $get_name_image));
             $image = md5(time()) . $name_image . '.' . $get_image->getClientOriginalExtension();
-            $get_image->move('public/upload', $image); // move == move_upload trong php
+            $get_image->move('public/upload', $image); // move == move_upload
             $data['img'] = $image;
 
             if (!sliderModel::insert($data)) {

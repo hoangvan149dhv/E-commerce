@@ -18,7 +18,6 @@ Route::get('/trang-chu','user\HomeController@index');
 
 //FIND PRODUCTS
 Route::get('/tim-kiem','user\HomeController@search');
-Route::get('/tim-kiem','user\HomeController@search_product');
 ///////////////////////////////---------BRANDS - CATEGORIES---------////////////////////////////////////////////////////
 
 //SHOW PRODUCT BY CATEGORIES

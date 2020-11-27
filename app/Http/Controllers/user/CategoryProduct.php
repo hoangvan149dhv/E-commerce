@@ -19,12 +19,9 @@
             $category_name = DB::table('tbl_category_product')->where('category_id', $category_id)->limit('1')->get();
 
             //category_by_id
-            $category_by_id = DB::table('tbl_product')
-                ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
-                ->join('tbl_brand_code_product', 'tbl_brand_code_product.code_id', '=', 'tbl_product.brandcode_id')
-                ->where('tbl_product.publish' ,'=' , 1)
-                ->where('tbl_category_product.category_id', $category_id)
-                ->paginate(12);
+            $category_by_id = \App\Http\library\product_detail::getAllProduct()
+                            ->where('tbl_category_product.category_id', $category_id)
+                            ->paginate(12);
             // meta
             foreach ($category_name as $value) {
                 //SEO

@@ -80,7 +80,8 @@ class loginController extends Controller
 
         $result = DB::table('tbl_admin')->where('user_name',$user_name)->where('admin_pass',$admin_pass)->first();
 
-        if($result){
+        if($result)
+        {
 
             $count = count::find(1);
 
@@ -98,24 +99,15 @@ class loginController extends Controller
 
             session::put('message', DB::table('tbl_orders')->where('status',0)->count());
 
-            $response = new Response();
+            view()->share('count',$count);
 
-            $alert=  $response->withcookie($result->admin_name,$result->admin_name,1000000);
-
-            if(isset($alert)){
-
-                view()->share('count',$count);
-
-                return view('admin.dashboard')
-                    ->with('alert',$alert)
+            return view('admin.dashboard')
                     ->with('product_order_date',$product_order_date)
                     ->with('product_order_month',$product_order_month);
-            }
-            else{
-                return view('admin.login.admin_login');
-                }
-        }else{
 
+        }
+        else
+        {
             echo "<script type='text/javascript'>
                   alert('Sai Mật Khẩu ');
                   </script>";

@@ -62,7 +62,7 @@ class BrandcodeProduct extends AdminController
         $data = array();
         $data['brandcode_name'] = $Request->name;
         $data['brandcode_id'] = $Request->code;
-        //THỰC HIỆN query
+
         DB::table('tbl_brand_code_product')->where('code_id',$brand_code_id)->update($data);
 
         Session::put('alert-success','Sửa Mã Thương Hiệu Thành Công');

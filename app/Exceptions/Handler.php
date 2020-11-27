@@ -47,14 +47,10 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $exception)
     {
         if ($this->isHttpException($exception)) {
-            if ($exception->getStatusCode() == 404) {
-                return response()->view('errors.' . '404', [], 404);
-            }
-            else if ($exception->getStatusCode() == 405) {
-                return response()->view('errors.' . '404', [], 405);
-            }
-            else if ($exception->getStatusCode() == 500) {
-                return response()->view('errors.' . '404', [], 500);
+            $status_code = $exception->getStatusCode();
+
+            if ($status_code == 404 || $status_code == 500) {
+                return response()->view('errors.' . '404', [], $status_code);
             }
         }
 
