@@ -45,7 +45,7 @@
             </td>
             <td style="border: 1px solid #E6E4DF;" class="cart_quantity">
                 <div class="cart_quantity_button" style="text-align: center;">
-                    <p width="50px">{{$value->soluong}}</p>
+                    <p width="50px">{{$value->qty}}</p>
                 </div>
             </td>
             <td>

@@ -21,11 +21,11 @@
               </thead>
               <tbody>
                @foreach ($infocustomerorder as $info)
-                    <tr>
+                <tr>
                   <td style="text-align:center">  {{$info->customer->cusname}}</td>
-                  <td style="text-align:center">  {{$info->cusphone}}</td>
+                  <td style="text-align:center">  {{$info->customer->cusPhone}}</td>
                   <td style="text-align:center">  {{$info->customer->cusadd}}</td>
-                  <td style="text-align:center">  {{$info->note}}</td>
+                  <td style="text-align:center">  {{$info->customer->cusNote}}</td>
                   <td style="text-align:center">  {{Carbon::createFromFormat('Y-m-d H:i:s', $info->order_date)->format('d/m/yy | H:i:s')}}</td>
                 </tr>
                 @endforeach
@@ -53,22 +53,21 @@
             </tr>
           </thead>
           <tbody>
-           @foreach ($infocustomerorder as $product)
+           @foreach ($infocustomerorder_product as $product)
             <tr>
-
-              <td style="text-align:center"><a href="{{URL::to('/edit-product/'.$product->product_id)}}">{{$product->productname}}</a></td>
-              <td style="text-align:center"><a href="{{URL::to('/edit-product/'.$product->product_id)}}"><img src="{{asset('public/upload/'.$product->image )}}" width=80 height=110></a></td>
-              <td style="text-align:center">{{$product->productorder->product_material}}</td>
-              <td style="text-align:center">  {{$product->soluong}}</td>
-              <td style="text-align:center">  {{number_format($product->price)}}.VNĐ</td>
-              <td style="text-align:center">  {{number_format($product->fee_ship)}}.VNĐ</td>
-              <td style="text-align:center">  {{number_format($product->total)}}.VNĐ</td>
-              @if ($product->status==1)
+              <td style="text-align:center"><a href="{{URL::to('/edit-product/'.$product->product_id)}}">{{$product->product_Name}}</a></td>
+              <td style="text-align:center"><a href="{{URL::to('/edit-product/'.$product->product_id)}}"><img src="{{asset('public/upload/'.$product->product_image )}}" width=80 height=110></a></td>
+              <td style="text-align:center">{{$product->product_material}}</td>
+              <td style="text-align:center">  {{$info->qty}}</td>
+              <td style="text-align:center">  {{number_format($product->product_price)}}.VNĐ</td>
+              <td style="text-align:center">  {{number_format($info->fee_ship)}}.VNĐ</td>
+              <td style="text-align:center">  {{number_format($info->total)}}.VNĐ</td>
+              @if ($info->status == 1)
               <td style="text-align:center;background:#bbecc457">
-                  <a href="{{ URL::to('/update-status-1/'.$product->orderid) }}" style="color:green;">Đã Giao Xong</a>
+                  <a href="{{ URL::to('/update-status-1/'.$info->orderid) }}" style="color:green;">Đã Giao Xong</a>
               @else
               <td style="text-align:center;background:#f0bcb470;">
-                  <a href="{{ URL::to('/update-status-0/'.$product->orderid) }}" style="color:red">Đang Xử Lý</a>
+                  <a href="{{ URL::to('/update-status-0/'.$info->orderid) }}" style="color:red">Đang Xử Lý</a>
               @endif</td>
             </tr>
             @endforeach

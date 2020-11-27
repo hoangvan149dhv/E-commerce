@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\admin;
+use App\Http\Model\OrderModel;
 use Illuminate\Http\Request;
 use DB;
 use Session;
@@ -40,41 +41,26 @@ class AdminController extends loginController{
 
     //cHUYỂN ĐẾN TRANG CHỦ ADMIN
     public function index(){
-
-        $date=  Carbon::now()->day;
-
-        $month=  Carbon::now()->month;
-
+        $date  =  Carbon::now();
+        $month =  Carbon::now()->month;
         $product_order_date = DB::table('tbl_orders')->where('status',1)->whereDate('order_date',$date)->get();
-
         $product_order_month = DB::table('tbl_orders')->where('status',1)->whereMonth('order_date',$month)->get();
 
         session::put('message', DB::table('tbl_orders')->where('status',0)->count());
 
-        $response = new Response();
 
-        $alert=  $response->withcookie('hjftgkk','dàdsfs',1000000);
+        return view('admin.dashboard')
+              ->with('product_order_date',$product_order_date)
+              ->with('product_order_month',$product_order_month);
 
-        if(isset($alert)){
-
-            return view('admin.dashboard')
-                  ->with('alert',$alert)
-                  ->with('product_order_date',$product_order_date)
-                  ->with('product_order_month',$product_order_month);
-
-        }else{
-
-            return view('admin.login.admin_login');
-
-        }
 
     }
     //QUẢN LÝ ĐƠN HÀNG
     public function order(){
+        $orderModel = new OrderModel();
+        $product_order = $orderModel->orderby('orderid','desc')->paginate(15);
 
-        $product_order = DB::table('tbl_orders')->orderby('orderid','desc')->paginate(3);
-
-        session::put('message', DB::table('tbl_orders')->where('status',0)->count());
+        session::put('message', DB::table('tbl_orders')->where('status', 0)->count());
 
         return view('admin.order.order')->with('product_order',$product_order);
 
@@ -88,34 +74,14 @@ class AdminController extends loginController{
     }
 
     //convert status 0->1
-    public function update_status_0($orderid){
-
-        $data['status'] = 1;
-
-        DB::table('tbl_orders')->where('orderid',$orderid)->update($data);
-
-        return back();
-    }
-
-    //covert status 1->0
-    public function update_status_1($orderid){
-
-        $data['status'] = 0;
+    public function update_status($orderid, $order_status){
+        $data['status'] = $order_status;
 
         DB::table('tbl_orders')->where('orderid',$orderid)->update($data);
 
         return back();
-
     }
 
-    //remove oder complete
-    public function delete_status_1($orderid){
-
-        DB::table('tbl_orders')->where('orderid',$orderid)->delete();
-
-        return back();
-
-    }
 
     //destroy muti order
     public function destroy_order(Request $request){
@@ -131,48 +97,30 @@ class AdminController extends loginController{
 
         $key_word = $request->search;
 
-        $search = DB::table('tbl_orders')->orderby('orderid','desc')->where('cusname','like','%'.$key_word.'%')
+        $search = DB::table('tbl_orders')->where('cusname','like','%'.$key_word.'%')
                     ->orWhere('status',$key_word)
-                    ->orWhere('productname','like','%'.$key_word.'%')->paginate(30);
+                    ->orWhere('productname','like','%'.$key_word.'%')
+                    ->orderby('orderid','desc')->paginate(30);
 
         return view('admin.search.search')->with('search',$search);
 
     }
 
-    public function search_product_order(Request $request){
+    public function display_order_status($status)
+    {
+        $orderModel = new OrderModel();
+        $order_detail = $orderModel->where('status', $status)->orderby('orderid','desc')->paginate(30);
 
-        $key_word = $request->search;
-
-        $search = DB::table('tbl_orders')->orderby('orderid','desc')->where('cusname','like','%'.$key_word.'%')
-        ->orWhere('status',$key_word)
-        ->orWhere('productname','like','%'.$key_word.'%')->paginate(30);
-        return view('admin.search.search')->with('search',$search);
-
+        return view('admin.order.order_detail')
+            ->with('order_detail', $order_detail);
     }
 
-    public function order_not_complete(){
-
-        $order_not_complete = DB::table('tbl_orders')->orderby('orderid','desc')->where('status',0)->paginate(30);
-
-        return view('admin.order.order_not_complete')->with('order_not_complete',$order_not_complete);
-
-    }
-
-    public function order_complete(){
-
-        $order_complete = DB::table('tbl_orders')->orderby('orderid','desc')->where('status',1)->paginate(30);
-
-        return view('admin.order.order_complete')->with('order_complete',$order_complete);
-
-    }
 
     public function searchProduct(Request $request){
 
         $key_word = $request->search;
 
-        $search = DB::table('tbl_product')->orderby('product_id','desc')
-                ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
-                ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
+        $search = \App\Http\library\product_detail::getallProduct()
                 ->orderby('product_id','desc')->where('product_Name','like','%'.$key_word.'%')
                 ->orWhere('tbl_category_product.category_name','like','%'.$key_word.'%')
                 ->paginate(30);
@@ -181,32 +129,24 @@ class AdminController extends loginController{
 
     }
 
-    public function searchProduct_item(Request $request){
-
-        $key_word = $request->search;
-
-        $search = DB::table('tbl_product')->orderby('product_id','desc')
-                    ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
-                    ->join('tbl_brand_code_product','tbl_brand_code_product.code_id','=','tbl_product.brandcode_id')
-                    ->orderby('product_id','desc')->where('product_Name','like','%'.$key_word.'%')
-                    ->orWhere('tbl_category_product.category_name','like','%'.$key_word.'%')
-                    ->paginate(30);
-
-        return view('admin.search.searchproduct')->with('search',$search);
-    }
-
     //THÔNG TIN ĐƠN HÀNG KHÁCH ĐÃ ĐẶT
     public function infocustomerorder($orderid){
 
         $infocustomer = CustomerorderModel::where('orderid',$orderid)->get();
 
-        return view('admin.infoOrder.infoOrder',['infocustomerorder'=>$infocustomer]);
+        $orderItems =  $infocustomer[0]->toArray();
+
+        $getProductItems = explode(',',$orderItems['product_id']);
+        for ( $i = 0; $i < count($getProductItems); $i++){
+            $productItem = \App\Http\library\product_detail::getProductDetail($getProductItems[$i]);
+        }
+        return view('admin.infoOrder.infoOrder',
+            ['infocustomerorder' => $infocustomer,
+                'infocustomerorder_product' => $productItem]);
 
     }
 
-    public function upload(Request $request){
-
-
+    public function upload(Request $request) {
 
         if($request->hasFile('upload')) {
             //get filename with extension

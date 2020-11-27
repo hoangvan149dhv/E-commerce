@@ -8,13 +8,6 @@
       <div class="panel-heading">
          Liên hệ từ phía khách hàng
       </div>
-      <?php
-    //   $message = Session::get('message');
-    //   if($message){
-    //       echo $message;
-    //       Session::put('message',null);
-    //   }
-  ?>
       <div class="row w3-res-tb">
         <div class="col-sm-5 m-b-xs">
         </div>
@@ -40,16 +33,17 @@
                     <td style="text-align:center">  {{$contactadmin->Con_Name}}</td>
                     <td style="text-align:center">  {{($contactadmin->Con_Email)}}</td>
                     <td style="text-align:center">  {{($contactadmin->Con_Content)}}</td>
-                    <td style="text-align:center">  {{Carbon::createFromFormat('Y-m-d H:i:s', $contactadmin->created_date)->format('d/m/yy | H:i:s')}}</td>
-                    @if ($contactadmin->status==1)
+                    <td style="text-align:center">  {{Carbon::createFromFormat('Y-m-d H:i:s', $contactadmin->created_at)->format('d/m/yy | H:i:s')}}</td>
+                    @if ($contactadmin->status == 1)
                     <td style="text-align:center;background:#bbecc457">
-                        <a href="{{ URL::to('/updatestatus-1/'.$contactadmin->Con_Id) }}" style="color:green;">Đã Đọc</a>
+                        <a href="{{ URL::to('/update_status_contact/'.$contactadmin->id.'/0') }}" style="color:green;">Đã Đọc</a>
                         ||
-                        <a href="{{ URL::to('/deletestatus-1/'.$contactadmin->Con_Id) }}" style="color:red">Xóa</a>
+                        <a href="{{ URL::to('/delete_status/'.$contactadmin->id) }}" style="color:red">Xóa</a>
                     @else
                     <td style="text-align:center;background:#f0bcb470;">
-                        <a href="{{ URL::to('/updatestatus-0/'.$contactadmin->Con_Id) }}" style="color:red">Chưa Đọc</a>
-                    @endif</td>
+                        <a href="{{ URL::to('/update_status_contact/'.$contactadmin->id.'/1') }}" style="color:red">Chưa Đọc</a>
+                    </td>
+                    @endif
             </tr>
             @endforeach
           </tbody>

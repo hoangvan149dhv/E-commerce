@@ -39,15 +39,12 @@
             <tr>
               <td><label class="i-checks m-b-none"><input type="checkbox" value="{{ $slider->id }}" name="slider[]"></label></td>
               <td><img src="public/upload/{{$slider->img}}" width="80" height="120" alt=""></td>
-              <td><span class="text-ellipsis">
-                  <?php
-                      if($slider->status==0){?>
-                        <a href=" {{URL::to('/status-1/'.$slider->id)}}"><span class='fa fa-eye'style='color:green;font-size:20px'>||Hiện</span></a>
-                      <?php }else{ ?>
-                        <a href=" {{URL::to('/status-0/'.$slider->id)}}"><span class="fa fa-eye-slash" style='color:red;font-size:20px'>||Ẩn</span></a>
-                     <?php }
-                    ?>
-                  </span>
+              <td>
+                  @if ($slider->status == 1)
+                    <a href=" {{URL::to('/update_status_slider/'.$slider->id.'/0')}}"><span class='fa fa-eye'style='color:green;font-size:20px'>||Hiện</span></a>
+                  @else
+                    <a href=" {{URL::to('/update_status_slider/'.$slider->id.'/1')}}"><span class="fa fa-eye-slash" style='color:red;font-size:20px'>||Ẩn</span></a>
+                  @endif
               </td>
               <td>
                 <a href="{{URL::to('/update-layout-slider/'.$slider->id)}}"style='color:green;font-size:20px' class="active" ui-toggle-class="">

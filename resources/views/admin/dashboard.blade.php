@@ -93,7 +93,7 @@
                       @endphp
                       @foreach ($product_order_date as $product =>$key)
                           @php
-                              $subtotal = $key->price;
+                              $subtotal = $key->total;
                               $total += $subtotal;
                           @endphp
                           <?php
@@ -120,9 +120,9 @@
                       @php
                           $total = 0;
                       @endphp
-                      @foreach ($product_order_month as $product =>$key)
+                      @foreach ($product_order_month as $product => $key)
                           @php
-                              $subtotal = $key->price;
+                              $subtotal = $key->total;
                               $total += $subtotal;
                           @endphp
                       @endforeach

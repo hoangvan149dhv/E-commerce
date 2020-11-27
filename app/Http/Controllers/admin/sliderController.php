@@ -69,18 +69,12 @@ class sliderController extends AdminController
         }
 
     }
-    function status_0($id){
-        sliderModel::where('id',$id)->update(['status'=>0]);
+    function update_status_slider($id, $status){
+        sliderModel::where('id',$id)->update(['status'=> $status]);
 
         return Redirect::to('all-slider');
     }
-    function status_1($id){
 
-        sliderModel::where('id',$id)->update(['status'=>1]);
-
-        return Redirect::to('all-slider');
-
-    }
     //xóa qc
     function delete($id)
     {

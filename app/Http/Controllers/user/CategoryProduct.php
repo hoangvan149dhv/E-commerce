@@ -19,8 +19,9 @@
             $category_name = DB::table('tbl_category_product')->where('category_id', $category_id)->limit('1')->get();
 
             //category_by_id
-            $category_by_id = \App\Http\library\product_detail::getAllProduct()
+            $category_by_id = \App\Http\library\product_detail::getProductPublish()
                             ->where('tbl_category_product.category_id', $category_id)
+                            ->orderby('product_price_promotion', 'desc')
                             ->paginate(12);
             // meta
             foreach ($category_name as $value) {

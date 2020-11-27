@@ -16,8 +16,9 @@
             //brand_name
             $brand_name = DB::table('tbl_brand_code_product')->where('code_id', $brand_id)->limit('1')->get();
 
-            $brand_by_id = \App\Http\library\product_detail::getAllProduct()
+            $brand_by_id = \App\Http\library\product_detail::getProductPublish()
                             ->where('tbl_brand_code_product.code_id', $brand_id)
+                            ->orderby('tbl_product.product_price_promotion', 'desc')
                             ->paginate(12);
 
             return view('user.brand.show_brandcode')

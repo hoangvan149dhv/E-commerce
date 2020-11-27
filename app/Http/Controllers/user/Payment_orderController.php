@@ -18,43 +18,36 @@ require dirname(__FILE__, 5). '/mpdf/vendor/autoload.php';
 class Payment_orderController extends HomeController
 {
     public function payment_order(Request $request){
+        $order_data['product_id'] = '';
 
         $content = Cart::content();
 
         // INSERT CUSTOMER
         $cus_data['cusname'] = $request->name;
         $cus_data['cusadd'] = $request->add;
-        $cus_data['cusPhone'] =$request->phone;
-
+        $cus_data['cusPhone'] = $request->phone;
+        $cus_data['cusNote'] = $request->note;
         if(empty($request->phone)|| empty($request->add) || empty($request->name)){
 
             Session::put('error','Bạn Không Được Để Trống bất kì mục nào');
             return Redirect::to('/hien-thi-gio-hang');
 
-        }else{
+        }
+        else
+        {
 
             $cus_id = DB::table('tbl_customer')->insertGetId($cus_data);
 
         // INSERT ORDER_PAYMENT
             foreach($content as $value_content){
                 $order_data['cusid']       = $cus_id;
-                $order_data['cusname']     = $request->name;
-                $order_data['product_id']  = $value_content->id;
-                $order_data['productname'] = $value_content->name;
-                $order_data['price']       = $value_content->price;
-                $order_data['soluong']     = $value_content->qty;
+                $order_data['product_id']  .= ',' . $value_content->id;
+                $order_data['qty']         = $value_content->qty;
                 $order_data['fee_ship']    = $request->val_feeship;
-                $order_data['total']       = ($order_data['price'] * $order_data['soluong']) +  $order_data['fee_ship'];
-                $order_data['image']       = $value_content->options->images;
-                $order_data['cusphone']    = $request->phone;
-
-                if(empty($request->note))
-                {
-                    $order_data['note'] = "Null";
-                }else {
-                    $order_data['note'] = $request->note; //GHI CHÚ
-                }
-                $order_data['status']="đang xử lý"; //TRẠNG THÁI XỬ LÝ
+                $order_data['total']       = ($value_content->price * $order_data['qty']) + $order_data['fee_ship'];
+                $order_data['status']      = 0;
+            }
+                $order_data['product_id'] = substr($order_data['product_id'], 1);
 
                 $getIdorder = DB::table('tbl_orders')->insertGetId($order_data);
 
@@ -85,7 +78,7 @@ class Payment_orderController extends HomeController
                         //template order
                         $file_template_mail = "mails.order_mail";
 
-                        if (!$sendmail->sendMail(
+                        $sendmail->sendMail(
                             $fromname,
                             $mailconfig_recipient,
                             $ccname,
@@ -93,9 +86,8 @@ class Payment_orderController extends HomeController
                             $subject,
                             $file_template_mail,
                             $template,
-                            $item_detail_order)){
-                            continue;
-                        }
+                            $item_detail_order);
+
 
                         $mpdf = new \Mpdf\Mpdf();
                         $mpdf->WriteHTML($template[0]->template);
@@ -106,7 +98,7 @@ class Payment_orderController extends HomeController
 
                     throw new \RuntimeException($e->getMessage(), $e->getCode());
                 }
-            }
+
             Cart::destroy();
 
 

@@ -31,30 +31,20 @@ class CategoryProduct extends AdminController
 
     //ADD Save
     public function save_Category_Product(Request $Request){
-
         $data['category_name'] = $Request->name;
         $data['category_desc'] = $Request->mota;
         $data['category_status'] = $Request->status;
-
-        DB::table('tbl_category_product')->insert($data);//CHỌN table ->insert dữ liệu data
+        DB::table('tbl_category_product')->insert($data);
 
         Session::put('message', 'Thêm Danh Mục Sản Phẩm Thành Công');
 
-        return Redirect::to('addCategoryProduct');
+        return back();
     }
 
     //active
-    public function active_Category_Product($category_product_id){
-
-        DB::table('tbl_category_product')->where('category_id', $category_product_id)->update(['category_status' => 1]);
-
-        return Redirect::to('allCategoryProduct');
-    }
-
-    //unactive
-    public function unactive_Category_Product($category_product_id){
-
-        DB::table('tbl_category_product')->where('category_id', $category_product_id)->update(['category_status' => 0]);
+    public function update_status_category($category_product_id, $status)
+    {
+        DB::table('tbl_category_product')->where('category_id', $category_product_id)->update(['category_status' => $status]);
 
         return Redirect::to('allCategoryProduct');
     }
@@ -84,17 +74,9 @@ class CategoryProduct extends AdminController
 
         Session::put('message', 'Sửa Danh Mục Sản Phẩm Thành Công');
 
-        return Redirect::to('/allCategoryProduct');
-    }
-
-    public function delete_Category_Product($category_product_id){
-
-        DB::table('tbl_category_product')->where('category_id', $category_product_id)->delete();
-
         return back();
     }
 
-////DESTROY CATEGOY
     public function destroy_Category_Product(request $request){
 
         $destroy_cate = $request->category;

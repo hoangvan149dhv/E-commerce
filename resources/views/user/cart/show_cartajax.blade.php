@@ -31,7 +31,7 @@
                                 <div class="cart_quantity_button" style="margin-top:10px;text-align: center;">
                                     @csrf
                                     <input type="hidden" value="" name="rowId_cart">
-                                    <input class="cart_quantity_input" type="number" name="soluong" value="{{ $cart['product_qty'] }}" width="50px" min="1">
+                                    <input class="cart_quantity_input" type="number" name="qty" value="{{ $cart['product_qty'] }}" width="50px" min="1">
                                     <input type="submit" name="submit" value="Sửa" class="cart_quantity_delete" style="color:white;font-size:17px;background:#FE980F;">
                                 </div>
                             </form>

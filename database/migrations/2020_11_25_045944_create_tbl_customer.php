@@ -18,6 +18,7 @@ class CreateTblCustomer extends Migration
             $table->string('cusname',70);
             $table->string('cusadd',70);
             $table->string('cusPhone',11);
+            $table->text('note')->nullable();
         });
     }
 

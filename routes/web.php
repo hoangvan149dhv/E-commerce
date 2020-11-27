@@ -108,28 +108,20 @@ Route::get('/logout','admin\AdminController@log_out');
 /////////////////////////////////////////-------ORDER------/////////////////////////////////////////////////////////////
 
 /////UPDATE- STATUS ORDER
-Route::get('/update-status-0/{order_id}','admin\AdminController@update_status_0');
-//UPDATE- STATUS ORDER
-Route::get('/update-status-1/{order_id}','admin\AdminController@update_status_1');
+Route::get('/update-status/{order_id}/{order_status}','admin\AdminController@update_status');
 
-//DELETE STATUS ORDER COMPLETE
-Route::get('/delete-status-1/{order_id}','admin\AdminController@delete_status_1');
 //REMOVE MUTI ORDERS
 Route::get('/destroy-order', 'admin\AdminController@destroy_order');
 
 //ORDERS FIND
 Route::get('/search-order', 'admin\AdminController@search_order');
-Route::get('/search-order', 'admin\AdminController@search_product_order');
 
 //PRODUCTS FIND
 Route::post('/tim-kiem-san-pham', 'admin\AdminController@searchProduct');
-Route::get('/tim-kiem-san-pham', 'admin\AdminController@searchProduct_item');
 
-//UNFINIGH ORDERS
-Route::get('/order_not_complete', 'admin\AdminController@order_not_complete');
+//SHOP ITEM ORDER DETAIL
+Route::get('/order_status/{order_status}', 'admin\AdminController@display_order_status');
 
-//ORDERS COMPLETE
-Route::get('/order_complete', 'admin\AdminController@order_complete');
 
 
 ////////////////////////////////////////-------CATEGORIES - BRANDS-----/////////////////////////////////////////////////
@@ -146,19 +138,14 @@ Route::get('/edit-category-product/{category_product_idd}', 'admin\CategoryProdu
 
 Route::post('/update-category-product/{category_product_idd}', 'admin\CategoryProduct@update_Category_Product');
 
-//DELETE CATEGORY
-Route::get('/delete-category-product/{category_product_id}', 'admin\CategoryProduct@delete_Category_Product');
-
 //DESTROY CATEGOY
 Route::get('/destroy', 'admin\CategoryProduct@destroy_Category_Product');
 
 
 
 //ACTIVE (ID)
-Route::get('/active/{category_product_idd}', 'admin\CategoryProduct@active_Category_Product');
+Route::get('/status/{category_product_id}/{status}', 'admin\CategoryProduct@update_status_category');
 
-//UNACTIVE (ID)
-Route::get('/unactive/{category_product_idd}', 'admin\CategoryProduct@unactive_Category_Product');
 
 
 
@@ -229,19 +216,17 @@ route::post('update-news/{primaryKey}','admin\newsadminController@update_news');
 
 Route::get('contact','admin\contactController@contactadmin');
 
-Route::get('/updatestatus-0/{Con_Id}','admin\contactController@update_status_0');
-
-Route::get('/updatestatus-1/{Con_Id}','admin\contactController@update_status_1');
+Route::get('/update_status_contact/{Con_Id}/{status}','admin\contactController@update_status_contact');
 
 
-Route::get('/deletestatus-1/{Con_Id}','admin\contactController@delete_status_1');
+
+Route::get('/delete_status/{Con_Id}','admin\contactController@delete_status');
 
 
 
 Route::get('reviews','admin\reviewsController@reviews');
 
-Route::get('/deletestatus1/{Con_Id}','admin\reviewsController@delete_status_1');
-
+    Route::get('/delete_review_status/{Con_Id}','admin\reviewsController@delete_status');
 //////////////////////////////////-------------------SLIDER---------------------////////////////////////////////////////
 
 //SHOW ADD SLIDER
@@ -254,9 +239,7 @@ route::get('/all-slider','admin\sliderController@slider_all');
 Route::post('/update-slider/{id}','admin\sliderController@update_slider');
 Route::get('/update-layout-slider/{id}','admin\sliderController@update_layout_slider');
 
-Route::get('/status-0/{id}','admin\sliderController@status_0');
-
-Route::get('/status-1/{id}','admin\sliderController@status_1');
+Route::get('/update_status_slider/{id}/{status}','admin\sliderController@update_status_slider');
 
 Route::get('/delete-layout-slider/{id}','admin\sliderController@delete');
 

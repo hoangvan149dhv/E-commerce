@@ -13,10 +13,10 @@ class CustomerorderModel extends Model
 
     public function productorder()
     {
-        return $this->belongsTo('App\Http\Model\productModel', 'product_id', 'product_id');
+        return $this->hasMany('App\Http\Model\productModel', 'product_id', 'product_id');
     }
     public function customer()
     {
-        return $this->belongsTo('App\Http\Model\customerModel','cusid','cusid');
+        return $this->hasOne('App\Http\Model\customerModel','cusid','cusid');
     }
 }

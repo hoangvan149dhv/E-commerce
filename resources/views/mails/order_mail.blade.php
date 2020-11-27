@@ -15,7 +15,7 @@
     $product_id   = $key->product_id;
     $productname  = $key->productname;
     $fee_ship     = $key->fee_ship;
-    $soluong      = $key->soluong;
+    $qty      = $key->qty;
     $price        = $key->price;
     $total        = $key->total;
     $cusphone     = $key->cusphone;
@@ -25,7 +25,7 @@
     $email        = $key->customer->cusadd;
 
     $item_replace = array($order_id,$cusid,$cusname,$product_id,
-        $productname,number_format($fee_ship). ' VNĐ',$email,$soluong,number_format($price).' VNĐ',number_format($total).' VNĐ',
+        $productname,number_format($fee_ship). ' VNĐ',$email,$qty,number_format($price).' VNĐ',number_format($total).' VNĐ',
         $cusphone,$status,$note,Carbon::createFromFormat('Y-m-d H:i:s', $order_date)->format('d/m/yy | H:i:s'));
 
     $search       = array('{order_id}','{cus_id}','{cus_name}','{product_id}','{product_name}',

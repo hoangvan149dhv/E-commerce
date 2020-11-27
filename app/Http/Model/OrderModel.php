@@ -26,6 +26,10 @@ class OrderModel extends Model
     }
     public function customer()
     {
-        return $this->belongsTo('App\Http\Model\customerModel','cusid','cusid');
+        return $this->hasOne('App\Http\Model\customerModel','cusid','cusid');
+    }
+    public function getProduct()
+    {
+        return $this->hasMany('App\Http\Model\OrderModel','product_id','product_id');
     }
 }

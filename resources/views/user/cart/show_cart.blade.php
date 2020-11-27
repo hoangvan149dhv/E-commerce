@@ -41,7 +41,7 @@
                                     @csrf
                                     <div class="cart_quantity_button" style="text-align: center;">
                                         <input type="hidden" value="{{$value_content->rowId}}" name="rowId_cart">
-                                        <input class="cart_quantity_input" type="number" name="soluong"
+                                        <input class="cart_quantity_input" type="number" name="qty"
                                                value="{{$value_content->qty}}" width="50px"
                                                min="1"> {{-- rowId là là trong dòng 17 GỌI LÀ RAMDOM --}}
                                         <input type="submit" name="submit" value="Sửa" class="cart_quantity_delete">

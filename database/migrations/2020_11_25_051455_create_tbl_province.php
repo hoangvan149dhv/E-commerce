@@ -16,7 +16,7 @@ class CreateTblProvince extends Migration
         Schema::create('tbl_province', function (Blueprint $table) {
             $table->bigIncrements('maqh');
             $table->string('name',70);
-            $table->integer('type',);
+            $table->integer('type');
             $table->integer('matp');
         });
     }

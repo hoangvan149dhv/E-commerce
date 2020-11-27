@@ -9,6 +9,14 @@
             <div class="panel-body">
                 @foreach ($all_Brandcode_product as $key=>$edit_value)
                 <div class="position-center">
+                    <?php
+                    $message_success = Session::get('alert-success');
+                    if(!empty($message_success)) : ?>
+                    <div class="alert-success alert"><?php echo $message_success;?></div>
+                    <?php endif ?>
+                    <?php
+                    Session::put('alert-success', null);
+                    ?>
                     <form role="form" action="{{URL::to('/update-brandcode-product/'.$edit_value->code_id)}}" method="post">
                        {{ csrf_field() }}
                         <div class="form-group">
@@ -22,16 +30,10 @@
                                     value="{{$edit_value->brandcode_name}}" class="form-control" name="name"id="exampleInputEmail1" placeholder="Tên Danh Mục">
                         </div>
                         <div class="checkbox">
-                            {!! $message = Session::get('alert-success'); !!}
-                            @if($message)
-                                <div class="alert-success alert">{{$message}} </div>
-                                {!! Session::put('alert-success',null); !!}
-                            @endif
                         </div>
                         <button type="submit" name="update" class="btn btn-info">Cập Nhật</button>
                         </form>
                     </div>
-
                 </div>
                 @endforeach
         </section>

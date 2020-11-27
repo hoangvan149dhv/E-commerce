@@ -83,9 +83,10 @@
         public function promotion()
         {
             $slider = sliderModel::where('status', 1)->orderby('id', 'desc')->take(3)->get();
+
             $promotion = \App\Http\library\product_detail::getAllProduct()
                 ->where('product_price_promotion', '>', '1')
-                ->where('tbl_product.promotion_end_date', '>=', self::getcurrentTime())
+                ->where('promotion_end_date', '>=', self::getcurrentTime())
                 ->orderby('product_price_promotion', 'desc')
                 ->paginate(10);
 
@@ -96,7 +97,7 @@
 
         public static function getcurrentTime()
         {
-            \App\Http\library\product_detail::getcurrentTime();
+            return \App\Http\library\product_detail::getcurrentTime();
         }
     }
 

@@ -98,8 +98,9 @@ CREATE TABLE `tbl_customer` (
   `cusname` varchar(70) COLLATE utf8mb4_unicode_ci NOT NULL,
   `cusadd` varchar(70) COLLATE utf8mb4_unicode_ci NOT NULL,
   `cusPhone` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cusNote` text COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`cusid`)
-) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
 DROP TABLE IF EXISTS `tbl_info_contact` ;
@@ -139,20 +140,14 @@ DROP TABLE IF EXISTS `tbl_orders` ;
 CREATE TABLE `tbl_orders` (
   `orderid` bigint unsigned NOT NULL AUTO_INCREMENT,
   `cusid` int NOT NULL,
-  `cusname` varchar(70) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `product_id` int NOT NULL,
-  `productname` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `soluong` int NOT NULL,
-  `price` int NOT NULL,
+  `product_id` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `qty` int NOT NULL,
   `fee_ship` int NOT NULL,
   `total` int NOT NULL,
-  `cusphone` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `note` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `order_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`orderid`)
-) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
 DROP TABLE IF EXISTS `tbl_product` ;

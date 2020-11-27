@@ -16,7 +16,7 @@ class reviewsController extends AdminController {
 
     }
         //remove Reviews
-    public function delete_status_1($Rid){
+    public function delete_status($Rid){
 
         ReviewModel ::where('Rid',$Rid)->delete();
 

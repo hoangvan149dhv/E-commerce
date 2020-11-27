@@ -53,7 +53,7 @@
                 <span>{{number_format($details_product->product_price)}}.VNĐ</span>
                 <br>
                 <label>Số Lượng:</label>
-                <input type="number" name="soluong" value="1" min="1" />
+                <input type="number" name="qty" value="1" min="1" />
                 <input type="hidden" name="product_id_hidden" value="{{ $details_product->product_id }}" />
                 <p><b>Chất Liệu:</b> {{$details_product->product_material }}</p>
                 <p><b>Thương Hiệu:</b> {{$details_product->brandcode_name}}</p>

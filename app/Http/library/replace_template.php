@@ -24,7 +24,7 @@ class replace_template extends BaseController
         $product_id   = $getOrderIds['product_id'];
         $productname  = $getOrderIds['productname'];
         $fee_ship     = $getOrderIds['fee_ship'];
-        $soluong      = $getOrderIds['soluong'];
+        $qty      = $getOrderIds['qty'];
         $price        = $getOrderIds['price'];
         $total        = $getOrderIds['total'];
         $cusphone     = $getOrderIds['cusphone'];
@@ -34,7 +34,7 @@ class replace_template extends BaseController
         $email        = $getOrderIds->customer->cusadd;
 
         $item_replace = array($order_id,$cusid,$cusname,$product_id,
-            $productname,number_format($fee_ship). ' VNĐ',$email,$soluong,number_format($price).' VNĐ',number_format($total).' VNĐ',
+            $productname,number_format($fee_ship). ' VNĐ',$email,$qty,number_format($price).' VNĐ',number_format($total).' VNĐ',
             $cusphone,$status,$note,Carbon::createFromFormat('Y-m-d H:i:s', $order_date)->format('d/m/yy | H:i:s'));
 
         $search       = array('{order_id}','{cus_id}','{cus_name}','{product_id}','{product_name}',

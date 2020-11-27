@@ -80,31 +80,22 @@ class loginController extends Controller
 
         $result = DB::table('tbl_admin')->where('user_name',$user_name)->where('admin_pass',$admin_pass)->first();
 
-        if($result)
+        if( $result )
         {
-
             $count = count::find(1);
-
-            $date  = Carbon::now()->day;
-
+            $date  = Carbon::now();
             $month = Carbon::now()->month;
-
             $product_order_date = DB::table('tbl_orders')->where('status',1)->whereDate('order_date',$date)->get();
-
             $product_order_month = DB::table('tbl_orders')->where('status',1)->whereMonth('order_date',$month)->get();
 
             session::put('admin_name', $result->admin_name);
-
-            session::put('session_id',md5( $result->admin_pass . Carbon::now()->day));
-
+            session::put('session_id',md5( $result->admin_pass . Carbon::now()));
             session::put('message', DB::table('tbl_orders')->where('status',0)->count());
-
-            view()->share('count',$count);
 
             return view('admin.dashboard')
                     ->with('product_order_date',$product_order_date)
-                    ->with('product_order_month',$product_order_month);
-
+                    ->with('product_order_month',$product_order_month)
+                    ->with('count',$count);
         }
         else
         {
