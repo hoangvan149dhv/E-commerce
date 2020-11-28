@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTblConfigmailReceiver extends Migration
+class CreateTblPdf extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateTblConfigmailReceiver extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_configmail_receiver', function (Blueprint $table) {
-            $table->Increments('id');
-            $table->string('Email',50);
-            $table->string('name_email',50);
-            $table->tinyInteger('publish');
+        Schema::create('tbl_pdf', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('label',100);
+            $table->text('template');
+            $table->string('status',20);
         });
     }
 
@@ -28,6 +28,6 @@ class CreateTblConfigmailReceiver extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_configmail_receiver');
+        Schema::dropIfExists('tbl_pdf');
     }
 }

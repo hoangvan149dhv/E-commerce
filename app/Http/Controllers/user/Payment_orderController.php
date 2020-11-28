@@ -13,7 +13,6 @@ use App\Http\Model\CustomerorderModel;
 use App\Http\Controllers\sendMailController;
 use App\Http\Model\templateMailModel;
 use App\Http\Controllers\user\HomeController;
-require dirname(__FILE__, 5). '/mpdf/vendor/autoload.php';
 
 class Payment_orderController extends HomeController
 {
@@ -24,6 +23,7 @@ class Payment_orderController extends HomeController
 
         // INSERT CUSTOMER
         $cus_data['cusname'] = $request->name;
+        $cus_data['cusEmail'] = $request->email;
         $cus_data['cusadd'] = $request->add;
         $cus_data['cusPhone'] = $request->phone;
         $cus_data['cusNote'] = $request->note;
@@ -58,35 +58,38 @@ class Payment_orderController extends HomeController
 
                         $EmailName = configMailModel::select()->get();
                         foreach ($EmailName as $key => $value) {
+                            
                         }
+                        if ( !empty($value->publish)) {
+                            //SEND MAIL
+                            $sendmail = new sendMailController();
+                            //param
+                            $template = templateMailModel::where('status', 'Hiện')->get();
+                            foreach ($template as $key => $item) {
+                            }
 
-                        //SEND MAIL
-                        $sendmail = new sendMailController();
-                        //param
-                        $template = templateMailModel::where('status', 'Hiện')->get();
-                        foreach ($template as $key => $item) {
+                            //CC Name //BCCNAME  //RECEIPT
+                            $mailconfig_recipient = $value->Email;
+                            $ccname = array("$request->email");
+                            $bccname = array("hoangvan149dhv@gmail.com");
+
+                            //Subject (mail)
+                            $subject = $item->label;
+
+                            //template order
+                            $file_template_mail = "mails.order_mail";
+
+                            $sendmail->sendMail(
+                                $fromname,
+                                $mailconfig_recipient,
+                                $ccname,
+                                $bccname,
+                                $subject,
+                                $file_template_mail,
+                                $template,
+                                $item_detail_order);
                         }
-
-                        //CC Name //BCCNAME  //RECEIPT
-                        $mailconfig_recipient = $value->Email;
-                        $ccname = array("$request->email");
-                        $bccname = array("hoangvan149dhv@gmail.com");
-
-                        //Subject (mail)
-                        $subject = $item->label;
-
-                        //template order
-                        $file_template_mail = "mails.order_mail";
-
-                        $sendmail->sendMail(
-                            $fromname,
-                            $mailconfig_recipient,
-                            $ccname,
-                            $bccname,
-                            $subject,
-                            $file_template_mail,
-                            $template,
-                            $item_detail_order);
+                        
 
 
                         $mpdf = new \Mpdf\Mpdf();

@@ -57,7 +57,7 @@
             <tr>
               <td style="text-align:center"><a href="{{URL::to('/edit-product/'.$product->product_id)}}">{{$product->product_Name}}</a></td>
               <td style="text-align:center"><a href="{{URL::to('/edit-product/'.$product->product_id)}}"><img src="{{asset('public/upload/'.$product->product_image )}}" width=80 height=110></a></td>
-              <td style="text-align:center">{{$product->product_material}}</td>
+              <td style="text-align:center">  {{$product->product_material}}</td>
               <td style="text-align:center">  {{$info->qty}}</td>
               <td style="text-align:center">  {{number_format($product->product_price)}}.VNĐ</td>
               <td style="text-align:center">  {{number_format($info->fee_ship)}}.VNĐ</td>

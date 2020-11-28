@@ -24,37 +24,46 @@ class sendMailController extends Controller
      */
     public function sendMail(&$fromname , $mailconfig_recipient,
                              $ccname, $bccname, $subject, $file_template_mail,
-                             $template ,$item_detail_order){
-
+                             $template ,$item_detail_order) 
+    {
         //template mail display
         $EmailName = configMailModel::select()->get();
-        foreach ($EmailName as $key => $value) {
+        
+        if (empty($EmailName[0]->publish)) {
+            return ; 
         }
+        foreach ($EmailName as $key => $value) {
+       
+            //value mail config in admin
+            $fromname             = $value->name_email;
+            
+            $data = array('email_recipient' => $mailconfig_recipient,
+                        'subject' => $subject, 'fromname' => $fromname,
+                        'ccname' => $ccname, 'bccname' => $bccname);
 
-        //value mail config in admin
-        $fromname             = $value->name_email;
+            //layout message
+            view()->share('item_detail_order',$item_detail_order);
+            view()->share('template',$template);
 
-        $data = array('email_recipient' => $mailconfig_recipient,
-                      'subject' => $subject, 'fromname' => $fromname,
-                      'ccname' => $ccname, 'bccname' => $bccname);
+            Mail::send($file_template_mail, $data,
 
-        //layout message
-        view()->share('item_detail_order',$item_detail_order);
-        view()->share('template',$template);
+            function ($message) use ($data, $value) {
 
-        Mail::send($file_template_mail, $data,
-
-        function ($message) use ($data, $value) {
-
-        $message->from( 'vandaovipga1491999@gmail.com',$data['fromname']);
-        $message->to( $data['email_recipient'])->cc($data['ccname'])->bcc($data['bccname']);
-        $message->subject($data['subject']);
-        });
+            $message->from( 'vandaovipga1491999@gmail.com',$data['fromname']);
+            $message->to( $data['email_recipient'])->cc($data['ccname'])->bcc($data['bccname']);
+            $message->subject($data['subject']);
+            });
+        }
     }
 
     public function sendtestMail(){
         try {
              $EmailName = configMailModel::select()->get();
+             if (empty($EmailName[0]->publish)) {
+                 Session::put('send-mail-success','Vui lòng bật chức năng gửi mail');
+                return back(); 
+            }
+
              foreach ($EmailName as $key => $value) {
              }
 

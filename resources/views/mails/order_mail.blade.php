@@ -1,4 +1,6 @@
-<?php use Carbon\Carbon?>
+<?php use Carbon\Carbon;
+    use \App\Http\library\product_detail as product_detail;
+?>
 {{--DATA ORDERID--}}
     @foreach($item_detail_order as $value => $key)
     @endforeach
@@ -7,20 +9,28 @@
     @foreach ($template as $item)
     @endforeach
     <?php
+    $infocustomer = CustomerorderModel::where('orderid',$key->orderid)->get();
+
+    $orderItems =  $infocustomer[0]->toArray();
+    $getProductItems = explode(',',$orderItems['product_id']);
+        for ( $i = 0; $i < count($getProductItems); $i++)
+        {
+            $productItem = product_detail::getProductDetail($getProductItems[$i]);
+        }
 
     //data replace
     $order_id     = $key->orderid;
     $cusid        = $key->cusid;
-    $cusname      = $key->cusname;
+    $cusname      = $key->customer->cusname;
     $product_id   = $key->product_id;
     $productname  = $key->productname;
     $fee_ship     = $key->fee_ship;
-    $qty      = $key->qty;
-    $price        = $key->price;
+    $qty          = $key->qty;
+    $price        = $key->product_price;
     $total        = $key->total;
-    $cusphone     = $key->cusphone;
-    $status       = $key->status;
-    $note         = $key->note;
+    $cusphone     = $key->customer->cusphone;
+    $status       = $key->status == 0 ? "Đang xử Lý" : "Đã giao xong";
+    $note         = $key->customer->note;
     $order_date   = $key->order_date;
     $email        = $key->customer->cusadd;
 

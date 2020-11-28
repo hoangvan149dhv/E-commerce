@@ -16,9 +16,10 @@ class CreateTblCustomer extends Migration
         Schema::create('tbl_customer', function (Blueprint $table) {
             $table->bigIncrements('cusid');
             $table->string('cusname',70);
+            $table->string('cusEmail',150);
             $table->string('cusadd',70);
             $table->string('cusPhone',11);
-            $table->text('note')->nullable();
+            $table->text('cusNote')->nullable();
         });
     }
 

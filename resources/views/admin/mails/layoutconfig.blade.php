@@ -40,8 +40,8 @@
                         <div class="checkbox">
                             <div class="checkbox">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Trạng thái gửi mail (bật)</label>
-                                    <input type="checkbox" checked="checked" name="publish" value="<?php echo Config::get('config_admin.mail.publish'); ?>"  name="publish"  ></label>
+                                    <span>Trạng thái gửi mail</span>
+                                    <input type="checkbox" style="margin-left: 20px" @if ($item->publish == 1) checked="checked" @endif  value="1"  name="publish"  ></label>
                                 </div>
                             </div>
                         </div>

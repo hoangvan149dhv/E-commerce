@@ -296,7 +296,7 @@ Route::post('/save-config-mail','admin\configmailController@saveConfigmail');
 Route::get('/all-template-mail', 'admin\configmailController@listitemtemplatemail');
 
 //Convert status template work
-Route::get('/status-template/{id}','admin\configmailController@update_status');
+Route::get('/status-template/{id}','admin\configmailController@update_status_template');
 
 //layout detail update template
 Route::get('/chi-tiet-template/{id}','admin\configmailController@layout_update_template');
