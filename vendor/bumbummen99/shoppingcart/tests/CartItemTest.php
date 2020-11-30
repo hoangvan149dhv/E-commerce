@@ -7,7 +7,7 @@ use Gloudemans\Shoppingcart\ShoppingcartServiceProvider;
 use Orchestra\Testbench\TestCase;
 
 class CartItemTest extends TestCase
-{ss
+{
     /**
      * Set the package service provider.
      *
