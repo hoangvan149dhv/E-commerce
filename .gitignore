@@ -2,12 +2,17 @@
 /public/hot
 /public/storage
 /storage/*.key
-/vendor
+/vendor/*
+#Not ignore shopping cart AND PDF
+!/vendor/bumbummen99
+#!/vendor/mpdf
+
 .env.backup
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-.env
 /.idea
+
+
