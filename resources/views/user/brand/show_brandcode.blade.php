@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('user.index')
 @section('content')
 <div class="features_items"><!--features_items-->
     @foreach ($brand_name as $product)

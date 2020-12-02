@@ -1,5 +1,5 @@
-@extends('layout')
-@Section('content')
+@extends('user.index')
+@section('content')
     <div class="features_items"><!--features_items-->
         {{-- show category --}}
         @foreach ($search as $product)

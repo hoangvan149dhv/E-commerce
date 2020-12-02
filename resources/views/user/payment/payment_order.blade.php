@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('user.index')
 @Section('content')
 <div class="row" style="text-align:justify">
     <div style="padding-left:25px;border:1px solid #F7F7F0;padding:50px 10px;border-radius:15px;" >

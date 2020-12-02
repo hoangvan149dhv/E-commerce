@@ -17,7 +17,7 @@ class CreateTblOrders extends Migration
             $table->bigIncrements('orderid');
             $table->integer('cusid');
             $table->integer('product_id');
-            $table->integer('qty');
+            $table->string('qty',50);
             $table->integer('fee_ship');
             $table->integer('total');
             $table->string('status',20);

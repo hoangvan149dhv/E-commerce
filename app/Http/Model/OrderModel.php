@@ -18,7 +18,7 @@ class OrderModel extends Model
     public function getOrderId($id) {
         if (empty($id)) {
             Session::put('error', 'Đơn Hàng Không Tồn Tại');
-            return Redirect::to('/trang-chu');
+            return Redirect::to('/');
         }
 
         $data = self::find($id);

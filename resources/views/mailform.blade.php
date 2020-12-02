@@ -66,8 +66,8 @@
     </div>
 </div>
 <input type="color" name="" id="">
-xxxxxxxxxxxxxxx
-<?php echo Config::get('config_admin.mail.publish'); ?>
+xxxxxxxxxxxxxxx <br>
+<?php echo Config::get('config_admin.SEO'); ?>
 </body>
 </html>
 <script>

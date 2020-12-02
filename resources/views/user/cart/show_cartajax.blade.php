@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('user.index')
  @Section('content')
 <section id="cart_items">
     <div class="container-sm">

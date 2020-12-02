@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('user.index')
 @Section('content')
 <div class="product-details">
     <!--product-details-->
@@ -217,7 +217,7 @@
 </div>
 <!--/recommended_items-->
 @endsection
-@section('product')
+@section('product_other')
 <h2>Sản phẩm khác</h2>
 <div class="panel-group">
     <!--brands_products-->

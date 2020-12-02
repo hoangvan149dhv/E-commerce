@@ -1,4 +1,4 @@
-@extends('admin.admin_layout')
+@extends('admin.index')
 @section('content')
 <div class="row">
     <div class="col-lg-12">
@@ -32,9 +32,6 @@
             </section>
     </div>
 </div>
-@endsection
-@section('script')
-
 @endsection
 @section('mail')
      class="active"

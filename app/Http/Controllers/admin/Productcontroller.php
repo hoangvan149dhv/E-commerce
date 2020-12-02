@@ -77,10 +77,10 @@
 
             $manager_product = view('admin.products.allProduct')->with('all_Product', $all_product);
 
-            return view('admin.admin_layout')->with('admin.products.allProduct', $manager_product);
+            return view('admin.index')->with('admin.products.allProduct', $manager_product);
         }
 
-        //THÊM product
+
         public function save_product(request $Request)
         {
 
@@ -181,7 +181,7 @@
                 ->with('category_product', $category_product)
                 ->with('brandcode_product', $brandcode_product);
 
-            return view('admin.admin_layout')->with('admin.products.updateProduct', $manager_product);
+            return view('admin.index')->with('admin.products.updateProduct', $manager_product);
         }
 
         //UPDATE

@@ -22,20 +22,27 @@
 
             \App\Http\library\product_detail::updateProduct();
             //SEO
-            $meta_desc = "Chuyên bán vải áo dài, may tại xưởng, giá rẻ, in sỉ, lẻ , chất lượng";
-            $meta_keyword = "Áo dài in 3D, áo dài đẹp, áo dài in sỉ lẻ, đồng phục";
-            $meta_title = "Vải áo dài xinh - Khuyến Mãi";
-            $url_canonical = $request->url();
+            if (config('config_admin.SEO')) {
+                $meta_Robots = 'index, follow';
+            }
+            else{
+                $meta_Robots = 'noindex, nofollow';
+            }
+                $meta_desc = "Chuyên bán vải áo dài, may tại xưởng, giá rẻ, in sỉ, lẻ , chất lượng";
+                $meta_keyword = "Áo dài in 3D, áo dài đẹp, áo dài in sỉ lẻ, đồng phục";
+                $meta_title = "Vải áo dài xinh - Khuyến Mãi";
+                $url_canonical = $request->url();
 
             //SEO
             view()->share('category_product', $category_product);
             view()->share('brand_code_product', $brandcode_product);
-
+            view()->share('meta_Robots',$meta_Robots);
             view()->share('meta_desc', $meta_desc);
             view()->share('meta_keyword', $meta_keyword);
             view()->share('meta_title', $meta_title);
             view()->share('url_canonical', $url_canonical);
             view()->share('contactinfoModel', $contactinfoModel);
+
         }
 
         public function index(Request $request)
@@ -56,7 +63,7 @@
                 $request->cookie("abc" . rand(0, 9999));
                 $count->increment('counts');
             }
-            return view('user.home')
+            return view('user.home.home')
                 ->with('count', $count)
                 ->with(compact('all_product', 'slider'));
         }

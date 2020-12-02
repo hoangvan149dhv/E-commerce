@@ -1,5 +1,5 @@
-@extends('home_page')
-@Section('content')
+@extends('user.index')
+@section('content')
     <div class="features_items" xmlns="http://www.w3.org/1999/html">
         <!--features_items-->
         <h2 class="title text-center">Sản Phẩm Khuyến Mãi</h2>

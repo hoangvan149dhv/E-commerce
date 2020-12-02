@@ -1,4 +1,4 @@
-@extends('admin.admin_layout')
+@extends('admin.index')
 @section('content')  {{--QUAN TRỌNG DÒNG YEIL dòng 294--}}
 <div class="row">
     <div class="col-lg-12">

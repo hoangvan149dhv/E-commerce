@@ -20,7 +20,7 @@ class CreateTblReview extends Migration
             $table->string('Remail',100);
             $table->text('Rcomment');
             $table->tinyInteger('status');
-            $table->timestamp('created_date')->default(DB::raw('CURRENT_TIMESTAMP'))->nullable();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'))->nullable();
             $table->timestamp('updated_at')->nullable();
         });
     }

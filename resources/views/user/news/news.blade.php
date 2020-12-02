@@ -1,7 +1,7 @@
 <?php
     use Carbon\Carbon;
 ?>
-@extends('layout')
+@extends('user.index')
 @Section('content')
 <div class="col-sm-11">
     <div class="blog-post-area">

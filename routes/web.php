@@ -14,8 +14,6 @@
 //////////////////////////--------------USER----------//////////////////////////////////////////////////////////////////
 Route::get('/','user\HomeController@index');
 
-Route::get('/trang-chu','user\HomeController@index');
-
 //FIND PRODUCTS
 Route::get('/tim-kiem','user\HomeController@search');
 ///////////////////////////////---------BRANDS - CATEGORIES---------////////////////////////////////////////////////////
@@ -317,8 +315,8 @@ Route::get('/send-test-mail','sendMailController@sendtestMail');
 
 //TEST MAIL
 Route::get('/testmail','sendMailController@test');
-Route::get('/test','sendMailController@abc');
-//Route::get('/test',function (){
+//Route::get('/test','sendMailController@abc');
+Route::get('/test',function (){
 
-//    return view('mailform');
-//});
+    return view('mailform');
+});

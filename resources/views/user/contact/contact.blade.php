@@ -76,7 +76,7 @@
                         </div>
                         <div class="mainmenu pull-left">
                             <ul class="nav navbar-nav collapse navbar-collapse">
-                                <li><a href="{{ url('/trang-chu') }}">Trang Chủ</a></li>
+                                <li><a href="{{ url('/') }}">Trang Chủ</a></li>
                                 <li class="dropdowna"><a style="cursor: pointer;"><i class="fa-icon fa fa-chevron-down"></i> Bộ sưu tập</a>
                                     <ul role="menu" class="sub-menu-cate">
                                         @foreach ($category_product as $cate)
@@ -210,7 +210,7 @@
             </div>
             {{-- MENU BAR --}}
             <div class="icon-bar-menu">
-                <a class="active" href="{{ URL('/trang-chu') }}"><i class="fa fa-home"></i></a>
+                <a class="active" href="{{ URL('/') }}"><i class="fa fa-home"></i></a>
                 <a href="tel:{{ $contact->info_contact_phone }}"><i class="fa fa-phone"></i></a>
                 <a href="{{URL::to('/hien-thi-gio-hang')}}"><i class="fa fa-shopping-cart">
                         <?php

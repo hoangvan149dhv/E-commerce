@@ -26,7 +26,7 @@ class CategoryProduct extends AdminController
             $all_category_product
         );
 
-        return view('admin.admin_layout')->with('admin.categories.allcategoryProduct', $manager_category_product);
+        return view('admin.index')->with('admin.categories.allcategoryProduct', $manager_category_product);
     }
 
     //ADD Save
@@ -59,7 +59,7 @@ class CategoryProduct extends AdminController
             $edit_category_product
         );
 
-        return view('admin.admin_layout')->with('admin.categories.updatecategoryproduct', $manager_category_product);
+        return view('admin.index')->with('admin.categories.updatecategoryproduct', $manager_category_product);
     }
 
     public function update_Category_Product(Request $Request, $category_product_id){

@@ -1,10 +1,10 @@
-@extends('home_page')
-@Section('content')
+@extends('user.index')
+@section('content')
     <div class="features_items">
         <!--features_items-->
         <h2 class="title text-center">Sản Phẩm Mới Nhất</h2>
         @foreach ($all_product as $product)
-            <div class="col-sm-3 col-xs-6 col-ipad" style="padding:0 5px;">
+            <div class="col-lg-3 col-xs-6 col-ipad" style="padding:0 5px;">
                 <div class="product-image-wrapper product-image">
                     <div class="single-products">
                         <div class="productinfo text-center" id="product">
@@ -22,7 +22,7 @@
                                 <input type="hidden" class="url_addtocart_success" url="{{url('/hien-thi-gio-hang')}}"/>
                                 <input type="hidden" value="1" class="cart_product_qty_{{$product->product_id}}">
                                 <?php
-                                // tinh phan tram sale sản phẩm
+                                // caculate percent discount
                                 $c = 0;
                                 $c = (100 * $product->product_price) / $product->product_price_promotion;
                                 $sale = 100 - $c;
@@ -67,9 +67,9 @@
         {!! $all_product->links() !!}
     </div>
 @endsection
-@section('pupup')
+@section('popup')
     <div id="background">
-        <img src="public/upload/qc2.png" alt="">
+        <img src="{{asset('public/upload/qc2.png')}}" alt="">
     </div>
 @endsection
 @section('slider')
@@ -116,3 +116,4 @@
         @endforeach
     </script>
 @endsection
+

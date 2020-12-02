@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('user.index')
 @Section('content')
 <div class="contact-form">
     <h2 class="title text-center">Thông Tin Khách Hàng</h2>

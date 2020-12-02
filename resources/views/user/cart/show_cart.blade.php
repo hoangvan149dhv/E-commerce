@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('user.index')
 @Section('content')
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <section id="cart_items">

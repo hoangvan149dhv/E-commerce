@@ -23,7 +23,7 @@ class BrandcodeProduct extends AdminController
 
         $manager_brandcode_product = view('admin.brands.allBrandProduct')->with('allBrandcode_Productt',$allBrandcode_product);
 
-        return view('admin.admin_layout')->with('admin.brands.allBrandProduct',$manager_brandcode_product);
+        return view('admin.index')->with('admin.brands.allBrandProduct',$manager_brandcode_product);
     }
 
     // THÊM brand
@@ -54,7 +54,7 @@ class BrandcodeProduct extends AdminController
 
         $manager_brandcode_product = view('admin.brands.updateBrandProduct')->with('all_Brandcode_product',$allBrandcode_product);
 
-        return view('admin.admin_layout')->with('admin.brands.updateBrandProduct',$manager_brandcode_product);
+        return view('admin.index')->with('admin.brands.updateBrandProduct',$manager_brandcode_product);
     }
 
     public function update_brand_code_Product(Request $Request,$brand_code_id){

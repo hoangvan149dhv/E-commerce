@@ -2,7 +2,7 @@
     use Carbon\Carbon;
     use App\Http\Model\OrderModel;
 ?>
-@extends('admin.admin_layout')
+@extends('admin.index')
 @section('content')
 <div class="table-agile-info">
     <div class="panel panel-default">

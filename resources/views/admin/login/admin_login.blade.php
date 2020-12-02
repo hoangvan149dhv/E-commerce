@@ -1,5 +1,4 @@
-@extends('libraries.head')
-@section('content')
+@extends('admin.sections.head')
 <div class="log-w3">
 <div class="w3layouts-main">
     <h2>Đăng Nhập</h2>
@@ -13,5 +12,5 @@
     </form>
 </div>
 </div>
-@endsection
+
 

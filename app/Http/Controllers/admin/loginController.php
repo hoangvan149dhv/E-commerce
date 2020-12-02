@@ -92,7 +92,7 @@ class loginController extends Controller
             session::put('session_id',md5( $result->admin_pass . Carbon::now()));
             session::put('message', DB::table('tbl_orders')->where('status',0)->count());
 
-            return view('admin.dashboard')
+            return view('admin.home.home')
                     ->with('product_order_date',$product_order_date)
                     ->with('product_order_month',$product_order_month)
                     ->with('count',$count);

@@ -1,5 +1,4 @@
-@extends('libraries.head')
-@section('content')
+@include('admin.sections.head')
 <div class="log-w3">
 <div class="w3layouts-main">
     <h2>Lấy mật khẩu</h2>
@@ -13,4 +12,3 @@
         <p><a href="{{URL::to('/admin-login')}}">Trở về trang đăng nhập</a></p>
 </div>
 </div>
-@endsection

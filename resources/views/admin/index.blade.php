@@ -1,19 +1,6 @@
 <!DOCTYPE html>
-<head>
-<title>Quản Lý</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="{{asset('public/admin/css/bootstrap.min.css')}}" >
-<link href="{{asset('public/admin/css/style.css')}}" rel='stylesheet' type='text/css' />
-<link href="{{asset('public/admin/css/style-responsive.css')}}" rel="stylesheet"/>
-<link rel="stylesheet" href="{{asset('public/admin/css/font.css')}}" type="text/css"/>
-<link href="{{asset('public/admin/css/font-awesome.css')}}" rel="stylesheet">
-<link rel="stylesheet" href="{{asset('public/admin/css/morris.css')}}" type="text/css"/>
-<meta name="csrf-token" content="{{ csrf_token() }}">
-<script src="{{asset('public/admin/js/jquery2.0.3.min.js')}}"></script>
-<script src="{{asset('public/admin/js/raphael-min.js')}}"></script>
-<script src="{{asset('public/admin/js/morris.js')}}"></script>
-</head>
+<html lang="en">
+@include('admin.sections.head')
 <body>
 <section id="container">
 <header class="header fixed-top clearfix">
@@ -76,7 +63,7 @@
             </ul>
         </li>
         <li id="header_inbox_bar">
-            <a  class="dropdown-toggle" target="_blank" href="{{ URL::to('/trang-chu') }}"><i class="fa fa-globe"></i></a>
+            <a  class="dropdown-toggle" target="_blank" href="{{ URL::to('/') }}"><i class="fa fa-globe"></i></a>
         </li>
         @yield('preview_product')
         <!-- inbox dropdown end -->
@@ -243,51 +230,11 @@
             <div class="clearfix"> </div>
 		</div>
 </section>
- <!-- footer -->
-		  <div class="footer">
-			<div class="wthree-copyright">
-			</div>
-		  </div>
-  <!-- / footer -->
+@include('admin.sections.footer')
 </section>
 <!--main content end-->
 </section>
-<script src="{{asset('public/admin/js/bootstrap.js')}}"></script>
-<script src="{{asset('public/admin/js/jquery.dcjqaccordion.2.7.js')}}"></script>
-<script src="{{asset('public/admin/js/scripts.js')}}"></script>
-<script src="{{asset('public/admin/js/jquery.nicescroll.js')}}"></script>
-<script src="{{asset('public/admin/js/jquery.scrollTo.js')}}"></script>
-<script src="{{asset('public/client/ckeditor/ckeditor.js')}}"></script>
-<script>
-    CKEDITOR.replace( 'ckComment', {
-        filebrowserUploadUrl: "{{route('uploads', ['_token' => csrf_token() ])}}",
-                                    //('uploads') là truyền tham số bên view web.php dòng 119
-        filebrowserUploadMethod: 'form'
-    });
-</script>
-
-{{-- DÙNG VALIDATION FORM ĐỂ CHECK KÍ TỰ --}}
-<script src="{{asset('public/client/js/jquery.js')}}"></script>
-<script>
-</script>
-<script src="{{asset('public/admin/js/form-validator.min.js')}}"></script>
-<script type="text/javascript">
-        //check validate
-		$.validate({
-		});
-
-        function checkConditiondumpDatabase() {
-            var condition = prompt("Người yêu của tao tên gì?");
-            if (condition == "" || condition != "ngan" ) {
-                alert('Sai rồi thằng óc chó');
-                $('form.abc').removeAttr('action');
-                return;
-            }
-            else{
-                alert('Giỏi, Mày ngon');
-            }
-        }
-</script>
+@include('admin.libraries.script')
 @yield('script')
 </body>
 </html>

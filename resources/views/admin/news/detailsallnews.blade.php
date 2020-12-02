@@ -1,7 +1,7 @@
 <?php
     // use Carbon\Carbon;
 ?>
-@extends('admin.admin_layout')
+@extends('admin.index')
 @section('content')
 <div class="table-agile-info">
     <div class="panel panel-default">

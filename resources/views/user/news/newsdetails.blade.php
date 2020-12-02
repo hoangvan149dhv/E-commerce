@@ -6,7 +6,7 @@
 <meta property="og:image" content="http://vanduong.com.web3.redhost.vn/public/upload/{{ $newsadminModel->news_image}}"/>
 @endisset
 @endsection
-@extends('layout')
+@extends('user.index')
 @Section('content')
     <div class="col-sm-12" style="border-right:1px solid #e8e8e2;border-left:1px solid #e8e8e2">
         <div class="blog-post-area">

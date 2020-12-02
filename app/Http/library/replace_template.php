@@ -12,7 +12,7 @@ class replace_template extends BaseController
     {
         if (empty($id)) {
             Session::put('error', 'Đơn Hàng Không Tồn Tại');
-            return Redirect::to('/trang-chu');
+            return Redirect::to('/');
         }
         $orderModel = new OrderModel();
         $getOrderIds = $orderModel->getOrderId($id);
