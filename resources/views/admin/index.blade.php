@@ -123,16 +123,15 @@
                         <i class="fa fa-shopping-cart"></i>
                         <span >Đơn Hàng (
                             <?php
-                            //  TẠO MODEL
                                 use App\Http\Model\OrderModel;
                                 $order_status_notcomplete = OrderModel::all()->where('status',0)->count();
                                 echo $order_status_notcomplete;
                             ?>)</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="{{URL::to('/admin-quanly-donhang')}}">Tổng đơn hàng</a></li>
-                        <li><a href="{{URL::to('/order_status/0')}}">Đơn hàng chưa hoàn thành</a></li>
-                        <li><a href="{{URL::to('/order_status/1')}}">Đơn hàng đã giao xong</a></li>
+                        <li><a href="{{URL::to('/admin-quanly-donhang/tong-don-hang')}}">Tổng đơn hàng</a></li>
+                        <li><a href="{{URL::to('/admin-quanly-donhang/0')}}">Đơn hàng chưa hoàn thành</a></li>
+                        <li><a href="{{URL::to('/admin-quanly-donhang/1')}}">Đơn hàng đã giao xong</a></li>
                         </ul>
                 </li>
 

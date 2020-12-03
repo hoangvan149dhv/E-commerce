@@ -29,6 +29,10 @@
                                 $c = (100 * $product->product_price) / $product->product_price_promotion;
                                 $sale = 100 - $c;
                                 ?>
+                                @if ( strtotime($product->created_date) + 604800 > time() )
+                                    <img src="http://localhost/vaiaodai/public/client/images/new.jpg"
+                                         class="newarrival_right" alt="">
+                                @endif
                                 <div class="product_price">
                                     @if ($product->product_price_promotion==1||$product->product_price_promotion==0)
                                         <p></p>

@@ -102,10 +102,12 @@
                                            data-validation-error-msg='vui lòng điền đầy đủ thông tin' type="text"
                                            name="name" placeholder="Họ Và Tên Người Nhận">
                                     <input data-validation="length" data-validation-length="5-50"
-                                           data-validation-error-msg='vui lòng điền đúng đúng email, Khi order sẽ được gửi mail' type="email"
+                                           data-validation-error-msg='vui lòng điền đúng đúng email, Khi order sẽ được gửi mail'
+                                           type="email"
                                            name="email" placeholder="Nhập đúng email, Khi order sẽ được gửi mail">
                                     <input data-validation="length" data-validation-length="10-11"
-                                           data-validation-error-msg='vui lòng điền đúng số điện thoại bắt đầu 09xx,...' type="number"
+                                           data-validation-error-msg='vui lòng điền đúng số điện thoại bắt đầu 09xx,...'
+                                           type="number"
                                            name="phone" placeholder="Số Điện Thoại">
                                     <form>
                                         @csrf
@@ -152,7 +154,7 @@
                         </div>
                         {{-- </form> --}}
                         <?php
-                            }
+                        }
                         ?>
                     </div>
                 </div>
@@ -164,7 +166,7 @@
 @endsection
 @section('script')
     <script>
-        var select_delivery         = "{{url('/select-delivery') }}";
+        var select_delivery = "{{url('/select-delivery') }}";
         var select_delivery_feeship = "{{url('/select-delivery-feeship') }}";
     </script>
 @endsection

@@ -93,17 +93,18 @@ Route::post('/admin-quanly', 'admin\loginController@check_login_user_pass');
 
 Route::get('/admin-quanly', 'admin\AdminController@index');
 
-//ORDER MANAGEMENT
-Route::get('/admin-quanly-donhang', 'admin\AdminController@order');
+
 
 //UPLOAD IMAGE
 Route::post('ckeditor/image_upload', 'admin\AdminController@upload')->name('uploads');
 
 //LOGOUT
-Route::get('/logout','admin\AdminController@log_out');
+Route::get('/logout','admin\loginController@log_out');
 
 
 /////////////////////////////////////////-------ORDER------/////////////////////////////////////////////////////////////
+//ORDER MANAGEMENT
+Route::get('/admin-quanly-donhang/{order_status}', 'admin\AdminController@order');
 
 /////UPDATE- STATUS ORDER
 Route::get('/update-status/{order_id}/{order_status}','admin\AdminController@update_status');
@@ -118,7 +119,7 @@ Route::get('/search-order', 'admin\AdminController@search_order');
 Route::post('/tim-kiem-san-pham', 'admin\AdminController@searchProduct');
 
 //SHOP ITEM ORDER DETAIL
-Route::get('/order_status/{order_status}', 'admin\AdminController@display_order_status');
+Route::get('/order_status', 'admin\AdminController@display_order_status');
 
 
 

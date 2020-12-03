@@ -61,25 +61,6 @@ class AdminController extends loginController
 
     }
 
-    //QUẢN LÝ ĐƠN HÀNG
-    public function order()
-    {
-        $orderModel = new OrderModel();
-        $product_order = $orderModel->orderby('orderid', 'desc')->paginate(15);
-
-        session::put('message', DB::table('tbl_orders')->where('status', 0)->count());
-
-        return view('admin.order.order')->with('product_order', $product_order);
-
-    }
-
-    public function log_out()
-    {
-        Session::put('session_id', null);
-
-        return redirect('/admin-login');
-
-    }
 
     //convert status 0->1
     public function update_status($orderid, $order_status)
@@ -117,19 +98,23 @@ class AdminController extends loginController
 
     }
 
-    public function display_order_status($status)
+    //QUẢN LÝ ĐƠN HÀNG
+    public function order($status)
     {
         $orderModel = new OrderModel();
-        $order_detail = $orderModel->where('status', $status)->orderby('orderid', 'desc')->paginate(30);
 
-        return view('admin.order.order_detail')
-            ->with('order_detail', $order_detail);
+        $order_item = is_numeric($status) ? $orderModel->where('status', $status)->orderby('orderid', 'desc')->paginate(15)
+                                          : $orderModel->orderby('orderid', 'desc')->paginate(15);
+
+        session::put('message', DB::table('tbl_orders')->where('status', 0)->count());
+
+        return view('admin.order.order')->with('product_order', $order_item);
+
     }
 
 
     public function searchProduct(Request $request)
     {
-
         $key_word = $request->search;
 
         $search = \App\Http\library\product_detail::getallProduct()

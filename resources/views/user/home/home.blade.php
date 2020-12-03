@@ -28,7 +28,11 @@
                                 $sale = 100 - $c;
                                 ?>
                                 <a href="{{ URL::to('/chi-tiet/'.$product->meta_slug) }}" title="Chi tiết">
-                                    @if ($product->product_price_promotion==1||$product->product_price_promotion==0)
+                                    @if ( strtotime($product->created_date) + 604800 > time() )
+                                        <img src="http://localhost/vaiaodai/public/client/images/new.jpg"
+                                             class="newarrival_right" alt="">
+                                    @endif
+                                    @if ($product->product_price_promotion == 1 ||$product->product_price_promotion ==0)
 
                                     @else
                                         <span class="stick-promotion">-{{ round($sale) }}%</span>
@@ -39,7 +43,7 @@
                                     <h5 id="title">{{$product->product_Name}}</h5>
                                 </a>
                                 <div class="product_price">
-                                    @if ($product->product_price_promotion==1||$product->product_price_promotion==0)
+                                    @if ($product->product_price_promotion ==1 ||$product->product_price_promotion ==0 )
                                         <p></p>
                                     @else
                                         <p style="text-decoration: line-through;color:#ff4b0099">{{number_format($product->product_price_promotion) ."VNĐ"}}</p>
@@ -90,7 +94,7 @@
             const countDownDate_{{$product->product_id}} = new Date("{{$product->promotion_end_date}}").getTime();
             // Get today's date and time
             var now = new Date().getTime();
-            var onedayGMT7 = (1000 * 60 * 60 * 17);
+            var onedayGMT7 = (1000 * 60 * 60 * 7);
             // Find the distance between now and the count down date
             var distance = (countDownDate_{{$product->product_id}} - now) + onedayGMT7;
 

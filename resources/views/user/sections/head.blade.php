@@ -3,7 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="">
     <title>{{$meta_title ?? 'Trang chủ' }}</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="robots" content="{{$meta_Robots ?? ''}}"/>
     <meta property="og:image" content="{{ asset('public/upload/qc2.png') }}"/>
     <meta property="og:site_name" content="{{$url_canonical ?? ''}}"/>

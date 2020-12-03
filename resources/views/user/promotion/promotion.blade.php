@@ -4,7 +4,7 @@
         <!--features_items-->
         <h2 class="title text-center">Sản Phẩm Khuyến Mãi</h2>
         @foreach ($promotion as $product)
-            <div class="col-sm-3 col-xs-6 col-ipad " style="padding:0 5px;">
+            <div class="col-sm-3 col-lg-3 col-xs-6 col-ipad " style="padding:0 5px;">
                 <div class="product-image-wrapper col-promotion">
                     <div class="single-products">
                         <div class="productinfo text-center" id="product">
@@ -27,12 +27,17 @@
                                 $discountpercent = (100 * $product->product_price) / $product->product_price_promotion;
                                 $sale = 100 - $discountpercent;
                                 ?>
+                                @if ( strtotime($product->created_date) + 604800 > time() )
+                                    <img src="http://localhost/vaiaodai/public/client/images/new.jpg"
+                                         class="newarrival_right" alt="">
+                                @endif
                                 <a href="{{ URL::to('/chi-tiet/'.$product->meta_slug) }}" title="Chi tiết">
                                     @if ($product->product_price_promotion == 1)
 
                                     @else
                                         <span class="stick-promotion">-{{ round($sale) }}%</span>
-                                        <span class="stick-promotion_countdown" id="stick-promotions_{{$product->product_id}}"></span>
+                                        <span class="stick-promotion_countdown"
+                                              id="stick-promotions_{{$product->product_id}}"></span>
                                     @endif
                                     <img class="img-fluid" src="public/upload/{{$product->product_image}}"/>
                                     <h6 id="title">{{$product->product_Name}}</h6>
@@ -96,8 +101,7 @@
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            if ( document.getElementById("stick-promotions_{{$product->product_id}}") !== null )
-            {
+            if (document.getElementById("stick-promotions_{{$product->product_id}}") !== null) {
                 // Display the result in the element with id="demo"
                 document.getElementById("stick-promotions_{{$product->product_id}}").innerHTML = "Còn " + days + " ngày " + hours + ":"
                     + minutes + ":" + seconds;

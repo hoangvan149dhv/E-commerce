@@ -106,4 +106,12 @@ class loginController extends Controller
             return view('admin.login.admin_login');
         }
     }
+
+    public function log_out()
+    {
+        Session::put('session_id', null);
+
+        return redirect('/admin-login');
+
+    }
 }

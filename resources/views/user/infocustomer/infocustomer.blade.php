@@ -1,5 +1,5 @@
 @extends('user.index')
-@Section('content')
+@section('content')
 <div class="contact-form">
     <h2 class="title text-center">Thông Tin Khách Hàng</h2>
     <div class="status alert alert-success" style="display: none"></div>
@@ -14,7 +14,6 @@
         </div>
     </form>
 </div>
-
 @endsection
 @section('script')
     <script>$(document).ready(function name(params) {
