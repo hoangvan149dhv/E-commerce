@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en"><head>
 @include('admin.sections.head')
 <div class="log-w3">
     <div class="w3layouts-main">
