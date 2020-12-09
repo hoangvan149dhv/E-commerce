@@ -3,6 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="">
     <title>{{$meta_title ?? 'Trang chủ' }}</title>
+    @if(config('config_admin.SEO'))
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="robots" content="{{$meta_Robots ?? ''}}"/>
     <meta property="og:image" content="{{ asset('public/upload/qc2.png') }}"/>
@@ -15,5 +16,6 @@
     <meta property="og:url" content="{{ $url_canonical ?? '' }}"/>
     <link rel="icon" type="image" href="">
     <link rel="canonical" href="{{ $url_canonical ?? '' }}"/>
+    @endif
     @include('user.libraries.link')
 </head>

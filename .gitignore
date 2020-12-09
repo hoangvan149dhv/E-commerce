@@ -5,8 +5,7 @@
 /vendor
 #Not ignore shopping cart AND PDF
 #!/vendor/mpdf
-
-.env.backup
+.env
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
