@@ -22,13 +22,13 @@ class CreateTblProduct extends Migration
             $table->string('product_material');
             $table->integer('product_price');
             $table->integer('product_price_promotion');
-            $table->date('promotion_start_date')->nullable();
-            $table->date('promotion_end_date')->nullable();
+            $table->date('promotion_start_date')->default(null)->nullable();
+            $table->date('promotion_end_date')->default(null)->nullable();
             $table->string('product_image',255);
             $table->string('meta_keyword',255);
             $table->text('meta_desc');
             $table->text('meta_slug');
-            $table->integer('publish');
+            $table->integer('publish')->default(0);
             $table->timestamp('created_date')->default(DB::raw('CURRENT_TIMESTAMP'))->nullable();
         });
     }

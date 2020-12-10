@@ -17,7 +17,7 @@ class CreateTblConfigmailReceiver extends Migration
             $table->Increments('id');
             $table->string('Email',50);
             $table->string('name_email',50);
-            $table->tinyInteger('publish');
+            $table->tinyInteger('publish')->default(1);
         });
     }
 

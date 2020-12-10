@@ -5,7 +5,7 @@
     <div class="w3layouts-main">
         <h2>Đăng Nhập</h2>
     <form action="{{URL::to('/admin-quanly')}}" method="post">{{ csrf_field() }}
-                <input type="text" class="ggg" name="Email" value="{{ $result->user_name }}" placeholder="Tên Đăng Nhập" required="">
+                <input type="text" class="ggg" name="Email" value="{{ $result->user_name ?? '' }}" placeholder="Tên Đăng Nhập" required="">
                 <input type="text" class="ggg" value="" name="Password" placeholder="Mật Khẩu..." required="">
 
                 <h6><a href="{{ URL::to('/quen-mat-khau') }}">Quên Mật Khẩu?</a></h6>

@@ -14,8 +14,8 @@ class CreateTblCount extends Migration
     public function up()
     {
         Schema::create('tbl_count', function (Blueprint $table) {
-            $table->Increments('id');
-            $table->integer('counts');
+            $table->integer('id');
+            $table->integer('counts')->default(0);
         });
     }
 
