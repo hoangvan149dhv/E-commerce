@@ -81,24 +81,24 @@ CREATE TABLE `tbl_contact` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
 DROP TABLE IF EXISTS `tbl_count` ;
 CREATE TABLE `tbl_count` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `counts` int NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `id` int NOT NULL,
+  `counts` int NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
 DROP TABLE IF EXISTS `tbl_customer` ;
 CREATE TABLE `tbl_customer` (
   `cusid` bigint unsigned NOT NULL AUTO_INCREMENT,
   `cusname` varchar(70) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cusEmail` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
   `cusadd` varchar(70) COLLATE utf8mb4_unicode_ci NOT NULL,
   `cusPhone` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `cusNote` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cusNote` text COLLATE utf8mb4_unicode_ci,
   PRIMARY KEY (`cusid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -140,8 +140,8 @@ DROP TABLE IF EXISTS `tbl_orders` ;
 CREATE TABLE `tbl_orders` (
   `orderid` bigint unsigned NOT NULL AUTO_INCREMENT,
   `cusid` int NOT NULL,
-  `product_id` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `qty` int NOT NULL,
+  `product_id` int NOT NULL,
+  `qty` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `fee_ship` int NOT NULL,
   `total` int NOT NULL,
   `status` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -154,19 +154,19 @@ DROP TABLE IF EXISTS `tbl_product` ;
 CREATE TABLE `tbl_product` (
   `product_id` int unsigned NOT NULL AUTO_INCREMENT,
   `category_id` int NOT NULL,
+  `brandcode_id` int NOT NULL,
   `product_Name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `product_desc` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `product_material` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `product_price` int NOT NULL,
   `product_price_promotion` int NOT NULL,
-  `brandcode_id` int NOT NULL,
   `promotion_start_date` date DEFAULT NULL,
   `promotion_end_date` date DEFAULT NULL,
   `product_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `meta_desc` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `meta_slug` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `publish` int NOT NULL,
+  `publish` int NOT NULL DEFAULT '0',
   `created_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`product_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -180,10 +180,10 @@ CREATE TABLE `tbl_review` (
   `Remail` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Rcomment` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` tinyint NOT NULL,
-  `created_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`Rid`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
 DROP TABLE IF EXISTS `tbl_sliders` ;
@@ -194,7 +194,7 @@ CREATE TABLE `tbl_sliders` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
 DROP TABLE IF EXISTS `tbl_template_mail` ;
@@ -212,6 +212,7 @@ CREATE TABLE `tbl_configmail_receiver` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
   `Email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name_email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `publish` tinyint NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
