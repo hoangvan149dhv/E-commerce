@@ -3,14 +3,13 @@
 /public/storage
 /storage/*.key
 /vendor
-#Not ignore shopping cart AND PDF
-#!/vendor/mpdf
-.env
+.env.backup
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-/.idea
-
-
+.env
+database_aodaixinh_23-09-20.sql
+.idea/*
+/public/search.blade.php
