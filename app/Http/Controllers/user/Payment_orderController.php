@@ -18,7 +18,7 @@ class Payment_orderController extends HomeController
 {
     public function payment_order(Request $request){
         $order_data['product_id'] = '';
-
+        $order_data['qty']        = '';
         $content = Cart::content();
 
         // INSERT CUSTOMER
@@ -37,18 +37,18 @@ class Payment_orderController extends HomeController
         {
 
             $cus_id = DB::table('tbl_customer')->insertGetId($cus_data);
-
+            $order_data['total'] = 0;
         // INSERT ORDER_PAYMENT
-            foreach($content as $value_content){
+            foreach($content as $value_content) {
                 $order_data['cusid']       = $cus_id;
                 $order_data['product_id']  .= ',' . $value_content->id;
-                $order_data['qty']         = $value_content->qty;
+                $order_data['qty']         .= ',' . $value_content->qty;
                 $order_data['fee_ship']    = $request->val_feeship;
-                $order_data['total']       = ($value_content->price * $order_data['qty']) + $order_data['fee_ship'];
+                $order_data['total']       += ($value_content->price *$value_content->qty) + $order_data['fee_ship'];
                 $order_data['status']      = 0;
             }
                 $order_data['product_id'] = substr($order_data['product_id'], 1);
-
+                $order_data['qty']        = substr($order_data['qty'], 1);
                 $getIdorder = DB::table('tbl_orders')->insertGetId($order_data);
 
                 $item_detail_order = CustomerorderModel::where('orderid',$getIdorder)->get();
@@ -70,7 +70,7 @@ class Payment_orderController extends HomeController
 
                             //CC Name //BCCNAME  //RECEIPT
                             $mailconfig_recipient = $value->Email;
-                            $ccname = array("$request->email");
+                            $ccname = $cus_data['cusEmail'];
                             $bccname = array("hoangvan149dhv@gmail.com");
 
                             //Subject (mail)

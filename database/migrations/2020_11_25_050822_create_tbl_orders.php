@@ -16,7 +16,7 @@ class CreateTblOrders extends Migration
         Schema::create('tbl_orders', function (Blueprint $table) {
             $table->bigIncrements('orderid');
             $table->integer('cusid');
-            $table->integer('product_id');
+            $table->string('product_id',255);
             $table->string('qty',50);
             $table->integer('fee_ship');
             $table->integer('total');

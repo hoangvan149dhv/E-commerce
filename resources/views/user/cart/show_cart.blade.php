@@ -73,21 +73,6 @@
             <div class="container-sm">
                 <div class="row">
                     <div class="col-sm-6">
-                        <div class="total_area">
-                            <ul>
-                                <li><span class="subtotal_product">Tổng</span><span
-                                        class="fee_cart_product">{{ str_replace('.00',"",Cart::subtotal()) }}</span><span>.VNĐ</span>
-                                </li>
-                                <li><span class="fee_ship">Phí vận chuyển</span>
-                                    <span class="fee_ship_cart"></span><span class="fee_delivery"></span></li>
-                                <li><span class="total_name">Thành tiền</span>
-                                    <span class="total_price">{{ str_replace('.00',"",Cart::subtotal()) }}</span><span>.VNĐ</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-                    <div class="col-sm-6">
                         <div class="chose_area col-sm-12" style="padding-left:25px;">
                             <?php
                             if(empty($value_content->name)){
@@ -153,10 +138,24 @@
                             </div>
                         </div>
                         {{-- </form> --}}
-                        <?php
-                        }
-                        ?>
                     </div>
+                    <div class="col-sm-6">
+                        <div class="total_area">
+                            <ul>
+                                <li><span class="subtotal_product">Tổng</span><span
+                                        class="fee_cart_product">{{ str_replace('.00',"",Cart::subtotal()) }}</span><span>.VNĐ</span>
+                                </li>
+                                <li><span class="fee_ship">Phí vận chuyển</span>
+                                    <span class="fee_ship_cart"></span><span class="fee_delivery"></span></li>
+                                <li><span class="total_name">Thành tiền</span>
+                                    <span class="total_price">{{ str_replace('.00',"",Cart::subtotal()) }}</span><span>.VNĐ</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
         </section>
