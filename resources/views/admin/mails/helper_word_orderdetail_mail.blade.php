@@ -65,6 +65,10 @@
                 <td>{order_date}</td>
                 <td>Ngày đặt</td>
             </tr>
+            <tr>
+                <td>{loop_product}</td>
+                <td>Danh sách sản phẩm đã đặt</td>
+            </tr>
             </tbody>
         </table>
     </div>
