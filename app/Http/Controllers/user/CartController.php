@@ -45,7 +45,7 @@
 
             $productId = $request->product_id_hidden;
 
-            //lấy sản phẩm
+            //Get product
             $product_info = DB::table('tbl_product')->where('tbl_product.product_id', $productId)->first();
 
             $data['id'] = $productId;
@@ -71,7 +71,7 @@
             return view('user.cart.show_cart');
         }
 
-        //delete cart
+        //Remove cart
         public function del_cart($rowId)
         {
             $cart = Cart::content();

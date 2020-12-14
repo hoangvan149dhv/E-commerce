@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\admin\AdminController;
 class dumpDatabasesController extends AdminController
 {
-    public function backup_database(){
+    public function backup_database() {
 
         //ENTER THE RELEVANT INFO BELOW
         $mysqlHostName      = env('DB_HOST');

@@ -17,11 +17,10 @@ class newsadminController extends HomeController
               ->with('newsadminModel',$newsadminModel);
 
     }
-         //CHI TIẾT trang tin tức
-        public function newsdetails_client($primaryKey,request $request){
+
+        public function news_details_client($primaryKey,request $request){
         $newsadminModel = newsadminModel::find($primaryKey);
         $news_details = newsadminModel::select()->whereNotIn('news_id',[$primaryKey])->orderby('news_id','desc')->take(5)->get();
-        //
         $meta_desc= $newsadminModel->news_desc;
         $meta_title =  $newsadminModel->news_title;
         $url_canonical = $request->url();

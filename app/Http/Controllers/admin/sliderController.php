@@ -7,11 +7,7 @@ use App\Http\Model\sliderModel;
 use DB;
 class sliderController extends AdminController
 {
-    function slider_layout(){
-
-        return view('admin.slider.addslider');
-    }
-    function add_slider(Request $request){
+    function add_slider(Request $request) {
 
         $data = array();
         $data['status'] = $request->status;
@@ -75,7 +71,6 @@ class sliderController extends AdminController
         return Redirect::to('all-slider');
     }
 
-    //xóa qc
     function delete($id)
     {
         $slider = sliderModel::where('id',$id)->get();

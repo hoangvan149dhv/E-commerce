@@ -43,7 +43,6 @@ class AdminController extends loginController
         });
     }
 
-    //cHUYỂN ĐẾN TRANG CHỦ ADMIN
     public function index()
     {
         $date = Carbon::now();
@@ -61,8 +60,6 @@ class AdminController extends loginController
 
     }
 
-
-    //convert status 0->1
     public function update_status($orderid, $order_status)
     {
         $data['status'] = $order_status;
@@ -72,8 +69,6 @@ class AdminController extends loginController
         return back();
     }
 
-
-    //destroy muti order
     public function destroy_order(Request $request)
     {
 
@@ -98,20 +93,19 @@ class AdminController extends loginController
 
     }
 
-    //QUẢN LÝ ĐƠN HÀNG
     public function order($status)
     {
         $orderModel = new OrderModel();
 
-        $order_item = is_numeric($status) ? $orderModel->where('status', $status)->orderby('orderid', 'desc')->paginate(15)
-                                          : $orderModel->orderby('orderid', 'desc')->paginate(15);
+        $order_item = is_numeric($status) ? $orderModel->where('status', $status)->orderby('orderid',
+            'desc')->paginate(15)
+            : $orderModel->orderby('orderid', 'desc')->paginate(15);
 
         session::put('message', DB::table('tbl_orders')->where('status', 0)->count());
 
         return view('admin.order.order')->with('product_order', $order_item);
 
     }
-
 
     public function searchProduct(Request $request)
     {
@@ -135,11 +129,11 @@ class AdminController extends loginController
 
         $getProductItems = explode(',', $orderItems['product_id']);
         $order_item_qty_value = explode(',', $orderItems['qty']);
-        return view('admin.infoOrder.infoOrder')
-            ->with('getProductItems',$getProductItems)
-            ->with('infocustomerorder',$infocustomer)
-            ->with('order_item_qty_value',$order_item_qty_value);
 
+        return view('admin.infoOrder.infoOrder')
+            ->with('getProductItems', $getProductItems)
+            ->with('infocustomerorder', $infocustomer)
+            ->with('order_item_qty_value', $order_item_qty_value);
     }
 
     public function upload(Request $request)

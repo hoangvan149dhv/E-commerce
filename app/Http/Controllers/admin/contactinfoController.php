@@ -10,7 +10,7 @@ use App\Http\Controllers\admin\AdminController;
 class contactinfoController extends AdminController
 {
 
-    public function layout_insert_Infocontact(){
+    public function layout_insert_Infocontact() {
 
         $contactinfoModel = contactinfoModel::where('id_Info',1)->get();
 

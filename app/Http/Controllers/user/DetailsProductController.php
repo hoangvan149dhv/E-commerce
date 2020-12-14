@@ -28,8 +28,8 @@
 
                 return redirect('trang-chu');
             }
-            //SẢN PHÂM ĐC QUAN TÂM (SẢN PHẨM MỚI)
-            $show_details_product_recommended = \App\Http\library\product_detail::getAllProduct()
+            //Product details recommended
+            $products_detail_recommended = \App\Http\library\product_detail::getAllProduct()
                 ->whereNotIn('tbl_product.meta_slug', [$meta_slug])
                 ->limit('3')->orderby('product_id', 'desc')->get();
 
@@ -54,7 +54,8 @@
                 return redirect('trang-chu');
             }
 
-            //LẤY SẢN PHẨM THEO DANH MỤC
+
+            //get products by category
             $show_product =\App\Http\library\product_detail::getAllProduct()
                 ->where('tbl_product.category_id', $category_product_id)
                 ->whereNotIn('tbl_product.meta_slug', [$meta_slug])
@@ -64,7 +65,7 @@
 
             return view('user.details_product.details_product')
                 ->with('details_product', $show_details_product)
-                ->with('show_details_product_recommended', $show_details_product_recommended)
+                ->with('show_details_product_recommended', $products_detail_recommended)
                 ->with('related_product', $related_product)
                 ->with('show_product', $show_product)
 

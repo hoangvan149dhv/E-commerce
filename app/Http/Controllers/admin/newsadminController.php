@@ -11,12 +11,6 @@ use App\Http\Controllers\admin\AdminController;
 class newsadminController extends AdminController
 {
 
-    public function layoutaddNews(){
-
-        return view('admin.news.addnews');
-
-    }
-    //THÊM BÀI VIẾT
     public function insertNews(request $Request){
 
         $newsadminModel = new newsadminModel();
@@ -57,8 +51,6 @@ class newsadminController extends AdminController
 
     }
 
-
-    // HIỂN THỊ TẤT CẢ BÀI VIẾT
     public function layoutallNews(){
 
         $newsadminModel= newsadminModel::select()->orderBy('news_id','desc')->paginate(10);
@@ -66,7 +58,7 @@ class newsadminController extends AdminController
         return view('admin.news.allnews')->with(compact('newsadminModel'));
 
     }
-    //HIỂN THỊ CHI TIẾT TỪNG BÀI VIẾT
+    //Show detail reviews on product
     public function newsdetails($primaryKey){
 
         $newsadminModel= newsadminModel::find($primaryKey);
@@ -75,7 +67,6 @@ class newsadminController extends AdminController
 
     }
 
-        //XÓA BÀI VIẾT
     public function delete_news($primaryKey){
         $newsadminModel = newsadminModel::find($primaryKey);
         $news_img_old = $newsadminModel->news_image;
@@ -86,14 +77,14 @@ class newsadminController extends AdminController
 
     }
     //UPDATE
-    public function edit_news($primaryKey){
+    public function edit_news($primaryKey) {
 
         $newsadminModel = newsadminModel::find($primaryKey);
         return view('admin.news.updatenews')->with('newsadminModel',$newsadminModel);
 
     }
-    //UPDATE SỬA
-    public function update_news($primaryKey,  request $Request){
+
+    public function update_news($primaryKey,  request $Request) {
 
         $newsadminModel = newsadminModel::find($primaryKey);
         $newsadminModel->news_title = $Request['title'];

@@ -124,8 +124,6 @@ class DeliveryController extends Controller
 
     public function update_fee_delivery(Request $request){
 
-        // $data = $request->all();
-
         $feeship_update = new feeShipModel();
 
         $data['fee_feeship'] = $request['fee_ship'];

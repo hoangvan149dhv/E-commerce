@@ -9,7 +9,7 @@ use Validator;
 use App\Http\Controllers\admin\AdminController;
 class contactController extends AdminController{
 
-    public function contactadmin(){
+    public function contactadmin() {
 
         $contact= contactModel::select()->orderby('id','desc')->paginate(10);
 

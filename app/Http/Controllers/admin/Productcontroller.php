@@ -165,7 +165,7 @@ class Productcontroller extends AdminController
         return back();
     }
 
-    //UPDATE (HIỂN THỊ )
+    //Show detail products
     public function edit_product($product_id)
     {
         $category_product = DB::table('tbl_category_product')->orderby('category_id', 'desc')->get();

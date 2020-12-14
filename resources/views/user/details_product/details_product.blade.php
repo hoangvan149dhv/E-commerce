@@ -145,7 +145,7 @@
         <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="item active">
-                    @foreach ($show_details_product_recommended as $product_recommended)
+                    @foreach ($products_detail_recommended as $product_recommended)
                         <div class="col-sm-4">
                             <div class="product-image-wrapper details">
                                 <div class="single-products">
@@ -270,7 +270,7 @@
 @endsection
 @section('script')
     <script>
-        @foreach ($show_details_product_recommended as $product)
+        @foreach ($products_detail_recommended as $product)
         // Set the date we're counting down to
         // Update the count down every 1 second
         var x = setInterval(function () {

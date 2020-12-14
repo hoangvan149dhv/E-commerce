@@ -10,10 +10,10 @@ use Validator;
 use App\Http\Model\contactinfoModel;
 use App\Http\Controllers\user\HomeController;
 class contactController extends HomeController{
-    public function Contact(Request $request)
+    public function Contact()
     {
 
-        return view('user.contact.contact');
+
     }
 
     public function insertContact(request $request)

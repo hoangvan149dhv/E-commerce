@@ -19,7 +19,7 @@ Route::get('/tim-kiem','user\HomeController@search');
 ///////////////////////////////---------BRANDS - CATEGORIES---------////////////////////////////////////////////////////
 
 //SHOW PRODUCT BY CATEGORIES
-Route::get('/Danh-muc-san-pham/{category_id}', 'user\CategoryProduct@show_category_home');
+Route::get('/Danh-muc-san-pham/{category_id}', 'user\CategoryProduct@show_products_from_category');
 
 //SHOW PRODUCT BY BRANDS
 Route::get('/thuong-hieu/{brandcode_id}', 'user\BrandcodeProduct@show_brand_home');
@@ -64,7 +64,7 @@ Route::get('/thanh-toan-gio-hang','user\Payment_orderController@payment_order');
 Route::get('/tin-tuc-chia-se','user\newsadminController@news_client');
 
 //DETAIL NEWS
-Route::get('/tin-tuc-chia-se/{primary_id}','user\newsadminController@newsdetails_client');
+Route::get('/tin-tuc-chia-se/{primary_id}','user\newsadminController@news_details_client');
 
 //DETAIL INFO ORDER CUSTOMER
 route::get('/thong-tin-khach-hang','user\InfocustomerController@info_customer');
@@ -75,7 +75,10 @@ route::get('/hien-thi-thong-tin','user\InfocustomerController@info_customer_phon
 
 
 //CONTACT CUSTOMER
-Route::get('/lien-he','user\contactController@Contact');
+Route::get('/lien-he', function() {
+    return view('user.contact.contact');
+});
+
 Route::post('/lien-he','user\contactController@insertContact');
 
 
@@ -126,7 +129,9 @@ Route::get('/order_status', 'admin\AdminController@display_order_status');
 ////////////////////////////////////////-------CATEGORIES - BRANDS-----/////////////////////////////////////////////////
 
 //ADD CATEGORY
-Route::get('/addCategoryProduct', 'admin\CategoryProduct@add_Category_Product');
+Route::get('/addCategoryProduct', function () {
+    return view('admin.categories.addcategoryProduct');
+});
 //SHOW CATEGORY
 Route::get('/allCategoryProduct', 'admin\CategoryProduct@all_Category_Product');
 //SAVE CATEGORY
@@ -151,7 +156,9 @@ Route::get('/status/{category_product_id}/{status}', 'admin\CategoryProduct@upda
 //BRAND PRODUCT
 
 //add  BRAND
-Route::get('/add-Brand-code-Product', 'admin\BrandcodeProduct@add_Brand_code_Product');
+Route::get('/add-Brand-code-Product',function () {
+    return view('admin.brands.addBrandProduct');
+});
 //SHOW BRAND
 Route::get('/all-Brand-code-Product', 'admin\BrandcodeProduct@all_Brand_code_Product');
 // SAVE BRAND
@@ -193,7 +200,9 @@ route::get('/thong-tin-don-hang/{order_id}','admin\AdminController@infocustomero
 //////////////////////////////////////////-------NEWS----------/////////////////////////////////////////////////////////
 
 //SHOW DISPLAY NEWS
-route::get('/add-news','admin\newsadminController@layoutaddNews');
+route::get('/add-news', function() {
+    return view('admin.news.addnews');
+});
 //ADD NEWS
 route::post('/save-news','admin\newsadminController@insertNews');
 
@@ -229,7 +238,9 @@ Route::get('reviews','admin\reviewsController@reviews');
 //////////////////////////////////-------------------SLIDER---------------------////////////////////////////////////////
 
 //SHOW ADD SLIDER
-Route::get('/add-slider','admin\sliderController@slider_layout');
+Route::get('/add-slider', function() {
+    return view('admin.slider.addslider');
+});
 Route::post('/edit-slider','admin\sliderController@add_slider');
 
 //SLIDER MANAGERMENT

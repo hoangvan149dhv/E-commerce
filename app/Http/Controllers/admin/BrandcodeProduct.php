@@ -10,13 +10,7 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\admin\loginController as loginController;
 class BrandcodeProduct extends AdminController
 {
-    // LAYOUT ADD
-    public function add_Brand_code_Product(){
-
-        return view('admin.brands.addBrandProduct');
-    }
-
-    //ALL HIỂN THỊ
+    //Show brand
     public function all_Brand_code_Product(){
 
         $allBrandcode_product = DB::table('tbl_brand_code_product')->get();
@@ -26,7 +20,7 @@ class BrandcodeProduct extends AdminController
         return view('admin.index')->with('admin.brands.allBrandProduct',$manager_brandcode_product);
     }
 
-    // THÊM brand
+    // Create brand
     public function save_brandcode_product(request $Request){
 
         $data['brandcode_name'] = $Request->name;
@@ -40,14 +34,14 @@ class BrandcodeProduct extends AdminController
         return redirect::to('add-Brand-code-Product');
 
     }
-    //DELETE BRAND-CODE
+
     public function delete_brand_code_product($brand_code_id){
 
         DB::table('tbl_brand_code_product')->where('code_id',$brand_code_id)->delete();
 
         return redirect::to('/all-Brand-code-Product');
     }
-    //UPDATE (HIỂN THỊ )
+    //show detail brands
     public function edit_brand_code_product($brand_code_id){
 
         $allBrandcode_product = DB::table('tbl_brand_code_product')->where('code_id',$brand_code_id)->get();

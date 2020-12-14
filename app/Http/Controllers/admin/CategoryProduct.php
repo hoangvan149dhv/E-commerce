@@ -10,13 +10,6 @@ use Illuminate\Support\Facades\Redirect;
 
 class CategoryProduct extends AdminController
 {
-
-    // LAYOUT ADD
-    public function add_Category_Product(){
-
-        return view('admin.categories.addcategoryProduct');
-    }
-
     public function all_Category_Product(){
 
         $all_category_product = DB::table('tbl_category_product')->get();
@@ -41,7 +34,6 @@ class CategoryProduct extends AdminController
         return back();
     }
 
-    //active
     public function update_status_category($category_product_id, $status)
     {
         DB::table('tbl_category_product')->where('category_id', $category_product_id)->update(['category_status' => $status]);

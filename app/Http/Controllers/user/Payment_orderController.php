@@ -58,7 +58,7 @@ class Payment_orderController extends HomeController
 
                         $EmailName = configMailModel::select()->get();
                         foreach ($EmailName as $key => $value) {
-                            
+
                         }
                         if ( !empty($value->publish)) {
                             //SEND MAIL
@@ -89,8 +89,6 @@ class Payment_orderController extends HomeController
                                 $template,
                                 $item_detail_order);
                         }
-                        
-
 
                         $mpdf = new \Mpdf\Mpdf();
                         $mpdf->WriteHTML($template[0]->template);

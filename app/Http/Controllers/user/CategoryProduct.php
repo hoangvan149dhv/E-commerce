@@ -12,8 +12,7 @@
 
     class CategoryProduct extends HomeController
     {
-        //SHOW SẢN PHẨM CỦA DAN MỤC
-        public function show_category_home($category_id, request $request)
+        public function show_products_from_category($category_id, request $request)
         {
             //category_name
             $category_name = DB::table('tbl_category_product')->where('category_id', $category_id)->limit('1')->get();
