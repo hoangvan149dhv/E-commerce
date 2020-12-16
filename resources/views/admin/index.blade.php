@@ -122,7 +122,7 @@
                     <a  @yield('order') href="#">
                         <i class="fa fa-shopping-cart"></i>
                         <span>Đơn Hàng (<?php
-
+                            use App\Http\Model\OrderModel;
                             $order_status_notcomplete = OrderModel::all()->where('status', 0)->count();
                             echo $order_status_notcomplete;
                             ?>)

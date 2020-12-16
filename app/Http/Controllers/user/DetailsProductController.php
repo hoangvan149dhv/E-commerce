@@ -65,7 +65,7 @@
 
             return view('user.details_product.details_product')
                 ->with('details_product', $show_details_product)
-                ->with('show_details_product_recommended', $products_detail_recommended)
+                ->with('products_detail_recommended', $products_detail_recommended)
                 ->with('related_product', $related_product)
                 ->with('show_product', $show_product)
 
