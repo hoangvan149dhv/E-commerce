@@ -1,6 +1,3 @@
-<?php
-    // use Carbon\Carbon;
-?>
 @extends('admin.index')
 @section('content')
 <div class="table-agile-info">
@@ -30,36 +27,38 @@
         <table class="table table-striped table-responsive b-t b-light table-hover">
 			<thead>
 			  <tr>
-                <th style="text-align:center"><input type="checkbox" name="select-all"  id="select-all"/></th>
-				<th>Mã Hàng</th>
-				<th>Sản Phẩm</th>
-				<th>Danh Mục</th>
-				<th>Chất Liệu</th>
-				<th>Hình Ảnh</th>
-				<th>Gía</th>
-				<th>Gía khuyến mãi</th>
-				<th style="width:100px;"></th>
+              <th class="text-center"><input type="checkbox" name="select-all"  id="select-all"/></th>
+              <th style="text-align:center">Sản Phẩm</th>
+              <th style="text-align:center">Mã Hàng</th>
+              <th style="text-align:center">Danh Mục</th>
+              <th style="text-align:center">Chất Liệu</th>
+              <th style="text-align:center">Hình Ảnh</th>
+              <th style="text-align:center">Gía</th>
+              <th style="text-align:center">Gía KM</th>
+              <th></th>
 			  </tr>
 			</thead>
 			<tbody>
 			 @foreach ($search as $product)
                  <tr>
                      <td style="text-align:center"><input type="checkbox" value="{{ $product->product_id }}" name="product[]"></td>
-                     <input type="hidden" name="slug[]" value="{{ $product->meta_slug }}">
+              <td style="text-align:center"><a href="{{URL::to('/edit-product/'.$product->product_id)}}">{{$product->product_Name}}</a></td>
                      <td style="text-align:center">{{$product->brandcode_id}}</td>
-                     <td style="text-align:center"><a href="{{URL::to('/edit-product/'.$product->product_id)}}">{{$product->product_Name}}</a></td>
                      <td style="text-align:center">{{$product->category_name}}</td>
                      <td style="text-align:center">{{$product->product_material}}</td>
                      <td style="text-align:center"><a href="{{URL::to('/edit-product/'.$product->product_id)}}"><img src="public/upload/{{ $product->product_image }}" width=80 height=110></a></td>
                      <td style="text-align:center">{{number_format($product->product_price)}}.VNĐ</td>
                      <td style="text-align:center">{{number_format($product->product_price_promotion)}}.VNĐ</td>
                      <td>
-                         <a href="{{URL::to('/edit-product/'.$product->product_id)}}"style='color:green;font-size:20px' class="active" ui-toggle-class="">
-                             <i class="fa fa-pencil-square-o text-success text-active"></i>
-                         </a>||
-                         <a href="{{URL::to('/delete-product/'.$product->product_id)}}" style='color:red;font-size:20px'class="active" ui-toggle-class="">
-                             <i class="fa fa-times text-danger text"></i>
+                <?php if($product->publish == 1):?>
+                <a href="{{URL::to('/check-publish-product/'.$product->product_id.'/'.$product->publish)}}"class="active" ui-toggle-class="">
+                  <i class="fa fa-check-circle text-success text-active"></i>
                          </a>
+                <?php else : ?>
+                <a href="{{URL::to('/check-publish-product/'.$product->product_id.'/'.$product->publish)}}" class="active" ui-toggle-class="">
+                  <i class="fa fa-times-circle text-danger text-active"></i>
+                </a>
+                <?php endif ?>
                      </td>
                  </tr>
         @endforeach
@@ -70,8 +69,6 @@
       </div>
       <footer class="panel-footer">
         <div class="row">
-          <div class="col-sm-5 text-center">
-          </div>
           <div class="col-sm-7 text-right text-center-xs">
             <ul class="pagination pagination-sm m-t-none m-b-none">
 				{!! $search->links() !!}
