@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\user;
 
-use App\Http\library\replace_template;
 use App\Http\Model\configMailModel;
 use Illuminate\Http\Request;
 use Cart;
@@ -13,7 +12,6 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Model\CustomerorderModel;
 use App\Http\Controllers\sendMailController;
 use App\Http\Model\templateMailModel;
-use App\Http\Controllers\user\HomeController;
 use App\Http\Model\customerModel;
 use App\Http\Controllers\pdfController as pdfController;
 
