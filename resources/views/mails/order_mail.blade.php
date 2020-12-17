@@ -10,9 +10,9 @@
 @foreach ($template as $item)
 @endforeach
 <?php
-$infocustomer = CustomerorderModel::where('orderid',$key->orderid)->get();
+$infoOdercustomer = CustomerorderModel::where('orderid',$key->orderid)->get();
 
-$orderItems =  $infocustomer[0]->toArray();
+$orderItems =  $infoOdercustomer[0]->toArray();
 $productItems = explode(',',$orderItems['product_id']);
 $qtyProductItems = explode(',',$orderItems['qty']);
 //data replace
@@ -27,10 +27,10 @@ $price        = $key->product_price;
 $total        = $key->total;
 $cusphone     = $key->customer->cusPhone;
 $status       = $key->status == 0 ? "Đang xử Lý" : "Đã giao xong";
-$note         = $key->customer->note;
+$note         = $key->customer->cusNote;
 $order_date   = $key->order_date;
 $address      = $key->customer->cusadd;
-$email        = $key->customer->cusEmail;     
+$email        = $key->customer->cusEmail;
 //content
 $loop_product = '';
 $product_loop_tag = '';
@@ -46,9 +46,9 @@ for ( $i = 0; $i < count($productItems); $i++)
                             <td style="text-align:center">{product_quantity}</td>
                         </tr>
                         ';
-    $loop_product .=  str_replace(array('{product_name}','{product_price}','{product_quantity}'), 
-    array($productItem[0]->product_Name,$productItem[0]->product_price, $qtyProductItems[$i]), $product_loop_tag);   
-            // var_dump($loop_product);
+    $loop_product .=  str_replace(array('{product_name}','{product_price}','{product_quantity}'),
+    array($productItem[0]->product_Name,$productItem[0]->product_price, $qtyProductItems[$i]), $product_loop_tag);
+
 }
 $search       = array('{order_id}','{cus_id}','{cus_name}','{product_id}','{product_name}',
     '{fee_shipping}','{address}','{email}','{product_quantity}','{product_price}','{order_total}','{cusphone}','{order_status}',

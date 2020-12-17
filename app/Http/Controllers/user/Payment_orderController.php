@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\user;
 
+use App\Http\library\replace_template;
 use App\Http\Model\configMailModel;
 use Illuminate\Http\Request;
 use Cart;
@@ -89,11 +90,11 @@ class Payment_orderController extends HomeController
                                 $template,
                                 $item_detail_order);
                         }
-
+                        $replace_Template = new replace_template();
                         $mpdf = new \Mpdf\Mpdf();
-                        $mpdf->WriteHTML($template[0]->template);
+                        $mpdf->WriteHTML( $replace_Template->replace_orderID($getIdorder, $template[0]->template));
                         $mpdf->Output('hoa don.pdf','I');
-                        $mpdf->SetTitle("xxx");
+                        $mpdf->SetTitle("xxx");die;
                     }
                 } catch (\RuntimeException $e) {
 

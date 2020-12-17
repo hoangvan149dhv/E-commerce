@@ -17,12 +17,6 @@
 
     class CartController extends HomeController
     {
-        public function show_cart_ajax(Request $request)
-        {
-
-            return view('user.cart.show_cartajax');
-        }
-
         public function save_cart_ajax(Request $request)
         {
 

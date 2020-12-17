@@ -155,7 +155,7 @@ $(document).ready(function() {
         $('.checkout').click(function name(params) {
             if ($('#wards').val() == 0 || $('#province').val() == 0 || $('#wards').val() == 0) {
                 alert('Vui lòng điền đầy đủ thông tin');
-                return !1
+                return ;
             }
             var val_city = $('#city option:selected').text();
             var val_province = $('#province option:selected').text();

@@ -2066,8 +2066,10 @@ textarea {
 }
 
 .check_out:hover {
-    color: #FFF;
-    background: #FE980F
+    transition: 300ms;
+    color: #333;
+    background-color: #ebebeb;
+    border-color: #adadad;
 }
 
 .step-one {

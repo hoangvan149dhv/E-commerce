@@ -24,19 +24,19 @@ class sendMailController extends Controller
      */
     public function sendMail(&$fromname , $mailconfig_recipient,
                              $ccname, $bccname, $subject, $file_template_mail,
-                             $template ,$item_detail_order) 
+                             $template ,$item_detail_order)
     {
         //template mail display
         $EmailName = configMailModel::select()->get();
-        
+
         if (empty($EmailName[0]->publish)) {
-            return ; 
+            return ;
         }
         foreach ($EmailName as $key => $value) {
-       
+
             //value mail config in admin
             $fromname             = $value->name_email;
-            
+
             $data = array('email_recipient' => $mailconfig_recipient,
                         'subject' => $subject, 'fromname' => $fromname,
                         'ccname' => $ccname, 'bccname' => $bccname);
@@ -61,7 +61,7 @@ class sendMailController extends Controller
              $EmailName = configMailModel::select()->get();
              if (empty($EmailName[0]->publish)) {
                  Session::put('send-mail-success','Vui lòng bật chức năng gửi mail');
-                return back(); 
+                return back();
             }
 
              foreach ($EmailName as $key => $value) {
@@ -130,7 +130,7 @@ class sendMailController extends Controller
     public function abc(){
         $template = \App\Http\Model\templateMailModel::where('status', 'Hiện')->get();
         $replace_Template = new replace_template();
-        $replace_Template->replace_orderID(39, $template[0]->template);
+        $replace_Template->replace_orderID(93, $template[0]->template);die;
     }
 }
 

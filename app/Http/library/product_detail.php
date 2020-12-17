@@ -12,7 +12,7 @@ class product_detail  extends BaseController
         return $productData;
     }
 
-    public static function updateProduct()
+    public static function removeExpiredSales()
     {
         // Update product when promotion_end_date over time
         DB::table('tbl_product')->where('tbl_product.promotion_end_date', '<', self::getcurrentTime())

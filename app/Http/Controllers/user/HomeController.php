@@ -20,7 +20,7 @@
             $category_product = DB::table('tbl_category_product')->orderby('category_id', 'desc')->get();
             $brandcode_product = DB::table('tbl_brand_code_product')->orderby('code_id', 'desc')->get();
 
-            \App\Http\library\product_detail::updateProduct();
+            product_detail::removeExpiredSales();
             //SEO
             if (config('config_admin.SEO')) {
                 $meta_Robots = 'index, follow';
@@ -57,10 +57,9 @@
             $count = count::findOrFail(1);
             $response = new Response();
 
-            $response->withcookie("abc" . rand(0, 9999), "abc" . rand(0, 9999), 1111);
+            $cookie = $response->withcookie("abc" . rand(0, 9999), "abc" . rand(0, 9999), 1111);
 
-            if (isset($response)) {
-                $request->cookie("abc" . rand(0, 9999));
+            if ($cookie) {
                 $count->increment('counts');
             }
             return view('user.home.home')
