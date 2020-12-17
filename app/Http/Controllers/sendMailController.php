@@ -130,7 +130,7 @@ class sendMailController extends Controller
     public function abc(){
         $template = \App\Http\Model\templateMailModel::where('status', 'Hiện')->get();
         $replace_Template = new replace_template();
-        $replace_Template->replace_orderID(93, $template[0]->template);die;
+        echo $replace_Template->replace_orderID(93, $template[0]->template);die;
     }
 }
 

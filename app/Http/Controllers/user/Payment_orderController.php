@@ -14,12 +14,15 @@ use App\Http\Model\CustomerorderModel;
 use App\Http\Controllers\sendMailController;
 use App\Http\Model\templateMailModel;
 use App\Http\Controllers\user\HomeController;
+use App\Http\Model\customerModel;
+use App\Http\Controllers\pdfController as pdfController;
 
 class Payment_orderController extends HomeController
 {
-    public function payment_order(Request $request){
+    public function payment_order(Request $request)
+    {
         $order_data['product_id'] = '';
-        $order_data['qty']        = '';
+        $order_data['qty'] = '';
         $content = Cart::content();
 
         // INSERT CUSTOMER
@@ -28,81 +31,69 @@ class Payment_orderController extends HomeController
         $cus_data['cusadd'] = $request->add;
         $cus_data['cusPhone'] = $request->phone;
         $cus_data['cusNote'] = $request->note;
-        if(empty($request->phone)|| empty($request->add) || empty($request->name)){
-
-            Session::put('error','Bạn Không Được Để Trống bất kì mục nào');
+        if (empty($request->phone) || empty($request->add) || empty($request->name)) {
+            Session::put('error', 'Bạn Không Được Để Trống bất kì mục nào');
             return Redirect::to('/hien-thi-gio-hang');
-
-        }
-        else
-        {
-
+        } else {
             $cus_id = DB::table('tbl_customer')->insertGetId($cus_data);
             $order_data['total'] = 0;
-        // INSERT ORDER_PAYMENT
-            foreach($content as $value_content) {
-                $order_data['cusid']       = $cus_id;
-                $order_data['product_id']  .= ',' . $value_content->id;
-                $order_data['qty']         .= ',' . $value_content->qty;
-                $order_data['fee_ship']    = $request->val_feeship;
-                $order_data['total']       += ($value_content->price *$value_content->qty) + $order_data['fee_ship'];
-                $order_data['status']      = 0;
+            // INSERT ORDER_PAYMENT
+            foreach ($content as $value_content) {
+                $order_data['cusid'] = $cus_id;
+                $order_data['product_id'] .= ','.$value_content->id;
+                $order_data['qty'] .= ','.$value_content->qty;
+                $order_data['fee_ship'] = $request->val_feeship;
+                $order_data['total'] += ($value_content->price * $value_content->qty) + $order_data['fee_ship'];
+                $order_data['status'] = 0;
             }
-                $order_data['product_id'] = substr($order_data['product_id'], 1);
-                $order_data['qty']        = substr($order_data['qty'], 1);
-                $getIdorder = DB::table('tbl_orders')->insertGetId($order_data);
+            $order_data['product_id'] = substr($order_data['product_id'], 1);
+            $order_data['qty'] = substr($order_data['qty'], 1);
 
-                $item_detail_order = CustomerorderModel::where('orderid',$getIdorder)->get();
+            if ( ! $order_data['product_id']) {
+                customerModel::remove($cus_id);
+                return Redirect::to('/');
+            }
 
-                try {
-                    if ($item_detail_order) {
+            $orderId = DB::table('tbl_orders')->insertGetId($order_data);
 
-                        $EmailName = configMailModel::select()->get();
-                        foreach ($EmailName as $key => $value) {
+            $item_detail_order = CustomerorderModel::where('orderid', $orderId)->get();
 
-                        }
-                        if ( !empty($value->publish)) {
-                            //SEND MAIL
-                            $sendmail = new sendMailController();
-                            //param
-                            $template = templateMailModel::where('status', 'Hiện')->get();
-                            foreach ($template as $key => $item) {
-                            }
+            try {
+                if ($item_detail_order) {
+                    $template = templateMailModel::where('status', 'Hiện')->get();
+                    pdfController::convertPDF($orderId, $template[0]->template);
 
-                            //CC Name //BCCNAME  //RECEIPT
-                            $mailconfig_recipient = $value->Email;
-                            $ccname = $cus_data['cusEmail'];
-                            $bccname = array("hoangvan149dhv@gmail.com");
+                    $EmailName = configMailModel::select()->get();
+                    if ( ! empty($EmailName[0]->publish)) {
+                        //SEND MAIL
+                        $sendmail = new sendMailController();
+                        $mailconfig_recipient = $EmailName[0]->Email;
+                        $ccname = $cus_data['cusEmail'];
+                        $bccname = array("hoangvan149dhv@gmail.com");
 
-                            //Subject (mail)
-                            $subject = $item->label;
+                        //Subject (mail)
+                        $subject = $template[0]->label;
 
-                            //template order
-                            $file_template_mail = "mails.order_mail";
+                        //template order
+                        $file_template_mail = "mails.order_mail";
 
-                            $sendmail->sendMail(
-                                $fromname,
-                                $mailconfig_recipient,
-                                $ccname,
-                                $bccname,
-                                $subject,
-                                $file_template_mail,
-                                $template,
-                                $item_detail_order);
-                        }
-                        $replace_Template = new replace_template();
-                        $mpdf = new \Mpdf\Mpdf();
-                        $mpdf->WriteHTML( $replace_Template->replace_orderID($getIdorder, $template[0]->template));
-                        $mpdf->Output('hoa don.pdf','I');
-                        $mpdf->SetTitle("xxx");die;
+                        $sendmail->sendMail(
+                            $fromname,
+                            $mailconfig_recipient,
+                            $ccname,
+                            $bccname,
+                            $subject,
+                            $file_template_mail,
+                            $template,
+                            $item_detail_order);
                     }
-                } catch (\RuntimeException $e) {
-
-                    throw new \RuntimeException($e->getMessage(), $e->getCode());
                 }
+            } catch (\RuntimeException $e) {
+
+                throw new \RuntimeException($e->getMessage(), $e->getCode());
+            }
 
             Cart::destroy();
-
 
             return view('user.payment.payment_order');
         }

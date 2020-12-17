@@ -11,4 +11,8 @@ class customerModel extends Model
     protected $order=('cusid');
     public $timastamps = false;
 
+    public static function remove($cusId)
+    {
+        self::where('cusid',$cusId)->delete();
+    }
 }
