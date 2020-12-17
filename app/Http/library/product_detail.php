@@ -4,6 +4,7 @@ namespace App\Http\library;
 use DB;
 use Illuminate\Routing\Controller as BaseController;
 use App\Http\Model\productModel;
+use Carbon\Carbon;
 class product_detail  extends BaseController
 {
     public static function getProductDetail($pid) {
@@ -38,12 +39,12 @@ class product_detail  extends BaseController
 
     public static function getcurrentTime()
     {
-        $timeCurrent = date("Y-m-d");
+        $timeCurrent = Carbon::now()->toDateTimeString();
 
-        return $timeCurrent;
+        return strtotime($timeCurrent);
     }
 
-    public static function getProductPromotionEmptynedDate($pid)
+    public static function getProductPromotionEmptyDate($pid)
     {
         $products = productModel::where('product_price_promotion', '>', 1 )->where('promotion_end_date', '=', null)
             ->where('promotion_end_date', '=', null)->where('product_id', '=', $pid)->get();

@@ -246,7 +246,7 @@ class Productcontroller extends AdminController
 
     public function publish($product_id, $pushlish)
     {
-        $product = \App\Http\library\product_detail::getProductPromotionEmptynedDate($product_id);
+        $product = \App\Http\library\product_detail::getProductPromotionEmptyDate($product_id);
 
         if (!empty($product[0])) {
             Session::put('alert-danger-product',

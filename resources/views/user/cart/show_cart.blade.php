@@ -26,14 +26,12 @@
                                  width="90" height="90"
                                  alt="">
                         </td>
-                        {{-- Sản Phẩm --}}
                         <td class="cart_description">
                             <h5><p>{{$value_content->name }}</p></h5>
                         </td>
                         <td class="cart_price">
                             <p>{{number_format($value_content->price)}}.VNĐ</p>
                         </td>
-                        {{-- SỐ LƯỢNG --}}
                         <td class="cart_quantity">
                             <form action="{{ URL::to('update_cart_quantity') }}" method="POST"
                                   style="margin-bottom:0px">
@@ -43,12 +41,11 @@
                                     <input type="hidden" value="{{$value_content->rowId}}" name="rowId_cart">
                                     <input class="cart_quantity_input" type="number" name="qty"
                                            value="{{$value_content->qty}}" width="50px"
-                                           min="1"> {{-- rowId là là trong dòng 17 GỌI LÀ RAMDOM --}}
+                                           min="1">
                                     <input type="submit" name="submit" value="Sửa" class="cart_quantity_delete">
                                 </div>
                             </form>
                         </td>
-                        {{--TỔNG GIÁ --}}
                         <td class="cart_total">
                             <p class="cart_total_price">
                                 <?php
