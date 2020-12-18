@@ -49,7 +49,7 @@ class sendMailController extends Controller
 
             function ($message) use ($data, $value) {
 
-            $message->from( 'vandaovipga1491999@gmail.com',$data['fromname']);
+            $message->from( $data['email_recipient'],$data['fromname']);
             $message->to( $data['email_recipient'])->cc($data['ccname'])->bcc($data['bccname']);
             $message->subject($data['subject']);
             });

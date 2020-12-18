@@ -42,18 +42,18 @@
             @foreach ($order_detail as $order)
               <tr>
                   <td style="text-align:center"><input type="checkbox" value="{{ $order->orderid }}" name="orderid[]"></td>
-                  <a href="{{ URL::to('/thong-tin-don-hang/'.$order->orderid) }}">
-                      <td style="text-align:center"><a href="{{ URL::to('/thong-tin-don-hang/'.$order->orderid) }}">{{$order->cusid}}</a></td>
-                      <td style="text-align:center"><a href="{{ URL::to('/thong-tin-don-hang/'.$order->orderid) }}">{{$order->customer->cusname}}</a></td>
-                      <td style="text-align:center">{{Carbon::createFromFormat('Y-m-d H:i:s', $order->order_date)->format('d/m/yy | H:i:s')}}</td>
-                      <td style="text-align:center">{{number_format($order->total)}}.VNĐ</td>
-                      @if ($order->status == 1 )
-                          <td style="text-align:center;background:#bbecc457">
-                              <a href="{{ URL::to('/update-status/'.$order->orderid).'/0' }}" style="color:green;">Đã Giao Xong</a>
-                      @else
-                          <td style="text-align:center;background:#f0bcb470;">
-                              <a href="{{ URL::to('/update-status/'.$order->orderid.'/1') }}" style="color:red">Đang Xử Lý</a>
-                          </td>
+                  <td style="text-align:center"><a href="{{ URL::to('/thong-tin-don-hang/'.$order->orderid) }}">{{$order->cusid}}</a></td>
+                  <td style="text-align:center"><a href="{{ URL::to('/thong-tin-don-hang/'.$order->orderid) }}">{{$order->customer->cusname}}</a></td>
+                  <td style="text-align:center">{{Carbon::createFromFormat('Y-m-d H:i:s', $order->order_date)->format('d/m/yy | H:i:s')}}</td>
+                  <td style="text-align:center">{{number_format($order->total)}}.VNĐ</td>
+                  @if ($order->status == 1 )
+                      <td style="text-align:center;background:#bbecc457">
+                          <a href="{{ URL::to('/update-status/'.$order->orderid).'/0' }}" style="color:green;">Đã Giao Xong</a>
+                      </td>
+                  @else
+                      <td style="text-align:center;background:#f0bcb470;">
+                          <a href="{{ URL::to('/update-status/'.$order->orderid.'/1') }}" style="color:red">Đang Xử Lý</a>
+                      </td>
                   @endif
               </tr>
           @endforeach

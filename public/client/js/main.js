@@ -92,6 +92,7 @@ $(document).ready(function() {
             var _token = $('input[name="_token"]').val();
             var result = '';
             if (action == 'city') {
+                $('#img-load').css('display', 'block');
                 result = 'province';
                 result_ward = 'wards'
             } else {
@@ -107,6 +108,7 @@ $(document).ready(function() {
                 },
                 success: function(data) {
                     $('#' + result).html(data);
+                    $('#img-load').css('display', 'none');
                     if (action == 'city') {
                         $('#' + result_ward).html('<option value="0" style="cursor: no-drop">Vui lòng chọn quận huyện trước</option>')
                     }
@@ -153,7 +155,7 @@ $(document).ready(function() {
             })
         });
         $('.checkout').click(function name(params) {
-            if ($('#wards').val() == 0 || $('#province').val() == 0 || $('#wards').val() == 0) {
+            if ($('#wards').val() == ''|| $('#province').val() == '' || $('#wards').val() == '') {
                 alert('Vui lòng điền đầy đủ thông tin');
                 return ;
             }

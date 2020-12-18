@@ -76,11 +76,17 @@ use Carbon\Carbon;
                                 @if ($info->status == 1 )
                                     <td style="text-align:center;background:#bbecc457">
                                         <a href="{{ URL::to('/update-status/'.$info->orderid).'/0' }}" style="color:green;">Đã Giao Xong</a>
+                                    </td>
                                 @else
                                     <td style="text-align:center;background:#f0bcb470;">
                                         <a href="{{ URL::to('/update-status/'.$info->orderid.'/1') }}" style="color:red">Đang Xử Lý</a>
                                     </td>
                                 @endif
+                                <td style="text-align:center">
+                                    <a href="{{URL::to('/print-pdf/'.$info->orderid.'/Hiện')}}" target="_blank">
+                                        <i class="fa fa-file-pdf-o"></i>
+                                    </a>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>

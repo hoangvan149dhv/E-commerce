@@ -42,7 +42,6 @@
            @foreach ($product_order as $order)
             <tr>
               <td style="text-align:center"><input type="checkbox" value="{{ $order->orderid }}" name="orderid[]"></td>
-                <a href="{{ URL::to('/thong-tin-don-hang/'.$order->orderid) }}">
               <td style="text-align:center"><a href="{{ URL::to('/thong-tin-don-hang/'.$order->orderid) }}">{{$order->cusid}}</a></td>
               <td style="text-align:center"><a href="{{ URL::to('/thong-tin-don-hang/'.$order->orderid) }}">{{$order->customer->cusname}}</a></td>
               <td style="text-align:center">{{Carbon::createFromFormat('Y-m-d H:i:s', $order->order_date)->format('d/m/yy | H:i:s')}}</td>

@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use App\Http\Controllers\pdfController;
 //////////////////////////--------------USER----------//////////////////////////////////////////////////////////////////
 Route::get('/','user\HomeController@index');
 
@@ -124,8 +124,8 @@ Route::post('/tim-kiem-san-pham', 'admin\AdminController@searchProduct');
 //SHOP ITEM ORDER DETAIL
 Route::get('/order_status', 'admin\AdminController@display_order_status');
 
-
-
+//PRINT PDF
+Route::get('/print-pdf/{orderId}/{status}', 'pdfController@getTemplateOrder');
 ////////////////////////////////////////-------CATEGORIES - BRANDS-----/////////////////////////////////////////////////
 
 //ADD CATEGORY

@@ -23,7 +23,6 @@ class InfocustomerController extends HomeController
 
     public function info_customer_phone(Request $request)
     {
-
         $info_customer = DB::table('tbl_customer')->where('cusPhone', $request->phone)->limit(1)->get();
 
         $order_item = DB::table('tbl_orders')->where('cusid', $info_customer[0]->cusid)->orderby('cusid',

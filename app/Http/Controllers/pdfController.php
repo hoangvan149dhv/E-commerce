@@ -3,10 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Http\library\replace_template;
+use App\Http\Model\templateMailModel;
 use Illuminate\Http\Request;
 
 class pdfController extends Controller
 {
+    public function getTemplateOrder($orderId, $status)
+    {
+        $template = templateMailModel::where('status', $status)->get()[0]->template;
+
+        return self::convertPDF($orderId, $template);
+    }
     public static function convertPDF($orderId, $template)
     {
         $mpdf = new \Mpdf\Mpdf();

@@ -43,8 +43,8 @@ class replace_template extends BaseController
         $status = $getOrderIds['status'] == 0 ? "Đang xử Lý" : "Đã giao xong";
         $note = $getOrderIds->customer->cusNote;
         $order_date = $getOrderIds['order_date'];
-        $email = $getOrderIds->customer->cusadd;
-
+        $email = $getOrderIds->customer->cusEmail;
+        $cus_address = $getOrderIds->customer->cusadd;
         $loop_product = '';
         $product_loop_tag = '';
         for ($i = 0; $i < count($productItems); $i++) {
@@ -65,8 +65,8 @@ class replace_template extends BaseController
 
         $search = array(
             '{order_id}', '{cus_id}', '{cus_name}', '{product_id}', '{product_name}',
-            '{fee_shipping}', '{address}', '{product_quantity}', '{product_price}', '{order_total}', '{cusphone}',
-            '{order_status}',
+            '{fee_shipping}', '{cus_email}', '{product_quantity}', '{product_price}', '{order_total}', '{cusphone}',
+            '{cus_address}', '{order_status}',
             '{cus_note}', '{order_date}', '{loop_product}'
         );
 
@@ -74,7 +74,8 @@ class replace_template extends BaseController
             $order_id, $cusid, $cusname, $product_id,
             $productname, number_format($fee_ship).' VNĐ', $email, $qty, number_format($price).' VNĐ',
             number_format($total).' VNĐ',
-            $cusphone, $status, $note, Carbon::createFromFormat('Y-m-d H:i:s', $order_date)->format('d/m/yy | H:i:s'),
+            $cusphone, $cus_address, $status, $note,
+            Carbon::createFromFormat('Y-m-d H:i:s', $order_date)->format('d/m/yy | H:i:s'),
             $loop_product
         );
 

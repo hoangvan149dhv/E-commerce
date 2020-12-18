@@ -29,8 +29,8 @@ $cusphone     = $key->customer->cusPhone;
 $status       = $key->status == 0 ? "Đang xử Lý" : "Đã giao xong";
 $note         = $key->customer->cusNote;
 $order_date   = $key->order_date;
-$address      = $key->customer->cusadd;
-$email        = $key->customer->cusEmail;
+$cus_address      = $key->customer->cusadd;
+$cus_email        = $key->customer->cusEmail;
 //content
 $loop_product = '';
 $product_loop_tag = '';
@@ -51,11 +51,11 @@ for ( $i = 0; $i < count($productItems); $i++)
 
 }
 $search       = array('{order_id}','{cus_id}','{cus_name}','{product_id}','{product_name}',
-    '{fee_shipping}','{address}','{email}','{product_quantity}','{product_price}','{order_total}','{cusphone}','{order_status}',
+    '{fee_shipping}','{cus_address}','{cus_email}','{product_quantity}','{product_price}','{order_total}','{cusphone}','{order_status}',
     '{cus_note}','{order_date}','{loop_product}');
 
 $item_replace = array($order_id,$cusid,$cusname,$product_id,
-    $productname,number_format($fee_ship). ' VNĐ',$address,$email,$qty,number_format($price).' VNĐ',number_format($total).' VNĐ',
+    $productname,number_format($fee_ship). ' VNĐ',$cus_address,$cus_email,$qty,number_format($price).' VNĐ',number_format($total).' VNĐ',
     $cusphone,$status,$note,Carbon::createFromFormat('Y-m-d H:i:s', $order_date)->format('d/m/yy | H:i:s'), $loop_product);
 
 echo str_replace($search , $item_replace, $body );

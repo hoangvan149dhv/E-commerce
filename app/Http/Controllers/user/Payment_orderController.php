@@ -19,6 +19,17 @@ class Payment_orderController extends HomeController
 {
     public function payment_order(Request $request)
     {
+        echo '<div id="img-load" style="text-align: center;
+    position: fixed;
+    z-index: 9999999999;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    border: 0;
+    padding: calc( 50vh - 50px)  0;
+    top: 0;
+    left: 0;
+    display: block;"><img src="public/upload/reloading.gif" class="loadpage"></div>';
         $order_data['product_id'] = '';
         $order_data['qty'] = '';
         $content = Cart::content();
@@ -60,7 +71,6 @@ class Payment_orderController extends HomeController
                 if ($item_detail_order) {
                     $template = templateMailModel::where('status', 'Hiện')->get();
                     pdfController::convertPDF($orderId, $template[0]->template);
-
                     $EmailName = configMailModel::select()->get();
                     if ( ! empty($EmailName[0]->publish)) {
                         //SEND MAIL
@@ -90,9 +100,7 @@ class Payment_orderController extends HomeController
 
                 throw new \RuntimeException($e->getMessage(), $e->getCode());
             }
-
             Cart::destroy();
-
             return view('user.payment.payment_order');
         }
     }
