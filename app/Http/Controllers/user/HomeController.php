@@ -74,9 +74,8 @@
             if ($key_word == '') {
                 return back();
             } else {
-                $search = \App\Http\library\product_detail::getAllProduct()
+                $search = \App\Http\library\product_detail::getProductPublish()
                     ->where('product_Name', 'like', '%' . $key_word . '%')
-                    ->orwhere('product_material', 'like', '%' . $key_word . '%')
                     ->orderby('product_price_promotion', 'desc')
                     ->orderby('product_id', 'desc')
                     ->paginate(15);
@@ -90,7 +89,7 @@
         {
             $slider = sliderModel::where('status', 1)->orderby('id', 'desc')->take(3)->get();
 
-            $promotion = \App\Http\library\product_detail::getAllProduct()
+            $promotion = \App\Http\library\product_detail::getProductPublish()
                 ->where('product_price_promotion', '>', '1')
                 ->where('promotion_end_date', '>=', self::getcurrentTime())
                 ->orderby('product_price_promotion', 'desc')

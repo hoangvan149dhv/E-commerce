@@ -19,21 +19,15 @@ class Payment_orderController extends HomeController
 {
     public function payment_order(Request $request)
     {
-        echo '<div id="img-load" style="text-align: center;
-    position: fixed;
-    z-index: 9999999999;
-    background-color: rgba(0, 0, 0, 0.7);
-    width: 100%;
-    height: 100%;
-    border: 0;
-    padding: calc( 50vh - 50px)  0;
-    top: 0;
-    left: 0;
-    display: block;"><img src="public/upload/reloading.gif" class="loadpage"></div>';
+    
         $order_data['product_id'] = '';
         $order_data['qty'] = '';
         $content = Cart::content();
-
+        echo "<pre>";
+        var_dump($content);
+        echo "<pre>";
+        var_dump($request[0]);
+        echo "</pre>";die;  
         // INSERT CUSTOMER
         $cus_data['cusname'] = $request->name;
         $cus_data['cusEmail'] = $request->email;

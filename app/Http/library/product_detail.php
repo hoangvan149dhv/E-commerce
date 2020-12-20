@@ -17,13 +17,13 @@ class product_detail  extends BaseController
     {
         // Update product when promotion_end_date over time
         DB::table('tbl_product')->where('tbl_product.promotion_end_date', '<', self::getcurrentTime())
-            ->update(array('promotion_end_date' => null,
-                'promotion_start_date' => null,
+            ->update(array('promotion_end_date' => 0,
+                'promotion_start_date' => 0,
                 'publish' => 0));
 
         // Update product price
-        productModel::where('product_price_promotion', '>', 1 )->where('promotion_end_date', '=', null)
-            ->where('promotion_end_date', '=', null)->update(array('product_price_promotion' => 1,
+        productModel::where('product_price_promotion', '>', 1 )->where('promotion_start_date', '=', 0)
+            ->where('promotion_end_date', '=', 0)->update(array('product_price_promotion' => 1,
                 'publish' => 0));
     }
 

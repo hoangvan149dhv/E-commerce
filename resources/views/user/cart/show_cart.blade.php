@@ -122,12 +122,6 @@
                                                   id="" rows="6" placeholder="Ghi Chú"></textarea>
                                         <div style="color:red;margin-top:1.5rem;">
                                         </div>
-                                        <div class="checkout">
-                                            <button type="submit" name="submit" class="btn btn-default check_out"
-                                                    style="margin-left: 0px;border-radius: 5px; font-size: 25px;">
-                                                MUA HÀNG
-                                            </button>
-                                        </div>
                                     </form>
                                 </form>
                             </div>
@@ -144,6 +138,12 @@
                                 <li><span class="total_name">Thành tiền</span>
                                     <span class="total_price">{{ str_replace('.00',"",Cart::subtotal()) }}</span><span>.VNĐ</span>
                                 </li>
+                                <div class="checkout">
+                                    <button type="submit" onclick="check_out()" name="submit" class="btn btn-default check_out"
+                                            style="margin-left: 0px;border-radius: 5px; font-size: 25px;">
+                                        MUA HÀNG
+                                    </button>
+                                </div>
                             </ul>
                         </div>
                     </div>
@@ -172,10 +172,9 @@
     <script>
         var select_delivery = "{{url('/select-delivery') }}";
         var select_delivery_feeship = "{{url('/select-delivery-feeship') }}";
-
-        $('.check_out').click(function () {
-            alert('xxx');
-           // if ($('input[name ="name"]').val() || $('input[name ="email"]').val() || $('select[name ="city"]').val() || $('select[name ="province"]') || $('select[name ="wards"]'))
-        });
+        // http://localhost/banhanglaravel/thanh-toan-gio-hang
+        function check_out() {
+            document.querySelector('#shopper-info');
+        }
     </script>
 @endsection

@@ -99,27 +99,27 @@ class Productcontroller extends AdminController
         $data['brandcode_id'] = $Request->brandcode;
         $data['meta_keyword'] = $Request->meta_keyword;
         $data['meta_desc'] = $Request->meta_desc;
-        if (empty($Request->promotion_start_date) || empty($Request->promotion_end_date) || $Request->promotion_price == 1) {
-            $data['promotion_start_date'] = '0000-00-00';
-            $data['promotion_end_date'] = '0000-00-00';
-            if ($Request->promotion_price > 1) {
-                Session::put('alert-danger-product', 'Vui lòng chọn thời gian khuyến mãi');
 
-                return back();
-            }
-            $data['product_price_promotion'] = 1;
-            $data['product_price'] = $Request->price;
+        if (empty($Request->promotion_start_date) || empty($Request->promotion_end_date) && $Request->promotion_price > 1) {
+            Session::put('alert-danger-product', 'Vui lòng chọn thời gian khuyến mãi');
+
+            return back();
         } else {
             if (date($Request->promotion_start_date) > date($Request->promotion_end_date)) {
                 Session::put('alert-danger-product', 'Vui lòng chọn thời gian bắt đầu phải nhỏ hơn thời gian kết thúc');
 
                 return back();
             } else {
-                $data['promotion_start_date'] = date($Request->promotion_start_date);
-                $data['promotion_end_date'] = date($Request->promotion_end_date);
+                if ( $Request->price > $Request->promotion_price)
+                {
+                    Session::put('alert-danger-product', 'Vui lòng chọn giá khuyến mãi lớn hơn giá gốc');
+                    return back();
+                }
+                $data['promotion_start_date'] = strtotime(date($Request->promotion_start_date));
+                $data['promotion_end_date'] = strtotime(date($Request->promotion_end_date));
             }
-
         }
+        
         $slugg = $this->utf8convert($data['product_Name']);
         $data['meta_slug'] = $this->utf8tourl($slugg).rand(0, 22220);
 
@@ -199,26 +199,24 @@ class Productcontroller extends AdminController
         $data['meta_keyword'] = $Request->meta_keyword;
         $data['meta_desc'] = $Request->meta_desc;
 
-        if (empty($Request->promotion_start_date) || empty($Request->promotion_end_date) || $Request->promotion_price == 1) {
-            $data['promotion_start_date'] = '0000-00-00';
-            $data['promotion_end_date'] = '0000-00-00';
-            if ($Request->promotion_price > 1) {
-                Session::put('alert-danger-product', 'Vui lòng chọn thời gian khuyến mãi');
+        if (empty($Request->promotion_start_date) || empty($Request->promotion_end_date) && $Request->promotion_price > 1) {
+            Session::put('alert-danger-product', 'Vui lòng chọn thời gian khuyến mãi');
 
-                return back();
-            }
-            $data['product_price_promotion'] = 1;
-            $data['product_price'] = $Request->price;
+            return back();
         } else {
             if (date($Request->promotion_start_date) > date($Request->promotion_end_date)) {
                 Session::put('alert-danger-product', 'Vui lòng chọn thời gian bắt đầu phải nhỏ hơn thời gian kết thúc');
 
                 return back();
             } else {
-                $data['promotion_start_date'] = date($Request->promotion_start_date);
-                $data['promotion_end_date'] = date($Request->promotion_end_date);
+                if ( $Request->price > $Request->promotion_price)
+                {
+                    Session::put('alert-danger-product', 'Vui lòng chọn giá khuyến mãi lớn hơn giá gốc');
+                    return back();
+                }
+                $data['promotion_start_date'] = strtotime(date($Request->promotion_start_date . ' 00:00:00'));
+                $data['promotion_end_date'] = strtotime(date($Request->promotion_end_date . ' 23:59:59'));
             }
-
         }
         $slugg = $this->utf8convert($data['product_Name']);
         $data['meta_slug'] = $this->utf8tourl($slugg).rand(0, 1000);
