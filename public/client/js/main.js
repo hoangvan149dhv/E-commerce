@@ -155,9 +155,9 @@ $(document).ready(function() {
             })
         });
         $('.checkout').click(function name(params) {
-            if ($('#wards').val() == ''|| $('#province').val() == '' || $('#wards').val() == '') {
+            if ($('#city').val().length === 0 || $('#province').val().length === 0 || $('#wards').val().length === 0) {
                 alert('Vui lòng điền đầy đủ thông tin');
-                return ;
+                return false;
             }
             var val_city = $('#city option:selected').text();
             var val_province = $('#province option:selected').text();

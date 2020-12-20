@@ -19,6 +19,7 @@ INSERT INTO tbl_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES
 INSERT INTO tbl_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("93","Thành phố Cần Thơ","Quận Bình Thuỷ","Phường An Thới","40000");
 INSERT INTO tbl_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("94","Tỉnh Cao Bằng","Huyện Hà Quảng","Xã Cải Viên","10000");
 INSERT INTO tbl_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("95","Tỉnh Tuyên Quang","Huyện Chiêm Hóa","Xã Minh Quang","10000");
+INSERT INTO tbl_feeship (fee_id, fee_matp, fee_maqh, fee_xa, fee_feeship) VALUES ("96","Tỉnh Cao Bằng","Huyện Bảo Lạc","Xã Cô Ba","30000");
 INSERT INTO tbl_province (maqh, name, type, matp) VALUES ("1","Quận Ba Đình","0","1");
 INSERT INTO tbl_province (maqh, name, type, matp) VALUES ("2","Quận Hoàn Kiếm","0","1");
 INSERT INTO tbl_province (maqh, name, type, matp) VALUES ("3","Quận Tây Hồ","0","1");
@@ -11967,8 +11968,196 @@ INSERT INTO tbl_category_product (category_id, category_name, category_desc, cat
 INSERT INTO tbl_category_product (category_id, category_name, category_desc, category_status) VALUES ("5","Áo dài truyền thông","tests","1");
 INSERT INTO tbl_contact (id, Con_Name, Con_Email, Con_Content, status, created_at, updated_at) VALUES ("2","test van duong","hoangvan149dhv@gmail.com","tesstaa","0","2020-11-27 09:09:00","2020-11-27 09:32:39");
 INSERT INTO tbl_contact (id, Con_Name, Con_Email, Con_Content, status, created_at, updated_at) VALUES ("3","test van duong","hoangvan1491999@gmail.com","asdasd","0","2020-11-27 09:09:31","2020-11-27 09:32:38");
-INSERT INTO tbl_count (id, counts) VALUES ("1","1935");
+INSERT INTO tbl_count (id, counts) VALUES ("1","2085");
 INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("92","test van duong","","asd, Xã Huổi Só, Huyện Tủa Chùa, Tỉnh Điện Biên","0334964103","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("93","test van duong","van.duong@redweb.dk","asd, Xã Ngọc Long, Huyện Yên Minh, Tỉnh Hà Giang","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("94","test van duong","van.duong@redweb.dk","asd, Xã Hồng Quang, Huyện Lâm Bình, Tỉnh Tuyên Quang","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("95","test van duong","van.duong@redweb.dk","asd, Xã Yên Giả, Huyện Quế Võ, Tỉnh Bắc Ninh","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("96","test van duong","van.duong@bca.vn","SZXfc, Xã Đức Hạnh, Huyện Bảo Lâm, Tỉnh Cao Bằng","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("97","test van duong","van.duong@bca.vn","SZXfc, Xã Đức Hạnh, Huyện Bảo Lâm, Tỉnh Cao Bằng","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("98","test van duong","van.duong@redweb.dk","asfd, Xã Đường Thượng, Huyện Yên Minh, Tỉnh Hà Giang","1234567890","asf");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("99","test van duong","van.duong@redweb.dk","asfd, Xã Đường Thượng, Huyện Yên Minh, Tỉnh Hà Giang","1234567890","asf");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("100","test van duong","van.duong@redweb.dk","asfd, Xã Đường Thượng, Huyện Yên Minh, Tỉnh Hà Giang","1234567890","asf");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("101","test van duong","van.duong@redweb.dk","asfd, Xã Đường Thượng, Huyện Yên Minh, Tỉnh Hà Giang","1234567890","asf");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("102","test van duong","van.duong@redweb.dk","asfd, Xã Đường Thượng, Huyện Yên Minh, Tỉnh Hà Giang","1234567890","asf");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("103","test van duong","van.duong@redweb.dk","asfd, Xã Đường Thượng, Huyện Yên Minh, Tỉnh Hà Giang","1234567890","asf");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("104","test van duong","van.duong@redweb.dk","asfd, Xã Bành Trạch, Huyện Ba Bể, Tỉnh Bắc Kạn","1234567890","asf");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("105","test van duong","van.duong@redweb.dk","asd, Xã Minh Đức, Huyện Tứ Kỳ, Tỉnh Hải Dương","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("106","test van duong","van.duong@redweb.dk","asd, Xã Minh Đức, Huyện Tứ Kỳ, Tỉnh Hải Dương","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("107","test van duong","van.duong@redweb.dk","asd, Xã Minh Đức, Huyện Tứ Kỳ, Tỉnh Hải Dương","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("108","test van duong","van.duong@redweb.dk","asd, Xã Minh Đức, Huyện Tứ Kỳ, Tỉnh Hải Dương","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("109","test van duong","van.duong@redweb.dk","asd, Xã Minh Đức, Huyện Tứ Kỳ, Tỉnh Hải Dương","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("110","test van duong","van.duong@redweb.dk","asd, Xã Minh Đức, Huyện Tứ Kỳ, Tỉnh Hải Dương","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("111","test van duong","van.duong@redweb.dk","asd, Xã Minh Đức, Huyện Tứ Kỳ, Tỉnh Hải Dương","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("112","test van duong","van.duong@redweb.dk","asd, Xã Minh Đức, Huyện Tứ Kỳ, Tỉnh Hải Dương","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("113","test van duong","van.duong@redweb.dk","asd, Xã Minh Đức, Huyện Tứ Kỳ, Tỉnh Hải Dương","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("114","test van duong","van.duong@redweb.dk","asd, Xã Minh Đức, Huyện Tứ Kỳ, Tỉnh Hải Dương","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("115","test van duong","van.duong@redweb.dk","asd, Xã Minh Đức, Huyện Tứ Kỳ, Tỉnh Hải Dương","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("116","test van duong","van.duong@redweb.dk","asd, Xã Minh Đức, Huyện Tứ Kỳ, Tỉnh Hải Dương","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("117","test van duong","van.duong@redweb.dk","asd, Xã Minh Đức, Huyện Tứ Kỳ, Tỉnh Hải Dương","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("118","test van duong","van.duong@redweb.dk","asd, Xã Minh Đức, Huyện Tứ Kỳ, Tỉnh Hải Dương","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("119","test van duong","van.duong@redweb.dk","asd, Xã Minh Đức, Huyện Tứ Kỳ, Tỉnh Hải Dương","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("120","test van duong","van.duong@redweb.dk","asd, Xã Minh Đức, Huyện Tứ Kỳ, Tỉnh Hải Dương","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("121","test van duong","van.duong@redweb.dk","DFG, Xã Tân Phong, Huyện Bình Xuyên, Tỉnh Vĩnh Phúc","1234567890","DFG");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("122","test van duong","van.duong@redweb.dk","DFG, Xã Tân Phong, Huyện Bình Xuyên, Tỉnh Vĩnh Phúc","1234567890","DFG");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("123","test van duong","van.duong@redweb.dk","DFG, Xã Tân Phong, Huyện Bình Xuyên, Tỉnh Vĩnh Phúc","1234567890","DFG");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("124","test van duong","van.duong@redweb.dk","DFG, Xã Tân Phong, Huyện Bình Xuyên, Tỉnh Vĩnh Phúc","1234567890","DFG");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("125","test van duong","van.duong@redweb.dk","DFG, Xã Tân Phong, Huyện Bình Xuyên, Tỉnh Vĩnh Phúc","1234567890","DFG");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("126","test van duong","van.duong@redweb.dk","DFG, Xã Tân Phong, Huyện Bình Xuyên, Tỉnh Vĩnh Phúc","1234567890","DFG");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("127","test van duong","van.duong@redweb.dk","DFG, Xã Tân Phong, Huyện Bình Xuyên, Tỉnh Vĩnh Phúc","1234567890","DFG");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("128","test van duong","van.duong@redweb.dk","DFG, Xã Tân Phong, Huyện Bình Xuyên, Tỉnh Vĩnh Phúc","1234567890","DFG");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("129","test van duong","van.duong@redweb.dk","DFG, Xã Tân Phong, Huyện Bình Xuyên, Tỉnh Vĩnh Phúc","1234567890","DFG");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("130","test van duong","van.duong@redweb.dk","DFG, Xã Tân Phong, Huyện Bình Xuyên, Tỉnh Vĩnh Phúc","1234567890","DFG");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("131","test van duong","van.duong@redweb.dk","DFG, Xã Tân Phong, Huyện Bình Xuyên, Tỉnh Vĩnh Phúc","1234567890","DFG");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("132","test van duong","van.duong@redweb.dk","DFG, Xã Tân Phong, Huyện Bình Xuyên, Tỉnh Vĩnh Phúc","1234567890","DFG");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("133","test van duong","van.duong@redweb.dk","DFG, Xã Tân Phong, Huyện Bình Xuyên, Tỉnh Vĩnh Phúc","1234567890","DFG");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("134","test van duong","van.duong@redweb.dk","DFG, Xã Tân Phong, Huyện Bình Xuyên, Tỉnh Vĩnh Phúc","1234567890","DFG");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("135","test van duong","van.duong@redweb.dk","DFG, Xã Tân Phong, Huyện Bình Xuyên, Tỉnh Vĩnh Phúc","1234567890","DFG");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("136","test van duong","van.duong@redweb.dk","DFG, Xã Tân Phong, Huyện Bình Xuyên, Tỉnh Vĩnh Phúc","1234567890","DFG");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("137","test van duong","van.duong@redweb.dk","DFG, Xã Tân Phong, Huyện Bình Xuyên, Tỉnh Vĩnh Phúc","1234567890","DFG");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("138","test van duong","van.duong@redweb.dk","DFG, Xã Tân Phong, Huyện Bình Xuyên, Tỉnh Vĩnh Phúc","1234567890","DFG");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("139","test van duong","van.duong@redweb.dk","DFG, Xã Tân Phong, Huyện Bình Xuyên, Tỉnh Vĩnh Phúc","1234567890","DFG");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("140","test van duong","van.duong@redweb.dk","DFG, Xã Tân Phong, Huyện Bình Xuyên, Tỉnh Vĩnh Phúc","1234567890","DFG");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("141","test van duong","van.duong@redweb.dk","DFG, Xã Tân Phong, Huyện Bình Xuyên, Tỉnh Vĩnh Phúc","1234567890","DFG");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("142","test van duong","van.duong@redweb.dk","asd, Phường Trúc Bạch, Quận Ba Đình, Thành phố Hà Nội","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("143","test van duong","van.duong@redweb.dk","asd, Phường Trúc Bạch, Quận Ba Đình, Thành phố Hà Nội","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("144","test van duong","van.duong@redweb.dk","asd, Xã Bộc Bố, Huyện Pác Nặm, Tỉnh Bắc Kạn","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("145","test van duong","van.duong@redweb.dk","dfgh, Xã Yên Mỹ, Huyện Lạng Giang, Tỉnh Bắc Giang","1234567890","dfg");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("146","test van duong","van.duong@redweb.dk","dfgh, , , Tỉnh Bắc Giang","1234567890","dfg");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("147","test van duong","van.duong@redweb.dk","dfgh, , , Tỉnh Bắc Giang","1234567890","dfg");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("148","test van duong","van.duong@redweb.dk","dfgh, , , Tỉnh Bắc Giang","1234567890","dfg");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("149","test van duong","van.duong@redweb.dk","dfg, Xã Hồng Thái, Huyện Ninh Giang, Tỉnh Hải Dương","1234567890","dfg");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("150","test van duong","van.duong@redweb.dk","gfh, Thị trấn Như Quỳnh, Huyện Văn Lâm, Tỉnh Hưng Yên","1234567890","fgh");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("151","test van duong","van.duong@redweb.dk","gfh, , , Tỉnh Hưng Yên","1234567890","fgh");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("152","test van duong","van.duong@redweb.dk","gfh, Thị trấn Mường Khương, Huyện Mường Khương, Tỉnh Lào Cai","1234567890","fgh");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("153","test van duong","van.duong@redweb.dk","gfh, , , Tỉnh Lào Cai","1234567890","fgh");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("154","test van duong","van.duong@redweb.dk","gfh, , , Tỉnh Lào Cai","1234567890","fgh");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("155","test van duong","van.duong@redweb.dk","asd, Xã Pải Lủng, Huyện Mèo Vạc, Tỉnh Hà Giang","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("156","test van duong","van.duong@redweb.dk","asd, Xã Pải Lủng, Huyện Mèo Vạc, Tỉnh Hà Giang","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("157","test van duong","van.duong@redweb.dk","asd, Xã Nhạn Môn, Huyện Pác Nặm, Tỉnh Bắc Kạn","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("158","test van duong","van.duong@redweb.dk","nhbgvj, Xã Thượng Hà, Huyện Bảo Lạc, Tỉnh Cao Bằng","1234567890","ghj");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("159","test van duong","van.duong@redweb.dk","asd, Thị trấn Như Quỳnh, Huyện Văn Lâm, Tỉnh Hưng Yên","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("160","test van duong","vanduong@redweb.dk","asd, Xã Văn Môn, Huyện Yên Phong, Tỉnh Bắc Ninh","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("161","test van duong","van.duong@redweb.dk","jk, Phường Đồng Xuân, Quận Hoàn Kiếm, Thành phố Hà Nội","1234567890","jk");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("162","test van duong","van.duong@redweb.dk","jk, Phường Đồng Xuân, Quận Hoàn Kiếm, Thành phố Hà Nội","1234567890","jk");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("163","test van duong","van.duong@redweb.dk","jk, Phường Đồng Xuân, Quận Hoàn Kiếm, Thành phố Hà Nội","1234567890","jk");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("164","test van duong","van.duong@redweb.dk","jk, Phường Đồng Xuân, Quận Hoàn Kiếm, Thành phố Hà Nội","1234567890","jk");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("165","test van duong","van.duong@redweb.dk","jk, Phường Đồng Xuân, Quận Hoàn Kiếm, Thành phố Hà Nội","1234567890","jk");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("166","test van duong","van.duong@redweb.dk","jk, Phường Đồng Xuân, Quận Hoàn Kiếm, Thành phố Hà Nội","1234567890","jk");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("167","test van duong","van.duong@redweb.dk","jk, Phường Đồng Xuân, Quận Hoàn Kiếm, Thành phố Hà Nội","1234567890","jk");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("168","test van duong","van.duong@redweb.dk","jk, Phường Đồng Xuân, Quận Hoàn Kiếm, Thành phố Hà Nội","1234567890","jk");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("169","test van duong","van.duong@redweb.dk","jk, Phường Đồng Xuân, Quận Hoàn Kiếm, Thành phố Hà Nội","1234567890","jk");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("170","test van duong","van.duong@redweb.dk","jk, Phường Đồng Xuân, Quận Hoàn Kiếm, Thành phố Hà Nội","1234567890","jk");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("171","test van duong","van.duong@redweb.dk","jk, Phường Đồng Xuân, Quận Hoàn Kiếm, Thành phố Hà Nội","1234567890","jk");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("172","test van duong","van.duong@redweb.dk","jk, Phường Đồng Xuân, Quận Hoàn Kiếm, Thành phố Hà Nội","1234567890","jk");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("173","test van duong","van.duong@redweb.dk","jk, Phường Đồng Xuân, Quận Hoàn Kiếm, Thành phố Hà Nội","1234567890","jk");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("175","test van duong","van.duong@redweb.dk","hjk, Phường Nghĩa Tân, Quận Cầu Giấy, Thành phố Hà Nội","1234567890","hjk");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("177","test van duong","van.duong@redweb.dk","asd, Phường Đồng Xuân, Quận Hoàn Kiếm, Thành phố Hà Nội","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("178","test van duong","vanduong@redweb.dk","ased, Xã Vần Chải, Huyện Đồng Văn, Tỉnh Hà Giang","1234567890","asdf");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("179","test van duong","van.duong@redweb.dk","yui, Xã Hồng Phong, Huyện Nam Sách, Tỉnh Hải Dương","1234567890","tyui");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("180","test van duong","vanduong@redweb.dk","asd, Phường Sông Bằng, Thành phố Cao Bằng, Tỉnh Cao Bằng","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("181","test van duong","vanduong@redweb.dk","asd, , , Tỉnh Cao Bằng","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("182","test van duong","van.duong@redweb.dk","hjk, Xã Má Lé, Huyện Đồng Văn, Tỉnh Hà Giang","1234567890","");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("183","test van duong","van.duong@redweb.dk","asd, Xã Hương Nộn, Huyện Tam Nông, Tỉnh Phú Thọ","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("184","test van duong","vanduong@redweb.dk","ád, Thị trấn Pác Miầu, Huyện Bảo Lâm, Tỉnh Cao Bằng","1234567890","ád");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("186","test van duong","van.duong@redweb.dk","asd, Xã Bằng Thành, Huyện Pác Nặm, Tỉnh Bắc Kạn","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("189","test van duong","van.duong@redweb.dk","asd, Phường Trần Phú, Thành phố Hà Giang, Tỉnh Hà Giang","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("190","test van duong","van.duong@redweb.dk","o'', Xã Kim Bình, Huyện Chiêm Hóa, Tỉnh Tuyên Quang","1234567890","op'");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("192","van duong","vandaovipga1491999@gmail.com","asd, Xã Định Trung, Thành phố Vĩnh Yên, Tỉnh Vĩnh Phúc","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("193","van duong","vandaovipga1491999@gmail.com","asd, Xã Tân Quang, Huyện Văn Lâm, Tỉnh Hưng Yên","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("194","van duong","vandaovipga1491999@gmail.com","asd, , , Tỉnh Hưng Yên","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("195","test van duong","vanduong@redweb.dk","ád, Xã Trung Hưng, Huyện Yên Mỹ, Tỉnh Hưng Yên","1234567890","ád");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("196","test van duong","van.duong@redweb.dk","ád, Xã Chi Lăng, Huyện Quế Võ, Tỉnh Bắc Ninh","1234567890","ádád");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("197","test van duong","van.duong@redweb.dk","ád, Xã Chi Lăng, Huyện Quế Võ, Tỉnh Bắc Ninh","1234567890","ádád");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("198","test van duong","van.duong@redweb.dk","ád, Xã Chi Lăng, Huyện Quế Võ, Tỉnh Bắc Ninh","1234567890","ádád");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("199","test van duong","van.duong@redweb.dk","ád, Xã Chi Lăng, Huyện Quế Võ, Tỉnh Bắc Ninh","1234567890","ádád");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("200","test van duong","van.duong@redweb.dk","ád, Xã Chi Lăng, Huyện Quế Võ, Tỉnh Bắc Ninh","1234567890","ádád");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("201","test van duong","van.duong@redweb.dk","ád, Xã Chi Lăng, Huyện Quế Võ, Tỉnh Bắc Ninh","1234567890","ádád");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("202","test van duong","van.duong@redweb.dk","ád, Xã Chi Lăng, Huyện Quế Võ, Tỉnh Bắc Ninh","1234567890","ádád");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("203","test van duong","van.duong@redweb.dk","ád, Xã Chi Lăng, Huyện Quế Võ, Tỉnh Bắc Ninh","1234567890","ádád");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("204","test van duong","van.duong@redweb.dk","fgh, Phường Hàng Mã, Quận Hoàn Kiếm, Thành phố Hà Nội","1234567890","fgh");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("205","test van duong","vanduong@redweb.dk","ád, Xã Niêm Tòng, Huyện Mèo Vạc, Tỉnh Hà Giang","1234567890","ád");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("206","test van duong","vanduong@redweb.dk","ád, Xã Niêm Tòng, Huyện Mèo Vạc, Tỉnh Hà Giang","1234567890","ád");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("207","test van duong","vanduong@redweb.dk","ád, Xã Niêm Tòng, Huyện Mèo Vạc, Tỉnh Hà Giang","1234567890","ád");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("208","test van duong","van.duong@redweb.dk","asd, Xã Tây Đô, Huyện Hưng Hà, Tỉnh Thái Bình","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("209","test van duong","van.duong@redweb.dk","asd, , , Tỉnh Thái Bình","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("210","test van duong","van.duong@redweb.dk","asd, Xã Đức Long, Huyện Quế Võ, Tỉnh Bắc Ninh","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("211","test van duong","van.duong@redweb.dk","asd, Xã Đức Long, Huyện Quế Võ, Tỉnh Bắc Ninh","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("212","test van duong","van.duong@redweb.dk","asd, Xã Đức Long, Huyện Quế Võ, Tỉnh Bắc Ninh","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("213","test van duong","van.duong@redweb.dk","asd, Xã Đức Long, Huyện Quế Võ, Tỉnh Bắc Ninh","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("214","test van duong","van.duong@redweb.dk","asd, Xã Đức Long, Huyện Quế Võ, Tỉnh Bắc Ninh","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("215","test van duong","van.duong@redweb.dk","asd, Xã Đức Long, Huyện Quế Võ, Tỉnh Bắc Ninh","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("216","test van duong","van.duong@redweb.dk","asd, Xã Đức Long, Huyện Quế Võ, Tỉnh Bắc Ninh","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("217","test van duong","van.duong@redweb.dk","asd, Xã Đức Long, Huyện Quế Võ, Tỉnh Bắc Ninh","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("218","test van duong","van.duong@redweb.dk","asd, Xã Đức Long, Huyện Quế Võ, Tỉnh Bắc Ninh","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("219","test van duong","van.duong@redweb.dk","asd, Xã Đức Long, Huyện Quế Võ, Tỉnh Bắc Ninh","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("220","test van duong","van.duong@redweb.dk","asd, Xã Đức Long, Huyện Quế Võ, Tỉnh Bắc Ninh","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("221","test van duong","van.duong@redweb.dk","asd, Xã Đức Long, Huyện Quế Võ, Tỉnh Bắc Ninh","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("222","test van duong","van.duong@redweb.dk","asd, Xã Đức Long, Huyện Quế Võ, Tỉnh Bắc Ninh","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("223","test van duong","van.duong@redweb.dk","asd, Xã Đức Long, Huyện Quế Võ, Tỉnh Bắc Ninh","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("224","test van duong","van.duong@redweb.dk","asd, Xã Đức Long, Huyện Quế Võ, Tỉnh Bắc Ninh","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("225","test van duong","van.duong@redweb.dk","asd, Xã Đức Long, Huyện Quế Võ, Tỉnh Bắc Ninh","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("226","test van duong","van.duong@redweb.dk","asd, Thị trấn Chợ Rã, Huyện Ba Bể, Tỉnh Bắc Kạn","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("227","test van duong","van.duong@redweb.dk","asd, , , Tỉnh Bắc Kạn","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("228","test van duong","van.duong@redweb.dk","asd, , , Tỉnh Bắc Kạn","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("229","test van duong","van.duong@redweb.dk","asd, Xã Hồng Thái, Huyện Ninh Giang, Tỉnh Hải Dương","1234567890","das");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("230","test van duong","van.duong@redweb.dk","asd, Xã Hồng Thái, Huyện Ninh Giang, Tỉnh Hải Dương","1234567890","das");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("231","test van duong","van.duong@redweb.dk","asd, Xã Hồng Thái, Huyện Ninh Giang, Tỉnh Hải Dương","1234567890","das");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("232","test van duong","van.duong@redweb.dk","asd, Xã Đình Phùng, Huyện Bảo Lạc, Tỉnh Cao Bằng","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("233","test van duong","van.duong@redweb.dk","asd, Xã Đình Phùng, Huyện Bảo Lạc, Tỉnh Cao Bằng","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("234","test van duong","van.duong@redweb.dk","asd, Xã Đình Phùng, Huyện Bảo Lạc, Tỉnh Cao Bằng","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("235","test van duong","van.duong@redweb.dk","asd, Xã Đình Phùng, Huyện Bảo Lạc, Tỉnh Cao Bằng","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("236","test van duong","van.duong@redweb.dk","asd, Xã Đình Phùng, Huyện Bảo Lạc, Tỉnh Cao Bằng","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("237","test van duong","van.duong@redweb.dk","asd, Xã Đình Phùng, Huyện Bảo Lạc, Tỉnh Cao Bằng","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("238","test van duong","van.duong@redweb.dk","asd, Xã Đình Phùng, Huyện Bảo Lạc, Tỉnh Cao Bằng","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("239","test van duong","van.duong@redweb.dk","asd, Xã Cần Yên, Huyện Thông Nông, Tỉnh Cao Bằng","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("240","test van duong","van.duong@redweb.dk","asd, Xã Xuân Dục, Huyện Mỹ Hào, Tỉnh Hưng Yên","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("241","test van duong","van.duong@redweb.dk","asd, Xã Lũng Phìn, Huyện Đồng Văn, Tỉnh Hà Giang","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("242","test van duong","van.duong@redweb.dk","asd, Xã Lũng Cú, Huyện Đồng Văn, Tỉnh Hà Giang","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("243","test van duong","van.duong@redweb.dk","asd, Xã Lũng Cú, Huyện Đồng Văn, Tỉnh Hà Giang","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("244","test van duong","van.duong@redweb.dk","asd, Xã Lũng Cú, Huyện Đồng Văn, Tỉnh Hà Giang","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("245","test van duong","van.duong@redweb.dk","asd, Xã Lũng Cú, Huyện Đồng Văn, Tỉnh Hà Giang","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("246","test van duong","van.duong@redweb.dk","asd, Xã Lũng Cú, Huyện Đồng Văn, Tỉnh Hà Giang","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("247","test van duong","van.duong@redweb.dk","asd, Xã Lũng Cú, Huyện Đồng Văn, Tỉnh Hà Giang","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("248","test van duong","van.duong@redweb.dk","asd, Xã Lũng Cú, Huyện Đồng Văn, Tỉnh Hà Giang","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("249","test van duong","van.duong@redweb.dk","asd, Xã Lũng Cú, Huyện Đồng Văn, Tỉnh Hà Giang","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("250","test van duong","van.duong@redweb.dk","asd, Xã Lũng Cú, Huyện Đồng Văn, Tỉnh Hà Giang","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("251","test van duong","van.duong@redweb.dk","asd, Xã Lũng Cú, Huyện Đồng Văn, Tỉnh Hà Giang","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("252","test van duong","van.duong@redweb.dk","asd, Xã Lũng Cú, Huyện Đồng Văn, Tỉnh Hà Giang","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("253","test van duong","van.duong@redweb.dk","asd, Xã Lũng Cú, Huyện Đồng Văn, Tỉnh Hà Giang","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("254","test van duong","van.duong@redweb.dk","asd, Xã Lũng Cú, Huyện Đồng Văn, Tỉnh Hà Giang","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("255","test van duong","van.duong@redweb.dk","asd, Xã Lũng Cú, Huyện Đồng Văn, Tỉnh Hà Giang","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("256","test van duong","van.duong@redweb.dk","asd, Xã Lũng Cú, Huyện Đồng Văn, Tỉnh Hà Giang","1234567890","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("258","van duong","vandaovipga1491999@gmail.com","asd, Xã Pải Lủng, Huyện Mèo Vạc, Tỉnh Hà Giang","1234567890","");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("259","Dương Hoàng Văn","hoangvan1491999@gmail.com","sad, Xã Lũng Cú, Huyện Đồng Văn, Tỉnh Hà Giang","0334964103","sad");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("260","Dương Hoàng Văn","vandaovipga1491999@gmail.com","ASD, Vui lòng chọn quận huyện trước, Chọn Quận huyện, Tỉnh Vĩnh Phúc","0334964103","SAD");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("261","Dương Hoàng Văn","vandaovipga1491999@gmail.com","ht5g, Vui lòng chọn quận huyện trước, Chọn Quận huyện, Tỉnh Vĩnh Phúc","0334964103","6hf");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("262","Dương Hoàng Văn","hoangvan1491999@gmail.com","asd, Phường Sông Bằng, Thành phố Cao Bằng, Tỉnh Cao Bằng","0334964103","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("263","Dương Hoàng Văn","hoangvan1491999@gmail.com","ghgh, Xã Sinh Long, Huyện Nà Hang, Tỉnh Tuyên Quang","0334964103","hg");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("264","Dương Hoàng Văn","hoangvan1491999@gmail.com","adsfa, Xã Thắng Mố, Huyện Yên Minh, Tỉnh Hà Giang","0334964103","gag");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("265","Dương Hoàng Văn","hoangvan1491999@gmail.com","assf, Phường Giang Biên, Quận Long Biên, Thành phố Hà Nội","0334964103","sag");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("266","Dương Hoàng Văn","hoangvan1491999@gmail.com","asd, Xã Mỹ Thanh, Huyện Bạch Thông, Tỉnh Bắc Kạn","0334964103","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("267","Dương Hoàng Văn","hoangvan1491999@gmail.com","asd, Xã Kim Long, Huyện Tam Dương, Tỉnh Vĩnh Phúc","0334964103","sad");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("268","Dương Hoàng Văn","hoangvan1491999@gmail.com","adsf, Xã Đức Hạnh, Huyện Bảo Lâm, Tỉnh Cao Bằng","0334964103","sdf");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("269","Dương Hoàng Văn","vandaovipga1491999@gmail.com","asd, Xã Cần Nông, Huyện Thông Nông, Tỉnh Cao Bằng","0334964103","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("270","Dương Hoàng Văn","hoangvan1491999@gmail.com","wqe, Phường Phan Chu Trinh, Quận Hoàn Kiếm, Thành phố Hà Nội","0334964103","qwe");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("271","Dương Hoàng Văn","hoangvan1491999@gmail.com","asd, Thị trấn Chợ Rã, Huyện Ba Bể, Tỉnh Bắc Kạn","0334964103","sad");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("272","Dương Hoàng Văn","hoangvan1491999@gmail.com","zxc, Xã Thượng Hà, Huyện Bảo Lạc, Tỉnh Cao Bằng","0334964103","zxc");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("273","Dương Hoàng Văn","hoangvan1491999@gmail.com","sad, Xã Cốc Pàng, Huyện Bảo Lạc, Tỉnh Cao Bằng","0334964103","sad");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("274","Dương Hoàng Văn","hoangvan1491999@gmail.com","sdf, Xã Thượng Phùng, Huyện Mèo Vạc, Tỉnh Hà Giang","0334964103","sdf");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("275","Dương Hoàng Văn","hoangvan1491999@gmail.com","sdf, Xã Sinh Long, Huyện Nà Hang, Tỉnh Tuyên Quang","0334964103","dsf");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("276","Dương Hoàng Văn","hoangvan1491999@gmail.com","asd, Xã Thượng Phùng, Huyện Mèo Vạc, Tỉnh Hà Giang","0334964103","sad");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("277","Dương Hoàng Văn","hoangvan1491999@gmail.com","asd, Xã Xín Cái, Huyện Mèo Vạc, Tỉnh Hà Giang","0334964103","sad");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("278","Dương Hoàng Văn","hoangvan1491999@gmail.com","sad, Xã Phúc Lộc, Huyện Ba Bể, Tỉnh Bắc Kạn","0334964103","sad");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("280","Dương Hoàng Văn","hoangvan1491999@gmail.com","asd, Xã Cô Ba, Huyện Bảo Lạc, Tỉnh Cao Bằng","0334964103","asd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("281","Dương Hoàng Văn","hoangvan1491999@gmail.com","45/45/45 Nguyễn Phúc Chu, Xã Cần Nông, Huyện Thông Nông, Tỉnh Cao Bằng","0334964103","ZXXZDz");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("283","Dương Hoàng Văn","hoangvan1491999@gmail.com","sdf, Xã Cốc Pàng, Huyện Bảo Lạc, Tỉnh Cao Bằng","0334964103","dsf");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("284","Dương Hoàng Văn","hoangvan1491999@gmail.com","ZX, Xã Thượng Nông, Huyện Nà Hang, Tỉnh Tuyên Quang","0334964103","zvx");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("285","Dương Hoàng Văn","hoangvan1491999@gmail.com","zdfsf, Xã Má Lé, Huyện Đồng Văn, Tỉnh Hà Giang","0334964103","sdfsdfsd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("286","Dương Hoàng Văn","hoangvan1491999@gmail.com","fcsdfs, Xã Cần Nông, Huyện Thông Nông, Tỉnh Cao Bằng","0334964103","fdsfsdf");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("287","Dương Hoàng Văn","vandaovipga1491999@gmail.com","ádasd, Xã Sinh Long, Huyện Nà Hang, Tỉnh Tuyên Quang","0334964103","ádasd");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("288","Dương Hoàng Văn","vandaovipga1491999@gmail.com","sad, Xã Xín Cái, Huyện Mèo Vạc, Tỉnh Hà Giang","0334964103","sad");
+INSERT INTO tbl_customer (cusid, cusname, cusEmail, cusadd, cusPhone, cusNote) VALUES ("289","Dương Hoàng Văn","hoangvan1491999@gmail.com","ádasd, Xã Bằng Thành, Huyện Pác Nặm, Tỉnh Bắc Kạn","0334964103","ádádsadasdasd");
 INSERT INTO tbl_info_contact (id_Info, google_map, info_contact_add, info_contact_phone, info_contact_mail, created_date) VALUES ("1","<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.678414013548!2d106.68587031536053!3d10.759248862451315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1a8284e89f%3A0x323e361ec67595d5!2zNDQ5IMSQLiBUcuG6p24gSMawbmcgxJDhuqFvLCBD4bqndSBLaG8sIFF14bqtbiAxLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1605318235579!5m2!1svi!2s' width='600' height='450' frameborder='0' style='border:0;' allowfullscreen='' aria-hidden='false' tabindex='0'></iframe>","xnxx.com","1234567890","xnxx.com@gmail.com","2020-11-26 16:31:21");
 INSERT INTO tbl_news (news_id, news_title, news_desc, news_image, news_content, created_date, updated_at) VALUES ("7","Áo dài cách tân: “Hơi thở mới” cho trang phục truyền thống","Áo dài cách tân: “Hơi thở mới” cho trang phục truyền thống, Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.","84194903_773654616376103_8257184345794543616_n91.jpg","<h2>Lịch sử hình thành áo dài Việt Nam</h2>
 
@@ -12287,7 +12476,130 @@ INSERT INTO tbl_news (news_id, news_title, news_desc, news_image, news_content, 
 <p><img alt='Áo dài Lê Phổ' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153616/ao-dai-le-pho.jpg' style='height:910px; width:480px' /></p>
 
 <p>Chiếc áo dài Lê Phổ được nhiều phụ nữ Việt ưa thích và hoan nghênh nhiệt liệt.</p>","2020-11-14 04:42:54","2020-11-25 03:44:13");
-INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("81","92","12","1,2,1","500000","1000000","0","2020-11-27 12:08:02");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("129","140","16","1","20000","520000","0","2020-12-17 11:25:35");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("130","141","16","1","20000","520000","0","2020-12-17 11:25:35");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("131","143","16,15","2,1","40000","1580000","0","2020-12-17 16:19:36");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("132","145","14","1","200000","650000","0","2020-12-17 16:24:02");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("133","149","13,10","1,1","20000","1090000","0","2020-12-17 16:36:41");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("134","152","16","1","20000","520000","0","2020-12-17 16:37:46");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("135","155","16","1","20000","520000","0","2020-12-17 16:46:46");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("136","156","16","1","20000","520000","0","2020-12-17 16:47:33");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("137","157","16","1","20000","520000","0","2020-12-17 16:48:12");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("138","158","16","1","50000","550000","0","2020-12-17 16:52:42");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("139","159","16","1","20000","520000","0","2020-12-17 16:54:42");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("140","160","16","1","20000","520000","0","2020-12-17 16:55:11");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("141","161","16","1","40000","540000","0","2020-12-17 16:55:42");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("142","162","16","1","40000","540000","0","2020-12-17 16:55:57");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("143","163","16","1","40000","540000","0","2020-12-17 16:56:22");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("144","164","16","1","40000","540000","1","2020-12-17 16:56:30");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("145","165","16","1","40000","540000","1","2020-12-17 16:56:39");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("146","175","16","1","40000","540000","0","2020-12-17 18:01:00");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("147","177","14","1","40000","490000","0","2020-12-18 10:20:03");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("148","178","14","1","20000","470000","0","2020-12-18 10:26:41");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("149","179","16,10,11,12,9,8,7,6,5","1,1,1,1,1,1,1,1,1","20000","5580000","0","2020-12-18 10:27:31");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("150","180","15","1","50000","550000","0","2020-12-18 11:07:17");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("151","181","15","1","20000","520000","0","2020-12-18 11:07:21");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("152","182","15","1","20000","520000","0","2020-12-18 11:31:58");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("153","183","14","1","20000","470000","0","2020-12-18 11:32:33");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("154","184","16","1","50000","550000","0","2020-12-18 11:46:08");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("155","186","15","1","20000","520000","0","2020-12-18 11:54:46");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("156","189","15","1","20000","520000","0","2020-12-18 12:00:35");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("157","190","16","1","100000","600000","0","2020-12-18 12:02:11");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("158","192","16","1","20000","520000","0","2020-12-18 12:09:22");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("159","193","15","1","20000","520000","0","2020-12-18 12:09:55");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("160","194","15","1","20000","520000","0","2020-12-18 12:09:59");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("161","195","15","1","20000","520000","0","2020-12-18 13:08:51");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("162","196","15","1","20000","520000","0","2020-12-18 13:10:14");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("163","197","15","1","20000","520000","0","2020-12-18 13:10:52");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("164","198","15","1","20000","520000","0","2020-12-18 13:11:43");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("165","199","15","1","20000","520000","0","2020-12-18 13:12:12");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("166","200","15","1","20000","520000","0","2020-12-18 13:12:15");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("167","201","15","1","20000","520000","0","2020-12-18 13:12:16");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("168","202","15","1","20000","520000","0","2020-12-18 13:12:19");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("169","203","15","1","20000","520000","0","2020-12-18 13:15:47");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("170","204","15","1","40000","540000","0","2020-12-18 13:15:58");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("171","205","15","1","20000","520000","0","2020-12-18 13:27:33");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("172","206","15","1","20000","520000","1","2020-12-18 13:29:05");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("173","207","15","1","20000","520000","1","2020-12-18 13:32:14");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("174","208","16","1","20000","520000","0","2020-12-18 14:50:01");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("175","209","16","1","20000","520000","0","2020-12-18 14:51:59");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("176","210","16","1","20000","520000","0","2020-12-18 14:52:24");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("177","211","16","1","20000","520000","0","2020-12-18 14:52:39");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("178","212","16","1","20000","520000","0","2020-12-18 14:52:40");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("179","213","16","1","20000","520000","0","2020-12-18 14:52:41");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("180","214","16","1","20000","520000","0","2020-12-18 14:52:41");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("181","215","16","1","20000","520000","0","2020-12-18 14:52:41");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("182","216","16","1","20000","520000","0","2020-12-18 14:52:42");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("183","217","16","1","20000","520000","0","2020-12-18 14:52:42");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("184","218","16","1","20000","520000","0","2020-12-18 14:53:02");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("185","219","16","1","20000","520000","0","2020-12-18 14:53:03");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("186","220","16","1","20000","520000","0","2020-12-18 14:53:03");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("187","221","16","1","20000","520000","0","2020-12-18 14:53:09");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("188","222","16","1","20000","520000","0","2020-12-18 14:53:10");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("189","223","16","1","20000","520000","0","2020-12-18 14:53:34");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("190","224","16","1","20000","520000","0","2020-12-18 14:53:35");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("191","225","16","1","20000","520000","0","2020-12-18 14:53:35");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("192","226","16","1","20000","520000","0","2020-12-18 14:53:48");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("193","227","16","1","20000","520000","0","2020-12-18 14:54:25");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("194","228","16","1","20000","520000","0","2020-12-18 14:54:35");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("195","229","16","1","20000","520000","0","2020-12-18 14:54:49");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("196","230","16","1","20000","520000","0","2020-12-18 14:55:12");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("197","231","16","1","20000","520000","0","2020-12-18 14:55:17");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("198","232","16","1","50000","550000","0","2020-12-18 14:55:48");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("199","233","16","1","50000","550000","0","2020-12-18 14:56:28");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("200","234","16","1","50000","550000","0","2020-12-18 14:56:28");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("201","235","16","1","50000","550000","0","2020-12-18 14:56:28");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("202","236","16","1","50000","550000","0","2020-12-18 14:56:29");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("203","237","16","1","50000","550000","0","2020-12-18 14:56:29");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("204","238","16","1","50000","550000","0","2020-12-18 14:56:29");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("205","239","16","1","50000","550000","0","2020-12-18 14:57:34");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("206","240","16","1","20000","520000","0","2020-12-18 14:58:12");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("207","241","15","1","20000","520000","0","2020-12-18 14:58:56");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("208","242","15,16","1,1","20000","1040000","0","2020-12-18 15:00:08");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("209","243","15,16","1,1","20000","1040000","0","2020-12-18 15:00:08");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("210","244","15,16","1,1","20000","1040000","0","2020-12-18 15:00:08");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("211","245","15,16","1,1","20000","1040000","0","2020-12-18 15:00:09");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("212","246","15,16","1,1","20000","1040000","0","2020-12-18 15:00:09");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("213","247","15,16","1,1","20000","1040000","0","2020-12-18 15:00:09");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("214","248","15,16","1,1","20000","1040000","0","2020-12-18 15:00:09");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("215","249","15,16","1,1","20000","1040000","0","2020-12-18 15:00:09");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("216","250","15,16","1,1","20000","1040000","0","2020-12-18 15:00:10");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("217","251","15,16","1,1","20000","1040000","0","2020-12-18 15:00:10");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("218","252","15,16","1,1","20000","1040000","0","2020-12-18 15:00:10");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("219","253","15,16","1,1","20000","1040000","0","2020-12-18 15:00:11");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("220","254","15,16","1,1","20000","1040000","0","2020-12-18 15:00:11");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("221","255","15,16","1,1","20000","1040000","0","2020-12-18 15:00:12");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("222","256","15,16","1,1","20000","1040000","0","2020-12-18 15:00:12");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("223","258","16","1","20000","520000","0","2020-12-18 15:28:19");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("224","259","16","2","20000","1020000","0","2020-12-20 10:12:46");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("225","260","16","1","20000","520000","0","2020-12-20 10:18:46");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("226","261","16","1","20000","520000","0","2020-12-20 10:20:18");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("227","262","16","1","50000","550000","0","2020-12-20 10:23:09");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("228","263","16","1","100000","600000","0","2020-12-20 10:25:10");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("229","264","16","1","20000","520000","0","2020-12-20 10:31:05");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("230","265","16","1","40000","540000","0","2020-12-20 10:32:46");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("231","266","16","1","20000","520000","0","2020-12-20 10:42:22");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("232","267","16","1","20000","520000","0","2020-12-20 10:43:35");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("233","268","16","1","50000","550000","0","2020-12-20 10:46:33");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("234","269","16","1","50000","550000","0","2020-12-20 10:53:49");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("235","270","16","1","40000","540000","0","2020-12-20 10:54:42");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("236","271","16","1","20000","520000","0","2020-12-20 10:56:03");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("237","272","16","1","50000","550000","0","2020-12-20 10:57:12");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("238","273","16","1","50000","550000","0","2020-12-20 10:57:51");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("239","274","16","1","20000","520000","0","2020-12-20 10:58:40");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("240","275","16","1","100000","600000","0","2020-12-20 10:59:28");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("241","276","16","1","20000","520000","0","2020-12-20 11:01:22");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("242","277","16","1","20000","520000","0","2020-12-20 11:06:44");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("243","278","16","1","20000","520000","0","2020-12-20 11:07:14");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("244","280","16","1","50000","550000","0","2020-12-20 11:17:09");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("245","281","16","1","50000","550000","0","2020-12-20 11:26:57");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("246","283","16","1","50000","550000","0","2020-12-20 11:27:24");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("247","284","16","1","100000","600000","0","2020-12-20 11:42:49");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("248","285","16","1","20000","520000","0","2020-12-20 11:43:44");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("249","286","16","1","50000","550000","0","2020-12-20 11:44:55");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("250","287","16","1","100000","600000","0","2020-12-20 11:47:18");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("251","288","16","1","20000","520000","0","2020-12-20 11:48:24");
+INSERT INTO tbl_orders (orderid, cusid, product_id, qty, fee_ship, total, status, order_date) VALUES ("252","289","16","1","20000","520000","0","2020-12-20 11:49:40");
 INSERT INTO tbl_product (product_id, category_id, brandcode_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish, created_date) VALUES ("4","5","1","Áo dài Hội Phố","<h2>Lịch sử hình thành áo dài Việt Nam</h2>
 
 <p>Hình ảnh tà áo dài đã quá quen thuộc với mỗi người Việt nhưng không phải ai cũng có thể miêu tả chính xác bộ trang phục truyền thống này với bạn bè ngoại quốc.</p>
@@ -12336,7 +12648,7 @@ INSERT INTO tbl_product (product_id, category_id, brandcode_id, product_Name, pr
 
 <p><img alt='Áo dài ngũ thân' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153407/ao-dai-ngu-than.jpg' style='height:450px; width:360px' /></p>
 
-<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>","lụa nhật","100000","1","0000-00-00","0000-00-00","84527909_773654836376081_9198133503353421824_o36.jpg","Áo dài Hội Phố","Áo dài Hội Phố","ao-dai-hoi-pho216","1","2020-11-26 16:31:21");
+<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>","lụa nhật","100000","1","0","0","84527909_773654836376081_9198133503353421824_o36.jpg","Áo dài Hội Phố","Áo dài Hội Phố","ao-dai-hoi-pho216","0","2020-11-26 16:31:21");
 INSERT INTO tbl_product (product_id, category_id, brandcode_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish, created_date) VALUES ("5","4","1","Áo dài Lê Phố","<h2>Lịch sử hình thành áo dài Việt Nam</h2>
 
 <p>Hình ảnh tà áo dài đã quá quen thuộc với mỗi người Việt nhưng không phải ai cũng có thể miêu tả chính xác bộ trang phục truyền thống này với bạn bè ngoại quốc.</p>
@@ -12385,7 +12697,7 @@ INSERT INTO tbl_product (product_id, category_id, brandcode_id, product_Name, pr
 
 <p><img alt='Áo dài ngũ thân' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153407/ao-dai-ngu-than.jpg' style='height:450px; width:360px' /></p>
 
-<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>","Áo dài Lê Phố","200000","1","0000-00-00","0000-00-00","86190117_773654536376111_1148412901342576640_n39.jpg","Áo dài Lê Phố","Áo dài Lê Phố","ao-dai-le-pho603","1","2020-11-26 16:31:21");
+<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>","Áo dài Lê Phố","200000","1","0","0","86190117_773654536376111_1148412901342576640_n39.jpg","Áo dài Lê Phố","Áo dài Lê Phố","ao-dai-le-pho603","0","2020-11-26 16:31:21");
 INSERT INTO tbl_product (product_id, category_id, brandcode_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish, created_date) VALUES ("6","5","1","Áo dài Lễ Hội","<h2>Lịch sử hình thành áo dài Việt Nam</h2>
 
 <p>Hình ảnh tà áo dài đã quá quen thuộc với mỗi người Việt nhưng không phải ai cũng có thể miêu tả chính xác bộ trang phục truyền thống này với bạn bè ngoại quốc.</p>
@@ -12434,8 +12746,8 @@ INSERT INTO tbl_product (product_id, category_id, brandcode_id, product_Name, pr
 
 <p><img alt='Áo dài ngũ thân' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153407/ao-dai-ngu-than.jpg' style='height:450px; width:360px' /></p>
 
-<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>","lụa nhật","300000","1","0000-00-00","0000-00-00","86172838_773654293042802_193841709543587840_n68.jpg","Áo dài Lễ Hội","Áo dài Lễ Hội","ao-dai-le-hoi133","1","2020-11-26 16:31:21");
-INSERT INTO tbl_product (product_id, category_id, brandcode_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish, created_date) VALUES ("7","2","1","Áo dài Hà Nội","<p>test</p>","lụa nhật","500000","1","0000-00-00","0000-00-00","84404743_773654449709453_1007598137935659008_o (1)80.jpg","lụa nhật","lụa nhật","ao-dai-ha-noi962","1","2020-11-26 16:31:21");
+<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>","lụa nhật","300000","1","0","0","86172838_773654293042802_193841709543587840_n68.jpg","Áo dài Lễ Hội","Áo dài Lễ Hội","ao-dai-le-hoi133","0","2020-11-26 16:31:21");
+INSERT INTO tbl_product (product_id, category_id, brandcode_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish, created_date) VALUES ("7","2","1","Áo dài Hà Nội","<p>test</p>","lụa nhật","500000","1","0","0","84404743_773654449709453_1007598137935659008_o (1)80.jpg","lụa nhật","lụa nhật","ao-dai-ha-noi962","0","2020-11-26 16:31:21");
 INSERT INTO tbl_product (product_id, category_id, brandcode_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish, created_date) VALUES ("8","1","1","Áo dài cách tân","<h2>Lịch sử hình thành áo dài Việt Nam</h2>
 
 <p>Hình ảnh tà áo dài đã quá quen thuộc với mỗi người Việt nhưng không phải ai cũng có thể miêu tả chính xác bộ trang phục truyền thống này với bạn bè ngoại quốc.</p>
@@ -12484,7 +12796,7 @@ INSERT INTO tbl_product (product_id, category_id, brandcode_id, product_Name, pr
 
 <p><img alt='Áo dài ngũ thân' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153407/ao-dai-ngu-than.jpg' style='height:450px; width:360px' /></p>
 
-<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>","lụa nhật","700000","1","0000-00-00","0000-00-00","84676676_773654356376129_7117881907605405696_n76.jpg","Áo dài cách tân","Áo dài cách tân","ao-dai-cach-tan839","1","2020-11-26 16:31:21");
+<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>","lụa nhật","700000","1","0","0","84676676_773654356376129_7117881907605405696_n76.jpg","Áo dài cách tân","Áo dài cách tân","ao-dai-cach-tan839","0","2020-11-26 16:31:21");
 INSERT INTO tbl_product (product_id, category_id, brandcode_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish, created_date) VALUES ("9","5","1","Áo dài truyền thống","<h2>Lịch sử hình thành áo dài Việt Nam</h2>
 
 <p>Hình ảnh tà áo dài đã quá quen thuộc với mỗi người Việt nhưng không phải ai cũng có thể miêu tả chính xác bộ trang phục truyền thống này với bạn bè ngoại quốc.</p>
@@ -12533,7 +12845,7 @@ INSERT INTO tbl_product (product_id, category_id, brandcode_id, product_Name, pr
 
 <p><img alt='Áo dài ngũ thân' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153407/ao-dai-ngu-than.jpg' style='height:450px; width:360px' /></p>
 
-<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>","lụa nhật","500000","1","0000-00-00","0000-00-00","85115032_773654149709483_9059140063778045952_n58.jpg","lụa nhật","lụa nhật","ao-dai-truyen-thong898","0","2020-11-26 16:31:21");
+<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>","lụa nhật","500000","1","0","0","85115032_773654149709483_9059140063778045952_n58.jpg","lụa nhật","lụa nhật","ao-dai-truyen-thong898","0","2020-11-26 16:31:21");
 INSERT INTO tbl_product (product_id, category_id, brandcode_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish, created_date) VALUES ("10","2","1","Áo dài bông hoa","<h2>Lịch sử hình thành áo dài Việt Nam</h2>
 
 <p>Hình ảnh tà áo dài đã quá quen thuộc với mỗi người Việt nhưng không phải ai cũng có thể miêu tả chính xác bộ trang phục truyền thống này với bạn bè ngoại quốc.</p>
@@ -12582,14 +12894,15 @@ INSERT INTO tbl_product (product_id, category_id, brandcode_id, product_Name, pr
 
 <p><img alt='Áo dài ngũ thân' src='https://s3-ap-southeast-1.amazonaws.com/canifablog/blog/wp-content/uploads/2017/09/22153407/ao-dai-ngu-than.jpg' style='height:450px; width:360px' /></p>
 
-<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>","lụa nhật","800000","1","0000-00-00","0000-00-00","85142834_773653949709503_6666853325834551296_o49.jpg","Áo dài bông hoa","Áo dài bông hoa","ao-dai-bong-hoa378","1","2020-11-26 16:31:21");
-INSERT INTO tbl_product (product_id, category_id, brandcode_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish, created_date) VALUES ("11","5","1","Áo dài Dạ Hội","<p>Áo dài Dạ Hội</p>","lụa nhật","1000000","1","0000-00-00","0000-00-00","85195202_773653663042865_7979821151729745920_o89.jpg","Áo dài Dạ Hội","Áo dài Dạ Hội","ao-dai-da-hoi979","1","2020-11-26 16:31:21");
-INSERT INTO tbl_product (product_id, category_id, brandcode_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish, created_date) VALUES ("12","4","1","Áo dài Dạ Hội AB","<p>Áo dài Dạ Hội AB</p>","lụa nhật","900000","1000000","2020-11-15","2020-12-08","84922140_773654203042811_7474135159747379200_o65.jpg","Áo dài Dạ Hội AB","Áo dài Dạ Hội AB","ao-dai-da-hoi-ab211","1","2020-11-26 16:31:21");
-INSERT INTO tbl_product (product_id, category_id, brandcode_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish, created_date) VALUES ("13","5","1","Áo dài truyền thống VN","<p>Áo dài truyền thống VN</p>","Áo dài truyền thống VN","250000","1","0000-00-00","0000-00-00","83815495_773654023042829_651030464122847232_o6.jpg","Áo dài truyền thống VN","Áo dài truyền thống VN","ao-dai-truyen-thong-vn858","1","2020-11-26 16:31:21");
-INSERT INTO tbl_product (product_id, category_id, brandcode_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish, created_date) VALUES ("14","1","1","Áo dài cách tân ABC","<p>Áo dài cách tân ABC</p>","Áo dài cách tân ABC","450000","1","0000-00-00","0000-00-00","85137522_773653723042859_9173677491418562560_n30.jpg","Áo dài cách tân ABC","Áo dài cách tân ABC","ao-dai-cach-tan-abc425","1","2020-11-26 16:31:21");
-INSERT INTO tbl_product (product_id, category_id, brandcode_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish, created_date) VALUES ("15","3","1","Áo dài Hội Phố ABC","<p>Áo dài Hội Phố ABC</p>","Áo dài Hội Phố ABC","500000","1","2020-11-26","2020-12-12","84612966_773653896376175_640374783405457408_o42.jpg","Áo dài Hội Phố ABC","Áo dài Hội Phố ABC","ao-dai-hoi-pho-abc771","0","2020-11-26 16:31:21");
-INSERT INTO tbl_product (product_id, category_id, brandcode_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish, created_date) VALUES ("16","1","1","Áo dài cách tân ABCS","<p>Áo dài cách tân ABCS</p>","Áo dài cách tân ABCS","500000","1","0000-00-00","0000-00-00","86190117_773654536376111_1148412901342576640_n66.jpg","Áo dài cách tân ABCS","Áo dài cách tân ABCS","ao-dai-cach-tan-abcs944","1","2020-11-26 16:31:21");
+<p>Mỗi vạt có 2 thân nối sống tượng trưng cho phụ mẫu, còn vạt con đằng trước tượng trưng cho người mặc. Đặc biệt, đây là kiểu áo mà tầng lớp quan lại, quý tộc thường mặc.</p>","lụa nhật","800000","1","0","0","85142834_773653949709503_6666853325834551296_o49.jpg","Áo dài bông hoa","Áo dài bông hoa","ao-dai-bong-hoa378","0","2020-11-26 16:31:21");
+INSERT INTO tbl_product (product_id, category_id, brandcode_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish, created_date) VALUES ("11","5","1","Áo dài Dạ Hội","<p>Áo dài Dạ Hội</p>","lụa nhật","1000000","1","0","0","85195202_773653663042865_7979821151729745920_o89.jpg","Áo dài Dạ Hội","Áo dài Dạ Hội","ao-dai-da-hoi979","0","2020-11-26 16:31:21");
+INSERT INTO tbl_product (product_id, category_id, brandcode_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish, created_date) VALUES ("12","4","1","Áo dài Dạ Hội AB","<p>Áo dài Dạ Hội AB</p>","lụa nhật","900000","1","0","0","84922140_773654203042811_7474135159747379200_o65.jpg","Áo dài Dạ Hội AB","Áo dài Dạ Hội AB","ao-dai-da-hoi-ab211","0","2020-11-26 16:31:21");
+INSERT INTO tbl_product (product_id, category_id, brandcode_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish, created_date) VALUES ("13","5","1","Áo dài truyền thống VN","<p>Áo dài truyền thống VN</p>","Áo dài truyền thống VN","250000","1","0","0","83815495_773654023042829_651030464122847232_o6.jpg","Áo dài truyền thống VN","Áo dài truyền thống VN","ao-dai-truyen-thong-vn858","0","2020-11-26 16:31:21");
+INSERT INTO tbl_product (product_id, category_id, brandcode_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish, created_date) VALUES ("14","1","1","Áo dài cách tân ABC","<p>Áo dài cách tân ABC</p>","Áo dài cách tân ABC","450000","1","0","0","85137522_773653723042859_9173677491418562560_n30.jpg","Áo dài cách tân ABC","Áo dài cách tân ABC","ao-dai-cach-tan-abc425","0","2020-11-26 16:31:21");
+INSERT INTO tbl_product (product_id, category_id, brandcode_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish, created_date) VALUES ("15","3","1","Áo dài Hội Phố ABC","<p>Áo dài Hội Phố ABC</p>","Áo dài Hội Phố ABC","500000","1","0","0","84612966_773653896376175_640374783405457408_o42.jpg","Áo dài Hội Phố ABC","Áo dài Hội Phố ABC","ao-dai-hoi-pho-abc771","0","2020-11-26 16:31:21");
+INSERT INTO tbl_product (product_id, category_id, brandcode_id, product_Name, product_desc, product_material, product_price, product_price_promotion, promotion_start_date, promotion_end_date, product_image, meta_keyword, meta_desc, meta_slug, publish, created_date) VALUES ("16","1","1","Áo dài cách tân ABCS","<p>Áo dài cách tân ABCS</p>","Áo dài cách tân ABCS","500000","1000000","1607558400","1609027199","86190117_773654536376111_1148412901342576640_n66.jpg","Áo dài cách tân ABCS","Áo dài cách tân ABCS","ao-dai-cach-tan-abcs645","1","2020-11-26 16:31:21");
 INSERT INTO tbl_review (Rid, product_id, Rname, Remail, Rcomment, status, created_at, updated_at) VALUES ("4","14","test van duong","van.duong@redweb.dk","abcsc","0","2020-12-02 10:30:16","2020-12-02 10:30:16");
+INSERT INTO tbl_review (Rid, product_id, Rname, Remail, Rcomment, status, created_at, updated_at) VALUES ("5","16","asdasdas","van.duong@redweb.dk","asdasdasdasdasdasdas","0","2020-12-18 07:49:34","2020-12-18 07:49:34");
 INSERT INTO tbl_sliders (id, img, status, created_at, updated_at) VALUES ("2","d5ef589b961cfcdf5f591918400e709d84194903_773654616376103_8257184345794543616_n.jpg","1","0000-00-00 00:00:00","0000-00-00 00:00:00");
 INSERT INTO tbl_template_mail (id, label, template, status) VALUES ("1","Đơn Hàng Từ Vải Áo Dài Xinh Sunny","<table border='1' cellpadding='0' cellspacing='0' style='width:900px'>
 	<tbody>
@@ -12634,12 +12947,16 @@ INSERT INTO tbl_template_mail (id, label, template, status) VALUES ("1","Đơn H
 												<td>{cus_name}</td>
 											</tr>
 											<tr>
+												<td>Email:</td>
+												<td>{cus_email}</td>
+											</tr>
+											<tr>
 												<td>Điện thoại liên hệ:</td>
 												<td>{cusphone}</td>
 											</tr>
 											<tr>
 												<td>Địa chỉ giao hàng:</td>
-												<td>{address}</td>
+												<td>{cus_address}</td>
 											</tr>
 											<!--{shipping_address_end}-->
 											<tr>
@@ -12668,13 +12985,7 @@ INSERT INTO tbl_template_mail (id, label, template, status) VALUES ("1","Đơn H
 									<td style='text-align:center'>Đơn giá</td>
 									<td style='text-align:center'>Số lượng</td>
 								</tr>
-								<!--{product_loop_start}-->
-								<tr>
-									<td style='text-align:center'>{product_name}</td>
-									<td style='text-align:center'>{product_price}</td>
-									<td style='text-align:center'>{product_quantity}</td>
-								</tr>
-								<!--{product_loop_end}-->
+								<!--{product_loop_start}-->{loop_product}<!--{product_loop_end}-->
 							</tbody>
 						</table>
 
@@ -12717,4 +13028,4 @@ INSERT INTO tbl_template_mail (id, label, template, status) VALUES ("1","Đơn H
 		</tr>
 	</tbody>
 </table>","Hiện");
-INSERT INTO tbl_configmail_receiver (id, Email, name_email, publish) VALUES ("1","hoangvan149dhv@gmail.com","Hoàng Văn","1");
+INSERT INTO tbl_configmail_receiver (id, Email, name_email, publish) VALUES ("1","vandaovipga1491999@gmail.com","Hoàng Văn","1");

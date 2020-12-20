@@ -23,11 +23,6 @@ class Payment_orderController extends HomeController
         $order_data['product_id'] = '';
         $order_data['qty'] = '';
         $content = Cart::content();
-        echo "<pre>";
-        var_dump($content);
-        echo "<pre>";
-        var_dump($request[0]);
-        echo "</pre>";die;  
         // INSERT CUSTOMER
         $cus_data['cusname'] = $request->name;
         $cus_data['cusEmail'] = $request->email;
@@ -64,7 +59,7 @@ class Payment_orderController extends HomeController
             try {
                 if ($item_detail_order) {
                     $template = templateMailModel::where('status', 'Hiện')->get();
-                    pdfController::convertPDF($orderId, $template[0]->template);
+                    // pdfController::convertPDF($orderId, $template[0]->template);
                     $EmailName = configMailModel::select()->get();
                     if ( ! empty($EmailName[0]->publish)) {
                         //SEND MAIL
