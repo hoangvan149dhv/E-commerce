@@ -39,11 +39,11 @@
                                 </div>
                                 <div class="form-group" id="promotion_start_date" >
                                     <label>Ngày bắt đầu giảm giá:</label>
-                                    <input type="date"  value="{{$product->promotion_start_date}}" name="promotion_start_date">
+                                    <input type="date"  value="{{date('Y-m-d',$product->promotion_start_date)}}" name="promotion_start_date">
                                 </div>
                                 <div class="form-group" id="promotion_end_date" >
                                     <label>Ngày kết thúc giảm giá:</label>
-                                    <input type="date" value="{{$product->promotion_end_date}}" name="promotion_end_date">
+                                    <input type="date" value="{{date('Y-m-d',$product->promotion_end_date)}}" name="promotion_end_date">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Gía Sản Phẩm</label>
@@ -88,7 +88,6 @@
                                               class="form-control" cols="" rows=""
                                               placeholder="Mô Tả trên google....">{{$product->meta_desc}}</textarea>
                                 </div>
-                                @endforeach
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Danh Mục Sản Phẩm</label>
                                     <select name="category" class="form-control input-sm m-bot15">
@@ -118,6 +117,7 @@
                                 <button type="submit" name="update" class="btn btn-info">Cập Nhật</button>
                             </form>
                         </div>
+                    @endforeach
                 </div>
             </section>
         </div>

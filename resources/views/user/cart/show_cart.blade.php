@@ -75,11 +75,11 @@
                             <div class="shopper-info">
                                 <form action="{{ URL::to('/thanh-toan-gio-hang') }}" method="POST" id = "shopper-info">
                                     {{ csrf_field() }}
-                                    <input data-validation="length" data-validation-length="1-70"
+                                    <input data-validation="length" data-validation-length="1-100"
                                            data-validation-error-msg='vui lòng điền đầy đủ thông tin' type="text"
                                            name="name" placeholder="Họ Và Tên Người Nhận">
-                                    <input data-validation="length" data-validation-length="5-50"
-                                           data-validation-error-msg='vui lòng điền đúng đúng email, Khi order sẽ được gửi mail'
+                                    <input data-validation="length" data-validation-length="5-100"
+                                           data-validation-error-msg='vui lòng điền đúng đúng email, Khi order sẽ được gửi mail, tối đa 150 kí tự'
                                            type="email"
                                            name="email" placeholder="Nhập đúng email, Khi order sẽ được gửi mail">
                                     <input data-validation="length" data-validation-length="10-11"
@@ -111,23 +111,21 @@
                                                 <option value="">Phường xã</option>
                                             </select>
                                         </div>
-                                        <input data-validation="length" data-validation-length="1-70" class="add"
-                                               data-validation-error-msg='vui lòng điền đầy đủ thông tin'
-                                               type="text"
+                                        <input data-validation="length" data-validation-length="1-250" class="add"
+                                               data-validation-error-msg='vui lòng điền địa chỉ cụ thể'
+                                               type="text" name="add" id="val_address"
                                                placeholder="Địa Chỉ">
-                                        <input type="hidden" name="add" id="val_address" value="">
                                         <textarea data-validation="length" data-validation-length="0-1000"
-                                                  data-validation-error-msg='vui lòng điền đầy đủ thông tin'
+                                                  data-validation-error-msg='vui lòng điền thông tin'
                                                   name="note"
-                                                  id="" rows="6" placeholder="Ghi Chú"></textarea>
-                                        <div style="color:red;margin-top:1.5rem;">
-                                        </div>
+                                                  id="" rows="6" placeholder="Ghi Chú (vd: chung cư, công ty,...)"></textarea>
                                         <div class="checkout">
-                                            <button type="submit" name="submit" class="btn btn-default check_out"
+                                            <button type="submit" onclick="validate_check_out(this.form)" name="submit" class="btn btn-default check_out"
                                                     style="margin-left: 0px;border-radius: 5px; font-size: 25px;">
                                                 MUA HÀNG
                                             </button>
                                         </div>
+                                        <div style="color:red;margin-top:1.5rem;"></div>
                                     </form>
                                 </form>
                             </div>
@@ -173,9 +171,14 @@
         var select_delivery = "{{url('/select-delivery') }}";
         var select_delivery_feeship = "{{url('/select-delivery-feeship') }}";
 
-        $('.check_out').click(function () {
-            alert('xxx');
-           // if ($('input[name ="name"]').val() || $('input[name ="email"]').val() || $('select[name ="city"]').val() || $('select[name ="province"]') || $('select[name ="wards"]'))
-        });
+        function validate_check_out(form) {
+            if ($("input[name='name']").val() && $("input[name='email']").val() && $("input[name='phone']").val() && $("input[name='add']").val() && $('#city').val().length !== 0 && $('#province').val().length !== 0 && $('#wards').val().length !== 0) {
+                $('#img-load').css('display','block');
+                form.submit.disabled = false;
+            }
+            else{
+                return false;
+            }
+        }
     </script>
 @endsection

@@ -22,8 +22,8 @@ class CreateTblProduct extends Migration
             $table->string('product_material');
             $table->integer('product_price');
             $table->integer('product_price_promotion');
-            $table->date('promotion_start_date')->default(null)->nullable();
-            $table->date('promotion_end_date')->default(null)->nullable();
+            $table->integer('promotion_start_date')->default(0);
+            $table->integer('promotion_end_date')->default(0);
             $table->string('product_image',255);
             $table->string('meta_keyword',255);
             $table->text('meta_desc');

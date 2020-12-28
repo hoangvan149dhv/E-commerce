@@ -33,7 +33,7 @@ class DeliveryController extends Controller
             if($data['action'] == 'city'){
 
                 $select_province = ProvinceModel::where('matp',$data['ma_id'])->orderby('maqh','asc')->get();
-                echo '<option value="0">Chọn Quận huyện</option>';
+                echo '<option>Chọn Quận huyện</option>';
 
                 foreach ($select_province as $key => $province)
                 {
@@ -46,7 +46,7 @@ class DeliveryController extends Controller
             {
 
                 $select_wards = WardModel::where('maqh',$data['ma_id'])->orderby('xaid','ASC')->get();
-                echo '<option value="0"><--Chọn Xa Phuong--></option>';
+                echo '<option>Vui lòng chọn phường xã</option>';
 
                 foreach ($select_wards as $key => $wards)
                 {

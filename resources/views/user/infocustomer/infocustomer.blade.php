@@ -10,8 +10,17 @@
             <input type="text" name="phone" class="form-control" placeholder="Số Điện Thoại">
         </div>
         <div class="form-group col-md-12">
+            <?php
+            $customer_notfound = Session::get('customer-not-found');
+            if(!empty($customer_notfound)) : ?>
+                <div class="alert-danger alert"><?php echo $customer_notfound;?></div>
+            <?php endif ?>
+            <?php
+            Session::put('customer-not-found', null);
+            ?>
             <input type="submit" name="submit" class="btn btn-primary pull-right" style="border-radius:5px" value="Tìm">
         </div>
+       
     </form>
 </div>
 @endsection

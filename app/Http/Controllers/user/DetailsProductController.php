@@ -21,7 +21,7 @@
             {
                 return back();
             }
-            $show_details_product = \App\Http\library\product_detail::getAllProduct()
+            $show_details_product = \App\Http\library\product_detail::getProductPublish()
                 ->where('meta_slug', $meta_slug)->get();
 
             if (empty($show_details_product)) {
@@ -29,7 +29,7 @@
                 return redirect('trang-chu');
             }
             //Product details recommended
-            $products_detail_recommended = \App\Http\library\product_detail::getAllProduct()
+            $products_detail_recommended = \App\Http\library\product_detail::getProductPublish()
                 ->whereNotIn('tbl_product.meta_slug', [$meta_slug])
                 ->limit('3')->orderby('product_id', 'desc')->get();
 
@@ -45,7 +45,7 @@
                 ///SEO
             }
             if (isset($brand_product_id)) {
-                $related_product = \App\Http\library\product_detail::getAllProduct()
+                $related_product = \App\Http\library\product_detail::getProductPublish()
                     ->where('tbl_brand_code_product.brandcode_id', $brand_product_id)
                     ->whereNotIn('tbl_product.meta_slug', [$meta_slug])->limit('3')
                     ->orderby('product_id', 'asc')->get();
@@ -56,7 +56,7 @@
 
 
             //get products by category
-            $show_product =\App\Http\library\product_detail::getAllProduct()
+            $show_product =\App\Http\library\product_detail::getProductPublish()
                 ->where('tbl_product.category_id', $category_product_id)
                 ->whereNotIn('tbl_product.meta_slug', [$meta_slug])
                 ->limit(5)
