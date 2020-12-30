@@ -4,6 +4,7 @@
 <script src="{{asset('public/admin/js/jquery.nicescroll.js')}}"></script>
 <script src="{{asset('public/admin/js/jquery.scrollTo.js')}}"></script>
 <script src="{{asset('public/client/ckeditor/ckeditor.js')}}"></script>
+<script src="{{asset('public/admin/js/monthly.js')}}"></script>
 <script>
     CKEDITOR.replace( 'ckComment', {
         filebrowserUploadUrl: "{{route('uploads', ['_token' => csrf_token() ])}}",

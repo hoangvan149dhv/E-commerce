@@ -19,25 +19,29 @@
         <!-- settings start -->
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                 <i class="fa fa-bell-o"></i>
-                 <span class="badge bg-success">
+                <i class="fa fa-bell-o"></i>
+                <span class="badge bg-warning">
                     <?php
-                        use App\Http\Model\ReviewModel;
-                        $alertt = ReviewModel::all()->where('status',0)->count();
-                        echo $alertt;
+                    use App\Http\Model\ReviewModel;
+                    $alertt = ReviewModel::all()->where('status',0)->count();
+                    echo $alertt;
                     ?>
                 </span>
-                <ul class="dropdown-menu extended inbox">
-                    <li>
-                        <a href="{{ URL::to('reviews') }}">
-                            <p class="red">Bạn Có {{$alertt }}
-                                <span style="color:red">
-                                </span>Đánh giá
-                            </p>
-                        </a>
-                    </li>
-                </ul>
             </a>
+            <ul class="dropdown-menu extended tasks-bar">
+                <li>
+                    <p class=""></p>
+                </li>
+                <li>
+                    <a href="{{URL::to('/reviews')}}">
+                        <div class="task-info clearfix">
+                            <div class="desc pull-left">
+                                Bạn Có {{$alertt }} Đánh giá
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
         </li>
         <!-- settings end -->
         <!-- inbox dropdown start-->
@@ -55,6 +59,9 @@
             </a>
             <ul class="dropdown-menu extended inbox">
                 <li>
+                    <p></p>
+                </li>
+                <li>
                     <a href="{{ URL::to('contact') }}"><p class="red">Bạn Có {{$alert }} <span style="color:red">
                     </span>Góp Ý</p></a>
                 </li>
@@ -63,17 +70,17 @@
             </ul>
         </li>
         <li id="header_inbox_bar">
-            <a  class="dropdown-toggle" target="_blank" href="{{ URL::to('/') }}"><i class="fa fa-globe"></i></a>
+            <a  class="dropdown-toggle" target="_blank" href="{{ URL::to('/') }}"><span class="glyphicon glyphicon-new-window"></span></a>
         </li>
         @yield('preview_product')
         <!-- inbox dropdown end -->
         <!-- notification dropdown start-->
         <li id="header_notification_bar" class="dropdown">
             <form action="{{ URL::to('/search-order') }}" method="POST">
-            {{ csrf_field() }}
-            <li>
-                <input type="text" name="search" class="form-control search" placeholder=" Search">
-            </li>
+                {{ csrf_field() }}
+                <li>
+                    <input type="text" name="search" class="form-control search" placeholder=" Search">
+                </li>
             </form>
         </li>
         <!-- notification dropdown end -->

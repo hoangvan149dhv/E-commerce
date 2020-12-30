@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Model\OrderModel;
 use Illuminate\Http\Request;
 use DB;
+use PhpParser\Node\Expr\Cast\Object_;
 use Session;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Response;
@@ -24,12 +25,13 @@ class AdminController extends loginController
         $category_product = DB::table('tbl_category_product')->orderby('category_id', 'desc')->get();
         $brandcode_product = DB::table('tbl_brand_code_product')->orderby('code_id', 'desc')->get();
         $contactinfoModel = contactinfoModel::select()->get();
-
+        $totalOder = DB::table('tbl_orders')->get();
+        view()->share('dataOderofMonth',$this->getDataOderofMonth());
         view()->share('count', $count);
         view()->share('contactinfoModel', $contactinfoModel);
         view()->share('category_product', $category_product);
         view()->share('brand_code_product', $brandcode_product);
-
+        view()->share('totalOder', $totalOder);
         //check login
         $this->middleware(function ($request, $next) {
             $session_id = session::get('session_id');
@@ -134,6 +136,25 @@ class AdminController extends loginController
             ->with('getProductItems', $getProductItems)
             ->with('infocustomerorder', $infocustomer)
             ->with('order_item_qty_value', $order_item_qty_value);
+    }
+
+    public function getDataOderofMonth()
+    {
+        $data             = (Object)
+        $total = 0;
+        $dataStringformJson = '';
+        for ($i = 1; $i <= 12; $i++) {
+            $dataOders = OrderModel::whereMonth('order_date', '=', $i)->where('status', '=' ,1)->get();
+            foreach ($dataOders as $dataOder) {
+                $total += (int) $dataOder->total;
+
+            }
+            $data->Month = 'Tháng ' . $i;
+            $data->Total = $total;
+            unset($data->scalar);
+            $dataStringformJson .= ',' . json_encode($data);
+        }
+        return '['. substr($dataStringformJson,1) . ']' ;
     }
 
     public function upload(Request $request)
