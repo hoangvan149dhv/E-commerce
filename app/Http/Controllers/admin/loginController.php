@@ -8,7 +8,7 @@ use DB;
 use App\Http\Controllers\Controller;
 use Session;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Http\Response;
+use App\Http\Controllers\admin\AdminController;
 use Carbon\Carbon;
 use App\Http\Model\count;
 
@@ -17,7 +17,6 @@ class loginController extends Controller
     //check login if user already login
     public function login()
     {
-
         $session_id = Session::get('session_id');
 
         if ($session_id) {
@@ -39,7 +38,6 @@ class loginController extends Controller
 
     public function get_pass(Request $request)
     {
-
         //SEND MAIL
         $sendmail = new sendMailController();
 
@@ -88,6 +86,7 @@ class loginController extends Controller
         $result = DB::table('tbl_admin')->where('user_name', $user_name)->where('admin_pass', $admin_pass)->first();
 
         if ($result) {
+            new AdminController();
             $count = count::find(1);
             $date = Carbon::now();
             $month = Carbon::now()->month;
