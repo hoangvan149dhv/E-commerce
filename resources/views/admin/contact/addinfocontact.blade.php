@@ -7,6 +7,9 @@
                 Thông tin liên hệ
             </header>
             @foreach ($contactinfoModel as $contact)
+                <div class="col-md-12 w3-agile-map-left">
+                    {!! $contact->google_map !!}
+                </div>
             <div class="panel-body">
                 <div class="position-center">
                 <form role="form" action="{{URL::to('/save-info-contact')}}" method="post">

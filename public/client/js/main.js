@@ -19,9 +19,7 @@ $(document).ready(function() {
             zIndex: 999
         })
     })
-});
-$.validate({});
-$(document).ready(function() {
+    $.validate({});
     $(window).scroll(function name(params) {
         if (window.scrollY > 300) {
             $('.icon-bar-menu').addClass('menu-bar');
@@ -83,87 +81,85 @@ $(document).ready(function() {
             }
         })
     });
-    $(document).ready(function name(params) {
-        $('.home, active').removeClass('active');
-        $('.cart-product').addClass('active');
-        $('.choose').on('change', function name(params) {
-            var action = $(this).attr('id');
-            var ma_id = $(this).val();
-            var _token = $('input[name="_token"]').val();
-            var result = '';
-            if (action == 'city') {
-                $('#img-load').css('display', 'block');
-                result = 'province';
-                result_ward = 'wards'
-            } else {
-                result = 'wards'
-            }
-            $.ajax({
-                url: select_delivery,
-                method: 'POST',
-                data: {
-                    action: action,
-                    ma_id: ma_id,
-                    _token: _token
-                },
-                success: function(data) {
-                    $('#' + result).html(data);
-                    $('#img-load').css('display', 'none');
-                    if (action == 'city') {
-                        $('#' + result_ward).html('<option value="0" style="cursor: no-drop">Vui lòng chọn quận huyện trước</option>')
-                    }
-                }
-            })
-        });
-
-        function formatNumber(nStr, decSeperate, groupSeperate) {
-            nStr += '';
-            x = nStr.split(decSeperate);
-            x1 = x[0];
-            x2 = x.length > 1 ? '.' + x[1] : '';
-            var rgx = /(\d+)(\d{3})/;
-            while (rgx.test(x1)) {
-                x1 = x1.replace(rgx, '$1' + groupSeperate + '$2')
-            }
-            return x1 + x2
+    $('.home, active').removeClass('active');
+    $('.cart-product').addClass('active');
+    $('.choose').on('change', function name(params) {
+        var action = $(this).attr('id');
+        var ma_id = $(this).val();
+        var _token = $('input[name="_token"]').val();
+        var result = '';
+        if (action == 'city') {
+            $('#img-load').css('display', 'block');
+            result = 'province';
+            result_ward = 'wards'
+        } else {
+            result = 'wards'
         }
-        $('#city').change(function name(params) {
-            var fee_ship = $('#city option:selected').text();
-            var _token = $('input[name="_token"]').val();
-            var fee_cart_product = $('.fee_cart_product').text().split(',').join('');
-            var total;
-            $.ajax({
-                url: select_delivery_feeship,
-                method: 'POST',
-                data: {
-                    fee_ship: fee_ship,
-                    _token: _token
-                },
-                success: function(data) {
-                    $('.fee_ship_cart').text(formatNumber(data, '.', ','));
-                    $('.fee_delivery').text(".VNĐ");
-                    if (data.length < 1) {
-                        total = 20000 + parseFloat(fee_cart_product);
-                        $('.val_feeship').val(20000);
-                        $('.fee_ship_cart').text(formatNumber(20000, '.', ','))
-                    } else {
-                        $('.val_feeship').val(parseFloat(data));
-                        total = parseFloat(data) + parseFloat(fee_cart_product)
-                    }
-                    $('.total_price').text(formatNumber(parseFloat(total), '.', ','))
+        $.ajax({
+            url: select_delivery,
+            method: 'POST',
+            data: {
+                action: action,
+                ma_id: ma_id,
+                _token: _token
+            },
+            success: function(data) {
+                $('#' + result).html(data);
+                $('#img-load').css('display', 'none');
+                if (action == 'city') {
+                    $('#' + result_ward).html('<option value="0" style="cursor: no-drop">Vui lòng chọn quận huyện trước</option>')
                 }
-            })
-        });
-        $('.checkout').click(function name(params) {
-            if ($('#city').val().length === 0 || $('#province').val().length === 0 || $('#wards').val().length === 0) {
-                alert('Vui lòng điền đầy đủ thông tin');
-                return false;
             }
-            var val_city = $('#city option:selected').text();
-            var val_province = $('#province option:selected').text();
-            var val_wards = $('#wards option:selected').text();
-            var val_add = $('.add').val();
-            $('#val_address').val(val_add + ", " + val_wards + ", " + val_province + ", " + val_city)
         })
+    });
+
+    function formatNumber(nStr, decSeperate, groupSeperate) {
+        nStr += '';
+        x = nStr.split(decSeperate);
+        x1 = x[0];
+        x2 = x.length > 1 ? '.' + x[1] : '';
+        var rgx = /(\d+)(\d{3})/;
+        while (rgx.test(x1)) {
+            x1 = x1.replace(rgx, '$1' + groupSeperate + '$2')
+        }
+        return x1 + x2
+    }
+    $('#city').change(function name(params) {
+        var fee_ship = $('#city option:selected').text();
+        var _token = $('input[name="_token"]').val();
+        var fee_cart_product = $('.fee_cart_product').text().split(',').join('');
+        var total;
+        $.ajax({
+            url: select_delivery_feeship,
+            method: 'POST',
+            data: {
+                fee_ship: fee_ship,
+                _token: _token
+            },
+            success: function(data) {
+                $('.fee_ship_cart').text(formatNumber(data, '.', ','));
+                $('.fee_delivery').text(".VNĐ");
+                if (data.length < 1) {
+                    total = 20000 + parseFloat(fee_cart_product);
+                    $('.val_feeship').val(20000);
+                    $('.fee_ship_cart').text(formatNumber(20000, '.', ','))
+                } else {
+                    $('.val_feeship').val(parseFloat(data));
+                    total = parseFloat(data) + parseFloat(fee_cart_product)
+                }
+                $('.total_price').text(formatNumber(parseFloat(total), '.', ','))
+            }
+        })
+    });
+    $('.checkout').click(function name(params) {
+        if ($('#wards').val() == ''|| $('#province').val() == '' || $('#wards').val() == '') {
+            alert('Vui lòng điền đầy đủ thông tin');
+            return ;
+        }
+        var val_city = $('#city option:selected').text();
+        var val_province = $('#province option:selected').text();
+        var val_wards = $('#wards option:selected').text();
+        var val_add = $('.add').val();
+        $('#val_address').val(val_add + ", " + val_wards + ", " + val_province + ", " + val_city)
     })
 })

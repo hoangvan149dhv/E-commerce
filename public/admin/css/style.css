@@ -743,7 +743,7 @@ ul.top-menu>li>a:hover,ul.top-menu>li>a:focus {
   -moz-transition: 0.5s all;
   -o-transition: 0.5s all;
 }
-.market-update-right i.fa.fa-users {
+.market-update-right i.fa.fa-exclamation-circle {
     font-size: 3em;
     color:#fff;
    text-align: left;
@@ -1278,7 +1278,6 @@ h3.agileits-icons-title {
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-	color: #777;
 }
 .bs-glyphicons .glyphicon-class {
     display: block;
