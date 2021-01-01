@@ -1,0 +1,24 @@
+<script src="{{asset('public/client/js/jquery.js')}}"></script>
+<script src="{{asset('public/client/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('public/client/js/jquery.scrollUp.min.js')}}"></script>
+<script src="{{asset('public/client/js/price-range.js')}}"></script>
+<script src="{{asset('public/client/js/jquery.prettyPhoto.js')}}"></script>
+<script src="{{asset('public/client/js/form-validator.min.js')}}"></script>
+<script src="{{asset('public/client/js/sweetalert.js')}}"></script>
+<script src="{{asset('public/client/js/main.js')}}"></script>
+
+<script src="{{asset('public/frontend/js/jquery.min.js')}}"></script>
+<script src="{{asset('public/frontend/js/jquery-migrate-3.0.1.min.js')}}"></script>
+<script src="{{asset('public/frontend/js/popper.min.js')}}"></script>
+<script src="{{asset('public/frontend/js/bootstrap/bootstrap.min.js')}}"></script>
+<script src="{{asset('public/frontend/js/jquery.easing.1.3.js')}}"></script>
+<script src="{{asset('public/frontend/js/jquery.waypoints.min.js')}}"></script>
+<script src="{{asset('public/frontend/js/jquery.stellar.min.js')}}"></script>
+<script src="{{asset('public/frontend/js/owl.carousel.min.js')}}"></script>
+<script src="{{asset('public/frontend/js/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{asset('public/frontend/js/jquery.animateNumber.min.js')}}"></script>
+<script src="{{asset('public/frontend/js/scrollax.min.js')}}"></script>
+<script src="{{asset('public/frontend/js/bootstrap/bootstrap-select.min.js')}}"></script>
+<script src="{{asset('public/frontend/js/main.js')}}"></script>
+<script src="{{asset('public/frontend/js/plugins.js')}}"></script>
+<script src="{{asset('public/frontend/js/active.js')}}"></script>
