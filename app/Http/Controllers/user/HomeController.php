@@ -11,6 +11,7 @@
     use Illuminate\Http\Response;
     use App\Http\Model\contactinfoModel;
     use App\Http\Model\count;
+    use App\Http\Model\newsadminModel;
     use App\Http\library\product_detail;
     class HomeController extends Controller
     {
@@ -51,8 +52,9 @@
                 ->orderby('product_price_promotion', 'desc')
                 ->orderby('product_id', 'desc')
                 ->paginate(15);
+            $blogs = newsadminModel::select()->orderby('news_id','desc')->take(4)->get();
 
-            $slider = sliderModel::where('status', 1)->orderby('id', 'desc')->take(3)->get();
+            $slider = sliderModel::where('status', 1)->orderby('id', 'desc')->take(1)->get();
             //SỐ LƯỢT TRUY CẬP
             $count = count::findOrFail(1);
             $response = new Response();
@@ -62,9 +64,9 @@
             if ($cookie) {
                 $count->increment('counts');
             }
-            return view('user.home.home')
+            return view('frontend.home.home')
                 ->with('count', $count)
-                ->with(compact('all_product', 'slider'));
+                ->with(compact('all_product', 'slider', 'blogs'));
         }
 
         public function search(Request $request)

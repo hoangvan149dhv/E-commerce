@@ -17,5 +17,5 @@
     <link rel="icon" type="image" href="">
     <link rel="canonical" href="{{ $url_canonical ?? '' }}"/>
     @endif
-    @include('user.libraries.link')
+    @include('frontend.libraries.link')
 </head>

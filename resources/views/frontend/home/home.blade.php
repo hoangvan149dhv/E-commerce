@@ -1,90 +1,113 @@
-@extends('user.index')
+<?php use Carbon\Carbon;?>
+@extends('frontend.index')
 @section('content')
-    <div class="features_items">
-        <!--features_items-->
-        <h2 class="title text-center">Sản Phẩm Mới Nhất</h2>
+    <div class="row justify-content-center pb-5">
+        <div class="col-md-7 heading-section text-center ftco-animate">
+            <span class="subheading">Our Delightful offerings</span>
+            <h2>Sản Phẩm Mới Nhất</h2>
+        </div>
+    </div>
+    <div class="row">
+        <!--Product-->
         @foreach ($all_product as $product)
-            <div class="col-lg-3 col-xs-6 col-ipad" style="padding:0 5px;">
-                <div class="product-image-wrapper product-image">
-                    <div class="single-products">
-                        <div class="productinfo text-center" id="product">
-                            <form action="" style="margin-bottom: 0px;">
-                                @csrf
-                                <input type="hidden" value="{{$product->product_id}}"
-                                       class="cart_product_id_{{$product->product_id}}">
-                                <input type="hidden" value="{{$product->product_Name}}"
-                                       class="cart_product_name_{{$product->product_id}}">
-                                <input type="hidden" value="{{$product->product_image}}"
-                                       class="cart_product_image_{{$product->product_id}}">
-                                <input type="hidden" value="{{$product->product_price}}"
-                                       class="cart_product_price_{{$product->product_id}}">
-                                <input type="hidden" class="url" url="{{url('/add-cart-ajax')}}"/>
-                                <input type="hidden" class="url_addtocart_success" url="{{url('/hien-thi-gio-hang')}}"/>
-                                <input type="hidden" value="1" class="cart_product_qty_{{$product->product_id}}">
-                                <?php
-                                // caculate percent discount
-                                $c = 0;
-                                $c = (100 * $product->product_price) / $product->product_price_promotion;
-                                $sale = 100 - $c;
-                                ?>
-                                <a href="{{ URL::to('/chi-tiet/'.$product->meta_slug) }}" title="Chi tiết">
-                                    @if ( strtotime($product->created_date) + 604800 > time() )
-                                        <img src="http://localhost/vaiaodai/public/client/images/new.jpg"
-                                             class="newarrival_right" alt="">
-                                    @endif
-                                    @if ($product->product_price_promotion == 1 ||$product->product_price_promotion ==0)
-
-                                    @else
-                                        <span class="stick-promotion">-{{ round($sale) }}%</span>
-                                        <span class="stick-promotion_countdown"
-                                              id="stick-promotions_{{$product->product_id}}"></span>
-                                    @endif
-                                    <img class="img-fluid" src="public/upload/{{$product->product_image}}"/>
-                                    <h5 id="title">{{$product->product_Name}}</h5>
-                                </a>
-                                <div class="product_price">
-                                    @if ($product->product_price_promotion ==1 ||$product->product_price_promotion ==0 )
-                                        <p></p>
-                                    @else
-                                        <p style="text-decoration: line-through;color:#ff4b0099">{{number_format($product->product_price_promotion) ."VNĐ"}}</p>
-                                    @endif
-                                    <p style="margin-bottom:4px;font-size: 16px;">{{number_format($product->product_price)}}
-                                        .VNĐ</p>
-                                </div>
-                                <div class="text-center">
-                                    <span><a href="{{ URL::to('/chi-tiet/'.$product->meta_slug) }}"
-                                             class="btn btn-default add-to-cart">Chi tiết</a></span>
-                                    <span><button type="button" title="Thêm giỏ hàng"
-                                                  class="btn btn-default add-to-cart"
-                                                  data-id_product="{{$product->product_id}}" name="add-to-cart">+<i
-                                                class="fa fa-shopping-cart"></i></button></span>
-                                </div>
-                            </form>
+            <div class="col-md-3 d-flex">
+                <div class="product ftco-animate">
+                    <div class="img d-flex align-items-center justify-content-center" style="background-image: url(public/upload/{{ $product->product_image }});">
+                        <div class="desc">
+                            <p class="meta-prod d-flex">
+                                <form action="" style="margin-bottom: 0px;">
+                                    @csrf
+                                    <input type="hidden" value="{{$product->product_id}}"
+                                        class="cart_product_id_{{$product->product_id}}">
+                                    <input type="hidden" value="{{$product->product_Name}}"
+                                        class="cart_product_name_{{$product->product_id}}">
+                                    <input type="hidden" value="{{$product->product_image}}"
+                                        class="cart_product_image_{{$product->product_id}}">
+                                    <input type="hidden" value="{{$product->product_price}}"
+                                        class="cart_product_price_{{$product->product_id}}">
+                                    <input type="hidden" class="url" url="{{url('/add-cart-ajax')}}"/>
+                                    <input type="hidden" class="url_addtocart_success" url="{{url('/hien-thi-gio-hang')}}"/>
+                                    <input type="hidden" value="1" class="cart_product_qty_{{$product->product_id}}">
+                                    <a href="#" class="d-flex align-items-center justify-content-center add-to-cart" 
+                                        data-id_product="{{$product->product_id}}" name="add-to-cart">
+                                        <span class="flaticon-shopping-bag"></span>
+                                    </a>
+                                </form>
+                                <a href="{{ URL::to('/chi-tiet/'.$product->meta_slug) }}" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
+                            </p>
                         </div>
+                    </div>
+                    <div class="text text-center">
+                        @if ($product->product_price_promotion == 1 ||$product->product_price_promotion ==0)
+                        @else
+                            <?php
+                            // caculate percent discount
+                            $c = 0;
+                            $c = (100 * $product->product_price) / $product->product_price_promotion;
+                            $sale = 100 - $c;
+                            ?>
+                            <span class="stick-promotion sale">-{{ round($sale) }}%</span>
+                            <span class="stick-promotion_countdown"
+                                    id="stick-promotions_{{$product->product_id}}"></span>
+                        @endif
+                        <h2>{{ $product->product_Name }}</h2>
+                        <p class="mb-0">
+                            @if ($product->product_price_promotion == 1 ||$product->product_price_promotion == 0 )
+                                <span></span>
+                            @else
+                                <span class="price price-sale">{{number_format($product->product_price_promotion) ."VNĐ"}}</span>
+                            @endif
+                            <span class="price">{{number_format($product->product_price)}}.VNĐ</span>
+                        </p>
                     </div>
                 </div>
             </div>
         @endforeach
+        <!--/Product-->
     </div>
-    <!--features_items-->
-    <div class="page" style="text-align:center">
-        {!! $all_product->links() !!}
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <a href="#" class="btn btn-primary d-block">Xem thêm<span class="fa fa-long-arrow-right"></span></a>
+        </div>
     </div>
 @endsection
-@section('popup')
+@section('blog')
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+                <span class="subheading">Góc chia sẻ</span>
+            <h2>Bí quyết làm đẹp</h2>
+            </div>
+        </div>
+        <div class="row d-flex">
+            @foreach ($blogs as $blog)
+                <div class="col-lg-6 d-flex align-items-stretch ftco-animate">
+                    <div class="blog-entry d-flex">
+                        <a href="{{ URL::to('/tin-tuc-chia-se/'.$blog->news_id) }}" class="block-20 img" style="background-image: url('public/upload/{{  $blog->news_image }}');">
+                    </a>
+                    <div class="text p-4 bg-light">
+                        <div class="meta">
+                            <p><span class="fa fa-calendar"></span>
+                                {{Carbon::createFromFormat('Y-m-d H:i:s',  $blog->updated_at)->format('d/m/yy') }}
+                            </p>
+                        </div>
+                    <h3 class="heading mb-3"><a href="{{ URL::to('/tin-tuc-chia-se/'.$blog->news_id) }}">{{ $blog->news_title }}</a></h3>
+                    <p>{{ $blog->news_desc }}</p>
+                    <a href="{{ URL::to('/tin-tuc-chia-se/'.$blog->news_id) }}" class="btn-custom">Xem thêm<span class="fa fa-long-arrow-right"></span></a>
+                    </div>
+                </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+  </section>	
+@endsection
+{{-- @section('popup')
     <div id="background">
         <img src="{{asset('public/upload/qc2.png')}}" alt="">
     </div>
-@endsection
-@section('slider')
-    @foreach ($slider as $slider_img)
-        <div class="item">
-            <div class="col-sm-12">
-                <img src="public/upload/{{$slider_img->img}}" class="img-fluid" alt=""/>
-            </div>
-        </div>
-    @endforeach
-@endsection
+@endsection --}}
 @section('script')
     <script>
         @foreach ($all_product as $product)

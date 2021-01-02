@@ -12,8 +12,7 @@ use App\Http\Controllers\user\HomeController;
 class contactController extends HomeController{
     public function Contact()
     {
-
-
+        
     }
 
     public function insertContact(request $request)
