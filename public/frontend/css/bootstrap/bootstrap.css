@@ -2980,6 +2980,7 @@ input[type=button].btn-block {
   white-space: nowrap;
   background-color: transparent;
   border: 0;
+  font-size: 20px;
 }
 .dropdown-item:first-child {
   border-top-left-radius: calc(0.25rem - 1px);

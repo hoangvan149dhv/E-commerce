@@ -15,7 +15,6 @@
                     <div class="img d-flex align-items-center justify-content-center" style="background-image: url(public/upload/{{ $product->product_image }});">
                         <div class="desc">
                             <p class="meta-prod d-flex">
-                                <form action="" style="margin-bottom: 0px;">
                                     @csrf
                                     <input type="hidden" value="{{$product->product_id}}"
                                         class="cart_product_id_{{$product->product_id}}">
@@ -30,10 +29,11 @@
                                     <input type="hidden" value="1" class="cart_product_qty_{{$product->product_id}}">
                                     <a href="#" class="d-flex align-items-center justify-content-center add-to-cart" 
                                         data-id_product="{{$product->product_id}}" name="add-to-cart">
-                                        <span class="flaticon-shopping-bag"></span>
+                                        <span class="fa fa-shopping-cart"></span>
                                     </a>
-                                </form>
-                                <a href="{{ URL::to('/chi-tiet/'.$product->meta_slug) }}" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
+                                <a href="{{ URL::to('/chi-tiet/'.$product->meta_slug) }}" class="d-flex align-items-center justify-content-center"><span class="fa fa-search" aria-hidden="true"></span></a>
+                                <div class="stick-promotion_countdown"
+                                id="stick-promotions_{{$product->product_id}}"></div>
                             </p>
                         </div>
                     </div>
@@ -47,8 +47,6 @@
                             $sale = 100 - $c;
                             ?>
                             <span class="stick-promotion sale">-{{ round($sale) }}%</span>
-                            <span class="stick-promotion_countdown"
-                                    id="stick-promotions_{{$product->product_id}}"></span>
                         @endif
                         <h2>{{ $product->product_Name }}</h2>
                         <p class="mb-0">
@@ -103,11 +101,6 @@
     </div>
   </section>	
 @endsection
-{{-- @section('popup')
-    <div id="background">
-        <img src="{{asset('public/upload/qc2.png')}}" alt="">
-    </div>
-@endsection --}}
 @section('script')
     <script>
         @foreach ($all_product as $product)
@@ -131,12 +124,10 @@
                 // Display the result in the element with id="demo"
                 document.getElementById("stick-promotions_{{$product->product_id}}").innerHTML = "Còn " + days + " ngày " + hours + ":"
                     + minutes + ":" + seconds;
-                document.getElementById("stick-promotions_{{$product->product_id}}").style.background = '#fe980f';
                 // If the count down is finished, write some text
                 if (distance < 0) {
                     clearInterval(x);
                     document.getElementById("stick-promotions_{{$product->product_id}}").innerHTML = "SALE";
-                    document.getElementById("stick-promotions_{{$product->product_id}}").style.background = '#fe980f';
                 }
             }
         }, 1000);

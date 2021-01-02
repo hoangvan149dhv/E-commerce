@@ -10,7 +10,7 @@
                     <p class="mb-0 phone pl-md-2">
                         <a href="tel:@foreach ($contactinfoModel as $contact) {{ $contact->info_contact_phone }} @endforeach" class="mr-2">
                             <span class="fa fa-phone mr-1"></span> {{ $contact->info_contact_phone }}</a> 
-                        <a href="mailto:{{ $contact->info_contact_mail }}"><span class="fa fa-paper-plane mr-1"></span>{{ $contact->info_contact_mail }}</a>
+                        <a href="mailto:{{ $contact->info_contact_mail }}"><i class="fa fa-envelope mr-1" aria-hidden="true"></i>{{ $contact->info_contact_mail }}</a>
                     </p>
                 </div>
                 <div class="col-md-6 d-flex justify-content-md-end">

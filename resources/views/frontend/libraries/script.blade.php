@@ -4,9 +4,9 @@
 <script src="{{asset('public/client/js/price-range.js')}}"></script>
 <script src="{{asset('public/client/js/jquery.prettyPhoto.js')}}"></script>
 <script src="{{asset('public/client/js/form-validator.min.js')}}"></script>
-<script src="{{asset('public/client/js/sweetalert.js')}}"></script>
-<script src="{{asset('public/client/js/main.js')}}"></script> --}}
 
+<script src="{{asset('public/client/js/main.js')}}"></script> --}}
+<script src="{{asset('public/client/js/sweetalert.js')}}"></script>
 <script src="{{asset('public/frontend/js/jquery.min.js')}}"></script>
 <script src="{{asset('public/frontend/js/jquery-migrate-3.0.1.min.js')}}"></script>
 <script src="{{asset('public/frontend/js/popper.min.js')}}"></script>

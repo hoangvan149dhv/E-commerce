@@ -135,7 +135,7 @@
   white-space: nowrap; // prevent links from randomly breaking onto new lines
   background-color: transparent; // For `<button>`s
   border: 0; // For `<button>`s
-
+  font-size: 20px;
   &:first-child {
     @include border-top-radius($dropdown-inner-border-radius);
   }

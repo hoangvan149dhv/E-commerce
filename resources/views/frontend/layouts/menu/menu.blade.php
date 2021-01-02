@@ -3,17 +3,19 @@
     <div class="container">
         <a href="{{ URL::to('/') }}"><img src="{{asset('public/upload/logo2.png')}}" alt=""/></a>
         <div class="order-lg-last btn-group">
-        <a class="dropdown-toggle-split" href="{{URL::to('/thong-tin-khach-hang')}}"><i class="fa fa-pencil-square-o"></i></a>
-        <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="flaticon-shopping-bag"></span>
-        <div class="d-flex justify-content-center align-items-center">
-            <small>
-                <?php
-                    $dataCart = Cart::content();
-                    $amount_cart = $dataCart->count();
-                    echo empty($amount_cart) ? '' : "(" . $amount_cart . ")";
-                ?>
-            </small>
+            <a class="dropdown-toggle-split history-order" href="{{URL::to('/thong-tin-khach-hang')}}"><span class="fa fa-pencil-square-o"></span></a>
+        </div>
+        <div class="order-lg-last btn-group">
+            <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="fa fa-shopping-cart" aria-hidden="true"></span>
+            <div class="d-flex justify-content-center align-items-center">
+                <small>
+                    <?php
+                        $dataCart = Cart::content();
+                        $amount_cart = $dataCart->count();
+                        echo empty($amount_cart) ? '' : "(" . $amount_cart . ")";
+                    ?>
+                </small>
         </div>
         </a>
         @foreach ($dataCart as $cart)
