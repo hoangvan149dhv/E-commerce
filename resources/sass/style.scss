@@ -262,6 +262,7 @@ h1, h2, h3, h4, h5,
 				font-weight: 300;
 				text-transform: uppercase;
 				letter-spacing: 1px;
+                white-space: nowrap;
 				&:hover {
 					color: $primary;
 				}
@@ -374,7 +375,7 @@ h1, h2, h3, h4, h5,
 			div{
 				position: absolute;
 				top: -5px;
-				right: -15px;
+				right: -10px;
 				height: 18px;
 				line-height: 1;
 				border-radius: 50%;

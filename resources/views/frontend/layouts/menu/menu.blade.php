@@ -1,23 +1,25 @@
 <!--header-middle-->
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
+        <a class="navbar-brand" href="index.html">Sunny <span>Ngo</span></a>
         <a href="{{ URL::to('/') }}"><img src="{{asset('public/upload/logo2.png')}}" alt=""/></a>
         <div class="order-lg-last btn-group">
-            <a class="dropdown-toggle-split history-order" href="{{URL::to('/thong-tin-khach-hang')}}"><span class="fa fa-pencil-square-o"></span></a>
-        </div>
-        <div class="order-lg-last btn-group">
+            <a class="dropdown-toggle-split history-order" href="{{URL::to('/thong-tin-khach-hang')}}">
+                <span class="fa fa-pencil-square-o"></span>
+            </a>
             <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="fa fa-shopping-cart" aria-hidden="true"></span>
-            <div class="d-flex justify-content-center align-items-center">
-                <small>
-                    <?php
-                        $dataCart = Cart::content();
-                        $amount_cart = $dataCart->count();
-                        echo empty($amount_cart) ? '' : "(" . $amount_cart . ")";
-                    ?>
-                </small>
+                <div class="d-flex justify-content-center align-items-center">
+                    <small>
+                        <?php
+                            $dataCart = Cart::content();
+                            $amount_cart = $dataCart->count();
+                            echo empty($amount_cart) ? '' : "(" . $amount_cart . ")";
+                        ?>
+                    </small>
+                </div>
+            </a>
         </div>
-        </a>
         @foreach ($dataCart as $cart)
         <div class="dropdown-menu dropdown-menu-right">
             <div class="dropdown-item d-flex align-items-start" href="#">

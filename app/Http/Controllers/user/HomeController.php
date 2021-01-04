@@ -51,7 +51,7 @@
             $all_product = \App\Http\library\product_detail::getProductPublish()
                 ->orderby('product_price_promotion', 'desc')
                 ->orderby('product_id', 'desc')
-                ->paginate(15);
+                ->paginate(8);
             $blogs = newsadminModel::select()->orderby('news_id','desc')->take(4)->get();
 
             $slider = sliderModel::where('status', 1)->orderby('id', 'desc')->take(1)->get();

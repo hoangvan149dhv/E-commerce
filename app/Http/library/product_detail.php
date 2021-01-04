@@ -19,7 +19,7 @@ class product_detail  extends BaseController
         DB::table('tbl_product')->where('tbl_product.promotion_end_date', '<', self::getcurrentTime())
             ->update(array('promotion_end_date' => 0,
                 'promotion_start_date' => 0,
-                'publish' => 0));
+                'publish' => 1));
 
         // Update product price
         productModel::where('product_price_promotion', '>', 1 )->where('promotion_start_date', '=', 0)
