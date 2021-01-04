@@ -9,17 +9,13 @@
     use Session;
     use App\Http\Requests;
     use Illuminate\Support\Facades\Redirect;
-    use App\Http\Model\WardModel;
-    use App\Http\Model\ProvinceModel;
     use App\Http\Model\CityModel;
     use App\Http\Controllers\user\HomeController;
-    use App\Http\Model\feeShipModel;
 
     class CartController extends HomeController
     {
-        public function save_cart_ajax(Request $request)
+        public function add_cart_ajax(Request $request)
         {
-
             $data['id'] = $request->cart_id;
             $data['qty'] = 1;
             $data['name'] = $request->cart_name;
@@ -29,9 +25,11 @@
             if (!Cart::add($data)) {
                 return back();
             }
-
+            $data['images'] = $data['options']['images'];
             session::put('message', Cart::content()->count());
-
+            $data['totalQty'] = Cart::content()->count();
+            unset($data['id'], $data['qty'], $data['options']);
+            echo json_encode($data, JSON_UNESCAPED_UNICODE);
         }
 
         public function save_product_cart(Request $request)

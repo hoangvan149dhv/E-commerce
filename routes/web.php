@@ -37,7 +37,7 @@ Route::post('/chi-tiet/{product_id}','user\DetailsProductController@insertCommen
 ///////////////////----------CART-------////////////////////////////////////////////////////////////////////////////////
 ///
 //SAVE CART AJAX
-Route::get('/add-cart-ajax','user\CartController@save_cart_ajax');
+Route::get('/add-cart-ajax','user\CartController@add_cart_ajax');
 //SAVE CART
 Route::post('/them-gio-hang','user\CartController@save_product_cart');
 
