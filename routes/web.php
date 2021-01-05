@@ -75,9 +75,8 @@ route::get('/hien-thi-thong-tin','user\InfocustomerController@info_customer_phon
 
 
 //CONTACT CUSTOMER
-Route::get('/lien-he', function() {
-    return view('user.contact.contact');
-});
+
+Route::get('/lien-he', 'user\contactController@layout');
 
 Route::post('/lien-he','user\contactController@insertContact');
 

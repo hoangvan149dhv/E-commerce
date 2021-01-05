@@ -9,10 +9,11 @@ use Illuminate\Support\Facades\Redirect;
 use Validator;
 use App\Http\Model\contactinfoModel;
 use App\Http\Controllers\user\HomeController;
-class contactController extends HomeController{
-    public function Contact()
+class contactController extends HomeController {
+
+    public function layout()
     {
-        
+        return view('frontend.contact.contact');
     }
 
     public function insertContact(request $request)

@@ -1,7 +1,7 @@
 <!--header-middle-->
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-        <a class="navbar-brand" href="index.html">Sunny <span>Ngo</span></a>
+        <a class="navbar-brand" href="{{ URL::to('/') }}">Sunny <span>Ngo</span></a>
         <a href="{{ URL::to('/') }}"><img src="{{asset('public/upload/logo2.png')}}" alt=""/></a>
         <div class="order-lg-last btn-group">
             <a class="dropdown-toggle-split history-order" href="{{URL::to('/thong-tin-khach-hang')}}">
@@ -12,8 +12,7 @@
                 <span class="fa fa-shopping-cart" aria-hidden="true"></span>
                 @php
                     $dataCart = Cart::content();
-                    $amount_cart =  Session::get('Qty');
-                    //var_dump($amount_cart);die;
+                    $amount_cart = Session::get('Qty');
                 @endphp
                 <div class="d-flex justify-content-center align-items-center">
                     <small>
@@ -30,9 +29,12 @@
             <div class="dropdown-menu dropdown-menu-right">
                 @if($amount_cart)
                     @foreach ($dataCart as $cart)
+                        @php
+                            $product = \App\Http\library\product_detail::getProductDetail($cart->id);
+                        @endphp
                         <div class="dropdown-item d-flex align-items-start" href="#">
-                            <a href="{{ URL::to('/chi-tiet/'.$product->meta_slug) }}">
-                                <div class="img" style="background-image: url(public/upload/{{$cart->options->images}});"></div>
+                            <a href="{{ URL::to('/chi-tiet/'.$product[0]->meta_slug) }}">
+                                <div class="img" style="background-image: url({{asset('public/upload/'.$cart->options->images)}}"></div>
                                 <div class="text pl-3">
                                     <h4>{{$cart->name}}</h4>
                                     <p class="mb-0"><a href="#" class="price">{{number_format($cart->price)}}.VNĐ</a><span

@@ -1,336 +1,144 @@
-@extends('user.index')
+@extends('frontend.index')
 @Section('content')
-    <div class="product-details">
-        <!--product-details-->
-        @foreach ($details_product as $details_product)
-            <div class="col-sm-4">
-                <div class="view-product">
-                    <?php
-                    // caculate percent
-                    $c = 0;
-                    $c = (100 * $details_product->product_price) / $details_product->product_price_promotion;
-                    $sale = 100 - $c;
-                    ?>
-                    @if ($details_product->product_price_promotion==1||$details_product->product_price_promotion==0)
-                        <p></p>
-                    @else
-                        <span class="stick-promotion">-{{ round($sale) }}%</span> @endif
-                    <img src="{{asset('public/upload/'.$details_product->product_image)}}" alt=""/>
-                </div>
-                <div id="similar-product" class="carousel slide" data-ride="carousel">
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <div class="single_product_thumb">
+                <div id="product_details_slider" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li class="active product-details" data-target="#product_details_slider" data-slide-to="0" style="background-image: url({{asset('public/upload/'.$details_product[0]->product_image )}});">
+                        </li>
+                        <li class="product-details" data-target="#product_details_slider" data-slide-to="1" style="background-image: url({{asset('public/upload/'.$details_product[0]->product_image )}});">
+                        </li>
+                        <li class="product-details" data-target="#product_details_slider" data-slide-to="2" style="background-image: url({{asset('public/upload/'.$details_product[0]->product_image )}});">
+                        </li>
+                        <li class="product-details" data-target="#product_details_slider" data-slide-to="3" style="background-image: url({{asset('public/upload/'.$details_product[0]->product_image )}});">
+                        </li>
+                    </ol>
                     <div class="carousel-inner">
-                        <div class="item active">
-                            @foreach ($related_product as $item)
-                                <a href=""><img src="{{asset('public/upload/'.$item->product_image)}}"
-                                                style="margin-left:15px" height="80" width="70" alt=""/></a>
+                        <div class="carousel-item active">
+                            <a class="gallery_img" href="{{asset('public/upload/'.$details_product[0]->product_image )}}">
+                                <img class="d-block w-100" src="{{asset('public/upload/'.$details_product[0]->product_image )}}" alt="First slide">
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a class="gallery_img" href="{{asset('public/upload/'.$details_product[0]->product_image )}}">
+                                <img class="d-block w-100" src="{{asset('public/upload/'.$details_product[0]->product_image )}}" alt="Second slide">
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a class="gallery_img" href="{{asset('public/upload/'.$details_product[0]->product_image )}}">
+                                <img class="d-block w-100" src="{{asset('public/upload/'.$details_product[0]->product_image )}}" alt="Third slide">
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a class="gallery_img" href="{{asset('public/upload/'.$details_product[0]->product_image )}}">
+                                <img class="d-block w-100" src="{{asset('public/upload/'.$details_product[0]->product_image )}}" alt="Fourth slide">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 product-details pl-md-5 ftco-animate">
+            @foreach ($details_product as $detail_product)
+                <h3>{{$detail_product->product_Name}}</h3>
+            <div>
+                <p><b>Chất Liệu:</b> {{$detail_product->product_material }}</p>
+                <p><b>Thương Hiệu:</b> {{$detail_product->brandcode_name}}</p>
+                <p><b>Danh Mục:</b> {{$detail_product->category_name}}</p>
+            </div>
+            @endforeach
+            @if ($detail_product->product_price_promotion == 1 || $detail_product->product_price_promotion == 0)
+                    <p class="price"><span>{{number_format($detail_product->product_price)}}.VNĐ</span></p>
+            @else
+                    <p class="price price-sale" style="text-decoration:line-through">{{number_format($detail_product->product_price)}}.VNĐ</p>
+                    <p class="price"><span>{{number_format($detail_product->product_price_promotion)}}.VNĐ</span></p>
+            @endif
+                <div class="row mt-4">
+                    <div class="input-group col-md-6 d-flex mb-3">
+	                	<button type="button" class="quantity-left-minus btn mr-2"  data-type="minus" data-field="">
+	                        <i class="fa fa-minus"></i>
+	                	</button>
+                        <input type="number" id="quantity" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
+                        <button type="button" class="quantity-right-plus btn ml-2" data-type="plus" data-field="">
+                             <i class="fa fa-plus"></i>
+                         </button>
+                    </div>
+                </div>
+            <p><a href="cart.html" class="btn btn-primary py-3 px-5 mr-2">Add to Cart</a><a href="cart.html" class="btn btn-primary py-3 px-5">Buy now</a></p>
+        </div>
+    </div>
+    <div class="row mt-5 description">
+        <div class="col-md-12 nav-link-wrap">
+            <div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link ftco-animate active mr-lg-1" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Chi tiết</a>
+                <a class="nav-link ftco-animate" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Đánh giá</a>
+
+            </div>
+        </div>
+        <div class="col-md-12 tab-wrap">
+            <div class="tab-content bg-light" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
+                    <div class="p-4">
+                        {!! $detail_product->product_desc !!}
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-day-3-tab">
+                    <div class="row p-4">
+                        <div class="col-md-7">
+                            <h3 class="mb-4">{{count($reviewModel)}} Đánh giá</h3>
+                            @foreach ($reviewModel as $review)
+                                <div class="review">
+                                    <a href="#"><div class="user-img" style="background-image: url({{asset('public/upload/user/user.png')}}"></div></a>
+                                <div class="desc">
+                                    <h4>
+                                        <span class="text-left">{{$review->Rname}}</span>
+                                        <span class="text-right">{{(date('d-m-Y', strtotime($review->updated_at)))}}</span>
+                                    </h4>
+                                    <p>{{$review->Rcomment}}</p>
+                                </div>
+                            </div>
                             @endforeach
                         </div>
                     </div>
-                    <!-- Controls -->
-                    <a class="left item-control" href="#similar-product" data-slide="prev">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                    <a class="right item-control" href="#similar-product" data-slide="next">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 </div>
             </div>
-        @endforeach
-        <div class="col-sm-7">
-            <div class="product-information">
-                <!--/product-information-->
-                <img src="{{asset('public/client/images/new.jpg')}}" class="newarrival" alt=""/>
-                <h2 style="color:red;font-weight: 700;">{{$details_product->product_Name}}</h2>
-                <p>Mã Hàng: {{$details_product->brandcode_id}}</p>
-                {{-- UPDATE QUATITY --}}
-                @if ($details_product->product_price_promotion==0 ||$details_product->product_price_promotion==1)
-                    <p></p>
-                @else
-                    <h4 style="color: #fe980fe8;text-decoration: line-through">{{number_format($details_product->product_price_promotion)}}
-                        .VNĐ</h4>
-                @endif
-                <form action="{{URL::to('/them-gio-hang')}}" method="POST">
-                    {{ csrf_field() }}
-                    <span>
-                <span>{{number_format($details_product->product_price)}}.VNĐ</span>
-                <br>
-                <label>Số Lượng:</label>
-                <input type="number" name="qty" value="1" min="1"/>
-                <input type="hidden" name="product_id_hidden" value="{{ $details_product->product_id }}"/>
-                <p><b>Chất Liệu:</b> {{$details_product->product_material }}</p>
-                <p><b>Thương Hiệu:</b> {{$details_product->brandcode_name}}</p>
-                <p><b>Danh Mục:</b> {{$details_product->category_name}}</p>
-                <button type="submit" class="btn btn-fefault cart">
-                    <i class="fa fa-shopping-cart"></i> Đặt Mua
-                </button>
-                </span>
-                </form>
-            </div>
-            <!--/product-information-->
         </div>
     </div>
     <!--/product-details-->
-    <div class="category-tab shop-details-tab">
-        <!--category-tab-->
-        <div class="col-sm-12">
-            <ul class="nav nav-tabs">
-                <li><a href="#details" data-toggle="tab">Chi Tiết</a></li>
-                <li class="active"><a href="#reviews" data-toggle="tab">Đánh Gía</a></li>
-            </ul>
-        </div>
-        <div class="tab-content">
-            <div class="tab-pane" id="details">
-                <div class="col-sm-12">
-                    <div class="details-desc-products">
-                        {!! $details_product->product_desc !!}
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade active in" id="reviews">
-                <div class="col-sm-12">
-                    @foreach ($reviewModel as $review)
-                        <div style="border:1px solid #F7F7F0;">
-                            <div style="padding:15px 25px">
-                                <ul>
-                                    <li><a href=""><i class="fa fa-user"></i>{{ $review->Rname }}</a></li>
-                                </ul>
-                                <p><strong>NỘI DUNG: </strong>
-                                    <br> {{ $review->Rcomment }}</p>
-                                <p style="text-align:right;"><i class="fa fa-calendar-o"></i>Thời
-                                    gian: {{(date('d-m-Y', strtotime($review->updated_at)))}}</p>
-                            </div>
-                        </div>
-                    @endforeach
-                    <hr>
-                    <h2 class="text-center" style="color:#FE980F;">ĐÁNH GIÁ SẢN PHẨM</h2>
-                    <style>
-                        h2.text-center {
-                            font-size: 20px;
-                        }
-                    </style>
-                    <form action="{{ URL::to('/chi-tiet/'.$details_product->meta_slug) }}" method="post">
-                        {{ csrf_field() }}
-                        <span>
-                        <input data-validation="length" data-validation-length="5-70"
-                               data-validation-error-msg='vui lòng điền 5- 70 kí tự' type="text" name="name"
-                               placeholder="Họ tên"/>
-                        <input data-validation="length" data-validation-length="5-100"
-                               data-validation-error-msg='vui lòng điền 5- 100 kí tự' type="email" name="email"
-                               placeholder="Email"/>
-                        <input type="hidden" name="pid" value="{{$details_product->product_id}}"/>
-                    </span>
-                        <textarea name="comment" data-validation="length" data-validation-length="5-1000"
-                                  data-validation-error-msg='vui lòng điền 5- 1000 kí tự'
-                                  placeholder="Nội dung"></textarea>
-                        <?php
-                        $message = Session::get('alert');
-                        if ($message) {
-                            echo $message;
-                            Session::put('alert', null);
-                        }
-                        ?>
-                        <button type="submit" name="submit" class="btn btn-default pull-right">
-                            Gửi đi
-                        </button>
-                    </form>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <!--/category-tab-->
-    <div class="recommended_items" style="margin-bottom:15px">
-        <!--recommended_items-->
-        <h2 class="title text-center">Sản Phẩm Liên Quan</h2>
-        <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="item active">
-                    @foreach ($products_detail_recommended as $product_recommended)
-                        <div class="col-sm-4">
-                            <div class="product-image-wrapper details">
-                                <div class="single-products">
-                                    <div class="productinfo text-center">
-                                        <a href="{{ URL::to('/chi-tiet/'.$product_recommended->meta_slug) }}"><img
-                                                src="{{asset('public/upload/'.$product_recommended->product_image)}}"
-                                                alt=""/>
-                                            <p>{{$product_recommended->product_Name}}</p></a>
-                                        <?php
-                                        //caculate percent
-                                        $c = 0;
-                                        $c = (100 * $product_recommended->product_price) / $product_recommended->product_price_promotion;
-                                        $sale = 100 - $c;
-                                        ?>
-                                        @if ( strtotime($product_recommended->created_date) + 604800 > time() )
-                                            <img src="http://localhost/vaiaodai/public/client/images/new.jpg"
-                                                 class="newarrival_right" alt="">
-                                        @endif
-                                        <div class="product_price">
-                                            @if ($product_recommended->product_price_promotion==1||$product_recommended->product_price_promotion==0)
-                                            @else
-                                                <span class="stick-promotion">-{{ round($sale) }}%</span>
-                                                <span class="stick-promotion_countdown"
-                                                      id="stick-promotions_{{$product_recommended->product_id}}"></span>
-                                            @endif
-                                            @if ($product_recommended->product_price_promotion==1||$product_recommended->product_price_promotion==0)
-                                                <p></p>
-                                            @else
-                                                <p style="text-decoration: line-through;color:#ff4b0099">{{number_format($product_recommended->product_price_promotion) ."VNĐ"}}</p>
-                                            @endif
-                                            <p style="color: #FE980F;">{{number_format($product_recommended->product_price)}}
-                                                .VNĐ</p>
-                                        </div>
-                                        <a href="{{ URL::to('/chi-tiet/'.$product_recommended->meta_slug) }}"
-                                           type="button" class="btn btn-default add-to-cart"><i
-                                                class="fa fa-shopping-cart"></i>Chi tiết</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-                <div class="item">
-                    @foreach ($related_product as $related_product_item)
-                        <div class="col-sm-4">
-                            <div class="product-image-wrapper details">
-                                <div class="single-products">
-                                    <div class="productinfo text-center">
-                                        <a href="{{ URL::to('/chi-tiet/'.$related_product_item->meta_slug) }}"><img
-                                                src="{{asset('public/upload/'.$related_product_item->product_image)}}"
-                                                width="140" height="180" alt=""/>
-                                            <p>{{$related_product_item->product_Name}}</p>
-                                        </a>
-                                        <?php
-                                        // caculate percent
-                                        $c = 0;
-                                        $c = (100 * $related_product_item->product_price) / $related_product_item->product_price_promotion;
-                                        $sale = 100 - $c;
-                                        ?>
-                                        @if ( strtotime($related_product_item->created_date) + 604800 > time() )
-                                            <img src="http://localhost/vaiaodai/public/client/images/new.jpg"
-                                                 class="newarrival_right" alt="">
-                                        @endif
-                                        @if ($related_product_item->product_price_promotion==1||$related_product_item->product_price_promotion==0)
-                                        @else
-                                            <span class="stick-promotion">-{{ round($sale) }}%</span>
-                                            <span class="stick-promotion_countdown"
-                                                  id="stick-promotions_{{$related_product_item->product_id}}"></span>
-                                        @endif
-                                        <div class="product_price">
-                                            @if ($related_product_item->product_price_promotion==1||$related_product_item->product_price_promotion==0)
-                                                <p></p>
-                                            @else
-                                                <p style="text-decoration: line-through;color:#ff4b0099">{{number_format($related_product_item->product_price_promotion) ."VNĐ"}}</p>
-                                            @endif
-                                            <p style="color: #FE980F;">{{number_format($related_product_item->product_price)}}
-                                                .VNĐ</p>
-                                        </div>
-                                        <a href="{{ URL::to('/chi-tiet/'.$related_product_item->meta_slug) }}"
-                                           type="button" class="btn btn-default add-to-cart"><i
-                                                class="fa fa-shopping-cart"></i>Chi tiết</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-            <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
-                <i class="fa fa-angle-left"></i>
-            </a>
-            <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        </div>
-    </div>
-    <!--/recommended_items-->
 @endsection
-@section('product_other')
-    <h2>Sản phẩm khác</h2>
-    <div class="panel-group">
-        <!--brands_products-->
-        @foreach ($show_product as $product)
-            <div class="product-new">
-                <ul class="nav nav-pills nav-stacked">
-                    <li class="li">
-                        <a href="{{ URL::to('/chi-tiet/'.$product->meta_slug) }}">
-                            <img class="img-fluid" src="{{asset('public/upload/'.$product->product_image)}}">
-                            <h6 style="color:#ff0000">{{ $product->product_Name}}</h6>
-                            @if ($product->product_price_promotion==1||$product->product_price_promotion==0)
-                                <p></p>
-                            @else
-                                <p style="text-decoration: line-through;color:#ff4b0099">{{number_format($product->product_price_promotion) ."VNĐ"}}</p>
-                            @endif
-                            <p style="color:#FE980F">{{number_format($product->product_price)}}.VNĐ</p>
-                        </a>
-                    </li>
-                </ul>
+@section('breadcumbs')
+    <section class="hero-wrap hero-wrap-2" style="background-image: url({{asset('public/upload/'.$details_product[0]->product_image ) ?? ''}})" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-end justify-content-center">
+                <div class="col-md-9 ftco-animate mb-5 text-center">
+                    <p class="breadcrumbs mb-0">
+                        <span class="mr-2"><a href="{{ URL::to('/') }}">Trang chủ<i class="fa fa-chevron-right"></i></a></span>
+                        <span><a href="{{ URL::to('/Danh-muc-san-pham/'.$details_product[0]->category_id) ?? '#'}}">{{$show_product[0]->category_name ?? 'Chi tiết sản phẩm'}} <i class="fa fa-chevron-right"></i></a></span>
+                        <span>{{$details_product[0]->product_Name ?? ''}} <i class="fa fa-chevron-right"></i></span></p>
+                    <h2 class="mb-0 bread">{{$details_product[0]->product_Name ?? ''}}</h2>
+                </div>
             </div>
-        @endforeach
-    </div>
+        </div>
+    </section>
 @endsection
 @section('script')
     <script>
-        @foreach ($products_detail_recommended as $product)
-        // Set the date we're counting down to
-        // Update the count down every 1 second
-        var x = setInterval(function () {
-            const countDownDate_{{$product->product_id}} = {{$product->promotion_end_date}} * 1000;
-            // Get today's date and time
-            var now = new Date().getTime();
-            var onedayGMT7 = (1000 * 60 * 60 * 7);
-            // Find the distance between now and the count down date
-            var distance = (countDownDate_{{$product->product_id}} - now) - onedayGMT7;
+        $(document).ready(function(){
+            $('.quantity-right-plus').click(function(e){
+                e.preventDefault();
+                var quantity = parseInt($('#quantity').val());
+                $('#quantity').val(quantity + 1);
+            });
 
-            // Time calculations for days, hours, minutes and seconds
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            if (document.getElementById("stick-promotions_{{$product->product_id}}") !== null) {
-                // Display the result in the element with id="demo"
-                document.getElementById("stick-promotions_{{$product->product_id}}").innerHTML = "Còn " + days + " ngày " + hours + ":"
-                    + minutes + ":" + seconds;
-                document.getElementById("stick-promotions_{{$product->product_id}}").style.background = '#fe980f';
-                // If the count down is finished, write some text
-                if (distance < 0) {
-                    clearInterval(x);
-                    document.getElementById("stick-promotions_{{$product->product_id}}").innerHTML = "SALE";
-                    document.getElementById("stick-promotions_{{$product->product_id}}").style.background = '#fe980f';
+            $('.quantity-left-minus').click(function(e){
+                e.preventDefault();
+                var quantity = parseInt($('#quantity').val());
+                if(quantity > 1) {
+                    $('#quantity').val(quantity - 1);
                 }
-            }
-        }, 1000);
-        @endforeach
-        @foreach ($related_product as $product)
-        // Set the date we're counting down to
-        // Update the count down every 1 second
-        var x = setInterval(function () {
-            const countDownDate_{{$product->product_id}} = {{$product->promotion_end_date}} * 1000;
-            // Get today's date and time
-            var now = new Date().getTime();
-            var onedayGMT7 = (1000 * 60 * 60 * 7);
-            // Find the distance between now and the count down date
-            var distance = (countDownDate_{{$product->product_id}} - now) - onedayGMT7;
-
-            // Time calculations for days, hours, minutes and seconds
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            if (document.getElementById("stick-promotions_{{$product->product_id}}") !== null) {
-                // Display the result in the element with id="demo"
-                document.getElementById("stick-promotions_{{$product->product_id}}").innerHTML = "Còn " + days + " ngày " + hours + ":"
-                    + minutes + ":" + seconds;
-                document.getElementById("stick-promotions_{{$product->product_id}}").style.background = '#fe980f';
-                // If the count down is finished, write some text
-                if (distance < 0) {
-                    clearInterval(x);
-                    document.getElementById("stick-promotions_{{$product->product_id}}").innerHTML = "SALE";
-                    document.getElementById("stick-promotions_{{$product->product_id}}").style.background = '#fe980f';
-                }
-            }
-        }, 1000);
-        @endforeach
+            });
+        });
     </script>
 @endsection

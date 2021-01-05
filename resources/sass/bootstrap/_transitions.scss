@@ -2,7 +2,7 @@
 
 .fade {
   @include transition($transition-fade);
-
+    opacity: unset;
   &:not(.show) {
     opacity: 0;
   }

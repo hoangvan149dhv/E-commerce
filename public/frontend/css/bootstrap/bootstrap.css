@@ -2756,6 +2756,7 @@ input[type=button].btn-block {
 
 .fade {
   transition: opacity 0.15s linear;
+  opacity: unset;
 }
 @media screen and (prefers-reduced-motion: reduce) {
   .fade {
