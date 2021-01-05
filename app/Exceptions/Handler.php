@@ -49,7 +49,7 @@ class Handler extends ExceptionHandler
         if ($this->isHttpException($exception)) {
             $status_code = $exception->getStatusCode();
 
-            if ($status_code == 404) {
+            if ($status_code == 404 || $status_code == 405  && ! config('app.debug')) {
                 return response()->view('errors.'.'404', [], $status_code);
             }
         }
@@ -57,7 +57,6 @@ class Handler extends ExceptionHandler
         if ( ! $this->isHttpException($exception) && ! config('app.debug')) {
             return response()->view('errors.404', [], 500);
         }
-
         return parent::render($request, $exception);
     }
 }

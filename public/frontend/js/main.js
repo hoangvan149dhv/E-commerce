@@ -248,7 +248,7 @@ $(document).ready(function() {
 		var cart_url = $(".url_addtocart_success").attr('url');
 		$.ajax({
 			url: url,
-			method: 'GET',
+			method: 'POST',
 			data: {
 				cart_id: cart_id,
 				cart_name: cart_name,
@@ -259,8 +259,8 @@ $(document).ready(function() {
 			},
 			success: function(data) {
                 let datajson = JSON.parse(data);
-                console.log(datajson);
                 $('.ftco-navbar-light.scrolled .btn-cart div small').html('('+ datajson.totalQty + ')');
+                $('.ftco-navbar-light .btn-group .dropdown-menu').html(datajson.itemCart);
 				setTimeout(() => {
 					swal({
 						title: "Đã thêm sản phẩm vào giỏ hàng",

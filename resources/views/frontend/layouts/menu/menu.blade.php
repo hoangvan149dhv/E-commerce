@@ -27,27 +27,31 @@
                     </small>
                 </div>
             </a>
-            @if($amount_cart)
-                <div class="dropdown-menu dropdown-menu-right">
-                @foreach ($dataCart as $cart)
+            <div class="dropdown-menu dropdown-menu-right">
+                @if($amount_cart)
+                    @foreach ($dataCart as $cart)
                         <div class="dropdown-item d-flex align-items-start" href="#">
                             <a href="{{ URL::to('/chi-tiet/'.$product->meta_slug) }}">
                                 <div class="img" style="background-image: url(public/upload/{{$cart->options->images}});"></div>
                                 <div class="text pl-3">
                                     <h4>{{$cart->name}}</h4>
-                                    <p class="mb-0"><a href="#" class="price">$25.99</a><span
+                                    <p class="mb-0"><a href="#" class="price">{{number_format($cart->price)}}.VNĐ</a><span
                                             class="quantity ml-3">Số Lượng: {{$cart->qty}}</span></p>
                                 </div>
                             </a>
                         </div>
-                @endforeach
-                    <a class="dropdown-item text-center btn-link d-block w-100"
-                       href="{{URL::to('/hien-thi-gio-hang')}}">
-                        Đến giỏ hàng
-                        <span class="ion-ios-arrow-round-forward"></span>
-                    </a>
-                </div>
-            @endif
+                    @endforeach
+                        <a class="dropdown-item text-center btn-link d-block w-100"
+                           href="{{URL::to('/hien-thi-gio-hang')}}">
+                            Đến giỏ hàng
+                            <span class="ion-ios-arrow-round-forward"></span>
+                        </a>
+                @else
+                    <div class="dropdown-item d-flex align-items-start" href="#">
+                        Chưa có sản phẩm
+                    </div>
+                @endif
+            </div>
         </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav"
             aria-expanded="false" aria-label="Toggle navigation">
