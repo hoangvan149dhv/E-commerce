@@ -26,8 +26,8 @@
             </div>
         </div>
     </div>
-    @yield('breadcumbs')
     @include('frontend.layouts.menu.menu')
+    @yield('breadcumbs')
 <!--/header-->
 <!--slider-->
 @isset($slider[0])
