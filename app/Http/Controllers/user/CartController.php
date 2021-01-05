@@ -26,15 +26,19 @@
                 return back();
             }
             $data['images'] = $data['options']['images'];
-            session::put('message', Cart::content()->count());
-            $data['totalQty'] = Cart::content()->count();
+            $currrentQty = \Illuminate\Support\Facades\Session::get('Qty', 0);
+            $currrentQty += $data['qty'];
+            \Illuminate\Support\Facades\Session::put('Qty', $currrentQty);
+
+            $data['totalQty'] = $currrentQty;
+
             unset($data['id'], $data['qty'], $data['options']);
+
             echo json_encode($data, JSON_UNESCAPED_UNICODE);
         }
 
         public function save_product_cart(Request $request)
         {
-
             $productId = $request->product_id_hidden;
 
             //Get product
@@ -49,14 +53,16 @@
             if (!Cart::add($data)) {
                 return back();
             }
-            session::put('message', Cart::content()->count());
+            $currrentQty = session::get('Qty');
+            $currrentQty += $data['qty'];
+
+            session::put('Qty', $currrentQty);
 
             return Redirect::to('/hien-thi-gio-hang');
         }
 
         public function show_cart(Request $request)
         {
-
             $city = CityModel::orderby('matp', 'ASC')->get();
             view()->share('city', $city);
 

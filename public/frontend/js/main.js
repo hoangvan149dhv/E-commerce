@@ -259,6 +259,7 @@ $(document).ready(function() {
 			},
 			success: function(data) {
                 let datajson = JSON.parse(data);
+                console.log(datajson);
                 $('.ftco-navbar-light.scrolled .btn-cart div small').html('('+ datajson.totalQty + ')');
 				setTimeout(() => {
 					swal({

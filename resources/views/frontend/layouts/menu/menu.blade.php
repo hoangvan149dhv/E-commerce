@@ -12,20 +12,20 @@
                 <span class="fa fa-shopping-cart" aria-hidden="true"></span>
                 @php
                     $dataCart = Cart::content();
-                    $amount_cart = $dataCart->count();
+                    $amount_cart =  Session::get('Qty');
+                    //var_dump($amount_cart);die;
                 @endphp
-
-                    <div class="d-flex justify-content-center align-items-center">
-                        <small>
-                            @if($amount_cart)
-                            <?php
-                                echo empty($amount_cart) ? '' : "(".$amount_cart.")";
-                            ?>
-                            @else
-                                (0)
-                            @endif
-                        </small>
-                    </div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <small>
+                        @if($amount_cart)
+                        <?php
+                            echo empty($amount_cart) ? '' : "(".$amount_cart.")";
+                        ?>
+                        @else
+                            (0)
+                        @endif
+                    </small>
+                </div>
             </a>
             @if($amount_cart)
                 <div class="dropdown-menu dropdown-menu-right">
