@@ -180,8 +180,6 @@ h1, h2, h3, h4, h5,
 			padding: 0;
 			min-width: 20rem;
 			margin-top: 20px;
-            max-height: 400px;
-            overflow-y: scroll;
 			@include media-breakpoint-down(sm){
 				right: -70px !important;
 				 transform: translateX(-50%) !important;
@@ -207,7 +205,11 @@ h1, h2, h3, h4, h5,
 				top: -.5em;
 		    border-bottom-color: #fff;
 			}
-
+            .cart_products {
+                max-height: 400px;
+                overflow-y: scroll;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            }
 			.dropdown-item{
 				font-size: 16px;
 				color: rgba(0,0,0,.7);
@@ -215,7 +217,7 @@ h1, h2, h3, h4, h5,
 				padding: 20px;
 				border-bottom: 1px solid rgba(0,0,0,.05);
 				white-space: nowrap;
-				&:last-child(){
+				&:last-child {
 					border: none;
 				}
 				.img{
@@ -280,6 +282,7 @@ h1, h2, h3, h4, h5,
 			.dropdown-menu{
 				border: none;
 				background: $white;
+                animation: fadeInUp 250ms;
 				-webkit-box-shadow: 0px 10px 34px -20px rgba(0,0,0,0.41);
 				-moz-box-shadow: 0px 10px 34px -20px rgba(0,0,0,0.41);
 				box-shadow: 0px 10px 34px -20px rgba(0,0,0,0.41);
@@ -378,7 +381,7 @@ h1, h2, h3, h4, h5,
 			div{
 				position: absolute;
 				top: -5px;
-				right: -10px;
+				right: -15px;
 				height: 18px;
 				line-height: 1;
 				border-radius: 50%;
@@ -935,7 +938,7 @@ h1, h2, h3, h4, h5,
 		background: transparent;
 		padding: 0 15px;
 	}
-	button,.form-control{;
+	.form-control{;
 		height: 40px !important;
 		text-align: center;
 		border: 1px solid rgba(0,0,0,.1) !important;
@@ -2564,4 +2567,14 @@ textarea.form-control {
 
 .single_product_thumb {
   margin-bottom: 200px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
 }

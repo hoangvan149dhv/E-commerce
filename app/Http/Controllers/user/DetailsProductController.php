@@ -62,8 +62,7 @@ class DetailsProductController extends HomeController
         //get products by category
         $show_product =\App\Http\library\product_detail::getProductPublish()
             ->where('tbl_product.category_id', $category_product_id)
-            ->whereNotIn('tbl_product.meta_slug', [$meta_slug])
-            ->limit(5)
+            ->where('tbl_product.product_id',$show_details_product[0]->product_id)
             ->get();
 
         $reviewModel = ReviewModel::where('product_id', $show_details_product[0]->product_id)->limit(4)->orderby('Rid', 'desc')->get();

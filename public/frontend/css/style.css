@@ -9670,8 +9670,6 @@ h1, h2, h3, h4, h5,
   padding: 0;
   min-width: 20rem;
   margin-top: 20px;
-  max-height: 400px;
-  overflow-y: scroll;
 }
 @media (max-width: 767.98px) {
   .ftco-navbar-light .btn-group .dropdown-menu {
@@ -9702,6 +9700,11 @@ h1, h2, h3, h4, h5,
   top: -0.5em;
   border-bottom-color: #fff;
 }
+.ftco-navbar-light .btn-group .dropdown-menu .cart_products {
+  max-height: 400px;
+  overflow-y: scroll;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
 .ftco-navbar-light .btn-group .dropdown-menu .dropdown-item {
   font-size: 16px;
   color: rgba(0, 0, 0, 0.7);
@@ -9710,7 +9713,7 @@ h1, h2, h3, h4, h5,
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   white-space: nowrap;
 }
-.ftco-navbar-light .btn-group .dropdown-menu .dropdown-item:last-child() {
+.ftco-navbar-light .btn-group .dropdown-menu .dropdown-item:last-child {
   border: none;
 }
 .ftco-navbar-light .btn-group .dropdown-menu .dropdown-item .img {
@@ -9771,6 +9774,7 @@ h1, h2, h3, h4, h5,
 .ftco-navbar-light .navbar-nav > .nav-item .dropdown-menu {
   border: none;
   background: #fff;
+  animation: fadeInUp 250ms;
   -webkit-box-shadow: 0px 10px 34px -20px rgba(0, 0, 0, 0.41);
   -moz-box-shadow: 0px 10px 34px -20px rgba(0, 0, 0, 0.41);
   box-shadow: 0px 10px 34px -20px rgba(0, 0, 0, 0.41);
@@ -9863,7 +9867,7 @@ h1, h2, h3, h4, h5,
 .ftco-navbar-light.scrolled .btn-cart div {
   position: absolute;
   top: -5px;
-  right: -10px;
+  right: -15px;
   height: 18px;
   line-height: 1;
   border-radius: 50%;
@@ -10405,7 +10409,7 @@ h1, h2, h3, h4, h5,
   background: transparent;
   padding: 0 15px;
 }
-.product-details button, .product-details .form-control {
+.product-details .form-control {
   height: 40px !important;
   text-align: center;
   border: 1px solid rgba(0, 0, 0, 0.1) !important;
@@ -10418,7 +10422,7 @@ h1, h2, h3, h4, h5,
   border-radius: 0;
   font-size: 14px;
 }
-.product-details button:hover, .product-details button:focus, .product-details .form-control:hover, .product-details .form-control:focus {
+.product-details .form-control:hover, .product-details .form-control:focus {
   text-decoration: none;
   outline: none;
 }
@@ -11961,6 +11965,17 @@ textarea.form-control {
 
 .single_product_thumb {
   margin-bottom: 200px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 /*# sourceMappingURL=style.css.map */

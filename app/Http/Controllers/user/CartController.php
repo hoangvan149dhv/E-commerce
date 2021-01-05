@@ -35,6 +35,7 @@ class CartController extends HomeController
 
         $dataCarts = Cart::content();
 
+        $data['itemCart'] .= '<div class="cart_products">';
         foreach ($dataCarts as $dataCart) {
             $product = DB::table('tbl_product')->where('tbl_product.product_id', $dataCart->id)->first();
 
@@ -49,7 +50,7 @@ class CartController extends HomeController
                         </a>
                     </div>';
         }
-        $data['itemCart'] .= '<a class="dropdown-item text-center btn-link d-block w-100"
+        $data['itemCart'] .= '</div> <h3 class="dropdown-item text-center btn-link d-block w-100">Tổng: '.Cart::subtotal(0).'.VNĐ</h3><a class="dropdown-item text-center btn-link d-block w-100"
                                        href="'.url('/hien-thi-gio-hang').'">
                                         Đến giỏ hàng
                                         <span class="ion-ios-arrow-round-forward"></span>
@@ -66,7 +67,7 @@ class CartController extends HomeController
         $product_info = DB::table('tbl_product')->where('tbl_product.product_id', $productId)->first();
 
         $data['id'] = $productId;
-        $data['qty'] = $request->qty;
+        $data['qty'] = $request->qty ?? 1;
         $data['name'] = $product_info->product_Name;
         $data['price'] = $product_info->product_price;
         $data['weight'] = 0;
@@ -96,7 +97,6 @@ class CartController extends HomeController
         $cart = Cart::content();
         if ($cart->isNotEmpty()) {
             Cart::remove($rowId);
-
             return back();
         } else {
 
