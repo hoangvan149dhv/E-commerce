@@ -2813,7 +2813,7 @@ input[type=button].btn-block {
   float: left;
   min-width: 10rem;
   padding: 0.5rem 0;
-  margin: 0.125rem 0 0;
+  margin: 0;
   font-size: 1rem;
   color: #212529;
   text-align: left;
@@ -9770,7 +9770,6 @@ h1, h2, h3, h4, h5,
 }
 .ftco-navbar-light .navbar-nav > .nav-item .dropdown-menu {
   border: none;
-  padding: 10px 20px 0;
   background: #fff;
   -webkit-box-shadow: 0px 10px 34px -20px rgba(0, 0, 0, 0.41);
   -moz-box-shadow: 0px 10px 34px -20px rgba(0, 0, 0, 0.41);
@@ -11962,10 +11961,6 @@ textarea.form-control {
 
 .single_product_thumb {
   margin-bottom: 200px;
-}
-
-.order-lg-last.btn-group.show .show {
-  display: inline-flex;
 }
 
 /*# sourceMappingURL=style.css.map */
