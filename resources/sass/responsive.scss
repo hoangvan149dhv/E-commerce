@@ -1,0 +1,43 @@
+@media (max-width: 576px) {
+    .product {
+        .img {
+            height: 220px;
+        }
+        .text {
+            padding: 10px;
+            h2{
+                font-size: 16px;
+                height: 18px;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                visibility: visible;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+        }
+    }
+    .product-related {
+        .product {
+            .img {
+                //
+            }
+        }
+    }
+    .blog-entry {
+        .text {
+            .heading {
+               font-size: 18px;
+            }
+            p {
+                padding-bottom: 0px;
+                display: -webkit-box;
+                height: 80px;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                visibility: visible;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+        }
+    }
+}

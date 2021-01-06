@@ -61,10 +61,10 @@ Route::get('/thanh-toan-gio-hang','user\Payment_orderController@payment_order');
 
 /////////////////////////////////////-------NEWS-------/////////////////////////////////////////////////////////////////
 
-Route::get('/tin-tuc-chia-se','user\newsadminController@news_client');
+Route::get('/tin-tuc-chia-se','user\BlogController@news_client');
 
 //DETAIL NEWS
-Route::get('/tin-tuc-chia-se/{primary_id}','user\newsadminController@news_details_client');
+Route::get('/tin-tuc-chia-se/{primary_id}','user\BlogController@news_details_client');
 
 //DETAIL INFO ORDER CUSTOMER
 route::get('/thong-tin-khach-hang','user\InfocustomerController@info_customer');

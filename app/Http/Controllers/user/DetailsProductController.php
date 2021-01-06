@@ -35,7 +35,9 @@ class DetailsProductController extends HomeController
         //Product details recommended
         $products_detail_recommended = \App\Http\library\product_detail::getProductPublish()
             ->whereNotIn('tbl_product.meta_slug', [$meta_slug])
-            ->limit('3')->orderby('product_id', 'desc')->get();
+            ->where('tbl_category_product.category_id', $show_details_product[0]->category_id)
+            ->orderby('product_id', 'desc')
+            ->get();
 
 
         foreach ($show_details_product as $value) {

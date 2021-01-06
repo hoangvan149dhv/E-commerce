@@ -10,31 +10,30 @@
     <div class="row">
         <!--Product-->
         @foreach ($all_product as $product)
-            <div class="col-md-3 d-flex">
+            <div class="col-md-4 col-lg-3 col-6 d-flex">
                 <div class="product ftco-animate">
                     <div class="img d-flex align-items-center justify-content-center" style="background-image: url(public/upload/{{ $product->product_image }});">
                         <div class="desc">
                             <p class="meta-prod d-flex">
-                                    @csrf
-                                    <input type="hidden" value="{{$product->product_id}}"
-                                        class="cart_product_id_{{$product->product_id}}">
-                                    <input type="hidden" value="{{$product->product_Name}}"
-                                        class="cart_product_name_{{$product->product_id}}">
-                                    <input type="hidden" value="{{$product->product_image}}"
-                                        class="cart_product_image_{{$product->product_id}}">
-                                    <input type="hidden" value="{{$product->product_price}}"
-                                        class="cart_product_price_{{$product->product_id}}">
-                                    <input type="hidden" class="url" url="{{url('/add-cart-ajax')}}"/>
-                                    <input type="hidden" class="url_addtocart_success" url="{{url('/hien-thi-gio-hang')}}"/>
-                                    <input type="hidden" value="1" class="cart_product_qty_{{$product->product_id}}">
-                                    <a href="#" class="d-flex align-items-center justify-content-center add-to-cart"
-                                        data-id_product="{{$product->product_id}}" name="add-to-cart">
-                                        <span class="fa fa-shopping-cart"></span>
-                                    </a>
+                                @csrf
+                                <input type="hidden" value="{{$product->product_id}}"
+                                    class="cart_product_id_{{$product->product_id}}">
+                                <input type="hidden" value="{{$product->product_Name}}"
+                                    class="cart_product_name_{{$product->product_id}}">
+                                <input type="hidden" value="{{$product->product_image}}"
+                                    class="cart_product_image_{{$product->product_id}}">
+                                <input type="hidden" value="{{$product->product_price}}"
+                                    class="cart_product_price_{{$product->product_id}}">
+                                <input type="hidden" class="url" url="{{url('/add-cart-ajax')}}"/>
+                                <input type="hidden" class="url_addtocart_success" url="{{url('/hien-thi-gio-hang')}}"/>
+                                <input type="hidden" value="1" class="cart_product_qty_{{$product->product_id}}">
+                                <a href="#" class="d-flex align-items-center justify-content-center add-to-cart"
+                                    data-id_product="{{$product->product_id}}" name="add-to-cart">
+                                    <span class="fa fa-shopping-cart"></span>
+                                </a>
                                 <a href="{{ URL::to('/chi-tiet/'.$product->meta_slug) }}" class="d-flex align-items-center justify-content-center"><span class="fa fa-search" aria-hidden="true"></span></a>
                                 <div class="stick-promotion_countdown"
                                 id="stick-promotions_{{$product->product_id}}"></div>
-                            </p>
                         </div>
                     </div>
                     <div class="text text-center">
@@ -85,10 +84,8 @@
                         <a href="{{ URL::to('/tin-tuc-chia-se/'.$blog->news_id) }}" class="block-20 img" style="background-image: url('public/upload/{{  $blog->news_image }}');">
                     </a>
                     <div class="text p-4 bg-light">
-                        <div class="meta">
-                            <p><span class="fa fa-calendar"></span>
+                        <div class="meta"><span class="fa fa-calendar"></span>
                                 {{Carbon::createFromFormat('Y-m-d H:i:s',  $blog->updated_at)->format('d/m/yy') }}
-                            </p>
                         </div>
                     <h3 class="heading mb-3"><a href="{{ URL::to('/tin-tuc-chia-se/'.$blog->news_id) }}">{{ $blog->news_title }}</a></h3>
                     <p>{{ $blog->news_desc }}</p>

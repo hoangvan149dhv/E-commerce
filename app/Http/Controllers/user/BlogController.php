@@ -7,15 +7,14 @@ use App\Http\Requests;
 use App\Http\Model\newsadminModel;
 use DB;
 use App\Http\Controllers\user\HomeController;
-class newsadminController extends HomeController
+class BlogController extends HomeController
 {
-    public function news_client(){
+    public function news_client() {
 
-        $newsadminModel = newsadminModel::select()->orderby('news_id','desc')->paginate(5);
+        $newsadminModel = newsadminModel::select()->orderby('news_id','desc')->paginate(2);
 
-        return view('user.news.news')
+        return view('frontend.blogs.blogs')
               ->with('newsadminModel',$newsadminModel);
-
     }
 
     public function news_details_client($primaryKey,request $request){
@@ -25,7 +24,7 @@ class newsadminController extends HomeController
     $meta_title =  $newsadminModel->news_title;
     $url_canonical = $request->url();
 
-    return view('user.news.newsdetails')
+    return view('user.blogs.blogdetail')
             ->with('meta_desc',$meta_desc)
             ->with('meta_title',$meta_title)
             ->with('url_canonical',$url_canonical)

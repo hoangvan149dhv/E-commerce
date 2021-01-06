@@ -5523,9 +5523,9 @@ a.close.disabled {
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   display: inline-block;
-  width: 20px;
-  height: 20px;
-  background: transparent no-repeat center center;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.25) no-repeat center center;
   background-size: 100% 100%;
 }
 

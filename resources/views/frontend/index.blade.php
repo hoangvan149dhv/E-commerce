@@ -29,8 +29,9 @@
     @include('frontend.layouts.menu.menu')
     @yield('breadcumbs')
 <!--/header-->
-<!--slider-->
+
 @isset($slider[0])
+<!--slider-->
 <div class="hero-wrap" style="background-image: url('public/upload/{{$slider[0]->img}}');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
@@ -150,8 +151,8 @@
         </div>
     </div>
 </section>
-@endisset
 <!--/slider-->
+@endisset
 <section class="ftco-section">
     <div class="container">
         @yield('content')

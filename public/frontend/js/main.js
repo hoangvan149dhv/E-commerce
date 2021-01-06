@@ -38,20 +38,20 @@
 			loop: true,
 			autoplay: true,
 			autoplaySpeed:2000,
-			items:1,
+			items: 3,
 			margin: 30,
 			stagePadding: 0,
-			nav: false,
+			nav: true,
 			navText: ['<span class="ion-ios-arrow-back">', '<span class="ion-ios-arrow-forward">'],
 			responsive:{
 				0:{
-					items: 1
-				},
-				600:{
 					items: 2
 				},
-				1000:{
+				600:{
 					items: 3
+				},
+				1000:{
+					items: 4,
 				}
 			}
 		});
@@ -224,6 +224,7 @@
 
 })(jQuery);
 $(document).ready(function() {
+    $.validate({});
 	$('#background').fadeIn(1000);
 	$('#background').click(function name(params) {
 		$('#background').fadeOut(700, function name(params) {

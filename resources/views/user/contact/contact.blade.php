@@ -37,12 +37,14 @@
                                     <div class="form-group col-md-6">
                                         <input data-validation="length" data-validation-length="5-70"
                                                data-validation-error-msg='vui lòng điền 5- 70 kí tự' type="text"
+                                               class="form-control"
                                                name="name" class="form-control" required="required"
                                                placeholder="Họ tên">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <input data-validation="length" data-validation-length="5-70"
                                                data-validation-error-msg='vui lòng điền 5- 70 kí tự' type="email"
+                                               class="form-control"
                                                name="email" class="form-control" required="required"
                                                placeholder="Email">
                                     </div>

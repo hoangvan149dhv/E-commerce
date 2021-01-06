@@ -1,122 +1,117 @@
-<!DOCTYPE html>
-<html lang="en">
-@include('user.sections.head')
-<!--/head-->
-<body>
-<header id="header" class="header-main">
-    @include('user.layouts.menu.menu')
-</header>
-<!--/header-->
-<section>
+<?php use Carbon\Carbon;?>
+@extends('frontend.index')
+@section('content')
+<section class="ftco-section bg-light">
     <div class="container">
-        <div class="row">
-            <div id="contact-page" class="container">
-                <div class="bg">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <h2 class="title text-center">liên hệ <strong>chúng tôi</strong></h2>
-                            <?php
-                            foreach ($contactinfoModel as $item => $contact) {
-                                $map = $contact->google_map;
-                                if ($map == "") {
-                                } else {
-                                    echo '<div id="gmap" class="contact-map">'.$map.'</div>';
-                                }
-                            }
-                            ?>
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="wrapper px-md-4">
+                    @foreach ($contactinfoModel as $contact)
+                        <div class="row mb-5">
+                            <div class="col-md-4">
+                                <div class="dbox w-100 text-center">
+                                    <div class="icon d-flex align-items-center justify-content-center">
+                                        <span class="fa fa-map-marker"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p><span>Địa chỉ:</span> {{$contact->info_contact_add}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="dbox w-100 text-center">
+                                    <div class="icon d-flex align-items-center justify-content-center">
+                                        <span class="fa fa-phone"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p><span>Số điện thoại:</span> <a href="tel:{{ $contact->info_contact_phone }}">{{ $contact->info_contact_phone }}</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="dbox w-100 text-center">
+                                    <div class="icon d-flex align-items-center justify-content-center">
+                                       <span class="fa fa-envelope"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p><span>Email:</span> <a href="mailto:info@yoursite.com">
+                                                {{ $contact->info_contact_mail }}
+                                            </a></p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row" style="margin-top:25px">
-                        <div class="col-sm-7">
-                            <div class="contact-form">
-                                <h2 class="title text-center">liên hệ</h2>
-                                <div class="status alert alert-success" style="display: none"></div>
-                                <form id="main-contact-form" class="contact-form row" name="contact-form"
-                                      action="{{ URL::to('/lien-he') }}" method="post">
+                    @endforeach
+                    <div class="row no-gutters">
+                        <div class="col-md-7">
+                            <div class="contact-wrap w-100 p-md-5 p-4">
+                                <h3 class="mb-4">Liên hệ với chúng tôi</h3>
+                                <form method="POST" id="contactForm" name="contactForm" class="contact-form contactForm" action="{{ URL::to('/lien-he') }}" method="post">
                                     {{ csrf_field() }}
-                                    <div class="form-group col-md-6">
-                                        <input data-validation="length" data-validation-length="5-70"
-                                               data-validation-error-msg='vui lòng điền 5- 70 kí tự' type="text"
-                                               name="name" class="form-control" required="required"
-                                               placeholder="Họ tên">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <input data-validation="length" data-validation-length="5-70"
-                                               data-validation-error-msg='vui lòng điền 5- 70 kí tự' type="email"
-                                               name="email" class="form-control" required="required"
-                                               placeholder="Email">
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <textarea data-validation="length" data-validation-length="5-1000"
-                                                  data-validation-error-msg='vui lòng điền 5- 1000 kí tự' name="content"
-                                                  id="message" required="required" class="form-control" rows="8"
-                                                  placeholder="Nội dung"></textarea>
-                                    </div>
-                                    <div class="g-recaptcha" data-sitekey="{{env('CAPTCHA_KEY')}}"></div>
-                                    @if($errors->has('g-recaptcha-response'))
-                                        <span class="invalid-feedback" style="display:block">
-                                                <strong>{{$errors->first('g-recaptcha-response')}}</strong>
-                                            </span>
-                                    @endif
-                                    <?php
-                                    $message = Session::get('success');
-                                    if ($message) {
-                                        echo "<h2 class='col-md-12' style='color:green'>".$message."</h2>";
-                                        Session::put('success', null);
-                                    }
-                                    ?>
-                                    <div class="form-group col-md-12">
-                                        <input type="submit" name="submit" class="btn btn-primary pull-right"
-                                               value="Xác nhận">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="label" for="name">Họ tên</label>
+                                                <input data-validation="length" data-validation-length="5-70"
+                                                       data-validation-error-msg='vui lòng điền 5- 70 kí tự' type="text"
+                                                       class="form-control"
+                                                       name="name" class="form-control" required="required"
+                                                       placeholder="Nguyễn Văn A">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="label" for="email">Email</label>
+                                                <input data-validation="length" data-validation-length="5-70"
+                                                       data-validation-error-msg='vui lòng điền 5- 70 kí tự' type="email"
+                                                       class="form-control"
+                                                       name="email" class="form-control" required="required"
+                                                       placeholder="abc@xyz.com">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="label" for="#">Nội dung</label>
+                                                <textarea data-validation="length" data-validation-length="5-1000"
+                                                          data-validation-error-msg='vui lòng điền 5- 1000 kí tự' name="content"
+                                                          id="message" required="required" class="form-control" rows="8"
+                                                          placeholder="Góp Ý"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="submit" value="Send Message" class="btn btn-primary">
+                                                <div class="submitting"></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
                         </div>
-                        <div class="col-sm-5">
-                            <div class="contact-info">
-                                <h2 class="title text-center">Thông tin liên hệ</h2>
-                                @foreach ($contactinfoModel as $contact)
-                                    <address>
-                                        <p><strong> Địa chỉ:</strong> <br>{{ $contact->info_contact_add }}</p>
-                                        <p><strong>SĐT: </strong><a
-                                                href="tel:{{ $contact->info_contact_phone }}">{{ $contact->info_contact_phone }}</a>
-                                        </p>
-                                        <p><strong> Email:</strong> {{ $contact->info_contact_mail }} </p>
-                                    </address>
-                                @endforeach
-                                <div class="social-networks">
-                                    <h2 class="title text-center"></h2>
-                                    <ul>
-                                        <li>
-                                            <a href="#"><i class="fa fa-facebook"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fa fa-twitter"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fa fa-youtube"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="col-md-5 order-md-first d-flex align-items-stretch">{!! $contact->google_map ?? "" !!}</div>
                     </div>
                 </div>
             </div>
-            <!--/#contact-page-->
         </div>
     </div>
-    <a href="tel:{{ $contact->info_contact_phone }}">
-        <div class="hotline">
-            <span class="before-hotline">Hotline:</span>
-            <span class="hotline-number">{{ $contact->info_contact_phone }}</span>
-            <span class="fa fa-phone phone"></span>
-        </div>
-    </a>
 </section>
-@include('user.sections.footer')
-@include('user.libraries.script')
-@yield('script')
+@endsection
+@section('breadcumbs')
+    <section class="hero-wrap hero-wrap-2"
+             style="background-image: url({{asset('public/upload/85142834_773653949709503_6666853325834551296_o49.jpg' )}});"
+             data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-end justify-content-center">
+                <div class="col-md-9 ftco-animate mb-5 text-center">
+                    <p class="breadcrumbs mb-0"><span class="mr-2"><a href="{{ URL::to('/') }}">Trang chủ <i class="fa fa-chevron-right"></i></a></span> <span>Liên hệ <i class="fa fa-chevron-right"></i></span></p>
+                    <h2 class="mb-0 bread">Liên hệ</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection
+@section('script')
+    <script>
+        //
+    </script>
+@endsection

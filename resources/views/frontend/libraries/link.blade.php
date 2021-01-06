@@ -11,3 +11,4 @@
     <link rel="stylesheet" href="{{asset('public/frontend/css/bootstrap/bootstrap-select.min.css')}}">
     <link rel="stylesheet" href="{{asset('public/frontend/css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('public/frontend/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('public/frontend/css/responsive.css')}}">
