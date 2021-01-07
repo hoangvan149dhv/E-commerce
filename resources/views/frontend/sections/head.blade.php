@@ -6,7 +6,6 @@
     @if(config('config_admin.SEO'))
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="robots" content="{{$meta_Robots ?? ''}}"/>
-    <meta property="og:image" content="{{ asset('public/upload/qc2.png') }}"/>
     <meta property="og:site_name" content="{{$url_canonical ?? ''}}"/>
     <meta name="description" content="{{ $meta_desc ?? '' }}">
     <meta name="keywords" content="{{ $meta_keyword ?? '' }}"/>
@@ -16,6 +15,7 @@
     <meta property="og:url" content="{{ $url_canonical ?? '' }}"/>
     <link rel="icon" type="image" href="">
     <link rel="canonical" href="{{ $url_canonical ?? '' }}"/>
+    @yield('og:image')
     @endif
     @include('frontend.libraries.link')
 </head>

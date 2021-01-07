@@ -39,7 +39,7 @@ class DetailsProductController extends HomeController
             ->orderby('product_id', 'desc')
             ->get();
 
-
+        ///SEO
         foreach ($show_details_product as $value) {
             $category_product_id = $value->category_id;
             $brand_product_id = $value->brandcode_id;
@@ -47,8 +47,6 @@ class DetailsProductController extends HomeController
             $meta_keyword = $value->meta_keyword;
             $meta_title = $value->product_Name;
             $url_canonical = $request->url();
-
-            ///SEO
         }
         if (isset($brand_product_id)) {
             $related_product = \App\Http\library\product_detail::getProductPublish()

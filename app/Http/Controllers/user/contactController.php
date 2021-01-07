@@ -33,6 +33,6 @@ class contactController extends HomeController {
             Session::put('success','Cảm ơn bạn đã góp ý');
         }
 
-        return redirect('/lien-he');
+        return back();
     }
 }

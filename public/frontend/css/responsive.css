@@ -28,6 +28,10 @@
     text-overflow: ellipsis;
     overflow: hidden;
   }
+
+  .blog img {
+    max-width: 100%;
+  }
 }
 
 /*# sourceMappingURL=responsive.css.map */

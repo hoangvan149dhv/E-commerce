@@ -11,7 +11,7 @@ class BlogController extends HomeController
 {
     public function news_client() {
 
-        $newsadminModel = newsadminModel::select()->orderby('news_id','desc')->paginate(2);
+        $newsadminModel = newsadminModel::select()->orderby('news_id','desc')->paginate(4);
 
         return view('frontend.blogs.blogs')
               ->with('newsadminModel',$newsadminModel);
@@ -24,7 +24,7 @@ class BlogController extends HomeController
     $meta_title =  $newsadminModel->news_title;
     $url_canonical = $request->url();
 
-    return view('user.blogs.blogdetail')
+    return view('frontend.blogs.blogdetail')
             ->with('meta_desc',$meta_desc)
             ->with('meta_title',$meta_title)
             ->with('url_canonical',$url_canonical)

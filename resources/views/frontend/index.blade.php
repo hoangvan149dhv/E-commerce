@@ -154,9 +154,7 @@
 <!--/slider-->
 @endisset
 <section class="ftco-section">
-    <div class="container">
         @yield('content')
-    </div>
     @yield('blog')
 </section>
 @yield('popup')

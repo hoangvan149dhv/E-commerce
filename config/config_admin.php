@@ -3,5 +3,5 @@ return [
     'mail' => [
         'publish' => ''
     ],
-    'SEO' => '0'
+    'SEO' => '1'
 ];
