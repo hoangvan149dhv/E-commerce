@@ -1,8 +1,39 @@
+<?php use Carbon\Carbon; ?>
 @extends('frontend.index')
 @section('og:image')
     @isset($details_product)
         <meta property="og:image" content="{{URL::to('/public/upload/'.$details_product[0]->product_image)}}"/>
     @endisset
+@endsection
+@section('schema_structure_product_data')
+        @if($details_product[0]->product_price_promotion > 1 && $details_product[0]->promotion_end_date >= time())
+            @php
+                $price = $details_product[0]->product_price_promotion;
+                $priceValidUntil = date('Y-m-d', $details_product[0]->promotion_end_date);
+            @endphp
+        @else
+            @php
+                $price = $details_product[0]->product_price;
+                $priceValidUntil = '2030-12-31';
+            @endphp
+        @endif
+        "@type": "Product",
+        "name": "{{$details_product[0]->product_Name}}",
+        "image": "{{asset('public/upload/'.$details_product[0]->product_image )}}",
+        "description": "{{$details_product[0]->meta_desc}}",
+        "brand": {
+        "@type": "Brand",
+        "name": "{{$details_product[0]->category_name}}"
+        },
+        "offers": {
+        "@type": "Offer",
+        "priceCurrency": "VND",
+        "price": "{{$price}}",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "http://schema.org/NewCondition",
+        "priceValidUntil":"{{$priceValidUntil}}",
+        "url": "{{url()->current()}}"
+        }
 @endsection
 @Section('content')
     <div class="container">
