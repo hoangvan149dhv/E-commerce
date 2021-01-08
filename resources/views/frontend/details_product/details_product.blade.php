@@ -2,7 +2,10 @@
 @extends('frontend.index')
 @section('og:image')
     @isset($details_product)
+        <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image" content="{{URL::to('/public/upload/'.$details_product[0]->product_image)}}"/>
+        <meta property="og:image:secure_url" content="{{URL::to('/public/upload/'.$details_product[0]->product_image)}}"/>
+        <meta property="og:image:alt" content="{{ $details_product[0]->product_Name ?? '' }}"/>
     @endisset
 @endsection
 @section('schema_structure_product_data')

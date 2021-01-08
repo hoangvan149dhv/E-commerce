@@ -150,8 +150,6 @@ Route::get('/destroy', 'admin\CategoryProduct@destroy_Category_Product');
 Route::get('/status/{category_product_id}/{status}', 'admin\CategoryProduct@update_status_category');
 
 
-
-
 //BRAND PRODUCT
 
 //add  BRAND
@@ -324,10 +322,19 @@ Route::post('/send','sendMailController@sendMail');
 
 Route::get('/send-test-mail','sendMailController@sendtestMail');
 
+/////////////////////////////////////////////////////////-----CLEAR CACHE-----///////////////////////////////////////////////////////////
+Route::get('/clear-cache', function() {
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('config:cache');
+    Artisan::call('view:clear');
+    return back();
+});
+
 //TEST MAIL
 Route::get('/testmail','sendMailController@test');
 Route::get('/test','sendMailController@abc');
 Route::get('/test',function (){
-
+    Storage::put('abc.txt', 'Your name');
     return view('test');
 });

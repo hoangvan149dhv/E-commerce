@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "29b5075a4ec2cec028caa38c60d7a63f",
+    "content-hash": "f5edd69d487e80ac5e1625d8faccf446",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -5198,6 +5198,59 @@
                 "maxmind"
             ],
             "time": "2020-03-10T18:35:08+00:00"
+        },
+        {
+            "name": "verschuur/laravel-robotstxt",
+            "version": "3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/verschuur/laravel-robotstxt.git",
+                "reference": "4f845a2388539dd518a69b7af99762ae95f36bd7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verschuur/laravel-robotstxt/zipball/4f845a2388539dd518a69b7af99762ae95f36bd7",
+                "reference": "4f845a2388539dd518a69b7af99762ae95f36bd7",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^5.6|^6.0|^7.0|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0",
+                "phpstan/phpstan": "^0.12",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Verschuur\\Laravel\\RobotsTxt\\Providers\\RobotsTxtProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Verschuur\\Laravel\\RobotsTxt\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Govert Verschuur",
+                    "email": "govert.verschuur@gmail.com"
+                }
+            ],
+            "description": "Set the robots.txt content dynamically based on the Laravel app environment.",
+            "keywords": [
+                "laravel",
+                "php",
+                "robots.txt"
+            ],
+            "time": "2020-09-30T19:38:10+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

@@ -17,7 +17,6 @@
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="{{ $url_canonical ?? '' }}"/>
     <meta name="theme-color" content="#ffffff">
-    <meta property="og:image:alt" content="{{ $meta_title ?? '' }}"/>
     <link rel="icon" type="image" href="">
     <link rel="canonical" href="{{ $url_canonical ?? '' }}"/>
     <script type="application/ld+json">

@@ -1,2 +1,8 @@
 User-agent: *
-Disallow:
+Disallow: /app/*
+Disallow: /database/*
+Disallow: /config/*
+Disallow: /resources/*
+Disallow: /routes/*
+Disallow: .env
+
