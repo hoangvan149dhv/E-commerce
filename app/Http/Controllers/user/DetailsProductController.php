@@ -45,7 +45,7 @@ class DetailsProductController extends HomeController
             $brand_product_id = $value->brandcode_id;
             $meta_desc = $value->meta_desc;
             $meta_keyword = $value->meta_keyword;
-            $meta_title = $value->product_Name;
+            $meta_title = $value->product_Name . ' - ' . config('config_admin.site_name');
             $url_canonical = $request->url();
         }
         if (isset($brand_product_id)) {

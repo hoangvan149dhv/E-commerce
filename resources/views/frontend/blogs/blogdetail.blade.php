@@ -1,7 +1,5 @@
 <?php
-
 use Carbon\Carbon;
-
 ?>
 @section('og:image')
     @isset($newsadminModel)
@@ -9,6 +7,28 @@ use Carbon\Carbon;
     @endisset
 @endsection
 @extends('frontend.index')
+@section('schema_structure_article_data')
+    ,{
+        "@type": "Article",
+        "headline": "{{ $newsadminModel->news_title  ?? config('config_admin.site_name') }}",
+        "author": {
+            "@type": "Person",
+            "name": "{{config('config_admin.site_name')}}"
+        },
+        "description": "{{ $newsadminModel->news_desc ?? '' }}",
+        "@id": "{{URL::to('/')}}/#schema",
+        "isPartOf": {
+            "@id": "{{URL::to('/')}}/#webpage"
+        },
+        "publisher": {
+            "@id": "{{URL::to('/')}}/#organization"
+        },
+        "inLanguage": "vi",
+        "mainEntityOfPage": {
+            "@id": "{{URL::to('/')}}/#webpage"
+        }
+    }
+@endsection
 @Section('content')
     <div class="container">
         <div class="row">

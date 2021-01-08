@@ -6,34 +6,57 @@
     @endisset
 @endsection
 @section('schema_structure_product_data')
-        @if($details_product[0]->product_price_promotion > 1 && $details_product[0]->promotion_end_date >= time())
-            @php
-                $price = $details_product[0]->product_price_promotion;
-                $priceValidUntil = date('Y-m-d', $details_product[0]->promotion_end_date);
-            @endphp
-        @else
-            @php
-                $price = $details_product[0]->product_price;
-                $priceValidUntil = '2030-12-31';
-            @endphp
-        @endif
-        "@type": "Product",
-        "name": "{{$details_product[0]->product_Name}}",
-        "image": "{{asset('public/upload/'.$details_product[0]->product_image )}}",
-        "description": "{{$details_product[0]->meta_desc}}",
-        "brand": {
-        "@type": "Brand",
-        "name": "{{$details_product[0]->category_name}}"
-        },
-        "offers": {
-        "@type": "Offer",
-        "priceCurrency": "VND",
-        "price": "{{$price}}",
-        "availability": "https://schema.org/InStock",
-        "itemCondition": "http://schema.org/NewCondition",
-        "priceValidUntil":"{{$priceValidUntil}}",
-        "url": "{{url()->current()}}"
-        }
+    @if($details_product[0]->product_price_promotion > 1 && $details_product[0]->promotion_end_date >= time())
+        @php
+            $price = $details_product[0]->product_price_promotion;
+            $priceValidUntil = date('Y-m-d', $details_product[0]->promotion_end_date);
+        @endphp
+    @else
+        @php
+            $price = $details_product[0]->product_price;
+            $priceValidUntil = '2030-12-31';
+        @endphp
+    @endif
+                ,{
+                    "@type": "WebPage",
+                        "@id": "{{url()->current()}}/#webpage",
+                        "url": "{{url()->current()}}",
+                        "name": "{{$details_product[0]->product_Name}} - {{config('config_admin.site_name')}}",
+                        "isPartOf": {
+                        "@id": "{{URL::to('/')}}/#website"
+                        },
+                        "primaryImageOfPage": {
+                        "@id": "{{asset('public/upload/'.$details_product[0]->product_image )}}/#primaryImage"
+                        },
+                        "inLanguage": "vi"
+                },
+                {
+                    "@type": "Product",
+                        "name": "{{$details_product[0]->product_Name}}",
+                        "image": "{{asset('public/upload/'.$details_product[0]->product_image )}}",
+                        "description": "{{$details_product[0]->meta_desc}}",
+                        "brand": {
+                        "@type": "Brand",
+                        "name": "{{$details_product[0]->brandcode_name}}"
+                        },
+                        "category": "{{$details_product[0]->category_name}}",
+                        "offers": {
+                            "@type": "Offer",
+                            "priceCurrency": "VND",
+                            "price": "{{$price}}",
+                            "availability": "https://schema.org/InStock",
+                            "itemCondition": "http://schema.org/NewCondition",
+                            "priceValidUntil":"{{$priceValidUntil}}",
+                            "url": "{{url()->current()}}",
+                            "seller": {
+                                "@type": "Organization",
+                                "@id": "{{ URl::to('/') }}",
+                                "name": "{{config('config_admin.site_name') ?? 'Vải áo Dài'}}",
+                                "url": "{{ URl::to('/') }}",
+                                "logo": "{{ asset('public/upload/logo2.png') }}"
+                            }
+                        }
+                }
 @endsection
 @Section('content')
     <div class="container">
@@ -138,8 +161,10 @@
         </div>
         <div class="row mt-5 description">
             <div class="col-md-12 nav-link-wrap">
-                <div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link ftco-animate active mr-lg-1" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1"
+                <div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist"
+                     aria-orientation="vertical">
+                    <a class="nav-link ftco-animate active mr-lg-1" id="v-pills-1-tab" data-toggle="pill"
+                       href="#v-pills-1"
                        role="tab" aria-controls="v-pills-1" aria-selected="true">Chi tiết</a>
                     <a class="nav-link ftco-animate" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab"
                        aria-controls="v-pills-3" aria-selected="false">Đánh giá</a>
@@ -181,7 +206,8 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="reviewsProductLabel">Đánh giá</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
@@ -192,7 +218,8 @@
                                                     <input type="hidden" name="pid"
                                                            value="{{$detail_product->product_id}}"/>
                                                     <div class="form-group">
-                                                        <label for="recipient-name" class="col-form-label">Họ tên:</label>
+                                                        <label for="recipient-name" class="col-form-label">Họ
+                                                            tên:</label>
                                                         <input data-validation="length" data-validation-length="5-70"
                                                                class="form-control"
                                                                data-validation-error-msg='vui lòng điền tối đa 70 kí tự'
@@ -200,7 +227,8 @@
                                                                placeholder="Họ tên"/>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="recipient-name" class="col-form-label">Email:</label>
+                                                        <label for="recipient-name"
+                                                               class="col-form-label">Email:</label>
                                                         <input data-validation="length" data-validation-length="5-100"
                                                                class="form-control"
                                                                data-validation-error-msg='vui lòng điền tối đa 100 kí tự'
@@ -208,18 +236,22 @@
                                                                placeholder="Email"/>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="message-text" class="col-form-label">Nội dung:</label>
+                                                        <label for="message-text" class="col-form-label">Nội
+                                                            dung:</label>
                                                         <textarea class="form-control" name="comment"
-                                                                  data-validation="length" data-validation-length="1-1000"
+                                                                  data-validation="length"
+                                                                  data-validation-length="1-1000"
                                                                   data-validation-error-msg='Vui lòng điền tối đa 1000 ký tự'
                                                                   placeholder="Nội dung"></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                                    <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">
                                                         Đóng
                                                     </button>
-                                                    <button type="submit" name="submit" class="btn btn-primary">Gửi</button>
+                                                    <button type="submit" name="submit" class="btn btn-primary">Gửi
+                                                    </button>
                                                 </div>
                                             </form>
                                         </div>

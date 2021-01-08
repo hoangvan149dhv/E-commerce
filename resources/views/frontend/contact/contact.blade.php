@@ -1,5 +1,27 @@
 <?php use Carbon\Carbon;?>
 @extends('frontend.index')
+@section('schema_structure_article_data')
+    ,{
+        "@type": "Article",
+        "headline": "{{ 'Liên Hệ - ' .config('config_admin.site_name') ?? config('config_admin.site_name') }}",
+        "author": {
+            "@type": "Person",
+            "name": "{{config('config_admin.site_name')}}"
+        },
+        "description": "{{ $meta_desc ?? '' }}",
+        "@id": "{{URL::to('/')}}/#schema",
+        "isPartOf": {
+            "@id": "{{URL::to('/')}}/#webpage"
+        },
+        "publisher": {
+            "@id": "{{URL::to('/')}}/#organization"
+        },
+        "inLanguage": "vi",
+        "mainEntityOfPage": {
+            "@id": "{{URL::to('/')}}/#webpage"
+        }
+    }
+@endsection
 @section('content')
 <section class="ftco-section bg-light">
     <div class="container">
