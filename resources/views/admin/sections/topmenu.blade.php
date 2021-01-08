@@ -85,7 +85,7 @@
             </a>
             <ul class="dropdown-menu extended logout">
                 <li><a href="#"><i class=" fa fa-suitcase"></i>Thông Tin</a></li>
-                <li><a href="#"><i class="fa fa-cog"></i> Cài Đặt</a></li>
+                <li><a href="{{URL::to('/admin-config')}}"><i class="fa fa-cog"></i> Cấu Hình Website</a></li>
             <li><a href="{{URL::to('/logout')}}"><i class="fa fa-key"></i> Đăng Xuất</a></li>
             </ul>
         </li>

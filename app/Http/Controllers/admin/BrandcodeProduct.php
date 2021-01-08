@@ -7,7 +7,6 @@ use DB;
 use Session;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Facades\Redirect;
-use App\Http\Controllers\admin\loginController as loginController;
 class BrandcodeProduct extends AdminController
 {
     //Show brand

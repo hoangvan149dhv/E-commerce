@@ -95,8 +95,11 @@ Route::post('/admin-quanly', 'admin\loginController@check_login_user_pass');
 
 Route::get('/admin-quanly', 'admin\AdminController@index');
 
+/////////////////////////////////////////-------Config------/////////////////////////////////////////////////////////////
 
+Route::get('/admin-config', 'admin\configAdmincontroller@configlayout');
 
+Route::post('/save-config', 'admin\configAdmincontroller@updateConfig');
 //UPLOAD IMAGE
 Route::post('ckeditor/image_upload', 'admin\AdminController@upload')->name('uploads');
 
