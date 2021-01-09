@@ -31,9 +31,9 @@ use Carbon\Carbon;
 @endsection
 @Section('content')
     <div class="container">
-        <div class="row">
+        <article class="row">
             <div class="col-lg-8 ftco-animate blog">
-                <h2>{{ $newsadminModel->news_title }}</h2>
+                <h1>{{ $newsadminModel->news_title }}</h1>
                 <div class="text-right">
                     <i class="fa fa-calendar"></i>{{Carbon::createFromFormat('Y-m-d H:i:s',  $newsadminModel->updated_at)->format('d/m/yy') }}
                 </div>
@@ -70,7 +70,7 @@ use Carbon\Carbon;
                     @endforeach
                 </div>
             </div>
-        </div>
+        </article>
     </div>
 @endsection
 @section('breadcumbs')

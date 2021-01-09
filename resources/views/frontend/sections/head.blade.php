@@ -6,9 +6,11 @@
 <meta name="author" content="{{URL::to('/')}}">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="robots" content="{{$meta_Robots ?? ''}}"/>
+	<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+	<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="description" content="{{ $meta_desc ?? '' }}">
     <meta name="keywords" content="{{ $meta_keyword ?? '' }}"/>
-    <meta name="og:image:type" property="og:image:type" content="image/jpeg">
+    <meta name="og:image:type" property="og:image:type" content="image/jpg">
     <meta name="og:image:height" property="og:image:height" content="900">
     <meta property="og:locale" content="vi_VN">
     <meta property="og:site_name" content="{{config('config_admin.site_name') .  '  -  ' .$meta_title ?? config('config_admin.site_name')}}"/>
