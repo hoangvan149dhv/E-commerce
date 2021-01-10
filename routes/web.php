@@ -11,6 +11,8 @@
 |
 */
 use App\Http\Controllers\pdfController;
+use Illuminate\Support\Facades\Artisan;
+
 //////////////////////////--------------USER----------//////////////////////////////////////////////////////////////////
 Route::get('/','user\HomeController@index');
 
