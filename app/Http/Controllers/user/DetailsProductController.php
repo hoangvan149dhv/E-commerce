@@ -101,7 +101,7 @@ class DetailsProductController extends HomeController
 
         if (empty($request['name'] && $request['email'] && $request['comment']))
         {
-            Session::put('alert', "<div style='color:red'> bạn không được để trống ở bất kì mục nào</div>"); //admin_Id trong dbs`
+            Session::put('alert', "<div style='color:red'> bạn không được để trống ở bất kì mục nào</div>");
 
             return back();
         }

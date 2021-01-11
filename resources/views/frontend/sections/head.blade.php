@@ -19,7 +19,7 @@
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="{{ $url_canonical ?? '' }}"/>
     <meta name="theme-color" content="#ffffff">
-    <link rel="icon" type="image" href="">
+    <link rel="icon" type="image" href="{{ asset('public/upload/logo2.png') }}">
     <link rel="canonical" href="{{ $url_canonical ?? '' }}"/>
     <script type="application/ld+json">
         {
