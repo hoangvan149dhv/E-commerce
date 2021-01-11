@@ -1,4 +1,5 @@
 {
     "/frontend/js/main.js": "/frontend/js/main.js",
-    "/frontend/css/style.css": "/frontend/css/style.css"
+    "/frontend/css/style.css": "/frontend/css/style.css",
+    "/frontend/css/sweetalert.css": "/frontend/css/sweetalert.css"
 }
