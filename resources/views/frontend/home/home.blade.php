@@ -52,7 +52,7 @@
                                     <input type="hidden" value="1" class="cart_product_qty_{{$product->product_id}}">
                                     <a href="#" class="d-flex align-items-center justify-content-center add-to-cart"
                                         data-id_product="{{$product->product_id}}" name="add-to-cart">
-                                        <span class="fa fa-shopping-cart"></span>
+                                        <span class="flaticon-shopping-bag" aria-hidden="true"></span>
                                     </a>
                                     <a href="{{ URL::to('/chi-tiet/'.$product->meta_slug) }}" class="d-flex align-items-center justify-content-center"><span class="fa fa-search" aria-hidden="true"></span></a>
                                     <div class="stick-promotion_countdown"

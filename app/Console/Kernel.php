@@ -14,6 +14,9 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         //
+
+        // add the MySqlDump command here
+        \App\Console\Commands\DumpDB::class,
     ];
 
     /**
@@ -24,8 +27,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command('db:dump')
+            ->everyMinute();
+
     }
 
     /**

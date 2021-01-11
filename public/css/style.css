@@ -10892,8 +10892,8 @@ h5,
 
 .ftco-navbar-light.scrolled .btn-cart div {
   position: absolute;
-  top: -5px;
-  right: -15px;
+  top: -0px;
+  right: -10px;
   height: 18px;
   line-height: 1;
   border-radius: 50%;

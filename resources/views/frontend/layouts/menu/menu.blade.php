@@ -9,7 +9,7 @@
             </a>
             <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
                aria-haspopup="true" aria-expanded="false">
-                <span class="fa fa-shopping-cart" aria-hidden="true"></span>
+                <span class="flaticon-shopping-bag" aria-hidden="true"></span>
                 @php
                     $dataCart = Cart::content();
                     $qty = 0;

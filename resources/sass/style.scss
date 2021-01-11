@@ -149,9 +149,6 @@ h1, h2, h3, h4, h5,
 	.btn-cart,.history-order{
 		display: inline-block;
 		position: relative;
-		span{
-			font-size: 20px;
-		}
 		div{
 			position: absolute;
 			top:-5px;
@@ -381,8 +378,7 @@ h1, h2, h3, h4, h5,
 		.btn-cart{
 			div{
 				position: absolute;
-				top: -5px;
-				right: -15px;
+				right: -10px;
 				height: 18px;
 				line-height: 1;
 				border-radius: 50%;
