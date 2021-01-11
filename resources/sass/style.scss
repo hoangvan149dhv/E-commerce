@@ -258,8 +258,8 @@ h1, h2, h3, h4, h5,
 				font-size: 14px;
 				padding-top: 1.5rem;
 				padding-bottom: 1.5rem;
-				padding-left: 20px;
-				padding-right: 20px;
+				padding-left: 15px;
+				padding-right: 10px;
 				color: rgba(255,255,255,.5);
 				font-weight: 300;
 				text-transform: uppercase;
@@ -2588,4 +2588,23 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
     -moz-appearance: textfield;
+}
+
+.search-container {
+    display: none;
+}
+@media screen and (max-width: 768px) {
+    .search-container {
+        display: block;
+        button {
+            display: inline-block;
+            text-align: left;
+            padding: 10px;
+        }
+        input[type=text] {
+            margin: 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    }
 }

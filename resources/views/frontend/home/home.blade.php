@@ -33,7 +33,7 @@
         <div class="row">
             <!--Product-->
             @foreach ($all_product as $product)
-                <div class="col-md-4 col-lg-3 col-6 d-flex">
+                <div class="col-md-4 col-lg-3 col-12 d-flex">
                     <div class="product ftco-animate">
                         <div class="img d-flex align-items-center justify-content-center" style="background-image: url(public/upload/{{ $product->product_image }});">
                             <div class="desc">

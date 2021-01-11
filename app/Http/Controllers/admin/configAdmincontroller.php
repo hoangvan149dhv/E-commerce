@@ -37,6 +37,9 @@ return [
         fclose($myfile);
         Session::put('config-success','Lưu thông tin thành công');
 
-        return Redirect::to('/clear-cache');
+        \Artisan::call('cache:clear');
+        \Artisan::call('config:clear');
+        \Artisan::call('view:clear');
+        return back();
     }
 }

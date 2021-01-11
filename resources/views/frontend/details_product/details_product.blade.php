@@ -56,7 +56,7 @@
                                 "@id": "{{ URl::to('/') }}",
                                 "name": "{{config('config_admin.site_name') ?? 'Vải áo Dài'}}",
                                 "url": "{{ URl::to('/') }}",
-                                "logo": "{{ asset('public/upload/logo2.png') }}"
+                                "logo": "{{ asset('public/upload/logo/logo-aodai.jpg') }}"
                             }
                         }
                 }

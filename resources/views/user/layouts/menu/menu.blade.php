@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="logo pull-left">
-                    <a href="{{ URL::to('/') }}"><img src="{{asset('public/upload/logo2.png')}}" alt=""/></a>
+                    <a href="{{ URL::to('/') }}"><img src="{{asset('public/upload/logo/logo-aodai.jpg')}}" alt=""/></a>
                 </div>
                 <div class="btn-group pull-right"></div>
             </div>

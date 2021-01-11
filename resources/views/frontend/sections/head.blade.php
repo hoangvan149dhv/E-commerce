@@ -19,7 +19,7 @@
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="{{ $url_canonical ?? '' }}"/>
     <meta name="theme-color" content="#ffffff">
-    <link rel="icon" type="image" href="{{ asset('public/upload/logo2.png') }}">
+    <link rel="icon" type="image" href="{{ asset('public/upload/logo/logo-aodai.jpg') }}">
     <link rel="canonical" href="{{ $url_canonical ?? '' }}"/>
     <script type="application/ld+json">
         {
@@ -44,14 +44,14 @@
                         },
                         "logo": {
                             "@type": "ImageObject",
-                            "url": "{{ asset('public/upload/logo2.png') }}"
+                            "url": "{{ asset('public/upload/logo/logo-aodai.jpg') }}"
                         },
                         "openingHours": [
                             "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday 09:00-22:00"
                         ],
                         "image": {
                             "@type": "ImageObject",
-                            "url": "{{ asset('public/upload/logo2.png') }}"
+                            "url": "{{ asset('public/upload/logo/logo-aodai.jpg') }}"
                         },
                         "telephone": "{{ $contact->info_contact_phone }}"
                     },

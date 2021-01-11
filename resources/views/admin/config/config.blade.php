@@ -50,7 +50,7 @@ use Carbon\Carbon;
                                 $message = Session::get('config-success');
                                 if($message){ ?>
                                 <div class="alert-success alert"><?php echo $message; ?></div>
-                                <?php }  Session::put('messages', null);
+                                <?php }  Session::put('config-success', null);
                                 ?>
                             </div>
                             <button type="submit" name="submit" class="btn btn-info">Lưu</button>

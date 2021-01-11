@@ -2,8 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
         <a class="navbar-brand" href="{{ URL::to('/') }}">Sunny <span>Ngo</span></a>
-        <a href="{{ URL::to('/') }}"><img src="{{asset('public/upload/logo2.png')}}" alt="{{config('config_admin.site_name')}}"/></a>
-        <div class="order-lg-last btn-group">
+            <div class="order-lg-last btn-group">
             <a class="dropdown-toggle-split history-order" href="{{URL::to('/thong-tin-khach-hang')}}">
                 <span class="fa fa-pencil-square-o"></span>
             </a>
@@ -68,41 +67,46 @@
             aria-expanded="false" aria-label="Toggle navigation">
         <span class="oi oi-menu"></span> Menu
     </button>
-
-    <div class="collapse navbar-collapse" id="ftco-nav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="{{ url::to('/khuyen-mai') }}" class="nav-link"> Khuyễn mãi</a></li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
-                   aria-expanded="false">Danh mục</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown04">
-                    @foreach ($category_product as $cate)
-                        <a class="dropdown-item"
-                           href="{{ URL::to('/Danh-muc-san-pham/'.$cate->category_id)}}">{{"- ". $cate->category_name}}</a>
-                    @endforeach
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
-                   aria-expanded="false">Bộ sưu tập</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown04">
-                    @foreach ($brand_code_product as $brand_code)
-                        <a class="dropdown-item"
-                           href="{{URL::to('/thuong-hieu/'.$brand_code->code_id)}}">{{"- ". $brand_code->brandcode_name}}</a>
-                    @endforeach
-                </div>
-            </li>
-            <li class="nav-item"><a href="{{ url::to('/tin-tuc-chia-se')}}" class="nav-link">Góc chia sẻ</a></li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
-                   aria-expanded="false">Thông tin về shop</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown04">
-                    <a class="dropdown-item" href="#">Về chúng tôi</a>
-                    <a class="dropdown-item" href="{{ url::to('/lien-he') }}">Liên hệ</a>
-                </div>
-            </li>
-        </ul>
-    </div>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a href="{{ url::to('/khuyen-mai') }}" class="nav-link"> Khuyễn mãi</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Danh mục</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown04">
+                        @foreach ($category_product as $cate)
+                            <a class="dropdown-item"
+                               href="{{ URL::to('/Danh-muc-san-pham/'.$cate->category_id)}}">{{"- ". $cate->category_name}}</a>
+                        @endforeach
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Bộ sưu tập</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown04">
+                        @foreach ($brand_code_product as $brand_code)
+                            <a class="dropdown-item"
+                               href="{{URL::to('/thuong-hieu/'.$brand_code->code_id)}}">{{"- ". $brand_code->brandcode_name}}</a>
+                        @endforeach
+                    </div>
+                </li>
+                <li class="nav-item"><a href="{{ url::to('/tin-tuc-chia-se')}}" class="nav-link">Góc chia sẻ</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Thông tin về shop</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown04">
+                        <a class="dropdown-item" href="#">Về chúng tôi</a>
+                        <a class="dropdown-item" href="{{ url::to('/lien-he') }}">Liên hệ</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="search-container">
+                <form action="{{URL::to('/tim-kiem')}}" class="d-flex" method="GET">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit" class="btn-primary"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </div>
     </div>
 </nav>
 <!--/header-bottom-->
