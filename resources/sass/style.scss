@@ -1166,6 +1166,7 @@ h1, h2, h3, h4, h5,
 	@include media-breakpoint-down(xl){
 		overflow-x: scroll;
 	}
+    width: 100%;
 }
 .table{
 	min-width: 1000px !important;
@@ -1203,6 +1204,7 @@ h1, h2, h3, h4, h5,
 		td{
 			&.quantity{
 				width: 10%;
+                padding: 0px;
 			}
 			.img{
 				width: 70px;

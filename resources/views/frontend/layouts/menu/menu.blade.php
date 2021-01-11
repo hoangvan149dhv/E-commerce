@@ -3,9 +3,39 @@
     <div class="container">
         <a class="navbar-brand" href="{{ URL::to('/') }}">Sunny <span>Ngo</span></a>
             <div class="order-lg-last btn-group">
-            <a class="dropdown-toggle-split history-order" href="{{URL::to('/thong-tin-khach-hang')}}">
-                <span class="fa fa-pencil-square-o"></span>
-            </a>
+            <!--history-order-->
+            <a href="#" data-toggle="modal"
+               data-target="#historyOrder"><span class="fa fa-pencil-square-o"></span></a>
+                <div class="modal fade" id="historyOrder" tabindex="-1" role="dialog"
+                     aria-labelledby="historyOrderLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="historyOrderLabel">Báo cáo lỗi</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <form action="{{URL::to('/hien-thi-thong-tin')}}"
+                                  method="post">
+                                <div class="modal-body">
+                                    {{ csrf_field() }}
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Họ tên:</label>
+                                        <input type="text" name="phone" class="form-control" placeholder="Số Điện Thoại">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                        Đóng
+                                    </button>
+                                    <button type="submit" name="submit" class="btn btn-primary">Gửi</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            <!--/history-order-->
             <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
                aria-haspopup="true" aria-expanded="false">
                 <span class="flaticon-shopping-bag" aria-hidden="true"></span>

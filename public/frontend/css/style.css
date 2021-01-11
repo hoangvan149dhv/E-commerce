@@ -5867,7 +5867,6 @@ a.close.disabled {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1040;
   width: 100vw;
   height: 100vh;
   background-color: #000;
@@ -11796,6 +11795,7 @@ h5,
 
 .table-wrap {
   overflow-x: scroll;
+  width: 100%;
 }
 
 .table {
@@ -11833,6 +11833,7 @@ h5,
 
 .table tbody td.quantity {
   width: 10%;
+  padding: 0px;
 }
 
 .table tbody td .img {

@@ -88,7 +88,7 @@ class CartController extends HomeController
         $city = CityModel::orderby('matp', 'ASC')->get();
         view()->share('city', $city);
 
-        return view('user.cart.show_cart');
+        return view('frontend.cart.show_cart');
     }
 
     //Remove cart

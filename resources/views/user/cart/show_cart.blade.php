@@ -135,12 +135,12 @@
                         <div class="total_area">
                             <ul>
                                 <li><span class="subtotal_product">Tổng</span><span
-                                        class="fee_cart_product">{{ str_replace('.00',"",Cart::subtotal()) }}</span><span>.VNĐ</span>
+                                        class="fee_cart_product">{{ Cart::subtotal(0) }}</span><span>.VNĐ</span>
                                 </li>
                                 <li><span class="fee_ship">Phí vận chuyển</span>
                                     <span class="fee_ship_cart"></span><span class="fee_delivery"></span></li>
                                 <li><span class="total_name">Thành tiền</span>
-                                    <span class="total_price">{{ str_replace('.00',"",Cart::subtotal()) }}</span><span>.VNĐ</span>
+                                    <span class="total_price">{{ Cart::subtotal(0) }}</span><span>.VNĐ</span>
                                 </li>
                             </ul>
                         </div>
