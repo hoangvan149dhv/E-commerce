@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
         <a class="navbar-brand" href="{{ URL::to('/') }}">Sunny <span>Ngo</span></a>
-        <a href="{{ URL::to('/') }}"><img src="{{asset('public/upload/logo2.png')}}" alt=""/></a>
+        <a href="{{ URL::to('/') }}"><img src="{{asset('public/upload/logo2.png')}}" alt="{{config('config_admin.site_name')}}"/></a>
         <div class="order-lg-last btn-group">
             <a class="dropdown-toggle-split history-order" href="{{URL::to('/thong-tin-khach-hang')}}">
                 <span class="fa fa-pencil-square-o"></span>

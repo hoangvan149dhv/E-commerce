@@ -38,7 +38,7 @@ use Carbon\Carbon;
                     <i class="fa fa-calendar"></i>{{Carbon::createFromFormat('Y-m-d H:i:s',  $newsadminModel->updated_at)->format('d/m/yy') }}
                 </div>
                 <p>
-                    <img src="{{asset('public/upload/'.$newsadminModel->news_image)}}" class="img-fluid" alt="">
+                    <img src="{{asset('public/upload/'.$newsadminModel->news_image)}}" class="img-fluid" alt="{{ $newsadminModel->news_title }}">
                 </p>
                 <div class="ftco-animate" style="text-align:justify">
                     <p>{!! $newsadminModel->news_content !!}</p>
