@@ -14,3 +14,10 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/test/{helo}&{xxx}&{abc}','api\test@test');
+Route::post('/post',function(Request $request) {
+   $request->a = 'hello';
+   $request->b = 'name';
+   $data['a'] = $request->a;
+   $data['b'] = $request->b;
+    return response()->json(['data' => $data], 200);
+});

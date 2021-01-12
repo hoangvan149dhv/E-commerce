@@ -55,10 +55,11 @@ Route::get('/delete-all/{rowId}','user\CartController@del_cart_all');
 //UPDATE CART QUANTITY
 Route::post('/update_cart_quantity','user\CartController@update_Cart_quantity');
 
+//Checkout
+Route::get('/thanh-toan','user\checkoutController@checkout');
 
 //ORDER SUCCESS
-Route::post('/thanh-toan-gio-hang','user\Payment_orderController@payment_order');
-Route::get('/thanh-toan-gio-hang','user\Payment_orderController@payment_order');
+Route::post('/thanh-toan-don-hang','user\orderController@payment_order');
 
 
 /////////////////////////////////////-------NEWS-------/////////////////////////////////////////////////////////////////
@@ -335,25 +336,35 @@ Route::get('/clear-cache', function() {
     Artisan::call('view:clear');
     return back();
 });
-use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\Request;
 
 //TEST MAIL
 Route::get('/testmail','sendMailController@test');
 //Route::get('/test','sendMailController@abc');
 Route::get('/guzzle',function () {
     $client = new \GuzzleHttp\Client();
-    $response = $client->request('GET', 'https://api.github.com/repos/guzzle/guzzle');
-
-    echo $response->getStatusCode(); // 200
-    echo $response->getHeaderLine('content-type'); // 'application/json; charset=utf8'
-    echo $response->getBody(); // '{"id": 1420053, "name": "guzzle", ...}'
+//    $response = $client->request('GET', 'http://van.local/index.php/api/test/abc&drg&hkg');
+//
+//    echo $response->getStatusCode(); // 200
+//    echo $response->getHeaderLine('content-type'); // 'application/json; charset=utf8'
+//    echo $response->getBody(); // '{"id": 1420053, "name": "guzzle", ...}'
 
 // Send an asynchronous request.
     $request = new \GuzzleHttp\Psr7\Request('GET', 'http://httpbin.org');
-    $promise = $client->sendAsync($request)->then(function ($response) {
-        echo 'I completed! ' . $response->getBody();
-    });
+//    $promise = $client->sendAsync($request)->then(function ($response) {
+//        echo 'I completed! ' . $response->getBody();
+//    });
+//
+//    $promise->wait();
 
-    $promise->wait();
+    //POST
+    $response = $client->request('POST', 'http://httpbin.org/post', [
+        'form_params' => [
+            'field_name' => 'abc',
+            'other_field' => '123',
+            'nested_field' => [
+                'nested' => 'hello'
+            ]
+        ]
+    ]);
+    var_dump($response);
 });

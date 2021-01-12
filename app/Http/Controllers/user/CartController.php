@@ -85,9 +85,6 @@ class CartController extends HomeController
 
     public function show_cart()
     {
-        $city = CityModel::orderby('matp', 'ASC')->get();
-        view()->share('city', $city);
-
         return view('frontend.cart.show_cart');
     }
 

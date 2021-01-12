@@ -1,4 +1,4 @@
-(function($) {
+(function ($) {
 
     "use strict";
 
@@ -12,10 +12,10 @@
     });
 
 
-    var fullHeight = function() {
+    var fullHeight = function () {
 
         $('.js-fullheight').css('height', $(window).height());
-        $(window).resize(function(){
+        $(window).resize(function () {
             $('.js-fullheight').css('height', $(window).height());
         });
 
@@ -23,34 +23,34 @@
     fullHeight();
 
     // loader
-    var loader = function() {
-        setTimeout(function() {
-            if($('#ftco-loader').length > 0) {
+    var loader = function () {
+        setTimeout(function () {
+            if ($('#ftco-loader').length > 0) {
                 $('#ftco-loader').removeClass('show');
             }
         }, 1);
     };
     loader();
 
-    var carousel = function() {
+    var carousel = function () {
         $('.carousel-testimony').owlCarousel({
             center: true,
             loop: true,
             autoplay: true,
-            autoplaySpeed:2000,
+            autoplaySpeed: 2000,
             items: 3,
             margin: 30,
             stagePadding: 0,
             nav: true,
             navText: ['<span class="ion-ios-arrow-back">', '<span class="ion-ios-arrow-forward">'],
-            responsive:{
-                0:{
+            responsive: {
+                0: {
                     items: 2
                 },
-                600:{
+                600: {
                     items: 3
                 },
-                1000:{
+                1000: {
                     items: 4,
                 }
             }
@@ -59,7 +59,7 @@
     };
     carousel();
 
-    $('nav .dropdown').hover(function(){
+    $('nav .dropdown').hover(function () {
         var $this = $(this);
         // 	 timer;
         // clearTimeout(timer);
@@ -67,7 +67,7 @@
         $this.find('> a').attr('aria-expanded', true);
         // $this.find('.dropdown-menu').addClass('animated-fast fadeInUp show');
         $this.find('.dropdown-menu').addClass('show');
-    }, function(){
+    }, function () {
         var $this = $(this);
         // timer;
         // timer = setTimeout(function(){
@@ -84,38 +84,38 @@
     });
 
     // scroll
-    var scrollWindow = function() {
-        $(window).scroll(function(){
+    var scrollWindow = function () {
+        $(window).scroll(function () {
             var $w = $(this),
                 st = $w.scrollTop(),
                 navbar = $('.ftco_navbar'),
                 sd = $('.js-scroll-wrap');
 
             if (st > 150) {
-                if ( !navbar.hasClass('scrolled') ) {
+                if (!navbar.hasClass('scrolled')) {
                     navbar.addClass('scrolled');
                 }
             }
             if (st < 150) {
-                if ( navbar.hasClass('scrolled') ) {
+                if (navbar.hasClass('scrolled')) {
                     navbar.removeClass('scrolled sleep');
                 }
             }
-            if ( st > 350 ) {
-                if ( !navbar.hasClass('awake') ) {
+            if (st > 350) {
+                if (!navbar.hasClass('awake')) {
                     navbar.addClass('awake');
                 }
 
-                if(sd.length > 0) {
+                if (sd.length > 0) {
                     sd.addClass('sleep');
                 }
             }
-            if ( st < 350 ) {
-                if ( navbar.hasClass('awake') ) {
+            if (st < 350) {
+                if (navbar.hasClass('awake')) {
                     navbar.removeClass('awake');
                     navbar.addClass('sleep');
                 }
-                if(sd.length > 0) {
+                if (sd.length > 0) {
                     sd.removeClass('sleep');
                 }
             }
@@ -123,14 +123,14 @@
     };
     scrollWindow();
 
-    var counter = function() {
+    var counter = function () {
 
-        $('#section-counter, .wrap-about, .ftco-counter').waypoint( function( direction ) {
+        $('#section-counter, .wrap-about, .ftco-counter').waypoint(function (direction) {
 
-            if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
+            if (direction === 'down' && !$(this.element).hasClass('ftco-animated')) {
 
                 var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(',')
-                $('.number').each(function(){
+                $('.number').each(function () {
                     var $this = $(this),
                         num = $this.data('number');
                     // console.log(num);
@@ -144,48 +144,47 @@
 
             }
 
-        } , { offset: '95%' } );
+        }, {offset: '95%'});
 
     }
     counter();
 
 
-    var contentWayPoint = function() {
+    var contentWayPoint = function () {
         var i = 0;
-        $('.ftco-animate').waypoint( function( direction ) {
+        $('.ftco-animate').waypoint(function (direction) {
 
-            if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
+            if (direction === 'down' && !$(this.element).hasClass('ftco-animated')) {
 
                 i++;
 
                 $(this.element).addClass('item-animate');
-                setTimeout(function(){
+                setTimeout(function () {
 
-                    $('body .ftco-animate.item-animate').each(function(k){
+                    $('body .ftco-animate.item-animate').each(function (k) {
                         var el = $(this);
-                        setTimeout( function () {
+                        setTimeout(function () {
                             var effect = el.data('animate-effect');
-                            if ( effect === 'fadeIn') {
+                            if (effect === 'fadeIn') {
                                 el.addClass('fadeIn ftco-animated');
-                            } else if ( effect === 'fadeInLeft') {
+                            } else if (effect === 'fadeInLeft') {
                                 el.addClass('fadeInLeft ftco-animated');
-                            } else if ( effect === 'fadeInRight') {
+                            } else if (effect === 'fadeInRight') {
                                 el.addClass('fadeInRight ftco-animated');
                             } else {
                                 el.addClass('fadeInUp ftco-animated');
                             }
                             el.removeClass('item-animate');
-                        },  k * 50, 'easeInOutExpo' );
+                        }, k * 50, 'easeInOutExpo');
                     });
 
                 }, 100);
 
             }
 
-        } , { offset: '95%' } );
+        }, {offset: '95%'});
     };
     contentWayPoint();
-
 
 
     // magnific popup
@@ -198,7 +197,7 @@
         gallery: {
             enabled: true,
             navigateByImgClick: true,
-            preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+            preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
         },
         image: {
             verticalFit: true
@@ -223,7 +222,7 @@
     $('[data-toggle="tooltip"]').tooltip()
 
 })(jQuery);
-$(document).ready(function() {
+$(document).ready(function () {
     $.validate({});
     $('#background').fadeIn(1000);
     $('#background').click(function name(params) {
@@ -237,7 +236,7 @@ $(document).ready(function() {
         })
     });
     $('.carousel-indicators li:first-child, .carousel-inner>.item:first-child').addClass('active');
-    $('.add-to-cart').click(function() {
+    $('.add-to-cart').click(function () {
         var id = $(this).data('id_product');
         var cart_id = $('.cart_product_id_' + id).val();
         var cart_name = $('.cart_product_name_' + id).val();
@@ -258,9 +257,9 @@ $(document).ready(function() {
                 cart_qty: cart_qty,
                 _token: _token
             },
-            success: function(data) {
+            success: function (data) {
                 let datajson = JSON.parse(data);
-                $('.ftco-navbar-light.scrolled .btn-cart div small').html('('+ datajson.totalQty + ')');
+                $('.ftco-navbar-light.scrolled .btn-cart div small').html('(' + datajson.totalQty + ')');
                 $('.ftco-navbar-light .btn-group .dropdown-menu').html(datajson.itemCart);
                 setTimeout(() => {
                     swal({
@@ -272,7 +271,7 @@ $(document).ready(function() {
                         confirmButtonText: "Đi đến giỏ hàng",
                         type: "success",
                         closeOnConfirm: !1
-                    }, function() {
+                    }, function () {
                         window.location.href = cart_url
                     })
                 }, 100)
@@ -301,7 +300,7 @@ $(document).ready(function() {
                 ma_id: ma_id,
                 _token: _token
             },
-            success: function(data) {
+            success: function (data) {
                 $('#' + result).html(data);
                 $('#img-load').css('display', 'none');
                 if (action == 'city') {
@@ -322,6 +321,7 @@ $(document).ready(function() {
         }
         return x1 + x2
     }
+
     $('#city').change(function name(params) {
         var fee_ship = $('#city option:selected').text();
         var _token = $('input[name="_token"]').val();
@@ -334,26 +334,29 @@ $(document).ready(function() {
                 fee_ship: fee_ship,
                 _token: _token
             },
-            success: function(data) {
-                $('.fee_ship_cart').text(formatNumber(data, '.', ','));
-                $('.fee_delivery').text(".VNĐ");
-                if (data.length < 1) {
+            success: function success(data) {
+                let amount = parseInt(data);
+                $('.fee_ship_cart').text(formatNumber(amount, '.', ','));
+                $('.fee_delivery').text("VNĐ");
+
+                if (isNaN(amount)) {
                     total = 20000 + parseFloat(fee_cart_product);
                     $('.val_feeship').val(20000);
-                    $('.fee_ship_cart').text(formatNumber(20000, '.', ','))
+                    $('.fee_ship_cart').text(formatNumber(20000, '.', ','));
                 } else {
-                    $('.val_feeship').val(parseFloat(data));
-                    total = parseFloat(data) + parseFloat(fee_cart_product)
+                    $('.val_feeship').val(parseFloat(amount));
+                    total = parseFloat(amount) + parseFloat(fee_cart_product);
                 }
-                $('.total_price').text(formatNumber(parseFloat(total), '.', ','))
+
+                $('.total_price').text(formatNumber(parseFloat(total), '.', ','));
             }
         })
     });
 
     $('.checkout').click(function name(params) {
-        if ($('#wards').val() == ''|| $('#province').val() == '' || $('#wards').val() == '') {
+        if ($('#wards').val() == '' || $('#province').val() == '' || $('#wards').val() == '') {
             alert('Vui lòng điền đầy đủ thông tin');
-            return ;
+            return;
         }
         var val_city = $('#city option:selected').text();
         var val_province = $('#province option:selected').text();

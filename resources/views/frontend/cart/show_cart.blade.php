@@ -80,7 +80,7 @@
                         <span>{{ Cart::subtotal(0) }}.VNĐ</span>
                     </p>
                 </div>
-                <p class="text-center"><a href="checkout.html" class="btn btn-primary py-3 px-4">Thanh toán</a>
+                <p class="text-center"><a href="{{URL::to('/thanh-toan')}}" class="btn btn-primary py-3 px-4">Thanh toán</a>
                 </p>
             </div>
         </div>
@@ -93,17 +93,6 @@
         @endif
     </div>
     <!--/#cart_items-->
-    <div id="img-load" style="text-align: center;
-    position: fixed;
-    z-index: 9999999999;
-    background-color: rgba(0, 0, 0, 0.7);
-    width: 100%;
-    height: 100%;
-    border: 0;
-    padding: calc( 50vh - 50px)  0;
-    top: 0;
-    left: 0;
-    display: none;"><img src="public/upload/reloading.gif" class="loadpage"></div>
 @endsection
 @section('breadcumbs')
     <section class="hero-wrap hero-wrap-2"

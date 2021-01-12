@@ -15,11 +15,11 @@ use App\Http\Model\templateMailModel;
 use App\Http\Model\customerModel;
 use App\Http\Controllers\pdfController as pdfController;
 
-class Payment_orderController extends HomeController
+class orderController extends HomeController
 {
     public function payment_order(Request $request)
     {
-    
+
         $order_data['product_id'] = '';
         $order_data['qty'] = '';
         $content = Cart::content();
@@ -30,8 +30,7 @@ class Payment_orderController extends HomeController
         $cus_data['cusPhone'] = $request->phone;
         $cus_data['cusNote'] = $request->note;
         if (empty($request->phone) || empty($request->add) || empty($request->name)) {
-            Session::put('error', 'Bạn Không Được Để Trống bất kì mục nào');
-            return Redirect::to('/hien-thi-gio-hang');
+            return Redirect::to('/');
         } else {
             $cus_id = DB::table('tbl_customer')->insertGetId($cus_data);
             $order_data['total'] = 0;

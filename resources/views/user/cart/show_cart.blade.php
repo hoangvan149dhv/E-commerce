@@ -164,7 +164,7 @@
     padding: calc( 50vh - 50px)  0;
     top: 0;
     left: 0;
-    display: none;"><img src="public/upload/reloading.gif" class="loadpage"></div>
+    display: none;"><img src="public/upload/reloading.gif" class="load-page"></div>
 @endsection
 @section('script')
     <script>

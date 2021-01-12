@@ -428,16 +428,17 @@ $(document).ready(function () {
         _token: _token
       },
       success: function success(data) {
-        $('.fee_ship_cart').text(formatNumber(data, '.', ','));
-        $('.fee_delivery').text(".VNĐ");
+        var amount = parseInt(data);
+        $('.fee_ship_cart').text(formatNumber(amount, '.', ','));
+        $('.fee_delivery').text("VNĐ");
 
-        if (data.length < 1) {
+        if (isNaN(amount)) {
           total = 20000 + parseFloat(fee_cart_product);
           $('.val_feeship').val(20000);
           $('.fee_ship_cart').text(formatNumber(20000, '.', ','));
         } else {
-          $('.val_feeship').val(parseFloat(data));
-          total = parseFloat(data) + parseFloat(fee_cart_product);
+          $('.val_feeship').val(parseFloat(amount));
+          total = parseFloat(amount) + parseFloat(fee_cart_product);
         }
 
         $('.total_price').text(formatNumber(parseFloat(total), '.', ','));

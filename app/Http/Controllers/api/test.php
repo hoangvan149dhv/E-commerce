@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class test extends Controller
 {
-    
+
     public function test($a,$b, $d)
     {
         $data['a'] = $a;

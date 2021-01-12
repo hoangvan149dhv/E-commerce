@@ -1,12 +1,5 @@
 @charset "UTF-8";
 
-/*!
- * Bootstrap v4.2.1 (https://getbootstrap.com/)
- * Copyright 2011-2018 The Bootstrap Authors
- * Copyright 2011-2018 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
-
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -10552,6 +10545,10 @@ h5,
   font-weight: 400;
 }
 
+.form-error {
+  color: #dc3545;
+}
+
 .wrap {
   position: relative;
   z-index: 0;
@@ -10671,7 +10668,7 @@ h5,
 .ftco-navbar-light .history-order div {
   position: absolute;
   top: -5px;
-  right: -15px;
+  right: -10px;
   height: 18px;
   line-height: 1;
   border-radius: 50%;
