@@ -335,11 +335,25 @@ Route::get('/clear-cache', function() {
     Artisan::call('view:clear');
     return back();
 });
+use GuzzleHttp\Client;
+use GuzzleHttp\Psr7\Request;
 
 //TEST MAIL
 Route::get('/testmail','sendMailController@test');
-Route::get('/test','sendMailController@abc');
-Route::get('/test',function (){
-    Storage::put('abc.txt', 'Your name');
-    return view('test');
+//Route::get('/test','sendMailController@abc');
+Route::get('/guzzle',function () {
+    $client = new \GuzzleHttp\Client();
+    $response = $client->request('GET', 'https://api.github.com/repos/guzzle/guzzle');
+
+    echo $response->getStatusCode(); // 200
+    echo $response->getHeaderLine('content-type'); // 'application/json; charset=utf8'
+    echo $response->getBody(); // '{"id": 1420053, "name": "guzzle", ...}'
+
+// Send an asynchronous request.
+    $request = new \GuzzleHttp\Psr7\Request('GET', 'http://httpbin.org');
+    $promise = $client->sendAsync($request)->then(function ($response) {
+        echo 'I completed! ' . $response->getBody();
+    });
+
+    $promise->wait();
 });
