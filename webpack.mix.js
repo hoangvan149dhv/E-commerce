@@ -14,7 +14,4 @@ const mix = require('laravel-mix');
 mix.js('resources/js/main.js', 'public/frontend/js/main.js')
     .sass('resources/sass/style.scss', 'public/frontend/css/style.css')
     .sass('resources/sass/sweetalert/sweetalert.scss', 'public/frontend/css/sweetalert.css').version();
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
-    .version();
 
