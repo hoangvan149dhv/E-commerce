@@ -19,7 +19,6 @@ class orderController extends HomeController
 {
     public function payment_order(Request $request)
     {
-
         $order_data['product_id'] = '';
         $order_data['qty'] = '';
         $content = Cart::content();
