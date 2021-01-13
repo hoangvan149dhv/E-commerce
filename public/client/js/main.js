@@ -107,7 +107,7 @@ $(document).ready(function() {
                 $('#' + result).html(data);
                 $('#img-load').css('display', 'none');
                 if (action == 'city') {
-                    $('#' + result_ward).html('<option value="0" style="cursor: no-drop">Vui lòng chọn quận huyện trước</option>')
+                    $('#' + result_ward).html('<option value="" style="cursor: no-drop">Vui lòng chọn quận huyện trước</option>')
                 }
             }
         })

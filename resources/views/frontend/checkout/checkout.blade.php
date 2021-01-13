@@ -32,7 +32,6 @@
                                 <td>{{number_format($data->price)}}</td>
                                 <td class="quantity">
                                     <form action="{{ URL::to('update_cart_quantity') }}" method="POST" class="d-flex">
-                                        {{ csrf_field() }}
                                         @csrf
                                         <div class="cart_quantity_button input-group" style="text-align: center;">
                                             <input type="hidden" value="{{$data->rowId}}" name="rowId_cart">
@@ -62,7 +61,7 @@
                 </div>
             </div>
             <div class="row">
-                <form action="{{ URL::to('/thanh-toan-don-hang') }}" method="POST" name="shopper_info"
+                <form action="{{ URL::to('/thanh-toan-don-hang') }}" method="POST" name="shopper_info" id="shopper-info"
                       class="billing-form d-md-flex">
                     @csrf
                     <div class="col col-lg-7 col-md-6 mt-5 ftco-animate">
@@ -139,9 +138,10 @@
                                     <label for="firstname">Địa chỉ</label>
                                     <input data-validation="length" data-validation-length="1-100"
                                            data-validation-error-msg='vui lòng điền đầy đủ thông tin' type="text"
-                                           name="add" placeholder="VD: Nguyễn Huệ" class="form-control">
+                                            placeholder="VD: Nguyễn Huệ" class="form-control add">
                                 </div>
                             </div>
+                            <input type="hidden" name="add" id="val_address">
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="note">Ghi chú</label>
@@ -172,8 +172,8 @@
                             </p>
                         </div>
                         <p class="text-center">
-                            <button type="submit" onclick="validate_check_out(this.form)" name="submit"
-                                    class="btn btn-primary py-3 px-4 check_out">Thanh toán
+                            <button
+                                    class="btn btn-primary py-3 px-4" id="check-out">Thanh toán
                             </button>
 
                         </p>
@@ -188,17 +188,7 @@
     </div>
     @endif
     <!--/#cart_items-->
-    <div id="img-load" style="text-align: center;
-    position: fixed;
-    z-index: 9999999999;
-    background-color: rgba(0, 0, 0, 0.7);
-    width: 100%;
-    height: 100%;
-    border: 0;
-    padding: calc( 50vh - 50px)  0;
-    top: 0;
-    left: 0;
-    display: none;"><img src="public/upload/reloading.gif" class="load-page"></div>
+    <div id="img-load"><img src="public/upload/reloading.gif" class="load-page"></div>
 @endsection
 @section('breadcumbs')
     <section class="hero-wrap hero-wrap-2"
@@ -222,18 +212,6 @@
     <script>
         var select_delivery = "{{url('/select-delivery') }}";
         var select_delivery_feeship = "{{url('/select-delivery-feeship') }}";
-
-        function validate_check_out(form) {
-            this.shopper_info;
-            if (form.city.value == '' || form.province.value == '' || form.wards.value == '') {
-                alert("Vui lòng điền đẩy đủ thông tin, địa chỉ, ...");
-                return;
-            } else {
-                $('#img-load').css('display', 'block');
-                return false;
-            }
-        }
-
         $(document).ready(function () {
             $('.select-address').select2({
                 placeholder: 'vui lòng điền thông tin',
@@ -258,6 +236,20 @@
 
         .select2-selection__arrow {
             height: 55px !important;
+        }
+        #img-load {
+            text-align: center;
+            position: fixed;
+            z-index: 9999999999;
+            background-color: rgba(0, 0, 0, 0.7);
+            width: 100%;
+            height: 100%;
+            border: 0;
+            padding: calc( 50vh - 50px)  0;
+            top: 0;
+            left: 0;
+            display: none;
+            overflow: hidden
         }
     </style>
 @endsection

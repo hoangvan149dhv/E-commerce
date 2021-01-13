@@ -37,7 +37,6 @@ class DeliveryController extends Controller
 
                 foreach ($select_province as $key => $province)
                 {
-                    var_dump($province->name);
                      echo '<option value="'.$province->maqh.'">'.$province->name.'</option>';
                 }
             }
@@ -46,7 +45,7 @@ class DeliveryController extends Controller
             {
 
                 $select_wards = WardModel::where('maqh',$data['ma_id'])->orderby('xaid','ASC')->get();
-                echo '<option>Vui lòng chọn phường xã</option>';
+                echo '<option value="">Vui lòng chọn phường xã</option>';
 
                 foreach ($select_wards as $key => $wards)
                 {

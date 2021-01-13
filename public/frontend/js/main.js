@@ -375,7 +375,6 @@ $(document).ready(function () {
     if (action == 'city') {
       $('#img-load').css('display', 'block');
       result = 'province';
-      result_ward = 'wards';
     } else {
       result = 'wards';
     }
@@ -445,25 +444,23 @@ $(document).ready(function () {
       }
     });
   });
-  $('.checkout').click(function name(params) {
-    alert('xxx');
-
-    if ($('#wards').val() == '' || $('#province').val() == '' || $('#wards').val() == '') {
+  $('#check-out').click(function name(e) {
+    if ($('#wards').val() == '' || $('#province').val() == '' || $('#wards').val() == '' || $('.add').val() == '') {
       alert('Vui lòng điền đầy đủ thông tin');
-      return;
+      e.preventDefault();
+    } else {
+      var val_city = $('#city option:selected').text();
+      var val_province = $('#province option:selected').text();
+      var val_wards = $('#wards option:selected').text();
+      var val_add = $('.add').val();
+      $('#val_address').val(val_add + ", " + val_wards + ", " + val_province + ", " + val_city);
+      $('#img-load').css('display', 'block');
+      $('#shopper-info').submit(function () {
+        $(this).find('#check-out').prop('disabled', true);
+      });
     }
-
-    var val_city = $('#city option:selected').text();
-    var val_province = $('#province option:selected').text();
-    var val_wards = $('#wards option:selected').text();
-    var val_add = $('.add').val();
-    $('#val_address').val(val_add + ", " + val_wards + ", " + val_province + ", " + val_city);
   });
-}); // let form  = document.shopper_info;
-// if (form.city.value == '' || form.province.value == '' || form.wards.value == '') {
-//     alert("Vui lòng điền đẩy đủ thông tin địa chỉ");
-//     return;
-// }
+});
 
 /***/ }),
 
