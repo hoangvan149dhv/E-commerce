@@ -62,7 +62,7 @@
                 </div>
             </div>
             <div class="row">
-                <form action="{{ URL::to('/thanh-toan-don-hang') }}" method="POST" id="shopper-info"
+                <form action="{{ URL::to('/thanh-toan-don-hang') }}" method="POST" name="shopper_info"
                       class="billing-form d-md-flex">
                     @csrf
                     <div class="col col-lg-7 col-md-6 mt-5 ftco-animate">
@@ -224,10 +224,12 @@
         var select_delivery_feeship = "{{url('/select-delivery-feeship') }}";
 
         function validate_check_out(form) {
-            if ($("input[name='name']").val() && $("input[name='email']").val() && $("input[name='phone']").val() && $("input[name='add']").val() && $('#city').val().length !== 0 && $('#province').val().length !== 0 && $('#wards').val().length !== 0) {
-                $('#img-load').css('display', 'block');
-                form.submit.disabled = false;
+            this.shopper_info;
+            if (form.city.value == '' || form.province.value == '' || form.wards.value == '') {
+                alert("Vui lòng điền đẩy đủ thông tin, địa chỉ, ...");
+                return;
             } else {
+                $('#img-load').css('display', 'block');
                 return false;
             }
         }
