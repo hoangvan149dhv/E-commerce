@@ -56,11 +56,14 @@ Route::get('/delete-all/{rowId}','user\CartController@del_cart_all');
 Route::post('/update_cart_quantity','user\CartController@update_Cart_quantity');
 
 //Checkout
-Route::get('/thanh-toan','user\checkoutController@checkout');
+Route::middleware('prevent-back-history')->group(function () {
+    Auth::routes();
+    Route::get('/thanh-toan','user\checkoutController@checkout');
+});
+
 
 //ORDER SUCCESS
 Route::post('/thanh-toan-don-hang','user\orderController@payment_order');
-
 
 /////////////////////////////////////-------NEWS-------/////////////////////////////////////////////////////////////////
 

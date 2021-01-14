@@ -21,7 +21,7 @@ class orderController extends HomeController
     {
         $order_data['product_id'] = '';
         $order_data['qty'] = '';
-        $content = Cart::content();
+        $dataCart = Cart::content();
         // INSERT CUSTOMER
         $cus_data['cusname'] = $request->name;
         $cus_data['cusEmail'] = $request->email;
@@ -34,12 +34,12 @@ class orderController extends HomeController
             $cus_id = DB::table('tbl_customer')->insertGetId($cus_data);
             $order_data['total'] = 0;
             // INSERT ORDER_PAYMENT
-            foreach ($content as $value_content) {
+            foreach ($dataCart as $data) {
                 $order_data['cusid'] = $cus_id;
-                $order_data['product_id'] .= ','.$value_content->id;
-                $order_data['qty'] .= ','.$value_content->qty;
+                $order_data['product_id'] .= ','.$data->id;
+                $order_data['qty'] .= ','.$data->qty;
                 $order_data['fee_ship'] = $request->val_feeship;
-                $order_data['total'] += ($value_content->price * $value_content->qty) + $order_data['fee_ship'];
+                $order_data['total'] += ($data->price * $data->qty) + $order_data['fee_ship'];
                 $order_data['status'] = 0;
             }
             $order_data['product_id'] = substr($order_data['product_id'], 1);
@@ -53,7 +53,7 @@ class orderController extends HomeController
             $orderId = DB::table('tbl_orders')->insertGetId($order_data);
 
             $item_detail_order = CustomerorderModel::where('orderid', $orderId)->get();
-
+            Cart::destroy();
             try {
                 if ($item_detail_order) {
                     $template = templateMailModel::where('status', 'Hiện')->get();
@@ -87,7 +87,6 @@ class orderController extends HomeController
 
                 throw new \RuntimeException($e->getMessage(), $e->getCode());
             }
-            Cart::destroy();
             return view('user.payment.payment_order');
         }
     }

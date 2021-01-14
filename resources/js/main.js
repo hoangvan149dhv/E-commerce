@@ -362,8 +362,8 @@ $(document).ready(function () {
             var val_wards = $('#wards option:selected').text();
             var val_add = $('.add').val();
             $('#val_address').val(val_add + ", " + val_wards + ", " + val_province + ", " + val_city);
-            $('#img-load').css('display', 'block');
             $('#shopper-info').submit(function() {
+                $('#img-load').css('display', 'block');
                 $(this).find('#check-out').prop('disabled', true);
             });
         }
