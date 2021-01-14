@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\library\mix;
+
 return [
 
     /*
@@ -225,6 +227,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'HTMLMin' => HTMLMin\HTMLMin\Facades\HTMLMin::class,
+        'Mix' => App\Http\library\mix::class,
     ],
 
 ];

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Redirect;
 class BrandcodeProduct extends AdminController
 {
     //Show brand
-    public function all_Brand_code_Product(){
+    public function show_Brand() {
 
         $allBrandcode_product = DB::table('tbl_brand_code_product')->get();
 
@@ -20,12 +20,11 @@ class BrandcodeProduct extends AdminController
     }
 
     // Create brand
-    public function save_brandcode_product(request $Request){
-
+    public function save_brandcode_product(request $Request) {
         $data['brandcode_name'] = $Request->name;
 
         $data['brandcode_id'] = $Request->code;
-
+        $data['brand_meta_slug'] = \Mix::utf8tourl($data['brandcode_name']) . "-" . rand(1,999);;
         DB::table('tbl_brand_code_product')->insert($data);
 
         Session::put('messages','Thêm Mã Thương Hiệu Thành Công');
@@ -34,14 +33,14 @@ class BrandcodeProduct extends AdminController
 
     }
 
-    public function delete_brand_code_product($brand_code_id){
+    public function delete_brand_code_product($brand_code_id) {
 
         DB::table('tbl_brand_code_product')->where('code_id',$brand_code_id)->delete();
 
         return redirect::to('/all-Brand-code-Product');
     }
     //show detail brands
-    public function edit_brand_code_product($brand_code_id){
+    public function edit_brand_code_product($brand_code_id) {
 
         $allBrandcode_product = DB::table('tbl_brand_code_product')->where('code_id',$brand_code_id)->get();
 
@@ -50,11 +49,12 @@ class BrandcodeProduct extends AdminController
         return view('admin.index')->with('admin.brands.updateBrandProduct',$manager_brandcode_product);
     }
 
-    public function update_brand_code_Product(Request $Request,$brand_code_id){
+    public function update_brand_code_Product(Request $Request,$brand_code_id) {
 
         $data = array();
         $data['brandcode_name'] = $Request->name;
         $data['brandcode_id'] = $Request->code;
+        $data['brand_meta_slug'] = \Mix::utf8tourl($data['brandcode_name']) . "-" . rand(1,999);;
 
         DB::table('tbl_brand_code_product')->where('code_id',$brand_code_id)->update($data);
 

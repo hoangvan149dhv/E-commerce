@@ -11,13 +11,14 @@ use App\Http\Controllers\admin\AdminController;
 class newsadminController extends AdminController
 {
 
-    public function insertNews(request $Request){
+    public function insertNews(request $Request) {
 
         $newsadminModel = new newsadminModel();
         $newsadminModel['news_title'] = $Request['title'];
 
         $newsadminModel->news_desc = $Request['desc'];
         $newsadminModel->news_content = $Request['content'];
+        $newsadminModel->meta_slug = \Mix::utf8tourl($newsadminModel['news_title']). "-" . rand(1,999);
 
         if( $newsadminModel->news_content==""){
 
@@ -90,7 +91,8 @@ class newsadminController extends AdminController
         $newsadminModel->news_title = $Request['title'];
         $newsadminModel->news_desc = $Request['desc'];
         $newsadminModel->news_content = $Request['content'];
-        $get_image=$Request->file('image');
+        $newsadminModel->meta_slug = \Mix::utf8tourl($newsadminModel->news_title). "-" . rand(1,999);
+        $get_image = $Request->file('image');
         $news_img_old = $newsadminModel->news_image;
 
         //remove image old if user update
@@ -102,6 +104,7 @@ class newsadminController extends AdminController
         }
 
         if (empty($get_image)) {
+
 
 
             $newsadminModel->save();

@@ -10,66 +10,15 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Model\ReviewModel;
 use App\Http\Model\OrderModel;
 use App\Http\Model\productModel;
-
 class Productcontroller extends AdminController
 {
-    ////SEO GOOGLE UTF8 convert UTF
-    public function utf8convert($str)
+    public function show_product()
     {
-
-        if (!$str) {
-            return false;
-        }
-
-        $utf8 = array(
-
-            'a' => 'á|à|ả|ã|ạ|ă|ắ|ặ|ằ|ẳ|ẵ|â|ấ|ầ|ẩ|ẫ|ậ|Á|À|Ả|Ã|Ạ|Ă|Ắ|Ặ|Ằ|Ẳ|Ẵ|Â|Ấ|Ầ|Ẩ|Ẫ|Ậ',
-
-            'd' => 'đ|Đ',
-
-            'e' => 'é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ|É|È|Ẻ|Ẽ|Ẹ|Ê|Ế|Ề|Ể|Ễ|Ệ',
-
-            'i' => 'í|ì|ỉ|ĩ|ị|Í|Ì|Ỉ|Ĩ|Ị',
-
-            'o' => 'ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ|Ó|Ò|Ỏ|Õ|Ọ|Ô|Ố|Ồ|Ổ|Ỗ|Ộ|Ơ|Ớ|Ờ|Ở|Ỡ|Ợ',
-
-            'u' => 'ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự|Ú|Ù|Ủ|Ũ|Ụ|Ư|Ứ|Ừ|Ử|Ữ|Ự',
-
-            'y' => 'ý|ỳ|ỷ|ỹ|ỵ|Ý|Ỳ|Ỷ|Ỹ|Ỵ',
-
-        );
-
-        foreach ($utf8 as $ascii => $uni) {
-            $str = preg_replace("/($uni)/i", $ascii, $str);
-        }
-
-        return $str;
-
-    }
-
-    public function utf8tourl($text)
-    {
-        $text = $this->utf8convert(strtolower($text));
-        $text = str_replace("ß", "ss", $text);
-        $text = str_replace("%", "", $text);
-        $text = preg_replace("/[^_a-zA-Z0-9 -] /", "", $text);
-        $text = str_replace(array('%20', ' '), '-', $text);
-        $text = str_replace("----", "-", $text);
-        $text = str_replace("---", "-", $text);
-        $text = str_replace("--", "-", $text);
-        return $text;
-    }
-
-    public function add_Product()
-    {
-
         $category_product = DB::table('tbl_category_product')->orderby('category_id', 'desc')->get();
-
         $brandcode_product = DB::table('tbl_brand_code_product')->orderby('code_id', 'desc')->get();
 
         return view('admin.products.addProduct')->with('category_product',
             $category_product)->with('brand_code_product', $brandcode_product);
-
     }
 
     public function all_Product()
@@ -86,7 +35,6 @@ class Productcontroller extends AdminController
 
     public function save_product(request $Request)
     {
-
         $data['category_id'] = $Request->category;
         $data['product_Name'] = $Request->name;
         $data['product_desc'] = empty($Request->mota) ? "Chưa có thông tin" : $Request->mota;
@@ -119,9 +67,9 @@ class Productcontroller extends AdminController
                 $data['promotion_end_date'] = strtotime(date($Request->promotion_end_date));
             }
         }
-        
-        $slugg = $this->utf8convert($data['product_Name']);
-        $data['meta_slug'] = $this->utf8tourl($slugg).rand(0, 22220);
+
+        $slugg = \Mix::utf8convert($data['product_Name']);
+        $data['meta_slug'] = \Mix::utf8tourl($slugg).rand(0, 22220);
 
         $get_image = $Request->file('image');
 
@@ -218,8 +166,8 @@ class Productcontroller extends AdminController
                 $data['promotion_end_date'] = strtotime(date($Request->promotion_end_date . ' 23:59:59'));
             }
         }
-        $slugg = $this->utf8convert($data['product_Name']);
-        $data['meta_slug'] = $this->utf8tourl($slugg).rand(0, 1000);
+        $slugg = \Mix::utf8convert($data['product_Name']);
+        $data['meta_slug'] = \Mix::utf8tourl($slugg).rand(0, 1000);
         $get_image = $Request->file('image');
 
         if (empty($get_image)) {

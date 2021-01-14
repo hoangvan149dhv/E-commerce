@@ -105,15 +105,15 @@
             @foreach ($blogs as $blog)
                 <div class="col-lg-6 d-flex align-items-stretch ftco-animate">
                     <div class="blog-entry d-flex">
-                        <a href="{{ URL::to('/tin-tuc-chia-se/'.$blog->news_id) }}" class="block-20 img" style="background-image: url('public/upload/{{  $blog->news_image }}');">
+                        <a href="{{ URL::to('/tin-tuc-chia-se/'.$blog->meta_slug) }}" class="block-20 img" style="background-image: url('public/upload/{{  $blog->news_image }}');">
                     </a>
                     <div class="text p-4 bg-light">
                         <div class="meta"><span class="fa fa-calendar"></span>
                                 {{Carbon::createFromFormat('Y-m-d H:i:s',  $blog->updated_at)->format('d/m/yy') }}
                         </div>
-                    <h3 class="heading mb-3"><a href="{{ URL::to('/tin-tuc-chia-se/'.$blog->news_id) }}">{{ $blog->news_title }}</a></h3>
+                    <h3 class="heading mb-3"><a href="{{ URL::to('/tin-tuc-chia-se/'.$blog->meta_slug) }}">{{ $blog->news_title }}</a></h3>
                     <p>{{ $blog->news_desc }}</p>
-                    <a href="{{ URL::to('/tin-tuc-chia-se/'.$blog->news_id) }}" class="btn-custom">Xem thêm<span class="fa fa-long-arrow-right"></span></a>
+                    <a href="{{ URL::to('/tin-tuc-chia-se/'.$blog->meta_slug) }}" class="btn-custom">Xem thêm<span class="fa fa-long-arrow-right"></span></a>
                     </div>
                 </div>
                 </div>

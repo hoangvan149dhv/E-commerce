@@ -106,7 +106,7 @@
                     <div class="dropdown-menu" aria-labelledby="dropdown04">
                         @foreach ($category_product as $cate)
                             <a class="dropdown-item"
-                               href="{{ URL::to('/Danh-muc-san-pham/'.$cate->category_id)}}">{{"- ". $cate->category_name}}</a>
+                               href="{{ URL::to('/Danh-muc-san-pham/'.$cate->category_meta_slug)}}">{{"- ". $cate->category_name}}</a>
                         @endforeach
                     </div>
                 </li>
@@ -116,7 +116,7 @@
                     <div class="dropdown-menu" aria-labelledby="dropdown04">
                         @foreach ($brand_code_product as $brand_code)
                             <a class="dropdown-item"
-                               href="{{URL::to('/thuong-hieu/'.$brand_code->code_id)}}">{{"- ". $brand_code->brandcode_name}}</a>
+                               href="{{URL::to('/thuong-hieu/'.$brand_code->brand_meta_slug)}}">{{"- ". $brand_code->brandcode_name}}</a>
                         @endforeach
                     </div>
                 </li>

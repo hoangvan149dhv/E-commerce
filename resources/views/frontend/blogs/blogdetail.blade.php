@@ -3,7 +3,7 @@ use Carbon\Carbon;
 ?>
 @section('og:image')
     @isset($newsadminModel)
-        <meta property="og:image" content="{{URL::to('/public/upload/'.$newsadminModel->news_image)}}"/>
+        <meta property="og:image" content="{{URL::to('/public/upload/'.$newsadminModel->news_image) ?? ''}}"/>
     @endisset
 @endsection
 @extends('frontend.index')
@@ -38,7 +38,7 @@ use Carbon\Carbon;
                     <i class="fa fa-calendar"></i>{{Carbon::createFromFormat('Y-m-d H:i:s',  $newsadminModel->updated_at)->format('d/m/yy') }}
                 </div>
                 <p>
-                    <img src="{{asset('public/upload/'.$newsadminModel->news_image)}}" class="img-fluid" alt="{{ $newsadminModel->news_title }}">
+                    <img src="{{asset('public/upload/'.$newsadminModel->news_image) ?? ''}}" class="img-fluid" alt="{{ $newsadminModel->news_title }}">
                 </p>
                 <div class="ftco-animate" style="text-align:justify">
                     <p>{!! $newsadminModel->news_content !!}</p>
@@ -57,10 +57,10 @@ use Carbon\Carbon;
                     <h3>Bài viết gần đây</h3>
                     @foreach ($news_details as $news)
                         <div class="block-21 mb-4 d-flex">
-                            <a class="blog-img mr-4" href="{{ URL::to('/tin-tuc-chia-se/'.$news->news_id) }}" style="background-image: url({{asset('public/upload/'.$news->news_image)}});"></a>
+                            <a class="blog-img mr-4" href="{{ URL::to('/tin-tuc-chia-se/'.$news->meta_slug) }}" style="background-image: url({{asset('public/upload/'.$news->news_image ?? '')}});"></a>
                             <div class="text">
                                 <h3 class="heading">
-                                    <a href="{{ URL::to('/tin-tuc-chia-se/'.$news->news_id) }}">{{ $newsadminModel->news_title }}</a>
+                                    <a href="{{ URL::to('/tin-tuc-chia-se/'.$news->meta_slug) }}">{{ $newsadminModel->news_title }}</a>
                                 </h3>
                                 <div class="meta">
                                     <div><a href="#"><span class="fa fa-calendar"></span>{{Carbon::createFromFormat('Y-m-d H:i:s',  $newsadminModel->updated_at)->format('d/m/yy') }}</a></div>
@@ -75,7 +75,7 @@ use Carbon\Carbon;
 @endsection
 @section('breadcumbs')
     <section class="hero-wrap hero-wrap-2"
-             style="background-image: url({{asset('public/upload/'.$newsadminModel->news_image)}});"
+             style="background-image: url({{asset('public/upload/'.($newsadminModel->news_image)?? '') }});"
              data-stellar-background-ratio="0.5">
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-center">
@@ -87,7 +87,6 @@ use Carbon\Carbon;
                         <span><a href="{{ URL::to('/tin-tuc-chia-se') }}">Góc chia sẻ <i class="fa fa-chevron-right"></i></a><i class="fa fa-chevron-right"></i></span>
                         <span>{{ $newsadminModel->news_title }} <i class="fa fa-chevron-right"></i></span>
                     </p>
-                    <h2 class="mb-0 bread">{{ $newsadminModel->news_title }}</h2>
                 </div>
             </div>
         </div>

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Redirect;
 
 class CategoryProduct extends AdminController
 {
-    public function all_Category_Product(){
+    public function show_Categories(){
 
         $all_category_product = DB::table('tbl_category_product')->get();
 
@@ -27,6 +27,7 @@ class CategoryProduct extends AdminController
         $data['category_name'] = $Request->name;
         $data['category_desc'] = $Request->mota;
         $data['category_status'] = $Request->status;
+        $data['category_meta_slug'] = \Mix::utf8tourl($data['category_name']) . "-" . rand(1,999);
         DB::table('tbl_category_product')->insert($data);
 
         Session::put('message', 'Thêm Danh Mục Sản Phẩm Thành Công');
@@ -59,6 +60,7 @@ class CategoryProduct extends AdminController
         $data = array();
         $data['category_name'] = $Request->name;
         $data['category_desc'] = $Request->mota;
+        $data['category_meta_slug'] = \Mix::utf8tourl($data['category_name']) . "-" . rand(1,999);
 
         DB::table('tbl_category_product')->where('category_id', $category_product_id)->update(
             $data

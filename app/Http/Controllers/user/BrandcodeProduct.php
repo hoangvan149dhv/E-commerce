@@ -11,18 +11,19 @@
 
     class BrandcodeProduct extends HomeController
     {
-        public function show_brand_home($brand_id)
+        public function show_products_from_brand($brand_meta_slug)
         {
             //brand_name
-            $brand_name = DB::table('tbl_brand_code_product')->where('code_id', $brand_id)->limit('1')->get();
+            $brand_name = DB::table('tbl_brand_code_product')->where('brand_meta_slug', $brand_meta_slug)->limit('1')->get();
+            $brand_id = $brand_name[0]->code_id;
 
-            $brand_by_id = \App\Http\library\product_detail::getProductPublish()
+            $productData = \App\Http\library\product_detail::getProductPublish()
                             ->where('tbl_brand_code_product.code_id', $brand_id)
                             ->orderby('tbl_product.product_price_promotion', 'desc')
                             ->paginate(12);
 
             return view('user.brand.show_brandcode')
-                ->with('brand_by_id', $brand_by_id)
+                ->with('productDataFromBrand', $productData)
                 ->with('brand_name', $brand_name);
         }
     }

@@ -12,11 +12,11 @@
 
     class CategoryProduct extends HomeController
     {
-        public function show_products_from_category($category_id, request $request)
+        public function show_products_from_category($category_meta_slug, request $request)
         {
             //category_name
-            $category_name = DB::table('tbl_category_product')->where('category_id', $category_id)->limit('1')->get();
-
+            $category_name = DB::table('tbl_category_product')->where('category_meta_slug', $category_meta_slug)->limit('1')->get();
+            $category_id = $category_name[0]->category_id;
             //category_by_id
             $category_by_id = \App\Http\library\product_detail::getProductPublish()
                             ->where('tbl_category_product.category_id', $category_id)

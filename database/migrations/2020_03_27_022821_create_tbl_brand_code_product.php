@@ -17,6 +17,7 @@ class CreateTblBrandcodeProduct extends Migration
             $table->increments('code_id');
             $table->string('brandcode_id',70);
             $table->string('brandcode_name',70);
+            $table->string('brand_meta_slug',255);
         });
     }
 

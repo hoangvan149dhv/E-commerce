@@ -25,22 +25,22 @@
 @section('content')
     <div class="col-sm-11">
         <div class="blog-post-area">
-            <h2 class="title text-center" style="margin-bottom:15px;">Tin tức-chia sẻ</h2>
+            <h2 class="title text-center" style="margin-bottom:15px;">Tin tức - chia sẻ</h2>
             <section class="ftco-section">
                 <div class="container">
                     <div class="row d-flex">
                         @foreach ($newsadminModel as $news)
                         <div class="col-lg-6 d-flex align-items-stretch ftco-animate">
                             <div class="blog-entry d-md-flex">
-                                <a href="{{ URL::to('/tin-tuc-chia-se/'.$news->news_id) }}" class="block-20 img" style="background-image: url({{asset('public/upload/'.$news->news_image ) ?? ''}})">
+                                <a href="{{ URL::to('/tin-tuc-chia-se/'.$news->meta_slug) }}" class="block-20 img" style="background-image: url({{asset('public/upload/'.$news->news_image ) ?? ''}})">
                                 </a>
                                 <div class="text p-4 bg-light">
                                     <div class="meta">
                                         <p><span class="fa fa-calendar"></span> {{Carbon::createFromFormat('Y-m-d H:i:s',  $news->updated_at)->format('d/m/yy') }}</p>
                                     </div>
-                                    <h3 class="heading mb-3"><a href="{{ URL::to('/tin-tuc-chia-se/'.$news->news_id) }}">{{ $news->news_title }}</a></h3>
+                                    <h3 class="heading mb-3"><a href="{{ URL::to('/tin-tuc-chia-se/'.$news->meta_slug) }}">{{ $news->news_title }}</a></h3>
                                     <p>{{ $news->news_desc }}</p>
-                                    <a href="{{ URL::to('/tin-tuc-chia-se/'.$news->news_id) }}" class="btn-custom">Xem thêm <span class="fa fa-long-arrow-right"></span></a>
+                                    <a href="{{ URL::to('/tin-tuc-chia-se/'.$news->meta_slug) }}" class="btn-custom">Xem thêm <span class="fa fa-long-arrow-right"></span></a>
                                 </div>
                             </div>
                         </div>

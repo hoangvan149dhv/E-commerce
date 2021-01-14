@@ -17,11 +17,13 @@ class BlogController extends HomeController
               ->with('newsadminModel',$newsadminModel);
     }
 
-    public function news_details_client($primaryKey,request $request){
-    $newsadminModel = newsadminModel::find($primaryKey);
-    $news_details = newsadminModel::select()->whereNotIn('news_id',[$primaryKey])->orderby('news_id','desc')->take(5)->get();
-    $meta_desc= $newsadminModel->news_desc;
-    $meta_title =  $newsadminModel->news_title;
+    public function news_details_client($meta_slug,request $request){
+    $newsadminModel = newsadminModel::select()->where('meta_slug',$meta_slug)->get();
+
+    $news_details = newsadminModel::select()->whereNotIn('meta_slug',[$meta_slug])->orderby('news_id','desc')->take(5)->get();
+
+    $meta_desc= $newsadminModel[0]->news_desc;
+    $meta_title =  $newsadminModel[0]->news_title;
     $url_canonical = $request->url();
 
     return view('frontend.blogs.blogdetail')

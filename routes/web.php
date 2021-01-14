@@ -21,10 +21,10 @@ Route::get('/tim-kiem','user\HomeController@search');
 ///////////////////////////////---------BRANDS - CATEGORIES---------////////////////////////////////////////////////////
 
 //SHOW PRODUCT BY CATEGORIES
-Route::get('/Danh-muc-san-pham/{category_id}', 'user\CategoryProduct@show_products_from_category');
+Route::get('/Danh-muc-san-pham/{category_meta_slug}', 'user\CategoryProduct@show_products_from_category');
 
 //SHOW PRODUCT BY BRANDS
-Route::get('/thuong-hieu/{brandcode_id}', 'user\BrandcodeProduct@show_brand_home');
+Route::get('/thuong-hieu/{brandcode_meta_slug}', 'user\BrandcodeProduct@show_products_from_brand');
 //////////////////////////////////------DETAIL PRODUCT------////////////////////////////////////////////////////////////
 
 //DETAIL PRODUCT
@@ -70,7 +70,7 @@ Route::post('/thanh-toan-don-hang','user\orderController@payment_order');
 Route::get('/tin-tuc-chia-se','user\BlogController@news_client');
 
 //DETAIL NEWS
-Route::get('/tin-tuc-chia-se/{primary_id}','user\BlogController@news_details_client');
+Route::get('/tin-tuc-chia-se/{meta_slug}','user\BlogController@news_details_client');
 
 //DETAIL INFO ORDER CUSTOMER
 route::get('/thong-tin-khach-hang','user\InfocustomerController@info_customer');
@@ -141,7 +141,7 @@ Route::get('/addCategoryProduct', function () {
     return view('admin.categories.addcategoryProduct');
 });
 //SHOW CATEGORY
-Route::get('/allCategoryProduct', 'admin\CategoryProduct@all_Category_Product');
+Route::get('/allCategoryProduct', 'admin\CategoryProduct@show_Categories');
 //SAVE CATEGORY
 Route::post('/save-category-product', 'admin\CategoryProduct@save_Category_Product');
 
@@ -166,7 +166,7 @@ Route::get('/add-Brand-code-Product',function () {
     return view('admin.brands.addBrandProduct');
 });
 //SHOW BRAND
-Route::get('/all-Brand-code-Product', 'admin\BrandcodeProduct@all_Brand_code_Product');
+Route::get('/all-Brand-code-Product', 'admin\BrandcodeProduct@show_Brand');
 // SAVE BRAND
 Route::post('/save-brandcode-product', 'admin\BrandcodeProduct@save_brandcode_product');
 
@@ -183,7 +183,7 @@ route::post('update-brandcode-product/{brand_code_id}','admin\BrandcodeProduct@u
 ///////////////////////////////////////-------------PRODUCT----------------/////////////////////////////////////////////
 
 //ADD  PRODUCT
-Route::get('/add-Product', 'admin\Productcontroller@add_Product');
+Route::get('/add-Product', 'admin\Productcontroller@show_product');
 //SHOW PRODUCT
 Route::get('/all-Product', 'admin\Productcontroller@all_Product');
 // SAVE PRODUCT

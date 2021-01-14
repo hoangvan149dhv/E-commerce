@@ -200,7 +200,7 @@
                     <p class="breadcrumbs mb-0"><span class="mr-2"><a href="{{ URL::to('/') }}">Trang chủ <i
                                     class="fa fa-chevron-right"></i></a></span> <span>Thanh toán <i
                                 class="fa fa-chevron-right"></i></span></p>
-                    <h2 class="mb-0 bread">Giỏ hàng</h2>
+                    <h2 class="mb-0 bread">Thanh toán</h2>
                 </div>
             </div>
         </div>
@@ -215,7 +215,12 @@
         $(document).ready(function () {
             $('.select-address').select2({
                 placeholder: 'vui lòng điền thông tin',
-                language: "vi"
+                language: "vi",
+                "language": {
+                    "noResults": function(){
+                        return "Chưa có dữ liệu";
+                    }
+                }
             });
         });
 

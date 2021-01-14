@@ -13,7 +13,7 @@ use Carbon\Carbon;
 @Section('content')
     <div class="col-sm-12" style="border-right:1px solid #e8e8e2;border-left:1px solid #e8e8e2">
         <div class="blog-post-area">
-            <h2 class="title text-center">Tin tức-chia sẻ</h2>
+            <h2 class="title text-center">Tin tức - chia sẻ</h2>
             <div class="single-blog-post">
                 <h2>{{ $newsadminModel->news_title }}</h2>
                 <div class="post-meta">
@@ -39,7 +39,7 @@ use Carbon\Carbon;
             <div class="media-body">
                 <h2 class="media-heading">Xem thêm:</h2>
                 @foreach ($news_details as $news)
-                    <a class="news-extra" href="{{ URL::to('/tin-tuc-chia-se/'.$news->news_id) }}"><p><i
+                    <a class="news-extra" href="{{ URL::to('/tin-tuc-chia-se/'.$news->meta_slug) }}"><p><i
                                 class="fa fa-chevron-right"> </i> {{ $news->news_title }}</p></a>
                 @endforeach
             </div>

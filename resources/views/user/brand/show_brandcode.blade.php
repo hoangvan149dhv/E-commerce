@@ -4,7 +4,7 @@
         @foreach ($brand_name as $product)
             <h2 class="title text-center">{{$product->brandcode_name}}</h2>
         @endforeach
-        @foreach ($brand_by_id as $product)
+        @foreach ($productDataFromBrand as $product)
             <div class="col-sm-4 col-brand">
                 <div class="product-image-wrapper brand">
                     <div class="single-products">
@@ -66,13 +66,13 @@
     </div><!--features_items-->
     <div class="page" style="text-align:center">
         {{-- Paginate--}}
-        {!! $brand_by_id->links() !!}
+        {!! $productDataFromBrand->links() !!}
     </div>
 @endsection
 
 @section('script')
     <script>
-        @foreach ($brand_by_id as $product)
+        @foreach ($productDataFromBrand as $product)
         // Set the date we're counting down to
         // Update the count down every 1 second
         var x = setInterval(function () {
