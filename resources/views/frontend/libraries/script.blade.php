@@ -12,6 +12,6 @@
 <script src="{{asset('public/frontend/js/scrollax.min.js')}}"></script>
 <script src="{{asset('public/frontend/js/bootstrap/bootstrap-select.min.js')}}"></script>
 <script src="{{asset('public/frontend/js/form-validator.min.js')}}"></script>
-<script src="{{asset('public/'.(mix('frontend/js/main.js')))}}"></script>
+<script src="{{asset('public'.(mix('frontend/js/main.js')))}}"></script>
 <script src="{{asset('public/frontend/js/plugins.js')}}"></script>
 <script src="{{asset('public/frontend/js/active.js')}}"></script>
