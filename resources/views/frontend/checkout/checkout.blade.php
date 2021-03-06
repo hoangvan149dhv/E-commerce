@@ -2,6 +2,8 @@
 @extends('frontend.index')
 @Section('content')
     @php $dataCart = Cart::content();@endphp
+
+<section class="ftco-section">
     <div class="container">
         @if($dataCart->count())
             <div class="row">
@@ -187,6 +189,7 @@
             </div>
     </div>
     @endif
+</section>
     <!--/#cart_items-->
     <div id="img-load"><img src="public/upload/reloading.gif" class="load-page"></div>
 @endsection

@@ -31,7 +31,7 @@ class InfocustomerController extends HomeController
             $order_item_value = explode(',', $order_item[0]->product_id);
             $order_item_qty_value = explode(',', $order_item[0]->qty);
 
-            return view('user.infocustomer.infocustomer_phone')
+            return view('frontend.infocustomer.infocustomer_phone')
                 ->with('info_customer', $info_customer)
                 ->with('order_item_value', $order_item_value)
                 ->with('order_item_qty_value', $order_item_qty_value);

@@ -22,7 +22,7 @@
                             ->orderby('tbl_product.product_price_promotion', 'desc')
                             ->paginate(12);
 
-            return view('user.brand.show_brandcode')
+            return view('frontend.brand.show_brandcode')
                 ->with('productDataFromBrand', $productData)
                 ->with('brand_name', $brand_name);
         }

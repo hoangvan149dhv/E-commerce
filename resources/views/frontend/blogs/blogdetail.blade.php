@@ -30,6 +30,8 @@ use Carbon\Carbon;
     }
 @endsection
 @Section('content')
+
+<section class="ftco-section">
     <div class="container">
         <article class="row">
             <div class="col-lg-8 ftco-animate blog">
@@ -72,6 +74,7 @@ use Carbon\Carbon;
             </div>
         </article>
     </div>
+</section>
 @endsection
 @section('breadcumbs')
     <section class="hero-wrap hero-wrap-2"

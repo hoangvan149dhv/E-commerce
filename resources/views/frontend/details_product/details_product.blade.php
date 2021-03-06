@@ -62,6 +62,7 @@
                 }
 @endsection
 @Section('content')
+<section class="ftco-section">
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-6">
@@ -335,6 +336,7 @@
         </div>
         <!--/product-related-->
     </div>
+</section>
 @endsection
 @section('breadcumbs')
     <section class="hero-wrap hero-wrap-2"
@@ -343,7 +345,7 @@
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-center">
                 <div class="col-md-9 ftco-animate mb-5 text-center">
-                    <p class="breadcrumbs mb-0"><span class="mr-2"><a href="{{ URL::to('/') }}">Trang chủ <i class="fa fa-chevron-right"></i></a></span> <span>Liên hệ <i class="fa fa-chevron-right"></i></span></p>
+                    <p class="breadcrumbs mb-0"><span class="mr-2"><a href="{{ URL::to('/') }}">Trang chủ <i class="fa fa-chevron-right"></i></a>{{$detail_product->brandcode_name}}</span></p>
                     <h2 class="mb-0 bread">{{$detail_product->product_Name}}</h2>
                 </div>
             </div>

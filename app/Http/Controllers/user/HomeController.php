@@ -94,7 +94,7 @@ class HomeController extends Controller
             ->orderby('product_price_promotion', 'desc')
             ->paginate(10);
 
-        return view('user.promotion.promotion')
+        return view('frontend.promotion.promotion')
             ->with('promotion', $promotion)
             ->with(compact('slider'));
     }

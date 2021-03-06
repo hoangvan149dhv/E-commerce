@@ -1,8 +1,6 @@
 <?php use Carbon\Carbon;?>
 @extends('frontend.index')
-
-@if (!empty($promotion[0]))
-  @section('content')
+@section('content')
 <section class="hero-wrap hero-wrap-2" style="background-image: url({{asset('public/upload/83815495_773654023042829_651030464122847232_o6.jpg')}}"
          data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
@@ -10,13 +8,14 @@
         <div class="row no-gutters slider-text align-items-end justify-content-center">
             <div class="col-md-9 ftco-animate mb-5 text-center">
                 <p class="breadcrumbs mb-0"><span class="mr-2"><a href="{{ URL::to('/')}}">Trang chủ <i
-                        class="fa fa-chevron-right"></i></a></span> <span>Khuyến mãi<i
+                        class="fa fa-chevron-right"></i></a></span> <span>@foreach ($category_name as $product){{$product->category_name}}@endforeach<i
                         class="fa fa-chevron-right"></i></span></p>
-                <h2 class="mb-0 bread">Khuyến mãi</h2>
+                <h2 class="mb-0 bread">{{$product->category_name}}</h2>
             </div>
         </div>
     </div>
 </section>
+
 <section class="ftco-section">
     <div class="container">
         <div class="row">
@@ -33,6 +32,7 @@
                     </div>
                 </div>
                 <div class="row">
+
                     @foreach ($promotion as $product)
                     <div class="col-md-4 col-lg-3 col-12 d-flex">
                         <div class="product ftco-animate">
@@ -168,6 +168,7 @@
     </div>
 </section>
 @endsection
+
 @section('script')
     <script>
         @foreach ($promotion as $product)
@@ -195,5 +196,4 @@
             @endif
         @endforeach
     </script>
-@endsection  
-@endif
+@endsection

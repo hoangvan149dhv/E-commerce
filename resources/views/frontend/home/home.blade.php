@@ -151,7 +151,7 @@
     </script>
 @endsection
 @section('slider')
-    <div class="hero-wrap" style="background-image: url('public/upload/{{$slider ?? ''[0]->img}}');" data-stellar-background-ratio="0.5">
+    <div class="hero-wrap" style="background-image: url('public/upload/{{$slider[0]->img ?? ''}}');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -207,7 +207,7 @@
     <section class="ftco-section ftco-no-pb">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 img img-3 d-flex justify-content-center align-items-center" style="background-image: url(images/about.jpg);">
+                <div class="col-md-6 img img-3 d-flex justify-content-center align-items-center" style="background-image: url(public/upload/83815495_773654023042829_651030464122847232_o6.jpg);">
                 </div>
                 <div class="col-md-6 wrap-about pl-md-5 ftco-animate py-5">
                     <div class="heading-section">
@@ -232,38 +232,38 @@
             <div class="row">
                 <div class="col-lg-2 col-md-4 ">
                     <div class="sort w-100 text-center ftco-animate">
-                        <div class="img" style="background-image: url(images/kind-1.jpg);"></div>
+                        <div class="img" style="background-image: url(public/upload/83815495_773654023042829_651030464122847232_o6.jpg);"></div>
                         <h3>Brandy</h3>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 ">
                     <div class="sort w-100 text-center ftco-animate">
-                        <div class="img" style="background-image: url(images/kind-2.jpg);"></div>
-                        <h3>Gin</h3>
+                        <div class="img" style="background-image: url(public/upload/85137522_773653723042859_9173677491418562560_n30.jpg);"></div>
+                        <h3>Phụ nữ</h3>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 ">
                     <div class="sort w-100 text-center ftco-animate">
-                        <div class="img" style="background-image: url(images/kind-3.jpg);"></div>
-                        <h3>Rum</h3>
+                        <div class="img" style="background-image: url(public/upload/84612966_773653896376175_640374783405457408_o42.jpg);"></div>
+                        <h3>Cách tân</h3>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 ">
                     <div class="sort w-100 text-center ftco-animate">
-                        <div class="img" style="background-image: url(images/kind-4.jpg);"></div>
-                        <h3>Tequila</h3>
+                        <div class="img" style="background-image: url(public/upload/84612966_773653896376175_640374783405457408_o42.jpg);"></div>
+                        <h3>Truyền thống</h3>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 ">
                     <div class="sort w-100 text-center ftco-animate">
-                        <div class="img" style="background-image: url(images/kind-5.jpg);"></div>
-                        <h3>Vodka</h3>
+                        <div class="img" style="background-image: url(public/upload/83815495_773654023042829_651030464122847232_o6.jpg);"></div>
+                        <h3>Cách tân</h3>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 ">
                     <div class="sort w-100 text-center ftco-animate">
-                        <div class="img" style="background-image: url(images/kind-6.jpg);"></div>
-                        <h3>Whiskey</h3>
+                        <div class="img" style="background-image: url(public/upload/83815495_773654023042829_651030464122847232_o6.jpg);"></div>
+                        <h3>Truyền thống</h3>
                     </div>
                 </div>
             </div>

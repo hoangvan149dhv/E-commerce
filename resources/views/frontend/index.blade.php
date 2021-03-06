@@ -35,10 +35,8 @@
 @yield('slider')
 <!--/slider-->
 @endif
-<section class="ftco-section">
-        @yield('content')
+    @yield('content')
     @yield('blog')
-</section>
 @yield('popup')
 @include('frontend.sections.footer')
 @include('frontend.libraries.script')

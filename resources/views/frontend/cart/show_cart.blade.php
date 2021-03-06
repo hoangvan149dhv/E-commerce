@@ -3,6 +3,8 @@
 @Section('content')
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @php $dataCart = Cart::content();@endphp
+    
+<section class="ftco-section">
     <div class="container">
         @if($dataCart->count())
             <div class="row">

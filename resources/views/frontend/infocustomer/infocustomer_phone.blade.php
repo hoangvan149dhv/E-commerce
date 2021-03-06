@@ -1,7 +1,8 @@
-@extends('user.index')
+@extends('frontend.index')
 @Section('content')
+<section class="ftco-section">
+    <div class="container">
     <div class="contact-form">
-        <h2 class="title text-center">Lịch sử mua hàng</h2>
         @foreach ($info_customer as $value_content)
             @if(isset($value_content->cusname))
                 <tr>
@@ -17,16 +18,16 @@
     </div>
     <div class="table-responsive cart_info">
         @if(isset($value_content->cusname))
-            <table class="table table-condensed table-responsive" style="margin-bottom: 0px;">
-                <thead>
-                <tr class="cart_menu"
-                    style="  border: 1px solid #E6E4DF; background:#FE980F;color:white; text-align: center;">
-                    <td class="image"><h4>Hình ảnh</h4></td>
-                    <td class="product"><h4>Sản phẩm</h4></td>
-                    <td class="price"><h4>Gía</h4></td>
-                    <td class="quantity"><h4>Số lượng</h4></td>
-                    <td class="total"><h4>Trạng thái</h4></td>
-                </tr>
+        <div class="row">
+            <table class="table cart">
+                <thead class="thead-primary">
+                    <tr>
+                        <th>Hình ảnh</th>
+                        <th>Sản phẩm</th>
+                        <th>Gía</th>
+                        <th>Số lượng</th>
+                        <th>Trạng thái</th>
+                    </tr>
                 </thead>
                 <tbody>
                 @foreach($order_item_value as $value)
@@ -35,7 +36,7 @@
                         $productItem->qty = $value;
                     @endphp
                     <tr style="border: 1px solid #E6E4DF;">
-                        <td class="cart_product" style="border: 1px solid #E6E4DF">
+                        <td class="" style="border: 1px solid #E6E4DF;text-align: center">
                             <img src="{{asset('public/upload/'.$productItem[0]->product_image)}}" width="70" height="90"
                                  alt="">
                         </td>
@@ -63,8 +64,32 @@
                 @endforeach
                 </tbody>
             </table>
-        @else
+        </div>
+            @else
             <div class='note' style='color:red;font-size:20px'>Không có thông tin!!!</div>
         @endif
     </div>
+    </div>
+</section>
+<style>
+    .table thead th{
+        text-align: center;
+    }
+</style>
+@endsection
+@section('breadcumbs')
+    <section class="hero-wrap hero-wrap-2"
+             style="background-image: url({{asset('public/upload/85142834_773653949709503_6666853325834551296_o49.jpg' )}});"
+             data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-end justify-content-center">
+                <div class="col-md-9 ftco-animate mb-5 text-center">
+                    <p class="breadcrumbs mb-0"><span class="mr-2"><a href="{{ URL::to('/') }}">Trang chủ <i
+                                    class="fa fa-chevron-right"></i></a></span> <span>Lịch sử mua hàng <i
+                                    class="fa fa-chevron-right"></i></span></p>
+                        <h2 class="mb-0 bread">Lịch sử mua hàng</h2>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection

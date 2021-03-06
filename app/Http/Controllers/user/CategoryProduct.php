@@ -32,7 +32,7 @@
                 $url_canonical = $request->url();
                 ///SEO
             }
-            return view('user.category.show_category')
+            return view('frontend.category.show_category')
                 ->with('category_by_id', $category_by_id)
                 ->with('category_name', $category_name)
                 //SEO
