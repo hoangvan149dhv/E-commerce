@@ -64,6 +64,9 @@ Route::middleware('prevent-back-history')->group(function () {
 
 //ORDER SUCCESS
 Route::post('/thanh-toan-don-hang','user\orderController@payment_order');
+Route::get('/thanh-toan-don-hang', function(){
+   die;
+});
 
 /////////////////////////////////////-------NEWS-------/////////////////////////////////////////////////////////////////
 

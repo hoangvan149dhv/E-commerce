@@ -87,7 +87,7 @@ class orderController extends HomeController
 
                 throw new \RuntimeException($e->getMessage(), $e->getCode());
             }
-            return view('user.payment.payment_order');
+            return view('frontend.payment.payment_order');
         }
     }
 }
