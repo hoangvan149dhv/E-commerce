@@ -4,5 +4,13 @@ Disallow: /database/*
 Disallow: /config/*
 Disallow: /resources/*
 Disallow: /routes/*
+Disallow: /vendor/*
+Disallow: /tests/*
+Disallow: /config/*
 Disallow: .env
-
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /storage/framework/cache/
+Disallow: /storage/framework/session/
+Disallow: /storage/app/
+Disallow: /storage/logs/
