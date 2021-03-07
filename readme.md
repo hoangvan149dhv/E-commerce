@@ -56,7 +56,11 @@ $ npm install
  DB_PASSWORD= {your_pass_DB}
 ```
 ## Install data
-- Open ``{Your_projecct}/database/backups/{year}/{month}/{day}/{file}.sql`` and install
+- Open 
+```
+{Your_projecct}/database/backups/{year}/{month}/{day}/{file}.sql
+``` 
+and install
 
 ## Code css/js
 - {File_JS}: 
