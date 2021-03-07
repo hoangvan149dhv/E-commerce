@@ -49,7 +49,7 @@ $ npm install
 ## Configuration
 - Create new file ``.env`` and change
 ``` bash
- DB_CONNECTION = localhost (apache2), mysqli (docker)  
+ DB_CONNECTION = localhost (Apache2), mysqli (Docker)  
  DB_HOST = 127.0.0.1
  DB_DATABASE= {your_DB}
  DB_USERNAME= {user_name_DB}
@@ -59,10 +59,10 @@ $ npm install
 - Open ``{Your_projecct}/database/backups/{year}/{month}/{day}/{file}.sql`` and install
 
 ## Code css/js
-- {JS}: ``{Your_project}/resources/js/{your_file.js}``
-- {css}: ``{Your_project}/resources/sass/{your_file.scss}``
-- Config css in ``webpack.mix.js``: ``mix.sass('{css}','public/frontend/css/{your_file.css}')`` 
-- Config js in ``webpack.mix.js``: ``mix.js('{js}','public/frontend/js/{your_file.js}')`` 
+- {File_JS}: ``{Your_project}/resources/js/{your_file.js}``
+- {File_CSS}: ``{Your_project}/resources/sass/{your_file.scss}``
+- Config css in ``webpack.mix.js``: ``mix.sass('{File_CSS}','public/frontend/css/{your_file.css}')`` 
+- Config js in ``webpack.mix.js``: ``mix.js('{File_JS}','public/frontend/js/{your_file.js}')`` 
 - Run web pack: ``npm run development``
 
 ## Contact me
