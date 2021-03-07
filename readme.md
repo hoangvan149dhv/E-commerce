@@ -5,6 +5,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+## Laravel  6.2
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
@@ -21,7 +22,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
 ==========
 ## Requirement
-- For redSHOP version **>= 2.1.5**: PHP Version: **>= 7.2**
+- PHP Version: **>= 7.2**
 ## IDE integration
 - PHPStorm: https://blog.jetbrains.com/phpstorm/2019/11/phpstorm-2019-3-release#psr
 
@@ -33,13 +34,13 @@ $ git clone https://github.com/hoangvan149dhv/Ecomerce-Laravel.git
 ```
 Installation
 ============
-install composer: ``https://www.digitalocean.com/community/tutorials/how-to-install-composer-on-ubuntu-20-04-quickstart``
+Install composer: ``https://www.digitalocean.com/community/tutorials/how-to-install-composer-on-ubuntu-20-04-quickstart``
 
 ```
 $ composer install
 ```
 
-install nodejs: ``sudo apt install nodejs && sudo apt install npm``
+Install nodejs: ``sudo apt install nodejs && sudo apt install npm``
 
 ```
 $ npm install
