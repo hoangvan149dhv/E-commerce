@@ -59,11 +59,26 @@ $ npm install
 - Open ``{Your_projecct}/database/backups/{year}/{month}/{day}/{file}.sql`` and install
 
 ## Code css/js
-- {File_JS}: ``{Your_project}/resources/js/{your_file.js}``
-- {File_CSS}: ``{Your_project}/resources/sass/{your_file.scss}``
-- Config css in ``webpack.mix.js``: ``mix.sass('{File_CSS}','public/frontend/css/{your_file.css}')`` 
-- Config js in ``webpack.mix.js``: ``mix.js('{File_JS}','public/frontend/js/{your_file.js}')`` 
-- Run web pack: ``npm run development``
+- {File_JS}: 
+```
+{Your_project}/resources/js/{your_file.js}
+```
+- {File_SCSS}: 
+```
+{Your_project}/resources/sass/{your_file.scss}
+```
+- Config css in ``webpack.mix.js``: 
+```
+mix.sass('{File_SCSS}','public/frontend/css/{your_file.css}')
+``` 
+- Config js in ``webpack.mix.js``: 
+```
+mix.js('{File_JS}','public/frontend/js/{your_file.js}')
+``` 
+- Run web pack: 
+```
+npm run development
+```
 
 ## Contact me
  Email: ``hoangvan149dhv@gmail.com``
