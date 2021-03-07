@@ -34,7 +34,7 @@ $ git clone https://github.com/hoangvan149dhv/Ecomerce-Laravel.git
 ```
 Installation
 ============
-Install composer: ``https://www.digitalocean.com/community/tutorials/how-to-install-composer-on-ubuntu-20-04-quickstart``
+- Install composer: https://www.digitalocean.com/community/tutorials/how-to-install-composer-on-ubuntu-20-04-quickstart
 
 ```
 $ composer install
