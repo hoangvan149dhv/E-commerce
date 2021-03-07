@@ -49,7 +49,7 @@ $ npm install
 ## Configuration
 - Create new file ``.env`` and change
 ``` bash
- DB_CONNECTION = localhost (Apache2), mysqli (Docker)  
+ DB_CONNECTION = localhost (Apache2)/mysqli (Docker)  
  DB_HOST = 127.0.0.1
  DB_DATABASE= {your_DB}
  DB_USERNAME= {user_name_DB}
