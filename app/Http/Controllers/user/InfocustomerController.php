@@ -28,6 +28,11 @@ class InfocustomerController extends HomeController
         if (count($info_customer)) {
             $order_item = DB::table('tbl_orders')->where('cusid', $info_customer[0]->cusid)->orderby('cusid',
             'desc')->get();
+            if (!count($order_item))
+            {
+                Session::put('customer-not-found', 'Không có tên hoặc số điện thoại quý khách đã từng mua hàng. Vui lòng thử lại.');
+                return redirect::to('/');
+            }
             $order_item_value = explode(',', $order_item[0]->product_id);
             $order_item_qty_value = explode(',', $order_item[0]->qty);
 
@@ -37,7 +42,7 @@ class InfocustomerController extends HomeController
                 ->with('order_item_qty_value', $order_item_qty_value);
         } else {
             Session::put('customer-not-found', 'Không có tên hoặc số điện thoại quý khách đã từng mua hàng. Vui lòng thử lại.');
-            return back();
+            return redirect::to('/');
         }
     }
 }
