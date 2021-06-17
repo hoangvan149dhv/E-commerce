@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="table-responsive">
-        <form action="{{URL::to('/destroy-slider')}}" method="get">
+        <form action="{{URL::to('/admin/destroy-slider')}}" method="get">
         <table class="table table-striped b-t b-light">
           <thead>
             <tr>
@@ -38,19 +38,19 @@
            @foreach ($slider_all as $slider)
             <tr>
               <td><label class="i-checks m-b-none"><input type="checkbox" value="{{ $slider->id }}" name="slider[]"></label></td>
-              <td><img src="public/upload/{{$slider->img}}" width="80" height="120" alt=""></td>
+              <td><img src="{{asset('public/upload/'.$slider->img)}}" width="80" height="120" alt=""></td>
               <td>
                   @if ($slider->status == 1)
-                    <a href=" {{URL::to('/update_status_slider/'.$slider->id.'/0')}}"><span class='fa fa-eye'style='color:green;font-size:20px'>||Hiện</span></a>
+                    <a href=" {{URL::to('/admin/update_status_slider/'.$slider->id.'/0')}}"><span class='fa fa-eye'style='color:green;font-size:20px'>||Hiện</span></a>
                   @else
-                    <a href=" {{URL::to('/update_status_slider/'.$slider->id.'/1')}}"><span class="fa fa-eye-slash" style='color:red;font-size:20px'>||Ẩn</span></a>
+                    <a href=" {{URL::to('/admin/update_status_slider/'.$slider->id.'/1')}}"><span class="fa fa-eye-slash" style='color:red;font-size:20px'>||Ẩn</span></a>
                   @endif
               </td>
               <td>
-                <a href="{{URL::to('/update-layout-slider/'.$slider->id)}}"style='color:green;font-size:20px' class="active" ui-toggle-class="">
+                <a href="{{URL::to('/admin/update-layout-slider/'.$slider->id)}}"style='color:green;font-size:20px' class="active" ui-toggle-class="">
                   <i class="fa fa-pencil-square-o text-success text-active"></i>
                 </a>||
-                  <a href="{{URL::to('/delete-layout-slider/'.$slider->id)}}" onclick="return confirm('Bạn Muốn Xóa Sản Phẩm Này?')"  style='color:red;font-size:20px'class="active" ui-toggle-class="">
+                  <a href="{{URL::to('/admin/delete-layout-slider/'.$slider->id)}}" onclick="return confirm('Bạn Muốn Xóa Sản Phẩm Này?')"  style='color:red;font-size:20px'class="active" ui-toggle-class="">
                   <i class="fa fa-times text-danger text"></i>
                 </a>
               </td>

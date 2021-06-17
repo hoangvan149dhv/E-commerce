@@ -18,7 +18,7 @@
                     <p class=""></p>
                 </li>
                 <li>
-                    <a href="{{URL::to('/reviews')}}">
+                    <a href="{{URL::to('/admin/reviews')}}">
                         <div class="task-info clearfix">
                             <div class="desc pull-left">
                                 Bạn Có {{$alertt }} Đánh giá
@@ -46,7 +46,7 @@
                     <p></p>
                 </li>
                 <li>
-                    <a href="{{ URL::to('contact') }}"><p class="red">Bạn Có {{$alert }} <span style="color:red">
+                    <a href="{{ URL::to('/admin/contact') }}"><p class="red">Bạn Có {{$alert }} <span style="color:red">
                     </span>Góp Ý</p></a>
                 </li>
                 <li>
@@ -59,14 +59,14 @@
         @yield('preview_product')
         <!-- inbox dropdown end -->
         <!-- notification dropdown start-->
-        <li id="header_notification_bar" class="dropdown">
-            <form action="{{ URL::to('/search-order') }}" method="POST">
+        {{--<li id="header_notification_bar" class="dropdown">
+            <form action="{{ URL::to('/admin/search-order') }}" method="POST">
                 {{ csrf_field() }}
                 <li>
                     <input type="text" name="search" class="form-control search" placeholder=" Search">
                 </li>
             </form>
-        </li>
+        </li>--}}
     </ul>
     <!--  notification end -->
 </div>
@@ -85,8 +85,8 @@
             </a>
             <ul class="dropdown-menu extended logout">
                 <li><a href="#"><i class=" fa fa-suitcase"></i>Thông Tin</a></li>
-                <li><a href="{{URL::to('/admin-config')}}"><i class="fa fa-cog"></i> Cấu Hình Website</a></li>
-            <li><a href="{{URL::to('/logout')}}"><i class="fa fa-key"></i> Đăng Xuất</a></li>
+                <li><a href="{{URL::to('/admin/admin-config')}}"><i class="fa fa-cog"></i> Cấu Hình Website</a></li>
+            <li><a href="{{URL::to('/admin/logout')}}"><i class="fa fa-key"></i> Đăng Xuất</a></li>
             </ul>
         </li>
         <!-- user login dropdown end -->

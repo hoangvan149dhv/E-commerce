@@ -5,10 +5,8 @@ namespace App\Http\Controllers\admin;
 use App\Http\Model\OrderModel;
 use Illuminate\Http\Request;
 use DB;
-use PhpParser\Node\Expr\Cast\Object_;
 use Session;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Http\Response;
 use Carbon\Carbon;
 use App\Http\Model\CustomerorderModel;
 use App\Http\Model\contactinfoModel;
@@ -33,20 +31,21 @@ class AdminController extends loginController
         view()->share('brand_code_product', $brandcode_product);
         view()->share('totalOder', $totalOder);
         //check login
-        $this->middleware(function ($request, $next) {
-            $session_id = session::get('session_id');
-
-            if (empty($session_id)) {
-
-                return Redirect::to('admin-login')->send();
-            }
-
-            return $next($request);
-        });
+//        $this->middleware(function ($request, $next) {
+//            $session_id = session::get('session_id');
+//
+//            if (empty($session_id)) {
+//
+//                return redirect::to('admin/admin/admin-login')->send();
+//            }
+//
+//            return $next($request);
+//        });
     }
 
     public function index()
     {
+        $req = new Request();
         $date = Carbon::now();
         $month = Carbon::now()->month;
         $product_order_date = DB::table('tbl_orders')->where('status', 1)->whereDate('order_date', $date)->get();
@@ -54,12 +53,9 @@ class AdminController extends loginController
 
         session::put('message', DB::table('tbl_orders')->where('status', 0)->count());
 
-
         return view('admin.home.home')
             ->with('product_order_date', $product_order_date)
             ->with('product_order_month', $product_order_month);
-
-
     }
 
     public function update_status($orderid, $order_status)
@@ -73,27 +69,23 @@ class AdminController extends loginController
 
     public function destroy_order(Request $request)
     {
-
         $order_id = $request->orderid;
-
         isset($order_id) ? DB::table('tbl_orders')->whereIn('orderid', $order_id)->delete() : "";
+
         return back();
-
     }
 
-    public function search_order(Request $request)
-    {
-
-        $key_word = $request->search;
-
-        $search = DB::table('tbl_orders')->where('cusname', 'like', '%'.$key_word.'%')
-            ->orWhere('status', $key_word)
-            ->orWhere('productname', 'like', '%'.$key_word.'%')
-            ->orderby('orderid', 'desc')->paginate(30);
-
-        return view('admin.search.search')->with('search', $search);
-
-    }
+//    public function search_order(Request $request)
+//    {
+//
+//        $key_word = $request->search;
+//
+//        $search = DB::table('tbl_orders')->where('productname', 'like', '%'.$key_word.'%')
+//            ->orWhere('status', $key_word)
+//            ->orderby('orderid', 'desc')->paginate(30);
+//
+//        return view('admin.search.search')->with('search', $search);
+//    }
 
     public function order($status)
     {
@@ -106,7 +98,6 @@ class AdminController extends loginController
         session::put('message', DB::table('tbl_orders')->where('status', 0)->count());
 
         return view('admin.order.order')->with('product_order', $order_item);
-
     }
 
     public function searchProduct(Request $request)
@@ -119,7 +110,6 @@ class AdminController extends loginController
             ->paginate(30);
 
         return view('admin.search.searchproduct')->with('search', $search);
-
     }
 
     //Order Detail

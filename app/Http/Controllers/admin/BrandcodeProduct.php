@@ -29,7 +29,7 @@ class BrandcodeProduct extends AdminController
 
         Session::put('messages','Thêm Mã Thương Hiệu Thành Công');
 
-        return redirect::to('add-Brand-code-Product');
+        return redirect::to('admin/add-Brand-code-Product');
 
     }
 
@@ -37,7 +37,7 @@ class BrandcodeProduct extends AdminController
 
         DB::table('tbl_brand_code_product')->where('code_id',$brand_code_id)->delete();
 
-        return redirect::to('/all-Brand-code-Product');
+        return redirect::to('admin/all-Brand-code-Product');
     }
     //show detail brands
     public function edit_brand_code_product($brand_code_id) {

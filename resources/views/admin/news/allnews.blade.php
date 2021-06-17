@@ -23,14 +23,14 @@
            @foreach ($newsadminModel as $news)
             <tr>
               <td  style="text-align:center">{{$news->news_id}}</td>
-              <td  style="text-align:center"><a href="{{ URL::to('/chi-tiet-bai-viet/'.$news->news_id)}}">{{$news->news_title}}</a> </td>
+              <td  style="text-align:center"><a href="{{ URL::to('/admin/chi-tiet-bai-viet/'.$news->news_id)}}">{{$news->news_title}}</a> </td>
               <td style="text-align:center">  {{$news->news_desc}}</td> {{--trích dẫn  --}}
-              <td style="text-align:center"><img src="public/upload/{{$news->news_image}}"width=80 height=110 alt=""></td>
+              <td style="text-align:center"><img src="{{asset('public/upload/'.$news->news_image)}}"width=80 height=110 alt=""></td>
               <td>
-                  <a href="{{URL::to('/edit-news/'.$news->news_id)}}"style='color:green;font-size:20px' class="active" ui-toggle-class="">
+                  <a href="{{URL::to('/admin/edit-news/'.$news->news_id)}}"style='color:green;font-size:20px' class="active" ui-toggle-class="">
                     <i class="fa fa-pencil-square-o text-success text-active"></i>
                   </a>||
-                    <a href="{{URL::to('/delete-news/'.$news->news_id)}}" style='color:red;font-size:20px'class="active" ui-toggle-class="">
+                    <a href="{{URL::to('/admin/delete-news/'.$news->news_id)}}" style='color:red;font-size:20px'class="active" ui-toggle-class="">
                     <i class="fa fa-times text-danger text"></i>
                   </a>
               </td>

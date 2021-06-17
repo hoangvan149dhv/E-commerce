@@ -8,7 +8,7 @@
             </header>
             <div class="panel-body">
                 <div class="position-center">
-                <form role="form" action="{{URL::to('/edit-slider')}}" method="post" enctype="multipart/form-data">
+                <form role="form" action="{{URL::to('/admin/edit-slider')}}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                    <div class="form-group">
                         <label for="exampleInputEmail1">Hình Ảnh</label>

@@ -91,7 +91,7 @@ class Productcontroller extends AdminController
             $data['product_image'] = '';
         }
         Session::put('alert-success-product', 'Thêm Sản phẩm Thành Công');
-        return redirect::to('add-Product');
+        return redirect::to('admin/add-Product');
     }
 
     public function destroy_product(Request $request)

@@ -160,7 +160,7 @@
                         <div class="cart-total mb-3">
                             <h3>Tổng giỏ hàng</h3>
                             <p class="d-flex">
-                                <span>Subtotal</span>
+                                <span>Tổng đơn hàng</span>
                                 <span class="fee_cart_product">{{ Cart::subtotal(0) }}</span><span>VNĐ</span>
                             </p>
                             <p class="d-flex">

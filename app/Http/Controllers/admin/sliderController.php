@@ -57,18 +57,18 @@ class sliderController extends AdminController
             $get_image->move('public/upload',$image);
             $slider_update->img = $image;
             $slider_update->save();
-            return redirect::to('update-layout-slider/'.$id)->with('success','sửa ảnh thành công');
+            return redirect::to('admin/update-layout-slider/'.$id)->with('success','sửa ảnh thành công');
         }
         else
         {
-            return redirect::to('update-layout-slider/'.$id)->with('error','Sửa thất bại vui lòng thử lại');
+            return redirect::to('admin/update-layout-slider/'.$id)->with('error','Sửa thất bại vui lòng thử lại');
         }
 
     }
     function update_status_slider($id, $status){
         sliderModel::where('id',$id)->update(['status'=> $status]);
 
-        return Redirect::to('all-slider');
+        return redirect::to('admin/all-slider');
     }
 
     function delete($id)
@@ -82,7 +82,7 @@ class sliderController extends AdminController
 
         sliderModel::where('id',$id)->delete();
 
-        return  Redirect::to('all-slider')->with('success','xóa thành công');
+        return  redirect::to('admin/all-slider')->with('success','xóa thành công');
 
     }
 
@@ -99,6 +99,6 @@ class sliderController extends AdminController
         }
         sliderModel::whereIn('id',$slider_id)->delete();
 
-        return Redirect::to('all-slider')->with('success','xóa thành công');
+        return redirect::to('admin/all-slider')->with('success','xóa thành công');
     }
 }

@@ -13,7 +13,7 @@
                         <div class="alert-success alert"> {{$message}} </div>
                     @endif
                     {!! Session::put('updatesuccess',null); !!}
-                <form role="form" action="{{URL::to('/update-news/'.$newsadminModel->news_id)}}" method="post" enctype="multipart/form-data">
+                <form role="form" action="{{URL::to('/admin/update-news/'.$newsadminModel->news_id)}}" method="post" enctype="multipart/form-data">
                    {{ csrf_field() }}  {{-- Token --}}
                     <div class="form-group">
                         <label for="exampleInputEmail1">Tiêu Đề Bài Viết</label>

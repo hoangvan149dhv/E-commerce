@@ -17,7 +17,7 @@
                     <?php
                     Session::put('alert-success', null);
                     ?>
-                    <form role="form" action="{{URL::to('/update-brandcode-product/'.$edit_value->code_id)}}" method="post">
+                    <form role="form" action="{{URL::to('/admin/update-brandcode-product/'.$edit_value->code_id)}}" method="post">
                        {{ csrf_field() }}
                         <div class="form-group">
                             <label for="exampleInputEmail1">Mã Sản Phẩm</label>

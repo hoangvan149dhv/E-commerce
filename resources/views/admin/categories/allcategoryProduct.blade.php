@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="table-responsive">
-        <form action="{{URL::to('/destroy')}}" method="get">
+        <form action="{{URL::to('/admin/destroy')}}" method="get">
         <table class="table table-striped b-t b-light">
           <thead>
             <tr>
@@ -28,18 +28,18 @@
            @foreach ($allcategory_Productt as $cate_Product)
             <tr>
               <td><label class="i-checks m-b-none"><input type="checkbox" value="{{ $cate_Product->category_id }}" name="category[]"></label></td>
-              <td><a href="{{URL::to('/edit-category-product/'.$cate_Product->category_id)}}">{{$cate_Product->category_name}}</a></td>
+              <td><a href="{{URL::to('/admin/edit-category-product/'.$cate_Product->category_id)}}">{{$cate_Product->category_name}}</a></td>
               <td>
                   <span class="text-ellipsis">
                       <?php if($cate_Product->category_status == 1){?>
-                            <a href=" {{URL::to('/status/'.$cate_Product->category_id.'/0')}}"><span class='fa fa-eye'style='color:green;font-size:20px'>||Hiện</span></a>
+                            <a href=" {{URL::to('/admin/status/'.$cate_Product->category_id.'/0')}}"><span class='fa fa-eye'style='color:green;font-size:20px'>||Hiện</span></a>
                           <?php }else{ ?>
-                            <a href=" {{URL::to('/status/'.$cate_Product->category_id.'/1')}}"><span class="fa fa-eye-slash" style='color:red;font-size:20px'>||Ẩn</span></a>
+                            <a href=" {{URL::to('/admin/status/'.$cate_Product->category_id.'/1')}}"><span class="fa fa-eye-slash" style='color:red;font-size:20px'>||Ẩn</span></a>
                       <?php }?>
                   </span>
               </td>
               <td>
-                <a href="{{URL::to('/edit-category-product/'.$cate_Product->category_id)}}"style='color:green;font-size:20px' class="active" ui-toggle-class="">
+                <a href="{{URL::to('/admin/edit-category-product/'.$cate_Product->category_id)}}"style='color:green;font-size:20px' class="active" ui-toggle-class="">
                   <i class="fa fa-pencil-square-o text-success text-active"></i>
               </td>
             </tr>

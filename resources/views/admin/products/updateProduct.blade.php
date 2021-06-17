@@ -21,7 +21,7 @@
                             Session::put('alert-success-product', null);
                             Session::put('alert-danger-product', null);
                             ?>
-                            <form role="form" action="{{URL::to('/update-product/'.$product->product_id)}}"
+                            <form role="form" action="{{URL::to('/admin/update-product/'.$product->product_id)}}"
                                   method="post" enctype="multipart/form-data">
                                 {{ csrf_field() }}  {{-- Token --}}
                                 <div class="form-group">
@@ -128,6 +128,6 @@
 @endsection
 @section('preview_product')
 <li id="header_inbox_bar">
-    <a  class="dropdown-toggle" target="_blank" href="{{ URL::to('/chi-tiet/'.$product->meta_slug) }}"><i class="fa fa-external-link-square"></i></a>
+    <a  class="dropdown-toggle" target="_blank" href="{{ URL::to('/admin/chi-tiet/'.$product->meta_slug) }}"><i class="fa fa-external-link-square"></i></a>
 </li>
 @endsection

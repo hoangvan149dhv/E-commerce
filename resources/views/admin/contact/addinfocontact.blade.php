@@ -12,7 +12,7 @@
                 </div>
             <div class="panel-body">
                 <div class="position-center">
-                <form role="form" action="{{URL::to('/save-info-contact')}}" method="post">
+                <form role="form" action="{{URL::to('/admin/save-info-contact')}}" method="post">
                    {{ csrf_field() }}  {{-- Token --}}
                    <div class="form-group">
                         <label for="exampleInputPassword1">Bản đồ</label>

@@ -34,10 +34,10 @@
               <td>{{$Brandcode_Product->brandcode_id}}</td>
               <td>{{$Brandcode_Product->brandcode_name}}</td>
               <td>
-                <a href="{{URL::to('/edit-brand-code-product/'.$Brandcode_Product->code_id)}}"style='color:green;font-size:20px' class="active" ui-toggle-class="">
+                <a href="{{URL::to('/admin/edit-brand-code-product/'.$Brandcode_Product->code_id)}}"style='color:green;font-size:20px' class="active" ui-toggle-class="">
                     <i class="fa fa-pencil-square-o text-success text-active"></i>
                 </a>||
-                <a href="{{URL::to('/delete-brand-code-product/'.$Brandcode_Product->code_id)}}" style='color:red;font-size:20px'class="active" ui-toggle-class="">
+                <a href="{{URL::to('/admin/delete-brand-code-product/'.$Brandcode_Product->code_id)}}" style='color:red;font-size:20px'class="active" ui-toggle-class="">
                     <i class="fa fa-times text-danger text"></i>
                 </a>
               </td>

@@ -11,7 +11,7 @@ use Carbon\Carbon;
                 </header>
                 <div class="panel-body">
                     <div class="position-center">
-                        <form role="form" action="{{URL::to('/save-config')}}" method="post"
+                        <form role="form" action="{{URL::to('/admin/save-config')}}" method="post"
                               enctype="multipart/form-data">
                             {{ csrf_field() }}  {{-- Token --}}
                             <div class="form-group">

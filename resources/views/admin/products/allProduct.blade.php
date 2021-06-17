@@ -20,7 +20,7 @@
         <div class="col-sm-4">
         </div>
         <div class="col-sm-3">
-          <form action="{{ URL::to('/tim-kiem-san-pham') }}" method="POST">
+          <form action="{{ URL::to('/admin/tim-kiem-san-pham') }}" method="POST">
             {{ csrf_field() }}
           <div class="input-group">
             <input type="text" name="search" class="input-sm form-control">
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="table-responsive ">
-        <form action="{{URL::to('/destroy-product')}}" method="get">
+        <form action="{{URL::to('/admin/destroy-product')}}" method="get">
         <table class="table table-striped table-responsive b-t b-light table-hover">
           <thead>
             <tr>
@@ -51,20 +51,20 @@
            @foreach ($all_Product as $product)
             <tr>
               <td style="text-align:center"><input type="checkbox" value="{{ $product->product_id }}" name="product[]"></td>
-              <td style="text-align:center"><a href="{{URL::to('/edit-product/'.$product->product_id)}}">{{$product->product_Name}}</a></td>
+              <td style="text-align:center"><a href="{{URL::to('/admin/edit-product/'.$product->product_id)}}">{{$product->product_Name}}</a></td>
               <td style="text-align:center">{{$product->brandcode_id}}</td>
               <td style="text-align:center">{{$product->category_name}}</td>
               <td style="text-align:center">{{$product->product_material}}</td>
-              <td style="text-align:center"><a href="{{URL::to('/edit-product/'.$product->product_id)}}"><img src="public/upload/{{ $product->product_image }}" width=80 height=110></a></td>
+              <td style="text-align:center"><a href="{{URL::to('/admin/edit-product/'.$product->product_id)}}"><img src="{{asset('public/upload/'.$product->product_image) }}" width=80 height=110></a></td>
               <td style="text-align:center">{{number_format($product->product_price)}}.VNĐ</td>
               <td style="text-align:center">{{number_format($product->product_price_promotion)}}.VNĐ</td>
               <td>
                 <?php if($product->publish == 1):?>
-                <a href="{{URL::to('/check-publish-product/'.$product->product_id.'/'.$product->publish)}}"class="active" ui-toggle-class="">
+                <a href="{{URL::to('/admin/check-publish-product/'.$product->product_id.'/admin/'.$product->publish)}}"class="active" ui-toggle-class="">
                   <i class="fa fa-check-circle text-success text-active"></i>
                 </a>
                 <?php else : ?>
-                <a href="{{URL::to('/check-publish-product/'.$product->product_id.'/'.$product->publish)}}" class="active" ui-toggle-class="">
+                <a href="{{URL::to('/admin/check-publish-product/'.$product->product_id.'/admin/'.$product->publish)}}" class="active" ui-toggle-class="">
                   <i class="fa fa-times-circle text-danger text-active"></i>
                 </a>
                 <?php endif ?>

@@ -9,15 +9,16 @@ use DB;
 use App\Http\Controllers\user\HomeController;
 class BlogController extends HomeController
 {
-    public function news_client() {
-
-        $newsadminModel = newsadminModel::select()->orderby('news_id','desc')->paginate(4);
+    public function news_client()
+    {
+        $newsadminModel = newsadminModel::select()->orderby('news_id', 'desc')->paginate(4);
 
         return view('frontend.blogs.blogs')
-              ->with('newsadminModel',$newsadminModel);
+            ->with('newsadminModel', $newsadminModel);
     }
 
-    public function news_details_client($meta_slug,request $request){
+    public function news_details_client($meta_slug,request $request)
+    {
     $newsadminModel = newsadminModel::select()->where('meta_slug',$meta_slug)->get();
 
     $news_details = newsadminModel::select()->whereNotIn('meta_slug',[$meta_slug])->orderby('news_id','desc')->take(5)->get();

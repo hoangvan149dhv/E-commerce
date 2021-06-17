@@ -5,8 +5,8 @@
 <section id="container">
 <header class="header fixed-top clearfix">
 <div class="brand">
-    <a href="{{URL::to('/admin-quanly')}}" class="logo">
-        Sunny Ngo
+    <a href="{{URL::to('/admin/admin-quanly')}}" class="logo">
+        {{config('config_admin.site_name')}}
     </a>
     <div class="sidebar-toggle-box">
         <div class="fa fa-bars"></div>

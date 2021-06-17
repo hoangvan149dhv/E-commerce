@@ -8,7 +8,7 @@
             </header>
             <div class="panel-body">
                 <div class="position-center">
-                <form role="form" action="{{URL::to('/save-news')}}" method="post" enctype="multipart/form-data">
+                <form role="form" action="{{URL::to('/admin/save-news')}}" method="post" enctype="multipart/form-data">
                    {{ csrf_field() }}  {{-- Token --}}
                     <div class="form-group">
                         <label for="exampleInputEmail1">Tiêu Đề Bài Viết</label>

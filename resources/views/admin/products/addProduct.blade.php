@@ -22,7 +22,7 @@
                       <?php }
                         Session::put('alert-warning-product',null);
                 ?>
-                <form role="form" action="{{URL::to('/save-product')}}" method="post" enctype="multipart/form-data">
+                <form role="form" action="{{URL::to('/admin/save-product')}}" method="post" enctype="multipart/form-data">
                    {{ csrf_field() }}  {{-- Token --}}
                     <div class="form-group">
                         <label for="exampleInputEmail1">Tên Sản Phẩm</label>

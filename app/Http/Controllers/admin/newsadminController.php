@@ -28,7 +28,7 @@ class newsadminController extends AdminController
 
         $get_image=$Request->file('image');
 
-        if($get_image){
+        if ($get_image) {
 
             $get_name_image = $get_image->getClientOriginalName();
 
@@ -38,17 +38,17 @@ class newsadminController extends AdminController
             $get_image->move('public/upload',$new_image);
             $newsadminModel->news_image = $new_image;
 
-        }else{
+        } else {
             $newsadminModel->news_image =='';
             Session::put('success','Thêm bản tin Thành Công');
 
-            return redirect::to('add-news');
+            return redirect::to('admin/add-news');
         }
 
         $newsadminModel->save();
         Session::put('success','Thêm bản tin Thành Công');
 
-        return redirect::to('add-news');
+        return redirect::to('admin/add-news');
 
     }
 
@@ -110,7 +110,7 @@ class newsadminController extends AdminController
             $newsadminModel->save();
             Session::put('updatesuccess','Sửa bản tin Thành Công');
 
-            return redirect::to('edit-news/'.$primaryKey);
+            return redirect::to('admin/edit-news/'.$primaryKey);
 
         } elseif ($get_image) {
 

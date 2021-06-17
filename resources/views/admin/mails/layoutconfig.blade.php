@@ -16,7 +16,7 @@
             ?>
             <div class="panel-body">
                 <div class="position-center">
-                    <form action="{{ URL::to('/save-config-mail') }}" method="POST">
+                    <form action="{{ URL::to('/admin/save-config-mail') }}" method="POST">
                     {{ csrf_field() }}  {{-- Token --}}
                         @foreach ($configmail as $item)
                         <div class="form-group">
@@ -48,7 +48,7 @@
                         <button type="submit" name="submit"  class="btn  btn-info">Lưu</button>
                     </form>
                 </div>
-                <a href="{{URL::to('/send-test-mail')}}"><button type="submit" name="submit"  class="btn  btn-info ">Test mail</button></a>
+                <a href="{{URL::to('/admin/send-test-mail')}}"><button type="submit" name="submit"  class="btn  btn-info ">Test mail</button></a>
             </div>
         </section>
     </div>

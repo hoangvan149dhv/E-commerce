@@ -36,12 +36,12 @@
                     <td style="text-align:center">  {{Carbon::createFromFormat('Y-m-d H:i:s', $contactadmin->created_at)->format('d/m/yy | H:i:s')}}</td>
                     @if ($contactadmin->status == 1)
                     <td style="text-align:center;background:#bbecc457">
-                        <a href="{{ URL::to('/update_status_contact/'.$contactadmin->id.'/0') }}" style="color:green;">Đã Đọc</a>
+                        <a href="{{ URL::to('/admin/update_status_contact/'.$contactadmin->id.'/0') }}" style="color:green;">Đã Đọc</a>
                         ||
-                        <a href="{{ URL::to('/delete_status/'.$contactadmin->id) }}" style="color:red">Xóa</a>
+                        <a href="{{ URL::to('/admin/delete_status/'.$contactadmin->id) }}" style="color:red">Xóa</a>
                     @else
                     <td style="text-align:center;background:#f0bcb470;">
-                        <a href="{{ URL::to('/update_status_contact/'.$contactadmin->id.'/1') }}" style="color:red">Chưa Đọc</a>
+                        <a href="{{ URL::to('/admin/update_status_contact/'.$contactadmin->id.'/1') }}" style="color:red">Chưa Đọc</a>
                     </td>
                     @endif
             </tr>

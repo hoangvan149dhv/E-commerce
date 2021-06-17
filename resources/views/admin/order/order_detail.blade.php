@@ -13,20 +13,20 @@
         </div>
         <div class="col-sm-4">
         </div>
-        <div class="col-sm-3">
-          <form action="{{ URL::to('/search-order') }}" method="POST">
-            {{ csrf_field() }}
-          <div class="input-group">
-            <input type="text" name="search" class="input-sm form-control">
-            <span class="input-group-btn">
-              <button class="btn btn-sm btn-default" type="submit" name="submit">Tìm</button>
-            </span>
-          </div>
-        </form>
-        </div>
+{{--        <div class="col-sm-3">--}}
+{{--          <form action="{{ URL::to('/admin/search-order') }}" method="POST">--}}
+{{--            {{ csrf_field() }}--}}
+{{--          <div class="input-group">--}}
+{{--            <input type="text" name="search" class="input-sm form-control">--}}
+{{--            <span class="input-group-btn">--}}
+{{--              <button class="btn btn-sm btn-default" type="submit" name="submit">Tìm</button>--}}
+{{--            </span>--}}
+{{--          </div>--}}
+{{--        </form>--}}
+{{--        </div>--}}
       </div>
       <div class="table-responsive">
-        <form action="{{ URL::to('/destroy-order') }}" method="get">
+        <form action="{{ URL::to('/admin/destroy-order') }}" method="get">
         <table class="table table-striped b-t b-light table-hover "style="border:1px solid #eae6e6">
           <thead>
           <tr>
@@ -42,17 +42,17 @@
             @foreach ($order_detail as $order)
               <tr>
                   <td style="text-align:center"><input type="checkbox" value="{{ $order->orderid }}" name="orderid[]"></td>
-                  <td style="text-align:center"><a href="{{ URL::to('/thong-tin-don-hang/'.$order->orderid) }}">{{$order->cusid}}</a></td>
-                  <td style="text-align:center"><a href="{{ URL::to('/thong-tin-don-hang/'.$order->orderid) }}">{{$order->customer->cusname}}</a></td>
+                  <td style="text-align:center"><a href="{{ URL::to('/admin/thong-tin-don-hang/'.$order->orderid) }}">{{$order->cusid}}</a></td>
+                  <td style="text-align:center"><a href="{{ URL::to('/admin/thong-tin-don-hang/'.$order->orderid) }}">{{$order->customer->cusname}}</a></td>
                   <td style="text-align:center">{{Carbon::createFromFormat('Y-m-d H:i:s', $order->order_date)->format('d/m/yy | H:i:s')}}</td>
                   <td style="text-align:center">{{number_format($order->total)}}.VNĐ</td>
                   @if ($order->status == 1 )
                       <td style="text-align:center;background:#bbecc457">
-                          <a href="{{ URL::to('/update-status/'.$order->orderid).'/0' }}" style="color:green;">Đã Giao Xong</a>
+                          <a href="{{ URL::to('/admin/update-status/'.$order->orderid).'/0' }}" style="color:green;">Đã Giao Xong</a>
                       </td>
                   @else
                       <td style="text-align:center;background:#f0bcb470;">
-                          <a href="{{ URL::to('/update-status/'.$order->orderid.'/1') }}" style="color:red">Đang Xử Lý</a>
+                          <a href="{{ URL::to('/admin/update-status/'.$order->orderid.'/1') }}" style="color:red">Đang Xử Lý</a>
                       </td>
                   @endif
               </tr>

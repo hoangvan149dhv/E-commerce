@@ -64,10 +64,10 @@ use Carbon\Carbon;
                             @endphp
                             <tr>
                                 <td style="text-align:center"><a
-                                        href="{{URL::to('/edit-product/'.$productItem[0]->product_id)}}">{{$productItem[0]->product_Name}}</a>
+                                        href="{{URL::to('/admin/edit-product/'.$productItem[0]->product_id)}}">{{$productItem[0]->product_Name}}</a>
                                 </td>
                                 <td style="text-align:center"><a
-                                        href="{{URL::to('/edit-product/'.$productItem[0]->product_id)}}"><img
+                                        href="{{URL::to('/admin/edit-product/'.$productItem[0]->product_id)}}"><img
                                             src="{{asset('public/upload/'.$productItem[0]->product_image )}}" width=80
                                             height=110></a></td>
                                 <td style="text-align:center">  {{$productItem[0]->product_material}}</td>
@@ -75,15 +75,15 @@ use Carbon\Carbon;
                                 <td style="text-align:center">  {{number_format($productItem[0]->product_price)}}.VNĐ</td>
                                 @if ($info->status == 1 )
                                     <td style="text-align:center;background:#bbecc457">
-                                        <a href="{{ URL::to('/update-status/'.$info->orderid).'/0' }}" style="color:green;">Đã Giao Xong</a>
+                                        <a href="{{ URL::to('/admin/update-status/'.$info->orderid).'/0' }}" style="color:green;">Đã Giao Xong</a>
                                     </td>
                                 @else
                                     <td style="text-align:center;background:#f0bcb470;">
-                                        <a href="{{ URL::to('/update-status/'.$info->orderid.'/1') }}" style="color:red">Đang Xử Lý</a>
+                                        <a href="{{ URL::to('/admin/update-status/'.$info->orderid.'/1') }}" style="color:red">Đang Xử Lý</a>
                                     </td>
                                 @endif
                                 <td style="text-align:center">
-                                    <a href="{{URL::to('/print-pdf/'.$info->orderid.'/Hiện')}}" target="_blank">
+                                    <a href="{{URL::to('/admin/print-pdf/'.$info->orderid.'/Hiện')}}" target="_blank">
                                         <i class="fa fa-file-pdf-o"></i>
                                     </a>
                                 </td>

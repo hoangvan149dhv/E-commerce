@@ -12,3 +12,6 @@ yarn-error.log
 .env
 .idea/*
 /.vscode
+/public/public/
+!/public/user/*
+!/public/logo/*

@@ -64,18 +64,15 @@ class sendMailController extends Controller
                 return back();
             }
 
-             foreach ($EmailName as $key => $value) {
-             }
-
              //value mail config in admin
 
              //SUBJECT
              $subject = "Test Mail thành công";
              $template = "send mail thành công";
              $file_template_mail = "mails.testmail";
-             $mailconfig_recipient = $value->Email;
-             $ccname    = array("hoangvan1491999@gmail.com");
-             $bccname    = array("hoangvan149dhv@gmail.com");
+             $mailconfig_recipient = $EmailName[0]->Email;
+             $ccname    = $EmailName[0]->Email;
+             $bccname    = $EmailName[0]->Email;
 
              $this->sendMail($fromname, $mailconfig_recipient,
                  $ccname, $bccname, $subject,

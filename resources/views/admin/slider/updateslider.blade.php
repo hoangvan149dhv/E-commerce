@@ -9,7 +9,7 @@
                 <div class="panel-body">
                     {{-- @foreach ($slider_edit as $slider) --}}
                     <div class="position-center">
-                        <form role="form" action="{{URL::to('/update-slider/'.$slider_edit->id)}}" method="post" enctype="multipart/form-data">
+                        <form role="form" action="{{URL::to('/admin/update-slider/'.$slider_edit->id)}}" method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Hình Ảnh</label>

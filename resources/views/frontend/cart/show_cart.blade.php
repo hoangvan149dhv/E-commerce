@@ -3,7 +3,7 @@
 @Section('content')
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @php $dataCart = Cart::content();@endphp
-    
+
 <section class="ftco-section">
     <div class="container">
         @if($dataCart->count())
@@ -69,7 +69,7 @@
                 <div class="cart-total mb-3">
                     <h3>Cart Totals</h3>
                     <p class="d-flex">
-                        <span>Subtotal</span>
+                        <span>Tổng đơn hàng</span>
                         <span>{{ Cart::subtotal(0) }}.VNĐ</span>
                     </p>
                     <p class="d-flex">

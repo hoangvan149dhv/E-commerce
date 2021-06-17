@@ -39,7 +39,7 @@ class CategoryProduct extends AdminController
     {
         DB::table('tbl_category_product')->where('category_id', $category_product_id)->update(['category_status' => $status]);
 
-        return Redirect::to('allCategoryProduct');
+        return redirect::to('admin/allCategoryProduct');
     }
 
     //EDIT

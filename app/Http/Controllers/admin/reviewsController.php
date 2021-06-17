@@ -20,7 +20,7 @@ class reviewsController extends AdminController {
 
         ReviewModel ::where('Rid',$Rid)->delete();
 
-        return redirect('/reviews');
+        return redirect('admin/reviews');
 
     }
 }

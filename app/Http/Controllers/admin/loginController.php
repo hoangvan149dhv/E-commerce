@@ -20,7 +20,7 @@ class loginController extends Controller
         $session_id = Session::get('session_id');
 
         if ($session_id) {
-            return Redirect::to('admin-quanly');
+            return redirect::to('admin/admin/admin-quanly');
 
         } else {
 
@@ -76,8 +76,7 @@ class loginController extends Controller
         }
     }
 
-    //check user password when user fill
-    public function check_login_user_pass(Request $request)
+    public function check_login(Request $request)
     {
         $user_name = $request->Email;
 
@@ -92,7 +91,6 @@ class loginController extends Controller
             $month = Carbon::now()->month;
             $product_order_date = DB::table('tbl_orders')->where('status', 1)->whereDate('order_date', $date)->get();
             $product_order_month = DB::table('tbl_orders')->where('status', 1)->whereMonth('order_date', $month)->get();
-
             session::put('admin_name', $result->admin_name);
             session::put('session_id', md5($result->admin_pass.Carbon::now()));
             session::put('message', DB::table('tbl_orders')->where('status', 0)->count());
@@ -113,8 +111,6 @@ class loginController extends Controller
     public function log_out()
     {
         Session::put('session_id', null);
-
-        return redirect('/admin-login');
-
+        return redirect('/admin/admin-login');
     }
 }

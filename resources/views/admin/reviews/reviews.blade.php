@@ -34,7 +34,7 @@ use Carbon\Carbon;
                             <td style="text-align:center">  {{($reviewsadmin->Rcomment)}}</td>
                             <td style="text-align:center">  {{Carbon::createFromFormat('Y-m-d H:i:s', $reviewsadmin->created_at)->format('d/m/yy | H:i:s')}}</td>
                             <td style="text-align:center;background:#bbecc457">
-                                <a href="{{ URL::to('/delete_review_status/'.$reviewsadmin->Rid) }}" style="color:red">Xóa</a>
+                                <a href="{{ URL::to('/admin/delete_review_status/'.$reviewsadmin->Rid) }}" style="color:red">Xóa</a>
                             </td>
                         </tr>
                     @endforeach

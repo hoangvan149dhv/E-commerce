@@ -13,17 +13,17 @@
         </div>
         <div class="col-sm-4">
         </div>
-        <div class="col-sm-3">
-          <form action="{{ URL::to('/search-order') }}" method="GET">
-          {{ csrf_field() }}
-          <div class="input-group">
-            <input type="text" name="search" class="input-sm form-control">
-            <span class="input-group-btn">
-              <button class="btn btn-sm btn-default" type="submit">Tìm</button>
-            </span>
-          </div>
-         </form>
-        </div>
+{{--        <div class="col-sm-3">--}}
+{{--          <form action="{{ URL::to('/admin/search-order') }}" method="POST">--}}
+{{--          {{ csrf_field() }}--}}
+{{--          <div class="input-group">--}}
+{{--            <input type="text" name="search" class="input-sm form-control">--}}
+{{--            <span class="input-group-btn">--}}
+{{--              <button class="btn btn-sm btn-default" type="submit">Tìm</button>--}}
+{{--            </span>--}}
+{{--          </div>--}}
+{{--         </form>--}}
+{{--        </div>--}}
       </div>
       <div class="table-responsive">
         <table class="table table-striped b-t b-light">
@@ -43,7 +43,7 @@
             <tr>
               <td style="text-align:center">{{$product->cusid}}</td>
               <td style="text-align:center">
-                  <a href="{{ URL::to('/thong-tin-don-hang/'.$product->orderid)}}">{{$product->productname}}</a>
+                  <a href="{{ URL::to('/admin/thong-tin-don-hang/'.$product->orderid)}}">{{$product->productname}}</a>
               </td>
               <td style="text-align:center">  {{$product->cusname}}</td>
               <td style="text-align:center">
@@ -53,12 +53,12 @@
               <td style="text-align:center">  {{number_format($product->price)}}.VNĐ</td>
               @if ($product->status==1)
               <td style="text-align:center;background:#bbecc457">
-                  <a href="{{ URL::to('/update-status-1/'.$product->orderid) }}" style="color:green;">Đã Giao Xong</a>
+                  <a href="{{ URL::to('/admin/update-status-1/'.$product->orderid) }}" style="color:green;">Đã Giao Xong</a>
                   ||
-                  <a href="{{ URL::to('/delete-status-1/'.$product->orderid) }}" style="color:red">Xóa</a>
+                  <a href="{{ URL::to('/admin/delete-status-1/'.$product->orderid) }}" style="color:red">Xóa</a>
               @else
               <td style="text-align:center;background:#f0bcb470;">
-                  <a href="{{ URL::to('/update-status-0/'.$product->orderid) }}" style="color:red">Đang Xử Lý</a>
+                  <a href="{{ URL::to('/admin/update-status-0/'.$product->orderid) }}" style="color:red">Đang Xử Lý</a>
               @endif</td>
             </tr>
             @endforeach

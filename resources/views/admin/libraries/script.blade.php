@@ -21,14 +21,14 @@
     });
 
     function checkConditiondumpDatabase() {
-        var condition = prompt("Người yêu của tao tên gì?");
-        if (condition == "" || condition != "ngan" ) {
-            alert('Sai rồi thằng óc chó');
+        var condition = prompt("Vui lòng viết 'ok' viết thường. Database sẽ được lưu {project}/database/backups/month/today");
+        if (condition == "" || condition != "ok" ) {
+            alert('Sai');
             $('form.abc').removeAttr('action');
             return;
         }
         else{
-            alert('Giỏi, Mày ngon');
+            alert('Đã tạo thành công');
         }
     }
 </script>

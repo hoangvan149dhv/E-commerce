@@ -9,7 +9,7 @@
 
             <div class="panel-body">
                 <div class="position-center">
-                <form role="form" action="{{URL::to('/save-brandcode-product')}}" method="post">
+                <form role="form" action="{{URL::to('/admin/save-brandcode-product')}}" method="post">
                    {{ csrf_field() }}
                     <div class="form-group">
                         <label for="exampleInputEmail1">Mã Sản Phẩm</label>
