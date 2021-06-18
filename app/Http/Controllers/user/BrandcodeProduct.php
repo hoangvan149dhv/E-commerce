@@ -9,7 +9,7 @@
     use App\Http\Requests;
     use Illuminate\Support\Facades\Redirect;
 
-    class BrandcodeProduct extends HomeController
+    class Brand extends HomeController
     {
         public function show_products_from_brand($brand_meta_slug)
         {
@@ -22,7 +22,7 @@
                             ->orderby('tbl_product.product_price_promotion', 'desc')
                             ->paginate(12);
 
-            return view('frontend.brand.show_brandcode')
+            return view('frontend.brand.showcode')
                 ->with('productDataFromBrand', $productData)
                 ->with('brand_name', $brand_name);
         }

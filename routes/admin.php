@@ -14,8 +14,8 @@ use Illuminate\Http\Request;
 */
 
 
-Route::group([ 'name' => 'admin.'],function () {
-    Route::post('/admin-quanly', 'admin\loginController@check_login');
+Route::group([ 'name' => 'admin'],function () {
+    Route::post('/admin-quanly', 'admin\loginController@check_login')->name('admin');
 
     //LOGOUT
     Route::get('/logout','admin\loginController@log_out');
@@ -68,22 +68,22 @@ Route::group([ 'name' => 'admin.', 'middleware' => 'verfiy-account'],function ()
         return view('admin.categories.addcategoryProduct');
     });
 //SHOW CATEGORY
-    Route::get('/allCategoryProduct', 'admin\CategoryProduct@show_Categories');
+    Route::get('/allCategoryProduct', 'admin\CategoryProduct@index');
 //SAVE CATEGORY
-    Route::post('/save-category-product', 'admin\CategoryProduct@save_Category_Product');
+    Route::post('/save-category-product', 'admin\CategoryProduct@create');
 
 //UPDATE CATEGORY
-    Route::get('/edit-category-product/{category_product_idd}', 'admin\CategoryProduct@edit_Category_Product');
+    Route::get('/edit-category-product/{category_product_idd}', 'admin\CategoryProduct@edit');
 
-    Route::post('/update-category-product/{category_product_idd}', 'admin\CategoryProduct@update_Category_Product');
+    Route::post('/update-category-product/{category_product_idd}', 'admin\CategoryProduct@update');
 
 //DESTROY CATEGOY
-    Route::get('/destroy', 'admin\CategoryProduct@destroy_Category_Product');
+    Route::get('/destroy', 'admin\CategoryProduct@destroy');
 
 
 
 //ACTIVE (ID)
-    Route::get('/status/{category_product_id}/{status}', 'admin\CategoryProduct@update_status_category');
+    Route::get('/status/{category_product_id}/{status}', 'admin\CategoryProduct@update_status');
 
 
 //BRAND PRODUCT
@@ -93,17 +93,17 @@ Route::group([ 'name' => 'admin.', 'middleware' => 'verfiy-account'],function ()
         return view('admin.brands.addBrandProduct');
     });
 //SHOW BRAND
-    Route::get('/all-Brand-code-Product', 'admin\BrandcodeProduct@show_Brand');
+    Route::get('/brand', 'admin\Brand@show');
 // SAVE BRAND
-    Route::post('/save-brandcode-product', 'admin\BrandcodeProduct@save_brandcode_product');
+    Route::post('/save-brandcode-product', 'admin\Brand@create');
 
 //DELETE BRAND
-    route::get('/delete-brand-code-product/{brand_code_id}','admin\BrandcodeProduct@delete_brand_code_product');
+    route::get('/delete-brand-code-product/{brand_code_id}','admin\Brand@destroy');
 
 //UPDATE BRAND
-    route::get('edit-brand-code-product/{brand_code_id}','admin\BrandcodeProduct@edit_brand_code_product');
+    route::get('edit-brand-code-product/{brand_code_id}','admin\Brand@edit');
 
-    route::post('update-brandcode-product/{brand_code_id}','admin\BrandcodeProduct@update_brand_code_Product');
+    route::post('update-brandcode-product/{brand_code_id}','admin\Brand@update');
 
 
 
@@ -127,7 +127,7 @@ Route::group([ 'name' => 'admin.', 'middleware' => 'verfiy-account'],function ()
     route::get('/check-publish-product/{product_id}/{publish}','admin\Productcontroller@publish');
 
 ///////////////////////////////////////////-------INFO CUSTOMER ORDER-------////////////////////////////////////////////
-    route::get('/thong-tin-don-hang/{order_id}','admin\AdminController@infocustomerorder');
+    route::get('/thong-tin-don-hang/{order_id}','admin\OrderController@edit');
 
 
 //////////////////////////////////////////-------NEWS----------/////////////////////////////////////////////////////////
@@ -210,13 +210,13 @@ Route::group([ 'name' => 'admin.', 'middleware' => 'verfiy-account'],function ()
 
 /////////////////////////////////////////-------ORDER------/////////////////////////////////////////////////////////////
 //ORDER MANAGEMENT
-    Route::get('/admin-quanly-donhang/{order_status}', 'admin\AdminController@order');
+    Route::get('/quan-ly-don-hang/{order_status}', 'admin\OrderController@show');
 
 /////UPDATE- STATUS ORDER
-    Route::get('/update-status/{order_id}/{order_status}','admin\AdminController@update_status');
+    Route::get('/update-status/{order_id}/{order_status}','admin\OrderController@update');
 
 //REMOVE MUTI ORDERS
-    Route::get('/destroy-order', 'admin\AdminController@destroy_order');
+Route::get('/destroy-order', 'admin\OrderController@destroy');
 
 //ORDERS FIND
 //    Route::post('/search-order', 'admin\AdminController@search_order');

@@ -19,7 +19,7 @@ class contactController extends AdminController{
     public function update_status_contact($id, $status){
         $data['status'] = $status;
 
-        contactModel::where('id',$id)->update($data);SUNNY NGO
+        contactModel::where('id',$id)->update($data);
 
         return redirect('admin/contact');
     }

@@ -23,9 +23,9 @@
                         </span>
                     </a>
                     <ul class="sub">
-                        <li><a href="{{URL::to('/admin/admin-quanly-donhang/tong-don-hang')}}">Tổng đơn hàng</a></li>
-                        <li><a href="{{URL::to('/admin/admin-quanly-donhang/0')}}">Đơn hàng chưa hoàn thành</a></li>
-                        <li><a href="{{URL::to('/admin/admin-quanly-donhang/1')}}">Đơn hàng đã giao xong</a></li>
+                        <li><a href="{{URL::to('/admin/quan-ly-don-hang/tong-don-hang')}}">Tổng đơn hàng</a></li>
+                        <li><a href="{{URL::to('/admin/quan-ly-don-hang/0')}}">Đơn hàng chưa hoàn thành</a></li>
+                        <li><a href="{{URL::to('/admin/quan-ly-don-hang/1')}}">Đơn hàng đã giao xong</a></li>
                     </ul>
                 </li>
                 <!-- /Order -->
@@ -51,7 +51,7 @@
                     </a>
                     <ul class="sub">
                         <li><a href="{{URL::to('/admin/add-Brand-code-Product')}}">Thêm Mã Thương Hiệu</a></li>
-                        <li><a href="{{URL::to('/admin/all-Brand-code-Product')}}">Liệt Kê Mã Thương Hiệu</a></li>
+                        <li><a href="{{URL::to('/admin/brand')}}">Liệt Kê Mã Thương Hiệu</a></li>
                     </ul>
                 </li>
                 <!-- /Brands -->

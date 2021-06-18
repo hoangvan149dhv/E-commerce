@@ -132,13 +132,6 @@ use App\Http\Model\OrderModel;
                                                     $subtotal = $key->total;
                                                     $total += $subtotal;
                                                 @endphp
-                                                <?php
-                                                $productp = 0;
-                                                $productp += $key->price;
-                                                echo "<pre>";
-                                                print_r($product);
-                                                echo"</pre>";
-                                                ?>
                                             @endforeach
                                             <?php
                                             echo number_format($total).".VNĐ";

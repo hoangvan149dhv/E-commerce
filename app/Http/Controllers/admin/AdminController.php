@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Http\Controllers\Controller;
 use App\Http\Model\OrderModel;
 use Illuminate\Http\Request;
 use DB;
@@ -13,10 +14,71 @@ use App\Http\Model\contactinfoModel;
 use App\Http\Model\count;
 use App\Http\Controllers\admin\loginController;
 
-class AdminController extends loginController
+class AdminController extends Controller
 {
+    protected $id;
 
-    public function __construct()
+    /**
+     * Cached instances
+     *
+     * @var  array
+     */
+    protected static $instances = array();
+
+    /**
+     * Table primary key for load item.
+     *
+     * @var  string
+     */
+    protected $table = null;
+
+    protected $colum = null;
+
+    /**
+     * Constructor
+     *
+     * @param   mixed $id Identifier of the active item
+     */
+    public function __construct($id = null)
+    {
+        if ($id)
+        {
+            $this->table = DB::table($this->table)->where($this->colum, $id)->get();
+        }
+        else
+        {
+            $this->table = false !== DB::table($this->table)->get() ? DB::table($this->table) : '';
+        }
+    }
+    /**
+     * Create and return a cached instance
+     *
+     * @param   integer $id Identifier of the active item
+     *
+     * @return  $this
+     */
+    public function getInstance($id = null)
+    {
+        $class = get_called_class();
+        if ($id)
+        {
+            $this->id = $id;
+            return new static($id);
+        }
+        else
+        {
+            static::$instances[$class] = new static( $id);
+        }
+
+        return static::$instances[$class];
+    }
+
+    public function getTable()
+    {
+        return $this->table ?: '';
+    }
+
+    public function index()
     {
         $count = count::find(1);
 
@@ -24,33 +86,17 @@ class AdminController extends loginController
         $brandcode_product = DB::table('tbl_brand_code_product')->orderby('code_id', 'desc')->get();
         $contactinfoModel = contactinfoModel::select()->get();
         $totalOder = DB::table('tbl_orders')->get();
+
+        $date = Carbon::now();
+        $month = Carbon::now()->month;
+        $product_order_date = DB::table('tbl_orders')->where('status', 1)->whereDate('order_date', $date)->get();
+        $product_order_month = DB::table('tbl_orders')->where('status', 1)->whereMonth('order_date', $month)->get();
         view()->share('dataOderofMonth',$this->getDataOderofMonth());
         view()->share('count', $count);
         view()->share('contactinfoModel', $contactinfoModel);
         view()->share('category_product', $category_product);
         view()->share('brand_code_product', $brandcode_product);
         view()->share('totalOder', $totalOder);
-        //check login
-//        $this->middleware(function ($request, $next) {
-//            $session_id = session::get('session_id');
-//
-//            if (empty($session_id)) {
-//
-//                return redirect::to('admin/admin/admin-login')->send();
-//            }
-//
-//            return $next($request);
-//        });
-    }
-
-    public function index()
-    {
-        $req = new Request();
-        $date = Carbon::now();
-        $month = Carbon::now()->month;
-        $product_order_date = DB::table('tbl_orders')->where('status', 1)->whereDate('order_date', $date)->get();
-        $product_order_month = DB::table('tbl_orders')->where('status', 1)->whereMonth('order_date', $month)->get();
-
         session::put('message', DB::table('tbl_orders')->where('status', 0)->count());
 
         return view('admin.home.home')
@@ -58,47 +104,6 @@ class AdminController extends loginController
             ->with('product_order_month', $product_order_month);
     }
 
-    public function update_status($orderid, $order_status)
-    {
-        $data['status'] = $order_status;
-
-        DB::table('tbl_orders')->where('orderid', $orderid)->update($data);
-
-        return back();
-    }
-
-    public function destroy_order(Request $request)
-    {
-        $order_id = $request->orderid;
-        isset($order_id) ? DB::table('tbl_orders')->whereIn('orderid', $order_id)->delete() : "";
-
-        return back();
-    }
-
-//    public function search_order(Request $request)
-//    {
-//
-//        $key_word = $request->search;
-//
-//        $search = DB::table('tbl_orders')->where('productname', 'like', '%'.$key_word.'%')
-//            ->orWhere('status', $key_word)
-//            ->orderby('orderid', 'desc')->paginate(30);
-//
-//        return view('admin.search.search')->with('search', $search);
-//    }
-
-    public function order($status)
-    {
-        $orderModel = new OrderModel();
-
-        $order_item = is_numeric($status) ? $orderModel->where('status', $status)->orderby('orderid',
-            'desc')->paginate(15)
-            : $orderModel->orderby('orderid', 'desc')->paginate(15);
-
-        session::put('message', DB::table('tbl_orders')->where('status', 0)->count());
-
-        return view('admin.order.order')->with('product_order', $order_item);
-    }
 
     public function searchProduct(Request $request)
     {
@@ -110,22 +115,6 @@ class AdminController extends loginController
             ->paginate(30);
 
         return view('admin.search.searchproduct')->with('search', $search);
-    }
-
-    //Order Detail
-    public function infocustomerorder($orderid)
-    {
-
-        $infocustomer = CustomerorderModel::where('orderid', $orderid)->get();
-        $orderItems = $infocustomer[0]->toArray();
-
-        $getProductItems = explode(',', $orderItems['product_id']);
-        $order_item_qty_value = explode(',', $orderItems['qty']);
-
-        return view('admin.infoOrder.infoOrder')
-            ->with('getProductItems', $getProductItems)
-            ->with('infocustomerorder', $infocustomer)
-            ->with('order_item_qty_value', $order_item_qty_value);
     }
 
     public function getDataOderofMonth()

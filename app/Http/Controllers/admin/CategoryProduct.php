@@ -10,59 +10,70 @@ use Illuminate\Support\Facades\Redirect;
 
 class CategoryProduct extends AdminController
 {
-    public function show_Categories(){
+    protected $table = 'tbl_category_product';
 
-        $all_category_product = DB::table('tbl_category_product')->get();
+    protected $colum = 'category_id';
 
-        $manager_category_product = view('admin.categories.allcategoryProduct')->with(
+    /**
+     * Display a listing of the resource.
+     *
+     */
+    public function index() {
+        $all_category_product = $this->table->get();
+
+        $category_product = view('admin.categories.allcategoryProduct')->with(
             'allcategory_Productt',
             $all_category_product
         );
 
-        return view('admin.index')->with('admin.categories.allcategoryProduct', $manager_category_product);
+        return $category_product;
     }
 
-    //ADD Save
-    public function save_Category_Product(Request $Request){
-        $data['category_name'] = $Request->name;
-        $data['category_desc'] = $Request->mota;
-        $data['category_status'] = $Request->status;
-        $data['category_meta_slug'] = \Mix::utf8tourl($data['category_name']) . "-" . rand(1,999);
-        DB::table('tbl_category_product')->insert($data);
+    /**
+     * Show the form for creating a new resource.
+     *
+     */
+    public function create(Request $Request) {
+        $data['category_name']      = $Request->name;
+        $data['category_desc']      = $Request->mota;
+        $data['category_status']    = $Request->status;
+        $data['category_meta_slug'] = \Mix::utf8tourl($data['category_name'])."-".rand(1, 999);
+
+        $this->table->insert($data);
 
         Session::put('message', 'Thêm Danh Mục Sản Phẩm Thành Công');
 
         return back();
     }
 
-    public function update_status_category($category_product_id, $status)
+    public function update_status($category_id, $status)
     {
-        DB::table('tbl_category_product')->where('category_id', $category_product_id)->update(['category_status' => $status]);
-
-        return redirect::to('admin/allCategoryProduct');
+        $this->table->where('category_id', $category_id)->update(['category_status' => $status]);
+        return back();
     }
 
-    //EDIT
-    public function edit_Category_Product($category_product_id){
-
-        $edit_category_product = DB::table('tbl_category_product')->where('category_id', $category_product_id)->get();
-
-        $manager_category_product = view('admin.categories.updatecategoryproduct')->with(
+    public function edit($category_id)
+    {
+        return view('admin.categories.updatecategoryproduct')->with(
             'editcategory_Product',
-            $edit_category_product
+            $this->getInstance($category_id, $this->table)->getTable()
         );
-
-        return view('admin.index')->with('admin.categories.updatecategoryproduct', $manager_category_product);
     }
 
-    public function update_Category_Product(Request $Request, $category_product_id){
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     */
+    public function update(Request $Request, $id) {
 
         $data = array();
         $data['category_name'] = $Request->name;
         $data['category_desc'] = $Request->mota;
         $data['category_meta_slug'] = \Mix::utf8tourl($data['category_name']) . "-" . rand(1,999);
 
-        DB::table('tbl_category_product')->where('category_id', $category_product_id)->update(
+        $this->table->where('category_id', $id)->update(
             $data
         );
 
@@ -70,12 +81,16 @@ class CategoryProduct extends AdminController
 
         return back();
     }
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     */
+    public function destroy(request $request){
 
-    public function destroy_Category_Product(request $request){
+        $id = $request->category;
 
-        $destroy_cate = $request->category;
-
-        DB::table('tbl_category_product')->whereIn('category_id', $destroy_cate)->delete();
+        $this->table->whereIn('category_id', $id)->delete();
 
         return back();
     }

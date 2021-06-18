@@ -24,7 +24,7 @@ Route::get('/tim-kiem','user\HomeController@search');
 Route::get('/Danh-muc-san-pham/{category_meta_slug}', 'user\CategoryProduct@show_products_from_category');
 
 //SHOW PRODUCT BY BRANDS
-Route::get('/thuong-hieu/{brandcode_meta_slug}', 'user\BrandcodeProduct@show_products_from_brand');
+Route::get('/thuong-hieu/{brandcode_meta_slug}', 'user\Brand@show_products_from_brand');
 //////////////////////////////////------DETAIL PRODUCT------////////////////////////////////////////////////////////////
 
 //DETAIL PRODUCT

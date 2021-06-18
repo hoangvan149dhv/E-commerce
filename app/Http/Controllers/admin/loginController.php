@@ -85,8 +85,7 @@ class loginController extends Controller
         $result = DB::table('tbl_admin')->where('user_name', $user_name)->where('admin_pass', $admin_pass)->first();
 
         if ($result) {
-            new AdminController();
-            $count = count::find(1);
+            $admin = new AdminController();
             $date = Carbon::now();
             $month = Carbon::now()->month;
             $product_order_date = DB::table('tbl_orders')->where('status', 1)->whereDate('order_date', $date)->get();
@@ -95,10 +94,10 @@ class loginController extends Controller
             session::put('session_id', md5($result->admin_pass.Carbon::now()));
             session::put('message', DB::table('tbl_orders')->where('status', 0)->count());
 
+            $admin->index();
             return view('admin.home.home')
                 ->with('product_order_date', $product_order_date)
-                ->with('product_order_month', $product_order_month)
-                ->with('count', $count);
+                ->with('product_order_month', $product_order_month);
         } else {
             echo "<script type='text/javascript'>
                   alert('Sai Mật Khẩu ');
